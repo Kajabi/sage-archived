@@ -1,0 +1,243 @@
+.colors {
+  margin-bottom: $spacing;
+}
+.color {
+  padding: $spacing-sm $spacing;
+  &:before {
+    color: #fff;
+  }
+  &-blue {
+    @extend .color;
+    background: $color-blue;
+    &:before {
+      content: "$color-blue: #{$color-blue}";
+    }
+    &-light {
+      @extend .color;
+      background: $color-blue-light;
+      &:before {
+        content: "$color-blue-light: #{$color-blue-light}";
+      }
+    }
+    &-dark {
+      @extend .color;
+      background: $color-blue-dark;
+      &:before {
+        content: "$color-blue:-dark: #{$color-blue-dark}";
+      }
+    }
+  }
+  &-green {
+    @extend .color;
+    background: $color-green;
+    &:before {
+      content: "$color-green: #{$color-green}";
+    }
+    &-light {
+      @extend .color;
+      background: $color-green-light;
+      &:before {
+        content: "$color-green-light: #{$color-green-light}";
+      }
+    }
+    &-dark {
+      @extend .color;
+      background: $color-green-dark;
+      &:before {
+        content: "$color-green:-dark: #{$color-green-dark}";
+      }
+    }
+  }
+  &-orange {
+    @extend .color;
+    background: $color-orange;
+    &:before {
+      content: "$color-orange: #{$color-orange}";
+      color: #000;
+    }
+    &-light {
+      @extend .color;
+      background: $color-orange-light;
+      &:before {
+        content: "$color-orange-light: #{$color-orange-light}";
+        color: #000;
+      }
+    }
+    &-dark {
+      @extend .color;
+      background: $color-orange-dark;
+      &:before {
+        content: "$color-orange:-dark: #{$color-orange-dark}";
+      }
+    }
+  }
+  &-red {
+    @extend .color;
+    background: $color-red;
+    &:before {
+      content: "$color-red: #{$color-red}";
+    }
+    &-light {
+      @extend .color;
+      background: $color-red-light;
+      &:before {
+        content: "$color-red-light: #{$color-red-light}";
+      }
+    }
+    &-dark {
+      @extend .color;
+      background: $color-red-dark;
+      &:before {
+        content: "$color-red:-dark: #{$color-red-dark}";
+      }
+    }
+  }
+  &-turquoise {
+    @extend .color;
+    background: $color-turquoise;
+    &:before {
+      content: "$color-turquoise: #{$color-turquoise}";
+    }
+    &-light {
+      @extend .color;
+      background: $color-turquoise-light;
+      &:before {
+        content: "$color-turquoise-light: #{$color-turquoise-light}";
+        color: #000;
+      }
+    }
+    &-dark {
+      @extend .color;
+      background: $color-turquoise-dark;
+      &:before {
+        content: "$color-turquoise:-dark: #{$color-turquoise-dark}";
+      }
+    }
+  }
+  &-purple {
+    @extend .color;
+    background: $color-purple;
+    &:before {
+      content: "$color-purple: #{$color-purple}";
+    }
+    &-light {
+      @extend .color;
+      background: $color-purple-light;
+      &:before {
+        content: "$color-purple-light: #{$color-purple-light}";
+      }
+    }
+    &-dark {
+      @extend .color;
+      background: $color-purple-dark;
+      &:before {
+        content: "$color-purple:-dark: #{$color-purple-dark}";
+      }
+    }
+  }
+  &-pink {
+    @extend .color;
+    background: $color-pink;
+    &:before {
+      content: "$color-pink: #{$color-pink}";
+    }
+    &-light {
+      @extend .color;
+      background: $color-pink-light;
+      &:before {
+        content: "$color-pink-light: #{$color-pink-light}";
+      }
+    }
+    &-dark {
+      @extend .color;
+      background: $color-pink-dark;
+      &:before {
+        content: "$color-pink:-dark: #{$color-pink-dark}";
+      }
+    }
+  }
+  &-sky {
+    @extend .color;
+    background: $color-sky;
+    &:before {
+      content: "$color-sky: #{$color-sky}";
+      color: #000;
+    }
+    &-light {
+      @extend .color;
+      background: $color-sky-light;
+      &:before {
+        content: "$color-sky-light: #{$color-sky-light}";
+        color: #000;
+      }
+    }
+    &-dark {
+      @extend .color;
+      background: $color-sky-dark;
+      &:before {
+        content: "$color-sky:-dark: #{$color-sky-dark}";
+      }
+    }
+  }
+  &-white {
+    @extend .color;
+    background: $color-white;
+    &:before {
+      content: "$color-white: #{$color-white}";
+      color: #000;
+    }
+    &-dark {
+      @extend .color;
+      background: $color-white-dark;
+      &:before {
+        content: "$color-white-dark: #{$color-white-dark}";
+        color: #000;
+      }
+    }
+    &-extra-dark {
+      @extend .color;
+      background: $color-white-extra-dark;
+      &:before {
+        content: "$color-white-extra-dark: #{$color-white-extra-dark}";
+        color: #000;
+      }
+    }
+  }
+  &-grey {
+    @extend .color;
+    background: $color-grey;
+    &:before {
+      content: "$color-grey: #{$color-grey}";
+    }
+    &-light {
+      @extend .color;
+      background: $color-grey-light;
+      &:before {
+        content: "$color-grey-light: #{$color-grey-light}";
+        color: #000;
+      }
+    }
+    &-extra-light {
+      @extend .color;
+      background: $color-grey-extra-light;
+      &:before {
+        content: "$color-grey-extra-light: #{$color-grey-extra-light}";
+        color: #000;
+      }
+    }
+    &-dark {
+      @extend .color;
+      background: $color-grey-dark;
+      &:before {
+        content: "$color-grey-dark: #{$color-grey-dark}";
+      }
+    }
+    &-extra-dark {
+      @extend .color;
+      background: $color-grey-extra-dark;
+      &:before {
+        content: "$color-grey-extra-dark: #{$color-grey-extra-dark}";
+      }
+    }
+  }
+}

@@ -9,5 +9,14 @@ module Sage
     def core
     end
 
+    def elements
+    end
+
+    def components
+    end
+
+    def modules
+    end
+
   end
 end
