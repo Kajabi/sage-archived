@@ -1,0 +1,8 @@
+.sage-assistant {
+  display: flex;
+  padding: $spacing-sm $spacing;
+  &-body {
+    flex: 1;
+    padding-right: $spacing;
+  }
+}

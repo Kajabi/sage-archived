@@ -1,0 +1,17 @@
+.sage-sidebar {
+  width: $sidebar-width;
+  background: $color-white;
+  box-shadow: $shadow-md;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  &-body {
+    padding: $spacing;
+    flex: 1;
+    overflow: auto;
+  }
+  &-footer {
+    padding: $spacing;
+    border-top: $border-default;
+  }
+}

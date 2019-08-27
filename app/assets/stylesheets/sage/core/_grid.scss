@@ -1,0 +1,28 @@
+.sage-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: -$grid-spacing;
+  margin-right: -$grid-spacing;
+}
+.sage-col {
+  flex-basis: 100%;
+  padding: 0 $grid-spacing;
+  @for $i from 1 through $grid-columns {
+    &-#{$i} {
+      @extend .sage-col;
+    }
+  }
+}
+
+@media (min-width: $sm-max) {
+  .sage-col {
+    flex: 1;
+    @for $i from 1 through $grid-columns {
+      &-#{$i} {
+        flex-basis: percentage($i / $grid-columns);
+        max-width: percentage($i / $grid-columns);
+      }
+    }
+  }
+}

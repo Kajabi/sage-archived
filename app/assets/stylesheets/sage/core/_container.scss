@@ -1,0 +1,13 @@
+.sage-container {
+  margin: 0 auto;
+  padding: 0 $spacing;
+  max-width: $container-width;
+  &-sm {
+    @extend .sage-container;
+    max-width: $container-width-sm;
+  }
+  &-fluid {
+    @extend .sage-container;
+    max-width: $container-width-fluid;
+  }
+}

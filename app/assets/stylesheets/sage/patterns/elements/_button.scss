@@ -1,0 +1,18 @@
+.sage-btn {
+  display: inline-block;
+  font-size: $font-size-sm;
+  padding: $spacing-xs $spacing-sm;
+  background: $color-grey-light;
+  color: $font-color;
+  font-weight: $font-weight-semibold;
+  border-radius: $border-radius;
+  &-primary {
+    @extend .sage-btn;
+    background: $color-primary;
+    color: $color-white;
+    &:hover {
+      color: $color-white;
+      background: $color-blue-dark;
+    }
+  }
+}
