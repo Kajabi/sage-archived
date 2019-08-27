@@ -23,7 +23,7 @@ Or install it yourself as:
 Import Sage styles in app/assets/stylesheets/application.scss:
 
 ```scss
-@import "sage_design_system";
+@import "sage";
 ```
 
 ## License
