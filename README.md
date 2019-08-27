@@ -7,7 +7,7 @@ The Sage Design System (SDS) is our single source of truth, providing everything
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'sage_design_system', git: 'https://github.com/Kajabi/sage.git'
+gem 'sage', git: 'https://github.com/Kajabi/sage.git'
 ```
 
 And then execute:
