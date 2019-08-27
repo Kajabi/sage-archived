@@ -42,6 +42,10 @@ h6 {
   font-size: $font-size-xs;
 }
 
+p {
+  margin-bottom: $spacing;
+}
+
 a {
   color: $color-primary;
   &:hover,
