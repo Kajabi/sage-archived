@@ -1,6 +1,16 @@
 // Variables
 @import "sage/tokens/color_palette";
+@import "sage/tokens/color";
+@import "sage/tokens/border";
+@import "sage/tokens/breakpoints";
+@import "sage/tokens/shadow";
 @import "sage/tokens/size";
+@import "sage/tokens/typography";
+@import "sage/tokens/grid";
 
-// Colors
+// Colors Blocks
 @import "sage_docs/colors";
+// Code Examples
+@import "sage_docs/code";
+// Grid Examples
+@import "sage_docs/grid";

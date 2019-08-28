@@ -1,0 +1,16 @@
+<div class="sage-row">
+  <div class="sage-col-4"><div class="grid-item">Col</div></div>
+  <div class="sage-col"><div class="grid-item">Col</div></div>
+  <div class="sage-col"><div class="grid-item">Col</div></div>
+</div>
+<pre><code><xmp><div class="row">
+  <div class="sage-col-4">Col</div>
+  <div class="sage-col">Col</div>
+  <div class="sage-col">Col</div>
+</div></xmp></code></pre>
+<% 11.times do |num| %>
+  <div class="sage-row">
+    <div class="sage-col-<%= num + 1%>"><div class="grid-item"><%= num + 1%></div></div>
+    <div class="sage-col"><div class="grid-item"><%= 11 - num%></div></div>
+  </div>
+<% end %>

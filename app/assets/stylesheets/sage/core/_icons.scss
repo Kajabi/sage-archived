@@ -9,8 +9,8 @@
   font-style: normal;
 }
 
-[class^="icon-"],
-[class*=" icon-"] {
+[class^="sage-icon-"],
+[class*=" sage-icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: "icomoon" !important;
   speak: none;
@@ -25,24 +25,24 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-Help:before {
+.sage-icon-Help:before {
   content: "\e900";
 }
-.icon-Marketing:before {
+.sage-icon-Marketing:before {
   content: "\e901";
 }
-.icon-New-Window:before {
+.sage-icon-New-Window:before {
   content: "\e902";
 }
-.icon-People:before {
+.sage-icon-People:before {
   content: "\e903";
 }
-.icon-Products:before {
+.sage-icon-Products:before {
   content: "\e904";
 }
-.icon-Settings:before {
+.sage-icon-Settings:before {
   content: "\e905";
 }
-.icon-Website:before {
+.sage-icon-Website:before {
   content: "\e906";
 }
