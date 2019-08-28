@@ -9,6 +9,18 @@ module Sage
     def color
     end
 
+    def typography
+    end
+
+    def Grid
+    end
+
+    def container
+    end
+
+    def icon
+    end
+
     def elements
     end
 
