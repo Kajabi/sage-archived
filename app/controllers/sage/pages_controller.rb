@@ -6,7 +6,7 @@ module Sage
     def index
     end
 
-    def core
+    def color
     end
 
     def elements
