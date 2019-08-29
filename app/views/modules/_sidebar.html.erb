@@ -6,20 +6,28 @@
         <i class="sage-icon-Settings"></i>
         Introduction
       <% end %>
+      <a class="sage-nav-link-sub" href="#">Purpose</a>
+      <a class="sage-nav-link-sub" href="#">Principles</a>
+      <a class="sage-nav-link-sub" href="#">How We Work</a>
       <%= link_to pages_color_url, class: "sage-nav-link" do %>
         <i class="sage-icon-Settings"></i>
         Core
       <% end %>
       <%= link_to "Color", pages_color_url, class: "sage-nav-link-sub" %>
       <%= link_to "Typography", pages_typography_url, class: "sage-nav-link-sub" %>
-      <%= link_to "Grid", pages_grid_url, class: "sage-nav-link-sub" %>
+      <%= link_to pages_elements_url, class: "sage-nav-link" do %>
+        <i class="sage-icon-Settings"></i>
+        Layout
+      <% end %>
       <%= link_to "Container", pages_container_url, class: "sage-nav-link-sub" %>
-      <%= link_to "Icon", pages_icon_url, class: "sage-nav-link-sub" %>
+      <%= link_to "Grid", pages_grid_url, class: "sage-nav-link-sub" %>
+      <a class="sage-nav-link-sub" href="#">Media</a>
       <%= link_to pages_elements_url, class: "sage-nav-link" do %>
         <i class="sage-icon-Settings"></i>
         Elements
       <% end %>
       <a class="sage-nav-link-sub" href="#">Form</a>
+      <%= link_to "Icon", pages_icon_url, class: "sage-nav-link-sub" %>
       <a class="sage-nav-link-sub" href="#">Table</a>
       <a class="sage-nav-link-sub" href="#">Tooltip</a>
       <%= link_to pages_components_url, class: "sage-nav-link" do %>

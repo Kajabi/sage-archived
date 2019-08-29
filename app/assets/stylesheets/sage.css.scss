@@ -13,12 +13,15 @@
 
 // Base Styles
 @import "sage/core/typography";
-@import "sage/core/grid";
-@import "sage/core/icons";
-@import "sage/core/layout";
-@import "sage/core/container";
+
+// Layout Styles
+@import "sage/layout/container";
+@import "sage/layout/document";
+@import "sage/layout/grid";
+@import "sage/layout/media";
 
 // Elements
+@import "sage/patterns/elements/icon";
 
 // Components
 @import "sage/patterns/components/button";
