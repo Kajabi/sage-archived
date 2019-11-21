@@ -6,6 +6,9 @@ module Sage
     def index
     end
 
+    def token
+    end
+    
     def color
     end
 
@@ -28,6 +31,9 @@ module Sage
     end
 
     def modules
+    end
+
+    def utilities
     end
 
   end
