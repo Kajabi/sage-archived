@@ -54,3 +54,9 @@ a {
     text-decoration: none;
   }
 }
+
+hr {
+  border: 0;
+  border-top: $border-default;
+  margin: $spacing 0;
+}
