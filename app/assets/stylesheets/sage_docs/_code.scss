@@ -1,12 +1,13 @@
 pre {
-  background: $color-white-extra-dark;
+  background: #1d2f52;
   padding: $spacing;
-  font-size: $font-size;
+  font-size: $font-size-sm;
   margin-bottom: $spacing;
   border-radius: $border-radius;
-  color: $color-sky-dark;
+  color: $color-sky-light;
   font-weight: $font-weight-semibold;
 }
 xmp {
   margin: 0;
+  font-family: $font-family;
 }
