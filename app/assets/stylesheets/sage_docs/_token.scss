@@ -1,0 +1,354 @@
+.tokens {
+  margin-bottom: $spacing;
+  border: $border-default;
+  border-radius: $border-radius;
+  border-bottom: none;
+}
+.token {
+  display: flex;
+  &:before, &:after {
+    padding: $spacing-xs $spacing;
+    border-bottom: $border-default;
+  }
+  &:before {
+    border-right: $border-default;
+    font-weight: $font-weight-bold;
+    min-width: 300px;
+  }
+  &:after {
+    flex: 1;
+  }
+  &-border-default {
+    @extend .token;
+    &:before {
+      content: "$border-default";
+    }
+    &:after {
+      content: "#{$border-default}";
+    }
+  }
+  &-border-radius {
+    @extend .token;
+    &:before {
+      content: "$border-radius";
+    }
+    &:after {
+      content: "#{$border-radius}";
+    }
+  }
+  &-xs-max {
+    @extend .token;
+    &:before {
+      content: "$xs-max";
+    }
+    &:after {
+      content: "#{$xs-max}";
+    }
+  }
+  &-sm-min {
+    @extend .token;
+    &:before {
+      content: "$sm-min";
+    }
+    &:after {
+      content: "#{$sm-min}";
+    }
+  }
+  &-sm-max {
+    @extend .token;
+    &:before {
+      content: "$sm-max";
+    }
+    &:after {
+      content: "#{$sm-max}";
+    }
+  }
+  &-md-min {
+    @extend .token;
+    &:before {
+      content: "$md-min";
+    }
+    &:after {
+      content: "#{$md-min}";
+    }
+  }
+  &-md-max {
+    @extend .token;
+    &:before {
+      content: "$md-max";
+    }
+    &:after {
+      content: "#{$md-max}";
+    }
+  }
+  &-lg-min {
+    @extend .token;
+    &:before {
+      content: "$lg-min";
+    }
+    &:after {
+      content: "#{$lg-min}";
+    }
+  }
+  &-lg-max {
+    @extend .token;
+    &:before {
+      content: "$lg-max";
+    }
+    &:after {
+      content: "#{$lg-max}";
+    }
+  }
+  &-xl-min {
+    @extend .token;
+    &:before {
+      content: "$xl-min";
+    }
+    &:after {
+      content: "#{$xl-min}";
+    }
+  }
+  &-grid-columns {
+    @extend .token;
+    &:before {
+      content: "$grid-columns";
+    }
+    &:after {
+      content: "#{$grid-columns}";
+    }
+  }
+  &-grid-spacing {
+    @extend .token;
+    &:before {
+      content: "$grid-spacing";
+    }
+    &:after {
+      content: "#{$grid-spacing}";
+    }
+  }
+  &-shadow {
+    @extend .token;
+    &:before {
+      content: "$shadow";
+    }
+    &:after {
+      content: "#{$shadow}";
+    }
+  }
+  &-shadow-md {
+    @extend .token;
+    &:before {
+      content: "$shadow-md";
+    }
+    &:after {
+      content: "#{$shadow-md}";
+    }
+  }
+  &-shadow-lg {
+    @extend .token;
+    &:before {
+      content: "$shadow-lg";
+    }
+    &:after {
+      content: "#{$shadow-lg}";
+    }
+  }
+  &-spacing {
+    @extend .token;
+    &:before {
+      content: "$spacing";
+    }
+    &:after {
+      content: "#{$spacing}";
+    }
+  }
+  &-spacing-2xs {
+    @extend .token;
+    &:before {
+      content: "$spacing-2xs";
+    }
+    &:after {
+      content: "#{$spacing-2xs}";
+    }
+  }
+  &-spacing-xs {
+    @extend .token;
+    &:before {
+      content: "$spacing-xs";
+    }
+    &:after {
+      content: "#{$spacing-xs}";
+    }
+  }
+  &-spacing-sm {
+    @extend .token;
+    &:before {
+      content: "$spacing-sm";
+    }
+    &:after {
+      content: "#{$spacing-sm}";
+    }
+  }
+  &-spacing-lg {
+    @extend .token;
+    &:before {
+      content: "$spacing-lg";
+    }
+    &:after {
+      content: "#{$spacing-lg}";
+    }
+  }
+  &-container-width {
+    @extend .token;
+    &:before {
+      content: "$container-width";
+    }
+    &:after {
+      content: "#{$container-width}";
+    }
+  }
+  &-container-width-sm {
+    @extend .token;
+    &:before {
+      content: "$container-width-sm";
+    }
+    &:after {
+      content: "#{$container-width-sm}";
+    }
+  }
+  &-container-width-fluid {
+    @extend .token;
+    &:before {
+      content: "$container-width-fluid";
+    }
+    &:after {
+      content: "#{$container-width-fluid}";
+    }
+  }
+  &-sidebar-width {
+    @extend .token;
+    &:before {
+      content: "$sidebar-width";
+    }
+    &:after {
+      content: "#{$sidebar-width}";
+    }
+  }
+  &-sidebar-width-md {
+    @extend .token;
+    &:before {
+      content: "$sidebar-width-md";
+    }
+    &:after {
+      content: "#{$sidebar-width-md}";
+    }
+  }
+  &-sidebar-width-lg {
+    @extend .token;
+    &:before {
+      content: "$sidebar-width-lg";
+    }
+    &:after {
+      content: "#{$sidebar-width-lg}";
+    }
+  }
+  &-font-family {
+    @extend .token;
+    &:before {
+      content: "$font-family";
+    }
+    &:after {
+      content: "#{$font-family}";
+    }
+  }
+  &-font-size {
+    @extend .token;
+    &:before {
+      content: "$font-size";
+    }
+    &:after {
+      content: "#{$font-size}";
+    }
+  }
+  &-font-size-xs {
+    @extend .token;
+    &:before {
+      content: "$font-size-xs";
+    }
+    &:after {
+      content: "#{$font-size-xs}";
+    }
+  }
+  &-font-size-sm {
+    @extend .token;
+    &:before {
+      content: "$font-size-sm";
+    }
+    &:after {
+      content: "#{$font-size-sm}";
+    }
+  }
+  &-font-size-lg {
+    @extend .token;
+    &:before {
+      content: "$font-size-lg";
+    }
+    &:after {
+      content: "#{$font-size-lg}";
+    }
+  }
+  &-font-size-xl {
+    @extend .token;
+    &:before {
+      content: "$font-size-xl";
+    }
+    &:after {
+      content: "#{$font-size-xl}";
+    }
+  }
+  &-font-size-2xl {
+    @extend .token;
+    &:before {
+      content: "$font-size-2xl";
+    }
+    &:after {
+      content: "#{$font-size-2xl}";
+    }
+  }
+  &-font-size-3xl {
+    @extend .token;
+    &:before {
+      content: "$font-size-3xl";
+    }
+    &:after {
+      content: "#{$font-size-3xl}";
+    }
+  }
+  &-font-weight {
+    @extend .token;
+    &:before {
+      content: "$font-weight";
+    }
+    &:after {
+      content: "#{$font-weight}";
+    }
+  }
+  &-font-weight-semibold {
+    @extend .token;
+    &:before {
+      content: "$font-weight-semibold";
+    }
+    &:after {
+      content: "#{$font-weight-semibold}";
+    }
+  }
+  &-font-weight-bold {
+    @extend .token;
+    &:before {
+      content: "$font-weight-bold";
+    }
+    &:after {
+      content: "#{$font-weight-bold}";
+    }
+  }
+}

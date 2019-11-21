@@ -19,7 +19,7 @@
     background: $color-blue;
     padding: $spacing;
     &:before {
-      content: "$color-blue";
+      content: "$color-blue [ $color-primary ]";
     }
     &:after {
       content: "#{$color-blue}";
@@ -38,7 +38,7 @@
       @extend .color;
       background: $color-blue-dark;
       &:before {
-        content: "$color-blue:-dark";
+        content: "$color-blue-dark";
       }
       &:after {
         content: "#{$color-blue-dark}";
@@ -50,7 +50,7 @@
     background: $color-green;
     padding: $spacing;
     &:before {
-      content: "$color-green";
+      content: "$color-green [ $color-success ]";
     }
     &:after {
       content: "#{$color-green}";
@@ -69,7 +69,7 @@
       @extend .color;
       background: $color-green-dark;
       &:before {
-        content: "$color-green:-dark";
+        content: "$color-green-dark";
       }
       &:after {
         content: "#{$color-green-dark}";
@@ -81,7 +81,7 @@
     background: $color-orange;
     padding: $spacing;
     &:before {
-      content: "$color-orange";
+      content: "$color-orange [ $color-warning ]";
       color: #000;
     }
     &:after {
@@ -104,7 +104,7 @@
       @extend .color;
       background: $color-orange-dark;
       &:before {
-        content: "$color-orange:-dark";
+        content: "$color-orange-dark";
       }
       &:after {
         content: "#{$color-orange-dark}";
@@ -116,7 +116,7 @@
     background: $color-red;
     padding: $spacing;
     &:before {
-      content: "$color-red";
+      content: "$color-red [ $color-danger ]";
     }
     &:after {
       content: "#{$color-red}";
@@ -135,7 +135,7 @@
       @extend .color;
       background: $color-red-dark;
       &:before {
-        content: "$color-red:-dark";
+        content: "$color-red-dark";
       }
       &:after {
         content: "#{$color-red-dark}";
@@ -168,7 +168,7 @@
       @extend .color;
       background: $color-turquoise-dark;
       &:before {
-        content: "$color-turquoise:-dark";
+        content: "$color-turquoise-dark";
       }
       &:after {
         content: "#{$color-turquoise-dark}";
@@ -199,7 +199,7 @@
       @extend .color;
       background: $color-purple-dark;
       &:before {
-        content: "$color-purple:-dark";
+        content: "$color-purple-dark";
       }
       &:after {
         content: "#{$color-purple-dark}";
@@ -230,7 +230,7 @@
       @extend .color;
       background: $color-pink-dark;
       &:before {
-        content: "$color-pink:-dark";
+        content: "$color-pink-dark";
       }
       &:after {
         content: "#{$color-pink-dark}";
@@ -265,7 +265,7 @@
       @extend .color;
       background: $color-sky-dark;
       &:before {
-        content: "$color-sky:-dark";
+        content: "$color-sky-dark";
       }
       &:after {
         content: "#{$color-sky-dark}";
@@ -347,7 +347,7 @@
       @extend .color;
       background: $color-grey-dark;
       &:before {
-        content: "$color-grey-dark";
+        content: "$color-grey-dark [ $font-color-light ]";
       }
       &:after {
         content: "#{$color-grey-dark}";
@@ -357,7 +357,7 @@
       @extend .color;
       background: $color-grey-extra-dark;
       &:before {
-        content: "$color-grey-extra-dark";
+        content: "$color-grey-extra-dark [ $font-color ]";
       }
       &:after {
         content: "#{$color-grey-extra-dark}";
