@@ -1,4 +1,6 @@
 <h1>Components</h1>
 <p>Components are groups of atoms bonded together and are the smallest fundamental units of a compound. These Components take on their own properties and serve as the backbone of our design systems.</p>
 <hr>
-<h3 id="card">Card</h3>
+<% sage_components.each do |component| %>
+  <%= render "components/component", title: component[:title], path: component[:path] %>
+<% end %>
