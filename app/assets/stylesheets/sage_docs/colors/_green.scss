@@ -1,0 +1,76 @@
+&-green-100 {
+  @extend .color;
+  background: $sage-color-green-100;
+  color: $sage-font-color;
+  font-size: $sage-font-size-xs;
+  &:after {
+    content: "#{$sage-color-green-100}";
+  }
+}
+&-green-200 {
+  @extend .color;
+  background: $sage-color-green-200;
+  color: $sage-font-color;
+  font-size: $sage-font-size-xs;
+  &:after {
+    content: "#{$sage-color-green-200}";
+  }
+}
+&-green-300 {
+  @extend .color;
+  background: $sage-color-green-300;
+  color: $sage-font-color;
+  font-size: $sage-font-size-xs;
+  &:after {
+    content: "#{$sage-color-green-300}";
+  }
+}
+&-green-400 {
+  @extend .color;
+  background: $sage-color-green-400;
+  font-size: $sage-font-size-xs;
+  &:after {
+    content: "#{$sage-color-green-400}";
+  }
+}
+&-green-500 {
+  @extend .color;
+  background: $sage-color-green-500;
+  padding: $sage-spacing;
+  font-size: $sage-font-size-xs;
+  &:after {
+    content: "#{$sage-color-green-500}";
+  }
+}
+&-green-600 {
+  @extend .color;
+  background: $sage-color-green-600;
+  font-size: $sage-font-size-xs;
+  &:after {
+    content: "#{$sage-color-green-600}";
+  }
+}
+&-green-700 {
+  @extend .color;
+  background: $sage-color-green-700;
+  font-size: $sage-font-size-xs;
+  &:after {
+    content: "#{$sage-color-green-700}";
+  }
+}
+&-green-800 {
+  @extend .color;
+  background: $sage-color-green-800;
+  font-size: $sage-font-size-xs;
+  &:after {
+    content: "#{$sage-color-green-800}";
+  }
+}
+&-green-900 {
+  @extend .color;
+  background: $sage-color-green-900;
+  font-size: $sage-font-size-xs;
+  &:after {
+    content: "#{$sage-color-green-900}";
+  }
+}

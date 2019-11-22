@@ -1,0 +1,76 @@
+&-red-100 {
+  @extend .color;
+  background: $sage-color-red-100;
+  color: $sage-font-color;
+  font-size: $sage-font-size-xs;
+  &:after {
+    content: "#{$sage-color-red-100}";
+  }
+}
+&-red-200 {
+  @extend .color;
+  background: $sage-color-red-200;
+  color: $sage-font-color;
+  font-size: $sage-font-size-xs;
+  &:after {
+    content: "#{$sage-color-red-200}";
+  }
+}
+&-red-300 {
+  @extend .color;
+  background: $sage-color-red-300;
+  color: $sage-font-color;
+  font-size: $sage-font-size-xs;
+  &:after {
+    content: "#{$sage-color-red-300}";
+  }
+}
+&-red-400 {
+  @extend .color;
+  background: $sage-color-red-400;
+  font-size: $sage-font-size-xs;
+  &:after {
+    content: "#{$sage-color-red-400}";
+  }
+}
+&-red-500 {
+  @extend .color;
+  background: $sage-color-red-500;
+  padding: $sage-spacing;
+  font-size: $sage-font-size-xs;
+  &:after {
+    content: "#{$sage-color-red-500}";
+  }
+}
+&-red-600 {
+  @extend .color;
+  background: $sage-color-red-600;
+  font-size: $sage-font-size-xs;
+  &:after {
+    content: "#{$sage-color-red-600}";
+  }
+}
+&-red-700 {
+  @extend .color;
+  background: $sage-color-red-700;
+  font-size: $sage-font-size-xs;
+  &:after {
+    content: "#{$sage-color-red-700}";
+  }
+}
+&-red-800 {
+  @extend .color;
+  background: $sage-color-red-800;
+  font-size: $sage-font-size-xs;
+  &:after {
+    content: "#{$sage-color-red-800}";
+  }
+}
+&-red-900 {
+  @extend .color;
+  background: $sage-color-red-900;
+  font-size: $sage-font-size-xs;
+  &:after {
+    content: "#{$sage-color-red-900}";
+  }
+}

@@ -2,17 +2,17 @@
   display: inline-block;
   font-size: $sage-font-size-sm;
   padding: $sage-spacing-xs $sage-spacing-sm;
-  background: $sage-color-grey-light;
+  background: $sage-color-gray-500;
   color: $sage-font-color;
   font-weight: $sage-font-weight-semibold;
   border-radius: $sage-border-radius;
   &-primary {
     @extend .sage-btn;
-    background: $sage-color-primary;
+    background: $sage-color-blue-500;
     color: $sage-color-white;
     &:hover {
       color: $sage-color-white;
-      background: $sage-color-blue-dark;
+      background: $sage-color-blue-700;
     }
   }
 }

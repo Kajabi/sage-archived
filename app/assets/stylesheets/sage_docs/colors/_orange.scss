@@ -1,0 +1,76 @@
+&-orange-100 {
+  @extend .color;
+  background: $sage-color-orange-100;
+  color: $sage-font-color;
+  font-size: $sage-font-size-xs;
+  &:after {
+    content: "#{$sage-color-orange-100}";
+  }
+}
+&-orange-200 {
+  @extend .color;
+  background: $sage-color-orange-200;
+  color: $sage-font-color;
+  font-size: $sage-font-size-xs;
+  &:after {
+    content: "#{$sage-color-orange-200}";
+  }
+}
+&-orange-300 {
+  @extend .color;
+  background: $sage-color-orange-300;
+  color: $sage-font-color;
+  font-size: $sage-font-size-xs;
+  &:after {
+    content: "#{$sage-color-orange-300}";
+  }
+}
+&-orange-400 {
+  @extend .color;
+  background: $sage-color-orange-400;
+  font-size: $sage-font-size-xs;
+  &:after {
+    content: "#{$sage-color-orange-400}";
+  }
+}
+&-orange-500 {
+  @extend .color;
+  background: $sage-color-orange-500;
+  padding: $sage-spacing;
+  font-size: $sage-font-size-xs;
+  &:after {
+    content: "#{$sage-color-orange-500}";
+  }
+}
+&-orange-600 {
+  @extend .color;
+  background: $sage-color-orange-600;
+  font-size: $sage-font-size-xs;
+  &:after {
+    content: "#{$sage-color-orange-600}";
+  }
+}
+&-orange-700 {
+  @extend .color;
+  background: $sage-color-orange-700;
+  font-size: $sage-font-size-xs;
+  &:after {
+    content: "#{$sage-color-orange-700}";
+  }
+}
+&-orange-800 {
+  @extend .color;
+  background: $sage-color-orange-800;
+  font-size: $sage-font-size-xs;
+  &:after {
+    content: "#{$sage-color-orange-800}";
+  }
+}
+&-orange-900 {
+  @extend .color;
+  background: $sage-color-orange-900;
+  font-size: $sage-font-size-xs;
+  &:after {
+    content: "#{$sage-color-orange-900}";
+  }
+}
