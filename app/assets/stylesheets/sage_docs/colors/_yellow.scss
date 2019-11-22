@@ -1,7 +1,7 @@
 &-yellow-100 {
   @extend .color;
   background: $sage-color-yellow-100;
-  color: $sage-font-color;
+  color: $sage-color-yellow-900;
   font-size: $sage-font-size-xs;
   &:after {
     content: "#{$sage-color-yellow-100}";
@@ -10,7 +10,7 @@
 &-yellow-200 {
   @extend .color;
   background: $sage-color-yellow-200;
-  color: $sage-font-color;
+  color: $sage-color-yellow-900;
   font-size: $sage-font-size-xs;
   &:after {
     content: "#{$sage-color-yellow-200}";
@@ -19,7 +19,7 @@
 &-yellow-300 {
   @extend .color;
   background: $sage-color-yellow-300;
-  color: $sage-font-color;
+  color: $sage-color-yellow-900;
   font-size: $sage-font-size-xs;
   &:after {
     content: "#{$sage-color-yellow-300}";
@@ -28,6 +28,7 @@
 &-yellow-400 {
   @extend .color;
   background: $sage-color-yellow-400;
+  color: $sage-color-yellow-900;
   font-size: $sage-font-size-xs;
   &:after {
     content: "#{$sage-color-yellow-400}";

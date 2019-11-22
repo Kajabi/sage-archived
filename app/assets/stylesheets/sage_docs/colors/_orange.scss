@@ -1,7 +1,7 @@
 &-orange-100 {
   @extend .color;
   background: $sage-color-orange-100;
-  color: $sage-font-color;
+  color: $sage-color-orange-900;
   font-size: $sage-font-size-xs;
   &:after {
     content: "#{$sage-color-orange-100}";
@@ -10,7 +10,7 @@
 &-orange-200 {
   @extend .color;
   background: $sage-color-orange-200;
-  color: $sage-font-color;
+  color: $sage-color-orange-900;
   font-size: $sage-font-size-xs;
   &:after {
     content: "#{$sage-color-orange-200}";
@@ -19,7 +19,7 @@
 &-orange-300 {
   @extend .color;
   background: $sage-color-orange-300;
-  color: $sage-font-color;
+  color: $sage-color-orange-900;
   font-size: $sage-font-size-xs;
   &:after {
     content: "#{$sage-color-orange-300}";
@@ -28,6 +28,7 @@
 &-orange-400 {
   @extend .color;
   background: $sage-color-orange-400;
+  color: $sage-color-orange-900;
   font-size: $sage-font-size-xs;
   &:after {
     content: "#{$sage-color-orange-400}";

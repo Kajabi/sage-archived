@@ -1,7 +1,7 @@
 &-blue-100 {
   @extend .color;
   background: $sage-color-blue-100;
-  color: $sage-font-color;
+  color: $sage-color-blue-900;
   &:after {
     content: "#{$sage-color-blue-100}";
   }
@@ -9,7 +9,7 @@
 &-blue-200 {
   @extend .color;
   background: $sage-color-blue-200;
-  color: $sage-font-color;
+  color: $sage-color-blue-900;
   &:after {
     content: "#{$sage-color-blue-200}";
   }
@@ -17,7 +17,7 @@
 &-blue-300 {
   @extend .color;
   background: $sage-color-blue-300;
-  color: $sage-font-color;
+  color: $sage-color-blue-900;
   &:after {
     content: "#{$sage-color-blue-300}";
   }
@@ -25,6 +25,7 @@
 &-blue-400 {
   @extend .color;
   background: $sage-color-blue-400;
+  color: $sage-color-blue-900;
   &:after {
     content: "#{$sage-color-blue-400}";
   }

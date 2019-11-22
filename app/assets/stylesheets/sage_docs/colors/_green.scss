@@ -1,7 +1,7 @@
 &-green-100 {
   @extend .color;
   background: $sage-color-green-100;
-  color: $sage-font-color;
+  color: $sage-color-green-900;
   font-size: $sage-font-size-xs;
   &:after {
     content: "#{$sage-color-green-100}";
@@ -10,7 +10,7 @@
 &-green-200 {
   @extend .color;
   background: $sage-color-green-200;
-  color: $sage-font-color;
+  color: $sage-color-green-900;
   font-size: $sage-font-size-xs;
   &:after {
     content: "#{$sage-color-green-200}";
@@ -19,7 +19,7 @@
 &-green-300 {
   @extend .color;
   background: $sage-color-green-300;
-  color: $sage-font-color;
+  color: $sage-color-green-900;
   font-size: $sage-font-size-xs;
   &:after {
     content: "#{$sage-color-green-300}";
@@ -28,6 +28,7 @@
 &-green-400 {
   @extend .color;
   background: $sage-color-green-400;
+  color: $sage-color-green-900;
   font-size: $sage-font-size-xs;
   &:after {
     content: "#{$sage-color-green-400}";

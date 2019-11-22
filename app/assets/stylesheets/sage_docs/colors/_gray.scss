@@ -1,7 +1,7 @@
 &-gray-100 {
   @extend .color;
   background: $sage-color-gray-100;
-  color: $sage-font-color;
+  color: $sage-color-gray-900;
   &:after {
     content: "#{$sage-color-gray-100}";
   }
@@ -9,7 +9,7 @@
 &-gray-200 {
   @extend .color;
   background: $sage-color-gray-200;
-  color: $sage-font-color;
+  color: $sage-color-gray-900;
   &:after {
     content: "#{$sage-color-gray-200}";
   }
@@ -17,7 +17,7 @@
 &-gray-300 {
   @extend .color;
   background: $sage-color-gray-300;
-  color: $sage-font-color;
+  color: $sage-color-gray-900;
   &:after {
     content: "#{$sage-color-gray-300}";
   }
@@ -25,6 +25,7 @@
 &-gray-400 {
   @extend .color;
   background: $sage-color-gray-400;
+  color: $sage-color-gray-900;
   &:after {
     content: "#{$sage-color-gray-400}";
   }
@@ -70,7 +71,7 @@
 &-white {
   @extend .color;
   background: $sage-color-white;
-  color: $sage-font-color;
+  color: $sage-color-gray-900;
   &:after {
     content: "#{$sage-color-white}";
   }
