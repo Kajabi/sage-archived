@@ -1,24 +1,24 @@
 .sage-nav {
-  margin: $spacing 0;
+  margin: $sage-spacing 0;
   &-link {
     display: flex;
     align-items: center;
-    margin: $spacing-sm 0;
-    font-weight: $font-weight-bold;
-    color: $font-color;
+    margin: $sage-spacing-sm 0;
+    font-weight: $sage-font-weight-semibold;
+    color: $sage-font-color;
     &:hover {
-      color: $font-color-light;
+      color: $sage-font-color-light;
     }
     &-sub {
       @extend .sage-nav-link;
-      margin: $spacing-xs $spacing-lg;
-      font-size: $font-size-sm;
-      font-weight: $font-weight;
+      margin: $sage-spacing-xs $sage-spacing-lg;
+      font-size: $sage-font-size-sm;
+      font-weight: $sage-font-weight;
     }
     i {
-      font-size: $font-size-2xl;
-      margin-right: $spacing-xs;
-      color: $font-color-light;
+      font-size: $sage-font-size-2xl;
+      margin-right: $sage-spacing-xs;
+      color: $sage-font-color-light;
     }
   }
 }

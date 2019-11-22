@@ -1,18 +1,18 @@
 .tokens {
-  margin-bottom: $spacing;
-  border: $border-default;
-  border-radius: $border-radius;
+  margin-bottom: $sage-spacing;
+  border: $sage-border-default;
+  border-radius: $sage-border-radius;
   border-bottom: none;
 }
 .token {
   display: flex;
   &:before, &:after {
-    padding: $spacing-xs $spacing;
-    border-bottom: $border-default;
+    padding: $sage-spacing-xs $sage-spacing;
+    border-bottom: $sage-border-default;
   }
   &:before {
-    border-right: $border-default;
-    font-weight: $font-weight-bold;
+    border-right: $sage-border-default;
+    font-weight: $sage-font-weight-bold;
     min-width: 300px;
   }
   &:after {
@@ -21,334 +21,334 @@
   &-border-default {
     @extend .token;
     &:before {
-      content: "$border-default";
+      content: "$sage-border-default";
     }
     &:after {
-      content: "#{$border-default}";
+      content: "#{$sage-border-default}";
     }
   }
   &-border-radius {
     @extend .token;
     &:before {
-      content: "$border-radius";
+      content: "$sage-border-radius";
     }
     &:after {
-      content: "#{$border-radius}";
+      content: "#{$sage-border-radius}";
     }
   }
   &-xs-max {
     @extend .token;
     &:before {
-      content: "$xs-max";
+      content: "$sage-xs-max";
     }
     &:after {
-      content: "#{$xs-max}";
+      content: "#{$sage-xs-max}";
     }
   }
   &-sm-min {
     @extend .token;
     &:before {
-      content: "$sm-min";
+      content: "$sage-sm-min";
     }
     &:after {
-      content: "#{$sm-min}";
+      content: "#{$sage-sm-min}";
     }
   }
   &-sm-max {
     @extend .token;
     &:before {
-      content: "$sm-max";
+      content: "$sage-sm-max";
     }
     &:after {
-      content: "#{$sm-max}";
+      content: "#{$sage-sm-max}";
     }
   }
   &-md-min {
     @extend .token;
     &:before {
-      content: "$md-min";
+      content: "$sage-md-min";
     }
     &:after {
-      content: "#{$md-min}";
+      content: "#{$sage-md-min}";
     }
   }
   &-md-max {
     @extend .token;
     &:before {
-      content: "$md-max";
+      content: "$sage-md-max";
     }
     &:after {
-      content: "#{$md-max}";
+      content: "#{$sage-md-max}";
     }
   }
   &-lg-min {
     @extend .token;
     &:before {
-      content: "$lg-min";
+      content: "$sage-lg-min";
     }
     &:after {
-      content: "#{$lg-min}";
+      content: "#{$sage-lg-min}";
     }
   }
   &-lg-max {
     @extend .token;
     &:before {
-      content: "$lg-max";
+      content: "$sage-lg-max";
     }
     &:after {
-      content: "#{$lg-max}";
+      content: "#{$sage-lg-max}";
     }
   }
   &-xl-min {
     @extend .token;
     &:before {
-      content: "$xl-min";
+      content: "$sage-xl-min";
     }
     &:after {
-      content: "#{$xl-min}";
+      content: "#{$sage-xl-min}";
     }
   }
   &-grid-columns {
     @extend .token;
     &:before {
-      content: "$grid-columns";
+      content: "$sage-grid-columns";
     }
     &:after {
-      content: "#{$grid-columns}";
+      content: "#{$sage-grid-columns}";
     }
   }
   &-grid-spacing {
     @extend .token;
     &:before {
-      content: "$grid-spacing";
+      content: "$sage-grid-spacing";
     }
     &:after {
-      content: "#{$grid-spacing}";
+      content: "#{$sage-grid-spacing}";
     }
   }
   &-shadow {
     @extend .token;
     &:before {
-      content: "$shadow";
+      content: "$sage-shadow";
     }
     &:after {
-      content: "#{$shadow}";
+      content: "#{$sage-shadow}";
     }
   }
   &-shadow-md {
     @extend .token;
     &:before {
-      content: "$shadow-md";
+      content: "$sage-shadow-md";
     }
     &:after {
-      content: "#{$shadow-md}";
+      content: "#{$sage-shadow-md}";
     }
   }
   &-shadow-lg {
     @extend .token;
     &:before {
-      content: "$shadow-lg";
+      content: "$sage-shadow-lg";
     }
     &:after {
-      content: "#{$shadow-lg}";
+      content: "#{$sage-shadow-lg}";
     }
   }
   &-spacing {
     @extend .token;
     &:before {
-      content: "$spacing";
+      content: "$sage-spacing";
     }
     &:after {
-      content: "#{$spacing}";
+      content: "#{$sage-spacing}";
     }
   }
   &-spacing-2xs {
     @extend .token;
     &:before {
-      content: "$spacing-2xs";
+      content: "$sage-spacing-2xs";
     }
     &:after {
-      content: "#{$spacing-2xs}";
+      content: "#{$sage-spacing-2xs}";
     }
   }
   &-spacing-xs {
     @extend .token;
     &:before {
-      content: "$spacing-xs";
+      content: "$sage-spacing-xs";
     }
     &:after {
-      content: "#{$spacing-xs}";
+      content: "#{$sage-spacing-xs}";
     }
   }
   &-spacing-sm {
     @extend .token;
     &:before {
-      content: "$spacing-sm";
+      content: "$sage-spacing-sm";
     }
     &:after {
-      content: "#{$spacing-sm}";
+      content: "#{$sage-spacing-sm}";
     }
   }
   &-spacing-lg {
     @extend .token;
     &:before {
-      content: "$spacing-lg";
+      content: "$sage-spacing-lg";
     }
     &:after {
-      content: "#{$spacing-lg}";
+      content: "#{$sage-spacing-lg}";
     }
   }
   &-container-width {
     @extend .token;
     &:before {
-      content: "$container-width";
+      content: "$sage-container-width";
     }
     &:after {
-      content: "#{$container-width}";
+      content: "#{$sage-container-width}";
     }
   }
   &-container-width-sm {
     @extend .token;
     &:before {
-      content: "$container-width-sm";
+      content: "$sage-container-width-sm";
     }
     &:after {
-      content: "#{$container-width-sm}";
+      content: "#{$sage-container-width-sm}";
     }
   }
   &-container-width-fluid {
     @extend .token;
     &:before {
-      content: "$container-width-fluid";
+      content: "$sage-container-width-fluid";
     }
     &:after {
-      content: "#{$container-width-fluid}";
+      content: "#{$sage-container-width-fluid}";
     }
   }
   &-sidebar-width {
     @extend .token;
     &:before {
-      content: "$sidebar-width";
+      content: "$sage-sidebar-width";
     }
     &:after {
-      content: "#{$sidebar-width}";
+      content: "#{$sage-sidebar-width}";
     }
   }
   &-sidebar-width-md {
     @extend .token;
     &:before {
-      content: "$sidebar-width-md";
+      content: "$sage-sidebar-width-md";
     }
     &:after {
-      content: "#{$sidebar-width-md}";
+      content: "#{$sage-sidebar-width-md}";
     }
   }
   &-sidebar-width-lg {
     @extend .token;
     &:before {
-      content: "$sidebar-width-lg";
+      content: "$sage-sidebar-width-lg";
     }
     &:after {
-      content: "#{$sidebar-width-lg}";
+      content: "#{$sage-sidebar-width-lg}";
     }
   }
   &-font-family {
     @extend .token;
     &:before {
-      content: "$font-family";
+      content: "$sage-font-family";
     }
     &:after {
-      content: "#{$font-family}";
+      content: "#{$sage-font-family}";
     }
   }
   &-font-size {
     @extend .token;
     &:before {
-      content: "$font-size";
+      content: "$sage-font-size";
     }
     &:after {
-      content: "#{$font-size}";
+      content: "#{$sage-font-size}";
     }
   }
   &-font-size-xs {
     @extend .token;
     &:before {
-      content: "$font-size-xs";
+      content: "$sage-font-size-xs";
     }
     &:after {
-      content: "#{$font-size-xs}";
+      content: "#{$sage-font-size-xs}";
     }
   }
   &-font-size-sm {
     @extend .token;
     &:before {
-      content: "$font-size-sm";
+      content: "$sage-font-size-sm";
     }
     &:after {
-      content: "#{$font-size-sm}";
+      content: "#{$sage-font-size-sm}";
     }
   }
   &-font-size-lg {
     @extend .token;
     &:before {
-      content: "$font-size-lg";
+      content: "$sage-font-size-lg";
     }
     &:after {
-      content: "#{$font-size-lg}";
+      content: "#{$sage-font-size-lg}";
     }
   }
   &-font-size-xl {
     @extend .token;
     &:before {
-      content: "$font-size-xl";
+      content: "$sage-font-size-xl";
     }
     &:after {
-      content: "#{$font-size-xl}";
+      content: "#{$sage-font-size-xl}";
     }
   }
   &-font-size-2xl {
     @extend .token;
     &:before {
-      content: "$font-size-2xl";
+      content: "$sage-font-size-2xl";
     }
     &:after {
-      content: "#{$font-size-2xl}";
+      content: "#{$sage-font-size-2xl}";
     }
   }
   &-font-size-3xl {
     @extend .token;
     &:before {
-      content: "$font-size-3xl";
+      content: "$sage-font-size-3xl";
     }
     &:after {
-      content: "#{$font-size-3xl}";
+      content: "#{$sage-font-size-3xl}";
     }
   }
   &-font-weight {
     @extend .token;
     &:before {
-      content: "$font-weight";
+      content: "$sage-font-weight";
     }
     &:after {
-      content: "#{$font-weight}";
+      content: "#{$sage-font-weight}";
     }
   }
   &-font-weight-semibold {
     @extend .token;
     &:before {
-      content: "$font-weight-semibold";
+      content: "$sage-font-weight-semibold";
     }
     &:after {
-      content: "#{$font-weight-semibold}";
+      content: "#{$sage-font-weight-semibold}";
     }
   }
   &-font-weight-bold {
     @extend .token;
     &:before {
-      content: "$font-weight-bold";
+      content: "$sage-font-weight-bold";
     }
     &:after {
-      content: "#{$font-weight-bold}";
+      content: "#{$sage-font-weight-bold}";
     }
   }
 }

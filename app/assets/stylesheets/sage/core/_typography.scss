@@ -5,12 +5,15 @@ body {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   text-size-adjust: 100%;
-  color: $font-color;
-  font-family: $font-family;
-  font-weight: $font-weight;
-  font-size: $font-size;
-  line-height: $font-height;
-  margin-bottom: $spacing;
+  color: $sage-font-color;
+  font-family: $sage-font-family;
+  font-weight: $sage-font-weight;
+  font-size: $sage-font-size;
+  line-height: $sage-font-height;
+  margin-bottom: $sage-spacing;
+}
+@supports (font-variation-settings: normal) {
+  body { font-family: $sage-font-family-variation; }
 }
 h1,
 h2,
@@ -18,36 +21,36 @@ h3,
 h4,
 h5,
 h6 {
-  color: $font-color;
-  font-weight: $font-weight-semibold;
-  line-height: $font-height-sm;
-  margin-bottom: $spacing;
+  color: $sage-font-color;
+  font-weight: $sage-font-weight-bold;
+  line-height: $sage-font-height-sm;
+  margin-bottom: $sage-spacing;
 }
 h1 {
-  font-size: $font-size-3xl;
+  font-size: $sage-font-size-3xl;
 }
 h2 {
-  font-size: $font-size-2xl;
+  font-size: $sage-font-size-2xl;
 }
 h3 {
-  font-size: $font-size-xl;
+  font-size: $sage-font-size-xl;
 }
 h4 {
-  font-size: $font-size-lg;
+  font-size: $sage-font-size-lg;
 }
 h5 {
-  font-size: $font-size-sm;
+  font-size: $sage-font-size-sm;
 }
 h6 {
-  font-size: $font-size-xs;
+  font-size: $sage-font-size-xs;
 }
 
 p {
-  margin-bottom: $spacing;
+  margin-bottom: $sage-spacing;
 }
 
 a {
-  color: $color-primary;
+  color: $sage-color-primary;
   &:hover,
   &:focus {
     color: inherit;
@@ -57,6 +60,6 @@ a {
 
 hr {
   border: 0;
-  border-top: $border-default;
-  margin: $spacing 0;
+  border-top: $sage-border-default;
+  margin: $sage-spacing 0;
 }

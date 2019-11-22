@@ -1,22 +1,24 @@
 .sage-sidebar {
-  width: $sidebar-width;
-  background: $color-white-dark;
+  width: $sage-sidebar-width;
+  background: $sage-color-white-dark;
   z-index: 999;
   display: flex;
   flex-direction: column;
   &-md {
-    width: $sidebar-width-md;
+    @extend .sage-sidebar;
+    width: $sage-sidebar-width-md;
   }
   &-lg {
-    width: $sidebar-width-lg;
+    @extend .sage-sidebar;
+    width: $sage-sidebar-width-lg;
   }
   &-body {
-    padding: $spacing;
+    padding: $sage-spacing;
     flex: 1;
     overflow: auto;
   }
   &-footer {
-    padding: $spacing;
-    border-top: $border-default;
+    padding: $sage-spacing;
+    border-top: $sage-border-default;
   }
 }

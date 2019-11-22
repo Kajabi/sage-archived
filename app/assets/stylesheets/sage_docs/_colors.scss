@@ -1,11 +1,11 @@
 .colors {
-  margin-bottom: $spacing;
-  border-radius: $border-radius;
+  margin-bottom: $sage-spacing;
+  border-radius: $sage-border-radius;
   overflow: hidden;
 }
 .color {
-  padding: $spacing-sm $spacing;
-  font-size: $font-size-sm;
+  padding: $sage-spacing-sm $sage-spacing;
+  font-size: $sage-font-size-sm;
   &:before {
     color: #fff;
   }
@@ -16,351 +16,351 @@
   }
   &-blue {
     @extend .color;
-    background: $color-blue;
-    padding: $spacing;
+    background: $sage-color-blue;
+    padding: $sage-spacing;
     &:before {
-      content: "$color-blue [ $color-primary ]";
+      content: "$sage-color-blue [ $sage-color-primary ]";
     }
     &:after {
-      content: "#{$color-blue}";
+      content: "#{$sage-color-blue}";
     }
     &-light {
       @extend .color;
-      background: $color-blue-light;
+      background: $sage-color-blue-light;
       &:before {
-        content: "$color-blue-light";
+        content: "$sage-color-blue-light";
       }
       &:after {
-        content: "#{$color-blue-light}";
+        content: "#{$sage-color-blue-light}";
       }
     }
     &-dark {
       @extend .color;
-      background: $color-blue-dark;
+      background: $sage-color-blue-dark;
       &:before {
-        content: "$color-blue-dark";
+        content: "$sage-color-blue-dark";
       }
       &:after {
-        content: "#{$color-blue-dark}";
+        content: "#{$sage-color-blue-dark}";
       }
     }
   }
   &-green {
     @extend .color;
-    background: $color-green;
-    padding: $spacing;
+    background: $sage-color-green;
+    padding: $sage-spacing;
     &:before {
-      content: "$color-green [ $color-success ]";
+      content: "$sage-color-green [ $sage-color-success ]";
     }
     &:after {
-      content: "#{$color-green}";
+      content: "#{$sage-color-green}";
     }
     &-light {
       @extend .color;
-      background: $color-green-light;
+      background: $sage-color-green-light;
       &:before {
-        content: "$color-green-light";
+        content: "$sage-color-green-light";
       }
       &:after {
-        content: "#{$color-green-light}";
+        content: "#{$sage-color-green-light}";
       }
     }
     &-dark {
       @extend .color;
-      background: $color-green-dark;
+      background: $sage-color-green-dark;
       &:before {
-        content: "$color-green-dark";
+        content: "$sage-color-green-dark";
       }
       &:after {
-        content: "#{$color-green-dark}";
+        content: "#{$sage-color-green-dark}";
       }
     }
   }
   &-orange {
     @extend .color;
-    background: $color-orange;
-    padding: $spacing;
+    background: $sage-color-orange;
+    padding: $sage-spacing;
     &:before {
-      content: "$color-orange [ $color-warning ]";
+      content: "$sage-color-orange [ $sage-color-warning ]";
       color: #000;
     }
     &:after {
-      content: "#{$color-orange}";
+      content: "#{$sage-color-orange}";
       color: #000;
     }
     &-light {
       @extend .color;
-      background: $color-orange-light;
+      background: $sage-color-orange-light;
       &:before {
-        content: "$color-orange-light";
+        content: "$sage-color-orange-light";
         color: #000;
       }
       &:after {
-        content: "#{$color-orange-light}";
+        content: "#{$sage-color-orange-light}";
         color: #000;
       }
     }
     &-dark {
       @extend .color;
-      background: $color-orange-dark;
+      background: $sage-color-orange-dark;
       &:before {
-        content: "$color-orange-dark";
+        content: "$sage-color-orange-dark";
       }
       &:after {
-        content: "#{$color-orange-dark}";
+        content: "#{$sage-color-orange-dark}";
       }
     }
   }
   &-red {
     @extend .color;
-    background: $color-red;
-    padding: $spacing;
+    background: $sage-color-red;
+    padding: $sage-spacing;
     &:before {
-      content: "$color-red [ $color-danger ]";
+      content: "$sage-color-red [ $sage-color-danger ]";
     }
     &:after {
-      content: "#{$color-red}";
+      content: "#{$sage-color-red}";
     }
     &-light {
       @extend .color;
-      background: $color-red-light;
+      background: $sage-color-red-light;
       &:before {
-        content: "$color-red-light";
+        content: "$sage-color-red-light";
       }
       &:after {
-        content: "#{$color-red-light}";
+        content: "#{$sage-color-red-light}";
       }
     }
     &-dark {
       @extend .color;
-      background: $color-red-dark;
+      background: $sage-color-red-dark;
       &:before {
-        content: "$color-red-dark";
+        content: "$sage-color-red-dark";
       }
       &:after {
-        content: "#{$color-red-dark}";
+        content: "#{$sage-color-red-dark}";
       }
     }
   }
   &-turquoise {
     @extend .color;
-    background: $color-turquoise;
-    padding: $spacing;
+    background: $sage-color-turquoise;
+    padding: $sage-spacing;
     &:before {
-      content: "$color-turquoise";
+      content: "$sage-color-turquoise";
     }
     &:after {
-      content: "#{$color-turquoise}";
+      content: "#{$sage-color-turquoise}";
     }
     &-light {
       @extend .color;
-      background: $color-turquoise-light;
+      background: $sage-color-turquoise-light;
       &:before {
-        content: "$color-turquoise-light";
+        content: "$sage-color-turquoise-light";
         color: #000;
       }
       &:after {
-        content: "#{$color-turquoise-light}";
+        content: "#{$sage-color-turquoise-light}";
         color: #000;
       }
     }
     &-dark {
       @extend .color;
-      background: $color-turquoise-dark;
+      background: $sage-color-turquoise-dark;
       &:before {
-        content: "$color-turquoise-dark";
+        content: "$sage-color-turquoise-dark";
       }
       &:after {
-        content: "#{$color-turquoise-dark}";
+        content: "#{$sage-color-turquoise-dark}";
       }
     }
   }
   &-purple {
     @extend .color;
-    background: $color-purple;
-    padding: $spacing;
+    background: $sage-color-purple;
+    padding: $sage-spacing;
     &:before {
-      content: "$color-purple";
+      content: "$sage-color-purple";
     }
     &:after {
-      content: "#{$color-purple}";
+      content: "#{$sage-color-purple}";
     }
     &-light {
       @extend .color;
-      background: $color-purple-light;
+      background: $sage-color-purple-light;
       &:before {
-        content: "$color-purple-light";
+        content: "$sage-color-purple-light";
       }
       &:after {
-        content: "#{$color-purple-light}";
+        content: "#{$sage-color-purple-light}";
       }
     }
     &-dark {
       @extend .color;
-      background: $color-purple-dark;
+      background: $sage-color-purple-dark;
       &:before {
-        content: "$color-purple-dark";
+        content: "$sage-color-purple-dark";
       }
       &:after {
-        content: "#{$color-purple-dark}";
+        content: "#{$sage-color-purple-dark}";
       }
     }
   }
   &-pink {
     @extend .color;
-    background: $color-pink;
-    padding: $spacing;
+    background: $sage-color-pink;
+    padding: $sage-spacing;
     &:before {
-      content: "$color-pink";
+      content: "$sage-color-pink";
     }
     &:after {
-      content: "#{$color-pink}";
+      content: "#{$sage-color-pink}";
     }
     &-light {
       @extend .color;
-      background: $color-pink-light;
+      background: $sage-color-pink-light;
       &:before {
-        content: "$color-pink-light";
+        content: "$sage-color-pink-light";
       }
       &:after {
-        content: "#{$color-pink-light}";
+        content: "#{$sage-color-pink-light}";
       }
     }
     &-dark {
       @extend .color;
-      background: $color-pink-dark;
+      background: $sage-color-pink-dark;
       &:before {
-        content: "$color-pink-dark";
+        content: "$sage-color-pink-dark";
       }
       &:after {
-        content: "#{$color-pink-dark}";
+        content: "#{$sage-color-pink-dark}";
       }
     }
   }
   &-sky {
     @extend .color;
-    background: $color-sky;
-    padding: $spacing;
+    background: $sage-color-sky;
+    padding: $sage-spacing;
     &:before {
-      content: "$color-sky";
+      content: "$sage-color-sky";
       color: #000;
     }
     &:after {
-      content: "#{$color-sky}";
+      content: "#{$sage-color-sky}";
       color: #000;
     }
     &-light {
       @extend .color;
-      background: $color-sky-light;
+      background: $sage-color-sky-light;
       &:before {
-        content: "$color-sky-light";
+        content: "$sage-color-sky-light";
         color: #000;
       }
       &:after {
-        content: "#{$color-sky-light}";
+        content: "#{$sage-color-sky-light}";
         color: #000;
       }
     }
     &-dark {
       @extend .color;
-      background: $color-sky-dark;
+      background: $sage-color-sky-dark;
       &:before {
-        content: "$color-sky-dark";
+        content: "$sage-color-sky-dark";
       }
       &:after {
-        content: "#{$color-sky-dark}";
+        content: "#{$sage-color-sky-dark}";
       }
     }
   }
   &-white {
     @extend .color;
-    background: $color-white;
-    padding: $spacing;
+    background: $sage-color-white;
+    padding: $sage-spacing;
     &:before {
-      content: "$color-white";
+      content: "$sage-color-white";
       color: #000;
     }
     &:after {
-      content: "#{$color-white}";
+      content: "#{$sage-color-white}";
       color: #000;
     }
     &-dark {
       @extend .color;
-      background: $color-white-dark;
+      background: $sage-color-white-dark;
       &:before {
-        content: "$color-white-dark";
+        content: "$sage-color-white-dark";
         color: #000;
       }
       &:after {
-        content: "#{$color-white-dark}";
+        content: "#{$sage-color-white-dark}";
         color: #000;
       }
     }
     &-extra-dark {
       @extend .color;
-      background: $color-white-extra-dark;
+      background: $sage-color-white-extra-dark;
       &:before {
-        content: "$color-white-extra-dark";
+        content: "$sage-color-white-extra-dark";
         color: #000;
       }
       &:after {
-        content: "#{$color-white-extra-dark}";
+        content: "#{$sage-color-white-extra-dark}";
         color: #000;
       }
     }
   }
   &-grey {
     @extend .color;
-    background: $color-grey;
-    padding: $spacing;
+    background: $sage-color-grey;
+    padding: $sage-spacing;
     &:before {
-      content: "$color-grey";
+      content: "$sage-color-grey";
     }
     &:after {
-      content: "#{$color-grey}";
+      content: "#{$sage-color-grey}";
     }
     &-light {
       @extend .color;
-      background: $color-grey-light;
+      background: $sage-color-grey-light;
       &:before {
-        content: "$color-grey-light";
+        content: "$sage-color-grey-light";
         color: #000;
       }
       &:after {
-        content: "#{$color-grey-light}";
+        content: "#{$sage-color-grey-light}";
         color: #000;
       }
     }
     &-extra-light {
       @extend .color;
-      background: $color-grey-extra-light;
+      background: $sage-color-grey-extra-light;
       &:before {
-        content: "$color-grey-extra-light";
+        content: "$sage-color-grey-extra-light";
         color: #000;
       }
       &:after {
-        content: "#{$color-grey-extra-light}";
+        content: "#{$sage-color-grey-extra-light}";
         color: #000;
       }
     }
     &-dark {
       @extend .color;
-      background: $color-grey-dark;
+      background: $sage-color-grey-dark;
       &:before {
-        content: "$color-grey-dark [ $font-color-light ]";
+        content: "$sage-color-grey-dark [ $sage-font-color-light ]";
       }
       &:after {
-        content: "#{$color-grey-dark}";
+        content: "#{$sage-color-grey-dark}";
       }
     }
     &-extra-dark {
       @extend .color;
-      background: $color-grey-extra-dark;
+      background: $sage-color-grey-extra-dark;
       &:before {
-        content: "$color-grey-extra-dark [ $font-color ]";
+        content: "$sage-color-grey-extra-dark [ $sage-font-color ]";
       }
       &:after {
-        content: "#{$color-grey-extra-dark}";
+        content: "#{$sage-color-grey-extra-dark}";
       }
     }
   }

@@ -1,10 +1,10 @@
 .sage-assistant {
   display: flex;
   z-index: 998;
-  padding: $spacing-sm $spacing;
-  border-bottom: $border-default;
+  padding: $sage-spacing-sm $sage-spacing;
+  border-bottom: $sage-border-default;
   &-body {
     flex: 1;
-    padding-right: $spacing;
+    padding-right: $sage-spacing;
   }
 }
