@@ -6,6 +6,21 @@ module Sage
     def index
     end
 
+    def start
+    end
+
+    def conventions
+    end
+
+    def accessibility
+    end
+
+    def browser
+    end
+
+    def language
+    end
+
     def token
     end
     

@@ -6,7 +6,19 @@
         <i class="sage-icon-Settings"></i>
         Introduction
       <% end %>
-      <%= link_to pages_color_url, class: "sage-nav-link" do %>
+      <%= link_to pages_start_url, class: "sage-nav-link" do %>
+        <i class="sage-icon-Settings"></i>
+        Getting Started
+      <% end %>
+      <%= link_to pages_conventions_url, class: "sage-nav-link" do %>
+        <i class="sage-icon-Settings"></i>
+        Guidelines
+      <% end %>
+      <%= link_to "Code Conventions", pages_conventions_url, class: "sage-nav-link-sub" %>
+      <%= link_to "Accessibility", pages_accessibility_url, class: "sage-nav-link-sub" %>
+      <%= link_to "Browser Support", pages_browser_url, class: "sage-nav-link-sub" %>
+      <%= link_to "Product language", pages_language_url, class: "sage-nav-link-sub" %>
+      <%= link_to pages_token_url, class: "sage-nav-link" do %>
         <i class="sage-icon-Settings"></i>
         Styles
       <% end %>
