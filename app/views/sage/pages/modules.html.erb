@@ -1,6 +1,9 @@
 <h1>Modules</h1>
 <p>Modules are groups of molecules joined together to form a relatively complex, distinct section of an interface.</p>
 <hr>
+<% sage_modules.each do |example_module| %>
+  <%= render "example_modules/module", title: example_module[:title], path: example_module[:path] %>
+<% end %>
 <h3 id="assistant">Assistant</h3>
 <pre><code><xmp><div class="sage-assistant">
   <div class="sage-assistant-body"></div>
