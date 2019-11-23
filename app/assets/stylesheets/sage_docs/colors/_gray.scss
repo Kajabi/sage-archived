@@ -48,7 +48,6 @@
 &-gray-700 {
   @extend .color;
   background: $sage-color-gray-700;
-  padding: $sage-spacing;
   &:after {
     content: "#{$sage-color-gray-700}";
   }
@@ -63,7 +62,6 @@
 &-gray-900 {
   @extend .color;
   background: $sage-color-gray-900;
-  padding: $sage-spacing;
   &:after {
     content: "#{$sage-color-gray-900}";
   }
