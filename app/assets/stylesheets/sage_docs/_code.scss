@@ -1,13 +1,41 @@
-pre {
-  background: #1d2f52;
-  padding: $sage-spacing;
+xmp {
+  margin: 0;
+  font-family: $sage-font-family;
+}
+
+pre.prettyprint { 
+  display: block; 
+  background-color: #1d2f52;
+  padding: $sage-spacing !important;
   font-size: $sage-font-size-sm;
   margin-bottom: $sage-spacing;
   border-radius: $sage-border-radius;
   color: $sage-color-blue-300;
   font-weight: $sage-font-weight-semibold;
 }
-xmp {
-  margin: 0;
-  font-family: $sage-font-family;
+pre .nocode { background-color: none; color: #1d2f52 }
+pre .str { color: $sage-color-blue-300; } /* string  - pink */
+pre .kwd { color: $sage-color-blue-300; font-weight: bold }
+pre .com { color: $sage-color-blue-300; opacity: .4} /* comment - skyblue */
+pre .typ { color: $sage-color-blue-300 } /* type    - lightgreen */
+pre .lit { color: $sage-color-blue-300 } /* literal - darkred */
+pre .pun { color: $sage-color-blue-300}    /* punctuation */
+pre .pln { color: $sage-color-blue-300 }    /* plaintext */
+pre .tag { color: $sage-color-blue-300; font-weight: bold } /* html/xml tag    - lightyellow */
+pre .atn { color: $sage-color-blue-300; font-weight: bold } /* attribute name  - khaki */
+pre .atv { color: #ffffff } /* attribute value - pink */
+pre .dec { color: $sage-color-blue-300 } /* decimal         - lightgreen */
+
+@media print {
+  pre.prettyprint { background-color: none }
+  pre .str, code .str { color: #060 }
+  pre .kwd, code .kwd { color: #006; font-weight: bold }
+  pre .com, code .com { color: #600; font-style: italic }
+  pre .typ, code .typ { color: #404; font-weight: bold }
+  pre .lit, code .lit { color: #044 }
+  pre .pun, code .pun { color: #440 }
+  pre .pln, code .pln { color: #000 }
+  pre .tag, code .tag { color: #006; font-weight: bold }
+  pre .atn, code .atn { color: #404 }
+  pre .atv, code .atv { color: #060 }
 }
