@@ -3,16 +3,34 @@
   font-size: $sage-font-size-sm;
   padding: $sage-spacing-xs $sage-spacing-sm;
   background: $sage-color-gray-500;
-  color: $sage-font-color;
+  border: 1px solid $sage-color-gray-500;
+  color: $sage-color-white;
   font-weight: $sage-font-weight-semibold;
   border-radius: $sage-border-radius;
+  &:hover {
+    background: $sage-color-gray-600;
+    border: 1px solid $sage-color-gray-600;
+    color: $sage-color-white;
+  }
   &-primary {
     @extend .sage-btn;
     background: $sage-color-blue-500;
-    color: $sage-color-white;
+    border: 1px solid $sage-color-blue-500;
     &:hover {
+      background: $sage-color-blue-600;
+      border: 1px solid $sage-color-blue-600;
       color: $sage-color-white;
-      background: $sage-color-blue-700;
+    }
+  }
+  &-secondary {
+    @extend .sage-btn;
+    background: $sage-color-white;
+    border: 1px solid $sage-color-blue-500;
+    color: $sage-color-blue-500;
+    &:hover {
+      background: $sage-color-white;
+      border: 1px solid $sage-color-blue-600;
+      color: $sage-color-blue-600;
     }
   }
 }
