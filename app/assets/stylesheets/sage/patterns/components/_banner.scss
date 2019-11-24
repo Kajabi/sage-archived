@@ -1,0 +1,70 @@
+.sage-banner {
+  border-top: 4px solid;
+  padding: $sage-spacing;
+  background: $sage-color-gray-200;
+  border-bottom-left-radius: $sage-border-radius;
+  border-bottom-left-radius: $sage-border-radius;
+  box-shadow: $sage-shadow-md;
+  margin-bottom: $sage-spacing;
+  &-title { 
+    color: $sage-color-gray-900;
+    font-weight: $sage-font-weight-semibold;
+    margin-bottom: 0;
+  }
+  &-copy {
+    font-size: $sage-font-size-sm;
+    margin-bottom: 0;
+  }
+  &-primary {
+    @extend .sage-banner;
+    border-color: $sage-color-blue-500;
+    background: $sage-color-blue-200;
+    .sage-banner {
+      &-title { 
+        color: $sage-color-blue-900;
+      }
+      &-copy {
+        color: $sage-color-blue-800;
+      }
+    }
+  }
+  &-success {
+    @extend .sage-banner;
+    border-color: $sage-color-green-500;
+    background: $sage-color-green-200;
+    .sage-banner {
+      &-title { 
+        color: $sage-color-green-900;
+      }
+      &-copy {
+        color: $sage-color-green-800;
+      }
+    }
+  }
+  &-warning {
+    @extend .sage-banner;
+    border-color: $sage-color-yellow-500;
+    background: $sage-color-yellow-200;
+    .sage-banner {
+      &-title { 
+        color: $sage-color-yellow-900;
+      }
+      &-copy {
+        color: $sage-color-yellow-800;
+      }
+    }
+  }
+  &-danger {
+    @extend .sage-banner;
+    border-color: $sage-color-red-500;
+    background: $sage-color-red-200;
+    .sage-banner {
+      &-title { 
+        color: $sage-color-red-900;
+      }
+      &-copy {
+        color: $sage-color-red-800;
+      }
+    }
+  }
+}

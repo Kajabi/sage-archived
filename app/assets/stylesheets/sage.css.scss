@@ -3,7 +3,6 @@
 
 // Variables
 @import "sage/tokens/color_palette";
-@import "sage/tokens/color";
 @import "sage/tokens/border";
 @import "sage/tokens/breakpoints";
 @import "sage/tokens/shadow";
@@ -20,10 +19,10 @@
 @import "sage/layout/grid";
 
 // Elements
+@import "sage/patterns/elements/button";
 
 // Components
-@import "sage/patterns/components/button";
-@import "sage/patterns/components/card";
+@import "sage/patterns/components/banner";
 
 // Modules
 @import "sage/patterns/modules/assistant";

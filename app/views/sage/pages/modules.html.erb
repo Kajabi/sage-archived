@@ -1,40 +1,6 @@
 <h1>Modules</h1>
 <p>Modules are groups of molecules joined together to form a relatively complex, distinct section of an interface.</p>
 <hr>
-<h3 id="assistant">Assistant</h3>
-<pre><code><xmp><div class="sage-assistant">
-  <div class="sage-assistant-body"></div>
-  <div class="sage-assistant-actions"></div>
-</div></xmp></code></pre>
-
-<h3 id="content">Content</h3>
-<pre><code><xmp><div class="sage-content">
-  <div class="sage-container">
-    Page Content
-  </div>
-</div></xmp></code></pre>
-
-<h3 id="nav">Nav</h3>
-<pre><code><xmp><div class="sage-nav">
-  <a hre="#" class="sage-nav-link">Nav Link</a>
-  <a hre="#" class="sage-nav-link-sub">Nav Sub Link</a>
-</div></xmp></code></pre>
-
-<h3 id="nav">Page</h3>
-<pre><code><xmp><body class="sage-page">
-  <div class="sage-sidebar">...</div>
-  <div class="sage-stage">
-    <div class="sage-assistant">...</div>
-    <div class="sage-content">
-      <div class="sage-container-sm">...</div>
-    </div>
-  </div>
-</body></xmp></code></pre>
-
-<h3 id="sidebar">Sidebar</h3>
-<pre><code><xmp><div class="sage-sidebar">
-  <div class="sage-sidebar-body">
-  </div>
-  <div class="sage-sidebar-footer">
-  </div>
-</div></xmp></code></pre>
+<% sage_modules.each do |example_module| %>
+  <%= render "example_modules/module", title: example_module[:title], path: example_module[:path] %>
+<% end %>
