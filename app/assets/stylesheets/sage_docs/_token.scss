@@ -4,274 +4,64 @@
   border-radius: $sage-border-radius;
   border-bottom: none;
 }
-.token {
-  padding: $sage-spacing-xs $sage-spacing;
-  border-bottom: $sage-border-default;
-  font-size: $sage-font-size-sm;
-  display: flex;
-  strong {
-    min-width: 300px;
-  }
-  &:after {
-    width: 50%;
-    flex: 1;
-  }
-  &-border-default {
-    @extend .token;
-    &:after {
-      content: "#{$sage-border-default}";
+
+@mixin token($name, $token) {
+  .token-#{$name} {
+    padding: $sage-spacing-xs $sage-spacing;
+    border-bottom: $sage-border-default;
+    font-size: $sage-font-size-sm;
+    display: flex;
+    strong {
+      min-width: 300px;
     }
-  }
-  &-border-radius {
-    @extend .token;
     &:after {
-      content: "#{$sage-border-radius}";
-    }
-  }
-  &-xs-max {
-    @extend .token;
-    &:after {
-      content: "#{$sage-xs-max}";
-    }
-  }
-  &-sm-min {
-    @extend .token;
-    &:after {
-      content: "#{$sage-sm-min}";
-    }
-  }
-  &-sm-max {
-    @extend .token;
-    &:after {
-      content: "#{$sage-sm-max}";
-    }
-  }
-  &-md-min {
-    @extend .token;
-    &:after {
-      content: "#{$sage-md-min}";
-    }
-  }
-  &-md-max {
-    @extend .token;
-    &:after {
-      content: "#{$sage-md-max}";
-    }
-  }
-  &-lg-min {
-    @extend .token;
-    &:after {
-      content: "#{$sage-lg-min}";
-    }
-  }
-  &-lg-max {
-    @extend .token;
-    &:after {
-      content: "#{$sage-lg-max}";
-    }
-  }
-  &-xl-min {
-    @extend .token;
-    &:after {
-      content: "#{$sage-xl-min}";
-    }
-  }
-  &-grid-columns {
-    @extend .token;
-    &:after {
-      content: "#{$sage-grid-columns}";
-    }
-  }
-  &-grid-spacing {
-    @extend .token;
-    &:after {
-      content: "#{$sage-grid-spacing}";
-    }
-  }
-  &-shadow {
-    @extend .token;
-    &:after {
-      content: "#{$sage-shadow}";
-    }
-  }
-  &-shadow-md {
-    @extend .token;
-    &:after {
-      content: "#{$sage-shadow-md}";
-    }
-  }
-  &-shadow-lg {
-    @extend .token;
-    &:after {
-      content: "#{$sage-shadow-lg}";
-    }
-  }
-  &-shadow-xl {
-    @extend .token;
-    &:after {
-      content: "#{$sage-shadow-xl}";
-    }
-  }
-  &-shadow-2xl {
-    @extend .token;
-    &:after {
-      content: "#{$sage-shadow-2xl}";
-    }
-  }
-  &-spacing {
-    @extend .token;
-    &:after {
-      content: "#{$sage-spacing}";
-    }
-  }
-  &-spacing-2xs {
-    @extend .token;
-    &:after {
-      content: "#{$sage-spacing-2xs}";
-    }
-  }
-  &-spacing-xs {
-    @extend .token;
-    &:after {
-      content: "#{$sage-spacing-xs}";
-    }
-  }
-  &-spacing-sm {
-    @extend .token;
-    &:after {
-      content: "#{$sage-spacing-sm}";
-    }
-  }
-  &-spacing-lg {
-    @extend .token;
-    &:after {
-      content: "#{$sage-spacing-lg}";
-    }
-  }
-  &-container-width {
-    @extend .token;
-    &:after {
-      content: "#{$sage-container-width}";
-    }
-  }
-  &-container-width-sm {
-    @extend .token;
-    &:after {
-      content: "#{$sage-container-width-sm}";
-    }
-  }
-  &-container-width-fluid {
-    @extend .token;
-    &:after {
-      content: "#{$sage-container-width-fluid}";
-    }
-  }
-  &-sidebar-width {
-    @extend .token;
-    &:after {
-      content: "#{$sage-sidebar-width}";
-    }
-  }
-  &-sidebar-width-md {
-    @extend .token;
-    &:after {
-      content: "#{$sage-sidebar-width-md}";
-    }
-  }
-  &-sidebar-width-lg {
-    @extend .token;
-    &:after {
-      content: "#{$sage-sidebar-width-lg}";
-    }
-  }
-  &-font-family {
-    @extend .token;
-    &:after {
-      content: "#{$sage-font-family}";
-    }
-  }
-  &-font-size {
-    @extend .token;
-    &:after {
-      content: "#{$sage-font-size}";
-    }
-  }
-  &-font-size-xs {
-    @extend .token;
-    &:after {
-      content: "#{$sage-font-size-xs}";
-    }
-  }
-  &-font-size-sm {
-    @extend .token;
-    &:after {
-      content: "#{$sage-font-size-sm}";
-    }
-  }
-  &-font-size-md {
-    @extend .token;
-    &:after {
-      content: "#{$sage-font-size-md}";
-    }
-  }
-  &-font-size-lg {
-    @extend .token;
-    &:after {
-      content: "#{$sage-font-size-lg}";
-    }
-  }
-  &-font-size-xl {
-    @extend .token;
-    &:after {
-      content: "#{$sage-font-size-xl}";
-    }
-  }
-  &-font-size-2xl {
-    @extend .token;
-    &:after {
-      content: "#{$sage-font-size-2xl}";
-    }
-  }
-  &-font-size-3xl {
-    @extend .token;
-    &:after {
-      content: "#{$sage-font-size-3xl}";
-    }
-  }
-  &-font-size-4xl {
-    @extend .token;
-    &:after {
-      content: "#{$sage-font-size-4xl}";
-    }
-  }
-  &-font-size-5xl {
-    @extend .token;
-    &:after {
-      content: "#{$sage-font-size-5xl}";
-    }
-  }
-  &-font-size-6xl {
-    @extend .token;
-    &:after {
-      content: "#{$sage-font-size-5xl}";
-    }
-  }
-  &-font-weight {
-    @extend .token;
-    &:after {
-      content: "#{$sage-font-weight}";
-    }
-  }
-  &-font-weight-semibold {
-    @extend .token;
-    &:after {
-      content: "#{$sage-font-weight-semibold}";
-    }
-  }
-  &-font-weight-bold {
-    @extend .token;
-    &:after {
-      content: "#{$sage-font-weight-bold}";
+      width: 50%;
+      flex: 1;
+      content: "#{$token}";
     }
   }
 }
+
+@include token(border-default, $sage-border-default); 
+@include token(border-radius, $sage-border-radius); 
+@include token(xs-max, $sage-xs-max);
+@include token(sm-min, $sage-sm-min); 
+@include token(sm-max, $sage-sm-max); 
+@include token(md-min, $sage-md-min); 
+@include token(md-max, $sage-md-max); 
+@include token(lg-min, $sage-lg-min); 
+@include token(lg-max, $sage-lg-max); 
+@include token(xl-min, $sage-xl-min); 
+@include token(grid-columns, $sage-grid-columns); 
+@include token(grid-spacing, $sage-grid-spacing); 
+@include token(shadow, $sage-shadow); 
+@include token(shadow-md, $sage-shadow-md); 
+@include token(shadow-lg, $sage-shadow-lg); 
+@include token(shadow-xl, $sage-shadow-xl); 
+@include token(shadow-2xl, $sage-shadow-2xl); 
+@include token(spacing, $sage-spacing); 
+@include token(spacing-2xs, $sage-spacing-2xs); 
+@include token(spacing-xs, $sage-spacing-xs); 
+@include token(spacing-sm, $sage-spacing-sm); 
+@include token(spacing-lg, $sage-spacing-lg); 
+@include token(container-width, $sage-container-width); 
+@include token(container-width-sm, $sage-container-width-sm); 
+@include token(container-width-fluid, $sage-container-width-fluid); 
+@include token(sidebar-width, $sage-sidebar-width); 
+@include token(sidebar-width-md, $sage-sidebar-width-md); 
+@include token(sidebar-width-lg, $sage-sidebar-width-lg); 
+@include token(font-family, $sage-font-family); 
+@include token(font-size, $sage-font-size); 
+@include token(font-size-xs, $sage-font-size-xs); 
+@include token(font-size-sm, $sage-font-size-sm); 
+@include token(font-size-md, $sage-font-size-md); 
+@include token(font-size-lg, $sage-font-size-lg); 
+@include token(font-size-xl, $sage-font-size-xl); 
+@include token(font-size-2xl, $sage-font-size-2xl); 
+@include token(font-size-3xl, $sage-font-size-3xl); 
+@include token(font-size-4xl, $sage-font-size-4xl); 
+@include token(font-size-5xl, $sage-font-size-5xl); 
+@include token(font-size-6xl, $sage-font-size-6xl); 
+@include token(font-weight, $sage-font-weight); 
+@include token(font-weight-semibold, $sage-font-weight-semibold); 
+@include token(font-weight-bold, $sage-font-weight-bold); 
