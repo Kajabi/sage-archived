@@ -3,92 +3,34 @@
 <hr>
 <h2>Primary</h2>
 <p>These are the splashes of color that appear the most in Kajabi’s UI, and are the ones that determine the overall "look" of the app. Use these for things like primary actions, links, navigation items, icons, accent borders, or text we want to emphasize.</p>
-<div class="colors">
-  <div class="color-blue-100">$sage-color-blue-100</div>
-  <div class="color-blue-200">$sage-color-blue-200</div>
-  <div class="color-blue-300">$sage-color-blue-300</div>
-  <div class="color-blue-400">$sage-color-blue-400</div>
-  <div class="color-blue-500">$sage-color-blue-500 - [ Primary ]</div>
-  <div class="color-blue-600">$sage-color-blue-600</div>
-  <div class="color-blue-700">$sage-color-blue-700</div>
-  <div class="color-blue-800">$sage-color-blue-800</div>
-  <div class="color-blue-900">$sage-color-blue-900</div>
-</div>
+<%= render "color_values", color: "primary"%>
 <h2>Neutrals</h2>
 <p>These are the colors we will use the most and will make up the majority of Kajabi’s UI.<br>
 Use them for most of our text, backgrounds, and borders, as well as for things like alternative buttons and links.</p>
-<div class="colors">
-  <div class="color-white">$sage-color-white</div>
-  <div class="color-gray-100">$sage-color-gray-100</div>
-  <div class="color-gray-200">$sage-color-gray-200</div>
-  <div class="color-gray-300">$sage-color-gray-300</div>
-  <div class="color-gray-400">$sage-color-gray-400</div>
-  <div class="color-gray-500">$sage-color-gray-500 - [ Font Color Light ]</div>
-  <div class="color-gray-600">$sage-color-gray-600</div>
-  <div class="color-gray-700">$sage-color-gray-700 - [ Font Color ]</div>
-  <div class="color-gray-800">$sage-color-gray-800</div>
-  <div class="color-gray-900">$sage-color-gray-900 - [ Font Color Dark ]</div>
-  <div class="color-black">$sage-color-black</div>
+<%= render "color_values", color: "gray"%>
+<h1>Core</h1>
+<p>These colors are the core of our application and should be used as their name implies. We’ll use them when we need an element to stand out or to reinforce things like error states or positive trends with the appropriate semantic color.</p>
+<div class="sage-row">
+  <div class="sage-col">
+    <h3>Success</h3>
+    <%= render "color_values", color: "success"%>
+  </div>
+  <div class="sage-col">
+    <h3>Warning</h3>
+    <%= render "color_values", color: "warning"%>
+  </div>
+</div>
+<div class="sage-row">
+  <div class="sage-col-6">
+    <h3>Danger</h3>
+    <%= render "color_values", color: "danger"%>
+  </div>
 </div>
 <h1>Supporting</h1>
-<p>These colors should be used fairly conservatively throughout Kajabi’s UI to avoid overpowering our primary colors. We’ll use the m when we need an element to stand out, or to reinforce things like error states or positive trends with the appropriate semantic color.</p>
+<p>These colors should be used fairly conservatively throughout Kajabi’s UI to avoid overpowering our primary colors. We’ll use the m when we need an element to stand out.</p>
 <div class="sage-row">
-  <div class="sage-col">
-    <h3>Green</h3>
-    <div class="colors">
-      <div class="color-green-100">$sage-color-green-100</div>
-      <div class="color-green-200">$sage-color-green-200</div>
-      <div class="color-green-300">$sage-color-green-300</div>
-      <div class="color-green-400">$sage-color-green-400</div>
-      <div class="color-green-500">$sage-color-green-500 - [ Success ]</div>
-      <div class="color-green-600">$sage-color-green-600</div>
-      <div class="color-green-700">$sage-color-green-700</div>
-      <div class="color-green-800">$sage-color-green-800</div>
-      <div class="color-green-900">$sage-color-green-900</div>
-    </div>
-  </div>
-  <div class="sage-col">
+  <div class="sage-col-6">
     <h3>Orange</h3>
-    <div class="colors">
-      <div class="color-orange-100">$sage-color-orange-100</div>
-      <div class="color-orange-200">$sage-color-orange-200</div>
-      <div class="color-orange-300">$sage-color-orange-300</div>
-      <div class="color-orange-400">$sage-color-orange-400</div>
-      <div class="color-orange-500">$sage-color-orange-500</div>
-      <div class="color-orange-600">$sage-color-orange-600</div>
-      <div class="color-orange-700">$sage-color-orange-700</div>
-      <div class="color-orange-800">$sage-color-orange-800</div>
-      <div class="color-orange-900">$sage-color-orange-900</div>
-    </div>
-  </div>
-</div>
-<div class="sage-row">
-  <div class="sage-col">
-    <h3>Yellow</h3>
-    <div class="colors">
-      <div class="color-yellow-100">$sage-color-yellow-100</div>
-      <div class="color-yellow-200">$sage-color-yellow-200</div>
-      <div class="color-yellow-300">$sage-color-yellow-300</div>
-      <div class="color-yellow-400">$sage-color-yellow-400</div>
-      <div class="color-yellow-500">$sage-color-yellow-500 - [ Warning ]</div>
-      <div class="color-yellow-600">$sage-color-yellow-600</div>
-      <div class="color-yellow-700">$sage-color-yellow-700</div>
-      <div class="color-yellow-800">$sage-color-yellow-800</div>
-      <div class="color-yellow-900">$sage-color-yellow-900</div>
-    </div>
-  </div>
-  <div class="sage-col">
-    <h3>Red</h3>
-    <div class="colors">
-      <div class="color-red-100">$sage-color-red-100</div>
-      <div class="color-red-200">$sage-color-red-200</div>
-      <div class="color-red-300">$sage-color-red-300</div>
-      <div class="color-red-400">$sage-color-red-400</div>
-      <div class="color-red-500">$sage-color-red-500</div>
-      <div class="color-red-600">$sage-color-red-600</div>
-      <div class="color-red-700">$sage-color-red-700 - [ Danger ]</div>
-      <div class="color-red-800">$sage-color-red-800</div>
-      <div class="color-red-900">$sage-color-red-900</div>
-    </div>
+    <%= render "color_values", color: "orange"%>
   </div>
 </div>
