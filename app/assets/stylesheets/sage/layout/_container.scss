@@ -2,11 +2,11 @@
   margin: 0 auto;
   padding: 0 $sage-spacing;
   max-width: $sage-container-width;
-  &-sm {
+  &--sm {
     @extend .sage-container;
     max-width: $sage-container-width-sm;
   }
-  &-fluid {
+  &--fluid {
     @extend .sage-container;
     max-width: $sage-container-width-fluid;
   }
