@@ -2,35 +2,35 @@
   display: inline-block;
   font-size: $sage-font-size-sm;
   padding: $sage-spacing-xs $sage-spacing-sm;
-  background: $sage-color-gray-500;
-  border: 1px solid $sage-color-gray-500;
-  color: $sage-color-white;
+  background: sage-color(gray);
+  border: 1px solid sage-color(gray);
+  color: #ffffff;
   font-weight: $sage-font-weight-semibold;
   border-radius: $sage-border-radius;
   &:hover {
-    background: $sage-color-gray-600;
-    border: 1px solid $sage-color-gray-600;
-    color: $sage-color-white;
+    background: sage-color(gray, 600);
+    border: 1px solid sage-color(gray, 600);
+    color: #ffffff;
   }
   &-primary {
     @extend .sage-btn;
-    background: $sage-color-blue-500;
-    border: 1px solid $sage-color-blue-500;
+    background: sage-color(primary);
+    border: 1px solid sage-color(primary);
     &:hover {
-      background: $sage-color-blue-600;
-      border: 1px solid $sage-color-blue-600;
-      color: $sage-color-white;
+      background: sage-color(primary, 600);
+      border: 1px solid sage-color(primary, 600);
+      color: #fff;
     }
   }
   &-secondary {
     @extend .sage-btn;
-    background: $sage-color-white;
-    border: 1px solid $sage-color-blue-500;
-    color: $sage-color-blue-500;
+    background: #ffffff;
+    border: 1px solid sage-color(primary);
+    color: sage-color(primary);
     &:hover {
-      background: $sage-color-white;
-      border: 1px solid $sage-color-blue-600;
-      color: $sage-color-blue-600;
+      background: #ffffff;
+      border: 1px solid sage-color(primary, 600);
+      color: sage-color(primary, 600);
     }
   }
 }

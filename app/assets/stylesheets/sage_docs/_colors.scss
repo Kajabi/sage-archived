@@ -12,10 +12,20 @@
     float: right;
     text-transform: uppercase;
   }
-  @import "colors/blue";
-  @import "colors/gray";
-  @import "colors/green";
-  @import "colors/orange";
-  @import "colors/yellow";
-  @import "colors/red";
+  @each $name, $color in $sage-colors {
+    &-#{$name} {
+      @each $tone, $hex in $color {
+        &-#{$tone} {
+          @extend .color;
+          background: $hex;
+          @if (lightness($hex) > 50) {
+            color: sage-color($name, 900);
+          }
+          &:after {
+            content: "#{$hex}";
+          }
+        }
+      }
+    }
+  }
 }

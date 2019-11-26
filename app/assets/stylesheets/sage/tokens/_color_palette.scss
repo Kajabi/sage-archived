@@ -1,65 +1,75 @@
-// Primary
-$sage-color-blue-100: #F6FBFE;
-$sage-color-blue-200: #DDF0FD;
-$sage-color-blue-300: #8ECAFB;
-$sage-color-blue-400: #4CA9FF;
-$sage-color-blue-500: #0072EF;
-$sage-color-blue-600: #0059C7;
-$sage-color-blue-700: #004BAD;
-$sage-color-blue-800: #003B8F;
-$sage-color-blue-900: #002357;
+@function sage-color($base, $shade: 500) {
+  $color: map-get(map-get($sage-colors, $base), $shade);
+  @return $color;
+}
 
-// Neutrals
-$sage-color-black: #000000;
-$sage-color-white: #ffffff;
-
-$sage-color-gray-100: #F6F8F9;
-$sage-color-gray-200: #E4E7EB;
-$sage-color-gray-300: #CBD2D9;
-$sage-color-gray-400: #9AA5B1;
-$sage-color-gray-500: #7B8794;
-$sage-color-gray-600: #616E7C;
-$sage-color-gray-700: #54606C;
-$sage-color-gray-800: #3E4C59;
-$sage-color-gray-900: #1F2933;
-
-// Supporting
-$sage-color-green-100: #EDFDFA;
-$sage-color-green-200: #CFF7F3;
-$sage-color-green-300: #A8EBE6;
-$sage-color-green-400: #6EE2DF;
-$sage-color-green-500: #12A5A5;
-$sage-color-green-600: #059094;
-$sage-color-green-700: #007C80;
-$sage-color-green-800: #025B5E;
-$sage-color-green-900: #003942;
-
-$sage-color-orange-100: #FDF4ED;
-$sage-color-orange-200: #F8D2B8;
-$sage-color-orange-300: #F7B28B;
-$sage-color-orange-400: #F6976A;
-$sage-color-orange-500: #EF6D39;
-$sage-color-orange-600: #DF592F;
-$sage-color-orange-700: #CB4928;
-$sage-color-orange-800: #9F2C19;
-$sage-color-orange-900: #791E10;
-
-$sage-color-yellow-100: #FEFCF6;
-$sage-color-yellow-200: #FCF8E8;
-$sage-color-yellow-300: #F8DFA0;
-$sage-color-yellow-400: #F5D775;
-$sage-color-yellow-500: #E6AB0A;
-$sage-color-yellow-600: #DB8D06;
-$sage-color-yellow-700: #D8800E;
-$sage-color-yellow-800: #A44A19;
-$sage-color-yellow-900: #823218;
-
-$sage-color-red-100: #FFFAFA;
-$sage-color-red-200: #FFE5E5;
-$sage-color-red-300: #FCB0A6;
-$sage-color-red-400: #FE6C62;
-$sage-color-red-500: #F0574D;
-$sage-color-red-600: #DA463E;
-$sage-color-red-700: #BA2C2D;
-$sage-color-red-800: #911D1F;
-$sage-color-red-900: #580F18;
+$sage-colors: (
+  primary: (
+    100: #F6FBFE,
+    200: #DDF0FD,
+    300: #8ECAFB,
+    400: #4CA9FF,
+    500: #0072EF,
+    600: #0059C7,
+    700: #004BAD,
+    800: #003B8F,
+    900: #002357,
+  ),
+  success: (
+    100: #EDFDFA,
+    200: #CFF7F3,
+    300: #A8EBE6,
+    400: #6EE2DF,
+    500: #12A5A5,
+    600: #059094,
+    700: #007C80,
+    800: #025B5E,
+    900: #003942,
+  ),
+  warning: (
+    100: #FEFCF6,
+    200: #FCF8E8,
+    300: #F8DFA0,
+    400: #F5D775,
+    500: #E6AB0A,
+    600: #DB8D06,
+    700: #D8800E,
+    800: #A44A19,
+    900: #823218,
+  ),
+  danger: (
+    100: #FFFAFA,
+    200: #FFE5E5,
+    300: #FCB0A6,
+    400: #FE6C62,
+    500: #F0574D,
+    600: #DA463E,
+    700: #BA2C2D,
+    800: #911D1F,
+    900: #580F18,
+  ),
+  gray: (
+    white: #ffffff,
+    100: #F6F8F9,
+    200: #E4E7EB,
+    300: #CBD2D9,
+    400: #9AA5B1,
+    500: #7B8794,
+    600: #616E7C,
+    700: #54606C,
+    800: #3E4C59,
+    900: #1F2933,
+    black: #000000,
+  ),
+  orange: (
+    100: #FDF4ED,
+    200: #F8D2B8,
+    300: #F7B28B,
+    400: #F6976A,
+    500: #EF6D39,
+    600: #DF592F,
+    700: #CB4928,
+    800: #A44A19,
+    900: #791E10,
+  ),
+);
