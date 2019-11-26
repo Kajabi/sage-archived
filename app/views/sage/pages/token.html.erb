@@ -5,7 +5,7 @@
   <h3><%= token[:category] %></h3>
   <div class="tokens">
     <% token[:tokens] .each do |test| %>
-      <div class="token-<%= test[:name] %>"><strong>$sage-<%= test[:name] %></strong></div>
+      <div class="token-<%= test[:name] %>-<%= test[:value] %>"><strong>sage-<%= test[:name] %>(<%= test[:value] %>)</strong></div>
     <% end %>
   </div>
 <% end %>

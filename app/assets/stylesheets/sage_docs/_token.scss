@@ -1,14 +1,14 @@
 .tokens {
   margin-bottom: $sage-spacing;
-  border: $sage-border-default;
-  border-radius: $sage-border-radius;
+  border: sage-border();
+  border-radius: sage-border(radius);
   border-bottom: none;
 }
 
 @mixin token($name, $token) {
   .token-#{$name} {
     padding: $sage-spacing-xs $sage-spacing;
-    border-bottom: $sage-border-default;
+    border-bottom: sage-border();
     font-size: $sage-font-size-sm;
     display: flex;
     strong {
@@ -22,8 +22,8 @@
   }
 }
 
-@include token(border-default, $sage-border-default); 
-@include token(border-radius, $sage-border-radius); 
+@include token(border-, sage-border()); 
+@include token(border-radius, sage-border(radius)); 
 @include token(xs-max, $sage-xs-max);
 @include token(sm-min, $sage-sm-min); 
 @include token(sm-max, $sage-sm-max); 

@@ -9,7 +9,7 @@ pre.prettyprint {
   padding: $sage-spacing !important;
   font-size: $sage-font-size-sm;
   margin-bottom: $sage-spacing;
-  border-radius: $sage-border-radius;
+  border-radius: sage-border(radius);
   color: sage-color(primary, 300);
   font-weight: $sage-font-weight-semibold;
 }

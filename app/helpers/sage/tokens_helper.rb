@@ -5,8 +5,14 @@ module Sage
         { 
           category: "Border", 
           tokens: [
-            { name: "border-default" },
-            { name: "border-radius" },
+            { 
+              name: "border",
+              value: "",
+            },
+            { 
+              name: "border",
+              value: "radius",
+            },
           ]
         },
         { 

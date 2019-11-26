@@ -2,8 +2,8 @@
   border-top: 4px solid;
   padding: $sage-spacing;
   background: sage-color(gray, 200);
-  border-bottom-left-radius: $sage-border-radius;
-  border-bottom-left-radius: $sage-border-radius;
+  border-bottom-left-radius: sage-border(radius);
+  border-bottom-left-radius: sage-border(radius);
   box-shadow: $sage-shadow-md;
   margin-bottom: $sage-spacing;
   &__title { 

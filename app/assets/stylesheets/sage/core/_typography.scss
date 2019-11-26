@@ -60,6 +60,6 @@ a {
 
 hr {
   border: 0;
-  border-top: $sage-border-default;
+  border-top: sage-border();
   margin: $sage-spacing 0;
 }

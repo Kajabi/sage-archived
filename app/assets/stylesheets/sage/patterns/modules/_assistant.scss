@@ -2,7 +2,7 @@
   display: flex;
   z-index: 998;
   padding: $sage-spacing-sm $sage-spacing;
-  border-bottom: $sage-border-default;
+  border-bottom: sage-border();
   &__body {
     flex: 1;
     padding-right: $sage-spacing;

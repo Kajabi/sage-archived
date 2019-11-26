@@ -6,7 +6,7 @@
   border: 1px solid sage-color(gray);
   color: #ffffff;
   font-weight: $sage-font-weight-semibold;
-  border-radius: $sage-border-radius;
+  border-radius: sage-border(radius);
   &:hover {
     background: sage-color(gray, 600);
     border: 1px solid sage-color(gray, 600);
