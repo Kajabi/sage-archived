@@ -12,7 +12,7 @@
     border: 1px solid sage-color(gray, 600);
     color: #ffffff;
   }
-  &-primary {
+  &--primary {
     @extend .sage-btn;
     background: sage-color(primary);
     border: 1px solid sage-color(primary);
@@ -22,7 +22,7 @@
       color: #fff;
     }
   }
-  &-secondary {
+  &--secondary {
     @extend .sage-btn;
     background: #ffffff;
     border: 1px solid sage-color(primary);

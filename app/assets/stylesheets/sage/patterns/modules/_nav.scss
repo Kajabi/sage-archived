@@ -1,6 +1,6 @@
 .sage-nav {
   margin: $sage-spacing 0;
-  &-link {
+  &__link {
     display: flex;
     align-items: center;
     margin: $sage-spacing-sm 0;
@@ -9,8 +9,8 @@
     &:hover {
       color: sage-color(gray, 700);
     }
-    &-sub {
-      @extend .sage-nav-link;
+    &--sub {
+      @extend .sage-nav__link;
       margin: $sage-spacing-xs $sage-spacing-lg;
       font-size: $sage-font-size-sm;
       font-weight: $sage-font-weight;

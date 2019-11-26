@@ -9,7 +9,7 @@
   flex-basis: 100%;
   padding: 0 $sage-grid-spacing;
   @for $sage-i from 1 through $sage-grid-columns {
-    &-#{$sage-i} {
+    &--#{$sage-i} {
       @extend .sage-col;
     }
   }
@@ -19,7 +19,7 @@
   .sage-col {
     flex: 1;
     @for $sage-i from 1 through $sage-grid-columns {
-      &-#{$sage-i} {
+      &--#{$sage-i} {
         flex-basis: percentage($sage-i / $sage-grid-columns);
         max-width: percentage($sage-i / $sage-grid-columns);
       }

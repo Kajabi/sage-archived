@@ -4,20 +4,20 @@
   z-index: 999;
   display: flex;
   flex-direction: column;
-  &-md {
+  &--md {
     @extend .sage-sidebar;
     width: $sage-sidebar-width-md;
   }
-  &-lg {
+  &--lg {
     @extend .sage-sidebar;
     width: $sage-sidebar-width-lg;
   }
-  &-body {
+  &__body {
     padding: $sage-spacing;
     flex: 1;
     overflow: auto;
   }
-  &-footer {
+  &__footer {
     padding: $sage-spacing;
     border-top: $sage-border-default;
   }
