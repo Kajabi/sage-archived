@@ -3,20 +3,14 @@ module Sage
     def sage_tokens
       [
         { 
-          category: "Border", 
+          category: "border", 
           tokens: [
-            { 
-              name: "border",
-              value: "",
-            },
-            { 
-              name: "border",
-              value: "radius",
-            },
+            { name: "default" },
+            { name: "radius" },
           ]
         },
         { 
-          category: "Breakpoints", 
+          category: "breakpoint", 
           tokens: [
             { name: "xs-max" },
             { name: "sm-min" },
@@ -29,76 +23,62 @@ module Sage
           ]
         },
         { 
-          category: "Container", 
+          category: "container", 
           tokens: [
-            { name: "container-width" },
-            { name: "container-width-sm" },
-            { name: "container-width-fluid" },
+            { name: "sm" },
+            { name: "md" },
+            { name: "fluid" },
           ]
         },
         { 
-          category: "grid", 
+          category: "shadow", 
           tokens: [
-            { name: "grid-columns" },
-            { name: "grid-spacing" },
+            { name: "sm" },
+            { name: "md" },
+            { name: "lg" },
+            { name: "xl" },
+            { name: "2xl" },
           ]
         },
         { 
-          category: "Shadow", 
+          category: "sidebar", 
           tokens: [
-            { name: "shadow" },
-            { name: "shadow-md" },
-            { name: "shadow-lg" },
-            { name: "shadow-xl" },
-            { name: "shadow-2xl" },
+            { name: "sm" },
+            { name: "md" },
+            { name: "lg" },
           ]
         },
         { 
-          category: "Sidebar", 
+          category: "spacing", 
           tokens: [
-            { name: "sidebar-width" },
-            { name: "sidebar-width-md" },
-            { name: "sidebar-width-lg" },
+            { name: "2xs" },
+            { name: "xs" },
+            { name: "sm" },
+            { name: "md" },
+            { name: "lg" },
           ]
         },
         { 
-          category: "Spacing", 
+          category: "font-size", 
           tokens: [
-            { name: "spacing" },
-            { name: "spacing-2xs" },
-            { name: "spacing-xs" },
-            { name: "spacing-sm" },
-            { name: "spacing-lg" },
+            { name: "xs" },
+            { name: "sm" },
+            { name: "md" },
+            { name: "lg" },
+            { name: "xl" },
+            { name: "2xl" },
+            { name: "3xl" },
+            { name: "4xl" },
+            { name: "5xl" },
+            { name: "6xl" },
           ]
         },
         { 
-          category: "Font", 
+          category: "font-weight", 
           tokens: [
-            { name: "font-family" },
-          ]
-        },
-        { 
-          category: "Font Size", 
-          tokens: [
-            { name: "font-size" },
-            { name: "font-size-xs" },
-            { name: "font-size-sm" },
-            { name: "font-size-md" },
-            { name: "font-size-lg" },
-            { name: "font-size-xl" },
-            { name: "font-size-2xl" },
-            { name: "font-size-3xl" },
-            { name: "font-size-4xl" },
-            { name: "font-size-5xl" },
-            { name: "font-size-6xl" },
-          ]
-        },
-        { 
-          category: "Font Weight", 
-          tokens: [
-            { name: "font-weight" },
-            { name: "font-weight-semibold" },
-            { name: "font-weight-bold" },
+            { name: "regular" },
+            { name: "semibold" },
+            { name: "bold" },
           ]
         },
       ]

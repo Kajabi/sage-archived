@@ -3,9 +3,14 @@
 <hr>
 <% sage_tokens.each do |token| %>
   <h3><%= token[:category] %></h3>
+  <h6>Default</h6>
+  <div class="tokens">
+     <div class="token token-<%= token[:category] %>"><strong>sage-<%= token[:category] %>( )</strong></div>
+  </div>
+  <h6>Options</h6>
   <div class="tokens">
     <% token[:tokens] .each do |test| %>
-      <div class="token-<%= test[:name] %>-<%= test[:value] %>"><strong>sage-<%= test[:name] %>(<%= test[:value] %>)</strong></div>
+      <div class="token token-<%= token[:category] %>-<%= test[:name] %>"><strong>sage-<%= token[:category] %>(<%= test[:name] %>)</strong></div>
     <% end %>
   </div>
 <% end %>

@@ -1,14 +1,14 @@
 xmp {
   margin: 0;
-  font-family: $sage-font-family;
+  font-family: 'Inter', sans-serif;
 }
 
 pre.prettyprint { 
   display: block; 
   background-color: #1d2f52;
-  padding: $sage-spacing !important;
+  padding: sage-spacing() !important;
   font-size: $sage-font-size-sm;
-  margin-bottom: $sage-spacing;
+  margin-bottom: sage-spacing();
   border-radius: sage-border(radius);
   color: sage-color(primary, 300);
   font-weight: $sage-font-weight-semibold;

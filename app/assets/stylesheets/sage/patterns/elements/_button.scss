@@ -1,7 +1,7 @@
 .sage-btn {
   display: inline-block;
   font-size: $sage-font-size-sm;
-  padding: $sage-spacing-xs $sage-spacing-sm;
+  padding: sage-spacing(xs) sage-spacing(sm);
   background: sage-color(gray);
   border: 1px solid sage-color(gray);
   color: #ffffff;

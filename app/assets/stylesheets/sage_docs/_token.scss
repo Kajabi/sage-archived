@@ -1,67 +1,52 @@
 .tokens {
-  margin-bottom: $sage-spacing;
+  margin-bottom: sage-spacing();
   border: sage-border();
   border-radius: sage-border(radius);
   border-bottom: none;
 }
 
-@mixin token($name, $token) {
-  .token-#{$name} {
-    padding: $sage-spacing-xs $sage-spacing;
-    border-bottom: sage-border();
-    font-size: $sage-font-size-sm;
-    display: flex;
-    strong {
-      min-width: 300px;
-    }
-    &:after {
-      width: 50%;
-      flex: 1;
-      content: "#{$token}";
-    }
+.token {
+  padding: sage-spacing(xs) sage-spacing();
+  border-bottom: sage-border();
+  font-size: $sage-font-size-sm;
+  display: flex;
+  strong {
+    min-width: 300px;
+  }
+  &:after {
+    width: 50%;
+    flex: 1;
+  }
+  &-border:after { content: "#{sage-border()}" }
+  @each $name, $token in $sage-borders {
+    &-border-#{$name}:after { content: "#{$token}" }
+  }
+  &-breakpoint:after { content: "#{sage-breakpoint()}" }
+  @each $name, $token in $sage-breakpoints {
+    &-breakpoint-#{$name}:after { content: "#{$token}" }
+  }
+  &-container:after { content: "#{sage-container()}" }
+  @each $name, $token in $sage-containers {
+    &-container-#{$name}:after { content: "#{$token}" }
+  }
+  &-font-size:after { content: "#{sage-font-size()}" }
+  @each $name, $token in $sage-font-sizes {
+    &-font-size-#{$name}:after { content: "#{$token}" }
+  }
+  &-font-weight:after { content: "#{sage-font-weight()}" }
+  @each $name, $token in $sage-font-weights {
+    &-font-weight-#{$name}:after { content: "#{$token}" }
+  }
+  &-shadow:after { content: "#{sage-shadow()}" }
+  @each $name, $token in $sage-shadows {
+    &-shadow-#{$name}:after { content: "#{$token}" }
+  }
+  &-sidebar:after { content: "#{sage-sidebar()}" }
+  @each $name, $token in $sage-sidebars {
+    &-sidebar-#{$name}:after { content: "#{$token}" }
+  }
+  &-spacing:after { content: "#{sage-spacing()}" }
+  @each $name, $token in $sage-spacings {
+    &-spacing-#{$name}:after { content: "#{$token}" }
   }
 }
-
-@include token(border-, sage-border()); 
-@include token(border-radius, sage-border(radius)); 
-@include token(xs-max, $sage-xs-max);
-@include token(sm-min, $sage-sm-min); 
-@include token(sm-max, $sage-sm-max); 
-@include token(md-min, $sage-md-min); 
-@include token(md-max, $sage-md-max); 
-@include token(lg-min, $sage-lg-min); 
-@include token(lg-max, $sage-lg-max); 
-@include token(xl-min, $sage-xl-min); 
-@include token(grid-columns, $sage-grid-columns); 
-@include token(grid-spacing, $sage-grid-spacing); 
-@include token(shadow, $sage-shadow); 
-@include token(shadow-md, $sage-shadow-md); 
-@include token(shadow-lg, $sage-shadow-lg); 
-@include token(shadow-xl, $sage-shadow-xl); 
-@include token(shadow-2xl, $sage-shadow-2xl); 
-@include token(spacing, $sage-spacing); 
-@include token(spacing-2xs, $sage-spacing-2xs); 
-@include token(spacing-xs, $sage-spacing-xs); 
-@include token(spacing-sm, $sage-spacing-sm); 
-@include token(spacing-lg, $sage-spacing-lg); 
-@include token(container-width, $sage-container-width); 
-@include token(container-width-sm, $sage-container-width-sm); 
-@include token(container-width-fluid, $sage-container-width-fluid); 
-@include token(sidebar-width, $sage-sidebar-width); 
-@include token(sidebar-width-md, $sage-sidebar-width-md); 
-@include token(sidebar-width-lg, $sage-sidebar-width-lg); 
-@include token(font-family, $sage-font-family); 
-@include token(font-size, $sage-font-size); 
-@include token(font-size-xs, $sage-font-size-xs); 
-@include token(font-size-sm, $sage-font-size-sm); 
-@include token(font-size-md, $sage-font-size-md); 
-@include token(font-size-lg, $sage-font-size-lg); 
-@include token(font-size-xl, $sage-font-size-xl); 
-@include token(font-size-2xl, $sage-font-size-2xl); 
-@include token(font-size-3xl, $sage-font-size-3xl); 
-@include token(font-size-4xl, $sage-font-size-4xl); 
-@include token(font-size-5xl, $sage-font-size-5xl); 
-@include token(font-size-6xl, $sage-font-size-6xl); 
-@include token(font-weight, $sage-font-weight); 
-@include token(font-weight-semibold, $sage-font-weight-semibold); 
-@include token(font-weight-bold, $sage-font-weight-bold); 

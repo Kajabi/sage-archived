@@ -1,10 +1,10 @@
 .colors {
-  margin-bottom: $sage-spacing;
+  margin-bottom: sage-spacing();
   border-radius: sage-border(radius);
   overflow: hidden;
 }
 .color {
-  padding: $sage-spacing-sm $sage-spacing;
+  padding: sage-spacing(sm) sage-spacing();
   font-size: $sage-font-size-sm;
   font-weight: $sage-font-weight-semibold;
   color: #fff;
