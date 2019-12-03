@@ -1,0 +1,10 @@
+@function sage-sidebar($key: sm) {
+  $value: map-get($sage-sidebars, $key);
+  @return $value;
+}
+
+$sage-sidebars: (
+  sm: 240px,
+  md: 320px,
+  lg: 400px,
+);

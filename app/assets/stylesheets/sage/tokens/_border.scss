@@ -1,2 +1,9 @@
-$sage-border-default: 1px solid sage-color(gray, 200);
-$sage-border-radius: 5px;
+@function sage-border($key: default) {
+  $value: map-get($sage-borders, $key);
+  @return $value;
+}
+
+$sage-borders: (
+  default: 1px solid sage-color(gray, 200),
+  radius: 5px,
+);

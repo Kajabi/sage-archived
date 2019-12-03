@@ -1,0 +1,10 @@
+@function sage-container($key: md) {
+  $value: map-get($sage-containers, $key);
+  @return $value;
+}
+
+$sage-containers: (
+  sm: 900px,
+  md: 1200px,
+  fluid: 100%,
+);

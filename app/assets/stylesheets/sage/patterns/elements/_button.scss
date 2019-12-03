@@ -1,12 +1,12 @@
 .sage-btn {
   display: inline-block;
-  font-size: $sage-font-size-sm;
-  padding: $sage-spacing-xs $sage-spacing-sm;
+  font-size: sage-font-size(sm);
+  padding: sage-spacing(xs) sage-spacing(sm);
   background: sage-color(gray);
   border: 1px solid sage-color(gray);
   color: #ffffff;
-  font-weight: $sage-font-weight-semibold;
-  border-radius: $sage-border-radius;
+  font-weight: sage-font-weight(simibold);
+  border-radius: sage-border(radius);
   &:hover {
     background: sage-color(gray, 600);
     border: 1px solid sage-color(gray, 600);

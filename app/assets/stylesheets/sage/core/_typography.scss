@@ -1,3 +1,5 @@
+@import url('https://rsms.me/inter/inter.css');
+
 body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -6,14 +8,14 @@ body {
   -ms-text-size-adjust: 100%;
   text-size-adjust: 100%;
   color: sage-color(gray, 700);
-  font-family: $sage-font-family;
-  font-weight: $sage-font-weight;
-  font-size: $sage-font-size;
-  line-height: $sage-font-height;
-  margin-bottom: $sage-spacing;
+  font-family: 'Inter', sans-serif;
+  font-weight: sage-font-weight();
+  font-size: sage-font-size();
+  line-height: sage-font-height();
+  margin-bottom: sage-spacing();
 }
 @supports (font-variation-settings: normal) {
-  body { font-family: $sage-font-family-variation; }
+  body { font-family: 'Inter var', sans-serif; }
 }
 h1,
 h2,
@@ -22,31 +24,31 @@ h4,
 h5,
 h6 {
   color: sage-color(gray, 900);
-  font-weight: $sage-font-weight-bold;
-  line-height: $sage-font-height-sm;
-  margin-bottom: $sage-spacing;
+  font-weight: sage-font-weight(bold);
+  line-height: sage-font-height(sm);
+  margin-bottom: sage-spacing();
 }
 h1 {
-  font-size: $sage-font-size-3xl;
+  font-size: sage-font-size(3xl);
 }
 h2 {
-  font-size: $sage-font-size-2xl;
+  font-size: sage-font-size(2xl);
 }
 h3 {
-  font-size: $sage-font-size-xl;
+  font-size: sage-font-size(xl);
 }
 h4 {
-  font-size: $sage-font-size-lg;
+  font-size: sage-font-size(lg);
 }
 h5 {
-  font-size: $sage-font-size-sm;
+  font-size: sage-font-size(sm);
 }
 h6 {
-  font-size: $sage-font-size-xs;
+  font-size: sage-font-size(xs);
 }
 
 p {
-  margin-bottom: $sage-spacing;
+  margin-bottom: sage-spacing();
 }
 
 a {
@@ -60,6 +62,6 @@ a {
 
 hr {
   border: 0;
-  border-top: $sage-border-default;
-  margin: $sage-spacing 0;
+  border-top: sage-border();
+  margin: sage-spacing() 0;
 }

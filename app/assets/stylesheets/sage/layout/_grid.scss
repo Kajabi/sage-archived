@@ -2,26 +2,26 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin-left: -$sage-grid-spacing;
-  margin-right: -$sage-grid-spacing;
+  margin-left: - sage-spacing(sm);
+  margin-right: - sage-spacing(sm);
 }
 .sage-col {
   flex-basis: 100%;
-  padding: 0 $sage-grid-spacing;
-  @for $sage-i from 1 through $sage-grid-columns {
+  padding: 0 sage-spacing(sm);
+  @for $sage-i from 1 through 12 {
     &--#{$sage-i} {
       @extend .sage-col;
     }
   }
 }
 
-@media (min-width: $sage-sm-max) {
+@media (min-width: sage-breakpoint()) {
   .sage-col {
     flex: 1;
-    @for $sage-i from 1 through $sage-grid-columns {
+    @for $sage-i from 1 through 12 {
       &--#{$sage-i} {
-        flex-basis: percentage($sage-i / $sage-grid-columns);
-        max-width: percentage($sage-i / $sage-grid-columns);
+        flex-basis: percentage($sage-i / 12);
+        max-width: percentage($sage-i / 12);
       }
     }
   }
