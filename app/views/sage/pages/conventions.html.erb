@@ -7,9 +7,9 @@
 <p><strong>Avoid conflicts</strong> – Since our design system code is going to be introduced into an app with much legacy styles we need to ensure that our styles do not conflict with other libraries and systems. This is accomplished by the system’s namespacing of class names, described in more detail below.</p>
 <h2>Global Namespace</h2>
 <p>All classes associated with the design system are prefixed with a global namespace, which is the name of the system followed by a hyphen:</p>
-<pre><code><xmp>.sage-</xmp></code></pre>
+<pre class="prettyprint"><code><xmp>.sage-</xmp></code></pre>
 <p>For example a Card component in sage looks something like this:</p>
-<pre><code><xmp>/* card.scss */
+<pre class="prettyprint"><code><xmp>/* card.scss */
 
 .sage-card {
 	&-img { }
@@ -18,12 +18,12 @@
 }</xmp></code></pre>
 <h2>Design Tokens</h2>
 <p>We utilize design tokens in the form of Scss variables. These variables are namespaced in the same way that classes are so that we do not run into conflicts with other Scss code. </p>
-<pre><code><xmp>sage-font-size(): 16px;
+<pre class="prettyprint"><code><xmp>sage-font-size(): 16px;
 sage-font-weight(): 400;
 $sage-font-height: 1.5;</xmp></code></pre>
 <h2>Parent Selectors</h2>
 <p>The design system will make use of Sass’s parent selector mechanism. This allows all rules for a given component to be maintained in one location.</p>
-<pre><code><xmp>/* button.scss */
+<pre class="prettyprint"><code><xmp>/* button.scss */
 
 .sage-btn {
     /* Button In Sidebar Takes Full Width */
@@ -35,7 +35,7 @@ $sage-font-height: 1.5;</xmp></code></pre>
 }</xmp></code></pre>
 <h2>Media Queries</h2>
 <p>Component-specific media queries should be nested inside the component block.</p>
-<pre><code><xmp>/* button.scss */
+<pre class="prettyprint"><code><xmp>/* button.scss */
 
 .sage-btn {
     /* Button On Small Screen Takes Full Width */
