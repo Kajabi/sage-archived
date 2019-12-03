@@ -5,8 +5,8 @@
 }
 .color {
   padding: sage-spacing(sm) sage-spacing();
-  font-size: $sage-font-size-sm;
-  font-weight: $sage-font-weight-semibold;
+  font-size: sage-font-size(sm);
+  font-weight: sage-font-weight(simibold);
   color: #fff;
   &:after {
     float: right;

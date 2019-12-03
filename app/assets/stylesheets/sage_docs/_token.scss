@@ -8,7 +8,7 @@
 .token {
   padding: sage-spacing(xs) sage-spacing();
   border-bottom: sage-border();
-  font-size: $sage-font-size-sm;
+  font-size: sage-font-size(sm);
   display: flex;
   strong {
     min-width: 300px;
@@ -28,6 +28,10 @@
   &-container:after { content: "#{sage-container()}" }
   @each $name, $token in $sage-containers {
     &-container-#{$name}:after { content: "#{$token}" }
+  }
+  &-font-height:after { content: "#{sage-font-height()}" }
+  @each $name, $token in $sage-font-heights {
+    &-font-height-#{$name}:after { content: "#{$token}" }
   }
   &-font-size:after { content: "#{sage-font-size()}" }
   @each $name, $token in $sage-font-sizes {

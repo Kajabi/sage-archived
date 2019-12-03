@@ -7,11 +7,11 @@ pre.prettyprint {
   display: block; 
   background-color: #1d2f52;
   padding: sage-spacing() !important;
-  font-size: $sage-font-size-sm;
+  font-size: sage-font-size(sm);
   margin-bottom: sage-spacing();
   border-radius: sage-border(radius);
   color: sage-color(primary, 300);
-  font-weight: $sage-font-weight-semibold;
+  font-weight: sage-font-weight(simibold);
 }
 pre .nocode { background-color: none; color: #1d2f52 }
 pre .str { color: sage-color(primary, 300); } /* string  - pink */

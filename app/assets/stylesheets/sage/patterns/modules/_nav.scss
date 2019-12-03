@@ -4,7 +4,7 @@
     display: flex;
     align-items: center;
     margin: sage-spacing(sm) 0;
-    font-weight: $sage-font-weight-semibold;
+    font-weight: sage-font-weight(simibold);
     color: sage-color(gray, 900);;
     &:hover {
       color: sage-color(gray, 700);
@@ -12,11 +12,11 @@
     &--sub {
       @extend .sage-nav__link;
       margin: sage-spacing(xs) sage-spacing(lg);
-      font-size: $sage-font-size-sm;
-      font-weight: $sage-font-weight;
+      font-size: sage-font-size(sm);
+      font-weight: sage-font-weight();
     }
     i {
-      font-size: $sage-font-size-2xl;
+      font-size: sage-font-size(2xl);
       margin-right: sage-spacing(xs);
       color: sage-color(gray, 700);
     }

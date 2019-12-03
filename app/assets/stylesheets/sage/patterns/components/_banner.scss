@@ -8,11 +8,11 @@
   margin-bottom: sage-spacing();
   &__title { 
     color: sage-color(gray, 900);
-    font-weight: $sage-font-weight-semibold;
+    font-weight: sage-font-weight(simibold);
     margin-bottom: 0;
   }
   &__copy {
-    font-size: $sage-font-size-sm;
+    font-size: sage-font-size(sm);
     margin-bottom: 0;
   }
   @each $name, $color in $sage-colors {

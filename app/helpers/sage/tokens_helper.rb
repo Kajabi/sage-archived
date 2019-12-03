@@ -59,6 +59,13 @@ module Sage
           ]
         },
         { 
+          category: "font-height", 
+          tokens: [
+            { name: "sm" },
+            { name: "md" },
+          ]
+        },
+        { 
           category: "font-size", 
           tokens: [
             { name: "xs" },
