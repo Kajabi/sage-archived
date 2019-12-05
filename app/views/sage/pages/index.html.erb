@@ -16,9 +16,9 @@
 <p>This provides a healthy amount of friction between the system and the components that are consuming it. With that friction we are able to better maintain consistency and limit code and component duplication.</p>
 <p>All System components are prefixed with the sage- prefix. For example a card component in sage looks something like this:</p>
 <pre class="prettyprint"><code><xmp>.sage-card {
-  &-img { }
-  &-title { }
-  &-subtitle { }
+  &__img { }
+  &__title { }
+  &__subtitle { }
 }</xmp></code></pre>
 <p>This prefix approach ensures that the consumer is quickly able to identify that the styles are indeed coming from our external design system and also gives the Sage System Developer the confidence that they can create components without conflict with existing code.</p>
 <h2>How it is changed</h2>
