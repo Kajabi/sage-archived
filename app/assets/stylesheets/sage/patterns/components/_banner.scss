@@ -4,7 +4,7 @@
   background: sage-color(gray, 200);
   border-bottom-left-radius: sage-border(radius);
   border-bottom-left-radius: sage-border(radius);
-  box-shadow: $sage-shadow-md;
+  box-shadow: sage-shadow();
   margin-bottom: sage-spacing();
   &__title { 
     color: sage-color(gray, 900);
