@@ -1,5 +1,10 @@
 <div class="sage-assistant">
-  <div class="sage-assistant__body"></div>
+  <%= image_tag("sage/logo.svg", class: "sage-assistant__branding")%>
+  <div class="sage-assistant__body">
+    <div class="sage-container--sm">
+      <input type="text" class="sage-assistant__search" placeholder="Search...">
+    </div>
+  </div>
   <div class="sage-assistant__actions">
     <%= link_to "View On Github", "https://github.com/Kajabi/sage", class: "sage-btn--primary" %>
   </div>
