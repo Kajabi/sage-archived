@@ -1,3 +1,18 @@
+@mixin sage-banner-color($name, $color) {
+  &--#{$name} {
+    @extend .sage-banner;
+    border-color: sage-color($color);
+    background: sage-color($color, 100);
+    .sage-banner {
+      &__title { 
+        color: sage-color($color, 500);
+      }
+      &__copy {
+        color: sage-color($color, 400);
+      }
+    }
+  }
+}
 .sage-banner {
   border-top: 4px solid;
   padding: sage-spacing();
@@ -7,7 +22,7 @@
   box-shadow: sage-shadow();
   margin-bottom: sage-spacing();
   &__title { 
-    color: sage-color(gray, 900);
+    color: sage-color(charcoal, 500);
     font-weight: sage-font-weight(simibold);
     margin-bottom: 0;
   }
@@ -15,19 +30,8 @@
     font-size: sage-font-size(sm);
     margin-bottom: 0;
   }
-  @each $name, $color in $sage-colors {
-    &--#{$name} {
-      @extend .sage-banner;
-      border-color: sage-color($name);
-      background: sage-color($name, 200);
-      .sage-banner {
-        &__title { 
-          color: sage-color($name, 900);
-        }
-        &__copy {
-          color: sage-color($name, 800);
-        }
-      }
-    }
-  }
+  @include sage-banner-color(primary, primary);
+  @include sage-banner-color(success, sage);
+  @include sage-banner-color(warning, yellow);
+  @include sage-banner-color(danger, red);
 }

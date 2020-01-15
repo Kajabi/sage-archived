@@ -20,6 +20,12 @@ Or install it yourself as:
 
 ## Usage
 
+Mount Sage routes into your routes file:
+
+```ruby
+mount Sage::Engine => "/sage"
+```
+
 Import Sage styles in app/assets/stylesheets/application.scss:
 
 ```scss

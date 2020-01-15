@@ -7,7 +7,7 @@ body {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   text-size-adjust: 100%;
-  color: sage-color(gray, 700);
+  color: sage-color(charcoal, 300);
   font-family: 'Inter', sans-serif;
   font-weight: sage-font-weight();
   font-size: sage-font-size();
@@ -23,7 +23,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: sage-color(gray, 900);
+  color: sage-color(charcoal, 500);
   font-weight: sage-font-weight(bold);
   line-height: sage-font-height(sm);
   margin-bottom: sage-spacing();
