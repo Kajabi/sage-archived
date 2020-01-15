@@ -45,6 +45,11 @@ module Sage
     def components
     end
 
+    def component
+      @title = params[:title]
+      @path = params[:path]
+    end 
+
     def modules
     end
 
