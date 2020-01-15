@@ -1,7 +1,10 @@
-
 <div class="sage-panel">
-  <%= link_to "View Component", pages_component_url(:title => title, :path => path ), target: "_blank" %>
-  <h3><%= title %></h3>
+  <div class="sage-media">
+    <div class="sage-media-body">
+      <h3><%= title %></h3>
+    </div>
+    <%= link_to "View", pages_component_url(:title => title, :path => path ), target: "_blank" %>
+  </div>
   <h6 class="example-label">Preview</h6>
   <%= render "example_components/#{path}/preview" %>
   <h6 class="example-label">Code</h6>
