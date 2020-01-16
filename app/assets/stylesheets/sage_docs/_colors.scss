@@ -19,13 +19,18 @@
           @extend .color;
           background: $hex;
           @if (lightness($hex) > 50) {
-            color: sage-color($name, 900);
+            color: sage-color($name, 500);
           }
           &:after {
             content: "#{$hex}";
           }
         }
       }
+    }
+  }
+  &-grey {
+    &-100, &-200, &-300, &-400, &-500 {
+      color: sage-color(charcoal, 500);
     }
   }
 }

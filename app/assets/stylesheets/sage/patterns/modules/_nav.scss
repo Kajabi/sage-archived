@@ -4,9 +4,9 @@
     align-items: center;
     margin: sage-spacing(sm) 0;
     font-weight: sage-font-weight(simibold);
-    color: sage-color(gray, 900);;
+    color: sage-color(charcoal, 500);
     &:hover {
-      color: sage-color(gray, 700);
+      color: sage-color(charcoal, 400);
     }
     &--sub {
       @extend .sage-nav__link;
@@ -17,7 +17,7 @@
     i {
       font-size: sage-font-size(2xl);
       margin-right: sage-spacing(xs);
-      color: sage-color(gray, 700);
+      color: sage-color(charcoal, 400);
     }
   }
 }

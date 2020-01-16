@@ -2,23 +2,24 @@
   display: inline-block;
   font-size: sage-font-size(sm);
   padding: sage-spacing(xs) sage-spacing(sm);
-  background: sage-color(gray);
-  border: 1px solid sage-color(gray);
-  color: #ffffff;
+  background: #ffffff;
+  border: 1px solid sage-color(charcoal, 400);
+  color: sage-color(charcoal, 400);
   font-weight: sage-font-weight(simibold);
   border-radius: sage-border(radius);
   &:hover {
-    background: sage-color(gray, 600);
-    border: 1px solid sage-color(gray, 600);
-    color: #ffffff;
+    background: #ffffff;
+    border: 1px solid sage-color(charcoal, 500);
+    color: sage-color(charcoal, 500);
   }
   &--primary {
     @extend .sage-btn;
+    color: #fff;
     background: sage-color(primary);
     border: 1px solid sage-color(primary);
     &:hover {
-      background: sage-color(primary, 600);
-      border: 1px solid sage-color(primary, 600);
+      background: sage-color(primary, 400);
+      border: 1px solid sage-color(primary, 400);
       color: #fff;
     }
   }
@@ -29,8 +30,8 @@
     color: sage-color(primary);
     &:hover {
       background: #ffffff;
-      border: 1px solid sage-color(primary, 600);
-      color: sage-color(primary, 600);
+      border: 1px solid sage-color(primary, 400);
+      color: sage-color(primary, 400);
     }
   }
 }

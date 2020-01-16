@@ -2,6 +2,7 @@ require_dependency "sage/application_controller"
 
 module Sage
   class PagesController < ApplicationController
+    layout "sage/minimal", :only => [ :component, :element ]
 
     def index
     end
@@ -42,8 +43,18 @@ module Sage
     def elements
     end
 
+    def element
+      @title = params[:title]
+      @path = params[:path]
+    end
+
     def components
     end
+
+    def component
+      @title = params[:title]
+      @path = params[:path]
+    end 
 
     def modules
     end

@@ -1,5 +1,6 @@
 <h1>Colors</h1>
-<p>The colors in our palette communicate the reliability of our product. The colors purposefully communicate how things function in the interface. This helps us create visual patterns that can make interacting with our product easier and more predictable.</p>
+<p>Our color palette is built with a minimal approach to reduce decision fatigue and save time making design decisions. All of our colors and text color combinations meet AA requirements with a 4.5:1 passing grade at the bare minimum.</p>
+<p>You will notice pure black is not used at all as a text color. Instead, we rely on 400 for our darkest text color value. Our default text color is sage-color(charcoal, 400). To achive more depth use 300 to 400 shades for text on top of lighter background colors using 100 to 200 for their fill. You can also use 100 to 200 as the text color on darker backgrounds using from 300 to 400 for their fill. Pure white is used as a text color when the lightest shade (100) of a color will not pass color contrast tests. At the moment, this only occurs on the 300 shades of purple, primary, and red.</p>
 <hr>
 <h2>Primary</h2>
 <p>These are the splashes of color that appear the most in Kajabi’s UI, and are the ones that determine the overall "look" of the app. Use these for things like primary actions, links, navigation items, icons, accent borders, or text we want to emphasize.</p>
@@ -7,30 +8,41 @@
 <h2>Neutrals</h2>
 <p>These are the colors we will use the most and will make up the majority of Kajabi’s UI.<br>
 Use them for most of our text, backgrounds, and borders, as well as for things like alternative buttons and links.</p>
-<%= render "color_values", color: "gray"%>
-<h1>Core</h1>
-<p>These colors are the core of our application and should be used as their name implies. We’ll use them when we need an element to stand out or to reinforce things like error states or positive trends with the appropriate semantic color.</p>
 <div class="sage-row">
   <div class="sage-col">
-    <h3>Success</h3>
-    <%= render "color_values", color: "success"%>
+    <h3>Grey</h3>
+    <%= render "color_values", color: "grey"%>
   </div>
   <div class="sage-col">
-    <h3>Warning</h3>
-    <%= render "color_values", color: "warning"%>
-  </div>
-</div>
-<div class="sage-row">
-  <div class="sage-col--6">
-    <h3>Danger</h3>
-    <%= render "color_values", color: "danger"%>
+    <h3>Charcoal</h3>
+    <%= render "color_values", color: "charcoal"%>
   </div>
 </div>
 <h1>Supporting</h1>
 <p>These colors should be used fairly conservatively throughout Kajabi’s UI to avoid overpowering our primary colors. We’ll use the m when we need an element to stand out.</p>
 <div class="sage-row">
-  <div class="sage-col--6">
+  <div class="sage-col">
+    <h3>Purple</h3>
+    <%= render "color_values", color: "purple"%>
+  </div>
+  <div class="sage-col">
+    <h3>Sage</h3>
+    <%= render "color_values", color: "sage"%>
+  </div>
+</div>
+<div class="sage-row">
+  <div class="sage-col">
+    <h3>Yellow</h3>
+    <%= render "color_values", color: "yellow"%>
+  </div>
+   <div class="sage-col">
     <h3>Orange</h3>
     <%= render "color_values", color: "orange"%>
+  </div>
+</div>
+<div class="sage-row">
+  <div class="sage-col--6">
+    <h3>Red</h3>
+    <%= render "color_values", color: "red"%>
   </div>
 </div>
