@@ -1,0 +1,9 @@
+.sage-panel {
+  background: #ffffff;
+  padding: sage-spacing(lg);
+  border-radius: sage-border(radius);
+  box-shadow: sage-shadow(sm);
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
