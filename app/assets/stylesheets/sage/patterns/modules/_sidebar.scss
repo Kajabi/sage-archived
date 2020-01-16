@@ -1,6 +1,7 @@
 .sage-sidebar {
   width: sage-sidebar();
   background: sage-color(gray, 100);
+  border-right: 1px solid sage-color(gray, 200);
   z-index: 999;
   display: flex;
   flex-direction: column;

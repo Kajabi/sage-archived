@@ -3,6 +3,7 @@ module Sage
     def sage_components
       [
         { title: "Banner", path: "banner" },
+        { title: "Panel", path: "panel" },
       ]
     end
   end
