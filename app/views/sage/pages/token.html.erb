@@ -1,16 +1,17 @@
 <h1>Tokens</h1>
 <p>Design tokens are the visual design atoms of the design system — specifically, they are named entities that store visual design attributes. We use them in place of hard-coded values (such as hex values for color or pixel values for spacing) in order to maintain a scalable and consistent visual system for UI development.</p>
-<hr>
 <% sage_tokens.each do |token| %>
-  <h3><%= token[:category] %></h3>
-  <h6>Default</h6>
-  <div class="tokens">
-     <div class="token token-<%= token[:category] %>"><strong>sage-<%= token[:category] %>( )</strong></div>
-  </div>
-  <h6>Options</h6>
-  <div class="tokens">
-    <% token[:tokens] .each do |test| %>
-      <div class="token token-<%= token[:category] %>-<%= test[:name] %>"><strong>sage-<%= token[:category] %>(<%= test[:name] %>)</strong></div>
-    <% end %>
+  <div class="sage-panel">
+    <h3><%= token[:category] %></h3>
+    <h6>Default</h6>
+    <div class="tokens">
+      <div class="token token-<%= token[:category] %>"><strong>sage-<%= token[:category] %>( )</strong></div>
+    </div>
+    <h6>Options</h6>
+    <div class="tokens">
+      <% token[:tokens] .each do |test| %>
+        <div class="token token-<%= token[:category] %>-<%= test[:name] %>"><strong>sage-<%= token[:category] %>(<%= test[:name] %>)</strong></div>
+      <% end %>
+    </div>
   </div>
 <% end %>

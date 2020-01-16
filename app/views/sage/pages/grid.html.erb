@@ -1,24 +1,25 @@
 <h1>Grid</h1>
-<hr>
-<div class="sage-row">
-  <div class="sage-col"><div class="grid-item">Col</div></div>
-  <div class="sage-col"><div class="grid-item">Col</div></div>
-  <div class="sage-col"><div class="grid-item">Col</div></div>
-  <div class="sage-col"><div class="grid-item">Col</div></div>
-</div>
-<div class="sage-row">
-  <div class="sage-col--4"><div class="grid-item">Col</div></div>
-  <div class="sage-col"><div class="grid-item">Col</div></div>
-  <div class="sage-col"><div class="grid-item">Col</div></div>
-</div>
-<pre class="prettyprint"><code><xmp><div class="sage-row">
-  <div class="sage-col--4">Col</div>
-  <div class="sage-col">Col</div>
-  <div class="sage-col">Col</div>
-</div></xmp></code></pre>
-<% 10.times do |num| %>
+<div class="sage-panel">
   <div class="sage-row">
-    <div class="sage-col--<%= num + 1%>"><div class="grid-item"><%= num + 1%></div></div>
-    <div class="sage-col"><div class="grid-item"><%= 11 - num%></div></div>
+    <div class="sage-col"><div class="grid-item">Col</div></div>
+    <div class="sage-col"><div class="grid-item">Col</div></div>
+    <div class="sage-col"><div class="grid-item">Col</div></div>
+    <div class="sage-col"><div class="grid-item">Col</div></div>
   </div>
-<% end %>
+  <div class="sage-row">
+    <div class="sage-col--4"><div class="grid-item">Col</div></div>
+    <div class="sage-col"><div class="grid-item">Col</div></div>
+    <div class="sage-col"><div class="grid-item">Col</div></div>
+  </div>
+  <pre class="prettyprint"><code><xmp><div class="sage-row">
+    <div class="sage-col--4">Col</div>
+    <div class="sage-col">Col</div>
+    <div class="sage-col">Col</div>
+  </div></xmp></code></pre>
+  <% 10.times do |num| %>
+    <div class="sage-row">
+      <div class="sage-col--<%= num + 1%>"><div class="grid-item"><%= num + 1%></div></div>
+      <div class="sage-col"><div class="grid-item"><%= 11 - num%></div></div>
+    </div>
+  <% end %>
+</div>
