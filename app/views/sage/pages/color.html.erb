@@ -4,45 +4,51 @@
 <hr>
 <h2>Primary</h2>
 <p>These are the splashes of color that appear the most in Kajabi’s UI, and are the ones that determine the overall "look" of the app. Use these for things like primary actions, links, navigation items, icons, accent borders, or text we want to emphasize.</p>
-<%= render "color_values", color: "primary"%>
+<div class="sage-panel">
+  <%= render "color_values", color: "primary"%>
+</div>
 <h2>Neutrals</h2>
 <p>These are the colors we will use the most and will make up the majority of Kajabi’s UI.<br>
 Use them for most of our text, backgrounds, and borders, as well as for things like alternative buttons and links.</p>
-<div class="sage-row">
-  <div class="sage-col">
-    <h3>Grey</h3>
-    <%= render "color_values", color: "grey"%>
-  </div>
-  <div class="sage-col">
-    <h3>Charcoal</h3>
-    <%= render "color_values", color: "charcoal"%>
+<div class="sage-panel">
+  <div class="sage-row">
+    <div class="sage-col">
+      <h3>Grey</h3>
+      <%= render "color_values", color: "grey"%>
+    </div>
+    <div class="sage-col">
+      <h3>Charcoal</h3>
+      <%= render "color_values", color: "charcoal"%>
+    </div>
   </div>
 </div>
-<h1>Supporting</h1>
+<h2>Supporting</h2>
 <p>These colors should be used fairly conservatively throughout Kajabi’s UI to avoid overpowering our primary colors. We’ll use the m when we need an element to stand out.</p>
-<div class="sage-row">
-  <div class="sage-col">
-    <h3>Purple</h3>
-    <%= render "color_values", color: "purple"%>
+<div class="sage-panel">
+  <div class="sage-row">
+    <div class="sage-col">
+      <h3>Purple</h3>
+      <%= render "color_values", color: "purple"%>
+    </div>
+    <div class="sage-col">
+      <h3>Sage</h3>
+      <%= render "color_values", color: "sage"%>
+    </div>
   </div>
-  <div class="sage-col">
-    <h3>Sage</h3>
-    <%= render "color_values", color: "sage"%>
+  <div class="sage-row">
+    <div class="sage-col">
+      <h3>Yellow</h3>
+      <%= render "color_values", color: "yellow"%>
+    </div>
+    <div class="sage-col">
+      <h3>Orange</h3>
+      <%= render "color_values", color: "orange"%>
+    </div>
   </div>
-</div>
-<div class="sage-row">
-  <div class="sage-col">
-    <h3>Yellow</h3>
-    <%= render "color_values", color: "yellow"%>
-  </div>
-   <div class="sage-col">
-    <h3>Orange</h3>
-    <%= render "color_values", color: "orange"%>
-  </div>
-</div>
-<div class="sage-row">
-  <div class="sage-col--6">
-    <h3>Red</h3>
-    <%= render "color_values", color: "red"%>
+  <div class="sage-row">
+    <div class="sage-col--6">
+      <h3>Red</h3>
+      <%= render "color_values", color: "red"%>
+    </div>
   </div>
 </div>

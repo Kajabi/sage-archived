@@ -76,8 +76,6 @@ module Sage
             { name: "2xl" },
             { name: "3xl" },
             { name: "4xl" },
-            { name: "5xl" },
-            { name: "6xl" },
           ]
         },
         { 

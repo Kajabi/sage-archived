@@ -2,4 +2,8 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  &__icon {
+    height: 60px;
+    margin-bottom: sage-spacing();
+  }
 }

@@ -1,0 +1,24 @@
+// Typography
+a {
+  color: sage-color(sage);
+}
+
+// Button
+.sage-btn {
+  &--primary {
+    background: sage-color(sage);
+    border: 1px solid sage-color(sage);
+    &:hover {
+      background: sage-color(sage, 400);
+      border: 1px solid sage-color(sage, 400);
+    }
+  }
+}
+
+// Assistant
+.sage-assistant {
+  background: sage-color(charcoal, 500);
+  &__branding {
+    height: 30px;
+  }
+}
