@@ -1,7 +1,7 @@
 .sage-sidebar {
   width: sage-sidebar();
   background: sage-color(grey, 100);
-  border-right: 1px solid sage-color(grey, 300);
+  border-right: sage-border();
   z-index: 999;
   display: flex;
   flex-direction: column;
@@ -20,6 +20,5 @@
   }
   &__footer {
     padding: sage-spacing();
-    border-top: sage-border();
   }
 }
