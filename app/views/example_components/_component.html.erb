@@ -1,12 +1,12 @@
 <div class="sage-panel">
   <div class="sage-media">
     <div class="sage-media-body">
-      <h3><%= title %></h3>
+      <h3 class="example-title"><%= title %></h3>
     </div>
-    <%= link_to "View", pages_component_url(:title => title, :path => path ), target: "_blank" %>
+    <%= link_to "View", pages_component_url(:title => title ), target: "_blank" %>
   </div>
   <h6 class="example-label">Preview</h6>
-  <%= render "example_components/#{path}/preview" %>
+  <%= render "example_components/#{title}/preview" %>
   <h6 class="example-label">Code</h6>
-  <pre class="prettyprint"><code><xmp><%= render "example_components/#{path}/preview" %></xmp></code></pre>
+  <pre class="prettyprint"><code><xmp><%= render "example_components/#{title}/preview" %></xmp></code></pre>
 </div>

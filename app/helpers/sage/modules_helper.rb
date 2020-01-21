@@ -4,11 +4,11 @@ module Sage
     # Lists out all the available sage modules
     def sage_modules
       [
-        { title: "Assistant", path: "assistant" },
-        { title: "Content", path: "content" },
-        { title: "Nav", path: "nav" },
-        { title: "Page", path: "page" },
-        { title: "Sidebar", path: "sidebar" },
+        { title: "assistant" },
+        { title: "content" },
+        { title: "nav" },
+        { title: "page" },
+        { title: "sidebar" },
       ]
     end
 

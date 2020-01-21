@@ -9,7 +9,7 @@ class SageComponentGenerator < Rails::Generators::NamedBase
       "#{match}\n@import \"sage/patterns/components/#{file_name}\";"
     end
     gsub_file 'app/helpers/sage/components_helper.rb', /(#{Regexp.escape(helper_line)})/mi do |match|
-      "#{match}\n        { title: \"#{file_name}\", path: \"#{file_name}\" },"
+      "#{match}\n        { title: \"#{file_name}\" },"
     end
   end
 end

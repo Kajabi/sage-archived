@@ -45,7 +45,6 @@ module Sage
 
     def element
       @title = params[:title]
-      @path = params[:path]
     end
 
     def components
@@ -53,7 +52,6 @@ module Sage
 
     def component
       @title = params[:title]
-      @path = params[:path]
     end 
 
     def modules

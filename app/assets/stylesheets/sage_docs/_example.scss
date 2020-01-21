@@ -1,4 +1,7 @@
-.example {	
+.example {
+  &-title {
+    text-transform: capitalize;
+  }	
   &-label {	
     margin: sage-spacing() 0;	
   }	

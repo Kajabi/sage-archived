@@ -4,8 +4,8 @@ module Sage
     # Lists out all the available sage components
     def sage_components
       [
-        { title: "Banner", path: "banner" },
-        { title: "Panel", path: "panel" },
+        { title: "banner" },
+        { title: "panel" },
       ]
     end
     

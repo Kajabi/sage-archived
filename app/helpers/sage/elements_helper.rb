@@ -4,7 +4,7 @@ module Sage
     # Lists out all the available sage elements
     def sage_elements
       [
-        { title: "Button", path: "button" },
+        { title: "button" },
       ]
     end
 

@@ -9,7 +9,7 @@ class SageModuleGenerator < Rails::Generators::NamedBase
       "#{match}\n@import \"sage/patterns/modules/#{file_name}\";"
     end
     gsub_file 'app/helpers/sage/modules_helper.rb', /(#{Regexp.escape(helper_line)})/mi do |match|
-      "#{match}\n        { title: \"#{file_name}\", path: \"#{file_name}\" },"
+      "#{match}\n        { title: \"#{file_name}\" },"
     end
   end
 end
