@@ -1,0 +1,11 @@
+/*------------------------------------*/
+/*-- <%= file_name %> component */
+/*------------------------------------*/
+
+.sage-<%= file_name %> {
+  
+  /* <%= file_name %> responsive styles */
+  @media (max-width: sage-breakpoint()) {
+    
+  }
+}
