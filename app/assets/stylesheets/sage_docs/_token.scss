@@ -53,4 +53,5 @@
   @each $name, $token in $sage-spacings {
     &-spacing-#{$name}:after { content: "#{$token}" }
   }
+  // Generator Tokens
 }
