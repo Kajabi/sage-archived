@@ -1,6 +1,6 @@
 class SagePageGenerator < Rails::Generators::NamedBase
   source_root File.expand_path('../templates', __FILE__)
-  def create_sage_component
+  def create_sage_page
     
     # Page Variables
     page_file = "app/views/sage/pages/#{file_name}.html.erb"
@@ -9,7 +9,7 @@ class SagePageGenerator < Rails::Generators::NamedBase
     page_include_file_routes = "config/routes.rb"
     page_include_line_routes = "do"
     # Create Page File
-    template "page.html.erb", markup_file
+    template "page.html.erb", page_file
     # Include Page File In Controller
     gsub_file page_include_file_controller, /(#{Regexp.escape(page_include_line_controller)})/mi do |match|
       "#{match}\n    def #{file_name}\n    end"
