@@ -53,14 +53,4 @@
   @each $name, $token in $sage-spacings {
     &-spacing-#{$name}:after { content: "#{$token}" }
   }
-  
-  // Generator
-  $generator-tokens: ;
-
-  @each $generator-token in $generator-tokens {
-    &-#{$generator-token}:after { content: "#{sage-#{$generator-token}()}" }
-    @each $name, $token in $sage-#{$generator-token}s {
-      &-#{$generator-token}-#{$name}:after { content: "#{$token}" }
-    }
-  }
 }

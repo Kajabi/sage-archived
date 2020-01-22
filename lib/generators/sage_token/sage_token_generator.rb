@@ -21,13 +21,5 @@ class SageTokenGenerator < Rails::Generators::NamedBase
       "#{match}\n        {\n          category: \"#{file_name}\",\n          tokens: [\n            { name: \"default\" },\n          ]\n        },"
     end
 
-    # Documentation Style Variables
-    doc_include_file = "app/assets/stylesheets/sage_docs/_token.scss"
-    doc_include_line = "$generator-tokens:"
-    # Include Documentation Style
-    gsub_file doc_include_file, /(#{Regexp.escape(doc_include_line)})/mi do |match|
-    "#{match} #{file_name},"
-    end
-
   end
 end
