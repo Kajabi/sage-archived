@@ -23,10 +23,10 @@ class SageTokenGenerator < Rails::Generators::NamedBase
 
     # Documentation Style Variables
     doc_include_file = "app/assets/stylesheets/sage_docs/_token.scss"
-    doc_include_line = "// Generator Tokens"
+    doc_include_line = "$generator-tokens:"
     # Include Documentation Style
     gsub_file doc_include_file, /(#{Regexp.escape(doc_include_line)})/mi do |match|
-      "#{match}\n  &-spacing:after { content: \"#{sage-spacing()}\" }\n  @each $name, $token in $sage-spacings {\n    &-spacing-#{$name}:after { content: \"#{$token}\" }\n  }"
+    "#{match} #{file_name},"
     end
 
   end
