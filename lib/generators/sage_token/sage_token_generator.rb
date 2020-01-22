@@ -15,12 +15,10 @@ class SageTokenGenerator < Rails::Generators::NamedBase
 
     # Markup Variables
     markup_include_file = "app/helpers/sage/tokens_helper.rb"
-    markup_include_line = "def sage_tokens
-    [
-      {"
+    markup_include_line = "def sage_tokens\n      ["
     # Include Markup File
     gsub_file markup_include_file, /(#{Regexp.escape(markup_include_line)})/mi do |match|
-      "#{match}\n Hello World"
+      "#{match}\n        {\n          category: \"#{file_name}\",\n          tokens: [\n            { name: \"default\" },\n          ]\n        },"
     end
 
   end
