@@ -2,12 +2,6 @@ module Sage
   module TokensHelper
     def sage_tokens
       [
-        {
-          category: "height",
-          tokens: [
-            { name: "default" },
-          ]
-        },
         { 
           category: "border", 
           tokens: [
