@@ -47,8 +47,6 @@ module Sage
 
     def element
       @title = params[:title]
-    def generators
-    end
     end
 
     def components
@@ -56,8 +54,6 @@ module Sage
 
     def component
       @title = params[:title]
-    def generators
-    end
     end 
 
     def modules
