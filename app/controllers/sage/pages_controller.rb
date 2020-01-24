@@ -62,5 +62,7 @@ module Sage
     def utilities
     end
 
+    # Generator Pages
+
   end
 end

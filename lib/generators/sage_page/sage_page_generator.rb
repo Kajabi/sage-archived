@@ -5,7 +5,7 @@ class SagePageGenerator < Rails::Generators::NamedBase
     # Page Variables
     page_file = "app/views/sage/pages/#{file_name}.html.erb"
     page_include_file_controller = "app/controllers/sage/pages_controller.rb"
-    page_include_line_controller = "]"
+    page_include_line_controller = "# Generator Pages"
     page_include_file_routes = "config/routes.rb"
     page_include_line_routes = "do"
     # Create Page File
