@@ -21,4 +21,31 @@
   &__footer {
     padding: sage-spacing();
   }
+  &__checkbox {
+    display: none;
+  }
+  &__toggle {
+    display: none;
+  }
+  @media (max-width: sage-breakpoint()) {
+    margin-left: - sage-sidebar();
+    &__toggle {
+      margin-right: sage-spacing();
+      width: sage-spacing();
+      display: block;
+      margin-bottom: 0;
+      span {
+        display: block;
+        height: 2px;
+        margin: 6px 0;
+        background: #ffffff;
+
+      }
+    }
+    &__checkbox {
+      &:checked ~ .sage-sidebar {
+        margin-left: 0;
+      }
+    }
+  }
 }
