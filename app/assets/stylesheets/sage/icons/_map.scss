@@ -1,0 +1,298 @@
+/*------------------------
+	icons
+-------------------------*/
+@function unicode($str) {
+  @return unquote("\"\\#{$str}\"");
+}
+
+$sage-icon-menu-8: unicode(ea02);
+$sage-icon-launch-app: unicode(ea03);
+$sage-icon-zoom: unicode(ea04);
+$sage-icon-pc: unicode(ea05);
+$sage-icon-tag-cut: unicode(ea06);
+$sage-icon-megaphone: unicode(ea07);
+$sage-icon-circle-10: unicode(ea08);
+$sage-icon-gear: unicode(ea09);
+$sage-icon-pen: unicode(ea0a);
+$sage-icon-file-content: unicode(ea0b);
+$sage-icon-image: unicode(ea0c);
+$sage-icon-folder-15: unicode(ea0d);
+$sage-icon-users-mm: unicode(ea0e);
+$sage-icon-g-chart: unicode(ea0f);
+$sage-icon-preview: unicode(ea10);
+$sage-icon-b-preview: unicode(ea11);
+$sage-icon-comment: unicode(ea12);
+$sage-icon-b-comment: unicode(ea13);
+$sage-icon-e-add: unicode(ea14);
+$sage-icon-e-remove: unicode(ea15);
+$sage-icon-menu-5: unicode(ea16);
+$sage-icon-url: unicode(ea17);
+$sage-icon-delete-forever: unicode(ea18);
+$sage-icon-shopping-cart: unicode(ea19);
+$sage-icon-delete-key: unicode(ea1a);
+$sage-icon-delete-x: unicode(ea1b);
+$sage-icon-send-message: unicode(ea1c);
+$sage-icon-mail: unicode(ea1d);
+$sage-icon-loop-82: unicode(ea1e);
+$sage-icon-restore: unicode(ea1f);
+$sage-icon-clock: unicode(ea20);
+$sage-icon-calendar-date: unicode(ea21);
+$sage-icon-opening-times: unicode(ea22);
+$sage-icon-drop: unicode(ea23);
+$sage-icon-lock: unicode(ea24);
+$sage-icon-single-03: unicode(ea25);
+$sage-icon-a-star: unicode(ea26);
+$sage-icon-favorite: unicode(ea27);
+$sage-icon-star-rate: unicode(ea28);
+$sage-icon-check: unicode(ea29);
+$sage-icon-c-check: unicode(ea2a);
+$sage-icon-c-remove: unicode(ea2b);
+$sage-icon-c-add: unicode(ea2c);
+$sage-icon-c-delete: unicode(ea2d);
+$sage-icon-c-info: unicode(ea2e);
+$sage-icon-c-question: unicode(ea2f);
+$sage-icon-t-warning: unicode(ea30);
+$sage-icon-data-download: unicode(ea31);
+$sage-icon-enlarge-vertical: unicode(ea32);
+$sage-icon-enlarge: unicode(ea33);
+$sage-icon-arrow-up: unicode(ea34);
+$sage-icon-arrow-right: unicode(ea35);
+$sage-icon-arrow-left: unicode(ea36);
+$sage-icon-arrow-down: unicode(ea37);
+$sage-icon-up-arrow: unicode(ea39);
+$sage-icon-right-arrow: unicode(ea3a);
+$sage-icon-down-arrow: unicode(ea3b);
+$sage-icon-left-arrow: unicode(ea3c);
+
+.sage-icon-menu-8::before {
+  content: $sage-icon-menu-8;
+}
+
+.sage-icon-launch-app::before {
+  content: $sage-icon-launch-app;
+}
+
+.sage-icon-zoom::before {
+  content: $sage-icon-zoom;
+}
+
+.sage-icon-pc::before {
+  content: $sage-icon-pc;
+}
+
+.sage-icon-tag-cut::before {
+  content: $sage-icon-tag-cut;
+}
+
+.sage-icon-megaphone::before {
+  content: $sage-icon-megaphone;
+}
+
+.sage-icon-circle-10::before {
+  content: $sage-icon-circle-10;
+}
+
+.sage-icon-gear::before {
+  content: $sage-icon-gear;
+}
+
+.sage-icon-pen::before {
+  content: $sage-icon-pen;
+}
+
+.sage-icon-file-content::before {
+  content: $sage-icon-file-content;
+}
+
+.sage-icon-image::before {
+  content: $sage-icon-image;
+}
+
+.sage-icon-folder-15::before {
+  content: $sage-icon-folder-15;
+}
+
+.sage-icon-users-mm::before {
+  content: $sage-icon-users-mm;
+}
+
+.sage-icon-g-chart::before {
+  content: $sage-icon-g-chart;
+}
+
+.sage-icon-preview::before {
+  content: $sage-icon-preview;
+}
+
+.sage-icon-b-preview::before {
+  content: $sage-icon-b-preview;
+}
+
+.sage-icon-comment::before {
+  content: $sage-icon-comment;
+}
+
+.sage-icon-b-comment::before {
+  content: $sage-icon-b-comment;
+}
+
+.sage-icon-e-add::before {
+  content: $sage-icon-e-add;
+}
+
+.sage-icon-e-remove::before {
+  content: $sage-icon-e-remove;
+}
+
+.sage-icon-menu-5::before {
+  content: $sage-icon-menu-5;
+}
+
+.sage-icon-url::before {
+  content: $sage-icon-url;
+}
+
+.sage-icon-delete-forever::before {
+  content: $sage-icon-delete-forever;
+}
+
+.sage-icon-shopping-cart::before {
+  content: $sage-icon-shopping-cart;
+}
+
+.sage-icon-delete-key::before {
+  content: $sage-icon-delete-key;
+}
+
+.sage-icon-delete-x::before {
+  content: $sage-icon-delete-x;
+}
+
+.sage-icon-send-message::before {
+  content: $sage-icon-send-message;
+}
+
+.sage-icon-mail::before {
+  content: $sage-icon-mail;
+}
+
+.sage-icon-loop-82::before {
+  content: $sage-icon-loop-82;
+}
+
+.sage-icon-restore::before {
+  content: $sage-icon-restore;
+}
+
+.sage-icon-clock::before {
+  content: $sage-icon-clock;
+}
+
+.sage-icon-calendar-date::before {
+  content: $sage-icon-calendar-date;
+}
+
+.sage-icon-opening-times::before {
+  content: $sage-icon-opening-times;
+}
+
+.sage-icon-drop::before {
+  content: $sage-icon-drop;
+}
+
+.sage-icon-lock::before {
+  content: $sage-icon-lock;
+}
+
+.sage-icon-single-03::before {
+  content: $sage-icon-single-03;
+}
+
+.sage-icon-a-star::before {
+  content: $sage-icon-a-star;
+}
+
+.sage-icon-favorite::before {
+  content: $sage-icon-favorite;
+}
+
+.sage-icon-star-rate::before {
+  content: $sage-icon-star-rate;
+}
+
+.sage-icon-check::before {
+  content: $sage-icon-check;
+}
+
+.sage-icon-c-check::before {
+  content: $sage-icon-c-check;
+}
+
+.sage-icon-c-remove::before {
+  content: $sage-icon-c-remove;
+}
+
+.sage-icon-c-add::before {
+  content: $sage-icon-c-add;
+}
+
+.sage-icon-c-delete::before {
+  content: $sage-icon-c-delete;
+}
+
+.sage-icon-c-info::before {
+  content: $sage-icon-c-info;
+}
+
+.sage-icon-c-question::before {
+  content: $sage-icon-c-question;
+}
+
+.sage-icon-t-warning::before {
+  content: $sage-icon-t-warning;
+}
+
+.sage-icon-data-download::before {
+  content: $sage-icon-data-download;
+}
+
+.sage-icon-enlarge-vertical::before {
+  content: $sage-icon-enlarge-vertical;
+}
+
+.sage-icon-enlarge::before {
+  content: $sage-icon-enlarge;
+}
+
+.sage-icon-arrow-up::before {
+  content: $sage-icon-arrow-up;
+}
+
+.sage-icon-arrow-right::before {
+  content: $sage-icon-arrow-right;
+}
+
+.sage-icon-arrow-left::before {
+  content: $sage-icon-arrow-left;
+}
+
+.sage-icon-arrow-down::before {
+  content: $sage-icon-arrow-down;
+}
+
+.sage-icon-up-arrow::before {
+  content: $sage-icon-up-arrow;
+}
+
+.sage-icon-right-arrow::before {
+  content: $sage-icon-right-arrow;
+}
+
+.sage-icon-down-arrow::before {
+  content: $sage-icon-down-arrow;
+}
+
+.sage-icon-left-arrow::before {
+  content: $sage-icon-left-arrow;
+}
+
