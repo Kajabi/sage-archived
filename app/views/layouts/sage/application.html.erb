@@ -7,10 +7,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body class="sage-page">
-  <%= render "modules/assistant" %>
+  <%= render "assistant" %>
   <div class="sage-stage">
     <input type="checkbox" id="sage-sidebar__toggle" class="sage-sidebar__checkbox" />
-    <%= render "modules/sidebar" %>
+    <%= render "sidebar" %>
     <div class="sage-content">
       <div class="sage-container--sm">
         <%= yield %>
