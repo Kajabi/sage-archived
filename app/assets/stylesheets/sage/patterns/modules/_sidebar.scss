@@ -1,4 +1,5 @@
 .sage-sidebar {
+  @include sage-simple-ease(all);
   width: sage-sidebar();
   background: sage-color(grey, 100);
   border-right: sage-border();
@@ -20,5 +21,40 @@
   }
   &__footer {
     padding: sage-spacing();
+  }
+  &__checkbox {
+    display: none;
+  }
+  &__toggle {
+    display: none;
+  }
+  @media (max-width: sage-breakpoint()) {
+    margin-left: - sage-sidebar();
+    &__toggle {
+      margin-right: sage-spacing();
+      width: sage-spacing();
+      display: block;
+      margin-bottom: 0;
+      span {
+        display: block;
+        height: 2px;
+        margin: 6px 0;
+        background: #ffffff;
+        &:nth-child(1) {
+          width: 75%;
+        }
+        &:nth-child(2) {
+          width: 100%;
+        }
+        &:nth-child(3) {
+          width: 50%;
+        }
+      }
+    }
+    &__checkbox {
+      &:checked ~ .sage-sidebar {
+        margin-left: 0;
+      }
+    }
   }
 }
