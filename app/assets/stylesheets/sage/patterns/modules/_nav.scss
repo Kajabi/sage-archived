@@ -3,21 +3,26 @@
     display: flex;
     align-items: center;
     margin: sage-spacing(xs) 0;
-    font-weight: sage-font-weight(simibold);
-    color: sage-color(charcoal, 500);
+    font-weight: 500;
+    color: sage-color(charcoal, 400);
     &:hover {
-      color: sage-color(charcoal, 400);
+      color: sage-color(charcoal, 500);
+      i {
+        color: sage-color(primary);
+      }
     }
     &--sub {
       @extend .sage-nav__link;
       margin: sage-spacing(xs) sage-spacing(lg);
       font-size: sage-font-size(sm);
-      font-weight: sage-font-weight();
+      &:hover {
+        color: sage-color(primary);
+      }
     }
     i {
       font-size: sage-spacing();
       margin-right: sage-spacing(xs);
-      color: sage-color(charcoal);
+      color: sage-color(grey, 500);
     }
   }
 }
