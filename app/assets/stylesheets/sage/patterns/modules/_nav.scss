@@ -15,9 +15,9 @@
       font-weight: sage-font-weight();
     }
     i {
-      font-size: sage-font-size(2xl);
+      font-size: sage-spacing();
       margin-right: sage-spacing(xs);
-      color: sage-color(charcoal, 400);
+      color: sage-color(charcoal);
     }
   }
 }
