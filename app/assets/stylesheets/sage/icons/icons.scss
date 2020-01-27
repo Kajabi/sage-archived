@@ -54,39 +54,6 @@ $sage-icon-li-margin-right:  0.4em !default;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/*------------------------
-  change icon size
--------------------------*/
-
-/* relative units */
-.sage-icon-sm {
-  font-size: 0.8em;
-}
-.sage-icon-lg {
-  font-size: 1.2em;
-}
-/* absolute units */
-.sage-icon-16 {
-  font-size: 16px;
-}
-.sage-icon-32 {
-  font-size: 32px;
-}
-
-/*----------------------------------
-  add a square/circle background
------------------------------------*/
-
-.sage-icon-bg-square,
-.sage-icon-bg-circle {
-  padding: 0.35em;
-  background-color: $sage-icon-background-color;
-}
-
-.sage-icon-bg-circle {
-  border-radius: 50%;
-}
-
 /*------------------------------------
   use icons as list item markers
 -------------------------------------*/
