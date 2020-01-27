@@ -1,0 +1,26 @@
+.sage-icon {
+  &__wrapper {
+    padding-left: sage-spacing();
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    li {
+      flex: 1;
+      min-width: 30%;
+      margin-bottom: sage-spacing();
+      margin-right: sage-spacing();
+      padding: sage-spacing();
+      border: sage-border();
+      text-align: center;
+      i {
+        font-size: sage-font-size(xl);
+      }
+      p {
+        font-size: sage-font-size(sm);
+        margin-bottom: 0;
+        white-space: nowrap;
+        font-weight: sage-font-weight(semibold);
+      }
+    }
+  }
+}
