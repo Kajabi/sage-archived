@@ -1,0 +1,12 @@
+/*------------------------------------*/
+/*-- <%= file_name %> tokens */
+/*------------------------------------*/
+
+@function sage-<%= file_name %>($key: default) {
+  $value: map-get($sage-<%= file_name %>s, $key);
+  @return $value;
+}
+
+$sage-<%= file_name %>s: (
+  default: #000000,
+);
