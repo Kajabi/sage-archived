@@ -3,7 +3,7 @@
     <div class="sage-media-body">
       <h3 class="example-title"><%= title %></h3>
     </div>
-    <%= link_to "View", pages_element_url(:title => title ), target: "_blank" %>
+    <%= link_to "View", pages_element_url(title: title), target: "_blank" %>
   </div>
   <h6 class="example-label">Preview</h6>
   <%= render "example_elements/#{title}/preview" %>
