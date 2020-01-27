@@ -14,7 +14,7 @@ module Sage
 
     # Sorts available modules based on alphabet
     def sorted_sage_modules
-      sage_modules.sort_by { |h| h.first }
+      sage_modules.sort_by { |h| h[:title] }
     end
 
   end

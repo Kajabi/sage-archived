@@ -11,7 +11,7 @@ module Sage
     
     # Sorts available components based on alphabet
     def sorted_sage_components
-      sage_components.sort_by { |h| h.first }
+      sage_components.sort_by { |h| h[:title] }
     end
 
   end

@@ -10,7 +10,7 @@ module Sage
 
     # Sorts available elements based on alphabet
     def sorted_sage_emements
-      sage_elements.sort_by { |h| h.first }
+      sage_elements.sort_by { |h| h[:title] }
     end
 
   end
