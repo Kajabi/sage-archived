@@ -16,7 +16,7 @@ class SageComponentGenerator < Rails::Generators::NamedBase
     # Markup Variables
     markup_file = "app/views/example_components/#{file_name}/_preview.html.erb"
     markup_include_file = "app/helpers/sage/components_helper.rb"
-    markup_include_line = "["
+    markup_include_line = "# Sage Generated Components"
     # Create Markup File
     template "markup.html.erb", markup_file
     # Include Markup File
