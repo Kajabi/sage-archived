@@ -1,7 +1,7 @@
 <h1>Welcome to Sage</h1>
 <p>The Sage Design System (SDS) is our single source of truth, providing everything you need to build great products for our customers. It is the culmination of designers and developers working together to give teams the ability to ship high-quality products faster.</p>
 <div class="sage-panel">
-  <%= image_tag("sage/sage_illustration.png")%><br><br>
+  <%= image_tag("sage/sage_illustration.png", class: "sage-panel__img")%>
   <h2>Why a design system?</h2>
   <p>Design systems enable faster design iteration, team and product scalability, and programmatic thinking.</p>
   <p>This tool keeps our products consistent for users, and makes it easy for designers, PMs and engineers to build interfaces without writing CSS or JS. This also makes it possible for our UX Developers to quickly create usable, product ready, interfaces without needing pixel perfect design comps from our Design Team.</p>
@@ -10,7 +10,7 @@
   <p>We think of our approach to UI at Kajabi in this way: We default to using Rails Components and a classic Rails approach to most problems and move to React where it counts.</p>
   <p>Rails does many things very well and gives us the ability to move quickly and solve complex problems with very simple, tried and true, code solutions. With that said, sometimes we come across a problem that we want to solve that the standard rails approach will just not be enough ( Think complex interactions with many versions of state ). In this case we move to React as our default approach to solving complex, Javascript heavy problems.</p>
   <p>Because our system contains two different approaches to UI creation, we utilize a SCSS Design System to provide the styles to both types of components (Think Bootstrap, but customized for our products). Our Design System provides the styles for the core components that make up the UI of our product.</p>
-  <%= image_tag("sage/sage_structure.png")%>
+  <%= image_tag("sage/sage_structure.png", class: "sage-panel__img")%>
   <h2>How it is used</h2>
   <p>The Sage Design System is kept in a separate repo and served to the main Kajabi app as a version controlled gem that the different component libraries can consume.</p>
   <p>This provides a healthy amount of friction between the system and the components that are consuming it. With that friction we are able to better maintain consistency and limit code and component duplication.</p>
