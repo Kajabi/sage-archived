@@ -4,6 +4,7 @@ module Sage
     # Lists out all the available sage modules
     def sage_modules
       [
+        # Sage Generated Modules
         { title: "assistant" },
         { title: "content" },
         { title: "nav" },
