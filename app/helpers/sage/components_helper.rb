@@ -5,6 +5,7 @@ module Sage
     def sage_components
       [
         # Sage Generated Components
+        { title: "form_section" },
         { title: "tabs" },
         { title: "banner" },
         { title: "panel" },
