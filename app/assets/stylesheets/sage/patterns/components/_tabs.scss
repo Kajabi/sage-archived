@@ -3,7 +3,32 @@
 /*------------------------------------*/
 
 .sage-tabs {
-  
+  margin-bottom: sage-spacing();
+  &__tab {
+    color: sage-color(charcoal,100);
+    margin-right: sage-spacing();
+    &--active {
+      color: sage-color(charcoal,500);
+      font-weight: sage-font-weight(semibold);
+      padding-bottom: sage-spacing(xs);
+      display: inline-block;
+      position: relative;
+      &:after {
+        background: sage-color(primary);
+        border-radius: sage-border(radius);
+        content: "";
+        position: absolute;
+        display: inline-block;
+        height: 4px;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+      }
+    }
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
   /* tabs responsive styles */
   @media (max-width: sage-breakpoint()) {
     
