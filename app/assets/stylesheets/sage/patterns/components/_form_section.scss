@@ -7,6 +7,12 @@
   &__title {
     margin-bottom: sage-spacing(xs);
   }
+  &__subtitle {
+    color: sage-color(charcoal, 200);
+  }
+  &__panel {
+    @extend .sage-panel;
+  }
   /* form_section responsive styles */
   @media (max-width: sage-breakpoint()) {
     
