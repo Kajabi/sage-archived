@@ -3,7 +3,10 @@
 /*------------------------------------*/
 
 .sage-form_section {
-  
+  margin-bottom: sage-spacing();
+  &__title {
+    margin-bottom: sage-spacing(xs);
+  }
   /* form_section responsive styles */
   @media (max-width: sage-breakpoint()) {
     
