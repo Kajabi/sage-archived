@@ -3,12 +3,19 @@
 /*------------------------------------*/
 
 .sage-form_section {
+  @extend .sage-row;
   margin-bottom: sage-spacing();
+  &__info {
+    @extend .sage-col;
+  }
   &__title {
     margin-bottom: sage-spacing(xs);
   }
   &__subtitle {
     color: sage-color(charcoal, 200);
+  }
+  &__content {
+    @extend .sage-col--8;
   }
   &__panel {
     @extend .sage-panel;
