@@ -1,12 +1,12 @@
 .example {
-  &-title {
+  &__title {
     text-transform: capitalize;
   }	
-  &-link {
+  &__ink {
     color: sage-color(charcoal, 500);
     font-size: sage-font-size(lg);
   }
-  &-label {	
+  &__label {	
     margin: sage-spacing() 0;	
     padding: sage-spacing(xs) sage-spacing();
     background: #fff;

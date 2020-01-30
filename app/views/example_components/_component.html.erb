@@ -1,14 +1,18 @@
 <div class="sage-panel">
   <div class="sage-media">
     <div class="sage-media-body">
-      <h3 class="example-title"><%= title %></h3>
+      <h3 class="example__title"><%= title %></h3>
     </div>
-    <%= link_to pages_component_url(title: title), target: "_blank", class: "example-link" do %>
+    <%= link_to pages_component_url(title: title), target: "_blank", class: "example__link" do %>
       <i class="sage-icon sage-icon-launch-app"></i>
     <% end %>
   </div>
-  <h6 class="example-label">Preview</h6>
-  <%= render "example_components/#{title}/preview" %>
-  <h6 class="example-label">Code</h6>
-  <pre class="prettyprint"><code><xmp><%= render "example_components/#{title}/preview" %></xmp></code></pre>
+  <h6 class="example__label">Preview</h6>
+  <div class="example__preview">
+    <%= render "example_components/#{title}/preview" %>
+  </div>
+  <h6 class="example__label">Code</h6>
+  <div class="example__code">
+    <pre class="prettyprint"><code><xmp><%= render "example_components/#{title}/preview" %></xmp></code></pre>
+  </div>
 </div>
