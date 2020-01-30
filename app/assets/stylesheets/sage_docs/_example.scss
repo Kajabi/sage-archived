@@ -4,5 +4,13 @@
   }	
   &-label {	
     margin: sage-spacing() 0;	
+    padding: sage-spacing(xs) sage-spacing();
+    background: #fff;
+    box-shadow: sage-shadow();
+    color: sage-color(charcoal, 500);
+    display: inline-block;
+    border-radius: 20px;
+    min-width: 100px;
+    text-align: center;
   }	
 }
