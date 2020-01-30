@@ -2,6 +2,10 @@
   &-title {
     text-transform: capitalize;
   }	
+  &-link {
+    color: sage-color(charcoal, 500);
+    font-size: sage-font-size(lg);
+  }
   &-label {	
     margin: sage-spacing() 0;	
     padding: sage-spacing(xs) sage-spacing();

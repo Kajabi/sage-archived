@@ -3,7 +3,9 @@
     <div class="sage-media-body">
       <h3 class="example-title"><%= title %></h3>
     </div>
-    <%= link_to "View", pages_component_url(title: title), target: "_blank" %>
+    <%= link_to pages_component_url(title: title), target: "_blank", class: "example-link" do %>
+      <i class="sage-icon sage-icon-launch-app"></i>
+    <% end %>
   </div>
   <h6 class="example-label">Preview</h6>
   <%= render "example_components/#{title}/preview" %>
