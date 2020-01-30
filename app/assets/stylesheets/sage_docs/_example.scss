@@ -17,4 +17,13 @@
     min-width: 100px;
     text-align: center;
   }	
+  &__preview {
+    margin: sage-spacing() 0;
+  }
+  &__code {
+    margin: sage-spacing() 0;
+    pre.prettyprint {
+      margin-bottom: 0;
+    }
+  }
 }
