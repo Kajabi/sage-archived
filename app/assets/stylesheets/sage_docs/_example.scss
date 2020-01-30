@@ -1,8 +1,29 @@
 .example {
-  &-title {
+  &__title {
     text-transform: capitalize;
   }	
-  &-label {	
+  &__ink {
+    color: sage-color(charcoal, 500);
+    font-size: sage-font-size(lg);
+  }
+  &__label {	
     margin: sage-spacing() 0;	
+    padding: sage-spacing(xs) sage-spacing();
+    background: #fff;
+    box-shadow: sage-shadow();
+    color: sage-color(charcoal, 500);
+    display: inline-block;
+    border-radius: 20px;
+    min-width: 100px;
+    text-align: center;
   }	
+  &__preview {
+    margin: sage-spacing() 0;
+  }
+  &__code {
+    margin: sage-spacing() 0;
+    pre.prettyprint {
+      margin-bottom: 0;
+    }
+  }
 }
