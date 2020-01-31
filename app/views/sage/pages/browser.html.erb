@@ -1,5 +1,6 @@
 <%= content_for :heading do %>
-  
+  <h1>Browser support</h1>
+  <p>Guidelines that explain which browsers the design system is optimized for</p>
 <% end %>
 <%= content_for :quick_links do %>
   <div class="quick-links">
@@ -9,19 +10,18 @@
         <h5 class="quick-links__heading">Contents</h5>
       </div>
     </div>
-    <a href="##" class="quick-links__link">######</a>
+    <a href="#desktop" class="quick-links__link">Desktop Browsers</a>
+    <a href="#mobile" class="quick-links__link">Mobile Browsers</a>
   </div>
 <% end %>
-<h1>Browser support</h1>
-<p>Guidelines that explain which browsers the design system is optimized for</p>
 <div class="sage-panel">
   <p>We do our best to support as many of our customers as possible because we know that they come from all walks of life and a large variety of different areas across the world. With core functionality we do our best to ensure that there are no critical roadblocks for users of all browsers. With that said we use the following guidelines to determine what browsers we officially support and what we do our best to accommodate. </p>
-  <h2>Desktop Browsers</h2>
+  <h3 id="desktop">Desktop Browsers</h3>
   <p><strong>Google Chrome</strong> ( latest three releases for Mac and PC )</p>
   <p><strong>Firefox</strong> ( latest three releases for Mac and PC )</p>
   <p><strong>Safari</strong> ( latest two releases for Mac )</p>
   <p><strong>Microsoft Edge</strong> ( latest two releases for PC )</p>
-  <h2>Mobile Browsers</h2>
+  <h3 id="mobile">Mobile Browsers</h3>
   <p><strong>Mobile Safari</strong> ( latest two releases for iOS )</p>
   <p><strong>Chrome Mobile</strong> ( latest three releases for Android and iOS )</p>
   <p><strong>Samsung Internet</strong> ( latest two releases for Android )</p>

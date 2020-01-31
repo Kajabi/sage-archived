@@ -1,5 +1,5 @@
 <%= content_for :heading do %>
-  
+  <h1>Containers</h1> 
 <% end %>
 <%= content_for :quick_links do %>
   <div class="quick-links">
@@ -9,20 +9,21 @@
         <h5 class="quick-links__heading">Contents</h5>
       </div>
     </div>
-    <a href="##" class="quick-links__link">######</a>
+    <a href="#standard" class="quick-links__link">Standard Container</a>
+    <a href="#small" class="quick-links__link">Small Container</a>
+    <a href="#full" class="quick-links__link">Full Width Container</a>
   </div>
 <% end %>
-<h1>Containers</h1>
 <div class="sage-panel">
-  <h3>Standard Container</h3>
+  <h3 id="standard">Standard Container</h3>
   <pre class="prettyprint"><code><xmp><div class="sage-container">
     1200px
   </div></xmp></pre></code>
-  <h3>Small Container</h3>
+  <h3 id="small">Small Container</h3>
   <pre class="prettyprint"><code><xmp><div class="sage-container--sm">
     900px
   </div></xmp></pre></code>
-  <h3>Full Width Container</h3>
+  <h3 id="full">Full Width Container</h3>
   <pre class="prettyprint"><code><xmp><div class="sage-container--fluid">
     100%
   </div></xmp></pre></code>

@@ -1,5 +1,6 @@
 <%= content_for :heading do %>
-  
+  <h1>Components</h1>
+  <p>Components are groups of atoms bonded together and are the smallest fundamental units of a compound. These Components take on their own properties and serve as the backbone of our design systems.</p>
 <% end %>
 <%= content_for :quick_links do %>
   <div class="quick-links">
@@ -9,11 +10,11 @@
         <h5 class="quick-links__heading">Contents</h5>
       </div>
     </div>
-    <a href="##" class="quick-links__link">######</a>
+    <% sorted_sage_components.each do |component| %>
+      <a href="#<%= component[:title] %>" class="quick-links__link"><%= component[:title] %></a>
+    <% end %>
   </div>
 <% end %>
-<h1>Components</h1>
-<p>Components are groups of atoms bonded together and are the smallest fundamental units of a compound. These Components take on their own properties and serve as the backbone of our design systems.</p>
 <% sorted_sage_components.each do |component| %>
   <%= render "example_components/component", title: component[:title] %>
 <% end %>

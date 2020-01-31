@@ -1,5 +1,6 @@
 <%= content_for :heading do %>
-  
+  <h1>Modules</h1>
+  <p>Modules are groups of molecules joined together to form a relatively complex, distinct section of an interface.</p>
 <% end %>
 <%= content_for :quick_links do %>
   <div class="quick-links">
@@ -9,11 +10,11 @@
         <h5 class="quick-links__heading">Contents</h5>
       </div>
     </div>
-    <a href="##" class="quick-links__link">######</a>
+    <% sorted_sage_modules.each do |example_module| %>
+      <a href="#<%= example_module[:title] %>" class="quick-links__link"><%= example_module[:title] %></a>
+    <% end %>
   </div>
 <% end %>
-<h1>Modules</h1>
-<p>Modules are groups of molecules joined together to form a relatively complex, distinct section of an interface.</p>
 <% sorted_sage_modules.each do |example_module| %>
   <%= render "example_modules/module", title: example_module[:title] %>
 <% end %>
