@@ -1,0 +1,17 @@
+.quick-links {
+  &__icon {
+    margin-right: sage-spacing(xs);
+    color: sage-color(charcoal, 200);
+  }
+  &__heading {
+    margin-bottom: sage-spacing(sm);
+    color: sage-color(charcoal, 200);
+  }
+  &__link {
+    font-size: sage-font-size(sm);
+    color: sage-color(charcoal,100);
+    margin-bottom: sage-spacing(xs);
+    padding-left: sage-spacing();
+    display: block;
+  }
+}
