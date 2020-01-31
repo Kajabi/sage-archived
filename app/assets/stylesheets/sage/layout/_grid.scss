@@ -7,6 +7,7 @@
 }
 .sage-col {
   flex-basis: 100%;
+  max-width: 100%;
   padding: 0 sage-spacing(sm);
   @for $sage-i from 1 through 12 {
     &--#{$sage-i} {
