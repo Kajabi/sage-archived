@@ -12,8 +12,20 @@
     <input type="checkbox" id="sage-sidebar__toggle" class="sage-sidebar__checkbox" />
     <%= render "sidebar" %>
     <div class="sage-content">
-      <div class="sage-container--sm">
-        <%= yield %>
+      <div class="sage-container">
+        <div class="sage-row">
+          <div class="sage-col--7">
+            <%= yield :heading %>
+          </div>
+        </div>
+        <div class="sage-row">
+          <div class="sage-col--8">
+            <%= yield %>
+          </div>
+          <div class="sage-col--4">
+            <%= yield :quick_links %>
+          </div>
+        </div>
       </div>
     </div>
   </div>

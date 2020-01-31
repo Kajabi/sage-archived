@@ -1,7 +1,7 @@
 .sage-sidebar {
   @include sage-simple-ease(all);
   width: sage-sidebar();
-  background: sage-color(grey, 100);
+  background: sage-color(grey, 200);
   border-right: sage-border();
   z-index: 999;
   display: flex;

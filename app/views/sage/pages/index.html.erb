@@ -1,17 +1,34 @@
-<h1>Welcome to Sage</h1>
-<p>The Sage Design System (SDS) is our single source of truth, providing everything you need to build great products for our customers. It is the culmination of designers and developers working together to give teams the ability to ship high-quality products faster.</p>
+<%= content_for :heading do %>
+  <h1>Welcome to Sage</h1>
+  <p>The Sage Design System (SDS) is our single source of truth, providing everything you need to build great products for our customers. It is the culmination of designers and developers working together to give teams the ability to ship high-quality products faster.</p>
+<% end %>
+<%= content_for :quick_links do %>
+  <div class="quick-links">
+    <div class="sage-media">
+      <i class="quick-links__icon sage-icon sage-icon-menu-8"></i>
+      <div class="sage-media__body">
+        <h5 class="quick-links__heading">Contents</h5>
+      </div>
+    </div>
+    <a href="#why" class="quick-links__link">Why a design system?</a>
+    <a href="#how_works" class="quick-links__link">How it works</a>
+    <a href="#how_used" class="quick-links__link">How it is used</a>
+    <a href="#how_changed" class="quick-links__link">How it is changed</a>
+    <a href="#how_documented" class="quick-links__link">How it is documented</a>
+  </div>
+<% end %>
 <div class="sage-panel">
   <%= image_tag("sage/sage_illustration.png", class: "sage-panel__img")%>
-  <h2>Why a design system?</h2>
+  <h3 id="why">Why a design system?</h3>
   <p>Design systems enable faster design iteration, team and product scalability, and programmatic thinking.</p>
   <p>This tool keeps our products consistent for users, and makes it easy for designers, PMs and engineers to build interfaces without writing CSS or JS. This also makes it possible for our UX Developers to quickly create usable, product ready, interfaces without needing pixel perfect design comps from our Design Team.</p>
-  <h2>How it works</h2>
+  <h3 id="how_works">How it works</h3>
   <p>The UI of the Kajabi Core application is a combination of Rails Components, React Components and a custom CSS Framework called Sage that applies a uniform style to both.</p>
   <p>We think of our approach to UI at Kajabi in this way: We default to using Rails Components and a classic Rails approach to most problems and move to React where it counts.</p>
   <p>Rails does many things very well and gives us the ability to move quickly and solve complex problems with very simple, tried and true, code solutions. With that said, sometimes we come across a problem that we want to solve that the standard rails approach will just not be enough ( Think complex interactions with many versions of state ). In this case we move to React as our default approach to solving complex, Javascript heavy problems.</p>
   <p>Because our system contains two different approaches to UI creation, we utilize a SCSS Design System to provide the styles to both types of components (Think Bootstrap, but customized for our products). Our Design System provides the styles for the core components that make up the UI of our product.</p>
   <%= image_tag("sage/sage_structure.png", class: "sage-panel__img")%>
-  <h2>How it is used</h2>
+  <h3 id="how_used">How it is used</h3>
   <p>The Sage Design System is kept in a separate repo and served to the main Kajabi app as a version controlled gem that the different component libraries can consume.</p>
   <p>This provides a healthy amount of friction between the system and the components that are consuming it. With that friction we are able to better maintain consistency and limit code and component duplication.</p>
   <p>All System components are prefixed with the sage- prefix. For example a card component in sage looks something like this:</p>
@@ -21,11 +38,11 @@
     &__subtitle { }
   }</xmp></code></pre>
   <p>This prefix approach ensures that the consumer is quickly able to identify that the styles are indeed coming from our external design system and also gives the Sage System Developer the confidence that they can create components without conflict with existing code.</p>
-  <h2>How it is changed</h2>
+  <h3 id="how_changed">How it is changed</h3>
   <p>All UX Developers are encouraged to contribute to Sage but to do so with care and with the collaboration of both other UX Developers and The Product Designers.</p>
   <p>The number one question that should be asked before adding a new component to the system is if there is an existing component that could be utilized to achieve the desired outcome. No components should be added without the explicit request and or buy in of the Product Design team.</p>
   <p>The code review process to contribute to Sage is as thorough if not more thorough as it is to get code into Kajabi-products main repo. This is because components must fight to be included. By design the system should be streamlined to make the overall feel of the application consistent and easy to use.</p>
-  <h2>How it is documented</h2>
+  <h3 id="how_documented">How it is documented</h3>
   <p>Should a change be required it is essential that not just the code of the system be changed but the related documentation that explains how a component can be consumed is also updated to reflect this change.</p>
   <p>The power of the system is only as strong as our teams ability to consume it, so in depth documentation is essential.</p>
 </div>

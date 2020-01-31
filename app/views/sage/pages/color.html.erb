@@ -1,23 +1,46 @@
-<h1>Colors</h1>
-<p>Our color palette is built with a minimal approach to reduce decision fatigue and save time making design decisions. All of our colors and text color combinations meet AA requirements with a 4.5:1 passing grade at the bare minimum.</p>
+<%= content_for :heading do %>
+  <h1>Colors</h1>
+  <p>Our color palette is built with a minimal approach to reduce decision fatigue and save time making design decisions. All of our colors and text color combinations meet AA requirements with a 4.5:1 passing grade at the bare minimum.</p>
+  <hr>
+<% end %>
+<%= content_for :quick_links do %>
+  <div class="quick-links">
+    <div class="sage-media">
+      <i class="quick-links__icon sage-icon sage-icon-menu-8"></i>
+      <div class="sage-media__body">
+        <h5 class="quick-links__heading">Contents</h5>
+      </div>
+    </div>
+    <a href="#primary" class="quick-links__link">How we use color</a>
+    <a href="#primary" class="quick-links__link">Primary</a>
+    <a href="#neutral" class="quick-links__link">Neutrals</a>
+    <a href="#grey" class="quick-links__link">Grey</a>
+    <a href="#charcoal" class="quick-links__link">Charcoal</a>
+    <a href="#purple" class="quick-links__link">Purple</a>
+    <a href="#sage" class="quick-links__link">Sage</a>
+    <a href="#yellow" class="quick-links__link">Yellow</a>
+    <a href="#orange" class="quick-links__link">Orange</a>
+    <a href="#red" class="quick-links__link">Red</a>
+  </div>
+<% end %>
+<h2 id="how">How we use color</h2>
 <p>You will notice pure black is not used at all as a text color. Instead, we rely on 400 for our darkest text color value. Our default text color is sage-color(charcoal, 400). To achive more depth use 300 to 400 shades for text on top of lighter background colors using 100 to 200 for their fill. You can also use 100 to 200 as the text color on darker backgrounds using from 300 to 400 for their fill. Pure white is used as a text color when the lightest shade (100) of a color will not pass color contrast tests. At the moment, this only occurs on the 300 shades of purple, primary, and red.</p>
-<hr>
-<h2>Primary</h2>
+<h2 id="primary">Primary</h2>
 <p>These are the splashes of color that appear the most in Kajabi’s UI, and are the ones that determine the overall "look" of the app. Use these for things like primary actions, links, navigation items, icons, accent borders, or text we want to emphasize.</p>
 <div class="sage-panel">
   <%= render "color_values", color: "primary"%>
 </div>
-<h2>Neutrals</h2>
+<h2 id="neutral">Neutrals</h2>
 <p>These are the colors we will use the most and will make up the majority of Kajabi’s UI.<br>
 Use them for most of our text, backgrounds, and borders, as well as for things like alternative buttons and links.</p>
 <div class="sage-panel">
   <div class="sage-row">
     <div class="sage-col">
-      <h3>Grey</h3>
+      <h3 id="grey">Grey</h3>
       <%= render "color_values", color: "grey"%>
     </div>
     <div class="sage-col">
-      <h3>Charcoal</h3>
+      <h3 id="charcoal">Charcoal</h3>
       <%= render "color_values", color: "charcoal"%>
     </div>
   </div>
@@ -27,27 +50,27 @@ Use them for most of our text, backgrounds, and borders, as well as for things l
 <div class="sage-panel">
   <div class="sage-row">
     <div class="sage-col">
-      <h3>Purple</h3>
+      <h3 id="purple">Purple</h3>
       <%= render "color_values", color: "purple"%>
     </div>
     <div class="sage-col">
-      <h3>Sage</h3>
+      <h3 id="sage">Sage</h3>
       <%= render "color_values", color: "sage"%>
     </div>
   </div>
   <div class="sage-row">
     <div class="sage-col">
-      <h3>Yellow</h3>
+      <h3 id="yellow">Yellow</h3>
       <%= render "color_values", color: "yellow"%>
     </div>
     <div class="sage-col">
-      <h3>Orange</h3>
+      <h3 id="orange">Orange</h3>
       <%= render "color_values", color: "orange"%>
     </div>
   </div>
   <div class="sage-row">
     <div class="sage-col--6">
-      <h3>Red</h3>
+      <h3 id="red">Red</h3>
       <%= render "color_values", color: "red"%>
     </div>
   </div>

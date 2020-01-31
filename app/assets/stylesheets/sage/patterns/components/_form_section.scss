@@ -6,7 +6,7 @@
   @extend .sage-row;
   margin-bottom: sage-spacing();
   &__info {
-    @extend .sage-col;
+    @extend .sage-col--4;
   }
   &__title {
     margin-bottom: sage-spacing(xs);

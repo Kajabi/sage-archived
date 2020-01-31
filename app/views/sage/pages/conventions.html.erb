@@ -1,11 +1,30 @@
-<h1>Code Conventions</h1>
-<p>Guidelines around how we and why we structure our SCSS the way we do.</p>    
+<%= content_for :heading do %>
+  <h1>Code Conventions</h1>
+  <p>Guidelines around how we and why we structure our SCSS the way we do.</p>
+<% end %>
+<%= content_for :quick_links do %>
+  <div class="quick-links">
+    <div class="sage-media">
+      <i class="quick-links__icon sage-icon sage-icon-menu-8"></i>
+      <div class="sage-media__body">
+        <h5 class="quick-links__heading">Contents</h5>
+      </div>
+    </div>
+    <a href="#core" class="quick-links__link">Core Concepts</a>
+    <a href="#global" class="quick-links__link">Global Namespace</a>
+    <a href="#tokens" class="quick-links__link">Design Tokens</a>
+    <a href="#parent" class="quick-links__link">Parent Selectors</a>
+    <a href="#media" class="quick-links__link">Media Queries</a>
+    <a href="#utilities" class="quick-links__link">Utilities</a>
+  </div>
+<% end %>    
 <div class="sage-panel">
+  <h3 id="core">Core Concepts</h3>
   <p><strong>Make it modular</strong> –  There should be clear separation between components. When someone goes to work on a component there should be no confusion what files they should be editing. </p>
   <p><strong>Legibility is key</strong> – Developers should be able to understand CSS code at a glance and understand the purpose of any given selector.</p>
   <p><strong>Keep It Simple</strong> – Nesting in Sass can be very convenient, but runs the risk of poor output with overly long selector strings. We follow the Inception Rule and never nested Sass more than three layers deep.</p>
   <p><strong>Avoid conflicts</strong> – Since our design system code is going to be introduced into an app with much legacy styles we need to ensure that our styles do not conflict with other libraries and systems. This is accomplished by the system’s namespacing of class names, described in more detail below.</p>
-  <h2>Global Namespace</h2>
+  <h3 id="global">Global Namespace</h3>
   <p>All classes associated with the design system are prefixed with a global namespace, which is the name of the system followed by a hyphen:</p>
   <pre class="prettyprint"><code><xmp>.sage-</xmp></code></pre>
   <p>For example a Card component in sage looks something like this:</p>
@@ -16,7 +35,7 @@
       &__title { }
       &__subtitle { }
   }</xmp></code></pre>
-  <h2>Design Tokens</h2>
+  <h3 id="tokens">Design Tokens</h3>
   <p>We utilize design tokens in the form of Scss variables. These variables are namespaced in the same way that classes are so that we do not run into conflicts with other Scss code. </p>
   <pre class="prettyprint"><code><xmp>sage-font-height( )
 sage-font-size( )
@@ -33,7 +52,7 @@ sage-font-size(xl)
 sage-font-size(2xl)
 sage-font-size(3xl)
 sage-font-size(4xl)</xmp></code></pre>
-  <h2>Parent Selectors</h2>
+  <h3 id="parent">Parent Selectors</h3>
   <p>The design system will make use of Sass’s parent selector mechanism. This allows all rules for a given component to be maintained in one location.</p>
   <pre class="prettyprint"><code><xmp>/* button.scss */
 
@@ -45,7 +64,7 @@ sage-font-size(4xl)</xmp></code></pre>
           text-align: center;
       }
   }</xmp></code></pre>
-  <h2>Media Queries</h2>
+  <h3 id="media">Media Queries</h3>
   <p>Component-specific media queries should be nested inside the component block.</p>
   <pre class="prettyprint"><code><xmp>/* button.scss */
 
@@ -57,7 +76,7 @@ sage-font-size(4xl)</xmp></code></pre>
           text-align: center;
       }
   }</xmp></code></pre>
-  <h2>Utilities</h2>
+  <h3 id="utilities">Utilities</h3>
   <p>Utilities should be used sparingly and only when there is no way to accurately modify the block to fit the needs of the mockup. If you find yourself in a situation where you are tempted to use a utility class it might be a good opportunity to reach out to the product developer and ask if the unique treatment in the situation is needed.</p>
   <p>Utilities do not play well with responsive styling so a utility class should be used only in cases where the same treatment is needed on every device. When in doubt reach out to the designer or another developer. </p>
 </div>

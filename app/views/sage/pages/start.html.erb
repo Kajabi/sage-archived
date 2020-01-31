@@ -1,13 +1,27 @@
-<h1>Gettin Started</h1>
-<p>These docs are designed to give you access to every answer you need to successfully contribute to the Sage Design System.</p>
+<%= content_for :heading do %>
+  <h1>Gettin Started</h1>
+  <p>These docs are designed to give you access to every answer you need to successfully contribute to the Sage Design System.</p>
+<% end %>
+<%= content_for :quick_links do %>
+  <div class="quick-links">
+    <div class="sage-media">
+      <i class="quick-links__icon sage-icon sage-icon-menu-8"></i>
+      <div class="sage-media__body">
+        <h5 class="quick-links__heading">Contents</h5>
+      </div>
+    </div>
+    <a href="#running" class="quick-links__link">Running Sage Gem</a>
+    <a href="#create" class="quick-links__link">Create New Sage Component</a>
+  </div>
+<% end %>
 <div class="sage-panel">
-  <h2>Running Sage Gem</h2>
+  <h3 id="running">Running Sage Gem</h3>
   <p>Download or clone the sage gem from Github</p>
   <pre class="prettyprint"><code><xmp>https://github.com/Kajabi/sage_design_system.git</xmp></code></pre>
   <p>CD into test/dummy folder and run:</p>
   <pre class="prettyprint"><code><xmp>rails s</xmp></code></pre>
   <p>You are then able to navigate to all the guides associated with the system by following the link: <a href="http://localhost:3000/sage/pages/index" target="_blank">http://localhost:3000/sage/pages/index</a></p>
-  <h3>Create New Sage Component</h3>
+  <h3 id="create">Create New Sage Component</h3>
   <pre class="prettyprint"><code><xmp>rails generate sage_component COMPONENT_NAME</xmp></code></pre>
   <p>This will create a file for the markup of the new sage component markup file and also the .scss file needed to style your new component.</p>
   <p>The same can be done to create both elements and modules for the system and instructions can be found on the generators page.</p>

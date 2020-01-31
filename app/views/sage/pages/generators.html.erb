@@ -1,14 +1,31 @@
-<h1>Generators</h1>
-<p>Built into the Sage Design System is the ability to generate and link the pieces of code that make up the system.</p>
+<%= content_for :heading do %>
+  <h1>Generators</h1>
+  <p>Built into the Sage Design System is the ability to generate and link the pieces of code that make up the system.</p>
+<% end %>
+<%= content_for :quick_links do %>
+  <div class="quick-links">
+    <div class="sage-media">
+      <i class="quick-links__icon sage-icon sage-icon-menu-8"></i>
+      <div class="sage-media__body">
+        <h5 class="quick-links__heading">Contents</h5>
+      </div>
+    </div>
+    <a href="#token" class="quick-links__link">Generate Token</a>
+    <a href="#element" class="quick-links__link">Generate Element</a>
+    <a href="#component" class="quick-links__link">Generate Component</a>
+    <a href="#module" class="quick-links__link">Generate Module</a>
+    <a href="#page" class="quick-links__link">Generate Page</a>
+  </div>
+<% end %>
 <div class="sage-panel">
-  <h3>Generate Token</h3>
+  <h3 id="token">Generate Token</h3>
   <pre class="prettyprint"><code><xmp>rails generate sage_token TOKEN_NAME</xmp></code></pre>
-  <h3>Generate Element</h3>
+  <h3 id="element">Generate Element</h3>
   <pre class="prettyprint"><code><xmp>rails generate sage_element ELEMENT_NAME</xmp></code></pre>
-  <h3>Generate Component</h3>
+  <h3 id="component">Generate Component</h3>
   <pre class="prettyprint"><code><xmp>rails generate sage_component COMPONENT_NAME</xmp></code></pre>
-  <h3>Generate Module</h3>
+  <h3 id="module">Generate Module</h3>
   <pre class="prettyprint"><code><xmp>rails generate sage_module MODULE_NAME</xmp></code></pre>
-  <h3>Generate Page</h3>
+  <h3 id="page">Generate Page</h3>
   <pre class="prettyprint"><code><xmp>rails generate sage_page PAGE_NAME</xmp></code></pre>
 </div>
