@@ -4,7 +4,7 @@ module Sage
     # Lists out all the available sage utilities
     def sage_utilities
       [
-        # Sage Generated Elements
+        # Sage Generated Utilities
         { title: "media" },
       ]
     end
