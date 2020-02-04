@@ -14,7 +14,7 @@ class SageModuleGenerator < Rails::Generators::NamedBase
     end
     
     # Markup Variables
-    markup_file = "app/views/example_modules/#{file_name}/_preview.html.erb"
+    markup_file = "app/views/sage/examples/modules/#{file_name}/_preview.html.erb"
     markup_include_file = "app/helpers/sage/modules_helper.rb"
     markup_include_line = "# Sage Generated Modules"
     # Create Markup File
