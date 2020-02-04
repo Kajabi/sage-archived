@@ -14,7 +14,7 @@ class SageElementGenerator < Rails::Generators::NamedBase
     end
     
     # Markup Variables
-    markup_file = "app/views/example_elements/#{file_name}/_preview.html.erb"
+    markup_file = "app/views/examples/sage/elements/#{file_name}/_preview.html.erb"
     markup_include_file = "app/helpers/sage/elements_helper.rb"
     markup_include_line = "# Sage Generated Elements"
     # Create Markup File
