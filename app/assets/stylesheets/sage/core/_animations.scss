@@ -1,6 +1,3 @@
 @mixin sage-simple-ease($value) {
-  -webkit-transition: $value .2s ease-in-out;
-  -moz-transition: $value .2s ease-in-out;
-  -o-transition: $value .2s ease-in-out;
   transition: $value .2s ease-in-out;
 }
