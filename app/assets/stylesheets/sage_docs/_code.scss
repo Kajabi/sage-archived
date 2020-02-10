@@ -1,11 +1,6 @@
-xmp {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-}
-
-pre.prettyprint { 
-  display: block; 
-  background-color:sage-color(primary, 500);
+.prettyprint {
+  display: block;
+  background-color: sage-color(primary, 500);
   padding: sage-spacing() !important;
   font-size: sage-font-size(sm);
   margin-bottom: sage-spacing();
@@ -27,7 +22,7 @@ pre .atv { color: #ffffff } /* attribute value - pink */
 pre .dec { color: sage-color(sage, 200) } /* decimal         - lightgreen */
 
 @media print {
-  pre.prettyprint { background-color: none }
+  .prettyprint { background-color: none }
   pre .str, code .str { color: #060 }
   pre .kwd, code .kwd { color: #006; font-weight: bold }
   pre .com, code .com { color: #600; font-style: italic }
