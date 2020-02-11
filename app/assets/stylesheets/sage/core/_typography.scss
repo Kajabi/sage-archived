@@ -27,26 +27,38 @@ h6 {
   margin-bottom: sage-spacing();
 }
 h1 {
-  font-size: sage-font-size(3xl);
+  font-size: sage-font-size(4xl);
 }
 h2 {
-  font-size: sage-font-size(2xl);
+  font-size: sage-font-size(3xl);
 }
 h3 {
-  font-size: sage-font-size(xl);
+  font-size: sage-font-size(2xl);
 }
 h4 {
-  font-size: sage-font-size(lg);
+  font-size: sage-font-size(xl);
 }
 h5 {
-  font-size: sage-font-size(sm);
+  font-size: sage-font-size(lg);
 }
 h6 {
-  font-size: sage-font-size(xs);
+  font-size: sage-font-size(md);
 }
 
 p {
   margin-bottom: sage-spacing();
+
+  &.no-margin-bottom {
+    margin-bottom: 0;
+  }
+}
+
+ul, ol, dl {
+  margin-bottom: sage-spacing();
+
+  &.no-margin-bottom {
+    margin-bottom: 0;
+  }
 }
 
 a {
