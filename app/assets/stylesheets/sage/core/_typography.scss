@@ -1,21 +1,19 @@
-@import url('https://rsms.me/inter/inter.css');
+$sage-font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
 body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
   text-size-adjust: 100%;
   color: sage-color(charcoal, 300);
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', $sage-font-stack;
   font-weight: sage-font-weight();
   font-size: sage-font-size();
   line-height: sage-font-height();
   margin-bottom: sage-spacing();
 }
 @supports (font-variation-settings: normal) {
-  body { font-family: 'Inter var', sans-serif; }
+  body { font-family: 'Inter var', $sage-font-stack; }
 }
 h1,
 h2,
