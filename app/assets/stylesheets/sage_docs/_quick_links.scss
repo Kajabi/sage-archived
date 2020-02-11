@@ -1,13 +1,18 @@
 .quick-links {
   padding: sage-spacing() 0;
+  position: sticky;
+  top: 0;
+
   &__icon {
     margin-right: sage-spacing(xs);
     color: sage-color(charcoal, 200);
   }
+
   &__heading {
     margin-bottom: sage-spacing(sm);
     color: sage-color(charcoal, 200);
   }
+
   &__link {
     font-size: sage-font-size(sm);
     color: sage-color(charcoal,100);
