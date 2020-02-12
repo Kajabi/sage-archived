@@ -1,25 +1,32 @@
 .prettyprint {
   display: block;
   background-color: sage-color(primary, 500);
-  padding: sage-spacing() !important;
+  padding: sage-spacing();
   font-size: sage-font-size(sm);
   margin-bottom: sage-spacing();
   border-radius: sage-border(radius);
   color: sage-color(sage, 200);
-  font-weight: sage-font-weight(simibold);
+  font-weight: sage-font-weight(normal);
+  overflow: hidden;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+
+  &.prettyprinted {
+    padding: sage-spacing();
+  }
 }
-pre .nocode { background-color: none; color: #1d2f52 }
-pre .str { color: sage-color(sage, 200); } /* string  - pink */
+pre .nocode { background-color: none; color: sage-color(charcoal, 500) }
+pre .str { color: sage-color(sage, 200); } /* string */
 pre .kwd { color: sage-color(sage, 200); font-weight: bold }
-pre .com { color: sage-color(sage, 200); opacity: .4} /* comment - skyblue */
-pre .typ { color: sage-color(sage, 200) } /* type    - lightgreen */
-pre .lit { color: sage-color(sage, 200) } /* literal - darkred */
-pre .pun { color: sage-color(sage, 200)}    /* punctuation */
-pre .pln { color: sage-color(sage, 200) }    /* plaintext */
-pre .tag { color: sage-color(sage, 200); font-weight: bold } /* html/xml tag    - lightyellow */
-pre .atn { color: sage-color(sage, 200); font-weight: bold } /* attribute name  - khaki */
-pre .atv { color: #ffffff } /* attribute value - pink */
-pre .dec { color: sage-color(sage, 200) } /* decimal         - lightgreen */
+pre .com { color: sage-color(sage, 200); opacity: 0.4 } /* comment */
+pre .typ { color: sage-color(sage, 200) } /* typen */
+pre .lit { color: sage-color(sage, 200) } /* literal */
+pre .pun { color: sage-color(sage, 200)} /* punctuation */
+pre .pln { color: sage-color(primary, 200) } /* plaintext */
+pre .tag { color: sage-color(primary, 200); font-weight: bold } /* html/xml tag */
+pre .atn { color: sage-color(primary, 200); } /* attribute name */
+pre .atv { color: sage-color(primary, 100); font-weight: bold } /* attribute value */
+pre .dec { color: sage-color(sage, 200) } /* decimal */
 
 @media print {
   .prettyprint { background-color: none }
