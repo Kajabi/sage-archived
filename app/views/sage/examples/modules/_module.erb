@@ -1,5 +1,10 @@
 <div class="sage-panel">
-  <h3 id="<%= title %>" class="example__title"><%= title %></h3>
+  <div class="sage-media">
+    <div class="sage-media-body">
+      <%= render partial: "sage/application/itemtitle", object: title, as: 'itemtitle' =%>
+    </div>
+  </div>
+
   <h6 class="example__label">Code</h6>
   <pre class="prettyprint"><code><%= CGI.unescapeHTML(CGI.escapeHTML render "sage/examples/modules/#{title}/preview") %></code></pre>
 </div>
