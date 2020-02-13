@@ -11,7 +11,7 @@
       </div>
     </div>
     <% sorted_sage_elements.each do |element| %>
-      <a href="#<%= element[:title] %>" class="quick-links__link"><%= element[:title].capitalize.sub("_", " ") %></a>
+      <a href="#<%= element[:title] %>" class="quick-links__link"><%= element[:title].capitalize.gsub("_", " ") %></a>
     <% end %>
   </div>
 <% end %>
