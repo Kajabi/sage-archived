@@ -11,7 +11,7 @@
       </div>
     </div>
     <% sorted_sage_modules.each do |example_module| %>
-      <a href="#<%= example_module[:title] %>" class="quick-links__link"><%= example_module[:title].capitalize.gsub("_", " ") %></a>
+      <a href="#<%= example_module[:title] %>" class="quick-links__link"><%= example_module[:title].titleize %></a>
     <% end %>
   </div>
 <% end %>
