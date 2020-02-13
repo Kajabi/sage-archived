@@ -1,0 +1,37 @@
+.sage-specs {
+  columns: 2;
+  font-size: sage-font-size(sm);
+  margin-bottom: sage-spacing(lg);
+  padding: sage-spacing(lg) sage-spacing(sm) sage-spacing(sm);
+  border: 1px solid sage-color(grey, 300);
+  border-radius: sage-border(radius);
+  position: relative;
+
+  @media (min-width: sage-breakpoint(sm-min)) {
+    columns: 3;
+    padding: sage-spacing(lg) sage-spacing(xs) sage-spacing(xs);
+  }
+
+  &::before {
+    content: attr(data-label);
+    color: sage-color(sage, 400);
+    display: block;
+    font-size: sage-font-size(xs);
+    position: absolute;
+    padding: sage-spacing(xs);
+    top: 0;
+    left: 0;
+    text-transform: uppercase;
+  }
+}
+
+.sage-specs__property {
+  font-size: sage-font-size(xs);
+  text-transform: uppercase;
+}
+
+.sage-specs__value {
+  @media (min-width: sage-breakpoint(sm-min)) {
+    margin-bottom: 0;
+  }
+}
