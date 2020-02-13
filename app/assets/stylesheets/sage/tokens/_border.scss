@@ -5,5 +5,7 @@
 
 $sage-borders: (
   default: 1px solid sage-color(grey, 300),
-  radius: 5px,
+  radius: 0.25rem, // 4px
+  radius-large: 0.375rem, // 6px
+  radius-round: 50%, // rounded
 );
