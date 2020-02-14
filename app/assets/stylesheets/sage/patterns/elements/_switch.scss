@@ -42,6 +42,7 @@
       }
       & + label {
         color: sage-color(grey, 400);
+        cursor: not-allowed;
       }
     }
     // hover
