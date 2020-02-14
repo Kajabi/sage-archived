@@ -5,6 +5,8 @@ module Sage
     def sage_elements
       [
         # Sage Generated Elements
+        { title: "switch" },
+        { title: "radio" },
         { title: "button" },
       ]
     end
