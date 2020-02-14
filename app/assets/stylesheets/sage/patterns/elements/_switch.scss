@@ -1,0 +1,98 @@
+/*------------------------------------*/
+/*-- switch element */
+/*------------------------------------*/
+.sage-switch {
+  input {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background: #fff;
+    background: sage-color(grey, 400);
+    border-radius: 11px;
+    border: 1px solid sage-color(grey, 400);
+    cursor: pointer;
+    display: inline-block;
+    height: 24px;
+    margin: 0;
+    outline: none;
+    position: relative;
+    transition: 0.3s, border-color 0.3s, box-shadow 0.2s;
+    vertical-align: top;
+    width: 44px;
+    &:after {
+      content: "";
+      display: block;
+      left: 0;
+      position: absolute;
+      top: 0;
+      transition: transform 0.6s 0.3s cubic-bezier(0.2, 0.85, 0.32, 1.2) ease opacity 0.3s 0.2s;
+    }
+    // checked
+    &:checked {
+      background: sage-color(primary, 300);
+    }
+    // disabled
+    &:disabled {
+      background: sage-color(grey, 100);
+      border-color: sage-color(grey, 300);
+      cursor: not-allowed;
+      opacity: 0.5;
+      // disabled & checked
+      &:checked {
+        background: sage-color(grey, 200);
+      }
+      & + label {
+        color: sage-color(grey, 400);
+      }
+    }
+    // hover
+    &:hover {
+      &:not(:checked) {
+        &:not(:disabled) {
+          box-shadow: sage-shadow(sm);
+        }
+      }
+    }
+    // focus
+    &:focus {
+      box-shadow: 0 0 0 2px rgba(39, 94, 254, 0.3);
+    }
+    & + label {
+      cursor: pointer;
+      display: inline-block;
+      font-size: sage-font-size();
+      line-height: sage-font-height();
+      margin-left: 4px;
+      vertical-align: top;
+    }
+  }
+  // switch circle
+  input {
+    &:after {
+      background: #fff;
+      border-radius: 50%;
+      height: 18px;
+      left: 2px;
+      top: 2px;
+      transform: translateX(1px);
+      width: 18px;
+    }
+    &:checked {
+      background: sage-color(primary);
+      &:after {
+        transform: translateX(20px);
+      }
+    }
+    &:disabled {
+      &:not(:checked) {
+        &:after {
+          background: sage-color(grey, 200);
+          opacity: 0.6;
+        }
+      }
+    }
+  }
+
+  /* switch responsive styles */
+  @media (max-width: sage-breakpoint()) {
+  }
+}
