@@ -1,36 +1,74 @@
-.sage-btn {
-  display: inline-block;
-  font-size: sage-font-size(sm);
-  padding: sage-spacing(xs) sage-spacing(sm);
-  background: #ffffff;
-  border: 1px solid sage-color(charcoal, 400);
-  color: sage-color(charcoal, 400);
-  font-weight: sage-font-weight(simibold);
+
+@mixin button-style-base {
+  appearance: none;
+  color: sage-color(charcoal, 500);
+  cursor: pointer;
+  border: 2px solid currentColor;
   border-radius: sage-border(radius);
-  &:hover {
-    background: #ffffff;
-    border: 1px solid sage-color(charcoal, 500);
-    color: sage-color(charcoal, 500);
+  display: inline-block;
+  font-family: inherit;
+  font-weight: sage-font-weight(semibold);
+  letter-spacing: 0.01875rem; // 0.3px
+  line-height: 1;
+  padding: 0.625rem sage-spacing(sm) ;
+}
+
+button,
+input[type="submit"],
+input[type="search"] {
+  @include button-style-base;
+}
+
+.sage-btn {
+  $sage-button-transition: 0.15s ease-in-out;
+
+  @include button-style-base;
+  color: sage-color(charcoal, 500);
+  font-size: sage-font-size(md);
+  border-radius: sage-border(radius);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15), 0 3px 6px rgba(0, 0, 0, 0.08);
+  transition: border $sage-button-transition, color $sage-button-transition, background-color $sage-button-transition, box-shadow $sage-button-transition;
+
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: sage-color(charcoal, 100);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 3px 6px rgba(0, 0, 0, 0.15);
+    color: sage-color(charcoal, 200);
   }
+
+  &:active {
+    border-color: sage-color(charcoal, 200);
+    color: sage-color(charcoal, 400);
+  }
+
   &--primary {
     @extend .sage-btn;
-    color: #fff;
     background: sage-color(primary);
-    border: 1px solid sage-color(primary);
-    &:hover {
-      background: sage-color(primary, 400);
-      border: 1px solid sage-color(primary, 400);
+    border-color: sage-color(primary);
+    color: #fff;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background: #008cf7;
+      border-color: transparent;
       color: #fff;
     }
+
+    &:active {
+      border-color: rgba(142, 202, 251, 0.5);
+    }
   }
+
   &--secondary {
     @extend .sage-btn;
-    background: #ffffff;
-    border: 1px solid sage-color(primary);
+    background: #fff;
     color: sage-color(primary);
+
     &:hover {
-      background: #ffffff;
-      border: 1px solid sage-color(primary, 400);
+      background: #fff;
+      border-color: sage-color(primary, 400);
       color: sage-color(primary, 400);
     }
   }
