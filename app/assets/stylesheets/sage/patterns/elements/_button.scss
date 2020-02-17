@@ -1,6 +1,10 @@
+// ============================================
+// Mixins
+// ============================================
 
 @mixin button-style-base {
   appearance: none;
+  background-color: transparent;
   color: sage-color(charcoal, 500);
   cursor: pointer;
   border: 2px solid currentColor;
@@ -10,8 +14,26 @@
   font-weight: sage-font-weight(semibold);
   letter-spacing: 0.01875rem; // 0.3px
   line-height: 1;
-  padding: 0.625rem sage-spacing(sm) ;
+  padding: 0.625rem sage-spacing(sm);
+  margin-bottom: sage-spacing(xs);
 }
+
+@mixin button-style-disabled {
+  cursor: not-allowed;
+  box-shadow: none;
+  transition: none;
+
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: transparent;
+    outline: none;
+  }
+}
+
+// ============================================
+// Styles
+// ============================================
 
 button,
 input[type="submit"],
@@ -23,11 +45,12 @@ input[type="search"] {
   $sage-button-transition: 0.15s ease-in-out;
 
   @include button-style-base;
+
   color: sage-color(charcoal, 500);
   font-size: sage-font-size(md);
   border-radius: sage-border(radius);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15), 0 3px 6px rgba(0, 0, 0, 0.08);
-  transition: border $sage-button-transition, color $sage-button-transition, background-color $sage-button-transition, box-shadow $sage-button-transition;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: border $sage-button-transition, color $sage-button-transition, background-color $sage-button-transition, box-shadow $sage-button-transition, transform $sage-button-transition;
 
   &:hover,
   &:focus,
@@ -37,39 +60,106 @@ input[type="search"] {
     color: sage-color(charcoal, 200);
   }
 
+  &:focus {
+    outline: 1px dotted sage-color(charcoal, 100);
+    outline-offset: 1px;
+  }
+
   &:active {
     border-color: sage-color(charcoal, 200);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.08);
     color: sage-color(charcoal, 400);
+  }
+
+  &:disabled,
+  &.disabled {
+    @include button-style-disabled;
+
+    background-color: sage-color(grey, 100);
+    color: sage-color(grey);
   }
 
   &--primary {
     @extend .sage-btn;
-    background: sage-color(primary);
+
+    background-color: sage-color(primary);
     border-color: sage-color(primary);
     color: #fff;
 
     &:hover,
     &:focus,
     &:active {
-      background: #008cf7;
+      background-color: #2d8af0;
+      // background-color: rgba(sage-color(primary, 300), 0.8);
       border-color: transparent;
       color: #fff;
+    }
+
+    &:focus {
+      background-color: sage-color(primary);
     }
 
     &:active {
       border-color: rgba(142, 202, 251, 0.5);
     }
+
+    &:disabled,
+    &.disabled {
+      @include button-style-disabled;
+
+      background-color: sage-color(grey, 100);
+      border-color: transparent;
+      color: sage-color(grey);
+    }
   }
 
   &--secondary {
     @extend .sage-btn;
+
     background: #fff;
-    color: sage-color(primary);
+    border-color: sage-color(grey, 300);
+    color: sage-color(charcoal, 200);
 
     &:hover {
-      background: #fff;
-      border-color: sage-color(primary, 400);
-      color: sage-color(primary, 400);
+      border-color: sage-color(grey, 200);
+    }
+
+    &:disabled,
+    &.disabled {
+      @include button-style-disabled;
+
+      background-color: #fff;
+      border-color: sage-color(grey, 100);
+      color: sage-color(grey);
+
+      &:hover,
+      &:focus,
+      &:active {
+        border-color: sage-color(grey, 100);
+      }
+    }
+  }
+
+  &--danger {
+    @extend .sage-btn;
+
+    background: sage-color(red);
+    border-color: transparent;
+    color: #fff;
+
+    &:hover,
+    &:focus,
+    &:active {
+      border-color: rgba(249, 192, 185, 0.5);
+      color: #fff;
+    }
+
+    &:disabled,
+    &.disabled {
+      @include button-style-disabled;
+
+      background-color: sage-color(red, 100);
+      color: sage-color(red, 200);
     }
   }
 }

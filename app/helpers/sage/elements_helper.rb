@@ -7,7 +7,8 @@ module Sage
         # Sage Generated Elements
         { title: "switch" },
         { title: "radio" },
-        { title: "button_link" },
+        { title: "link_button" },
+        { title: "danger_button" },
         { title: "button" },
       ]
     end
