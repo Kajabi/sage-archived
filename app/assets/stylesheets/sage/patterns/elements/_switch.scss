@@ -32,8 +32,7 @@
     }
     // disabled
     &:disabled {
-      background: sage-color(grey, 100);
-      border-color: sage-color(grey, 300);
+      background: sage-color(grey, 200);
       cursor: not-allowed;
       opacity: 0.5;
       // disabled & checked
@@ -86,8 +85,7 @@
     &:disabled {
       &:not(:checked) {
         &:after {
-          background: sage-color(grey, 200);
-          opacity: 0.6;
+          background: #fff;
         }
       }
     }
