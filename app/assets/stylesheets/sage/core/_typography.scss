@@ -1,4 +1,4 @@
-$sage-font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$sage-font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
 
 body {
   text-rendering: optimizeLegibility;
@@ -9,12 +9,15 @@ body {
   font-family: 'Inter', $sage-font-stack;
   font-weight: sage-font-weight();
   font-size: sage-font-size();
+  letter-spacing: 0.01875rem; // 0.3px
   line-height: sage-font-height();
   margin-bottom: sage-spacing();
+
+  @supports (font-variation-settings: normal) {
+    font-family: 'Inter var', $sage-font-stack;
+  }
 }
-@supports (font-variation-settings: normal) {
-  body { font-family: 'Inter var', $sage-font-stack; }
-}
+
 h1,
 h2,
 h3,
@@ -26,23 +29,41 @@ h6 {
   line-height: sage-font-height(sm);
   margin-bottom: sage-spacing();
 }
+
 h1 {
   font-size: sage-font-size(4xl);
+  letter-spacing: 0.05rem; // 0.8px
+  line-height: calc(50 / 39.81);
 }
+
 h2 {
   font-size: sage-font-size(3xl);
+  letter-spacing: 0.05rem; // 0.8px
+  line-height: calc(41 / 33.18);
 }
+
 h3 {
   font-size: sage-font-size(2xl);
+  letter-spacing: 0.03125rem; // 0.5px
+  line-height: calc(35 / 27.65);
 }
+
 h4 {
   font-size: sage-font-size(xl);
+  font-weight: sage-font-weight(semibold);
+  letter-spacing: 0.03125rem; // 0.5px
+  line-height: calc(29 / 23.04);
 }
+
 h5 {
   font-size: sage-font-size(lg);
+  font-weight: sage-font-weight(semibold);
+  line-height: calc(24 / 19.2);
 }
+
 h6 {
   font-size: sage-font-size(md);
+  font-weight: sage-font-weight(semibold);
 }
 
 p {
@@ -63,6 +84,7 @@ ul, ol, dl {
 
 a {
   color: sage-color(primary);
+
   &:hover,
   &:focus {
     color: inherit;

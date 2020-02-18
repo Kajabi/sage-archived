@@ -2,14 +2,13 @@
   columns: 2;
   font-size: sage-font-size(sm);
   margin-bottom: sage-spacing(lg);
-  padding: sage-spacing(lg) sage-spacing(sm) sage-spacing(sm);
+  padding: 2.5rem sage-spacing(sm) sage-spacing(xs);
   border: 1px solid sage-color(grey, 300);
   border-radius: sage-border(radius);
   position: relative;
 
-  @media (min-width: sage-breakpoint(sm-min)) {
-    columns: 3;
-    padding: sage-spacing(lg) sage-spacing(xs) sage-spacing(xs);
+  @media (min-width: sage-breakpoint(xl-min)) {
+    columns: 4;
   }
 
   &::before {
@@ -18,7 +17,7 @@
     display: block;
     font-size: sage-font-size(xs);
     position: absolute;
-    padding: sage-spacing(xs);
+    padding: sage-spacing(xs) sage-spacing(sm);
     top: 0;
     left: 0;
     text-transform: uppercase;
@@ -30,8 +29,4 @@
   text-transform: uppercase;
 }
 
-.sage-specs__value {
-  @media (min-width: sage-breakpoint(sm-min)) {
-    margin-bottom: 0;
-  }
-}
+// .sage-specs__value {}
