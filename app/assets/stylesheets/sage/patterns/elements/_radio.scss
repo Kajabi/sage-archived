@@ -1,0 +1,84 @@
+/*------------------------------------*/
+/*-- radio element */
+/*------------------------------------*/
+.sage-radio {
+  input {
+    appearance: none;
+    background: #fff;
+    border: 1px solid sage-color(grey, 400);
+    cursor: pointer;
+    display: inline-block;
+    height: 1.5rem;
+    margin: 0;
+    outline: none;
+    position: relative;
+    transition: 0.3s, border-color 0.3s, box-shadow 0.2s;
+    vertical-align: top;
+    width: 1.5rem;
+    // checked
+    &:checked {
+      background: sage-color(primary, 300);
+    }
+    // disabled
+    &:disabled {
+      background: sage-color(grey, 100);
+      border-color: sage-color(grey, 300);
+      cursor: not-allowed;
+      opacity: 0.5;
+      // disabled & checked
+      &:checked {
+        background: sage-color(grey, 200);
+      }
+      & + label {
+        cursor: not-allowed;
+        color: sage-color(grey, 400);
+      }
+      &:not(:checked)::after {
+        background: sage-color(grey, 100);
+      }
+    }
+    // hover
+    &:hover {
+      &:not(:checked) {
+        &:not(:disabled) {
+          box-shadow: sage-shadow(sm);
+        }
+      }
+    }
+    // focus
+    &:focus {
+      box-shadow: 0 0 0 2px fade-out(sage-color(primary), .7)
+    }
+    // label
+    & + label {
+      cursor: pointer;
+      display: inline-block;
+      font-size: sage-font-size();
+      line-height: sage-font-height();
+      margin-left: sage-spacing(2xs);
+      vertical-align: top;
+    }
+  }
+  // circle when checked
+  input {
+    border-radius: 50%;
+    &:after {
+      content: "";
+      display: block;
+      left: 50%;
+      opacity: 1;
+      position: absolute;
+      top: 50%;
+      background: #fff;
+      border-radius: 50%;
+      height: 0.5rem;
+      opacity: 1;
+      transform: translate3d(-50%, -50%, 0);
+      width: 0.5rem;
+    }
+  }
+
+  /* radio responsive styles */
+  @media (max-width: sage-breakpoint()) {
+  }
+}
