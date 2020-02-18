@@ -14,8 +14,9 @@
   font-weight: sage-font-weight(semibold);
   letter-spacing: 0.01875rem; // 0.3px
   line-height: 1;
-  padding: 0.625rem sage-spacing(sm);
-  margin-bottom: sage-spacing(xs);
+  padding: 0.75rem sage-spacing(sm);
+  margin: 0 0.25rem sage-spacing(sm) 0;
+  position: relative;
 }
 
 @mixin button-style-disabled {
@@ -23,7 +24,7 @@
   box-shadow: none;
   transition: none;
 
-  &:hover,
+  &:hover:not(:focus):not(:active):not(:disabled):not(.disabled),
   &:focus,
   &:active {
     border-color: transparent;
@@ -42,15 +43,33 @@ input[type="search"] {
 }
 
 .sage-btn {
-  $sage-button-transition: 0.15s ease-in-out;
+  $sage-btn-transition: 0.15s ease-in-out;
+  $sage-btn-focus-outline-size: sage-spacing(xs);
+  $sage-btn-focus-outline-width: 2;
 
   @include button-style-base;
 
   color: sage-color(charcoal, 500);
   font-size: sage-font-size(md);
   border-radius: sage-border(radius);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(0, 0, 0, 0.08);
-  transition: border $sage-button-transition, color $sage-button-transition, background-color $sage-button-transition, box-shadow $sage-button-transition, transform $sage-button-transition;
+  // box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: border $sage-btn-transition, color $sage-btn-transition, background-color $sage-btn-transition, box-shadow $sage-btn-transition, transform $sage-btn-transition;
+
+  &::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    left: -($sage-btn-focus-outline-size);
+    top: -($sage-btn-focus-outline-size);
+    width: calc(100% + (#{$sage-btn-focus-outline-size} * #{$sage-btn-focus-outline-width}));
+    height: calc(100% + (#{$sage-btn-focus-outline-size} * #{$sage-btn-focus-outline-width}));
+    border: calc(#{$sage-btn-focus-outline-width} * 1px) solid currentColor;
+    border-radius: sage-border(radius-large);
+    pointer-events: none;
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.1s ease-out 0.05s, transform 0.25s ease-in-out;
+  }
 
   &:hover,
   &:focus,
@@ -60,9 +79,18 @@ input[type="search"] {
     color: sage-color(charcoal, 200);
   }
 
+  &:focus:not(:disabled):not(.disabled),
+  &:active:not(:disabled):not(.disabled) {
+    &::after {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
   &:focus {
-    outline: 1px dotted sage-color(charcoal, 100);
-    outline-offset: 1px;
+    // outline: 1px dotted sage-color(grey);
+    // outline-offset: 1px;
+    outline: none;
   }
 
   &:active {
@@ -85,8 +113,13 @@ input[type="search"] {
     background-color: sage-color(primary);
     border-color: sage-color(primary);
     color: #fff;
+    position: relative;
 
-    &:hover,
+    &::after {
+      border-color: sage-color(primary);
+    }
+
+    &:hover:not(:focus):not(:active):not(:disabled):not(.disabled),
     &:focus,
     &:active {
       background-color: #2d8af0;
@@ -95,21 +128,28 @@ input[type="search"] {
       color: #fff;
     }
 
+    &:focus:not(:disabled):not(.disabled),
+    &:active:not(:disabled):not(.disabled) {
+      // border-color: rgba(0, 28, 77, 0.5);
+      box-shadow: none;
+      // box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
     &:focus {
       background-color: sage-color(primary);
     }
 
     &:active {
-      border-color: rgba(142, 202, 251, 0.5);
+      background-color: #0059d6;
     }
 
     &:disabled,
     &.disabled {
       @include button-style-disabled;
 
-      background-color: sage-color(grey, 100);
+      background-color: sage-color(primary, 100);
       border-color: transparent;
-      color: sage-color(grey);
+      color: sage-color(primary, 200);
     }
   }
 
@@ -117,11 +157,29 @@ input[type="search"] {
     @extend .sage-btn;
 
     background: #fff;
-    border-color: sage-color(grey, 300);
+    border-color: transparent;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15), 0 0 3px rgba(0, 0, 0, 0.08);
     color: sage-color(charcoal, 200);
 
-    &:hover {
-      border-color: sage-color(grey, 200);
+    &::after {
+      // border-color: sage-color(grey, 500);
+      border-color: sage-color(primary);
+    }
+
+    &:hover:not(:focus):not(:active) {
+      border-color: transparent;
+    }
+
+    &:focus {
+      // border-color: sage-color(grey, 200);
+      border-color: transparent;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15), 0 0 3px rgba(0, 0, 0, 0.08);
+    }
+
+    &:active {
+      background-color: sage-color(grey, 100);
+      border-color: transparent;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15), 0 0 3px rgba(0, 0, 0, 0.08);
     }
 
     &:disabled,
@@ -147,6 +205,10 @@ input[type="search"] {
     border-color: transparent;
     color: #fff;
 
+    &::after {
+      border-color: sage-color(red, 300);
+    }
+
     &:hover,
     &:focus,
     &:active {
@@ -154,11 +216,26 @@ input[type="search"] {
       color: #fff;
     }
 
+    &:hover {
+      background-color: #dc5147;
+    }
+
+    &:focus:not(:disabled):not(.disabled),
+    &:active:not(:disabled):not(.disabled) {
+      border-color: rgba(82, 12, 10, 0.5);
+      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    &:active {
+      background-color: #ba352c;
+    }
+
     &:disabled,
     &.disabled {
       @include button-style-disabled;
 
       background-color: sage-color(red, 100);
+      border-color: transparent;
       color: sage-color(red, 200);
     }
   }
