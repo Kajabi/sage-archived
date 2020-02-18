@@ -3,19 +3,18 @@
 /*------------------------------------*/
 .sage-radio {
   input {
-    -webkit-appearance: none;
-    -moz-appearance: none;
+    appearance: none;
     background: #fff;
     border: 1px solid sage-color(grey, 400);
     cursor: pointer;
     display: inline-block;
-    height: 24px;
+    height: 1.5rem;
     margin: 0;
     outline: none;
     position: relative;
     transition: 0.3s, border-color 0.3s, box-shadow 0.2s;
     vertical-align: top;
-    width: 24px;
+    width: 1.5rem;
     // checked
     &:checked {
       background: sage-color(primary, 300);
@@ -56,7 +55,7 @@
       display: inline-block;
       font-size: sage-font-size();
       line-height: sage-font-height();
-      margin-left: 4px;
+      margin-left: sage-spacing(2xs);
       vertical-align: top;
     }
   }
@@ -66,16 +65,16 @@
     &:after {
       content: "";
       display: block;
-      left: 3px;
+      left: 50%;
       opacity: 1;
       position: absolute;
-      top: 3px;
+      top: 50%;
       background: #fff;
       border-radius: 50%;
-      height: 16px;
+      height: 0.5rem;
       opacity: 1;
-      transform: scale(0.5);
-      width: 16px;
+      transform: translate3d(-50%, -50%, 0);
+      width: 0.5rem;
     }
   }
 
