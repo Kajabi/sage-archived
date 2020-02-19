@@ -1,26 +1,33 @@
-.colors {
+.sage-colors {
   margin-bottom: sage-spacing();
   border-radius: sage-border(radius);
   overflow: hidden;
 }
-.color {
+
+.color-item {
   padding: sage-spacing(sm) sage-spacing();
   font-size: sage-font-size(sm);
-  font-weight: sage-font-weight(simibold);
   color: #fff;
-  &:after {
-    float: right;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &::after {
+    font-weight: sage-font-weight(semibold);
     text-transform: uppercase;
   }
+
   @each $name, $color in $sage-colors {
     &-#{$name} {
       @each $tone, $hex in $color {
         &-#{$tone} {
-          @extend .color;
+          @extend .color-item;
           background: $hex;
+
           @if (lightness($hex) > 50) {
             color: sage-color($name, 500);
           }
+
           &:after {
             content: "#{$hex}";
           }
@@ -28,6 +35,7 @@
       }
     }
   }
+
   &-grey {
     &-100, &-200, &-300, &-400, &-500 {
       color: sage-color(charcoal, 500);

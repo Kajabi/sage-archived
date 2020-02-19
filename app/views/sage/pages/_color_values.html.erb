@@ -1,8 +1,8 @@
-<div class="colors">
-  <div class="color-<%= color %>-300">sage-color(<%= color %>)</div>
+<div class="sage-colors">
+  <div class="color-item-<%= color %>-300">sage-color(<%= color %>)</div>
 </div>
-<div class="colors">
+<div class="sage-colors">
   <% (1..5).each do |i| %>
-    <div class="color-<%= color %>-<%= i %>00">sage-color(<%= color %>, <%= i %>00)</div>
+    <div class="color-item-<%= color %>-<%= i %>00">sage-color(<%= color %>, <%= i %>00)</div>
   <% end %>
 </div>
