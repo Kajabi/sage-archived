@@ -1,27 +1,33 @@
-.sage-colors {
+.sage-palette {
   margin-bottom: sage-spacing();
   border-radius: sage-border(radius);
   overflow: hidden;
+
+  &__item {
+    padding: sage-spacing(sm) sage-spacing();
+    font-size: sage-font-size(sm);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &::after {
+      font-weight: sage-font-weight(semibold);
+      text-transform: uppercase;
+    }
+  }
 }
 
-.color-item {
-  padding: sage-spacing(sm) sage-spacing();
-  font-size: sage-font-size(sm);
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  &::after {
-    font-weight: sage-font-weight(semibold);
-    text-transform: uppercase;
-  }
-
+// ============================================
+// Color swatch generator
+// output format: `color-charcoal-300`
+// ============================================
+.color {
   @each $name, $color in $sage-colors {
     &-#{$name} {
       @each $tone, $hex in $color {
         &-#{$tone} {
-          @extend .color-item;
+          @extend .sage-palette__item;
           background: $hex;
 
           @if (lightness($hex) > 50) {
