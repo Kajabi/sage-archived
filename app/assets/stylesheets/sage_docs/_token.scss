@@ -10,13 +10,14 @@
   border-bottom: sage-border();
   font-size: sage-font-size(sm);
   display: flex;
-  strong {
-    min-width: 300px;
-  }
+  justify-content: space-between;
+  flex-wrap: wrap;
+
   &:after {
-    width: 50%;
-    flex: 1;
+    font-family: monospace;
+    max-width: calc(100% / 3);
   }
+
   &-border:after { content: "#{sage-border()}" }
   @each $name, $token in $sage-borders {
     &-border-#{$name}:after { content: "#{$token}" }
