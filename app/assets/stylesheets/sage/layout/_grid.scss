@@ -31,6 +31,7 @@ $sage-grid-gap-lg: sage-spacing(sm);
   max-width: 100%;
   padding: 0 calc(#{$sage-grid-gap-md} / 2);
 
+  // TODO: create a mixin/function to reduce duplication below
   @for $sage-i from 1 through $sage-grid-columns-sm {
     &--sm-#{$sage-i} {
       @extend .sage-col;
@@ -50,6 +51,7 @@ $sage-grid-gap-lg: sage-spacing(sm);
   }
 }
 
+// TODO: create a mixin/function to reduce duplication
 @media (min-width: sage-breakpoint(sm-min)) {
   .sage-col {
     @for $sage-i from 1 through $sage-grid-columns-sm {
