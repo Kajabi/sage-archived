@@ -1,28 +1,83 @@
+// ============================================
+// Variables
+// ============================================
+
+$sage-grid-columns-sm: 12;
+$sage-grid-columns-md: 12;
+$sage-grid-columns-lg: 12;
+
+$sage-grid-gap-sm: sage-spacing(sm);
+$sage-grid-gap-md: sage-spacing(sm);
+$sage-grid-gap-lg: sage-spacing(sm);
+
+// ============================================
+// Rows
+// ============================================
+
 .sage-row {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin-left: - sage-spacing(sm);
-  margin-right: - sage-spacing(sm);
+  margin-left: calc(#{$sage-grid-gap-md} / -2);
+  margin-right: calc(#{$sage-grid-gap-md} / -2);
 }
+
+// ============================================
+// Columns
+// ============================================
+
 .sage-col {
-  flex-basis: 100%;
+  flex: 0 0 100%;
   max-width: 100%;
-  padding: 0 sage-spacing(sm);
-  @for $sage-i from 1 through 12 {
-    &--#{$sage-i} {
+  padding: 0 calc(#{$sage-grid-gap-md} / 2);
+
+  @for $sage-i from 1 through $sage-grid-columns-sm {
+    &--sm-#{$sage-i} {
+      @extend .sage-col;
+    }
+  }
+
+  @for $sage-i from 1 through $sage-grid-columns-md {
+    &--md-#{$sage-i} {
+      @extend .sage-col;
+    }
+  }
+
+  @for $sage-i from 1 through $sage-grid-columns-lg {
+    &--lg-#{$sage-i} {
       @extend .sage-col;
     }
   }
 }
 
-@media (min-width: sage-breakpoint()) {
+@media (min-width: sage-breakpoint(sm-min)) {
   .sage-col {
-    flex: 1;
-    @for $sage-i from 1 through 12 {
-      &--#{$sage-i} {
-        flex-basis: percentage($sage-i / 12);
-        max-width: percentage($sage-i / 12);
+    @for $sage-i from 1 through $sage-grid-columns-sm {
+      &--sm-#{$sage-i} {
+        flex: 0 1 auto;
+        width: percentage($sage-i / $sage-grid-columns-sm);
+      }
+    }
+  }
+}
+
+@media (min-width: sage-breakpoint(md-min)) {
+  .sage-col {
+    @for $sage-i from 1 through $sage-grid-columns-md {
+      &--md-#{$sage-i} {
+        flex: 0 1 auto;
+        width: percentage($sage-i / $sage-grid-columns-md);
+      }
+    }
+  }
+}
+
+@media (min-width: sage-breakpoint(lg-min)) {
+  .sage-col {
+    @for $sage-i from 1 through $sage-grid-columns-lg {
+      &--lg-#{$sage-i} {
+        flex: 0 1 auto;
+        width: percentage($sage-i / $sage-grid-columns-lg);
       }
     }
   }

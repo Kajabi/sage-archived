@@ -6,7 +6,7 @@
   @extend .sage-row;
   margin-bottom: sage-spacing();
   &__info {
-    @extend .sage-col--4;
+    @extend .sage-col--md-4;
   }
   &__title {
     margin-bottom: sage-spacing(xs);
@@ -15,13 +15,13 @@
     color: sage-color(charcoal, 200);
   }
   &__content {
-    @extend .sage-col--8;
+    @extend .sage-col--md-8;
   }
   &__panel {
     @extend .sage-panel;
   }
   /* form_section responsive styles */
   @media (max-width: sage-breakpoint()) {
-    
+
   }
 }

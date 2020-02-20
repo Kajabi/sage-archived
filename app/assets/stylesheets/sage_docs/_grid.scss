@@ -1,6 +1,7 @@
 .grid-item {
   background: sage-color(grey, 200);
-  margin-bottom: sage-spacing();
-  padding: sage-spacing(xs) sage-spacing();
+  text-align: center;
+  margin-bottom: sage-spacing(md);
+  padding: sage-spacing(xs) sage-spacing(md);
   border-radius: sage-border(radius);
 }
