@@ -1,7 +1,10 @@
 // ============================================
 // Variables
 // ============================================
+
 $sage-btn-transition: 0.15s ease-in-out;
+$sage-btn-border-width: 2px;
+
 $sage-btn-focus-outline-size: sage-spacing(xs);
 $sage-btn-focus-outline-width: 1;
 $sage-btn-focus-outline-color: currentColor;
@@ -23,7 +26,7 @@ $sage-btn-danger-text-color: #fff;
   background-color: transparent;
   color: sage-color(charcoal, 500);
   cursor: pointer;
-  border: 2px solid currentColor;
+  border: $sage-btn-border-width solid currentColor;
   border-radius: sage-border(radius);
   display: inline-block;
   font-family: inherit;
@@ -31,8 +34,7 @@ $sage-btn-danger-text-color: #fff;
   letter-spacing: 0.01875rem; // 0.3px
   line-height: 1;
   padding: 0.75rem sage-spacing(sm);
-  margin: 0 0.25rem sage-spacing(sm) 0;
-  margin-right: sage-spacing(md);
+  margin-bottom: sage-spacing(sm);
   position: relative;
 }
 
@@ -66,6 +68,11 @@ input[type="search"] {
   font-size: sage-font-size(md);
   border-radius: sage-border(radius);
   transition: border $sage-btn-transition, background-color $sage-btn-transition, box-shadow $sage-btn-transition;
+
+  // add space between adjacent buttons
+  + .sage-btn {
+    margin-left: sage-spacing(xs);
+  }
 
   &::after {
     content: "";
@@ -247,5 +254,17 @@ input[type="search"] {
       border-color: transparent;
       color: sage-color(red, 200);
     }
+  }
+
+  &--link {
+    @extend .sage-btn;
+
+
+  }
+
+  &--icon {
+    @extend .sage-btn;
+
+    display: flex;
   }
 }
