@@ -1,54 +1,124 @@
+// ============================================
+// Variables
+// ============================================
+
+$sage-radio-color-default: sage-color(grey, 400);
+$sage-radio-color-checked: sage-color(primary);
+$sage-radio-color-hover: sage-color(grey, 500);
+$sage-radio-color-disabled: sage-color(grey, 100);
+$sage-radio-color-disabled-checked: sage-color(grey, 300);
+$sage-radio-button-size: 1.5rem;
+$sage-radio-selected-indicator-size: 1rem;
+$sage-radio-selected-indicator-color: #fff;
+$sage-radio-focus-outline-size: sage-spacing(2xs);
+$sage-radio-focus-outline-width: 1;
+$sage-radio-focus-outline-color: currentColor;
+
 /*------------------------------------*/
 /*-- radio element */
 /*------------------------------------*/
 .sage-radio {
-  input {
+  input[type="radio"] {
     appearance: none;
-    background: #fff;
-    border: 1px solid sage-color(grey, 400);
+    background-color: #fff;
+    border: 1px solid $sage-radio-color-default;
+    border-radius: sage-border(radius-round);
+    color: $sage-radio-color-default;
     cursor: pointer;
     display: inline-block;
-    height: 1.5rem;
+    height: $sage-radio-button-size;
     margin: 0;
     outline: none;
     position: relative;
-    transition: 0.3s, border-color 0.3s, box-shadow 0.2s;
+    transition: background 0.2s ease-in, border 0.15s ease-out;
     vertical-align: top;
-    width: 1.5rem;
+    width: $sage-radio-button-size;
+
+    &::before,
+    &::after {
+      content: "";
+      color: inherit;
+      border-radius: inherit;
+      display: block;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      opacity: 0;
+      transform: translate3d(-50%, -50%, 0);
+      transition: opacity 0.15s ease-out 0.05s, transform 0.2s ease-in-out;
+    }
+
+    &::before {
+      width: calc(100% + ((#{$sage-radio-focus-outline-width}px ) + (#{$sage-radio-focus-outline-size} * 2)));
+      height: calc(100% + ((#{$sage-radio-focus-outline-width}px) + (#{$sage-radio-focus-outline-size} * 2)));
+      border: calc(#{$sage-radio-focus-outline-width}px) solid $sage-radio-focus-outline-color;
+      pointer-events: none;
+      opacity: 0;
+      transform: translate3d(-50%, -50%, 0) scale(0.9);
+    }
+
+    &::after {
+      background-color: $sage-radio-selected-indicator-color;
+      height: $sage-radio-selected-indicator-size;
+      width: $sage-radio-selected-indicator-size;
+    }
+
     // checked
     &:checked {
-      background: sage-color(primary, 300);
-    }
-    // disabled
-    &:disabled {
-      background: sage-color(grey, 100);
-      border-color: sage-color(grey, 300);
-      cursor: not-allowed;
-      opacity: 0.5;
-      // disabled & checked
-      &:checked {
-        background: sage-color(grey, 200);
-      }
-      & + label {
-        cursor: not-allowed;
-        color: sage-color(grey, 400);
-      }
-      &:not(:checked)::after {
-        background: sage-color(grey, 100);
+      background-color: $sage-radio-color-checked;
+      border-color: transparent;
+      color: $sage-radio-color-checked;
+
+      &::after {
+        opacity: 1;
+        transform: translate3d(-50%, -50%, 0) scale(0.5);
       }
     }
+
     // hover
     &:hover {
       &:not(:checked) {
         &:not(:disabled) {
+          border-color: $sage-radio-color-hover;
           box-shadow: sage-shadow(sm);
         }
       }
     }
-    // focus
-    &:focus {
-      box-shadow: 0 0 0 2px fade-out(sage-color(primary), .7)
+
+    &:focus:not(:disabled),
+    &:active:not(:disabled) {
+      &::before {
+        opacity: 1;
+        transform: translate3d(-50%, -50%, 0) scale(1);
+      }
+
+      &::after {
+        transform: translate3d(-50%, -50%, 0) scale(0.5);
+      }
     }
+
+    // disabled
+    &:disabled {
+      background: $sage-radio-color-disabled;
+      border-color: $sage-radio-color-disabled-checked;
+      cursor: not-allowed;
+      opacity: 0.5;
+
+      // disabled & checked
+      &:checked {
+        background: $sage-radio-color-disabled-checked;
+      }
+
+      & + label {
+        cursor: not-allowed;
+        color: $sage-radio-color-disabled-checked;
+      }
+
+      &:not(:checked)::after {
+        background: $sage-radio-color-disabled;
+      }
+    }
+
     // label
     & + label {
       cursor: pointer;
@@ -58,27 +128,5 @@
       margin-left: sage-spacing(2xs);
       vertical-align: top;
     }
-  }
-  // circle when checked
-  input {
-    border-radius: 50%;
-    &:after {
-      content: "";
-      display: block;
-      left: 50%;
-      opacity: 1;
-      position: absolute;
-      top: 50%;
-      background: #fff;
-      border-radius: 50%;
-      height: 0.5rem;
-      opacity: 1;
-      transform: translate3d(-50%, -50%, 0);
-      width: 0.5rem;
-    }
-  }
-
-  /* radio responsive styles */
-  @media (max-width: sage-breakpoint()) {
   }
 }
