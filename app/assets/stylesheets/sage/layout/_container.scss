@@ -1,11 +1,23 @@
 .sage-container {
   margin: 0 auto;
-  padding: 0 sage-spacing();
-  max-width: sage-container();
+  padding: 0 sage-spacing(md);
+  max-width: sage-container(md);
+
+  &--xs {
+    @extend .sage-container;
+    max-width: sage-container(xs);
+  }
+
   &--sm {
     @extend .sage-container;
     max-width: sage-container(sm);
   }
+
+  &--lg {
+    @extend .sage-container;
+    max-width: sage-container(lg);
+  }
+
   &--fluid {
     @extend .sage-container;
     max-width: sage-container(fluid);
