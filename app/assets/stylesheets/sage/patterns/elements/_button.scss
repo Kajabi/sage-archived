@@ -28,14 +28,18 @@ $sage-btn-danger-text-color: #fff;
   cursor: pointer;
   border: $sage-btn-border-width solid currentColor;
   border-radius: sage-border(radius);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.18), 0 1px 3px rgba(0, 0, 0, 0.1);
   display: inline-block;
   font-family: inherit;
-  font-weight: sage-font-weight(semibold);
+  font-size: sage-font-size(md);
+  font-weight: 500;
   letter-spacing: 0.01875rem; // 0.3px
   line-height: 1;
   padding: 0.75rem sage-spacing(sm);
   margin-bottom: sage-spacing(sm);
+  margin-right: sage-spacing(2xs);
   position: relative;
+  transition: border $sage-btn-transition, background-color $sage-btn-transition, box-shadow $sage-btn-transition;
 }
 
 @mixin button-style-disabled {
@@ -63,11 +67,6 @@ input[type="search"] {
 
 .sage-btn {
   @include button-style-base;
-
-  color: sage-color(charcoal, 500);
-  font-size: sage-font-size(md);
-  border-radius: sage-border(radius);
-  transition: border $sage-btn-transition, background-color $sage-btn-transition, box-shadow $sage-btn-transition;
 
   // add space between adjacent buttons
   + .sage-btn {
@@ -112,7 +111,7 @@ input[type="search"] {
 
   &:active {
     border-color: sage-color(charcoal, 200);
-    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15);
+    box-shadow: none;
     color: sage-color(charcoal, 400);
   }
 
@@ -129,9 +128,7 @@ input[type="search"] {
 
     background-color: $sage-btn-primary-bg-color;
     border-color: $sage-btn-primary-bg-color;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.18), 0 1px 3px rgba(0, 0, 0, 0.1);
     color: $sage-btn-primary-text-color;
-    position: relative;
 
     &::after {
       border-color: $sage-btn-primary-bg-color;
@@ -145,8 +142,7 @@ input[type="search"] {
     }
 
     &:hover:not(:focus):not(:active):not(:disabled):not(.disabled) {
-      background-color: lighten($sage-btn-primary-bg-color, 8.5%);
-      box-shadow: none;
+      background-color: lighten($sage-btn-primary-bg-color, 9%);
     }
 
     &:focus {
@@ -154,9 +150,9 @@ input[type="search"] {
       box-shadow: 0 1px 2px rgba(0, 0, 0, 0.18), 0 1px 3px rgba(0, 0, 0, 0.1);
     }
 
-    &:focus:active,
     &:active {
       background-color: darken($sage-btn-primary-bg-color, 11%);
+      box-shadow: none;
     }
 
     &:disabled,
@@ -173,8 +169,7 @@ input[type="search"] {
     @extend .sage-btn;
 
     background: #fff;
-    border-color: transparent;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.18), 0 1px 3px rgba(0, 0, 0, 0.1);
+    border: 1px solid transparent;
     color: $sage-btn-secondary-text-color;
 
     &::after {
@@ -188,14 +183,12 @@ input[type="search"] {
     }
 
     &:focus {
-      border-color: transparent;
+      border: 1px solid sage-color(grey, 300);
     }
 
-    &:focus:active,
     &:active {
       background-color: sage-color(grey, 200);
-      border-color: transparent;
-      box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15);;
+      border: 1px solid sage-color(grey, 300);
     }
 
     &:disabled,
@@ -246,7 +239,7 @@ input[type="search"] {
 
     &:active {
       background-color: darken($sage-btn-danger-bg-color, 4%);
-      box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15);
+      box-shadow: none;
     }
 
     &:disabled,
