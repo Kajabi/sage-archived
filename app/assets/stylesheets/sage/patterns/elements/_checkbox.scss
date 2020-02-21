@@ -1,0 +1,106 @@
+// ============================================
+// Variables
+// ============================================
+
+$sage-checkbox-color-default: sage-color(grey, 400);
+$sage-checkbox-color-checked: sage-color(primary);
+$sage-checkbox-color-disabled: sage-color(grey, 200);
+$sage-checkbox-border-radius: 0.25rem;
+$sage-checkbox-focus-outline-size: sage-spacing(2xs);
+$sage-checkbox-focus-outline-width: 1;
+$sage-checkbox-focus-outline-color: currentColor;
+
+/*------------------------------------*/
+/*-- checkbox element */
+/*------------------------------------*/
+.sage-checkbox {
+  input[type="checkbox"] {
+    appearance: none;
+    border: 1px solid $sage-checkbox-color-default;
+    border-radius: $sage-checkbox-border-radius;
+    color: $sage-checkbox-color-default;
+    cursor: pointer;
+    display: inline-block;
+    height: 1.5rem;
+    margin: 0;
+    outline: none;
+    position: relative;
+    vertical-align: top;
+    width: 1.5rem;
+    & + label {
+      cursor: pointer;
+      display: inline-block;
+      font-size: sage-font-size();
+      line-height: sage-font-height();
+      margin-left: sage-spacing(2xs);
+      vertical-align: top;
+    }
+    &::before {
+      border-radius: $sage-checkbox-border-radius;
+      border: calc(#{$sage-checkbox-focus-outline-width}px) solid $sage-checkbox-focus-outline-color;
+      content: "";
+      display: block;
+      height: calc(100% + ((#{$sage-checkbox-focus-outline-width}px) + (#{$sage-checkbox-focus-outline-size} * 2)));
+      left: 50%;
+      opacity: 0;
+      pointer-events: none;
+      position: absolute;
+      top: 50%;
+      transform: translate3d(-50%, -50%, 0) scale(0.94);
+      transition: opacity 0.15s ease-out 0.05s, transform 0.2s ease-in-out;
+      width: calc(100% + ((#{$sage-checkbox-focus-outline-width}px ) + (#{$sage-checkbox-focus-outline-size} * 2)));
+    }
+    // checked
+    &:checked {
+      background: $sage-checkbox-color-checked;
+      color: $sage-checkbox-color-checked;
+      &::after {
+        content: "";
+        border: 2px solid #fff;
+        border-left: 0;
+        border-top: 0;
+        display: block;
+        height: 0.8125rem;
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform: rotate(43deg) translate3d(-110%, -30%, 0);
+        width: 0.4375rem;
+      }
+    }
+    // disabled
+    &:disabled {
+      background: $sage-checkbox-color-disabled;
+      cursor: not-allowed;
+      opacity: 0.5;
+      &::before {
+        display:none;
+      }
+      // disabled & checked
+      &:checked {
+        background: $sage-checkbox-color-disabled;
+        &::before {
+          display:none;
+        }
+      }
+      & + label {
+        color: $sage-checkbox-color-default;
+        cursor: not-allowed;
+      }
+    }
+    // hover
+    &:hover {
+      &:not(:checked) {
+        &:not(:disabled) {
+          box-shadow: sage-shadow(sm);
+        }
+      }
+    }
+    &:focus,
+    &:active {
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+}
