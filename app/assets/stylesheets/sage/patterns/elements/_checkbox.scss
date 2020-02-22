@@ -83,6 +83,7 @@ $sage-checkbox-disabled-checked-color: sage-color(primary, 200);
       &:checked {
         background: $sage-checkbox-disabled-checked-color;
         border-color: $sage-checkbox-disabled-checked-color;
+        box-shadow: none;
         opacity: 1;
         &::before {
           display:none;
