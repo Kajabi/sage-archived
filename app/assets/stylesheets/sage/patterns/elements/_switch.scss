@@ -7,7 +7,8 @@ $sage-switch-color-default-text: sage-color(charcoal, 300);
 $sage-switch-color-checked: sage-color(primary);
 $sage-switch-color-disabled: sage-color(grey, 200);
 $sage-switch-color-disabled-text: sage-color(grey, 400);
-$sage-switch-color-disabled-checked: sage-color(grey, 300);
+$sage-switch-color-disabled-checked: sage-color(primary, 200);
+$sage-switch-color-disabled-checked-text: sage-color(charcoal, 100);
 
 $sage-switch-border-radius: 1rem;
 $sage-switch-toggle-size: 1.25rem;
@@ -103,6 +104,10 @@ $sage-switch-focus-outline-color: currentColor;
       // disabled & checked
       &:checked {
         background: $sage-switch-color-disabled-checked;
+
+        & + label {
+          color: $sage-switch-color-disabled-checked-text;
+        }
       }
     }
 
