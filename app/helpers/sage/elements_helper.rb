@@ -5,8 +5,11 @@ module Sage
     def sage_elements
       [
         # Sage Generated Elements
+        { title: "icon_button" },
         { title: "switch" },
         { title: "radio" },
+        { title: "link_button" },
+        { title: "danger_button" },
         { title: "button" },
       ]
     end

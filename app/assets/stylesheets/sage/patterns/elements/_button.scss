@@ -1,37 +1,266 @@
-.sage-btn {
-  display: inline-block;
-  font-size: sage-font-size(sm);
-  padding: sage-spacing(xs) sage-spacing(sm);
-  background: #ffffff;
-  border: 1px solid sage-color(charcoal, 400);
-  color: sage-color(charcoal, 400);
-  font-weight: sage-font-weight(simibold);
+// ============================================
+// Variables
+// ============================================
+
+$sage-btn-transition: 0.1s ease-in-out;
+$sage-btn-border-width: 2px;
+
+$sage-btn-focus-outline-size: sage-spacing(xs);
+$sage-btn-focus-outline-width: 1;
+$sage-btn-focus-outline-color: currentColor;
+
+$sage-btn-primary-bg-color: sage-color(primary);
+$sage-btn-primary-text-color: #fff;
+
+$sage-btn-secondary-text-color: sage-color(charcoal, 400);
+
+$sage-btn-danger-bg-color: sage-color(red);
+$sage-btn-danger-text-color: #fff;
+
+// ============================================
+// Mixins
+// ============================================
+
+@mixin button-style-base {
+  appearance: none;
+  background-color: transparent;
+  color: sage-color(charcoal, 500);
+  cursor: pointer;
+  border: $sage-btn-border-width solid currentColor;
   border-radius: sage-border(radius);
-  &:hover {
-    background: #ffffff;
-    border: 1px solid sage-color(charcoal, 500);
-    color: sage-color(charcoal, 500);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.18), 0 1px 3px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  font-family: inherit;
+  font-size: sage-font-size(md);
+  font-weight: 500;
+  letter-spacing: 0.01875rem; // 0.3px
+  line-height: 1;
+  padding: 0.75rem sage-spacing(sm);
+  margin-bottom: sage-spacing(sm);
+  margin-right: sage-spacing(2xs);
+  position: relative;
+  transition: border $sage-btn-transition, background-color $sage-btn-transition, box-shadow $sage-btn-transition;
+}
+
+@mixin button-style-disabled {
+  cursor: not-allowed;
+  box-shadow: none;
+  transition: none;
+
+  &:hover:not(:focus):not(:active):not(:disabled):not(.disabled),
+  &:focus,
+  &:active {
+    border-color: transparent;
+    outline: none;
   }
+}
+
+// ============================================
+// Styles
+// ============================================
+
+button,
+input[type="submit"],
+input[type="search"] {
+  @include button-style-base;
+}
+
+.sage-btn {
+  @include button-style-base;
+
+  // add space between adjacent buttons
+  + .sage-btn {
+    margin-left: sage-spacing(xs);
+  }
+
+  &::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: calc(100% + ((#{$sage-btn-focus-outline-width}px ) + (#{$sage-btn-focus-outline-size} * 2)));
+    height: calc(100% + ((#{$sage-btn-focus-outline-width}px) + (#{$sage-btn-focus-outline-size} * 2)));
+    border: calc(#{$sage-btn-focus-outline-width}px) solid $sage-btn-focus-outline-color;
+    border-radius: sage-border(radius-large);
+    pointer-events: none;
+    opacity: 0;
+    transform: translate3d(-50%, -50%, 0) scale(0.94);
+    transition: opacity 0.15s ease-out 0.05s, transform 0.2s ease-in-out;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: sage-color(charcoal, 100);
+    color: sage-color(charcoal, 200);
+  }
+
+  &:focus {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.18), 0 1px 3px rgba(0, 0, 0, 0.1);
+    outline: none;
+  }
+
+  &:focus:not(:disabled):not(.disabled),
+  &:active:not(:disabled):not(.disabled) {
+    &::after {
+      opacity: 1;
+      transform: translate3d(-50%, -50%, 0) scale(1);
+    }
+  }
+
+  &:active {
+    border-color: sage-color(charcoal, 200);
+    box-shadow: none;
+    color: sage-color(charcoal, 400);
+  }
+
+  &:disabled,
+  &.disabled {
+    @include button-style-disabled;
+
+    background-color: sage-color(grey, 100);
+    color: sage-color(grey);
+  }
+
   &--primary {
     @extend .sage-btn;
-    color: #fff;
-    background: sage-color(primary);
-    border: 1px solid sage-color(primary);
-    &:hover {
-      background: sage-color(primary, 400);
-      border: 1px solid sage-color(primary, 400);
-      color: #fff;
+
+    background-color: $sage-btn-primary-bg-color;
+    border-color: $sage-btn-primary-bg-color;
+    color: $sage-btn-primary-text-color;
+
+    &::after {
+      border-color: $sage-btn-primary-bg-color;
+    }
+
+    &:hover:not(:focus):not(:active):not(:disabled):not(.disabled),
+    &:focus,
+    &:active {
+      border-color: transparent;
+      color: $sage-btn-primary-text-color;
+    }
+
+    &:hover:not(:focus):not(:active):not(:disabled):not(.disabled) {
+      background-color: lighten($sage-btn-primary-bg-color, 9%);
+    }
+
+    &:focus {
+      background-color: $sage-btn-primary-bg-color;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.18), 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    &:active {
+      background-color: darken($sage-btn-primary-bg-color, 11%);
+      box-shadow: none;
+    }
+
+    &:disabled,
+    &.disabled {
+      @include button-style-disabled;
+
+      background-color: sage-color(primary, 100);
+      border-color: transparent;
+      color: sage-color(primary, 200);
     }
   }
+
   &--secondary {
     @extend .sage-btn;
-    background: #ffffff;
-    border: 1px solid sage-color(primary);
-    color: sage-color(primary);
-    &:hover {
-      background: #ffffff;
-      border: 1px solid sage-color(primary, 400);
-      color: sage-color(primary, 400);
+
+    background: #fff;
+    border: 1px solid transparent;
+    color: $sage-btn-secondary-text-color;
+
+    &::after {
+      border-color: sage-color(primary);
     }
+
+    &:hover:not(:focus):not(:active):not(:disabled):not(.disabled) {
+      border-color: transparent;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 3px 6px rgba(0, 0, 0, 0.15);
+      color: $sage-btn-secondary-text-color;
+    }
+
+    &:focus {
+      border: 1px solid sage-color(grey, 300);
+    }
+
+    &:active {
+      background-color: sage-color(grey, 200);
+      border: 1px solid sage-color(grey, 300);
+    }
+
+    &:disabled,
+    &.disabled {
+      @include button-style-disabled;
+
+      background-color: sage-color(grey, 200);
+      border-color: transparent;
+      color: sage-color(grey, 400);
+
+      &:hover,
+      &:focus,
+      &:active {
+        border-color: transparent;
+        box-shadow: none;
+      }
+    }
+  }
+
+  &--danger {
+    @extend .sage-btn;
+
+    background: $sage-btn-danger-bg-color;
+    border-color: transparent;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.18), 0 1px 3px rgba(0, 0, 0, 0.1);
+    color: $sage-btn-danger-text-color;
+
+    &::after {
+      border-color: $sage-btn-danger-bg-color;
+      z-index: 0;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      border-color: transparent;
+      color: $sage-btn-danger-text-color;
+    }
+
+    &:hover:not(:focus):not(:active):not(:disabled):not(.disabled) {
+      background-color: saturate(lighten($sage-btn-danger-bg-color, 6%), 5%);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 3px 6px rgba(0, 0, 0, 0.15);
+    }
+
+    &:focus {
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.18), 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    &:active {
+      background-color: darken($sage-btn-danger-bg-color, 4%);
+      box-shadow: none;
+    }
+
+    &:disabled,
+    &.disabled {
+      @include button-style-disabled;
+
+      background-color: sage-color(red, 100);
+      border-color: transparent;
+      color: sage-color(red, 200);
+    }
+  }
+
+  &--link {
+    @extend .sage-btn;
+
+
+  }
+
+  &--icon {
+    @extend .sage-btn;
+
+    display: inline-flex;
   }
 }
