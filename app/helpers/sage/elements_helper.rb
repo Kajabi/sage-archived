@@ -6,6 +6,7 @@ module Sage
       [
         # Sage Generated Elements
         { title: "icon_button" },
+        { title: "checkbox" },
         { title: "switch" },
         { title: "radio" },
         { title: "link_button" },
