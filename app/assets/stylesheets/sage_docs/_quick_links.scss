@@ -3,21 +3,35 @@
   position: sticky;
   top: 0;
 
+  &__body {
+    padding-left: sage-spacing();
+  }
+
   &__icon {
     margin-right: sage-spacing(xs);
     color: sage-color(charcoal, 200);
   }
 
-  &__heading {
+  &__header {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
     margin-bottom: sage-spacing(sm);
-    color: sage-color(charcoal, 200);
   }
 
   &__link {
     font-size: sage-font-size(sm);
     color: sage-color(charcoal,100);
-    margin-bottom: sage-spacing(xs);
-    padding-left: sage-spacing();
     display: block;
+
+    &:not(:last-child) {
+      margin-bottom: sage-spacing(xs);
+    }
+  }
+
+  &__title {
+    color: sage-color(charcoal, 200);
+    margin-bottom: 0;
+    flex: 1;
   }
 }
