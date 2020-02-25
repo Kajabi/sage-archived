@@ -4,15 +4,15 @@
 <% end %>
 <%= content_for :quick_links do %>
   <div class="quick-links">
-    <div class="sage-media">
+    <div class="quick-links__header">
       <i class="quick-links__icon sage-icon sage-icon-menu-8"></i>
-      <div class="sage-media__body">
-        <h5 class="quick-links__heading">Contents</h5>
-      </div>
+      <h5 class="quick-links__title">Contents</h5>
     </div>
-    <% sorted_sage_utilities.each do |utility| %>
-      <a href="#<%= utility[:title] %>" class="quick-links__link"><%= utility[:title].titleize %></a>
-    <% end %>
+    <div class="quick-links__body">
+      <% sorted_sage_utilities.each do |utility| %>
+        <a href="#<%= utility[:title] %>" class="quick-links__link"><%= utility[:title].titleize %></a>
+      <% end %>
+    </div>
   </div>
 <% end %>
 <% sorted_sage_utilities.each do |utility| %>
