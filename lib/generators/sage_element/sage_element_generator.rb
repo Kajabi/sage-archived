@@ -24,5 +24,10 @@ class SageElementGenerator < Rails::Generators::NamedBase
       "#{match}\n        { title: \"#{file_name}\" },"
     end
 
+    # Rules Variables
+    markup_file = "app/views/sage/examples/elements/#{file_name}/_rules.html.erb"
+    # Create Markup File
+    template "rules.html.erb", markup_file
+
   end
 end
