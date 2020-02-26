@@ -2,36 +2,36 @@
   padding: sage-spacing() 0;
   position: sticky;
   top: 0;
+}
 
-  &__body {
-    padding-left: sage-spacing();
+.quick-links__body {
+  padding-left: sage-spacing();
+}
+
+.quick-links__header {
+  margin-bottom: sage-spacing(sm);
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+.quick-links__icon {
+  margin-right: sage-spacing(xs);
+  color: sage-color(charcoal, 200);
+}
+
+.quick-links__link {
+  display: block;
+  font-size: sage-font-size(sm);
+  color: sage-color(charcoal, 100);
+
+  &:not(:last-child) {
+    margin-bottom: sage-spacing(xs);
   }
+}
 
-  &__icon {
-    margin-right: sage-spacing(xs);
-    color: sage-color(charcoal, 200);
-  }
-
-  &__header {
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-    margin-bottom: sage-spacing(sm);
-  }
-
-  &__link {
-    font-size: sage-font-size(sm);
-    color: sage-color(charcoal, 100);
-    display: block;
-
-    &:not(:last-child) {
-      margin-bottom: sage-spacing(xs);
-    }
-  }
-
-  &__title {
-    color: sage-color(charcoal, 200);
-    margin-bottom: 0;
-    flex: 1;
-  }
+.quick-links__title {
+  margin-bottom: 0;
+  color: sage-color(charcoal, 200);
+  flex: 1;
 }
