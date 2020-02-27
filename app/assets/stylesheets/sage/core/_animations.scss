@@ -1,3 +1,3 @@
-@mixin sage-simple-ease($value) {
-  transition: $value 0.2s ease-in-out;
+@mixin sage-simple-ease($value, $ease: ease-in-out) {
+  transition: $value 0.2s $ease;
 }
