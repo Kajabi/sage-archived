@@ -8,11 +8,13 @@
       <i class="quick-links__icon sage-icon sage-icon-menu-8"></i>
       <h5 class="quick-links__title">Contents</h5>
     </div>
-    <div class="quick-links__body">
+    <ul class="quick-links__body">
       <% sorted_sage_components.each do |component| %>
-        <a href="#<%= component[:title] %>" class="quick-links__link"><%= component[:title].titleize %></a>
+        <li class="quick-links__item">
+          <a href="#<%= component[:title] %>" class="quick-links__link"><%= component[:title].titleize %></a>
+        </li>
       <% end %>
-    </div>
+    </ul>
   </div>
 <% end %>
 <% sorted_sage_components.each do |component| %>

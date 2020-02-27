@@ -8,11 +8,13 @@
       <i class="quick-links__icon sage-icon sage-icon-menu-8"></i>
       <h5 class="quick-links__title">Contents</h5>
     </div>
-    <div class="quick-links__body">
+    <ul class="quick-links__body">
       <% sage_tokens.each do |token| %>
-        <a href="#<%= token[:category] %>" class="quick-links__link"><%= token[:category].titleize %></a>
+        <li class="quick-links__item">
+          <a href="#<%= token[:category] %>" class="quick-links__link"><%= token[:category].titleize %></a>
+        </li>
       <% end %>
-    </div>
+    </ul>
   </div>
 <% end %>
 <% sage_tokens.each do |token| %>
