@@ -1,3 +1,15 @@
+/* ==================================================
+** MIXINS
+================================================== */
+
+/* ==================================================
+  ** Visually Hidden mixin
+  Usage: `@include visually-hidden()`
+
+  Hides content from view, but allows text to stay visible to screen readers
+  params: n/a
+================================================== */
+
 @mixin visually-hidden {
   border: 0;
   clip: rect(0 0 0 0);
@@ -14,3 +26,33 @@
 .visually-hidden {
   @include visually-hidden();
 }
+
+/* ==================================================
+** Button reset mixin
+  Usage: `@include button-style-reset();
+
+  Resets base button style
+  params: n/a
+================================================== */
+
+@mixin button-style-reset {
+  display: inline-block;
+  padding: 0;
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  cursor: pointer;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: 1;
+}
+
+/* ==================================================
+** Placeholder mixin
+  Usage: `@include placeholder-input();
+
+  params: $color
+================================================== */
+
