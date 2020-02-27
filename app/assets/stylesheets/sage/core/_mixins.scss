@@ -7,7 +7,7 @@
   Usage: `@include visually-hidden()`
 
   Hides content from view, but allows text to stay visible to screen readers
-  params: n/a
+  arguments: n/a
 ================================================== */
 
 @mixin visually-hidden {
@@ -32,7 +32,7 @@
   Usage: `@include button-style-reset();
 
   Resets base button style
-  params: n/a
+  arguments: n/a
 ================================================== */
 
 @mixin button-style-reset {
@@ -50,9 +50,29 @@
 }
 
 /* ==================================================
+** Focus outline ring
+  Usage: `@include sage-focus-outline();
+
+  Draws a border around focused and active elements
+  arguments:
+  $color (outline color),
+  $size (outline size),
+  $pseudo (whether to use ::before or ::after (default))
+================================================== */
+
+@mixin sage-focus-outline($color, $size, $pseudo: after) {
+  position: relative;
+
+
+  @if ($pseudo == after) {
+
+  }
+}
+
+/* ==================================================
 ** Placeholder mixin
   Usage: `@include placeholder-input();
 
-  params: $color
+  arguments: $color
 ================================================== */
 

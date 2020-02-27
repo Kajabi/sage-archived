@@ -1,13 +1,12 @@
 <div class="sage-assistant">
-  <label for="sage-sidebar__toggle" class="sage-sidebar__toggle">
-    <span></span>
-    <span></span>
-    <span></span>
-  </label>
+  <button class="sage-sidebar__toggle" aria-expanded="false" aria-controls="sage-sidebar-menu">
+    <span class="btn-bar"></span><span class="btn-bar"></span><span class="btn-bar"></span>
+    <span class="visually-hidden">Toggle main menu</span>
+  </button>
   <%= image_tag("sage/sage.svg", class: "sage-assistant__branding")%>
   <div class="sage-assistant__body">
     <div class="sage-container--sm">
-      <input type="text" class="sage-assistant__search" placeholder="Search...">
+      <input type="text" class="sage-assistant__search" placeholder="Search&hellip;">
     </div>
   </div>
   <div class="sage-assistant__actions"></div>
