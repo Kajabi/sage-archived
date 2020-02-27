@@ -16,10 +16,3 @@ gemspec
 gem 'sqlite3', '~> 1.3.0'
 gem 'sass-rails'
 gem 'autoprefixer-rails'
-
-group :development do
-  gem 'guard', '>= 2.2.2', require: false
-  gem 'guard-livereload', require: false
-  gem 'rack-livereload'
-  gem 'rb-fsevent', require: false
-end
