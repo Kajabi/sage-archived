@@ -22,7 +22,7 @@ In a new terminal Start Up Rails Sever
 $ rails s
 ```
 
-You are then able to navigate to all the guides associated with the system by following the link: 
+You are then able to navigate to all the guides associated with the system by following the link:
 http://localhost:3000/sage/pages/index
 
 ## Installation
@@ -58,3 +58,21 @@ Import Sage styles in app/assets/stylesheets/application.scss:
 ## License
 
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+
+## Development
+
+This repository has some features set up for local development. To run the application locally, first ensure you have Node.js installed for assistance with running scripts. Then:
+
+```
+npm install
+```
+
+...in order to install dependencies. This only needs to be run the first time, or after any changes are made to the `package.json`.
+
+Afterwards, run the development rails environment and turn on live reloading with:
+
+```
+npm start
+```
+
+Happy development!
