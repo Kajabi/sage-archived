@@ -8,7 +8,7 @@ $sage-sidebar-toggle-line-height: 0.125rem;
 
 $sage-sidebar-btn-focus-outline-size: sage-spacing(xs);
 $sage-sidebar-btn-focus-outline-width: 1;
-$sage-sidebar-btn-focus-outline-color: sage-color(primary, 300);
+$sage-sidebar-btn-focus-outline-color: currentColor;
 
 // ============================================
 // Styles
@@ -43,6 +43,7 @@ $sage-sidebar-btn-focus-outline-color: sage-color(primary, 300);
     transition: transform 0.2s ease-out, opacity 0.15s ease-in-out;
 
     .sidebar-is-open & {
+      box-shadow: sage-shadow();
       opacity: 1;
       transform: none;
     }
@@ -126,6 +127,22 @@ $sage-sidebar-btn-focus-outline-color: sage-color(primary, 300);
       content: "";
     }
 
+    &:focus {
+      &::after {
+        opacity: 1;
+        border-color: sage-color(charcoal, 100);
+        transform: translate3d(-50%, -50%, 0) scale(1);
+      }
+    }
+
+    &:active {
+      color: sage-color(grey, 400);
+
+      &::after {
+        border-color: sage-color(charcoal, 200);
+      }
+    }
+
     .sidebar-is-open & {
       .btn-bar {
         width: 100%;
@@ -145,8 +162,17 @@ $sage-sidebar-btn-focus-outline-color: sage-color(primary, 300);
       }
 
       &::after {
+        border-color: sage-color(sage);
         opacity: 1;
         transform: translate3d(-50%, -50%, 0) scale(1);
+      }
+
+      &:active {
+        color: sage-color(grey, 400);
+
+        &::after {
+          border-color: sage-color(charcoal, 200);
+        }
       }
     }
   }
