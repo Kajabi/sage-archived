@@ -49,15 +49,12 @@ module Sage
       @title = params[:title]
     end
 
-    def components
+    def objects
     end
 
-    def component
+    def object
       @title = params[:title]
     end 
-
-    def modules
-    end
 
     def utilities
     end
