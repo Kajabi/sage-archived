@@ -56,9 +56,6 @@ module Sage
       @title = params[:title]
     end 
 
-    def modules
-    end
-
     def utilities
     end
 
