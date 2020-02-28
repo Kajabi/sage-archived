@@ -1,10 +1,10 @@
 module Sage
-  module ComponentsHelper
+  module ObjectsHelper
 
-    # Lists out all the available sage components
-    def sage_components
+    # Lists out all the available sage objects
+    def sage_objects
       [
-        # Sage Generated Components
+        # Sage Generated Objects
         { title: "form_section" },
         { title: "tabs" },
         { title: "banner" },
@@ -17,9 +17,9 @@ module Sage
       ]
     end
     
-    # Sorts available components based on alphabet
-    def sorted_sage_components
-      sage_components.sort_by { |h| h[:title] }
+    # Sorts available objects based on alphabet
+    def sorted_sage_objects
+      sage_objects.sort_by { |h| h[:title] }
     end
 
   end
