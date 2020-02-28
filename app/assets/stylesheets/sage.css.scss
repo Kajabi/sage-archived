@@ -41,11 +41,9 @@
 @import "sage/patterns/components/tabs";
 @import "sage/patterns/components/banner";
 @import "sage/patterns/components/panel";
-
-// Modules
-@import "sage/patterns/modules/assistant";
-@import "sage/patterns/modules/content";
-@import "sage/patterns/modules/nav";
-@import "sage/patterns/modules/page";
-@import "sage/patterns/modules/sidebar";
-@import "sage/patterns/modules/stage";
+@import "sage/patterns/components/assistant";
+@import "sage/patterns/components/content";
+@import "sage/patterns/components/nav";
+@import "sage/patterns/components/page";
+@import "sage/patterns/components/sidebar";
+@import "sage/patterns/components/stage";
