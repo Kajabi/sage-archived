@@ -15,8 +15,7 @@ Sage::Engine.routes.draw do
   get 'pages/icon'
   get 'pages/elements'
   get 'pages/element'
-  get 'pages/components'
-  get 'pages/component'
-  get 'pages/modules'
+  get 'pages/objects'
+  get 'pages/object'
   get 'pages/utilities'
 end

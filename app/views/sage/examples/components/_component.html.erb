@@ -3,7 +3,7 @@
     <div class="sage-media-body">
       <%= render partial: "sage/application/itemtitle", object: title, as: 'itemtitle' =%>
     </div>
-    <%= link_to pages_component_url(title: title), target: "_blank", class: "example__link" do %>
+    <%= link_to pages_object_url(title: title), target: "_blank", class: "example__link" do %>
       <i class="sage-icon sage-icon-launch-app"></i>
     <% end %>
   </div>
