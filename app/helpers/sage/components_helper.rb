@@ -9,6 +9,11 @@ module Sage
         { title: "tabs" },
         { title: "banner" },
         { title: "panel" },
+        { title: "assistant" },
+        { title: "content" },
+        { title: "nav" },
+        { title: "page" },
+        { title: "sidebar" },
       ]
     end
     
