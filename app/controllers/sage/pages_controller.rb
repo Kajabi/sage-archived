@@ -2,7 +2,7 @@ require_dependency "sage/application_controller"
 
 module Sage
   class PagesController < ApplicationController
-    layout "sage/minimal", :only => [ :component, :element ]
+    #layout "sage/minimal", :only => [ :component, :element ]
     def generators
     end
 
