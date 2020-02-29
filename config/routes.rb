@@ -1,5 +1,6 @@
 Sage::Engine.routes.draw do
   get 'pages/item'
+  get 'pages/status'
   get 'pages/breakout'
   get 'pages/index'
   get 'pages/token'
