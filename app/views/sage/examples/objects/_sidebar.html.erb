@@ -1,0 +1,7 @@
+<%= content_for :sidebar_objects do %>
+  <% sorted_sage_objects.each do |object| %>
+    <%= link_to pages_object_url(title: object[:title]), target: "_blank", class: "sage-nav__link--sub" do %>
+      <%= object[:title].titleize %>
+    <% end %>
+  <% end %>
+<% end %>

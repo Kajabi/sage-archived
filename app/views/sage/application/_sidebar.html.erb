@@ -17,6 +17,7 @@
         <i class="sage-icon sage-icon-gear"></i>
         Guidelines
       <% end %>
+      <%= yield :sidebar_guidelines %>
       <%= link_to "Code Conventions", pages_conventions_url, class: "sage-nav__link--sub" %>
       <%= link_to "Accessibility", pages_accessibility_url, class: "sage-nav__link--sub" %>
       <%= link_to "Browser Support", pages_browser_url, class: "sage-nav__link--sub" %>
@@ -25,12 +26,7 @@
         <i class="sage-icon sage-icon-gear"></i>
         Styles
       <% end %>
-      <%= link_to "Tokens", pages_token_url, class: "sage-nav__link--sub" %>
-      <%= link_to "Colors", pages_color_url, class: "sage-nav__link--sub" %>
-      <%= link_to "Typography", pages_typography_url, class: "sage-nav__link--sub" %>
-      <%= link_to "Icons", pages_icon_url, class: "sage-nav__link--sub" %>
-      <%= link_to "Containers", pages_container_url, class: "sage-nav__link--sub" %>
-      <%= link_to "Grid", pages_grid_url, class: "sage-nav__link--sub" %>
+      <%= yield :sidebar_styles %>
       <%= link_to pages_elements_url, class: "sage-nav__link" do %>
         <i class="sage-icon sage-icon-gear"></i>
         Elements
@@ -45,7 +41,6 @@
         <i class="sage-icon sage-icon-gear"></i>
         Utilities
       <% end %>
-      <%= yield :sidebar_utilities %>
     </div>
   </div>
   <div class="sage-sidebar__footer">
