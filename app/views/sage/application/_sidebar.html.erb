@@ -35,14 +35,17 @@
         <i class="sage-icon sage-icon-gear"></i>
         Elements
       <% end %>
+      <%= yield :sidebar_elements %>
       <%= link_to pages_objects_url, class: "sage-nav__link" do %>
         <i class="sage-icon sage-icon-gear"></i>
         Objects
       <% end %>
+      <%= yield :sidebar_objects %>
       <%= link_to pages_utilities_url, class: "sage-nav__link" do %>
         <i class="sage-icon sage-icon-gear"></i>
         Utilities
       <% end %>
+      <%= yield :sidebar_utilities %>
     </div>
   </div>
   <div class="sage-sidebar__footer">
