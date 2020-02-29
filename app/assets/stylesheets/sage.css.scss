@@ -24,8 +24,11 @@
 
 // Layout
 @import "sage/layout/container";
+@import "sage/layout/content";
 @import "sage/layout/document";
 @import "sage/layout/grid";
+@import "sage/layout/page";
+@import "sage/layout/stage";
 
 // Utilities
 @import "sage/utilities/media";
@@ -43,8 +46,5 @@
 @import "sage/patterns/objects/banner";
 @import "sage/patterns/objects/panel";
 @import "sage/patterns/objects/assistant";
-@import "sage/patterns/objects/content";
 @import "sage/patterns/objects/nav";
-@import "sage/patterns/objects/page";
 @import "sage/patterns/objects/sidebar";
-@import "sage/patterns/objects/stage";
