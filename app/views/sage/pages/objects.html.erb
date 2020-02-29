@@ -1,3 +1,4 @@
+<%= render "sage/examples/objects/sidebar" %>
 <%= content_for :heading do %>
   <h1>Objects</h1>
   <p>Objects are groups of atoms bonded together and are the smallest fundamental units of a compound. These Objects take on their own properties and serve as the backbone of our design systems.</p>
@@ -18,4 +19,3 @@
 <% sorted_sage_objects.each do |object| %>
   <%= render "sage/examples/objects/object", title: object[:title] %>
 <% end %>
-<%= render "sage/examples/objects/sidebar" %>
