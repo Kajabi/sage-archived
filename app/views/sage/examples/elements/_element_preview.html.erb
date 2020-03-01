@@ -1,7 +1,9 @@
 <div class="sage-panel">
   <div class="sage-media">
     <div class="sage-media-body">
-      <%= render partial: "sage/application/itemtitle", object: title, as: 'itemtitle' =%>
+      <%= link_to pages_element_url(title: title) do %>
+        <%= render partial: "sage/application/itemtitle", object: title, as: 'itemtitle' =%>
+      <% end %>
     </div>
     <%= link_to pages_element_url(title: title), target: "_blank", class: "example__link" do %>
       <i class="sage-icon sage-icon-launch-app"></i>
