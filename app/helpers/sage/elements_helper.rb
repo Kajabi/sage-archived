@@ -5,13 +5,13 @@ module Sage
     def sage_elements
       [
         # Sage Generated Elements
-        { title: "icon_button" },
-        { title: "checkbox" },
-        { title: "switch" },
-        { title: "radio" },
-        { title: "link_button" },
-        { title: "danger_button" },
-        { title: "button" },
+        { title: "icon_button", description: "" },
+        { title: "checkbox", description: "" },
+        { title: "switch", description: "" },
+        { title: "radio", description: "" },
+        { title: "link_button", description: "" },
+        { title: "danger_button", description: "" },
+        { title: "button", description: "" },
       ]
     end
 
