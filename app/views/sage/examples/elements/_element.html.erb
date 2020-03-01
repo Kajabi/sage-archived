@@ -1,16 +1,40 @@
 <%= content_for :heading do %>
-  <h1><%= title %></h1>
+  <h1><%= title.titleize %></h1>
+<% end %>
+
+<%= content_for :quick_links do %>
+  <div class="quick-links">
+    <div class="sage-media">
+      <i class="quick-links__icon sage-icon sage-icon-menu-8"></i>
+      <div class="sage-media__body">
+        <h5 class="quick-links__heading">Contents</h5>
+      </div>
+    </div>
+    <a href="#preview" class="quick-links__link">Preview</a>
+    <a href="#code" class="quick-links__link">Code</a>
+    <a href="#props" class="quick-links__link">Properties</a>
+    <a href="#best" class="quick-links__link">Best Practices</a>
+  </div>
 <% end %>
 
 <div class="sage-panel">
-  <h3 class="example__title">Preview</h3>
+  <h3 id="preview" class="example__title">Preview</h3>
   <div class="example__preview">
     <%= render "sage/examples/elements/#{title}/preview" %>
   </div>
 </div>
 <div class="sage-panel">
-  <h3 class="example__title">Code</h3>
+  <h3 id="code" class="example__title">Code</h3>
   <div class="example__code">
     <pre class="prettyprint"><code><%= CGI.unescapeHTML(CGI.escapeHTML render "sage/examples/elements/#{title}/preview") %></code></pre>
   </div>
 </div>
+<div id="props" class="sage-panel">
+  <h3 class="example__title">Properties</h3>
+  
+</div>
+<div id="best" class="sage-panel">
+  <h3 class="example__title">Best Practices</h3>
+  
+</div>
+
