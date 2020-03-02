@@ -1,0 +1,53 @@
+// ============================================
+// Variables
+// ============================================
+$sage-loading-bar-bg-color: sage-color(grey);
+$sage-loading-bar-height: 0.625rem; // 10px
+$sage-loading-bar-width: 18.75rem; // 300px
+
+
+// ============================================
+// Mixins
+// ============================================
+
+@mixin sage-loading {
+  position: relative;
+
+  &::before {
+    content: "";
+    display: block;
+    pointer-events: none;
+    transition: opacity 0.25s ease-in-out;
+  }
+
+  &[data-loading*="true"] {
+    &::before {
+      opacity: 1;
+    }
+  }
+}
+
+
+/*------------------------------------*/
+/*-- loading indicators */
+/*------------------------------------*/
+
+.sage-loading--bar {
+  @include sage-loading();
+
+  &::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: $sage-loading-bar-bg-color;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 225.7 8' class='sage-svg-loader'%3E%3Cstyle%3E .loader-blob %7B animation: movingBlobs 2s linear infinite forwards %7D @keyframes movingBlobs %7B 20%25 %7B transform: translateX(40%25) %7D 60%25 %7B transform: translateX(215%25) %7D 78%25 %7B opacity: 1; transform: translateX(250%25) %7D 79%25 %7B opacity: 0; transform: translateX(250%25) %7D 80%25 %7B opacity: 0; transform: none %7D 81%25 %7B opacity: 1; transform: none %7D %7D %3C/style%3E%3Cpath class='loader-blob' fill='%230072ef' d='M-187.3,0h53c2.2,0,4,1.8,4,4s-1.8,4-4,4h-53c-2.2,0-4-1.8-4-4C-191.3,1.8-189.5,0-187.3,0z'/%3E%3Cpath class='loader-blob' fill='%230072ef' d='M-234,0h26c2.2,0,4,1.8,4,4s-1.8,4-4,4h-26c-2.2,0-4-1.8-4-4S-236.2,0-234,0z'/%3E%3Cpath class='loader-blob' fill='%230072ef' d='M-113.5,0H-4c2.2,0,4,1.8,4,4s-1.8,4-4,4h-109.5c-2.2,0-4-1.8-4-4S-115.7,0-113.5,0z'/%3E%3C/svg%3E");
+    background-position: center center;
+    background-size: cover;
+    border-radius: $sage-loading-bar-height;
+    height: $sage-loading-bar-height;
+    max-width: $sage-loading-bar-width;
+    width: 100%;
+    transform: translate3d(-50%, -50%, 0);
+    opacity: 0;
+  }
+}
