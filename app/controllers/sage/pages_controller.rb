@@ -61,6 +61,12 @@ module Sage
     end
 
     # Generator Pages
+    def item
+      @type = params[:type]
+      @title = params[:title]
+      @description = params[:description]
+    end
+
     def breakout
       @type = params[:type]
       @title = params[:title]
