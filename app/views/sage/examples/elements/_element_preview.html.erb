@@ -1,7 +1,7 @@
 <div class="sage-panel">
   <div class="sage-media">
     <div class="sage-media-body">
-      <%= link_to pages_item_url(type: type, title: title, description: description) do %>
+      <%= link_to pages_element_url(title: title, description: description) do %>
         <h3 id="<%= title %>" class="example__title"><%= title.titleize %></h3>
       <% end %>
     </div>

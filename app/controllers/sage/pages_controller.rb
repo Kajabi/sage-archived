@@ -42,6 +42,11 @@ module Sage
     def icon
     end
 
+    def element
+      @title = params[:title]
+      @description = params[:description]
+    end
+    
     def elements
     end
 
