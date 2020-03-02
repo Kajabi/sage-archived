@@ -1,5 +1,5 @@
 .sage-assistant {
-  z-index: 998;
+  z-index: sage-z_index(nav);
   display: flex;
   align-items: center;
   padding: sage-spacing(xs) sage-spacing();

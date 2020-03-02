@@ -218,7 +218,7 @@ input[type="search"] {
 
     &::after {
       border-color: $sage-btn-danger-bg-color;
-      z-index: 0;
+      z-index: sage-z_index();
     }
 
     &:hover,
