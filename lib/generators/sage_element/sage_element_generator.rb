@@ -24,5 +24,15 @@ class SageElementGenerator < Rails::Generators::NamedBase
       "#{match}\n        { title: \"#{file_name}\" },"
     end
 
+    # Props Variables
+    markup_file = "app/views/sage/examples/elements/#{file_name}/_props.html.erb"
+    # Create Props File
+    template "props.html.erb", markup_file
+
+    # Rules Variables
+    markup_file = "app/views/sage/examples/elements/#{file_name}/_rules.html.erb"
+    # Create Rules File
+    template "rules.html.erb", markup_file
+
   end
 end
