@@ -55,6 +55,7 @@ module Sage
 
     def object
       @title = params[:title]
+      @description = params[:description]
     end 
 
     def utilities
