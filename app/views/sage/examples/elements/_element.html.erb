@@ -1,5 +1,5 @@
 <%= content_for :heading do %>
-  <h1><%= title.titleize %></h1>
+  <h1><%= @title.titleize %></h1>
   <p><%= @description %></p>
 <% end %>
 
@@ -21,13 +21,13 @@
 <div class="sage-panel">
   <h3 id="preview" class="example__title">Preview</h3>
   <div class="example__preview">
-    <%= render "sage/examples/elements/#{title}/preview" %>
+    <%= render "sage/examples/elements/#{@title}/preview" %>
   </div>
 </div>
 <div class="sage-panel">
   <h3 id="code" class="example__title">Code</h3>
   <div class="example__code">
-    <pre class="prettyprint"><code><%= CGI.unescapeHTML(CGI.escapeHTML render "sage/examples/elements/#{title}/preview") %></code></pre>
+    <pre class="prettyprint"><code><%= CGI.unescapeHTML(CGI.escapeHTML render "sage/examples/elements/#{@title}/preview") %></code></pre>
   </div>
 </div>
 <div id="props" class="sage-panel">
