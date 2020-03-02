@@ -5,7 +5,7 @@
         <%= render partial: "sage/application/itemtitle", object: title, as: 'itemtitle' =%>
       <% end %>
     </div>
-    <%= link_to pages_element_url(title: title, description: description), target: "_blank", class: "example__link" do %>
+    <%= link_to pages_breakout_url(type: type, title: title, description: description), target: "_blank", class: "example__link" do %>
       <i class="sage-icon sage-icon-launch-app"></i>
     <% end %>
   </div>

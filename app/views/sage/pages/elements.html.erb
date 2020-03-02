@@ -19,5 +19,5 @@
   </div>
 <% end %>
 <% sorted_sage_elements.each do |element| %>
-  <%= render "sage/examples/elements/element_preview", title: element[:title], description: element[:description] %>
+  <%= render "sage/examples/elements/element_preview", type: "element", title: element[:title], description: element[:description] %>
 <% end %>
