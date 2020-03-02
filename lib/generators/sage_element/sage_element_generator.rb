@@ -29,10 +29,15 @@ class SageElementGenerator < Rails::Generators::NamedBase
     # Create Props File
     template "props.html.erb", markup_file
 
-    # Rules Variables
-    markup_file = "app/views/sage/examples/elements/#{file_name}/_rules.html.erb"
-    # Create Rules File
-    template "rules.html.erb", markup_file
+    # Rules Do Variables
+    markup_file = "app/views/sage/examples/elements/#{file_name}/_rules_do.html.erb"
+    # Create Rules Do File
+    template "rules_do.html.erb", markup_file
+
+    # Rules Dont Variables
+    markup_file = "app/views/sage/examples/elements/#{file_name}/_rules_dont.html.erb"
+    # Create Rules Dont File
+    template "rules_dont.html.erb", markup_file
 
   end
 end

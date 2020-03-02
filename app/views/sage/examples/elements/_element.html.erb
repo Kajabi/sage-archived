@@ -43,16 +43,15 @@
   </table>
 </div>
 <div id="best" class="sage-panel">
-  <%= render "sage/examples/elements/#{@title}/rules" %>
   <h3 class="example__title">Best Practices</h3>
   <div class="sage-row">
     <div class="sage-col--md-6">
       <h5>Do</h5>
-      <%= yield :do %>
+      <%= render "sage/examples/elements/#{@title}/rules_do" %>
     </div>
     <div class="sage-col--md-6">
       <h5>Don't</h5>
-      <%= yield :dont %>
+      <%= render "sage/examples/elements/#{@title}/rules_dont" %>
     </div>
   </div>
 </div>
