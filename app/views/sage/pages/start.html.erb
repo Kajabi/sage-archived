@@ -4,15 +4,21 @@
 <% end %>
 <%= content_for :quick_links do %>
   <div class="quick-links">
-    <div class="sage-media">
+    <div class="quick-links__header">
       <i class="quick-links__icon sage-icon sage-icon-menu-8"></i>
-      <div class="sage-media__body">
-        <h5 class="quick-links__heading">Contents</h5>
-      </div>
+      <h5 class="quick-links__title">Contents</h5>
     </div>
-    <a href="#create" class="quick-links__link">Contributing</a>
-    <a href="#review" class="quick-links__link">Reviews</a>
-    <a href="#version" class="quick-links__link">Versioning</a>
+    <ul class="quick-links__body">
+      <li class="quick-links__item">
+        <a href="#create" class="quick-links__link">Contributing</a>
+      </li>
+      <li class="quick-links__item">
+        <a href="#review" class="quick-links__link">Reviews</a>
+      </li>
+      <li class="quick-links__item">
+        <a href="#version" class="quick-links__link">Versioning</a>
+      </li>
+    </ul>
   </div>
 <% end %>
 <div class="sage-panel">

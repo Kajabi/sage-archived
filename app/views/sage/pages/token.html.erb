@@ -4,15 +4,17 @@
 <% end %>
 <%= content_for :quick_links do %>
   <div class="quick-links">
-    <div class="sage-media">
+    <div class="quick-links__header">
       <i class="quick-links__icon sage-icon sage-icon-menu-8"></i>
-      <div class="sage-media__body">
-        <h5 class="quick-links__heading">Contents</h5>
-      </div>
+      <h5 class="quick-links__title">Contents</h5>
     </div>
-    <% sage_tokens.each do |token| %>
-      <a href="#<%= token[:category] %>" class="quick-links__link"><%= token[:category].titleize %></a>
-    <% end %>
+    <ul class="quick-links__body">
+      <% sage_tokens.each do |token| %>
+        <li class="quick-links__item">
+          <a href="#<%= token[:category] %>" class="quick-links__link"><%= token[:category].titleize %></a>
+        </li>
+      <% end %>
+    </ul>
   </div>
 <% end %>
 <% sage_tokens.each do |token| %>

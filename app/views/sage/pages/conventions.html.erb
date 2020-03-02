@@ -4,18 +4,30 @@
 <% end %>
 <%= content_for :quick_links do %>
   <div class="quick-links">
-    <div class="sage-media">
+    <div class="quick-links__header">
       <i class="quick-links__icon sage-icon sage-icon-menu-8"></i>
-      <div class="sage-media__body">
-        <h5 class="quick-links__heading">Contents</h5>
-      </div>
+      <h5 class="quick-links__title">Contents</h5>
     </div>
-    <a href="#core" class="quick-links__link">Core Concepts</a>
-    <a href="#global" class="quick-links__link">Global Namespace</a>
-    <a href="#tokens" class="quick-links__link">Design Tokens</a>
-    <a href="#parent" class="quick-links__link">Parent Selectors</a>
-    <a href="#media" class="quick-links__link">Media Queries</a>
-    <a href="#utilities" class="quick-links__link">Utilities</a>
+    <ul class="quick-links__body">
+      <li class="quick-links__item">
+        <a href="#core" class="quick-links__link">Core Concepts</a>
+      </li>
+      <li class="quick-links__item">
+        <a href="#global" class="quick-links__link">Global Namespace</a>
+      </li>
+      <li class="quick-links__item">
+        <a href="#tokens" class="quick-links__link">Design Tokens</a>
+      </li>
+      <li class="quick-links__item">
+        <a href="#parent" class="quick-links__link">Parent Selectors</a>
+      </li>
+      <li class="quick-links__item">
+        <a href="#media" class="quick-links__link">Media Queries</a>
+      </li>
+      <li class="quick-links__item">
+        <a href="#utilities" class="quick-links__link">Utilities</a>
+      </li>
+    </ul>
   </div>
 <% end %>
 <div class="sage-panel">
@@ -80,4 +92,3 @@ sage-font-size(4xl)</code></pre>
   <p>Utilities should be used sparingly and only when there is no way to accurately modify the block to fit the needs of the mockup. If you find yourself in a situation where you are tempted to use a utility class it might be a good opportunity to reach out to the product developer and ask if the unique treatment in the situation is needed.</p>
   <p>Utilities do not play well with responsive styling so a utility class should be used only in cases where the same treatment is needed on every device. When in doubt reach out to the designer or another developer. </p>
 </div>
-
