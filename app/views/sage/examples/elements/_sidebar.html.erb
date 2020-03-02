@@ -1,6 +1,6 @@
 <%= content_for :sidebar_elements do %>
   <% sorted_sage_elements.each do |element| %>
-    <%= link_to pages_element_url(title: element[:title]), class: "sage-nav__link--sub" do %>
+    <%= link_to pages_element_url(title: element[:title], description: element[:description]), class: "sage-nav__link--sub" do %>
       <%= element[:title].titleize %>
     <% end %>
   <% end %>
