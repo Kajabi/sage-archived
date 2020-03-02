@@ -1,8 +1,0 @@
-Description:
-    Explain the generator
-
-Example:
-    rails generate sage_module Thing
-
-    This will create:
-        what/will/it/create

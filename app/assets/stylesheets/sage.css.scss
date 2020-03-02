@@ -36,16 +36,14 @@
 @import "sage/patterns/elements/radio";
 @import "sage/patterns/elements/switch";
 
-// Components
-@import "sage/patterns/components/form_section";
-@import "sage/patterns/components/tabs";
-@import "sage/patterns/components/banner";
-@import "sage/patterns/components/panel";
-
-// Modules
-@import "sage/patterns/modules/assistant";
-@import "sage/patterns/modules/content";
-@import "sage/patterns/modules/nav";
-@import "sage/patterns/modules/page";
-@import "sage/patterns/modules/sidebar";
-@import "sage/patterns/modules/stage";
+// Objects
+@import "sage/patterns/objects/form_section";
+@import "sage/patterns/objects/tabs";
+@import "sage/patterns/objects/banner";
+@import "sage/patterns/objects/panel";
+@import "sage/patterns/objects/assistant";
+@import "sage/patterns/objects/content";
+@import "sage/patterns/objects/nav";
+@import "sage/patterns/objects/page";
+@import "sage/patterns/objects/sidebar";
+@import "sage/patterns/objects/stage";
