@@ -10,27 +10,27 @@
     </div>
     <ul class="quick-links__body">
       <li class="quick-links__item">
-        <a href="#running" class="quick-links__link">Running Sage Gem</a>
+        <a href="#create" class="quick-links__link">Contributing</a>
       </li>
       <li class="quick-links__item">
-        <a href="#create" class="quick-links__link">Create New Sage Component</a>
+        <a href="#review" class="quick-links__link">Reviews</a>
+      </li>
+      <li class="quick-links__item">
+        <a href="#version" class="quick-links__link">Versioning</a>
       </li>
     </ul>
   </div>
 <% end %>
 <div class="sage-panel">
-  <h3 id="running">Running Sage Gem</h3>
-  <p>Download or clone the sage gem from Github</p>
-  <pre class="prettyprint"><code>https://github.com/Kajabi/sage_design_system.git</code></pre>
-  <p>CD into test/dummy folder and run:</p>
-  <pre class="prettyprint"><code>rails s</code></pre>
-  <p>You are then able to navigate to all the guides associated with the system by following the link: <a href="http://localhost:3000/sage/pages/index" target="_blank">http://localhost:3000/sage/pages/index</a></p>
-  <h3 id="create">Create New Sage Component</h3>
+  <h3 id="create">Contributing</h3>
+  <p>Built into the Sage Design System are a number of generators meant to make contributing to the sage design system as simple and consistent as possible.</p>
+  <p>This example shows you how to create a component but the same can be done to create both elements and modules for the system. Instructions can be found on the <a href="/sage/pages/generators">generators page</a>.</p>
   <p>*All generators in the sage design system are created in the top level sage folder.</p>
   <pre class="prettyprint"><code>rails generate sage_component COMPONENT_NAME</code></pre>
   <p>This will create a file for the markup of the new sage component markup file and also the .scss file needed to style your new component.</p>
-  <p>The same can be done to create both elements and modules for the system. Instructions can be found on the <a href="/sage/pages/generators">generators page</a>.</p>
+  <h3 id="review">Reviews</h3>
   <p>Changes made to the Sage Design System will be reflected as you work and should not be merged until they have been reviewed by another member of the UX Development team.</p>
+  <h3 id="version">Versioning</h3>
   <p>Once changes are final the version number should be bumped. This file can be found in: <strong>lib/sage/version.rb</strong></p>
   <p>The last step is to head over to <a href="https://themes.kajabi.com/sage/changelog">https://themes.kajabi.com/sage/changelog</a> and document the changes to the system.</p>
 </div>
