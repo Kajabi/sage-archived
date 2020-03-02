@@ -45,11 +45,6 @@ module Sage
     def elements
     end
 
-    def element
-      @title = params[:title]
-      @description = params[:description]
-    end
-
     def objects
     end
 
