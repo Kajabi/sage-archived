@@ -1,0 +1,38 @@
+.status-key {
+  margin: sage-spacing(xs) sage-spacing();
+  display: flex;
+  align-items: center;
+  &:first-of-type {
+    margin-left: 0;
+  }
+  &__wrapper {
+    display: flex;
+  }
+  &__icon {
+    margin-right: sage-spacing(xs);
+    border: 2px solid sage-color(grey);
+    width: .8rem;
+    height: .8rem;
+    border-radius: 50%;
+    &--done {
+
+    }
+    &--doing {
+
+    }
+    &--todo {
+
+    }
+    &--no {
+
+    }
+    &--stop {
+
+    }
+  }
+  &__text {
+    font-size: sage-font-size(sm);
+    font-weight: sage-font-weight(semibold);
+    color: sage-color(charcoal, 200);
+  }
+}
