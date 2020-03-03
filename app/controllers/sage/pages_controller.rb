@@ -3,25 +3,8 @@ require_dependency "sage/application_controller"
 module Sage
   class PagesController < ApplicationController
     layout "sage/breakout", :only => [ :breakout ]
-    def generators
-    end
 
     def index
-    end
-
-    def start
-    end
-
-    def conventions
-    end
-
-    def accessibility
-    end
-
-    def browser
-    end
-
-    def language
     end
 
     def token
