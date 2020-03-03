@@ -1,10 +1,7 @@
 <div class="sage-sidebar">
   <div class="sage-sidebar__body">
     <div class="sage-nav">
-      <%= link_to "Introduction", pages_index_url, class: "sage-nav__link" %>
-      <%= link_to "Getting Started", pages_start_url, class: "sage-nav__link" %>
-      <%= link_to "Generators", pages_generators_url, class: "sage-nav__link" %>
-      <%= link_to "Guidelines", pages_conventions_url, class: "sage-nav__link" %>
+      <%= link_to "Guides", "https://github.com/Kajabi/sage/wiki", class: "sage-nav__link", target: "_blank" %>
       <%= yield :sidebar_guidelines %>
       <%= link_to "Styles", pages_token_url, class: "sage-nav__link" %>
       <%= yield :sidebar_styles %>
