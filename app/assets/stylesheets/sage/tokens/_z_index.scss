@@ -1,0 +1,20 @@
+/*------------------------------------*/
+/*-- z_index tokens */
+/*------------------------------------*/
+
+@function sage-z_index($key: default) {
+  $value: map-get($sage-z_indexes, $key);
+  @return $value;
+}
+
+$sage-z_indexes: (
+  underlay: -1,
+  default: 0,
+  raised: 10,
+  alert: 20,
+  nav: 50,
+  overlay: 60,
+  modal: 70,
+  priority: 80,
+  nuclear: 100
+);

@@ -54,4 +54,8 @@
   @each $name, $token in $sage-spacings {
     &-spacing-#{$name}:after { content: "#{$token}" }
   }
+  &-z_index:after { content: "#{sage-z_index()}" }
+  @each $name, $token in $sage-z_indexes {
+    &-z_index-#{$name}:after { content: "#{$token}" }
+  }
 }

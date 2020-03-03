@@ -2,15 +2,15 @@ module Sage
   module TokensHelper
     def sage_tokens
       [
-        { 
-          category: "border", 
+        {
+          category: "border",
           tokens: [
             { name: "default" },
             { name: "radius" },
           ]
         },
-        { 
-          category: "breakpoint", 
+        {
+          category: "breakpoint",
           tokens: [
             { name: "xs-max" },
             { name: "sm-min" },
@@ -22,16 +22,16 @@ module Sage
             { name: "xl-min" },
           ]
         },
-        { 
-          category: "container", 
+        {
+          category: "container",
           tokens: [
             { name: "sm" },
             { name: "md" },
             { name: "fluid" },
           ]
         },
-        { 
-          category: "shadow", 
+        {
+          category: "shadow",
           tokens: [
             { name: "sm" },
             { name: "md" },
@@ -40,16 +40,16 @@ module Sage
             { name: "2xl" },
           ]
         },
-        { 
-          category: "sidebar", 
+        {
+          category: "sidebar",
           tokens: [
             { name: "sm" },
             { name: "md" },
             { name: "lg" },
           ]
         },
-        { 
-          category: "spacing", 
+        {
+          category: "spacing",
           tokens: [
             { name: "2xs" },
             { name: "xs" },
@@ -58,15 +58,15 @@ module Sage
             { name: "lg" },
           ]
         },
-        { 
-          category: "font-height", 
+        {
+          category: "font-height",
           tokens: [
             { name: "sm" },
             { name: "md" },
           ]
         },
-        { 
-          category: "font-size", 
+        {
+          category: "font-size",
           tokens: [
             { name: "xs" },
             { name: "sm" },
@@ -78,12 +78,26 @@ module Sage
             { name: "4xl" },
           ]
         },
-        { 
-          category: "font-weight", 
+        {
+          category: "font-weight",
           tokens: [
             { name: "regular" },
             { name: "semibold" },
             { name: "bold" },
+          ]
+        },
+        {
+          category: "z_index",
+          tokens: [
+            { name: "default" },
+            { name: "underlay" },
+            { name: "raised" },
+            { name: "alert" },
+            { name: "nav" },
+            { name: "overlay" },
+            { name: "modal" },
+            { name: "priority" },
+            { name: "nuclear" },
           ]
         },
       ]

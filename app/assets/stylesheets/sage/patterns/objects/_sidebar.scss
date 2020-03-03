@@ -3,7 +3,7 @@
   width: sage-sidebar();
   background: sage-color(grey, 200);
   border-right: sage-border();
-  z-index: 999;
+  z-index: sage-z_index(nav);
   display: flex;
   flex-direction: column;
   &--md {
