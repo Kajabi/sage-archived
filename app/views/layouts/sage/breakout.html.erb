@@ -11,6 +11,7 @@
     <div class="sage-content">
       <div class="sage-container--sm">
         <%= image_tag("sage/sage_icon.svg", class: "sage-page__icon")%>
+        <%= yield :heading %>
         <%= yield %>
       </div>
     </div>

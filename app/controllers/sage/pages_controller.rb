@@ -2,7 +2,7 @@ require_dependency "sage/application_controller"
 
 module Sage
   class PagesController < ApplicationController
-    layout "sage/minimal", :only => [ :component, :element ]
+    layout "sage/breakout", :only => [ :breakout ]
     def generators
     end
 
@@ -42,11 +42,12 @@ module Sage
     def icon
     end
 
-    def elements
-    end
-
     def element
       @title = params[:title]
+      @description = params[:description]
+    end
+
+    def elements
     end
 
     def objects
@@ -54,12 +55,19 @@ module Sage
 
     def object
       @title = params[:title]
+      @description = params[:description]
     end 
 
     def utilities
     end
 
     # Generator Pages
+
+    def breakout
+      @type = params[:type]
+      @title = params[:title]
+      @description = params[:description]
+    end
 
   end
 end

@@ -1,18 +1,58 @@
-<div class="sage-panel">
-  <div class="sage-media">
-    <div class="sage-media-body">
-      <%= render partial: "sage/application/itemtitle", object: title, as: 'itemtitle' =%>
+<%= content_for :heading do %>
+  <h1><%= @title.titleize %></h1>
+  <p><%= @description %></p>
+<% end %>
+
+<%= content_for :quick_links do %>
+  <div class="quick-links">
+    <div class="sage-media">
+      <i class="quick-links__icon sage-icon sage-icon-menu-8"></i>
+      <div class="sage-media__body">
+        <h5 class="quick-links__heading">Contents</h5>
+      </div>
     </div>
-    <%= link_to pages_object_url(title: title), target: "_blank", class: "example__link" do %>
-      <i class="sage-icon sage-icon-launch-app"></i>
-    <% end %>
+    <a href="#preview" class="quick-links__link">Preview</a>
+    <a href="#code" class="quick-links__link">Code</a>
+    <a href="#props" class="quick-links__link">Properties</a>
+    <a href="#best" class="quick-links__link">Best Practices</a>
   </div>
-  <h6 class="example__label">Preview</h6>
+<% end %>
+
+<div class="sage-panel">
+  <h3 id="preview" class="example__title">Preview</h3>
   <div class="example__preview">
-    <%= render "sage/examples/objects/#{title}/preview" %>
-  </div>
-  <h6 class="example__label">Code</h6>
-  <div class="example__code">
-    <pre class="prettyprint"><code><%= CGI.unescapeHTML(CGI.escapeHTML render "sage/examples/objects/#{title}/preview") %></code></pre>
+    <%= render "sage/examples/objects/#{@title}/preview" %>
   </div>
 </div>
+<div class="sage-panel">
+  <h3 id="code" class="example__title">Code</h3>
+  <div class="example__code">
+    <pre class="prettyprint"><code><%= CGI.unescapeHTML(CGI.escapeHTML render "sage/examples/objects/#{@title}/preview") %></code></pre>
+  </div>
+</div>
+<div id="props" class="sage-panel">
+  <h3 class="example__title">Properties</h3>
+  <table>
+    <tr>
+      <th>Property</th>
+      <th>Description</th>
+      <th>Type</th>
+      <th>Default</th>
+    </tr>
+    <%= render "sage/examples/objects/#{@title}/props" %>
+  </table>
+</div>
+<div id="best" class="sage-panel">
+  <h3 class="example__title">Best Practices</h3>
+  <div class="sage-row">
+    <div class="sage-col--md-6">
+      <h5>Do</h5>
+      <%= render "sage/examples/objects/#{@title}/rules_do" %>
+    </div>
+    <div class="sage-col--md-6">
+      <h5>Don't</h5>
+      <%= render "sage/examples/objects/#{@title}/rules_dont" %>
+    </div>
+  </div>
+</div>
+

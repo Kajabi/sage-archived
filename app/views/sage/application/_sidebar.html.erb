@@ -1,60 +1,24 @@
 <div class="sage-sidebar">
   <div class="sage-sidebar__body">
     <div class="sage-nav">
-      <%= link_to pages_index_url, class: "sage-nav__link" do %>
-        <i class="sage-icon sage-icon-gear"></i>
-        Introduction
-      <% end %>
-      <%= link_to pages_start_url, class: "sage-nav__link" do %>
-        <i class="sage-icon sage-icon-gear"></i>
-        Getting Started
-      <% end %>
-      <%= link_to pages_generators_url, class: "sage-nav__link" do %>
-        <i class="sage-icon sage-icon-gear"></i>
-        Generators
-      <% end %>
-      <%= link_to pages_conventions_url, class: "sage-nav__link" do %>
-        <i class="sage-icon sage-icon-gear"></i>
-        Guidelines
-      <% end %>
-      <%= link_to "Code Conventions", pages_conventions_url, class: "sage-nav__link--sub" %>
-      <%= link_to "Accessibility", pages_accessibility_url, class: "sage-nav__link--sub" %>
-      <%= link_to "Browser Support", pages_browser_url, class: "sage-nav__link--sub" %>
-      <%= link_to "Product language", pages_language_url, class: "sage-nav__link--sub" %>
-      <%= link_to pages_token_url, class: "sage-nav__link" do %>
-        <i class="sage-icon sage-icon-gear"></i>
-        Styles
-      <% end %>
-      <%= link_to "Tokens", pages_token_url, class: "sage-nav__link--sub" %>
-      <%= link_to "Colors", pages_color_url, class: "sage-nav__link--sub" %>
-      <%= link_to "Typography", pages_typography_url, class: "sage-nav__link--sub" %>
-      <%= link_to "Icons", pages_icon_url, class: "sage-nav__link--sub" %>
-      <%= link_to "Containers", pages_container_url, class: "sage-nav__link--sub" %>
-      <%= link_to "Grid", pages_grid_url, class: "sage-nav__link--sub" %>
-      <%= link_to pages_elements_url, class: "sage-nav__link" do %>
-        <i class="sage-icon sage-icon-gear"></i>
-        Elements
-      <% end %>
-      <%= link_to pages_objects_url, class: "sage-nav__link" do %>
-        <i class="sage-icon sage-icon-gear"></i>
-        Objects
-      <% end %>
-      <%= link_to pages_utilities_url, class: "sage-nav__link" do %>
-        <i class="sage-icon sage-icon-gear"></i>
-        Utilities
-      <% end %>
+      <%= link_to "Introduction", pages_index_url, class: "sage-nav__link" %>
+      <%= link_to "Getting Started", pages_start_url, class: "sage-nav__link" %>
+      <%= link_to "Generators", pages_generators_url, class: "sage-nav__link" %>
+      <%= link_to "Guidelines", pages_conventions_url, class: "sage-nav__link" %>
+      <%= yield :sidebar_guidelines %>
+      <%= link_to "Styles", pages_token_url, class: "sage-nav__link" %>
+      <%= yield :sidebar_styles %>
+      <%= link_to "Elements", pages_elements_url, class: "sage-nav__link" %>
+      <%= yield :sidebar_elements %>
+      <%= link_to "Objects", pages_objects_url, class: "sage-nav__link" %>
+      <%= yield :sidebar_objects %>
+      <%= link_to "Utilities", pages_utilities_url, class: "sage-nav__link" %>
     </div>
   </div>
   <div class="sage-sidebar__footer">
     <div class="sage-nav">
-      <%= link_to "https://github.com/Kajabi/sage", class: "sage-nav__link", target: "_blank" do %>
-        <i class="sage-icon sage-icon-gear"></i>
-        Github
-      <% end %>
-      <%= link_to "https://themes.kajabi.com/sage/", class: "sage-nav__link", target: "_blank" do %>
-        <i class="sage-icon sage-icon-gear"></i>
-        Changelog
-      <% end %>
+      <%= link_to "Github", "https://github.com/Kajabi/sage", class: "sage-nav__link", target: "_blank" %>
+      <%= link_to "Changelog", "https://themes.kajabi.com/sage/", class: "sage-nav__link", target: "_blank" %>
     </div>
   </div>
 </div>
