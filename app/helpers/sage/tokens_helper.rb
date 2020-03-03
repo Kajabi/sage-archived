@@ -95,6 +95,7 @@ module Sage
             { name: "alert" },
             { name: "nav" },
             { name: "overlay" },
+            { name: "modal" },
             { name: "priority" },
             { name: "nuclear" },
           ]
