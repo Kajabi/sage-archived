@@ -1,6 +1,8 @@
 <div class="sage-sidebar">
   <div class="sage-sidebar__body">
     <div class="sage-nav">
+      <%= link_to "Introduction", pages_index_url, class: "sage-nav__link" %>
+      <%= link_to "Guidelines", "https://github.com/Kajabi/sage/wiki", class: "sage-nav__link", target: "_blank" %>
       <%= link_to "Styles", pages_token_url, class: "sage-nav__link" %>
       <%= yield :sidebar_styles %>
       <%= link_to "Elements", pages_elements_url, class: "sage-nav__link" %>
@@ -12,7 +14,6 @@
   </div>
   <div class="sage-sidebar__footer">
     <div class="sage-nav">
-      <%= link_to "Guides", "https://github.com/Kajabi/sage/wiki", class: "sage-nav__link", target: "_blank" %>
       <%= link_to "Github", "https://github.com/Kajabi/sage", class: "sage-nav__link", target: "_blank" %>
       <%= link_to "Changelog", "https://github.com/Kajabi/sage/wiki/Changelog", class: "sage-nav__link", target: "_blank" %>
     </div>
