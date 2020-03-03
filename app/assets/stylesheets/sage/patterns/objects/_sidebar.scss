@@ -4,7 +4,8 @@
 
 $sage-sidebar-toggle-size: 1.5rem; // 24px
 $sage-sidebar-toggle-line-color: #fff;
-$sage-sidebar-toggle-line-height: 0.125rem;
+$sage-sidebar-toggle-line-height: 0.125rem; // 2px
+$sage-sidebar-toggle-radius: 0.125rem; // 2px
 
 $sage-sidebar-btn-focus-outline-size: sage-spacing(xs);
 $sage-sidebar-btn-focus-outline-width: 1;
@@ -21,7 +22,7 @@ $sage-sidebar-btn-focus-outline-color: currentColor;
   border-right: sage-border();
   background: sage-color(grey, 200);
   overscroll-behavior-y: contain;
-  z-index: 90;  // TODO: replace with system z-index
+  z-index: sage-z_index(nav);
 
   &--md {
     @extend .sage-sidebar;
@@ -51,9 +52,10 @@ $sage-sidebar-btn-focus-outline-color: currentColor;
 }
 
 .sage-sidebar__body {
+  @include overflow-scroll();
+
   flex: 1;
   padding: sage-spacing();
-  overflow: auto;
 }
 
 .sage-sidebar__footer {
@@ -68,7 +70,6 @@ $sage-sidebar-btn-focus-outline-color: currentColor;
   position: relative;
 
   &::after {
-    // TODO: make this into a mixin
     content: none;
     display: inline-block;
     position: absolute;
@@ -93,6 +94,7 @@ $sage-sidebar-btn-focus-outline-color: currentColor;
     display: block;
     height: $sage-sidebar-toggle-line-height;
     background: currentColor;
+    border-radius: $sage-sidebar-toggle-radius;
     transition: transform 0.2s ease-out, opacity 0.15s ease-in-out;
 
     + .btn-bar {

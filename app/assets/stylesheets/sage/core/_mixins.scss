@@ -23,9 +23,6 @@
   white-space: nowrap;
 }
 
-.visually-hidden {
-  @include visually-hidden();
-}
 
 /* ==================================================
 ** Button reset mixin
@@ -49,30 +46,27 @@
   line-height: 1;
 }
 
-/* ==================================================
-** Focus outline ring
-  Usage: `@include sage-focus-outline();
 
-  Draws a border around focused and active elements
-  arguments:
-  $color (outline color),
-  $size (outline size),
-  $pseudo (whether to use ::before or ::after (default))
+/* ==================================================
+** Overflow scroll mixin
+  Usage: `@include overflow-scroll();
+
+  Define overflow scrolling dimensions
+  arguments: $dimension | all, y(default), x
 ================================================== */
 
-@mixin sage-focus-outline($color, $size, $pseudo: after) {
-  position: relative;
+@mixin overflow-scroll($dimension: y) {
+  overflow: hidden;
+  // adds momentum scroll on supported devices
+  -webkit-overflow-scrolling: touch;
 
-
-  @if ($pseudo == after) {
-
+  @if ($dimension == y) {
+    overflow-y: auto;
+  } @else if ($dimension == x) {
+    overflow-x: auto;
+  } @else if ($dimension == all) {
+    overflow: auto;
   }
 }
 
-/* ==================================================
-** Placeholder mixin
-  Usage: `@include placeholder-input();
-
-  arguments: $color
-================================================== */
 
