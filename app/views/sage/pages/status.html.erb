@@ -31,26 +31,28 @@
       <th>Development</th>
       <th>Documentation</th>
     </tr>
-    <tr>
-      <td>Example</td>
-      <td>SCSS</td>
-      <td><div class="status-key__icon status-key__icon--todo"></div></td>
-      <td><div class="status-key__icon status-key__icon--todo"></div></td>
-      <td><div class="status-key__icon status-key__icon--todo"></div></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>Rails</td>
-      <td><div class="status-key__icon status-key__icon--todo"></div></td>
-      <td><div class="status-key__icon status-key__icon--todo"></div></td>
-      <td><div class="status-key__icon status-key__icon--todo"></div></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>React</td>
-      <td><div class="status-key__icon status-key__icon--todo"></div></td>
-      <td><div class="status-key__icon status-key__icon--todo"></div></td>
-      <td><div class="status-key__icon status-key__icon--todo"></div></td>
-    </tr>
+    <% sorted_sage_elements.each do |element| %>
+      <tr>
+        <td>Example</td>
+        <td>SCSS</td>
+        <td><div class="status-key__icon status-key__icon--todo"></div></td>
+        <td><div class="status-key__icon status-key__icon--todo"></div></td>
+        <td><div class="status-key__icon status-key__icon--todo"></div></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>Rails</td>
+        <td><div class="status-key__icon status-key__icon--todo"></div></td>
+        <td><div class="status-key__icon status-key__icon--todo"></div></td>
+        <td><div class="status-key__icon status-key__icon--todo"></div></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>React</td>
+        <td><div class="status-key__icon status-key__icon--todo"></div></td>
+        <td><div class="status-key__icon status-key__icon--todo"></div></td>
+        <td><div class="status-key__icon status-key__icon--todo"></div></td>
+      </tr>
+    <% end %>
   </table>
 </div>

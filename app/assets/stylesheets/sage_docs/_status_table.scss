@@ -32,7 +32,7 @@
     }
   }
   tr {
-    &:nth-child(4) {
+    &:nth-child(3n + 1) {
       border-bottom: 2px solid sage-color(grey);
     }
   }
