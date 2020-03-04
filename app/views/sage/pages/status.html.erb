@@ -1,6 +1,30 @@
-<h1>Code Status</h1>
-<p>Our Elements and Objects and the platforms they're available in.</p>
-<%= render "status_key" %>
+<%= content_for :heading do %>
+  <h1>Code Status</h1>
+  <p>Our Elements and Objects and the platforms they're available in.</p>
+  <%= render "status_key" %>
+<% end %>
+<%= content_for :quick_links do %>
+  <div class="quick-links">
+    <div class="quick-links__header">
+      <i class="quick-links__icon sage-icon sage-icon-menu-8"></i>
+      <h5 class="quick-links__title">Contents</h5>
+    </div>
+    <ul class="quick-links__body">
+      <li class="quick-links__item">Elements</li>
+      <% sorted_sage_elements.each do |element| %>
+        <li class="quick-links__item">
+          <a href="#<%= element[:title] %>" class="quick-links__link"><%= element[:title].titleize %></a>
+        </li>
+      <% end %>
+      <li class="quick-links__item">Objects</li>
+      <% sorted_sage_objects.each do |object| %>
+        <li class="quick-links__item">
+          <a href="#<%= object[:title] %>" class="quick-links__link"><%= object[:title].titleize %></a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
 <div class="sage-panel">
   <h3>Elements</h3>
   <table class="status-table">
