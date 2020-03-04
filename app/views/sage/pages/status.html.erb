@@ -16,3 +16,18 @@
     <% end %>
   </table>
 </div>
+<div class="sage-panel">
+  <h3>Objects</h3>
+  <table class="status-table">
+    <tr>
+      <th>Object</th>
+      <th>Platforms</th>
+      <th>Design</th>
+      <th>Development</th>
+      <th>Documentation</th>
+    </tr>
+    <% sorted_sage_objects.each do |object| %>
+      <%= render "status_item", item: object %>
+    <% end %>
+  </table>
+</div>
