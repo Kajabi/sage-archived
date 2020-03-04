@@ -15,19 +15,21 @@
     height: .8rem;
     border-radius: 50%;
     &--done {
-
+      border-color: sage-color(sage);
+      background: sage-color(sage);
     }
     &--doing {
-
+      border-color: sage-color(orange);
     }
     &--todo {
-
+      border-color: sage-color(primary);
     }
     &--no {
-
+      background: sage-color(grey);
     }
     &--stop {
-
+      border-color: sage-color(red);
+      background: sage-color(red);
     }
   }
   &__text {
