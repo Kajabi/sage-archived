@@ -9,10 +9,10 @@
     }
     &:nth-child(5) {
       padding-right: 0;
-    }
+    }   
   }
   td {
-    padding: sage-spacing(sm) sage-spacing(sm);
+    padding: sage-spacing(xs) sage-spacing(sm);
     vertical-align: top;
     &:nth-child(1) {
       font-weight: sage-font-weight(semibold);
