@@ -1,28 +1,28 @@
 <h1>Code Status</h1>
 <p>Our Elements and Objects and the platforms they're available in.</p>
-<div class="sage-panel">
-  <div class="status-key__wrapper">
-    <div class="status-key">
-      <div class="status-key__icon status-key__icon--done"></div>
-      <div class="status-key__text">Done</div>
-    </div>
-    <div class="status-key">
-      <div class="status-key__icon status-key__icon--doing"></div>
-      <div class="status-key__text">In Progress</div>
-    </div>
-    <div class="status-key">
-      <div class="status-key__icon status-key__icon--todo"></div>
-      <div class="status-key__text">To-do</div>
-    </div>
-    <div class="status-key">
-      <div class="status-key__icon status-key__icon--no"></div>
-      <div class="status-key__text">Not applicable</div>
-    </div>
-    <div class="status-key">
-      <div class="status-key__icon status-key__icon--stop"></div>
-      <div class="status-key__text">Deprecated</div>
-    </div>
+<div class="status-key__wrapper">
+  <div class="status-key">
+    <div class="status-key__icon status-key__icon--done"></div>
+    <div class="status-key__text">Done</div>
   </div>
+  <div class="status-key">
+    <div class="status-key__icon status-key__icon--doing"></div>
+    <div class="status-key__text">In Progress</div>
+  </div>
+  <div class="status-key">
+    <div class="status-key__icon status-key__icon--todo"></div>
+    <div class="status-key__text">To-do</div>
+  </div>
+  <div class="status-key">
+    <div class="status-key__icon status-key__icon--no"></div>
+    <div class="status-key__text">Not applicable</div>
+  </div>
+  <div class="status-key">
+    <div class="status-key__icon status-key__icon--stop"></div>
+    <div class="status-key__text">Deprecated</div>
+  </div>
+</div>
+<div class="sage-panel">
   <table class="status-table">
     <tr>
       <th>Element</th>
@@ -33,25 +33,25 @@
     </tr>
     <% sorted_sage_elements.each do |element| %>
       <tr>
-        <td>Example</td>
+        <td><%= element[:title].titleize %></td>
         <td>SCSS</td>
-        <td><div class="status-key__icon status-key__icon--todo"></div></td>
-        <td><div class="status-key__icon status-key__icon--todo"></div></td>
-        <td><div class="status-key__icon status-key__icon--todo"></div></td>
+        <td><div class="status-key__icon status-key__icon--<%= element[:scss_design] %>"></div></td>
+        <td><div class="status-key__icon status-key__icon--<%= element[:scss_dev] %>"></div></td>
+        <td><div class="status-key__icon status-key__icon--<%= element[:scss_doc] %>"></div></td>
       </tr>
       <tr>
         <td></td>
         <td>Rails</td>
-        <td><div class="status-key__icon status-key__icon--todo"></div></td>
-        <td><div class="status-key__icon status-key__icon--todo"></div></td>
-        <td><div class="status-key__icon status-key__icon--todo"></div></td>
+        <td><div class="status-key__icon status-key__icon--<%= element[:rails_design] %>"></div></td>
+        <td><div class="status-key__icon status-key__icon--<%= element[:rails_dev] %>"></div></td>
+        <td><div class="status-key__icon status-key__icon--<%= element[:rails_doc] %>"></div></td>
       </tr>
       <tr>
         <td></td>
         <td>React</td>
-        <td><div class="status-key__icon status-key__icon--todo"></div></td>
-        <td><div class="status-key__icon status-key__icon--todo"></div></td>
-        <td><div class="status-key__icon status-key__icon--todo"></div></td>
+        <td><div class="status-key__icon status-key__icon--<%= element[:react_design] %>"></div></td>
+        <td><div class="status-key__icon status-key__icon--<%= element[:react_dev] %>"></div></td>
+        <td><div class="status-key__icon status-key__icon--<%= element[:react_doc] %>"></div></td>
       </tr>
     <% end %>
   </table>
