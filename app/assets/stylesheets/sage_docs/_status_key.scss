@@ -1,5 +1,5 @@
 .status-key {
-  margin: sage-spacing(xs) sage-spacing();
+  margin: 0 sage-spacing();
   display: flex;
   align-items: center;
   &:first-of-type {
@@ -7,13 +7,14 @@
   }
   &__wrapper {
     display: flex;
+    margin-bottom: sage-spacing();
   }
   &__icon {
-    margin-right: sage-spacing(xs);
     border: 2px solid sage-color(grey);
     width: .8rem;
     height: .8rem;
     border-radius: 50%;
+    display: inline-block;
     &--done {
       border-color: sage-color(sage);
       background: sage-color(sage);
@@ -33,6 +34,7 @@
     }
   }
   &__text {
+    margin-left: sage-spacing(xs);
     font-size: sage-font-size(sm);
     font-weight: sage-font-weight(semibold);
     color: sage-color(charcoal, 200);
