@@ -1,8 +1,12 @@
 module Sage
   module ElementsHelper
     ########################################################
-    # Values For Status
-    # done, doing, todo, no, stop
+    # STATUS KEY
+    # Done : done 
+    # In Progress : doing 
+    # To-do : todo 
+    # Not applicable : no 
+    # Deprecated : stop
     ########################################################
 
     # Lists out all the available sage elements
