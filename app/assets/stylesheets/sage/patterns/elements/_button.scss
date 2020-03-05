@@ -22,19 +22,15 @@ $sage-btn-danger-text-color: #fff;
 // ============================================
 
 @mixin button-style-base {
-  appearance: none;
-  background-color: transparent;
+  @include button-style-reset();
+
   color: sage-color(charcoal, 500);
-  cursor: pointer;
   border: $sage-btn-border-width solid currentColor;
   border-radius: sage-border(radius);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.18), 0 1px 3px rgba(0, 0, 0, 0.1);
-  display: inline-block;
-  font-family: inherit;
   font-size: sage-font-size(md);
   font-weight: 500;
   letter-spacing: 0.01875rem; // 0.3px
-  line-height: 1;
   padding: 0.75rem sage-spacing(sm);
   margin-bottom: sage-spacing(sm);
   margin-right: sage-spacing(2xs);

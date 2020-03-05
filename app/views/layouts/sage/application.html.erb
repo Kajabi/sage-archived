@@ -1,32 +1,34 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Sage</title>
-  <%= stylesheet_link_tag "sage", media: "all" %>
-  <%= stylesheet_link_tag "sage_docs", media: "all" %>
-  <%= csrf_meta_tags %>
-</head>
-<body class="sage-page">
-  <%= render "assistant" %>
-  <div class="sage-stage">
-    <input type="checkbox" id="sage-sidebar__toggle" class="sage-sidebar__checkbox" />
-    <%= render "sidebar" %>
-    <div class="sage-content">
-      <div class="sage-container--lg">
-        <div class="sage-row">
-          <div class="sage-col--lg-6">
-            <%= yield :heading %>
+<html lang="en">
+  <head>
+    <title>Sage</title>
+    <%= stylesheet_link_tag "sage", media: "all" %>
+    <%= stylesheet_link_tag "sage_docs", media: "all" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body class="sage-page sage-docs">
+    <header class="sage-header">
+      <%= render "assistant" %>
+    </header>
+    <div class="sage-stage">
+      <%= render "sidebar" %>
+      <div class="sage-content">
+        <div class="sage-container--lg">
+          <div class="sage-row">
+            <div class="sage-col--lg-7">
+              <%= yield :heading %>
+            </div>
           </div>
-        </div>
-        <div class="sage-row">
-          <div class="sage-col--lg-9">
-            <%= yield %>
+          <div class="sage-row">
+            <div class="sage-col--lg-9">
+              <%= yield %>
+            </div>
+            <div class="sage-col--lg-3"><%= yield :quick_links %></div>
           </div>
-          <div class="sage-col--lg-3"><%= yield :quick_links %></div>
         </div>
       </div>
     </div>
-  </div>
-  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
-</body>
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <%= javascript_include_tag "application", :cache => true %>
+  </body>
 </html>
