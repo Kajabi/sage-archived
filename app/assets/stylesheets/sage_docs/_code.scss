@@ -15,29 +15,84 @@
     padding: sage-spacing();
   }
 }
-pre .nocode { background-color: none; color: sage-color(charcoal, 500) }
-pre .str { color: sage-color(sage, 200); } /* string */
-pre .kwd { color: sage-color(sage, 200); font-weight: bold }
-pre .com { color: sage-color(sage, 200); opacity: 0.4 } /* comment */
-pre .typ { color: sage-color(sage, 200) } /* typen */
-pre .lit { color: sage-color(sage, 200) } /* literal */
-pre .pun { color: sage-color(sage, 200)} /* punctuation */
-pre .pln { color: sage-color(primary, 200) } /* plaintext */
-pre .tag { color: sage-color(primary, 200); font-weight: bold } /* html/xml tag */
-pre .atn { color: sage-color(primary, 200); } /* attribute name */
-pre .atv { color: sage-color(primary, 100); font-weight: bold } /* attribute value */
-pre .dec { color: sage-color(sage, 200) } /* decimal */
+pre .nocode {
+  color: sage-color(charcoal, 500);
+  background-color: none;
+}
+pre .str {
+  color: sage-color(sage, 200);
+} /* string */
+pre .kwd {
+  color: sage-color(sage, 200);
+  font-weight: bold;
+}
+pre .com { /* comment */
+  color: sage-color(sage, 200);
+  opacity: 0.4;
+}
+pre .typ { /* typen */
+  color: sage-color(sage, 200);
+}
+pre .lit { /* literal */
+  color: sage-color(sage, 200);
+}
+pre .pun { /* punctuation */
+  color: sage-color(sage, 200);
+}
+pre .pln { /* plaintext */
+  color: sage-color(primary, 200);
+}
+pre .tag { /* html/xml tag */
+  color: sage-color(primary, 200);
+  font-weight: bold;
+}
+pre .atn { /* attribute name */
+  color: sage-color(primary, 200);
+}
+pre .atv { /* attribute value */
+  color: sage-color(primary, 100);
+  font-weight: bold;
+}
+pre .dec { /* decimal */
+  color: sage-color(sage, 200);
+}
 
 @media print {
-  .prettyprint { background-color: none }
-  pre .str, code .str { color: #060 }
-  pre .kwd, code .kwd { color: #006; font-weight: bold }
-  pre .com, code .com { color: #600; font-style: italic }
-  pre .typ, code .typ { color: #404; font-weight: bold }
-  pre .lit, code .lit { color: #044 }
-  pre .pun, code .pun { color: #440 }
-  pre .pln, code .pln { color: #000 }
-  pre .tag, code .tag { color: #006; font-weight: bold }
-  pre .atn, code .atn { color: #404 }
-  pre .atv, code .atv { color: #060 }
+  .prettyprint {
+    background-color: none;
+  }
+  pre .str, code .str {
+    color: #060;
+  }
+  pre .kwd, code .kwd {
+    color: #006;
+    font-weight: bold;
+  }
+  pre .com, code .com {
+    color: #600;
+    font-style: italic;
+  }
+  pre .typ, code .typ {
+    color: #404;
+    font-weight: bold;
+  }
+  pre .lit, code .lit {
+    color: #044;
+  }
+  pre .pun, code .pun {
+    color: #440;
+  }
+  pre .pln, code .pln {
+    color: #000;
+  }
+  pre .tag, code .tag {
+    color: #006;
+    font-weight: bold;
+  }
+  pre .atn, code .atn {
+    color: #404;
+  }
+  pre .atv, code .atv {
+    color: #060;
+  }
 }
