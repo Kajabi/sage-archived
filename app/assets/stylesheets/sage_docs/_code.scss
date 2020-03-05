@@ -1,15 +1,15 @@
 .prettyprint {
   display: block;
-  background-color: sage-color(primary, 500);
-  padding: sage-spacing();
-  font-size: sage-font-size(sm);
-  margin-bottom: sage-spacing();
-  border-radius: sage-border(radius);
-  color: sage-color(sage, 200);
-  font-weight: sage-font-weight(normal);
   overflow: hidden;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+  padding: sage-spacing();
+  margin-bottom: sage-spacing();
+  color: sage-color(sage, 200);
+  font-size: sage-font-size(sm);
+  font-weight: sage-font-weight(normal);
+  background-color: sage-color(primary, 500);
+  border-radius: sage-border(radius);
 
   &.prettyprinted {
     padding: sage-spacing();
@@ -61,38 +61,48 @@ pre .dec { /* decimal */
   .prettyprint {
     background-color: none;
   }
-  pre .str, code .str {
+  pre .str,
+  code .str {
     color: #060;
   }
-  pre .kwd, code .kwd {
+  pre .kwd,
+  code .kwd {
     color: #006;
     font-weight: bold;
   }
-  pre .com, code .com {
+  pre .com,
+  code .com {
     color: #600;
     font-style: italic;
   }
-  pre .typ, code .typ {
+  pre .typ,
+  code .typ {
     color: #404;
     font-weight: bold;
   }
-  pre .lit, code .lit {
+  pre .lit,
+  code .lit {
     color: #044;
   }
-  pre .pun, code .pun {
+  pre .pun,
+  code .pun {
     color: #440;
   }
-  pre .pln, code .pln {
+  pre .pln,
+  code .pln {
     color: #000;
   }
-  pre .tag, code .tag {
+  pre .tag,
+  code .tag {
     color: #006;
     font-weight: bold;
   }
-  pre .atn, code .atn {
+  pre .atn,
+  code .atn {
     color: #404;
   }
-  pre .atv, code .atv {
+  pre .atv,
+  code .atv {
     color: #060;
   }
 }
