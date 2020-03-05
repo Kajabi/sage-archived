@@ -7,6 +7,7 @@
     "block-closing-brace-newline-before": "always",
     "block-closing-brace-space-before": null,
     "block-opening-brace-newline-after": ["always", { "severity": "error" }],
+    "block-no-empty": [true, { "severity": "error" }],
     "color-named": [
       "never", {
         "ignore": ["inside-function"]
@@ -14,6 +15,7 @@
     ],
     "comment-empty-line-before": null,
     "comment-no-empty": [true, { "severity": "error" }],
+    "comment-whitespace-inside": "always",
     "custom-property-empty-line-before": null,
     "declaration-bang-space-after": ["never", { "severity": "error" }],
     "declaration-bang-space-before": ["always", { "severity": "error" }],
@@ -32,7 +34,7 @@
     "function-calc-no-unspaced-operator": [true, { "severity": "error" }],
     "keyframe-declaration-no-important": true,
     "max-empty-lines": 2,
-    "max-nesting-depth": 3,
+    "max-nesting-depth": 2,
     "media-query-list-comma-newline-after": null,
     "media-query-list-comma-space-after": ["always", { "severity": "error" }],
     "no-unknown-animations": [true, { "severity": "error" }],
