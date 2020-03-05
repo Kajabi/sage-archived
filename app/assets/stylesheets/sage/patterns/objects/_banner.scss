@@ -4,7 +4,8 @@
     border-color: sage-color($color);
     background: sage-color($color, 100);
     .sage-banner {
-      &__title { 
+
+      &__title {
         color: sage-color($color, 500);
       }
       &__copy {
@@ -21,7 +22,8 @@
   border-bottom-left-radius: sage-border(radius);
   box-shadow: sage-shadow();
   margin-bottom: sage-spacing();
-  &__title { 
+
+  &__title {
     color: sage-color(charcoal, 500);
     font-weight: sage-font-weight(simibold);
     margin-bottom: 0;
