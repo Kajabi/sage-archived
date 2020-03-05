@@ -1,18 +1,5 @@
 // ============================================
-// Variables
-// ============================================
-
-$sage-sidebar-toggle-size: 1.5rem; // 24px
-$sage-sidebar-toggle-line-color: sage-color(grey, 100);
-$sage-sidebar-toggle-line-height: 0.125rem; // 2px
-$sage-sidebar-toggle-radius: 0.125rem; // 2px
-
-$sage-sidebar-btn-focus-outline-size: sage-spacing(xs);
-$sage-sidebar-btn-focus-outline-width: 1;
-$sage-sidebar-btn-focus-outline-color: currentColor;
-
-// ============================================
-// Styles
+// Sidebar
 // ============================================
 
 .sage-sidebar {
@@ -62,7 +49,19 @@ $sage-sidebar-btn-focus-outline-color: currentColor;
   padding: sage-spacing();
 }
 
+// ============================================
+// Toggle button
+// ============================================
+
 .sage-sidebar__toggle {
+  $sage-sidebar-toggle-size: 1.5rem; // 24px
+  $sage-sidebar-toggle-line-color: sage-color(grey, 100);
+  $sage-sidebar-toggle-line-height: 0.125rem; // 2px
+  $sage-sidebar-toggle-radius: 0.125rem; // 2px
+  $sage-sidebar-btn-focus-outline-size: sage-spacing(xs);
+  $sage-sidebar-btn-focus-outline-width: 1;
+  $sage-sidebar-btn-focus-outline-color: currentColor;
+
   @include button-style-reset();
 
   color: $sage-sidebar-toggle-line-color;
