@@ -1,0 +1,42 @@
+.status-key {
+  margin: 0 sage-spacing();
+  display: flex;
+  align-items: center;
+  &:first-of-type {
+    margin-left: 0;
+  }
+  &__wrapper {
+    display: flex;
+    margin-bottom: sage-spacing();
+  }
+  &__icon {
+    border: 2px solid sage-color(grey);
+    width: .8rem;
+    height: .8rem;
+    border-radius: 50%;
+    display: inline-block;
+    &--done {
+      border-color: sage-color(sage);
+      background: sage-color(sage);
+    }
+    &--doing {
+      border-color: sage-color(orange);
+    }
+    &--todo {
+      border-color: sage-color(primary);
+    }
+    &--no {
+      background: sage-color(grey);
+    }
+    &--stop {
+      border-color: sage-color(red);
+      background: sage-color(red);
+    }
+  }
+  &__text {
+    margin-left: sage-spacing(xs);
+    font-size: sage-font-size(sm);
+    font-weight: sage-font-weight(semibold);
+    color: sage-color(charcoal, 200);
+  }
+}

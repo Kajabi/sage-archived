@@ -45,6 +45,8 @@ module Sage
     end
 
     # Generator Pages
+    def status
+    end
 
     def breakout
       @type = params[:type]

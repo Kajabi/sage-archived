@@ -11,22 +11,15 @@
 @import "sage/tokens/spacing";
 @import "sage/tokens/z_index";
 
-// Colors Blocks
 @import "sage_docs/colors";
-// Code Examples
 @import "sage_docs/code";
 @import "sage_docs/snippet";
-// Grid Examples
 @import "sage_docs/grid";
-// Example Spec Lists
 @import "sage_docs/specs";
-// Icon Examples
 @import "sage_docs/icon";
-// Quick Links
 @import "sage_docs/quick_links";
-// Token Blocks
 @import "sage_docs/token";
-// Examples
 @import "sage_docs/example";
-// Theme
+@import "sage_docs/status_key";
+@import "sage_docs/status_table";
 @import "sage_docs/theme";
