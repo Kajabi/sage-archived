@@ -24,16 +24,18 @@ $sage-grid-gap-lg: sage-spacing(sm) !default;
 // Columns
 // ============================================
 
-.sage-col {
+%sage-col {
   flex: 1 1 auto;
   max-width: 100%;
   padding: 0 calc(#{$sage-grid-gap-md} / 2);
+}
 
+.sage-col {
   @for $sage-i from 1 through $sage-grid-columns {
     &--sm-#{$sage-i},
     &--md-#{$sage-i},
     &--lg-#{$sage-i} {
-      @extend .sage-col;
+      @extend %sage-col;
       flex: 0 0 100%;
     }
   }
