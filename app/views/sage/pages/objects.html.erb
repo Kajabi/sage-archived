@@ -9,7 +9,7 @@
       <i class="quick-links__icon sage-icon sage-icon-file-content" aria-hidden="true"></i>
       <h5 class="quick-links__title">Contents</h5>
     </div>
-    <ul>
+    <ul class="quick-links__body">
       <% sorted_sage_objects.each do |object| %>
         <li class="quick-links__item"><a href="#<%= object[:title] %>" class="quick-links__link"><%= object[:title].titleize %></a>
       <% end %>
