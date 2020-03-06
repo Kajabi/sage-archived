@@ -1,11 +1,11 @@
 .sage-specs {
+  position: relative;
   columns: 2;
-  font-size: sage-font-size(sm);
   margin-bottom: sage-spacing(lg);
   padding: 2.5rem sage-spacing(sm) sage-spacing(xs);
+  font-size: sage-font-size(sm);
   border: 1px solid sage-color(grey, 300);
   border-radius: sage-border(radius);
-  position: relative;
 
   @media (min-width: sage-breakpoint(xl-min)) {
     columns: 4;
@@ -13,13 +13,13 @@
 
   &::before {
     content: attr(data-label);
-    color: sage-color(sage, 400);
     display: block;
-    font-size: sage-font-size(xs);
     position: absolute;
-    padding: sage-spacing(xs) sage-spacing(sm);
     top: 0;
     left: 0;
+    padding: sage-spacing(xs) sage-spacing(sm);
+    color: sage-color(sage, 400);
+    font-size: sage-font-size(xs);
     text-transform: uppercase;
   }
 }
@@ -29,4 +29,3 @@
   text-transform: uppercase;
 }
 
-// .sage-specs__value {}
