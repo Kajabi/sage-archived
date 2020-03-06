@@ -11,15 +11,15 @@
 ================================================== */
 
 @mixin visually-hidden {
-  border: 0;
   clip: rect(0 0 0 0);
-  clip-path: polygon(0px 0px, 0px 0px, 0px 0px);
+  clip-path: polygon(0px 0px, 0px 0px, 0px 0px); /* stylelint-disable */
   height: 1px;
   margin: -1px;
   overflow: hidden;
   padding: 0;
   position: absolute;
   width: 1px;
+  border: 0;
   white-space: nowrap;
 }
 
@@ -62,9 +62,11 @@
 
   @if ($dimension == y) {
     overflow-y: auto;
-  } @else if ($dimension == x) {
+  }
+  @else if ($dimension == x) {
     overflow-x: auto;
-  } @else if ($dimension == all) {
+  }
+  @else if ($dimension == all) {
     overflow: auto;
   }
 }
