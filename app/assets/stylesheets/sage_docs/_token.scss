@@ -91,9 +91,9 @@
     }
   }
   &-z_index::after {
-    content: "#{sage-z_index()}";
+    content: "#{sage-z-index()}";
   }
-  @each $name, $token in $sage-z_indexes {
+  @each $name, $token in $sage-z-indexes {
     &-z_index-#{$name}::after {
       content: "#{$token}";
     }
