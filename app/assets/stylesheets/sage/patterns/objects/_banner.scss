@@ -1,10 +1,18 @@
+/* ==================================================
+  ** .sage-banner
+  type: object
+
+
+================================================== */
+
+// TODO: clean up mixin to remove extend
 @mixin sage-banner-color($name, $color) {
   &--#{$name} {
     @extend .sage-banner;
     border-color: sage-color($color);
     background: sage-color($color, 100);
-    .sage-banner {
 
+    .sage-banner {
       &__title {
         color: sage-color($color, 500);
       }
@@ -14,24 +22,27 @@
     }
   }
 }
+
 .sage-banner {
-  border-top: 4px solid;
+  margin-bottom: sage-spacing();
   padding: sage-spacing();
   background: sage-color(gray, 200);
+  border-top: 4px solid;
   border-bottom-left-radius: sage-border(radius);
   border-bottom-left-radius: sage-border(radius);
   box-shadow: sage-shadow();
-  margin-bottom: sage-spacing();
 
   &__title {
+    margin-bottom: 0;
     color: sage-color(charcoal, 500);
     font-weight: sage-font-weight(simibold);
-    margin-bottom: 0;
   }
+
   &__copy {
-    font-size: sage-font-size(sm);
     margin-bottom: 0;
+    font-size: sage-font-size(sm);
   }
+
   @include sage-banner-color(primary, primary);
   @include sage-banner-color(success, sage);
   @include sage-banner-color(warning, yellow);
