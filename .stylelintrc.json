@@ -137,6 +137,7 @@
     "property-case": ["lower", { "severity": "error" }],
     "property-no-unknown": null,
     "rule-empty-line-before": null,
+    "selector-class-pattern": null,
     "scss/double-slash-comment-whitespace-inside": "always",
     "scss/dimension-no-non-numeric-values": true,
     "scss/operator-no-unspaced": true,
