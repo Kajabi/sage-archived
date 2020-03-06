@@ -32,6 +32,7 @@
     "declaration-no-important": true,
     "font-family-name-quotes": ["always-unless-keyword", { "severity": "error" }],
     "function-calc-no-unspaced-operator": [true, { "severity": "error" }],
+    "function-parentheses-space-inside": "never-single-line",
     "keyframe-declaration-no-important": true,
     "max-empty-lines": 2,
     "max-nesting-depth": 2,
