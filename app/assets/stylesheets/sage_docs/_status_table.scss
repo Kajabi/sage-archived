@@ -19,14 +19,14 @@
     vertical-align: top;
 
     &:nth-child(1) {
-      // TODO: refactor this thing
+      // TODO: refactor fixed width block
       width: 10000px;
       padding-left: 0;
       font-weight: sage-font-weight(semibold);
     }
 
     &:nth-child(2) {
-      // TODO: refactor this thing
+      // TODO: refactor fixed width block
       width: 4000px;
       border-bottom: sage-border();
     }
