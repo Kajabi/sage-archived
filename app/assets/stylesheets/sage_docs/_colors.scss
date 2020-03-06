@@ -1,3 +1,9 @@
+/* ==================================================
+  ** _colors.scss
+
+
+================================================== */
+
 .colors {
   overflow: hidden;
   margin-bottom: sage-spacing();
@@ -19,7 +25,6 @@
   @each $name, $color in $sage-colors {
     &-#{$name} {
       @each $tone, $hex in $color {
-
         &-#{$tone} {
           @extend .color;
           background: $hex;
