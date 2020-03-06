@@ -32,6 +32,7 @@
 @import "sage/layout/grid";
 @import "sage/layout/page";
 @import "sage/layout/stage";
+@import "sage/layout/header";
 
 // Utilities
 @import "sage/utilities/media";
@@ -45,6 +46,7 @@
 @import "sage/patterns/elements/radio";
 @import "sage/patterns/elements/switch";
 @import "sage/patterns/elements/loader";
+@import "sage/patterns/elements/overlay";
 
 // Objects
 @import "sage/patterns/objects/form_section";

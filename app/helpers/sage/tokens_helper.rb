@@ -90,9 +90,10 @@ module Sage
           category: "z_index",
           tokens: [
             { name: "default" },
-            { name: "underlay" },
+            { name: "negative" },
             { name: "raised" },
             { name: "alert" },
+            { name: "underlay" },
             { name: "nav" },
             { name: "overlay" },
             { name: "modal" },

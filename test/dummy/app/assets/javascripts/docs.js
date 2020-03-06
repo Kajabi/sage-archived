@@ -1,28 +1,46 @@
+/**
+  * docs.js
+  *
+  * Sage documentation app functions
+  *
+*/
+
 if (document.querySelector('.sage-docs') !== null) {
 
-// Variables
-  var sageDocs = document.querySelector('.sage-docs');
-  var sageToggleBtn = document.querySelector('[data-js-action="sage-sidebar__toggle"]');
+  // Variables
+  const sageBody = document.querySelector('.sage-docs').classList;
+  const sageToggleBtn = document.querySelector('[data-js-action="sage-sidebar__toggle"]');
 
 
-// Event handlers
+  // Functions
+  function toggleOverlay(overlayClass) {
+    const bodyClassName = overlayClass ? overlayClass : 'overlay-is-open';
+    return sageBody.contains(bodyClassName) ? sageBody.remove(bodyClassName) : sageBody.add(bodyClassName);
+  }
 
-  // Sidebar click events
+
+  // Event handlers
+
+  // Sidebar
   sageToggleBtn.addEventListener('click', function(e) {
-    sageDocs.classList.toggle('sidebar-is-open');
+    sageBody.toggle('sidebar-is-open');
     if (document.querySelector('.sidebar-is-open') !== null) {
       this.setAttribute('aria-expanded', true);
     } else {
       this.setAttribute('aria-expanded', false);
     }
+    toggleOverlay();
   });
 
-  // sidebar key events
   document.addEventListener('keyup', function(e) {
-    var keyNum = 'which' in e ? e.which : e.keyCode;
+    const keyNum = 'which' in e ? e.which : e.keyCode;
 
     if (keyNum === 27 && document.querySelector('.sidebar-is-open') !== null) {  // esc key
-        sageDocs.classList.remove('sidebar-is-open');
+        sageBody.remove('sidebar-is-open');
+        sageToggleBtn.setAttribute('aria-expanded', false);
+        toggleOverlay();
     }
-  })
+  });
+
+
 }

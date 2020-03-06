@@ -25,22 +25,33 @@
     position: fixed;
     top: $sage-assistant-height;
     left: 0;
-    height: calc(100% - #{$sage-assistant-height});
-    opacity: 0;
     transform: translateX(-100%);
+    height: calc(100% - #{$sage-assistant-height});
     transition: transform 0.2s ease-out, opacity 0.15s ease-in-out;
+    opacity: 0;
 
     .sidebar-is-open & {
+      transform: none;
       box-shadow: sage-shadow();
       opacity: 1;
+    }
+
+    .example__preview & {
+      z-index: sage-z_index();
+      position: relative;
+      top: auto;
+      left: auto;
       transform: none;
+      height: auto;
+      box-shadow: none;
+      transition: none;
+      opacity: 1;
     }
   }
 }
 
 .sage-sidebar__body {
   @include overflow-scroll();
-
   flex: 1;
   padding: sage-spacing();
 }

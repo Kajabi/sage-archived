@@ -10,10 +10,11 @@
 }
 
 $sage-z-indexes: (
-  underlay: -1,
+  negative: -1,
   default: 0,
   raised: 10,
   alert: 20,
+  underlay: 40,
   nav: 50,
   overlay: 60,
   modal: 70,

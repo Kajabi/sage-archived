@@ -67,6 +67,14 @@ $sage-menubtn-focus-outline-color: currentColor !default;
         border-color: sage-color(charcoal, 200);
       }
     }
+
+    .sidebar-is-open & {
+      &::after {
+        transform: translate3d(-50%, -50%, 0) scale(1);
+        border-color: sage-color(sage);
+        opacity: 1;
+      }
+    }
   }
 }
 
@@ -111,20 +119,6 @@ $sage-menubtn-focus-outline-color: currentColor !default;
     &:nth-child(3) {
       // TODO: replace magic numbers
       transform: rotate(-45deg) translate3d(1px, 2px, 0);
-    }
-
-    &::after {
-      transform: translate3d(-50%, -50%, 0) scale(1);
-      border-color: sage-color(sage);
-      opacity: 1;
-    }
-
-    &:active {
-      color: sage-color(grey, 400);
-
-      &::after {
-        border-color: sage-color(charcoal, 200);
-      }
     }
   }
 }

@@ -1,0 +1,35 @@
+/* ==================================================
+  ** _overlay.scss
+
+
+================================================== */
+$sage-overlay-bg-color: rgba(sage-color(charcoal, 100), 0.5);
+
+
+.sage-overlay {
+  visibility: hidden;
+  position: absolute;
+  z-index: sage-z_index(underlay);
+  top: 0;
+  left: 0;
+  height: 0;
+  width: 0;
+  background-color: $sage-overlay-bg-color;
+  transition: opacity 0.5s ease-in-out, backdrop-filter 0.7s ease-in-out;
+  opacity: 0;
+  pointer-events: none;
+
+  @supports (backdrop-filter: blur(10px)) {
+    backdrop-filter: blur(0.0625rem);
+  }
+
+  @media (max-width: sage-breakpoint()) {
+    .overlay-is-open & {
+      visibility: visible;
+      z-index: sage-z_index(underlay);
+      height: 100%;
+      width: 100%;
+      opacity: 1;
+    }
+  }
+}
