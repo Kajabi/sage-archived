@@ -2,7 +2,7 @@ if (document.querySelector('.sage-docs') !== null) {
 
 // Variables
   var sageDocs = document.querySelector('.sage-docs');
-  var sageToggleBtn = document.querySelector('.sage-sidebar__toggle');
+  var sageToggleBtn = document.querySelector('[data-js-action="sage-sidebar__toggle"]');
 
 
 // Event handlers
@@ -25,5 +25,4 @@ if (document.querySelector('.sage-docs') !== null) {
         sageDocs.classList.remove('sidebar-is-open');
     }
   })
-
 }
