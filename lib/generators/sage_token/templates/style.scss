@@ -1,12 +1,16 @@
-/*------------------------------------*/
-/*-- <%= file_name %> tokens */
-/*------------------------------------*/
+/* ==================================================
+  ** <%= file_name %>
+  type: token
+
+
+
+================================================== */
 
 @function sage-<%= file_name %>($key: default) {
   $value: map-get($sage-<%= file_name %>s, $key);
   @return $value;
 }
 
-$sage-<%= file_name %>s: (
+$sage-<%= file_name %>s: ( /* stylelint-ignore */
   default: #000000,
 );

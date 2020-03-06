@@ -1,8 +1,13 @@
+/* ==================================================
+  ** _code.scss
+
+
+   ================================================== */
+
 .prettyprint {
+  @include overflow-scroll(x);
+
   display: block;
-  overflow: hidden;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
   padding: sage-spacing();
   margin-bottom: sage-spacing();
   color: sage-color(sage, 200);
@@ -19,9 +24,9 @@ pre .nocode {
   color: sage-color(charcoal, 500);
   background-color: none;
 }
-pre .str {
+pre .str { /* string */
   color: sage-color(sage, 200);
-} /* string */
+}
 pre .kwd {
   color: sage-color(sage, 200);
   font-weight: bold;
