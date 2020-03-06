@@ -38,10 +38,14 @@ $sage-grid-gap-lg: sage-spacing(sm) !default;
 }
 
 .sage-col {
+  // TODO: refactor this to replace extend
+  @extend %sage-col;
+
   @for $sage-i from 1 through $sage-grid-columns {
     &--sm-#{$sage-i},
     &--md-#{$sage-i},
     &--lg-#{$sage-i} {
+      // TODO: refactor this to replace extend
       @extend %sage-col;
       flex: 0 0 100%;
     }
