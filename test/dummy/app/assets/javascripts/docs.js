@@ -10,12 +10,19 @@ if (document.querySelector('.sage-docs') !== null) {
   // Variables
   const sageBody = document.querySelector('.sage-docs').classList;
   const sageToggleBtn = document.querySelector('[data-js-action="sage-sidebar__toggle"]');
+  const sageNavOverlay = document.querySelector('.sage-overlay');
 
 
   // Functions
   function toggleOverlay(overlayClass) {
     const bodyClassName = overlayClass ? overlayClass : 'overlay-is-open';
     return sageBody.contains(bodyClassName) ? sageBody.remove(bodyClassName) : sageBody.add(bodyClassName);
+  }
+
+  function resetSideNav() {
+    sageBody.remove('sidebar-is-open');
+    sageToggleBtn.setAttribute('aria-expanded', false);
+    toggleOverlay();
   }
 
 
@@ -32,13 +39,17 @@ if (document.querySelector('.sage-docs') !== null) {
     toggleOverlay();
   });
 
+
+  sageNavOverlay.addEventListener('click', function(e) {
+    resetSideNav();
+  });
+
+
   document.addEventListener('keyup', function(e) {
     const keyNum = 'which' in e ? e.which : e.keyCode;
 
     if (keyNum === 27 && document.querySelector('.sidebar-is-open') !== null) {  // esc key
-        sageBody.remove('sidebar-is-open');
-        sageToggleBtn.setAttribute('aria-expanded', false);
-        toggleOverlay();
+      resetSideNav();
     }
   });
 
