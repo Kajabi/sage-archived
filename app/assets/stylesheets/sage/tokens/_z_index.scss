@@ -1,13 +1,15 @@
-/*------------------------------------*/
-/*-- z_index tokens */
-/*------------------------------------*/
+/* ==================================================
+  ** _z_index.scss
 
-@function sage-z_index($key: default) {
-  $value: map-get($sage-z_indexes, $key);
+  Z-index system
+================================================== */
+
+@function sage-z-index($key: default) {
+  $value: map-get($sage-z-indexes, $key);
   @return $value;
 }
 
-$sage-z_indexes: (
+$sage-z-indexes: (
   underlay: -1,
   default: 0,
   raised: 10,

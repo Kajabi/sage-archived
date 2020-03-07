@@ -1,11 +1,14 @@
-/*------------------------------------*/
-/*-- <%= file_name %> element */
-/*------------------------------------*/
+/* ==================================================
+  ** <%= file_name %>
+  type: element
+
+
+
+================================================== */
 
 .sage-<%= file_name %> {
-  
-  /* <%= file_name %> responsive styles */
+
   @media (max-width: sage-breakpoint()) {
-    
+    /* <%= file_name %> responsive styles */
   }
 }
