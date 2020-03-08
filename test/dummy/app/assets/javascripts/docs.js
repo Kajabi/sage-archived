@@ -14,16 +14,16 @@ if (document.querySelector('.sage-docs') !== null) {
 
 
   // Functions
-  function toggleOverlay(overlayClass) {
+  const toggleOverlay = function (overlayClass) {
     const bodyClassName = overlayClass ? overlayClass : 'overlay-is-open';
     return sageBody.contains(bodyClassName) ? sageBody.remove(bodyClassName) : sageBody.add(bodyClassName);
-  }
+  };
 
-  function resetSideNav() {
+  const resetSideNav = function() {
     sageBody.remove('sidebar-is-open');
     sageToggleBtn.setAttribute('aria-expanded', false);
     toggleOverlay();
-  }
+  };
 
 
   // Event handlers
