@@ -1,0 +1,102 @@
+:root {
+  --something: something;
+}
+
+// ==================================================
+// GRID
+// ==================================================
+
+$sage-grid-columns: 12 !default;
+
+$sage-grid-gap-sm: sage-spacing(sm) !default;
+$sage-grid-gap-md: sage-spacing(sm) !default;
+$sage-grid-gap-lg: sage-spacing(sm) !default;
+
+// ==================================================
+// BUTTONS
+// ==================================================
+
+// Base styles
+$sage-btn-transition: 0.1s ease-in-out !default;
+$sage-btn-border-width: 2px !default;
+
+// Focus outline
+$sage-btn-focus-outline-size: sage-spacing(xs) !default;
+$sage-btn-focus-outline-width: 1 !default;
+$sage-btn-focus-outline-color: currentColor !default;
+
+// Primary button
+$sage-btn-primary-bg-color: sage-color(primary) !default;
+$sage-btn-primary-text-color: #fff !default;
+
+// Secondary button
+$sage-btn-secondary-text-color: sage-color(charcoal, 400) !default;
+
+// Danger button
+$sage-btn-danger-bg-color: sage-color(red) !default;
+$sage-btn-danger-text-color: #fff !default;
+
+
+// ==================================================
+// CHECKBOXES
+// ==================================================
+
+// Colors
+$sage-checkbox-color-default: sage-color(grey, 400) !default;
+$sage-checkbox-color-checked: sage-color(primary) !default;
+$sage-checkbox-color-disabled: sage-color(grey, 200) !default;
+$sage-checkbox-color-disabled-checked: sage-color(primary, 200) !default;
+
+$sage-checkbox-size: 1.5rem !default;
+$sage-checkbox-border-radius: 0.25rem !default;
+$sage-checkbox-transition: 0.15s ease-in-out;
+
+// Focus state
+$sage-checkbox-focus-outline-size: sage-spacing(2xs) !default;
+$sage-checkbox-focus-outline-width: 1 !default;
+$sage-checkbox-focus-outline-color: sage-color(primary) !default;
+
+
+// ============================================
+// RADIO BUTTONS
+// ============================================
+
+// Colors
+$sage-radio-color-default: sage-color(grey, 400) !default;
+$sage-radio-color-checked: sage-color(primary) !default;
+$sage-radio-color-hover: sage-color(grey, 500) !default;
+$sage-radio-color-disabled: sage-color(grey, 100) !default;
+$sage-radio-color-disabled-checked: sage-color(grey, 300) !default;
+
+$sage-radio-button-size: 1.5rem !default;
+$sage-radio-selected-indicator-size: 1rem !default;
+$sage-radio-selected-indicator-color: #fff !default;
+
+// Focus state
+$sage-radio-focus-outline-size: sage-spacing(2xs) !default;
+$sage-radio-focus-outline-width: 1 !default;
+$sage-radio-focus-outline-color: currentColor !default;
+
+
+// ============================================
+// SWITCHES
+// ============================================
+
+// Colors
+$sage-switch-color-default: sage-color(grey, 400) !default;
+$sage-switch-color-default-text: sage-color(charcoal, 300) !default;
+$sage-switch-color-checked: sage-color(primary) !default;
+$sage-switch-color-disabled: sage-color(grey, 200) !default;
+$sage-switch-color-disabled-text: sage-color(grey, 400) !default;
+$sage-switch-color-disabled-checked: sage-color(primary, 200) !default;
+$sage-switch-color-disabled-checked-text: sage-color(charcoal, 100) !default;
+
+$sage-switch-border-radius: 1rem !default;
+$sage-switch-toggle-size: 1.25rem !default;
+
+// Focus state
+$sage-switch-focus-outline-spacing: sage-spacing(2xs) !default;
+$sage-switch-focus-outline-width: 1 !default;
+$sage-switch-focus-outline-color: currentColor !default;
+
+
