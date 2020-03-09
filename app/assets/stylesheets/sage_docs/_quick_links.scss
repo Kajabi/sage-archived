@@ -35,6 +35,16 @@
   color: sage-color(charcoal, 100);
 }
 
+.quick-links__subhead {
+  margin-top: sage-spacing(sm);
+  margin-bottom: sage-spacing(xs);
+  font-size: sage-font-size(md);
+  line-height: sage-font-height(md);
+  color: sage-color(charcoal, 400);
+  font-weight: 400;
+  margin-left: sage-spacing()
+}
+
 .quick-links__title {
   margin-bottom: 0;
   color: sage-color(charcoal, 200);
