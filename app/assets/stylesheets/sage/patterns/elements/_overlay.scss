@@ -9,7 +9,7 @@ $sage-overlay-bg-color: rgba(sage-color(charcoal, 100), 0.5);
 .sage-overlay {
   visibility: hidden;
   position: absolute;
-  z-index: sage-z_index(underlay);
+  z-index: sage-z-index(underlay);
   top: 0;
   left: 0;
   height: 0;
@@ -25,7 +25,7 @@ $sage-overlay-bg-color: rgba(sage-color(charcoal, 100), 0.5);
   @media (max-width: sage-breakpoint()) {
     .overlay-is-open & {
       visibility: visible;
-      z-index: sage-z_index(underlay);
+      z-index: sage-z-index(underlay);
       height: 100%;
       width: 100%;
       opacity: 1;

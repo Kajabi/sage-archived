@@ -37,7 +37,7 @@
     }
 
     .example__preview & {
-      z-index: sage-z_index();
+      z-index: sage-z-index();
       position: relative;
       top: auto;
       left: auto;
