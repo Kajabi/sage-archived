@@ -19,6 +19,9 @@
         color: sage-color(primary);
       }
     }
+    &--active{
+      color: sage-color(primary);
+    }
     i {
       font-size: sage-spacing();
       margin-right: sage-spacing(xs);
