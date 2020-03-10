@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>Sage</title>
-  <%= stylesheet_link_tag "sage", media: "all" %>
-  <%= stylesheet_link_tag "sage_docs", media: "all" %>
-  <%= csrf_meta_tags %>
-</head>
-<body class="sage-page">
-  <div class="sage-stage">
-    <div class="sage-content">
-      <div class="sage-container--sm">
-        <%= image_tag("sage/sage_icon.svg", class: "sage-page__icon")%>
-        <%= yield :heading %>
-        <%= yield %>
+  <head>
+    <title>Sage</title>
+    <%= stylesheet_link_tag "sage", media: "all" %>
+    <%= stylesheet_link_tag "sage_docs", media: "all" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body class="sage-page">
+    <div class="sage-stage">
+      <div class="sage-content">
+        <div class="sage-container--sm">
+          <%= image_tag("sage/sage_icon.svg", class: "sage-page__icon")%>
+          <%= yield :heading %>
+          <%= yield %>
+        </div>
       </div>
     </div>
-  </div>
-  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
-</body>
+    <div class="sage-overlay" aria-hidden="true"></div>
+    <script src="//cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <%= javascript_include_tag :application, :cache => true %>
+  </body>
 </html>
