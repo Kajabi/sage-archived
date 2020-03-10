@@ -106,3 +106,7 @@ hr {
   border: 0;
   border-top: sage-border();
 }
+
+label {
+  margin-bottom: $sage-form-element-spacing;
+}

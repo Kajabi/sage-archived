@@ -13,12 +13,20 @@ $sage-grid-gap-md: sage-spacing(sm) !default;
 $sage-grid-gap-lg: sage-spacing(sm) !default;
 
 // ==================================================
+// FORM ELEMENTS
+// ==================================================
+
+$sage-form-element-spacing: 1rem !default;
+
+// ==================================================
 // BUTTONS
 // ==================================================
 
 // Base styles
 $sage-btn-transition: 0.1s ease-in-out !default;
-$sage-btn-border-width: 2px !default;
+$sage-btn-border-width: 0.125rem !default;
+$sage-btn-shadow-base: 0 1px 2px rgba(0, 0, 0, 0.18), 0 1px 3px rgba(0, 0, 0, 0.1) !default;
+$sage-btn-shadow-hover: 0 2px 4px rgba(0, 0, 0, 0.12), 0 3px 6px rgba(0, 0, 0, 0.15) !default;
 
 // Focus outline
 $sage-btn-focus-outline-size: sage-spacing(xs) !default;
@@ -49,7 +57,14 @@ $sage-checkbox-color-disabled-checked: sage-color(primary, 200) !default;
 
 $sage-checkbox-size: 1.5rem !default;
 $sage-checkbox-border-radius: 0.25rem !default;
-$sage-checkbox-transition: 0.15s ease-in-out;
+$sage-checkbox-transition: 0.15s ease-in-out !default;
+
+$sage-checkbox-marker-border: 0.125rem !default;
+$sage-checkbox-marker-height: 0.75rem !default;
+$sage-checkbox-marker-width: 0.375rem !default;
+$sage-checkbox-marker-color: #fff !default;
+$sage-checkbox-marker-rotate: 42.5deg;
+$sage-checkbox-marker-offset: $sage-checkbox-marker-border * 2 !default;
 
 // Focus state
 $sage-checkbox-focus-outline-size: sage-spacing(2xs) !default;
@@ -69,6 +84,7 @@ $sage-radio-color-disabled: sage-color(grey, 100) !default;
 $sage-radio-color-disabled-checked: sage-color(grey, 300) !default;
 
 $sage-radio-button-size: 1.5rem !default;
+$sage-radio-transition: 0.15s ease-in-out !default;
 $sage-radio-selected-indicator-size: 1rem !default;
 $sage-radio-selected-indicator-color: #fff !default;
 
