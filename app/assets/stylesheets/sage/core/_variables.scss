@@ -26,7 +26,7 @@ $sage-form-element-spacing: 1rem !default;
 $sage-btn-transition: 0.1s ease-in-out !default;
 $sage-btn-border-width: 0.125rem !default;
 $sage-btn-border-radius: sage-border(radius) !default;
-$sage-btn-letter-spacing: 0.01875rem; // 0.3px
+$sage-btn-letter-spacing: 0.01875rem !default;
 $sage-btn-shadow-base: sage-shadow(sm) !default;
 $sage-btn-shadow-hover: sage-shadow(md) !default;
 
@@ -65,7 +65,7 @@ $sage-checkbox-marker-border: 0.125rem !default;
 $sage-checkbox-marker-height: 0.75rem !default;
 $sage-checkbox-marker-width: 0.375rem !default;
 $sage-checkbox-marker-color: #fff !default;
-$sage-checkbox-marker-rotate: 42.5deg;
+$sage-checkbox-marker-rotate: 42.5deg !default;
 $sage-checkbox-marker-offset: $sage-checkbox-marker-border * 2 !default;
 
 // Focus state
