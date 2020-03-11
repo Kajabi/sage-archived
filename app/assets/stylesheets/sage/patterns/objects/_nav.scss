@@ -14,7 +14,8 @@
     }
     &--sub {
       @extend .sage-nav__link;
-      margin: sage-spacing(xs) sage-spacing(lg);
+      padding: sage-spacing(2xs) sage-spacing(xs);
+      margin: sage-spacing(xs);
       font-size: sage-font-size(sm);
       &:hover {
         color: sage-color(primary);
