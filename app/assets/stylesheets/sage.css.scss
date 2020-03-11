@@ -1,5 +1,4 @@
 // Reset
-@import "sage/vendor/fonts";
 @import "sage/vendor/reboot";
 
 // Variable Tokens
@@ -15,10 +14,12 @@
 @import "sage/tokens/spacing";
 @import "sage/tokens/z_index";
 
-// Global Mixins and Functions
-@import "sage/core/mixins";
+// Global Variables
+@import "sage/core/variables";
 
 // Base Styles
+@import "sage/core/mixins";
+@import "sage/core/fonts";
 @import "sage/core/animations";
 @import "sage/core/typography";
 
