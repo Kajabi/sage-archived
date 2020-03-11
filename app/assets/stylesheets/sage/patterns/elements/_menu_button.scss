@@ -1,16 +1,8 @@
-// ============================================
-// Menu button
-// ============================================
+/* ==================================================
+  ** _menu_button.scss
+  type: element
 
-// TODO: move to global vars
-$sage-menubtn-toggle-size: 1.5rem !default; // 24px
-$sage-menubtn-toggle-line-color: sage-color(grey, 100) !default;
-$sage-menubtn-toggle-line-height: 0.125rem !default; // 2px
-$sage-menubtn-toggle-radius: 0.125rem !default; // 2px
-$sage-menubtn-focus-outline-size: sage-spacing(xs) !default;
-$sage-menubtn-focus-outline-width: 1 !default;
-$sage-menubtn-focus-outline-color: currentColor !default;
-
+================================================== */
 
 .sage-menubutton {
   @include button-style-reset();

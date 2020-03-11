@@ -1,32 +1,23 @@
-// ============================================
-// Variables
-// ============================================
-$sage-loading-bar-bg-color: sage-color(grey);
-$sage-loading-bar-height: 0.625rem; // 10px
-$sage-loading-bar-width: 18.75rem; // 300px
+/* ==================================================
+  ** _loader.scss
+  type: element
 
-$sage-loading-spinner-size: 3rem; // 48px
-$sage-loading-spinner-speed: 0.9s;
-
-
-// ============================================
-// Loading indicators
-// ============================================
+================================================== */
 
 .sage-loading {
   position: relative;
 
   &::before {
+    content: "";
     display: block;
     position: absolute;
+    transform: translate3d(-50%, -50%, 0);
     top: 50%;
     left: 50%;
-    transform: translate3d(-50%, -50%, 0);
-    content: "";
-    background-position: center center;
     background-size: cover;
-    pointer-events: none;
+    background-position: center center;
     transition: opacity 0.25s ease-in-out;
+    pointer-events: none;
   }
 
   // visibility of the loader is toggled by setting data attribute "data-loading" to true.

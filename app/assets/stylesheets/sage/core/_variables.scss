@@ -46,6 +46,15 @@ $sage-btn-secondary-text-color: sage-color(charcoal, 400) !default;
 $sage-btn-danger-bg-color: sage-color(red) !default;
 $sage-btn-danger-text-color: #fff !default;
 
+// Menu button
+$sage-menubtn-toggle-size: 1.5rem !default; // 24px
+$sage-menubtn-toggle-line-color: sage-color(grey, 100) !default;
+$sage-menubtn-toggle-line-height: 0.125rem !default; // 2px
+$sage-menubtn-toggle-radius: 0.125rem !default; // 2px
+$sage-menubtn-focus-outline-size: sage-spacing(xs) !default;
+$sage-menubtn-focus-outline-width: 1 !default;
+$sage-menubtn-focus-outline-color: currentColor !default;
+
 
 // ==================================================
 // CHECKBOXES
@@ -118,4 +127,26 @@ $sage-switch-focus-outline-spacing: sage-spacing(2xs) !default;
 $sage-switch-focus-outline-width: 1 !default;
 $sage-switch-focus-outline-color: currentColor !default;
 
+
+// ==================================================
+// LOADERS AND SPINNERS
+// ==================================================
+
+$sage-loading-bar-bg-color: sage-color(grey) !default;
+$sage-loading-bar-height: 0.625rem !default; // 10px
+$sage-loading-bar-width: 18.75rem !default; // 300px
+
+$sage-loading-spinner-size: 3rem !default; // 48px
+$sage-loading-spinner-speed: 0.9s !default;
+
+
+// ==================================================
+// OVERLAYS
+// ==================================================
+
+$sage-overlay-bg-color: rgba(sage-color(charcoal, 100), 0.5);
+$sage-overlay-backdrop-filter: blur(0.125rem);
+$sage-overlay-z-index: sage-z-index(underlay);
+$sage-overlay-transition-default: opacity 0.5s ease-in-out;
+$sage-overlay-transition-backdrop-filter: backdrop-filter 0.7s ease-in-out;
 
