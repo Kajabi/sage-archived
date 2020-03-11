@@ -18,10 +18,10 @@
   margin-right: sage-spacing(2xs);
   font-size: sage-font-size(md);
   font-weight: 500;
-  letter-spacing: 0.01875rem; // 0.3px
+  letter-spacing: $sage-btn-letter-spacing;
   color: sage-color(charcoal, 500);
   border: $sage-btn-border-width solid currentColor;
-  border-radius: sage-border(radius);
+  border-radius: $sage-btn-border-radius;
   box-shadow: $sage-btn-shadow-base;
   transition: border $sage-btn-transition, background-color $sage-btn-transition, box-shadow $sage-btn-transition;
 }

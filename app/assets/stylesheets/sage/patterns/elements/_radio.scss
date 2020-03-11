@@ -18,7 +18,7 @@
     outline: none;
     background-color: #fff;
     border: 1px solid $sage-radio-color-default;
-    border-radius: sage-border(radius-round);
+    border-radius: $sage-radio-border-radius;
     transition: background 0.2s ease-in-out, box-shadow $sage-radio-transition, border $sage-radio-transition;
     cursor: pointer;
 
