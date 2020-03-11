@@ -1,15 +1,18 @@
-// ============================================
-// Sidebar
-// ============================================
+/* ==================================================
+  ** _sidebar.scss
+  type: object
 
+================================================== */
+
+// TODO: refactor @extend
 .sage-sidebar {
   display: flex;
   flex-direction: column;
+  z-index: sage-z-index(nav);
   width: sage-sidebar();
   border-right: sage-border();
   background: sage-color(grey, 200);
   overscroll-behavior-y: contain;
-  z-index: sage-z-index(nav);
 
   &--md {
     @extend .sage-sidebar;
