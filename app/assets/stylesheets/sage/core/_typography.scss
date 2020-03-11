@@ -1,11 +1,7 @@
 /* ==================================================
   ** _typography.scss
 
-
 ================================================== */
-
-$sage-font-stack: -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "Noto Sans", sans-serif;
-
 
 body {
   margin-bottom: sage-spacing();
@@ -17,7 +13,7 @@ body {
   font-family: "Inter", $sage-font-stack;
   font-weight: sage-font-weight();
   font-size: sage-font-size();
-  letter-spacing: 0.01875rem; // 0.3px
+  letter-spacing: $sage-body-letter-spacing;
   line-height: sage-font-height();
 
   @supports (font-variation-settings: normal) {

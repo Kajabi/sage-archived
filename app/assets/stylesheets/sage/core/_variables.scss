@@ -3,6 +3,15 @@
 }
 
 // ==================================================
+// FONTS
+// ==================================================
+$sage-body-font-path: "inter" !default;
+$sage-body-font-version: 3.12 !default;
+$sage-body-letter-spacing: 0.01875rem !default;
+$sage-font-stack: -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "Noto Sans", sans-serif;
+
+
+// ==================================================
 // GRID
 // ==================================================
 
@@ -12,11 +21,13 @@ $sage-grid-gap-sm: sage-spacing(sm) !default;
 $sage-grid-gap-md: sage-spacing(sm) !default;
 $sage-grid-gap-lg: sage-spacing(sm) !default;
 
+
 // ==================================================
 // FORM ELEMENTS
 // ==================================================
 
 $sage-form-element-spacing: 1rem !default;
+
 
 // ==================================================
 // BUTTONS
@@ -26,7 +37,7 @@ $sage-form-element-spacing: 1rem !default;
 $sage-btn-transition: 0.1s ease-in-out !default;
 $sage-btn-border-width: 0.125rem !default;
 $sage-btn-border-radius: sage-border(radius) !default;
-$sage-btn-letter-spacing: 0.01875rem !default;
+$sage-btn-letter-spacing: $sage-body-letter-spacing !default;
 $sage-btn-shadow-base: sage-shadow(sm) !default;
 $sage-btn-shadow-hover: sage-shadow(md) !default;
 
