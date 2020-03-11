@@ -119,7 +119,12 @@ $sage-switch-color-disabled-text: sage-color(grey, 400) !default;
 $sage-switch-color-disabled-checked: sage-color(primary, 200) !default;
 $sage-switch-color-disabled-checked-text: sage-color(charcoal, 100) !default;
 
+// Switch
 $sage-switch-border-radius: 1rem !default;
+$sage-switch-height: 1.5rem !default;
+$sage-switch-width: 2.75rem !default;
+
+// Toggle
 $sage-switch-toggle-size: 1.25rem !default;
 
 // Focus state
@@ -144,9 +149,9 @@ $sage-loading-spinner-speed: 0.9s !default;
 // OVERLAYS
 // ==================================================
 
-$sage-overlay-bg-color: rgba(sage-color(charcoal, 100), 0.5);
-$sage-overlay-backdrop-filter: blur(0.125rem);
-$sage-overlay-z-index: sage-z-index(underlay);
-$sage-overlay-transition-default: opacity 0.5s ease-in-out;
-$sage-overlay-transition-backdrop-filter: backdrop-filter 0.7s ease-in-out;
+$sage-overlay-bg-color: rgba(sage-color(charcoal, 100), 0.5) !default;
+$sage-overlay-backdrop-filter: blur(0.125rem) !default;
+$sage-overlay-z-index: sage-z-index(underlay) !default;
+$sage-overlay-transition-default: opacity 0.5s ease-in-out !default;
+$sage-overlay-transition-backdrop-filter: backdrop-filter 0.7s ease-in-out !default;
 
