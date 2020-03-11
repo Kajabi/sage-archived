@@ -1,7 +1,7 @@
 .quick-links {
-  padding: sage-spacing() 0;
   position: sticky;
   top: 0;
+  padding: sage-spacing() 0;
 }
 
 .quick-links__body {
@@ -10,10 +10,10 @@
 }
 
 .quick-links__header {
-  margin-bottom: sage-spacing(sm);
   display: flex;
   flex-flow: row wrap;
   align-items: center;
+  margin-bottom: sage-spacing(sm);
 }
 
 .quick-links__icon {
@@ -46,7 +46,7 @@
 }
 
 .quick-links__title {
+  flex: 1;
   margin-bottom: 0;
   color: sage-color(charcoal, 200);
-  flex: 1;
 }

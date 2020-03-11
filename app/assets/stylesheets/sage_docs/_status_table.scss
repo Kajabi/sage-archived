@@ -1,42 +1,55 @@
 .status-table {
   width: 100%;
+
   th {
     padding: sage-spacing(xs) sage-spacing(sm);
-    border-bottom: 2px solid sage-color(grey);
     font-size: sage-font-size(sm);
+    border-bottom: 2px solid sage-color(grey);
+
     &:nth-child(1) {
       padding-left: 0;
     }
     &:nth-child(5) {
       padding-right: 0;
-    }   
+    }
   }
+
   td {
     padding: sage-spacing(xs) sage-spacing(sm);
     vertical-align: top;
+
     &:nth-child(1) {
-      font-weight: sage-font-weight(semibold);
-      padding-left: 0;
+      // TODO: refactor fixed width block
       width: 10000px;
+      padding-left: 0;
+      font-weight: sage-font-weight(semibold);
     }
+
     &:nth-child(2) {
-      border-bottom: sage-border();
+      // TODO: refactor fixed width block
       width: 4000px;
-    }
-    &:nth-child(3), &:nth-child(4), &:nth-child(5) {
       border-bottom: sage-border();
-      text-align: center;
     }
+
+    &:nth-child(3),
+    &:nth-child(4),
+    &:nth-child(5) {
+      text-align: center;
+      border-bottom: sage-border();
+    }
+
     &:nth-child(5) {
       padding-right: 0;
     }
   }
+
   tr {
     &:nth-child(3n + 1) {
       border-bottom: 2px solid sage-color(grey);
     }
+
     &:last-child {
-      border-bottom: none;
+      border-bottom: 0;
     }
   }
 }

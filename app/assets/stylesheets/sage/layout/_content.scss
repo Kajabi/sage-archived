@@ -1,7 +1,13 @@
+/* ==================================================
+  ** _content.scss
+
+  sage primary page container
+================================================== */
+
 .sage-content {
-  background: sage-color(grey, 100);
-  padding: sage-spacing() 0;
   flex: 1;
   overflow: auto;
+  padding: sage-spacing() 0;
+  background: sage-color(grey, 100);
   scroll-behavior: smooth;
 }

@@ -1,29 +1,74 @@
+/**
+  * docs.js
+  *
+  * Sage documentation app functions
+  *
+*/
+
 if (document.querySelector('.sage-docs') !== null) {
 
-// Variables
-  var sageDocs = document.querySelector('.sage-docs');
-  var sageToggleBtn = document.querySelector('.sage-sidebar__toggle');
+  // Variables
+  const sageBody = document.querySelector('.sage-docs').classList;
+  const sageToggleBtn = document.querySelector('[data-js="sage-sidebar-menu"]');
+  const sageNavOverlay = document.querySelector('.sage-overlay');
 
 
-// Event handlers
+  // Functions
 
-  // Sidebar click events
+  // toggle overlay display
+  // TODO: move to global utils
+  const toggleOverlay = function (overlayClass) {
+    const bodyClassName = overlayClass ? overlayClass : 'overlay-is-open';
+    return sageBody.contains(bodyClassName) ? sageBody.remove(bodyClassName) : sageBody.add(bodyClassName);
+  };
+
+  // retrieve button target id
+  const getBtnTarget = function(e) {
+    return e.target.getAttribute('aria-controls') ? e.target.getAttribute('aria-controls') : e.target.getAttribute('data-js');
+  };
+
+  // reset sidenav state to closed/default
+  const resetSideNav = function() {
+    const openSidebar = document.querySelector('.sage-sidebar');
+
+    openSidebar.classList.remove('is-open');
+    sageToggleBtn.setAttribute('aria-expanded', false);
+    toggleOverlay();
+  };
+
+
+  // Event handlers
+
+  // Toggle sidebar on menu button click
   sageToggleBtn.addEventListener('click', function(e) {
-    sageDocs.classList.toggle('sidebar-is-open');
-    if (document.querySelector('.sidebar-is-open') !== null) {
+    const buttonTarget = document.getElementById(getBtnTarget(e));
+
+    buttonTarget.classList.toggle('is-open');
+
+    if (buttonTarget.classList.contains('is-open')) {
       this.setAttribute('aria-expanded', true);
     } else {
       this.setAttribute('aria-expanded', false);
     }
+
+    toggleOverlay();
   });
 
-  // sidebar key events
-  document.addEventListener('keyup', function(e) {
-    var keyNum = 'which' in e ? e.which : e.keyCode;
 
-    if (keyNum === 27 && document.querySelector('.sidebar-is-open') !== null) {  // esc key
-        sageDocs.classList.remove('sidebar-is-open');
+  // Close overlay and menu on click
+  sageNavOverlay.addEventListener('click', function(e) {
+    resetSideNav();
+  });
+
+
+  // Close overlay and menu on esc keypress
+  document.addEventListener('keyup', function(e) {
+    const keyNum = 'which' in e ? e.which : e.keyCode;
+
+    if (keyNum === 27 && document.querySelector('.sage-sidebar.is-open') !== null) {  // esc key
+      resetSideNav();
     }
-  })
+  });
+
 
 }

@@ -1,7 +1,14 @@
+/* ==================================================
+  ** _page.scss
+
+  Default Sage page layout
+================================================== */
+
 .sage-page {
-  height: 100%;
   display: flex;
   flex-direction: column;
+  height: 100%;
+
   &__icon {
     height: 60px;
     margin-bottom: sage-spacing();

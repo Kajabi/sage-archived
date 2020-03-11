@@ -11,16 +11,16 @@
 ================================================== */
 
 @mixin visually-hidden {
-  border: 0;
+  position: absolute;
+  overflow: hidden;
   clip: rect(0 0 0 0);
-  clip-path: polygon(0px 0px, 0px 0px, 0px 0px);
+  clip-path: polygon(0 0, 0 0, 0 0);
+  width: 1px;
   height: 1px;
   margin: -1px;
-  overflow: hidden;
   padding: 0;
-  position: absolute;
-  width: 1px;
   white-space: nowrap;
+  border: 0;
 }
 
 
@@ -62,9 +62,11 @@
 
   @if ($dimension == y) {
     overflow-y: auto;
-  } @else if ($dimension == x) {
+  }
+  @else if ($dimension == x) {
     overflow-x: auto;
-  } @else if ($dimension == all) {
+  }
+  @else if ($dimension == all) {
     overflow: auto;
   }
 }

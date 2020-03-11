@@ -9,7 +9,7 @@
   border-right: sage-border();
   background: sage-color(grey, 200);
   overscroll-behavior-y: contain;
-  z-index: sage-z_index(nav);
+  z-index: sage-z-index(nav);
 
   &--md {
     @extend .sage-sidebar;
@@ -25,156 +25,37 @@
     position: fixed;
     top: $sage-assistant-height;
     left: 0;
-    height: calc(100% - #{$sage-assistant-height});
-    opacity: 0;
     transform: translateX(-100%);
+    height: calc(100% - #{$sage-assistant-height});
     transition: transform 0.2s ease-out, opacity 0.15s ease-in-out;
+    opacity: 0;
 
-    .sidebar-is-open & {
+    &.is-open {
+      transform: none;
       box-shadow: sage-shadow();
       opacity: 1;
+    }
+
+    .example__preview & {
+      z-index: sage-z-index();
+      position: relative;
+      top: auto;
+      left: auto;
       transform: none;
+      height: auto;
+      box-shadow: none;
+      transition: none;
+      opacity: 1;
     }
   }
 }
 
 .sage-sidebar__body {
   @include overflow-scroll();
-
   flex: 1;
   padding: sage-spacing();
 }
 
 .sage-sidebar__footer {
   padding: sage-spacing();
-}
-
-// ============================================
-// Toggle button
-// ============================================
-
-.sage-sidebar__toggle {
-  $sage-sidebar-toggle-size: 1.5rem; // 24px
-  $sage-sidebar-toggle-line-color: sage-color(grey, 100);
-  $sage-sidebar-toggle-line-height: 0.125rem; // 2px
-  $sage-sidebar-toggle-radius: 0.125rem; // 2px
-  $sage-sidebar-btn-focus-outline-size: sage-spacing(xs);
-  $sage-sidebar-btn-focus-outline-width: 1;
-  $sage-sidebar-btn-focus-outline-color: currentColor;
-
-  @include button-style-reset();
-
-  color: $sage-sidebar-toggle-line-color;
-  display: none;
-  position: relative;
-
-  &::after {
-    content: none;
-    display: inline-block;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: calc(100% + ((#{$sage-sidebar-btn-focus-outline-width}px ) + (#{$sage-sidebar-btn-focus-outline-size} * 2)));
-    height: calc(100% + ((#{$sage-sidebar-btn-focus-outline-width}px) + (#{$sage-sidebar-btn-focus-outline-size} * 2)));
-    border: calc(#{$sage-sidebar-btn-focus-outline-width}px) solid $sage-sidebar-btn-focus-outline-color;
-    border-radius: sage-border(radius-large);
-    color: inherit;
-    opacity: 0;
-    transform: translate3d(-50%, -50%, 0) scale(0.94);
-    transition: opacity 0.15s ease-out 0.05s, transform 0.2s ease-in-out;
-  }
-
-  &:focus,
-  &:active {
-    outline: none;
-  }
-
-  .btn-bar {
-    display: block;
-    height: $sage-sidebar-toggle-line-height;
-    background: currentColor;
-    border-radius: $sage-sidebar-toggle-radius;
-    transition: transform 0.2s ease-out, opacity 0.15s ease-in-out;
-
-    + .btn-bar {
-      margin-top: 0.375rem;
-    }
-
-    &:nth-child(1) {
-      width: 75%;
-      transform-origin: top left;
-    }
-
-    &:nth-child(2) {
-      width: 100%;
-    }
-
-    &:nth-child(3) {
-      width: 50%;
-      transform-origin: top left;
-    }
-  }
-
-  @media (max-width: sage-breakpoint()) {
-    display: block;
-    position: relative;
-    height: $sage-sidebar-toggle-size;
-    width: $sage-sidebar-toggle-size;
-    margin-right: sage-spacing();
-    margin-bottom: 0;
-    cursor: pointer;
-
-    &::after {
-      content: "";
-    }
-
-    &:focus {
-      &::after {
-        opacity: 1;
-        border-color: sage-color(charcoal, 100);
-        transform: translate3d(-50%, -50%, 0) scale(1);
-      }
-    }
-
-    &:active {
-      color: sage-color(grey, 400);
-
-      &::after {
-        border-color: sage-color(charcoal, 200);
-      }
-    }
-
-    .sidebar-is-open & {
-      .btn-bar {
-        width: 100%;
-
-        &:nth-child(1) {
-        // TODO: replace magic numbers
-          transform: rotate(45deg) translate3d(3px, -3px, 0);
-        }
-        &:nth-child(2) {
-          opacity: 0;
-          transform: translateX(50%);
-        }
-        &:nth-child(3) {
-        // TODO: replace magic numbers
-          transform: rotate(-45deg) translate3d(1px, 2px, 0);
-        }
-      }
-
-      &::after {
-        border-color: sage-color(sage);
-        opacity: 1;
-        transform: translate3d(-50%, -50%, 0) scale(1);
-      }
-
-      &:active {
-        color: sage-color(grey, 400);
-
-        &::after {
-          border-color: sage-color(charcoal, 200);
-        }
-      }
-    }
-  }
 }

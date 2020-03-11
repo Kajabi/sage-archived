@@ -1,25 +1,39 @@
+/* ==================================================
+  ** .sage-icon
+  type: style
+
+
+================================================== */
+
 .sage-icon {
   &__wrapper {
-    padding-left: sage-spacing();
-    list-style-type: none;
     display: flex;
     flex-wrap: wrap;
+    padding-left: sage-spacing();
+    list-style-type: none;
+
+    /*
+      TODO: use classes over element selectors
+      eventually we'll want to refactor this whole block
+    */
     li {
       flex: 1;
       min-width: 30%;
       margin-bottom: sage-spacing();
       margin-right: sage-spacing();
       padding: sage-spacing();
-      border: sage-border();
       text-align: center;
+      border: sage-border();
+
       i {
         font-size: sage-font-size(xl);
       }
+
       p {
-        font-size: sage-font-size(sm);
         margin-bottom: 0;
-        white-space: nowrap;
+        font-size: sage-font-size(sm);
         font-weight: sage-font-weight(semibold);
+        white-space: nowrap;
       }
     }
   }

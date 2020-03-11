@@ -1,18 +1,22 @@
-/*------------------------------------*/
-/*-- tabs component */
-/*------------------------------------*/
+/* ==================================================
+  ** _tabs.scss
+  type: object
+
+================================================== */
 
 .sage-tabs {
   margin-bottom: sage-spacing();
   &__tab {
     color: sage-color(charcoal,100);
     margin-right: sage-spacing();
+
     &--active {
       color: sage-color(charcoal,500);
       font-weight: sage-font-weight(semibold);
       padding-bottom: sage-spacing(xs);
       display: inline-block;
       position: relative;
+
       &:after {
         background: sage-color(primary);
         border-radius: sage-border(radius);
@@ -25,12 +29,13 @@
         bottom: 0;
       }
     }
+
     &:last-of-type {
       margin-right: 0;
     }
   }
-  /* tabs responsive styles */
   @media (max-width: sage-breakpoint()) {
-    
+    /* tabs responsive styles */
+
   }
 }

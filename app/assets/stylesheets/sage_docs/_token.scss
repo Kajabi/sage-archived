@@ -2,60 +2,100 @@
   margin-bottom: sage-spacing();
   border: sage-border();
   border-radius: sage-border(radius);
-  border-bottom: none;
+  border-bottom: 0;
 }
 
 .token {
-  padding: sage-spacing(xs) sage-spacing();
-  border-bottom: sage-border();
-  font-size: sage-font-size(sm);
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  padding: sage-spacing(xs) sage-spacing();
+  font-size: sage-font-size(sm);
+  border-bottom: sage-border();
 
-  &:after {
-    font-family: monospace;
+  &::after {
     max-width: calc(100% / 3);
+    font-family: monospace;
   }
 
-  &-border:after { content: "#{sage-border()}" }
+  &-border::after {
+    content: "#{sage-border()}";
+  }
   @each $name, $token in $sage-borders {
-    &-border-#{$name}:after { content: "#{$token}" }
+    &-border-#{$name}::after {
+      content: "#{$token}";
+    }
   }
-  &-breakpoint:after { content: "#{sage-breakpoint()}" }
+  &-breakpoint::after {
+    content: "#{sage-breakpoint()}";
+  }
   @each $name, $token in $sage-breakpoints {
-    &-breakpoint-#{$name}:after { content: "#{$token}" }
+    &-breakpoint-#{$name}::after {
+      content: "#{$token}";
+    }
   }
-  &-container:after { content: "#{sage-container()}" }
+  &-container::after {
+    content: "#{sage-container()}";
+  }
   @each $name, $token in $sage-containers {
-    &-container-#{$name}:after { content: "#{$token}" }
+    &-container-#{$name}::after {
+      content: "#{$token}";
+    }
   }
-  &-font-height:after { content: "#{sage-font-height()}" }
+  &-font-height::after {
+    content: "#{sage-font-height()}";
+  }
   @each $name, $token in $sage-font-heights {
-    &-font-height-#{$name}:after { content: "#{$token}" }
+    &-font-height-#{$name}::after {
+      content: "#{$token}";
+    }
   }
-  &-font-size:after { content: "#{sage-font-size()}" }
+  &-font-size::after {
+    content: "#{sage-font-size()}";
+  }
   @each $name, $token in $sage-font-sizes {
-    &-font-size-#{$name}:after { content: "#{$token}" }
+    &-font-size-#{$name}::after {
+      content: "#{$token}";
+    }
   }
-  &-font-weight:after { content: "#{sage-font-weight()}" }
+  &-font-weight::after {
+    content: "#{sage-font-weight()}";
+  }
   @each $name, $token in $sage-font-weights {
-    &-font-weight-#{$name}:after { content: "#{$token}" }
+    &-font-weight-#{$name}::after {
+      content: "#{$token}";
+    }
   }
-  &-shadow:after { content: "#{sage-shadow()}" }
+  &-shadow::after {
+    content: "#{sage-shadow()}";
+  }
   @each $name, $token in $sage-shadows {
-    &-shadow-#{$name}:after { content: "#{$token}" }
+    &-shadow-#{$name}::after {
+      content: "#{$token}";
+    }
   }
-  &-sidebar:after { content: "#{sage-sidebar()}" }
+  &-sidebar::after {
+    content: "#{sage-sidebar()}";
+  }
   @each $name, $token in $sage-sidebars {
-    &-sidebar-#{$name}:after { content: "#{$token}" }
+    &-sidebar-#{$name}::after {
+      content: "#{$token}";
+    }
   }
-  &-spacing:after { content: "#{sage-spacing()}" }
+  &-spacing::after {
+    content: "#{sage-spacing()}";
+  }
   @each $name, $token in $sage-spacings {
-    &-spacing-#{$name}:after { content: "#{$token}" }
+    &-spacing-#{$name}::after {
+      content: "#{$token}";
+    }
   }
-  &-z_index:after { content: "#{sage-z_index()}" }
-  @each $name, $token in $sage-z_indexes {
-    &-z_index-#{$name}:after { content: "#{$token}" }
+  &-z_index::after {
+    content: "#{sage-z-index()}";
+  }
+  @each $name, $token in $sage-z-indexes {
+    &-z_index-#{$name}::after {
+      content: "#{$token}";
+    }
   }
 }

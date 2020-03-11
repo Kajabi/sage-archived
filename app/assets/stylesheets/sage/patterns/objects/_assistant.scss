@@ -9,7 +9,7 @@
   $sage-assistant-search-bg-opacity: 0.1 !default;
   $sage-assistant-search-placeholder-color: sage-color(grey, 400) !default;
 
-  z-index: sage-z_index(nav);
+  z-index: sage-z-index(nav);
   display: flex;
   align-items: center;
   padding: sage-spacing(xs) sage-spacing();

@@ -1,27 +1,35 @@
-/*------------------------------------*/
-/*-- form_section component */
-/*------------------------------------*/
+/* ==================================================
+  ** _form_section.scss
+
+  Form section component
+
+================================================== */
 
 .sage-form_section {
   @extend .sage-row;
   margin-bottom: sage-spacing();
+
   &__info {
     @extend .sage-col--md-4;
   }
+
   &__title {
     margin-bottom: sage-spacing(xs);
   }
+
   &__subtitle {
     color: sage-color(charcoal, 200);
   }
+
   &__content {
     @extend .sage-col--md-8;
   }
+
   &__panel {
     @extend .sage-panel;
   }
-  /* form_section responsive styles */
-  @media (max-width: sage-breakpoint()) {
 
+  @media (max-width: sage-breakpoint()) {
+    /* form_section responsive styles */
   }
 }
