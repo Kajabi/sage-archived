@@ -5,7 +5,19 @@
     While this results in a default <code>primary</code> color being applied, any other color
     from the System can be applied using <code>--ring-colorname</code>. Therefore, programmatic
     implementations of this object should allow <code>primary</code> to be the passive default
-    while also allowing a particular System color to be passed in.</td>
+    while also allowing a particular System color to be passed in.
+  </td>
   <td>String</td>
   <td>primary</td>
+</tr>
+<tr>
+  <td>size</td>
+  <td>
+    As a standalone component this object's size should be modified using a custom CSS property
+    `--sage-live-avatar-size`. Therefore, a `size` value passed in should modify its diameter
+    using an inline `style` attribute (see preview example). Preferably, the size should be set
+    in a component context using CSS.
+  </td>
+  <td>Integer</td>
+  <td>null</td>
 </tr>
