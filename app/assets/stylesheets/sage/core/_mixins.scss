@@ -81,16 +81,16 @@
 ================================================== */
 @mixin placeholder { /* stylelint-disable */
   &::-webkit-input-placeholder {
-    @content
+    @content;
   }
   &:-moz-placeholder {
-    @content
+    @content;
   }
   &::-moz-placeholder {
-    @content
+    @content;
   }
   &:-ms-input-placeholder {
-    @content
+    @content;
   }
 } /* stylelint-enable */
 
