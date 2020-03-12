@@ -1,6 +1,7 @@
 // Global Mixins and Functions
 @import "sage/core/mixins";
 
+// Design Tokens
 @import "sage/tokens/color_palette";
 @import "sage/tokens/border";
 @import "sage/tokens/breakpoints";
@@ -13,6 +14,10 @@
 @import "sage/tokens/spacing";
 @import "sage/tokens/z_index";
 
+// Documentation Variables
+@import "sage_docs/variables";
+
+// Documentation Styles
 @import "sage_docs/colors";
 @import "sage_docs/code";
 @import "sage_docs/snippet";

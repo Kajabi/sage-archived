@@ -6,36 +6,40 @@
 
 .sage-tabs {
   margin-bottom: sage-spacing();
+
   &__tab {
-    color: sage-color(charcoal,100);
     margin-right: sage-spacing();
-
-    &--active {
-      color: sage-color(charcoal,500);
-      font-weight: sage-font-weight(semibold);
-      padding-bottom: sage-spacing(xs);
-      display: inline-block;
-      position: relative;
-
-      &:after {
-        background: sage-color(primary);
-        border-radius: sage-border(radius);
-        content: "";
-        position: absolute;
-        display: inline-block;
-        height: 4px;
-        width: 100%;
-        left: 0;
-        bottom: 0;
-      }
-    }
+    color: $sage-tabs-default-color;
+    transition: color $sage-tabs-default-transition;
 
     &:last-of-type {
       margin-right: 0;
     }
-  }
-  @media (max-width: sage-breakpoint()) {
-    /* tabs responsive styles */
 
+    &::after {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: $sage-tabs-active-border-height;
+      width: $sage-tabs-active-border-width;
+      background: $sage-tabs-active-border-color;
+      border-radius: $sage-tabs-active-border-radius;
+      transition: opacity $sage-tabs-default-transition, transform $sage-tabs-default-transition;
+      opacity: 0;
+    }
+
+    &--active {
+      display: inline-block;
+      position: relative;
+      padding-bottom: sage-spacing(xs);
+      color: $sage-tabs-active-color;
+      font-weight: $sage-tabs-active-font-weight;
+    }
+
+    &--active::after {
+      opacity: 1;
+    }
   }
 }

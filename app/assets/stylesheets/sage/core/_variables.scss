@@ -1,6 +1,25 @@
-:root {
-  --something: something;
-}
+// ==================================================
+// CSS CUSTOM PROPERTIES
+// ==================================================
+
+/*
+  Place global custom properties here.
+  These should be limited to properties that are _expected_ to change
+  via media query, JS, or some other action/method, not used as static variables
+*/
+
+// :root {
+//   --something: something;
+// }
+
+// ==================================================
+// FONTS
+// ==================================================
+$sage-body-font-path: "inter" !default;
+$sage-body-font-version: 3.12 !default;
+$sage-body-letter-spacing: 0.01875rem !default;
+$sage-font-stack: -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "Noto Sans", sans-serif !default;
+
 
 // ==================================================
 // GRID
@@ -12,11 +31,13 @@ $sage-grid-gap-sm: sage-spacing(sm) !default;
 $sage-grid-gap-md: sage-spacing(sm) !default;
 $sage-grid-gap-lg: sage-spacing(sm) !default;
 
+
 // ==================================================
 // FORM ELEMENTS
 // ==================================================
 
 $sage-form-element-spacing: 1rem !default;
+
 
 // ==================================================
 // BUTTONS
@@ -26,7 +47,7 @@ $sage-form-element-spacing: 1rem !default;
 $sage-btn-transition: 0.1s ease-in-out !default;
 $sage-btn-border-width: 0.125rem !default;
 $sage-btn-border-radius: sage-border(radius) !default;
-$sage-btn-letter-spacing: 0.01875rem !default;
+$sage-btn-letter-spacing: $sage-body-letter-spacing !default;
 $sage-btn-shadow-base: sage-shadow(sm) !default;
 $sage-btn-shadow-hover: sage-shadow(md) !default;
 
@@ -45,6 +66,15 @@ $sage-btn-secondary-text-color: sage-color(charcoal, 400) !default;
 // Danger button
 $sage-btn-danger-bg-color: sage-color(red) !default;
 $sage-btn-danger-text-color: #fff !default;
+
+// Menu button
+$sage-menubtn-toggle-size: 1.5rem !default; // 24px
+$sage-menubtn-toggle-line-color: sage-color(grey, 100) !default;
+$sage-menubtn-toggle-line-height: 0.125rem !default; // 2px
+$sage-menubtn-toggle-radius: 0.125rem !default; // 2px
+$sage-menubtn-focus-outline-size: sage-spacing(xs) !default;
+$sage-menubtn-focus-outline-width: 1 !default;
+$sage-menubtn-focus-outline-color: currentColor !default;
 
 
 // ==================================================
@@ -110,7 +140,12 @@ $sage-switch-color-disabled-text: sage-color(grey, 400) !default;
 $sage-switch-color-disabled-checked: sage-color(primary, 200) !default;
 $sage-switch-color-disabled-checked-text: sage-color(charcoal, 100) !default;
 
+// Switch
 $sage-switch-border-radius: 1rem !default;
+$sage-switch-height: 1.5rem !default;
+$sage-switch-width: 2.75rem !default;
+
+// Toggle
 $sage-switch-toggle-size: 1.25rem !default;
 
 // Focus state
@@ -118,4 +153,67 @@ $sage-switch-focus-outline-spacing: sage-spacing(2xs) !default;
 $sage-switch-focus-outline-width: 1 !default;
 $sage-switch-focus-outline-color: currentColor !default;
 
+
+// ==================================================
+// LOADERS AND SPINNERS
+// ==================================================
+
+$sage-loading-bar-bg-color: sage-color(grey) !default;
+$sage-loading-bar-height: 0.625rem !default; // 10px
+$sage-loading-bar-width: 18.75rem !default; // 300px
+
+$sage-loading-spinner-size: 3rem !default; // 48px
+$sage-loading-spinner-speed: 0.9s !default;
+
+
+// ==================================================
+// OVERLAYS
+// ==================================================
+
+$sage-overlay-bg-color: rgba(sage-color(charcoal, 100), 0.5) !default;
+$sage-overlay-backdrop-filter: blur(0.125rem) !default;
+$sage-overlay-z-index: sage-z-index(underlay) !default;
+$sage-overlay-transition-default: opacity 0.5s ease-in-out !default;
+$sage-overlay-transition-backdrop-filter: backdrop-filter 0.7s ease-in-out !default;
+
+
+// ==================================================
+// PANEL
+// ==================================================
+
+$sage-panel-bg-color: #fff !default;
+$sage-panel-padding: sage-spacing(lg) !default;
+$sage-panel-border-radius: sage-border(radius) !default;
+$sage-panel-box-shadow: sage-shadow(sm) !default;
+
+
+// ==================================================
+// ASSISTANT
+// ==================================================
+
+$sage-assistant-height: 3.5rem !default;
+$sage-assistant-branding-height: 1.25rem !default; // 20px
+$sage-assistant-search-height: 2.5rem !default; // 40px
+$sage-assistant-search-bg-color: sage-color(grey, 300) !default;
+$sage-assistant-search-bg-opacity: 0.1 !default;
+$sage-assistant-search-placeholder-color: sage-color(grey, 400) !default;
+$sage-assistant-search-placeholder-transition: color 0.15s ease-in-out, opacity 0.15s ease-in-out !default;
+
+
+// ==================================================
+// TABS
+// ==================================================
+
+$sage-tabs-default-color: sage-color(charcoal, 100) !default;
+$sage-tabs-default-transition: 0.2s ease-in-out !default;
+
+// Active tab
+$sage-tabs-active-color: sage-color(charcoal, 500) !default;
+$sage-tabs-active-font-weight: sage-font-weight(semibold) !default;
+
+// Active tab indicator
+$sage-tabs-active-border-height: 0.25rem !default; // 4px
+$sage-tabs-active-border-width: 100% !default;
+$sage-tabs-active-border-color: sage-color(primary) !default;
+$sage-tabs-active-border-radius: sage-border(radius) !default;
 
