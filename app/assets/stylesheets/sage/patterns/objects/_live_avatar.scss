@@ -4,10 +4,10 @@
 
 ================================================== */
 
-$sage-live-avatar-size: 128px;
-$sage-live-avatar-ring-transition: $sage-btn-transition;
-$sage-live-avatar-ring-width: 1px;
-$sage-live-avatar-ring-colors: (
+$-live-avatar-size: 128px;
+$-live-avatar-ring-transition: $sage-btn-transition;
+$-live-avatar-ring-width: 1px;
+$-live-avatar-ring-colors: (
   primary,
   grey,
   charcoal,
@@ -19,31 +19,31 @@ $sage-live-avatar-ring-colors: (
 );
 
 :root {
-  --sage-live-avatar-size: #{$sage-live-avatar-size};
+  --live-avatar-size: #{$-live-avatar-size};
 }
 
 .sage-live-avatar {
   display: inline-block;
   position: relative;
-  max-width: $sage-live-avatar-size;
-  max-height: $sage-live-avatar-size;
+  max-width: $-live-avatar-size;
+  max-height: $-live-avatar-size;
   width: var(--sage-live-avatar-size);
   height: var(--sage-live-avatar-size);
 
   // Start a transparent border tucked behind the image and smaller
   // so as to create an animation when toggled on.
   &::before {
-    $sage-live-avatar-ring-offset: 0;
+    $-live-avatar-ring-offset: 0;
 
     content: "";
     position: absolute;
-    top: $sage-live-avatar-ring-offset;
-    right: $sage-live-avatar-ring-offset;
-    bottom: $sage-live-avatar-ring-offset;
-    left: $sage-live-avatar-ring-offset;
+    top: $-live-avatar-ring-offset;
+    right: $-live-avatar-ring-offset;
+    bottom: $-live-avatar-ring-offset;
+    left: $-live-avatar-ring-offset;
     border-radius: 50%;
-    border: $sage-live-avatar-ring-width solid transparent;
-    transition: $sage-live-avatar-ring-transition;
+    border: $-live-avatar-ring-width solid transparent;
+    transition: $-live-avatar-ring-transition;
     transition-property: border-color, top, left, right, bottom;
   }
 
@@ -57,7 +57,7 @@ $sage-live-avatar-ring-colors: (
   @include sage-live-avatar-ring();
 }
 
-@each $color in $sage-live-avatar-ring-colors {
+@each $color in $-live-avatar-ring-colors {
   .sage-live-avatar--ring-#{$color} {
     @include sage-live-avatar-ring($color);
   }
