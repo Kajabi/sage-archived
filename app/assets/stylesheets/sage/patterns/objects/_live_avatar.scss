@@ -1,0 +1,64 @@
+/* ==================================================
+  ** live_avatar
+  type: object
+
+================================================== */
+
+$sage-live-avatar-ring-transition: $sage-btn-transition;
+$sage-live-avatar-ring-width: 1px;
+$sage-live-avatar-ring-colors: (
+  primary,
+  grey,
+  charcoal,
+  purple,
+  sage,
+  yellow,
+  orange,
+  red
+);
+
+.sage-live-avatar {
+  display: inline-block;
+  position: relative;
+  max-width: 128px;
+
+  // Start a transparent border tucked behind the image and smaller
+  // so as to create an animation when toggled on.
+  &::before {
+    $sage-live-avatar-ring-offset: 0;
+
+    content: "";
+    position: absolute;
+    top: $sage-live-avatar-ring-offset;
+    right: $sage-live-avatar-ring-offset;
+    bottom: $sage-live-avatar-ring-offset;
+    left: $sage-live-avatar-ring-offset;
+    border-radius: 50%;
+    border: $sage-live-avatar-ring-width solid transparent;
+    transition: $sage-live-avatar-ring-transition;
+    transition-property: border-color, top, left, right, bottom;
+  }
+
+  // Documentation-specific styles
+  .sage-docs .example__preview > & {
+    margin-right: sage-spacing();
+  }
+}
+
+.sage-live-avatar--ring {
+  @include sage-live-avatar-ring();
+}
+
+@each $color in $sage-live-avatar-ring-colors {
+  .sage-live-avatar--ring-#{$color} {
+    @include sage-live-avatar-ring($color);
+  }
+}
+
+.sage-live-avatar__image {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  position: relative;
+}
