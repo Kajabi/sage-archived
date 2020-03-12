@@ -19,8 +19,6 @@
     &::after {
       content: "";
       display: inline-block;
-      // transform: scaleY(0);
-      // transform-origin: bottom center;
       position: absolute;
       left: 0;
       bottom: 0;
@@ -41,7 +39,6 @@
     }
 
     &--active::after {
-      // transform: none;
       opacity: 1;
     }
   }
