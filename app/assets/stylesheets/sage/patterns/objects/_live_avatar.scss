@@ -4,6 +4,7 @@
 
 ================================================== */
 
+$sage-live-avatar-size: 128px;
 $sage-live-avatar-ring-transition: $sage-btn-transition;
 $sage-live-avatar-ring-width: 1px;
 $sage-live-avatar-ring-colors: (
@@ -17,10 +18,17 @@ $sage-live-avatar-ring-colors: (
   red
 );
 
+:root {
+  --save-live-avatar-size: #{$sage-live-avatar-size};
+}
+
 .sage-live-avatar {
   display: inline-block;
   position: relative;
-  max-width: 128px;
+  max-width: $sage-live-avatar-size;
+  max-height: $sage-live-avatar-size;
+  width: var(--save-live-avatar-size);
+  height: var(--save-live-avatar-size);
 
   // Start a transparent border tucked behind the image and smaller
   // so as to create an animation when toggled on.
