@@ -1,10 +1,10 @@
 /* ==================================================
   ** _form_section.scss
-
-  Form section component
+  type: object
 
 ================================================== */
 
+// TODO: refactor @extend
 .sage-form_section {
   @extend .sage-row;
   margin-bottom: sage-spacing();
