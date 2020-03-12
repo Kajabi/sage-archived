@@ -2,26 +2,31 @@
   &__link {
     display: flex;
     align-items: center;
-    margin: sage-spacing(xs) 0;
+    margin: sage-spacing(2xs) 0;
+    padding: sage-spacing(2xs) sage-spacing(xs);
     font-weight: 500;
     color: sage-color(charcoal, 400);
+    border-radius: sage-border(radius);
     &:hover {
-      color: sage-color(charcoal, 500);
+      background: sage-color(grey, 300);
       i {
         color: sage-color(primary);
       }
     }
     &--sub {
       @extend .sage-nav__link;
-      margin: sage-spacing(xs) sage-spacing(lg);
+      margin: sage-spacing(xs);
       font-size: sage-font-size(sm);
       &:hover {
-        color: sage-color(primary);
+        background: sage-color(grey, 300);
       }
     }
+    &--active {
+      background: sage-color(grey, 300);
+    }
     i {
-      font-size: sage-spacing();
       margin-right: sage-spacing(xs);
+      font-size: sage-spacing();
       color: sage-color(grey, 500);
     }
   }
