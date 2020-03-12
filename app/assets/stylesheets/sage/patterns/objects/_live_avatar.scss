@@ -19,7 +19,7 @@ $sage-live-avatar-ring-colors: (
 );
 
 :root {
-  --save-live-avatar-size: #{$sage-live-avatar-size};
+  --sage-live-avatar-size: #{$sage-live-avatar-size};
 }
 
 .sage-live-avatar {
@@ -27,8 +27,8 @@ $sage-live-avatar-ring-colors: (
   position: relative;
   max-width: $sage-live-avatar-size;
   max-height: $sage-live-avatar-size;
-  width: var(--save-live-avatar-size);
-  height: var(--save-live-avatar-size);
+  width: var(--sage-live-avatar-size);
+  height: var(--sage-live-avatar-size);
 
   // Start a transparent border tucked behind the image and smaller
   // so as to create an animation when toggled on.
