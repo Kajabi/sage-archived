@@ -1,11 +1,25 @@
-<fieldset class="sage-form-section">
+<fieldset>
+  <p>Text (default)</p>
   <div class="sage-input">
-    <input class="sage-input__field" type="text" placeholder="First name" id="form__fname" required>
+    <input class="sage-input__field" type="text" placeholder="First name" id="form__fname" name="form__fname" required>
     <label for="form__fname" class="sage-input__label">First name</label>
   </div>
 
   <div class="sage-input">
-    <input class="sage-input__field" type="text" placeholder="Last name" id="form__lname" disabled>
+    <input class="sage-input__field" type="text" placeholder="Last name" id="form__lname" name="form__lname">
     <label for="form__lname" class="sage-input__label">Last name</label>
   </div>
+
+  <p>Email</p>
+  <div class="sage-input">
+    <input class="sage-input__field" type="email" placeholder="Email address" id="form__email" name="form__email" required>
+    <label for="form__email" class="sage-input__label">Email address</label>
+  </div>
+
+  <p>Password</p>
+  <div class="sage-input">
+    <input class="sage-input__field" type="password" placeholder="Create a password (8 to 32 characters)" id="form__pw" name="form__pw" minlength="8" maxlength="32" required>
+    <label for="form__pw" class="sage-input__label">Create a new password (8 to 32 characters)</label>
+  </div>
+
 </fieldset>

@@ -100,6 +100,9 @@ $sage-inputfield-padding: 1.125rem !default;  // 18px
 $sage-inputfield-padding-offset: $sage-inputfield-padding - $sage-inputfield-border-width;
 $sage-inputfield-padding-filled: 0.25rem !default;
 
+// Spacing
+$sage-inputfield-spacing: 2rem;
+
 // Colors
 $sage-inputfield-color-default: sage-color(charcoal) !default;
 $sage-inputfield-color-disabled: sage-color(grey, 400) !default;

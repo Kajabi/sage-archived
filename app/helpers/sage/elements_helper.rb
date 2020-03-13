@@ -15,16 +15,16 @@ module Sage
         # Sage Generated Elements
         {
           title: "form_input",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-          scss_design:  "todo",
-          scss_dev:     "todo",
-          scss_doc:     "todo",
-          rails_design: "todo",
-          rails_dev:    "todo",
-          rails_doc:    "todo",
-          react_design: "todo",
-          react_dev:    "todo",
-          react_doc:    "todo"
+          description: "Text or numeric input form fields",
+          scss_design:  "done",
+          scss_dev:     "doing",
+          scss_doc:     "doing",
+          rails_design: "no",
+          rails_dev:    "no",
+          rails_doc:    "no",
+          react_design: "no",
+          react_dev:    "no",
+          react_doc:    "no"
         },
         {
           title: "loader",

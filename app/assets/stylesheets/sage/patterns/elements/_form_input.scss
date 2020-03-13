@@ -12,6 +12,10 @@
 .sage-input {
   position: relative;
   height: $sage-inputfield-height;
+
+  &:not(:last-child) {
+    margin-bottom: $sage-inputfield-spacing;
+  }
 }
 
 .sage-input__label {
@@ -44,8 +48,12 @@
   &:focus:not(:disabled),
   &:active:not(:disabled),
   &:valid:not(:placeholder-shown),
-  &:required:not(:placeholder-shown):not(:valid) {
+  &:required:not(:placeholder-shown) {
     padding-bottom: $sage-inputfield-padding-filled;
+
+    .sage-input--no-label & {
+      padding-bottom: $sage-inputfield-padding;
+    }
 
     ~ .sage-input__label {
       @include floating-label();
