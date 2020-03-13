@@ -13,19 +13,6 @@
   position: relative;
 }
 
-.sage-input__field {
-  height: 100%;
-  width: 100%;
-  padding: $sage-inputfield-padding;
-  color: $sage-inputfield-color-default;
-  font-family: inherit;
-  line-height: 1;
-  border: $sage-inputfield-border-width solid $sage-inputfield-color-default;
-  border-radius: $sage-inputfield-border-radius;
-  background: transparent;
-  transition: border 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-}
-
 .sage-input__label {
   position: absolute;
   transform: translateY(calc(-1 * $sage-inputfield-font-size));
@@ -37,3 +24,26 @@
   pointer-events: none;
   opacity: 0;
 }
+
+.sage-input__field {
+  height: 100%;
+  width: 100%;
+  padding: $sage-inputfield-padding-offset $sage-inputfield-padding;
+  color: $sage-inputfield-color-default;
+  line-height: 1;
+  border: $sage-inputfield-border-width solid $sage-inputfield-color-default;
+  border-radius: $sage-inputfield-border-radius;
+  background: transparent;
+  transition: border 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+
+  @include placeholder {
+    color: inherit;
+  }
+
+  &:disabled {
+    color: $sage-inputfield-color-disabled;
+    background-color: $sage-inputfield-bg-disabled;
+    cursor: not-allowed;
+  }
+}
+
