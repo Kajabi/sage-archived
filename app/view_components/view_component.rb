@@ -4,7 +4,7 @@ class ViewComponent
 
   def render
     context.render(
-      partial: "components/#{template_path}",
+      partial: "sage/components/#{template_path}",
       locals: { component: self }
     )
   end
