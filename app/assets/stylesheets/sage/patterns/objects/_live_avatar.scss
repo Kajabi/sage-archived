@@ -40,7 +40,7 @@ $-live-avatar-ring-colors: (
     right: $-live-avatar-ring-offset;
     bottom: $-live-avatar-ring-offset;
     left: $-live-avatar-ring-offset;
-    border-radius: 50%;
+    border-radius: sage-border(radius-round);
     border: $sage-live-avatar-ring-width solid transparent;
     transition: $-live-avatar-ring-transition;
     transition-property: border-color, top, left, right, bottom;
@@ -63,9 +63,9 @@ $-live-avatar-ring-colors: (
 }
 
 .sage-live-avatar__image {
+  position: relative;
   max-width: 100%;
   max-height: 100%;
-  border-radius: 50%;
+  border-radius: sage-border(radius-round);
   object-fit: cover;
-  position: relative;
 }
