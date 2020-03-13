@@ -1,0 +1,16 @@
+/* ==================================================
+  ** _functions.scss
+
+================================================== */
+
+/* ==================================================
+  ** Integer (pixel) to rem function
+  Usage: `rem(12)`
+
+  Converts an integer to a rem value based on 16 as the base size.
+  arguments: $value | [integer]
+================================================== */
+
+@function rem($value) {
+  @return $value / 16 * 1rem;
+}
