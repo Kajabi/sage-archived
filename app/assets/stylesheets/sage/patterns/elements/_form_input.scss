@@ -5,17 +5,18 @@
 ================================================== */
 
 @mixin floating-label {
-  transform: translateY(calc(-50% - ($sage-inputfield-font-size - $sage-inputfield-padding-filled)));
+  transform: translateY(calc(-50% - (#{$sage-inputfield-font-size} - #{$sage-inputfield-padding-filled})));
   opacity: 1;
 }
 
 .sage-input {
   position: relative;
+  height: $sage-inputfield-height;
 }
 
 .sage-input__label {
   position: absolute;
-  transform: translateY(calc(-1 * $sage-inputfield-font-size));
+  transform: translateY(calc(-1 * #{$sage-inputfield-font-size}));
   left: $sage-inputfield-padding;
   top: 50%;
   color: inherit;
@@ -38,6 +39,47 @@
 
   @include placeholder {
     color: inherit;
+  }
+
+  &:focus:not(:disabled),
+  &:active:not(:disabled),
+  &:valid:not(:placeholder-shown),
+  &:required:not(:placeholder-shown):not(:valid) {
+    padding-bottom: $sage-inputfield-padding-filled;
+
+    ~ .sage-input__label {
+      @include floating-label();
+
+      transition: opacity 0.15s ease-out, transform 0.15s ease-in-out, color 0.15s ease-out;
+    }
+  }
+
+  &:focus:not(:disabled),
+  &:active:not(:disabled) {
+    border-color: currentColor;
+    outline: none;
+
+    &::placeholder {
+      opacity: 0;
+    }
+  }
+
+  &:valid:not(:placeholder-shown) {
+    border-color: $sage-inputfield-color-success;
+    box-shadow: $sage-inputfield-box-shadow-size $sage-inputfield-color-success;
+
+    ~ .sage-input__label {
+      color: $sage-inputfield-color-success;
+    }
+  }
+
+  &:required:not(:placeholder-shown):not(:valid) {
+    border-color: $sage-inputfield-color-error;
+    box-shadow: $sage-inputfield-box-shadow-size $sage-inputfield-color-error;
+
+    ~ .sage-input__label {
+      color: $sage-inputfield-color-error;
+    }
   }
 
   &:disabled {
