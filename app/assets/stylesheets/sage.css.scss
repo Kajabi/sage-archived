@@ -18,6 +18,7 @@
 @import "sage/core/variables";
 
 // Base Styles
+@import "sage/core/functions";
 @import "sage/core/mixins";
 @import "sage/core/fonts";
 @import "sage/core/animations";
@@ -50,6 +51,7 @@
 @import "sage/patterns/elements/overlay";
 
 // Objects
+@import "sage/patterns/objects/live_avatar";
 @import "sage/patterns/objects/form_section";
 @import "sage/patterns/objects/tabs";
 @import "sage/patterns/objects/banner";
@@ -57,4 +59,3 @@
 @import "sage/patterns/objects/assistant";
 @import "sage/patterns/objects/nav";
 @import "sage/patterns/objects/sidebar";
-

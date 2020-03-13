@@ -81,16 +81,36 @@
 ================================================== */
 @mixin placeholder { /* stylelint-disable */
   &::-webkit-input-placeholder {
-    @content
+    @content;
   }
   &:-moz-placeholder {
-    @content
+    @content;
   }
   &::-moz-placeholder {
-    @content
+    @content;
   }
   &:-ms-input-placeholder {
-    @content
+    @content;
   }
 } /* stylelint-enable */
 
+
+/* ==================================================
+** Live Avatar Ring
+  Usage: `@include sage-live-avatar-ring();`
+
+  Adds an activated ring around a save-live-avatar object in the provided color
+  arguments: $color | [valid system color]
+================================================== */
+
+@mixin sage-live-avatar-ring($color: primary) {
+  $-live-avatar-ring-offset: -($sage-live-avatar-ring-width + 2px);
+
+  &::before {
+    top: $-live-avatar-ring-offset;
+    right: $-live-avatar-ring-offset;
+    bottom: $-live-avatar-ring-offset;
+    left: $-live-avatar-ring-offset;
+    border-color: sage-color($color);
+  }
+}
