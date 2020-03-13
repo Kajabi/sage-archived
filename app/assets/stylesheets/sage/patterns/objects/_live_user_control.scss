@@ -1,0 +1,36 @@
+/* ==================================================
+  ** live_user_control
+  type: object
+
+
+
+================================================== */
+
+$-live-user-control-size: 48px;
+$-live-user-control-icon-size: 32px;
+
+.sage-live-user-control {
+  display: flex;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  width: $-live-user-control-size;
+  height: $-live-user-control-size;
+  border-radius: sage-border(radius-round);
+  background-color: transparent;
+
+  &:hover {
+    background-color: sage-color(grey, 200);
+  }
+}
+
+.sage-live-user-control__icon {
+  width: $-live-user-control-icon-size;
+  height: $-live-user-control-icon-size;
+  border-radius: sage-border(radius-round);
+  background-color: sage-color(primary);
+
+  .sage-live-user-control--inactive & {
+    background-color: sage-color(grey, 400);
+  }
+}

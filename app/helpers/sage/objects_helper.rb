@@ -14,17 +14,30 @@ module Sage
       [
         # Sage Generated Objects
         {
-          title: "live_avatar",
-          description: "The Live Avatar object shows a user's profile image in a circular frame and allows for a few helpful modifications for different uses.",
+          title: "live_user_control",
+          description: "The Live User Control is a button class that presents a variety of icons and interactive states related to the Live feature's user controls.",
           scss_design:  "doing",
           scss_dev:     "doing",
           scss_doc:     "doing",
-          rails_design: "todo",
-          rails_dev:    "todo",
-          rails_doc:    "todo",
+          rails_design: "no",
+          rails_dev:    "no",
+          rails_doc:    "no",
           react_design: "todo",
           react_dev:    "todo",
           react_doc:    "todo"
+        },
+        {
+          title: "live_avatar",
+          description: "The Live Avatar object shows a user's profile image in a circular frame and allows for a few helpful modifications for different uses.",
+          scss_design:  "done",
+          scss_dev:     "done",
+          scss_doc:     "done",
+          rails_design: "no",
+          rails_dev:    "no",
+          rails_doc:    "no",
+          react_design: "doing",
+          react_dev:    "doing",
+          react_doc:    "doing"
         },
         {
           title: "form_section",
