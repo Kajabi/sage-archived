@@ -4,9 +4,8 @@
 
 ================================================== */
 
-$-live-avatar-size: 128px;
+$-live-avatar-size: rem(128);
 $-live-avatar-ring-transition: $sage-btn-transition;
-$-live-avatar-ring-width: 1px;
 $-live-avatar-ring-colors: (
   primary,
   grey,
@@ -27,8 +26,8 @@ $-live-avatar-ring-colors: (
   position: relative;
   max-width: $-live-avatar-size;
   max-height: $-live-avatar-size;
-  width: var(--sage-live-avatar-size);
-  height: var(--sage-live-avatar-size);
+  width: var(--live-avatar-size);
+  height: var(--live-avatar-size);
 
   // Start a transparent border tucked behind the image and smaller
   // so as to create an animation when toggled on.
@@ -42,7 +41,7 @@ $-live-avatar-ring-colors: (
     bottom: $-live-avatar-ring-offset;
     left: $-live-avatar-ring-offset;
     border-radius: 50%;
-    border: $-live-avatar-ring-width solid transparent;
+    border: $sage-live-avatar-ring-width solid transparent;
     transition: $-live-avatar-ring-transition;
     transition-property: border-color, top, left, right, bottom;
   }

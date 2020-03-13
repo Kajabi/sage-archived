@@ -97,20 +97,20 @@
 
 /* ==================================================
 ** Live Avatar Ring
-  Usage: `@include overflow-scroll();
+  Usage: `@include sage-live-avatar-ring();`
 
-  Define overflow scrolling dimensions
-  arguments: $dimension | all, y(default), x
+  Adds an activated ring around a save-live-avatar object in the provided color
+  arguments: $color | [valid system color]
 ================================================== */
 
 @mixin sage-live-avatar-ring($color: primary) {
-  $sage-live-avatar-ring-offset: -($sage-live-avatar-ring-width + 2px);
+  $-live-avatar-ring-offset: -($sage-live-avatar-ring-width + 2px);
 
   &::before {
-    top: $sage-live-avatar-ring-offset;
-    right: $sage-live-avatar-ring-offset;
-    bottom: $sage-live-avatar-ring-offset;
-    left: $sage-live-avatar-ring-offset;
+    top: $-live-avatar-ring-offset;
+    right: $-live-avatar-ring-offset;
+    bottom: $-live-avatar-ring-offset;
+    left: $-live-avatar-ring-offset;
     border-color: sage-color($color);
   }
 }
