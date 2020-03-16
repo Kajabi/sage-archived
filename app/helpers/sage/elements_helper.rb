@@ -15,10 +15,10 @@ module Sage
         # Sage Generated Elements
         {
           title: "form_input",
-          description: "Text or numeric input form fields",
+          description: "Basic text input form fields with 'floating' labels",
           scss_design:  "done",
-          scss_dev:     "doing",
-          scss_doc:     "doing",
+          scss_dev:     "done",
+          scss_doc:     "done",
           rails_design: "no",
           rails_dev:    "no",
           rails_doc:    "no",
