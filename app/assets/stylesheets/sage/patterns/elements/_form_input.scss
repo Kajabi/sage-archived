@@ -1,0 +1,111 @@
+/* ==================================================
+  ** _form_inputs.scss
+  type: element
+
+================================================== */
+
+.sage-input {
+  position: relative;
+  height: $sage-inputfield-height;
+
+  &:not(:last-child) {
+    margin-bottom: $sage-inputfield-spacing;
+  }
+}
+
+.sage-input__label {
+  position: absolute;
+  transform: translateY(calc(#{$sage-inputfield-font-size} * -1));
+  left: $sage-inputfield-padding;
+  top: 50%;
+  color: inherit;
+  font-size: $sage-inputfield-label-font-size; // 11px
+  font-weight: $sage-inputfield-label-font-weight;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.sage-input__field {
+  $-ie-label-offset: -($sage-inputfield-font-size + $sage-inputfield-padding-filled);
+
+  @mixin floating-label {
+    transform: translateY($-ie-label-offset); // IE doesn't support calc in transforms
+    transform: translateY(calc(-50% - (#{$sage-inputfield-font-size} - #{$sage-inputfield-padding-filled})));
+    opacity: 1;
+  }
+
+  height: 100%;
+  width: 100%;
+  padding: $sage-inputfield-padding-offset $sage-inputfield-padding;
+  color: $sage-inputfield-color-default;
+  line-height: 1;
+  border: $sage-inputfield-border-width solid $sage-inputfield-color-default;
+  border-radius: $sage-inputfield-border-radius;
+  background: transparent;
+  transition: border 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+
+  @include placeholder {
+    color: inherit;
+  }
+
+  &:focus:not(:disabled),
+  &:active:not(:disabled) {
+    padding-bottom: $sage-inputfield-padding-filled;
+    border-color: currentColor;
+    outline: none;
+
+    @include placeholder {
+      opacity: 0;
+    }
+
+    .sage-input--no-label & {
+      padding-bottom: $sage-inputfield-padding;
+    }
+
+    ~ .sage-input__label {
+      @include floating-label();
+
+      transition: opacity 0.15s ease-out, transform 0.15s ease-in-out, color 0.15s ease-out;
+    }
+  }
+
+  &:valid:not(:placeholder-shown),
+  &:required:not(:placeholder-shown) {
+    padding-bottom: $sage-inputfield-padding-filled;
+
+    ~ .sage-input__label {
+      @include floating-label();
+
+      transition: opacity 0.15s ease-out, transform 0.15s ease-in-out, color 0.15s ease-out;
+    }
+
+    .sage-input--no-label & {
+      padding-bottom: $sage-inputfield-padding;
+    }
+  }
+
+  &:valid:not(:placeholder-shown) {
+    border-color: $sage-inputfield-color-success;
+    box-shadow: $sage-inputfield-box-shadow-size $sage-inputfield-color-success;
+
+    ~ .sage-input__label {
+      color: $sage-inputfield-color-success;
+    }
+  }
+
+  &:required:not(:placeholder-shown):not(:valid) {
+    border-color: $sage-inputfield-color-error;
+    box-shadow: $sage-inputfield-box-shadow-size $sage-inputfield-color-error;
+
+    ~ .sage-input__label {
+      color: $sage-inputfield-color-error;
+    }
+  }
+
+  &:disabled {
+    color: $sage-inputfield-color-disabled;
+    background-color: $sage-inputfield-bg-disabled;
+    cursor: not-allowed;
+  }
+}
+
