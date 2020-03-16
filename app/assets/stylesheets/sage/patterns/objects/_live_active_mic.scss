@@ -36,16 +36,6 @@
 // Documentation-specific styles
 // Animates the volumn to 20% on hover and bounces to 100% on click
 .sage-docs .example__preview {
-  .sage-live-active-mic {
-    &:hover {
-      --volume: 20;
-    }
-
-    &:active {
-      --volume: 100;
-    }
-  }
-
   .sage-live-active-mic-wrapper {
     display: inline-block;
     border-radius: 50%;
@@ -53,5 +43,17 @@
     height: 64px;
     padding: 16px;
     box-shadow: sage-shadow();
+
+    &:hover {
+      .sage-live-active-mic {
+        --volume: 20;
+      }
+    }
+
+    &:active {
+      .sage-live-active-mic {
+        --volume: 100;
+      }
+    }
   }
 }
