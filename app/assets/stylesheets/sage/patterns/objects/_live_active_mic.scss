@@ -6,46 +6,44 @@
 ================================================== */
 
 .sage-live-active-mic {
-  --volume: 0;
   --color-volume: #{sage-color(sage)};
   --color-background: #{sage-color(charcoal)};
+  --max-offset: 50%;
   --size: 100%;
+  --volume: 0;
 
   display: block;
   position: relative;
   width: var(--size);
   height: var(--size);
-  background-color: var(--color-background);
-  mask-image: url("data:image/svg+xml,%3Csvg class='active-mic' viewBox='0 0 18 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 0a4.96 4.96 0 00-5 5v3.333c0 2.794 2.206 5 5 5s5-2.206 5-5V5c0-2.794-2.206-5-5-5zM5.667 5c0-1.873 1.46-3.333 3.333-3.333 1.873 0 3.333 1.46 3.333 3.333v3.333c0 1.873-1.46 3.334-3.333 3.334-1.873 0-3.333-1.46-3.333-3.334V5z'/%3E%3Cpath d='M2.333 8.333a.833.833 0 00-1.666 0c0 4.346 3.269 7.88 7.5 8.293v1.707H4.833a.833.833 0 000 1.667h8.334a.833.833 0 000-1.667H9.833v-1.707a8.299 8.299 0 007.5-8.293.833.833 0 00-1.666 0A6.636 6.636 0 019 15a6.635 6.635 0 01-6.667-6.667z'/%3E%3C/svg%3E");
-  mask-position: center center;
-  mask-repeat: no-repeat;
-  mask-size: contain;
+}
 
-  &::after {
-    content: "";
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    height: calc(1% * var(--volume));
-    background-color: var(--color-volume);
-    transition: 0.1s height ease-out;
-  }
+.sage-live-active-mic__volume {
+  transform: translateY(calc(var(--max-offset) - (var(--max-offset) * var(--volume) / 100)));
+  fill: var(--color-volume);
+  transition: 0.1s ease-out transform;
+}
+
+.sage-live-active-mic__background {
+  fill: var(--color-background);
+}
+
+.sage-live-active-mic__icon {
+  fill: var(--color-background);
 }
 
 // Documentation-specific styles
 // Animates the volumn to 20% on hover and bounces to 100% on click
 .sage-live-active-mic-wrapper {
   display: inline-block;
-  width: 64px;
-  height: 64px;
-  padding: 16px;
-  border-radius: 50%;
-  box-shadow: sage-shadow();
+  box-sizing: content-box;
+  width: 20px;
+  height: 20px;
+  padding: 100px;
 
   &:hover {
     .sage-live-active-mic {
-      --volume: 20;
+      --volume: 5;
     }
   }
 
