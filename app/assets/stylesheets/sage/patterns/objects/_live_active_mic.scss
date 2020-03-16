@@ -1,0 +1,39 @@
+/* ==================================================
+  ** live_active_mic
+  type: object
+
+
+
+================================================== */
+
+.sage-live-active-mic {
+  --volume: 0;
+  --fill-volume: #{sage-color(sage)};
+  --fill-background: #{sage-color(charcoal)};
+
+  max-width: 100%;
+
+  // Documentation-specific styles
+  // Animates the volumn to 20% on hover and bounces to 100% on click
+  .sage-docs .example__preview > & {
+    width: 60px;
+
+    &:hover {
+      --volume: 20;
+    }
+
+    &:active {
+      --volume: 100;
+    }
+  }
+}
+
+.sage-live-active-mic__background {
+  fill: var(--fill-background);
+}
+
+.sage-live-active-mic__volume {
+  transform: translateY(calc(100% - (1% * var(--volume))));
+  fill: var(--fill-volume);
+  transition: 0.1s transform ease-out;
+}
