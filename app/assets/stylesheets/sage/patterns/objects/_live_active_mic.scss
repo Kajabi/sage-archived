@@ -6,15 +6,18 @@
 ================================================== */
 
 .sage-live-active-mic {
+  $size: 100%;
   --color-volume: #{sage-color(sage)};
   --color-background: #{sage-color(charcoal)};
   --max-offset: 50%;
-  --size: 100%;
+  --size: $size;
   --volume: 0;
 
   display: block;
   position: relative;
+  width: $size;
   width: var(--size);
+  height: $size;
   height: var(--size);
 }
 

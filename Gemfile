@@ -16,3 +16,4 @@ gemspec
 gem 'sqlite3', '~> 1.3.0'
 gem 'sass-rails'
 gem 'autoprefixer-rails'
+gem 'inline_svg'
