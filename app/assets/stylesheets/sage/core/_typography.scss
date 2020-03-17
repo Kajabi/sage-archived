@@ -4,7 +4,6 @@
 ================================================== */
 
 body {
-  margin-bottom: sage-spacing();
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -21,56 +20,52 @@ body {
   }
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+[class*="t-heading-"] {
   margin-bottom: sage-spacing();
   color: sage-color(charcoal, 500);
   font-weight: sage-font-weight(bold);
   line-height: sage-font-height(sm);
 }
 
-h1 {
+.t-heading-1 {
   font-size: sage-font-size(4xl);
   letter-spacing: 0.05rem; // 0.8px
   line-height: calc(50 / 39.81);
 }
 
-h2 {
+.t-heading-2 {
   font-size: sage-font-size(3xl);
   letter-spacing: 0.05rem; // 0.8px
   line-height: calc(41 / 33.18);
 }
 
-h3 {
+.t-heading-3 {
   font-size: sage-font-size(2xl);
   letter-spacing: 0.03125rem; // 0.5px
   line-height: calc(35 / 27.65);
 }
 
-h4 {
+.t-heading-4 {
   font-size: sage-font-size(xl);
   font-weight: sage-font-weight(semibold);
   letter-spacing: 0.03125rem; // 0.5px
   line-height: calc(29 / 23.04);
 }
 
-h5 {
+.t-heading-5 {
   font-size: sage-font-size(lg);
   font-weight: sage-font-weight(semibold);
   line-height: calc(24 / 19.2);
 }
 
-h6 {
+.t-heading-6 {
   font-size: sage-font-size(md);
   font-weight: sage-font-weight(semibold);
 }
 
-p {
+.t-body {
   margin-bottom: sage-spacing();
+  font-size: inherit;
 
   &.no-margin-bottom {
     margin-bottom: 0;
