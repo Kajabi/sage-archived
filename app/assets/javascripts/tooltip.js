@@ -64,4 +64,3 @@ Tooltip = function(options) {
   var tooltip = new Tooltip({
     distance: 8,  // distance in pixels from trigger to tooltip.
   });
-  
