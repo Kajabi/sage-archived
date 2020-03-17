@@ -14,6 +14,19 @@ module Sage
       [
         # Sage Generated Elements
         {
+          title: "tooltip",
+          description: "Tooltips display helpful text when users hover over an element.", 
+          scss_design:  "done",
+          scss_dev:     "done",
+          scss_doc:     "done",
+          rails_design: "todo",
+          rails_dev:    "todo",
+          rails_doc:    "todo",
+          react_design: "todo",
+          react_dev:    "todo",
+          react_doc:    "todo"
+        },
+        {
           title: "form_input",
           description: "Basic text input form fields with 'floating' labels",
           scss_design:  "done",

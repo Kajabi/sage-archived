@@ -258,3 +258,15 @@ $sage-tabs-active-border-radius: sage-border(radius) !default;
 
 // Avatars
 $sage-live-avatar-ring-width: 1px;
+
+// ==================================================
+// TOOLTIPS
+// ==================================================
+
+$tooltip-background-color: sage-color(charcoal, 400) !default;
+$tooltip-light-background-color: #fff !default;
+$tooltip-font-color: #fff !default;
+$tooltip-light-font-color: sage-color(charcoal, 400) !default;
+$tooltip-padding: sage-spacing(2xs) sage-spacing(sm) !default;
+$tooltip-zindex: sage-z_index(nuclear) !default;
+$tooltip-maxwidth: 200px !default;
