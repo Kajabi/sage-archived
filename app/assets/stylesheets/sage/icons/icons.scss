@@ -1,114 +1,43 @@
-// ==================================================
-// Variables
-// ==================================================
+$color: fff;
 
-$sage-icon-font-path: "sage" !default;
-$sage-icon-background-color: #eee !default;
-$sage-icon-li-margin-right: 0.4em !default;
+$icons: (
+  menu-8: "data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23#{$color}' fill-rule='evenodd' clip-rule='evenodd' d='M0 5a1 1 0 011-1h22a1 1 0 110 2H1a1 1 0 01-1-1zm0 7a1 1 0 011-1h22a1 1 0 110 2H1a1 1 0 01-1-1zm1 6a1 1 0 100 2h22a1 1 0 100-2H1z'/%3E%3C/svg%3E",
+  launch-app: "",
+  zoom: "",
+  pc: "",
+  tag-cut: ""
+);
 
+// Initial offset and ongaoin offset
+$-counter: 1;
+$-offset: 12px;
+$-icon-size: 24px;
+$-icon-gap: 24px;
 
-// ==================================================
-// Mixins
-// ==================================================
+@each $icon-name, $icon-path in $icons {
+  .sage-icon-#{$icon-name} {
+    $color: 000;
 
-@mixin sage-icon-rotate($degrees, $rotation) {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=#{$rotation});
-  transform: rotate($degrees);
-}
+    display: inline-block;
+    width: $-icon-size;
+    height: $-icon-size;
+    border: 1px solid red;
 
-@mixin sage-icon-flip($horiz, $vert, $rotation) {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=#{$rotation});
-  transform: scale($horiz, $vert);
-}
+    &::after {
+      content: "";
+      color: sage-color(sage);
+      display: block;
+      width: 100%;
+      height: 100%;
+      // background-color: currentColor;
+      background-image: url($icon-path);
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: 100%;
+    }
 
-@font-face {
-  font-family: "Sage";
-  src: url("#{$sage-icon-font-path}/Sage.eot");
-  src: url("#{$sage-icon-font-path}/Sage.eot") format("embedded-opentype"),
-    url("#{$sage-icon-font-path}/Sage.woff2") format("woff2"),
-    url("#{$sage-icon-font-path}/Sage.woff") format("woff"),
-    url("#{$sage-icon-font-path}/Sage.ttf") format("truetype"),
-    url("#{$sage-icon-font-path}/Sage.svg") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-
-
-// ==================================================
-// Base class definition
-// ==================================================
-
-.sage-icon {
-  display: inline-block;
-  text-transform: none;
-  font: normal normal normal 1em/1 "Sage";
-  speak: none;
-  /* Better Font Rendering */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-
-// ==================================================
-// use icons as list item markers
-// ==================================================
-
-.sage-icon-ul {
-  padding-left: 0;
-  list-style-type: none;
-
-  > li {
-    display: flex;
-    align-items: flex-start;
-    line-height: 1.4;
-  }
-
-  > li > .sage-icon {
-    margin-right: $sage-icon-li-margin-right;
-    line-height: inherit;
+    &:hover::after {
+      color: sage-color(charcoal);
+    }
   }
 }
-
-
-// ==================================================
-// Spinning icons
-// ==================================================
-
-.sage-icon-is-spinning {
-  animation: sage-icon-spin 2s infinite linear;
-}
-
-@keyframes sage-icon-spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-
-// ==================================================
-// Rotated/flipped icons
-// ==================================================
-
-.sage-icon-rotate-90 {
-  @include sage-icon-rotate(90deg, 1);
-}
-
-.sage-icon-rotate-180 {
-  @include sage-icon-rotate(180deg, 2);
-}
-
-.sage-icon-rotate-270 {
-  @include sage-icon-rotate(270deg, 3);
-}
-
-.sage-icon-flip-y {
-  @include sage-icon-flip(-1, 1, 0);
-}
-.sage-icon-flip-x {
-  @include sage-icon-flip(1, -1, 2);
-}
-
-@import "map";
