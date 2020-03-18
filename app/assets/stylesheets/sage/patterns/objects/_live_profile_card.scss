@@ -15,7 +15,9 @@ $-live-profile-card-avatar-size: 38px;
   box-shadow: 0 0 1px sage-color(charcoal);
 
   // Specific to preview
-  margin-bottom: sage-spacing(md);
+  .sage-docs .example__preview > &
+    margin-bottom: sage-spacing(md);
+  }
 }
 
 .sage-live-profile-card__avatar {
@@ -26,18 +28,13 @@ $-live-profile-card-avatar-size: 38px;
   margin-bottom: sage-spacing(2xs);
 }
 
-.sage-live-profile-card__info {
-  margin-right: 16px;
-}
-
 .sage-live-profile-card__controls {
   display: flex;
   margin-left: auto;
 }
 
-.sage-live-profile-card__mic-control,
-.sage-live-profile-card__cam-control {
-  // TBD
+.sage-live-profile-card__info {
+  margin-right: 16px;
 }
 
 .sage-live-profile-card__options {
