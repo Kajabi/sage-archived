@@ -17,17 +17,11 @@ $-live-avatar-ring-colors: (
   red
 );
 
-:root {
-  --live-avatar-size: #{$-live-avatar-size};
-}
-
 .sage-live-avatar {
   display: inline-block;
   position: relative;
   max-width: $-live-avatar-size;
   max-height: $-live-avatar-size;
-  width: var(--live-avatar-size);
-  height: var(--live-avatar-size);
 
   // Start a transparent border tucked behind the image and smaller
   // so as to create an animation when toggled on.
