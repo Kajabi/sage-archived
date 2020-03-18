@@ -1,0 +1,56 @@
+/* ==================================================
+  ** live_active_mic
+  type: object
+
+
+================================================== */
+$-live-active-mic-color-volume: sage-color(sage);
+$-live-active-mic-color-background: sage-color(charcoal);
+$-live-active-mic-initial-volume: 0;
+
+.sage-live-active-mic {
+  --volume: #{$-live-active-mic-initial-volume};
+
+  display: block;
+  position: relative;
+  width: 48px;
+  height: 48px;
+}
+
+.sage-live-active-mic__volume {
+  transform: scaleY($-live-active-mic-initial-volume);
+  transform: scaleY(var(--volume));
+  transform-origin: center 60%;
+  fill: $-live-active-mic-color-volume;
+  transition: 0.1s ease-out transform;
+}
+
+.sage-live-active-mic__background {
+  fill: $-live-active-mic-color-background;
+}
+
+.sage-live-active-mic__icon {
+  fill: $-live-active-mic-color-background;
+}
+
+// Documentation-specific styles
+// Animates the volumn to 20% on hover and bounces to 100% on click
+.sage-live-active-mic-wrapper {
+  display: inline-block;
+  box-sizing: content-box;
+  width: 20px;
+  height: 20px;
+  padding: 100px;
+
+  &:hover {
+    .sage-live-active-mic {
+      --volume: 0.2;
+    }
+  }
+
+  &:active {
+    .sage-live-active-mic {
+      --volume: 1;
+    }
+  }
+}
