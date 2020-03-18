@@ -15,7 +15,7 @@ $-live-profile-card-avatar-size: 38px;
   box-shadow: 0 0 1px sage-color(charcoal);
 
   // Specific to preview
-  .sage-docs .example__preview > &
+  .sage-docs .example__preview > & {
     margin-bottom: sage-spacing(md);
   }
 }
