@@ -2,7 +2,7 @@
   <div class="sage-media">
     <div class="sage-media-body">
       <%= link_to pages_element_url(title: title, description: description) do %>
-        <h3 id="<%= title %>" class="example__title"><%= title.titleize %></h3>
+        <h3 id="<%= title %>" class="t-heading-3 example__title"><%= title.titleize %></h3>
       <% end %>
     </div>
     <%= link_to pages_breakout_url(type: "element", title: title, description: description), target: "_blank", class: "example__link" do %>
