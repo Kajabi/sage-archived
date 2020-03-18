@@ -18,10 +18,11 @@
 
 /* ==================================================
   ** Strip units from value
-  Usage: `rem(12)`
+  Usage: `strip-unit(12px)`
 
   Converts an integer to a rem value based on 16 as the base size.
-  arguments: {Number} $number - Number to remove unit from
+  <https://css-tricks.com/snippets/sass/strip-unit-function/>
+    arguments: {Number} $number - Number to remove unit from
     @return {Number} - Unitless number
 ================================================== */
 
