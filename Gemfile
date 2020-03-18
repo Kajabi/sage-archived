@@ -13,6 +13,7 @@ gemspec
 # To use a debugger
 # gem 'byebug', group: [:development, :test]
 
+gem 'webpacker', '~> 4.2'
 gem 'sqlite3', '~> 1.3.0'
 gem 'sass-rails'
 gem 'autoprefixer-rails'
