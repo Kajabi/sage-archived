@@ -1,5 +1,3 @@
-
-
 sage.Tooltip = function() {
   
   document.querySelectorAll("[data-tooltip]").forEach(item => {
