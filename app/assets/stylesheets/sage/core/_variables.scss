@@ -59,6 +59,8 @@ $sage-btn-focus-outline-color: currentColor !default;
 
 // Primary button
 $sage-btn-primary-bg-color: sage-color(primary) !default;
+$sage-btn-primary-bg-active-color: darken($sage-btn-primary-bg-color, 11%);
+$sage-btn-primary-bg-hover-color: lighten($sage-btn-primary-bg-color, 9%);
 $sage-btn-primary-text-color: #fff !default;
 
 // Secondary button

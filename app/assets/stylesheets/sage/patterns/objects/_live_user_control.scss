@@ -3,34 +3,75 @@
   type: object
 
 
-
 ================================================== */
 
-$-live-user-control-size: 48px;
-$-live-user-control-icon-size: 32px;
+$-live-user-control-size: 36px;
+$-live-user-control-icon-size: 24px;
+$-live-user-control-focus-offset: 0;
+$-live-user-control-focus-width: $sage-btn-focus-outline-width * 1px;
+$-live-user-control-color: $sage-btn-primary-bg-color;
+$-live-user-control-color-hover: $sage-btn-primary-bg-hover-color;
+$-live-user-control-inactive-color: sage-color(grey, 400);
+$-live-user-control-inactive-color-hover: sage-color(grey);
 
 .sage-live-user-control {
   display: flex;
   box-sizing: border-box;
   justify-content: center;
   align-items: center;
+  position: relative;
   width: $-live-user-control-size;
   height: $-live-user-control-size;
+  margin: 0;
+  padding: 0;
+  color: $-live-user-control-color;
+  box-shadow: none;
+  border: 0;
   border-radius: sage-border(radius-round);
-  background-color: transparent;
 
   &:hover {
-    background-color: sage-color(grey, 200);
+    color: $-live-user-control-color-hover;
+  }
+
+  &:focus {
+    outline: none;
+
+    &::after {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: $-live-user-control-focus-offset;
+    right: $-live-user-control-focus-offset;
+    bottom: $-live-user-control-focus-offset;
+    left: $-live-user-control-focus-offset;
+    transform: scale(0.9);
+    border-radius: sage-border(radius-round);
+    border: 1px solid currentColor;
+    transition: $sage-btn-transition;
+    transition-property: opacity, transform;
+    opacity: 0;
+  }
+}
+
+.sage-live-user-control--inactive {
+  color: $-live-user-control-inactive-color;
+
+  &:hover {
+    color: $-live-user-control-inactive-color-hover;
   }
 }
 
 .sage-live-user-control__icon {
   width: $-live-user-control-icon-size;
   height: $-live-user-control-icon-size;
+  color: inherit;
   border-radius: sage-border(radius-round);
-  background-color: sage-color(primary);
-
-  .sage-live-user-control--inactive & {
-    background-color: sage-color(grey, 400);
-  }
+  background-color: currentColor;
+  transition: $sage-btn-transition;
+  transition-property: background-color;
 }
