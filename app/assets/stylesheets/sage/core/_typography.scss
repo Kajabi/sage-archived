@@ -3,20 +3,37 @@
 
 ================================================== */
 
+// ==================================================
+// MIXINS
+// ==================================================
+
+@mixin t-body-text {
+  margin-bottom: $sage-type-margin-bottom;
+
+  &.no-margin-bottom {
+    margin-bottom: 0;
+  }
+}
+
+
+// ==================================================
+// STYLES
+// ==================================================
+
 body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-size-adjust: 100%;
-  color: sage-color(charcoal, 400);
-  font-family: "Inter", $sage-font-stack;
-  font-weight: sage-font-weight();
-  font-size: sage-font-size();
+  color: $sage-body-font-color;
+  font-family: $sage-body-font-stack;
+  font-weight: $sage-body-font-weight;
+  font-size: $sage-body-font-size;
   letter-spacing: $sage-body-letter-spacing;
-  line-height: sage-font-height();
+  line-height: $sage-body-font-line-height;
 
   @supports (font-variation-settings: normal) {
-    font-family: "Inter var", $sage-font-stack;
+    font-family: "Inter var", $sage-body-font-stack;
   }
 }
 
@@ -29,26 +46,26 @@ body {
 
 .t-heading-1 {
   font-size: sage-font-size(4xl);
-  letter-spacing: 0.05rem; // 0.8px
+  letter-spacing: sage-letter-spacing(lg);
   line-height: calc(50 / 39.81);
 }
 
 .t-heading-2 {
   font-size: sage-font-size(3xl);
-  letter-spacing: 0.05rem; // 0.8px
+  letter-spacing: sage-letter-spacing(lg);
   line-height: calc(41 / 33.18);
 }
 
 .t-heading-3 {
   font-size: sage-font-size(2xl);
-  letter-spacing: 0.03125rem; // 0.5px
+  letter-spacing: sage-letter-spacing(md);
   line-height: calc(35 / 27.65);
 }
 
 .t-heading-4 {
   font-size: sage-font-size(xl);
   font-weight: sage-font-weight(semibold);
-  letter-spacing: 0.03125rem; // 0.5px
+  letter-spacing: sage-letter-spacing(md);
   line-height: calc(29 / 23.04);
 }
 
@@ -63,23 +80,26 @@ body {
   font-weight: sage-font-weight(semibold);
 }
 
-.t-body {
-  margin-bottom: sage-spacing();
-  font-size: inherit;
-
-  &.no-margin-bottom {
-    margin-bottom: 0;
-  }
-}
-
+p,
 ul,
 ol,
 dl {
-  margin-bottom: sage-spacing();
+  @include t-body-text();
+}
 
-  &.no-margin-bottom {
-    margin-bottom: 0;
-  }
+[class*="t-text-"] {
+  @include t-body-text();
+  line-height: calc(30 / 16);
+}
+
+.t-text-small {
+  font-size: sage-font-size(sm);
+  line-height: calc(25 / 13.3);
+}
+
+.t-text-smaller {
+  font-size: sage-font-size(xs);
+  line-height: calc(21 / 11.11);
 }
 
 a {

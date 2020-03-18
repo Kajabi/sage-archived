@@ -15,11 +15,24 @@
 // ==================================================
 // FONTS
 // ==================================================
-$sage-body-font-path: "inter" !default;
-$sage-body-font-size: 1rem !default; // 16px
+$sage-body-font-name: "Inter" !default;
+$sage-body-font-stack: $sage-body-font-name, -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "Noto Sans", sans-serif !default;
+$sage-body-font-path: "inter" !default;  // pathname of font directory
 $sage-body-font-version: 3.12 !default;
-$sage-body-letter-spacing: 0.01875rem !default;
-$sage-font-stack: -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "Noto Sans", sans-serif !default;
+
+$sage-body-font-size: 1rem !default; // 16px
+$sage-body-font-weight: sage-font-weight() !default;
+$sage-body-font-line-height: sage-font-height() !default;
+$sage-body-font-color: sage-color(charcoal, 400) !default;
+
+$sage-body-letter-spacing: sage-letter-spacing(sm) !default;  // 3px
+
+
+// ==================================================
+// TYPOGRAPHY
+// ==================================================
+
+$sage-type-margin-bottom: sage-spacing() !default;
 
 
 // ==================================================

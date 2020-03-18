@@ -72,6 +72,14 @@
       content: "#{$token}";
     }
   }
+  &-letter-spacing::after {
+    content: "#{sage-letter-spacing()}";
+  }
+  @each $name, $token in $sage-letter-spacings {
+    &-letter-spacing-#{$name}::after {
+      content: "#{$token}";
+    }
+  }
   &-shadow::after {
     content: "#{sage-shadow()}";
   }

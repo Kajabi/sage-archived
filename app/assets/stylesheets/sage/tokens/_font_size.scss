@@ -7,8 +7,8 @@ $sage-font-sizes: (
   xs: calc(11.11 / 16 * 1rem), // 11.11px
   sm: calc(13.33 / 16 * 1rem), // 13.33px
   md: 1rem, // 16px
-  lg: 1.2rem, // 19.2px
-  xl: 1.44rem, // 23.04px
+  lg: calc(19.2 / 16 * 1rem), // 19.2px
+  xl: calc(23.04 / 16 * 1rem), // 23.04px
   2xl: calc(27.65 / 16 * 1rem), // 27.65px
   3xl: calc(33.18 / 16 * 1rem), // 33.18px
   4xl: calc(39.81 / 16 * 1rem) // 39.81px

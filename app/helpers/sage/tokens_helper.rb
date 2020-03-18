@@ -3,13 +3,6 @@ module Sage
     def sage_tokens
       [
         {
-          category: "border",
-          tokens: [
-            { name: "default" },
-            { name: "radius" },
-          ]
-        },
-        {
           category: "breakpoint",
           tokens: [
             { name: "xs-max" },
@@ -84,6 +77,21 @@ module Sage
             { name: "regular" },
             { name: "semibold" },
             { name: "bold" },
+          ]
+        },
+        {
+          category: "letter-spacing",
+          tokens: [
+            { name: "sm" },
+            { name: "md" },
+            { name: "lg" },
+          ]
+        },
+        {
+          category: "border",
+          tokens: [
+            { name: "default" },
+            { name: "radius" },
           ]
         },
         {
