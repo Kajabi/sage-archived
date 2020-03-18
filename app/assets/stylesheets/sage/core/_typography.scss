@@ -7,8 +7,8 @@
 // MIXINS
 // ==================================================
 
-@mixin t-body-text {
-  margin-bottom: $sage-type-margin-bottom;
+@mixin t-body-block-spacing {
+  margin-bottom: $sage-body-margin-bottom;
 
   &.no-margin-bottom {
     margin-bottom: 0;
@@ -38,10 +38,10 @@ body {
 }
 
 [class*="t-heading-"] {
-  margin-bottom: sage-spacing();
-  color: sage-color(charcoal, 500);
-  font-weight: sage-font-weight(bold);
-  line-height: sage-font-height(sm);
+  margin-bottom: $sage-heading-margin-bottom;
+  color: $sage-heading-font-color;
+  font-weight: $sage-heading-font-weight;
+  line-height: $sage-heading-font-line-height;
 }
 
 .t-heading-1 {
@@ -84,11 +84,11 @@ p,
 ul,
 ol,
 dl {
-  @include t-body-text();
+  @include t-body-block-spacing();
 }
 
 [class*="t-text-"] {
-  @include t-body-text();
+  @include t-body-block-spacing();
   line-height: calc(30 / 16);
 }
 
