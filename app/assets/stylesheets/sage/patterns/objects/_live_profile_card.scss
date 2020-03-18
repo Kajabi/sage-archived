@@ -1,0 +1,66 @@
+/* ==================================================
+  ** live_profile_card
+  type: object
+
+
+================================================== */
+
+$-live-profile-card-avatar-size: 38px;
+
+.sage-live-profile-card {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  padding: sage-spacing(2xs) sage-spacing(sm);
+  box-shadow: 0 0 1px sage-color(charcoal);
+
+  // Specific to preview
+  margin-bottom: sage-spacing(md);
+}
+
+.sage-live-profile-card__avatar {
+  width: $-live-profile-card-avatar-size;
+  height: $-live-profile-card-avatar-size;
+  margin-top: sage-spacing(2xs);
+  margin-right: 16px;
+  margin-bottom: sage-spacing(2xs);
+}
+
+.sage-live-profile-card__info {
+  margin-right: 16px;
+}
+
+.sage-live-profile-card__controls {
+  display: flex;
+  margin-left: auto;
+}
+
+.sage-live-profile-card__mic-control,
+.sage-live-profile-card__cam-control {
+  // TBD
+}
+
+.sage-live-profile-card__options {
+  opacity: 0;
+
+  .sage-live-profile-card:hover &,
+  &:focus {
+    opacity: 1;
+  }
+}
+
+.sage-live-profile-card__user-name {
+  margin-bottom: 0;
+  font-size: sage-font-size(sm);
+  font-weight: sage-font-weight(medium);
+  line-height: rem(25);
+  color: sage-color(charcoal, 500);
+}
+
+.sage-live-profile-card__user-email {
+  margin-bottom: 0;
+  font-size: sage-font-size(xs);
+  font-weight: sage-font-weight(regular);
+  line-height: rem(20.8);
+  color: sage-color(grey, 500);
+}
