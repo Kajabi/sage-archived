@@ -1,3 +1,5 @@
+window.sage = window.sage || {};
+
 sage.Tooltip = function() {
   
   document.querySelectorAll("[data-tooltip]").forEach(item => {
