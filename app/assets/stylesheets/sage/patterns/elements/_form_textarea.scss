@@ -1,0 +1,65 @@
+/* ==================================================
+  ** form_textarea
+  type: element
+
+================================================== */
+
+// TODO: clean up and/or make a global mixin
+@mixin floating-label {
+  $-ie-label-offset: -($sage-inputfield-font-size + $sage-inputfield-padding-filled);
+
+  transform: translateY($-ie-label-offset); // IE doesn't support calc in transforms
+  transform: translateY(calc(-50% - (#{$sage-textarea-font-size} - #{$sage-textarea-padding-filled})));
+  opacity: 1;
+}
+
+.sage-textarea {
+  position: relative;
+}
+
+.sage-textarea__label {
+  position: absolute;
+  transform: translateY(calc(#{$sage-textarea-font-size} * -1));
+  left: $sage-textarea-padding;
+  top: 50%;
+  color: inherit;
+  font-size: $sage-textarea-label-font-size; // 11px
+  font-weight: $sage-textarea-label-font-weight;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.sage-textarea__field {
+  height: 100%;
+  width: 100%;
+  padding: $sage-textarea-padding-offset $sage-textarea-padding;
+  border: $sage-textarea-border-width solid $sage-textarea-color-default;
+  border-radius: $sage-textarea-border-radius;
+  background: transparent;
+  transition: border 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+
+  @include placeholder {
+    color: inherit;
+  }
+
+  &:focus:not(:disabled),
+  &:active:not(:disabled) {
+    padding-bottom: $sage-textarea-padding-filled;
+    border-color: currentColor;
+    outline: none;
+
+    @include placeholder {
+      opacity: 0;
+    }
+
+    .sage-textarea--no-label & {
+      padding-bottom: $sage-textarea-padding;
+    }
+
+    ~ .sage-textarea__label {
+      @include floating-label();
+
+      transition: opacity 0.15s ease-out, transform 0.15s ease-in-out, color 0.15s ease-out;
+    }
+  }
+}

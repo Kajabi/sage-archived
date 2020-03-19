@@ -134,6 +134,35 @@ $sage-inputfield-bg-disabled: sage-color(grey, 100) !default;
 
 
 // ==================================================
+// TEXTAREAS
+// ==================================================
+
+$sage-textarea-font-size: $sage-inputfield-font-size !default;
+$sage-textarea-letter-spacing: $sage-inputfield-letter-spacing !default;
+
+// Floating label
+$sage-textarea-label-font-size: $sage-inputfield-label-font-size !default;
+$sage-textarea-label-font-weight: $sage-inputfield-label-font-weight !default;
+
+// Border
+$sage-textarea-border-radius: $sage-inputfield-border-radius !default;
+$sage-textarea-border-width: $sage-inputfield-border-width !default;
+$sage-textarea-box-shadow-size: $sage-inputfield-box-shadow-size !default;
+
+// Sizing
+$sage-textarea-padding: $sage-inputfield-padding !default;
+$sage-textarea-padding-offset: $sage-textarea-padding - $sage-textarea-border-width;
+$sage-textarea-padding-filled: 0.25rem !default;
+
+// Colors
+$sage-textarea-color-default: $sage-inputfield-color-default !default;
+$sage-textarea-color-disabled: $sage-inputfield-color-disabled !default;
+$sage-textarea-color-success: $sage-inputfield-color-success !default;
+$sage-textarea-color-error: $sage-inputfield-color-error !default;
+$sage-textarea-bg-disabled: $sage-inputfield-bg-disabled !default;
+
+
+// ==================================================
 // CHECKBOXES
 // ==================================================
 
