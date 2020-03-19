@@ -15,7 +15,7 @@ module Sage
         # Sage Generated Objects
         {
           title: "live_profile_card",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+          description: "Live Profile Cards are used to show the users logged into a Live session. Their role in the session will affect what content is visible and whether or not they are also given a ring around their avatar.",
           scss_design:  "doing",
           scss_dev:     "doing",
           scss_doc:     "doing",
