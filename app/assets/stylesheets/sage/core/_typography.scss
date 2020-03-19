@@ -4,11 +4,131 @@
 ================================================== */
 
 // ==================================================
+// TYPE SPECS
+// ==================================================
+
+$t-base-spec: (
+  weight: $sage-body-font-weight,
+  size: $sage-body-font-size,
+  leading: $sage-body-font-line-height,
+  kerning: $sage-body-letter-spacing
+);
+$t-body-small-spec: (
+  weight: $sage-body-font-weight,
+  size: sage-font-size(sm),
+  leading: $sage-body-font-line-height,
+  kerning: $sage-body-letter-spacing
+);
+$t-body-xsmall-spec: (
+  weight: $sage-body-font-weight,
+  size: sage-font-size(xs),
+  leading: $sage-body-font-line-height,
+  kerning: $sage-body-letter-spacing
+);
+
+// The following map is used to generate both `.t-` classeses for each
+// entry as well as `%t-` of the same for limited use with `@extend`
+
+$type-specs: (
+  // Headings
+  "heading-1": (
+    weight: sage-font-weight(xbold),
+    size: sage-font-size(4xl),
+    leading: calc(50 / 39.81),
+    kerning: sage-letter-spacing(lg),
+  ),
+  "heading-2": (
+    weight: sage-font-weight(xbold),
+    size: sage-font-size(3xl),
+    leading: calc(41 / 33.18),
+    kerning: sage-letter-spacing(lg),
+  ),
+  "heading-3": (
+    weight: sage-font-weight(bold),
+    size: sage-font-size(2xl),
+    leading: calc(35 / 27.65),
+    kerning: sage-letter-spacing(md),
+  ),
+  "heading-4": (
+    weight: sage-font-weight(semibold),
+    size: sage-font-size(xl),
+    leading: calc(29 / 23.04),
+    kerning: sage-letter-spacing(md),
+  ),
+  "heading-5": (
+    weight: sage-font-weight(semibold),
+    size: sage-font-size(lg),
+    leading: calc(24 / 19.2),
+    kerning: 0,
+  ),
+  "heading-6": (
+    weight: sage-font-weight(semibold),
+    size: $sage-body-font-size,
+    leading: $sage-body-font-line-height,
+    kerning: $sage-body-letter-spacing
+  ),
+
+  // Body
+  "body": $t-base-spec,
+  "body-med": map-merge($t-base-spec, (
+    weight: sage-weight(medium)
+  )),
+  "body-semi": map-merge($t-base-spec, (
+    weight: sage-weight(semibold)
+  )),
+  "body-bold": map-merge($t-base-spec, (
+    weight: sage-weight(bold)
+  )),
+
+  // Body Small
+  "body-small": $t-body-small-spec,
+  "body-med-small": map-merge($t-body-small-spec, (
+    weight: sage-weight(medium)
+  )),
+  "body-semi-small": map-merge($t-body-small-spec, (
+    weight: sage-weight(semibold)
+  )),
+  "body-bold-small": map-merge($t-body-small-spec, (
+    weight: sage-weight(bold)
+  )),
+
+  // Body XSmall
+  "body-xsmall": $t-body-xsmall-spec,
+  "body-med-xsmall": map-merge($t-body-xsmall-spec, (
+    weight: sage-weight(medium)
+  )),
+  "body-semi-xsmall": map-merge($t-body-xsmall-spec, (
+    weight: sage-weight(semibold)
+  )),
+  "body-bold-xsmall": map-merge($t-body-xsmall-spec, (
+    weight: sage-weight(bold)
+  )),
+
+  // Additional custom specs
+  // TBD
+);
+
+// Automate setting up base specs to extend in context.
+@each $spec-name, $spec in $type-specs {
+  %t-#{$spec-name} {
+    font-weight: map-get($spec, weight);
+    font-size: map-get($spec, size);
+    letter-spacing: map-get($spec, kerning);
+    line-height: map-get($spec, leading);
+  }
+
+  .t-#{$spec-name} {
+    @extend %t-#{$spec-name};
+  }
+}
+
+
+// ==================================================
 // MIXINS
 // ==================================================
 
-@mixin t-body-block-spacing {
-  margin-bottom: $sage-body-margin-bottom;
+@mixin t-block-spacing($block-spacing) {
+  margin-bottom: $block-spacing;
 
   &.no-margin-bottom {
     margin-bottom: 0;
@@ -27,91 +147,74 @@ body {
   text-size-adjust: 100%;
   color: $sage-body-font-color;
   font-family: $sage-body-font-stack;
-  font-weight: $sage-body-font-weight;
-  font-size: $sage-body-font-size;
-  letter-spacing: $sage-body-letter-spacing;
-  line-height: $sage-body-font-line-height;
 
   @supports (font-variation-settings: normal) {
     font-family: "Inter var", $sage-body-font-stack;
   }
 }
 
-[class*="t-heading-"] {
-  margin-bottom: $sage-heading-margin-bottom;
-  color: $sage-heading-font-color;
-  font-weight: $sage-heading-font-weight;
-  line-height: $sage-heading-font-line-height;
-}
+// For simpler markup styling in blocks of CMS-like text, use this container
+.t-box {
 
-.t-heading-1 {
-  font-size: sage-font-size(4xl);
-  letter-spacing: sage-letter-spacing(lg);
-  line-height: calc(50 / 39.81);
-}
+  // Body-like elements get spacing below
+  p:not([class]),
+  ul:not([class]),
+  ol:not([class]),
+  dl:not([class]) {
+    @include t-block-spacing($sage-body-margin-bottom);
+  }
 
-.t-heading-2 {
-  font-size: sage-font-size(3xl);
-  letter-spacing: sage-letter-spacing(lg);
-  line-height: calc(41 / 33.18);
-}
+  // Heading-like elements get spacing below as well
+  h1:not([class]),
+  h2:not([class]),
+  h3:not([class]),
+  h4:not([class]),
+  h5:not([class]),
+  h6:not([class]),
+  [class*="t-heading-"] {
+    color: $sage-heading-font-color;
 
-.t-heading-3 {
-  font-size: sage-font-size(2xl);
-  letter-spacing: sage-letter-spacing(md);
-  line-height: calc(35 / 27.65);
-}
+    @include t-block-spacing($sage-heading-margin-bottom);
+  }
 
-.t-heading-4 {
-  font-size: sage-font-size(xl);
-  font-weight: sage-font-weight(semibold);
-  letter-spacing: sage-letter-spacing(md);
-  line-height: calc(29 / 23.04);
-}
+  // Elements with no classes extend related type specs
+  h1:not([class]) {
+    @extend %t-heading-1;
+  }
 
-.t-heading-5 {
-  font-size: sage-font-size(lg);
-  font-weight: sage-font-weight(semibold);
-  line-height: calc(24 / 19.2);
-}
+  h2:not([class]) {
+    @extend %t-heading-2;
+  }
 
-.t-heading-6 {
-  font-size: sage-font-size(md);
-  font-weight: sage-font-weight(semibold);
-}
+  h3:not([class]) {
+    @extend %t-heading-3;
+  }
 
-p,
-ul,
-ol,
-dl {
-  @include t-body-block-spacing();
-}
+  h4:not([class]) {
+    @extend %t-heading-4;
+  }
 
-[class*="t-text-"] {
-  @include t-body-block-spacing();
-  line-height: calc(30 / 16);
-}
+  h5:not([class]) {
+    @extend %t-heading-5;
+  }
 
-.t-text-small {
-  font-size: sage-font-size(sm);
-  line-height: calc(25 / 13.3);
-}
+  h6:not([class]) {
+    @extend %t-heading-6;
+  }
 
-.t-text-smaller {
-  font-size: sage-font-size(xs);
-  line-height: calc(21 / 11.11);
-}
+  // Hyperlinks get some default coloring applied
+  a:not([class]) {
+    color: sage-color(primary);
 
-a {
-  color: sage-color(primary);
-
-  &:hover,
-  &:focus {
-    color: inherit;
-    text-decoration: none;
+    &:hover,
+    &:focus {
+      color: inherit;
+      text-decoration: none;
+    }
   }
 }
 
+// TODO: Are these used?
 hr {
   margin: sage-spacing() 0;
   border: 0;

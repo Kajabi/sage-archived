@@ -1,6 +1,6 @@
 <%= render "sidebar_styles" %>
 <%= content_for :heading do %>
-  <h1 class="t-heading-1">Tokens</h1>
+  <h1>Tokens</h1>
   <p>Design tokens are the visual design atoms of the design system&mdash;specifically, they are named entities that store visual design attributes. We use them in place of hard-coded values (such as hex values for color or pixel values for spacing) in order to maintain a scalable and consistent visual system for UI development.</p>
 <% end %>
 <%= content_for :quick_links do %>
@@ -19,13 +19,13 @@
   </div>
 <% end %>
 <% sage_tokens.each do |token| %>
-  <div class="sage-panel">
-    <h3 class="t-heading-3" id="<%= token[:category] %>"><%= token[:category].titleize %></h3>
-    <h6>Default</h6>
+  <div class="sage-panel t-box">
+    <h2 id="<%= token[:category] %>"><%= token[:category].titleize %></h2>
+    <h3 class="t-heading-6">Default</h3>
     <div class="tokens">
       <div class="token token-<%= token[:category] %>"><strong>sage-<%= token[:category] %>( )</strong></div>
     </div>
-    <h6>Options</h6>
+    <h3 class="t-heading-6">Options</h3>
     <div class="tokens">
       <% token[:tokens] .each do |test| %>
         <div class="token token-<%= token[:category] %>-<%= test[:name] %>"><strong>sage-<%= token[:category] %>(<%= test[:name] %>)</strong></div>
