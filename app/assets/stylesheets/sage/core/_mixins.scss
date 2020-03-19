@@ -96,6 +96,22 @@
 
 
 /* ==================================================
+** Absolute Positioning shorthand
+  Usage: `@include position-full(4px);`
+
+  Sets an element's positioning offsets all to the value provided.
+  arguments: $offset | [length]
+================================================== */
+
+@mixin position-full($offset: 0) {
+  top: $offset;
+  right: $offset;
+  bottom: $offset;
+  left: $offset;
+}
+
+
+/* ==================================================
 ** Live Avatar Ring
   Usage: `@include sage-live-avatar-ring();`
 
@@ -105,12 +121,15 @@
 
 @mixin sage-live-avatar-ring($color: primary) {
   $-live-avatar-ring-offset: -($sage-live-avatar-ring-width + 2px);
+  $-live-avatar-right-color: sage-color($color);
+
+  @if ($color == charcoal) {
+    $-live-avatar-right-color: sage-color($color, 500);
+  }
 
   &::before {
-    top: $-live-avatar-ring-offset;
-    right: $-live-avatar-ring-offset;
-    bottom: $-live-avatar-ring-offset;
-    left: $-live-avatar-ring-offset;
-    border-color: sage-color($color);
+    border-color: $-live-avatar-right-color;
+
+    @include position-full($-live-avatar-ring-offset);
   }
 }
