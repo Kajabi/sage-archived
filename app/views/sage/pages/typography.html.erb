@@ -2,17 +2,6 @@
 <%= content_for :heading do %>
   <h1>Typography</h1>
   <p>Sage provides a constrained, purposeful set of typographic styles. These styles map as much as possible to functional roles so you know when each can be used.</p>
-
-  <p class="t-sage-heading-1">Lorem ipsum dolor site</p>
-  <p class="t-sage-heading-2">Lorem ipsum dolor site</p>
-  <p class="t-sage-heading-3">Lorem ipsum dolor site</p>
-  <p class="t-sage-heading-4">Lorem ipsum dolor site</p>
-  <p class="t-sage-heading-5">Lorem ipsum dolor site</p>
-  <p class="t-sage-heading-6">Lorem ipsum dolor site</p>
-  <p class="t-sage-body">Lorem ipsum dolor site</p>
-  <p class="t-sage-body-small">Lorem ipsum dolor site</p>
-  <p class="t-sage-body-xsmall">Lorem ipsum dolor site</p>
-
 <% end %>
 <%= content_for :quick_links do %>
   <div class="quick-links">
@@ -20,228 +9,150 @@
       <i class="quick-links__icon sage-icon sage-icon-file-content" aria-hidden="true"></i>
       <h5 class="quick-links__title">Contents</h5>
     </div>
-    <h6 class="quick-links__subhead">Base Specs</h6>
     <ul class="quick-links__body">
       <li class="quick-links__item">
-        <a href="#h1" class="quick-links__link">Heading 1</a>
+        <a href="#guidance" class="quick-links__link">Guidance</a>
       </li>
       <li class="quick-links__item">
-        <a href="#h2" class="quick-links__link">Heading 2</a>
-      </li>
-      <li class="quick-links__item">
-        <a href="#h3" class="quick-links__link">Heading 3</a>
-      </li>
-      <li class="quick-links__item">
-        <a href="#h4" class="quick-links__link">Heading 4</a>
-      </li>
-      <li class="quick-links__item">
-        <a href="#h5" class="quick-links__link">Heading 5</a>
-      </li>
-      <li class="quick-links__item">
-        <a href="#h6" class="quick-links__link">Heading 6</a>
-      </li>
-      <li class="quick-links__item">
-        <a href="#body" class="quick-links__link">Paragraph/Body</a>
-      </li>
-    </ul>
-    <h6 class="quick-links__subhead">Additional Uses</h6>
-    <ul class="quick-links__body">
-      <li class="quick-links__item">
-        <a href="#list-ul" class="quick-links__link">Unordered Lists</a>
-      </li>
-      <li class="quick-links__item">
-        <a href="#list-ol" class="quick-links__link">Ordered Lists</a>
+        <a href="#spec-table" class="quick-links__link">Type Spec Reference</a>
       </li>
     </ul>
   </div>
 <% end %>
-<div class="sage-panel">
-  <h1 id="h1" class="t-sage-heading-1">Heading 1: Empowering experts, entrepreneurs, and influencers to build online businesses.</h1>
-  <div class="sage-code-snippet">
-    <pre class="prettyprint"><code>&lt;h1 class="t-sage-heading-1"&gt;Empowering experts, entrepreneurs, and influencers to build online businesses.&lt;/h1&gt;</code></pre>
-  </div>
-  <dl class="sage-specs" data-label="Heading 1 specifications">
-    <dt class="sage-specs__property">Font weight</dt>
-    <dd class="sage-specs__value">800</dd>
-    <dt class="sage-specs__property">Font size</dt>
-    <dd class="sage-specs__value">39.81pt<br/>2.488rem</dd>
-    <dt class="sage-specs__property">Line height</dt>
-    <dd class="sage-specs__value"><br/>1.255</dd>
-    <dt class="sage-specs__property">Letter spacing</dt>
-    <dd class="sage-specs__value">0.8px</dd>
-  </dl>
-</div>
+<hr />
 
-<div class="sage-panel">
-  <h2 id="h2" class="t-sage-heading-2">Heading 2: Empowering experts, entrepreneurs, and influencers to build online businesses.</h2>
-  <div class="sage-code-snippet">
-    <pre class="prettyprint"><code>&lt;h2 class="t-sage-heading-2"&gt;Empowering experts, entrepreneurs, and influencers to build online businesses.&lt;/h2&gt;</code></pre>
-  </div>
-  <dl class="sage-specs" data-label="Heading 2 specifications">
-    <dt class="sage-specs__property">Font weight</dt>
-    <dd class="sage-specs__value">800</dd>
-    <dt class="sage-specs__property">Font size</dt>
-    <dd class="sage-specs__value">pt<br/>2.074rem</dd>
-    <dt class="sage-specs__property">Line height</dt>
-    <dd class="sage-specs__value">pt<br/>1.235</dd>
-    <dt class="sage-specs__property">Letter spacing</dt>
-    <dd class="sage-specs__value">0.8px</dd>
-  </dl>
-</div>
+<div class="sage-type">
+  <h2 id="structure">Structure</h2>
+  <p>
+    The Sage type system uses a minor third modular scale (factor of 1.2) with a base font size of 16pt.
+  </p>
+  <p>
+    Typography in our system uses <code>t-sage-</code> prefixes in order to apply a given typographical specification.
+    These can be used on any element to apply the desired typographical styles regardless of the tag. This allows a
+    wide range of flexibility for applying a desired style to an element while still using the most semantic element possible
+    for a given context.
+  </p>
+  <p>
+    Setting styles individual styles manually should be avoided, but where needed, should be sure to use the appropriate
+    <%= link_to "design tokens", pages_token_url %>.
+    In the end, we prefer adding new entries to the type spec over including one-off styling.
+  </p>
+  <h2 id="spec-table">Type Spec Reference</h2>
+  <table class="sage-specs">
+    <thead>
+      <tr>
+        <th>Style</th>
+        <th>Class</th>
+        <th>Weight</th>
+        <th>Size</th>
+        <th>Leading</th>
+        <th>Kerning</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="t-sage-heading-1">Heading 1</span></td>
+        <td><code>t-sage-heading-1</code>
+        <td>800</td>
+        <td>39.81pt</td>
+        <td>1.25</td>
+        <td>0.8px</td>
+      </tr>
+      <tr>
+        <td><span class="t-sage-heading-2">Heading 2</span></td>
+        <td><code>t-sage-heading-2</code>
+        <td>800</td>
+        <td>33.18pt</td>
+        <td>1.25</td>
+        <td>0.8px</td>
+      </tr>
+      <tr>
+        <td><span class="t-sage-heading-3">Heading 3</span></td>
+        <td><code>t-sage-heading-3</code>
+        <td>700</td>
+        <td>27.65pt</td>
+        <td>1.25</td>
+        <td>0.5px</td>
+      </tr>
+      <tr>
+        <td><span class="t-sage-heading-4">Heading 4</span></td>
+        <td><code>t-sage-heading-4</code>
+        <td>600</td>
+        <td>23.04pt</td>
+        <td>1.25</td>
+        <td>0.5px</td>
+      </tr>
+      <tr>
+        <td><span class="t-sage-heading-5">Heading 5</span></td>
+        <td><code>t-sage-heading-5</code>
+        <td>600</td>
+        <td>19.2pt</td>
+        <td>1.25</td>
+        <td>0.3px</td>
+      </tr>
+      <tr>
+        <td><span class="t-sage-heading-6">Heading 6</span></td>
+        <td><code>t-sage-heading-6</code>
+        <td>600</td>
+        <td>16pt</td>
+        <td>1.875</td>
+        <td>0.3px</td>
+      </tr>
+      <tr>
+        <td><span class="t-sage-body">Body*</span></td>
+        <td><code>t-sage-body</code>
+        <td>400*</td>
+        <td>16pt</td>
+        <td>1.875</td>
+        <td>0.3px</td>
+      </tr>
+      <tr>
+        <td><span class="t-sage-body-small">Small Body*</span></td>
+        <td><code>t-sage-body-small</code>
+        <td>400*</td>
+        <td>13.33pt</td>
+        <td>1.875</td>
+        <td>0.3px</td>
+      </tr>
+      <tr>
+        <td><span class="t-sage-body-xsmall">Extra Small Body*</span></td>
+        <td><code>t-sage-body-xsmall</code>
+        <td>400*</td>
+        <td>11.11pt</td>
+        <td>1.875</td>
+        <td>0.3px</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="6">
+          <p class="t-sage-body-xsmall">
+            * The <code>t-sage-body{-size}</code> classes also have weight variations:
+               append <code>-med</code> for <span class="t-sage-body-xsmall-med">medium (500)</span>;
+               append <code>-semi</code> for <span class="t-sage-body-xsmall-semi">semibold (600)</span>;
+               append <code>-bold</code> for <span class="t-sage-body-xsmall-bold">bold (700)</span>
+           </p>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
 
-<div class="sage-panel">
-  <h3 id="h3" class="t-sage-heading-3">Heading 3: Empowering experts, entrepreneurs, and influencers to build online businesses.</h3>
-  <div class="sage-code-snippet">
-    <pre class="prettyprint"><code>&lt;h3 class="t-sage-heading-3"&gt;Empowering experts, entrepreneurs, and influencers to build online businesses.&lt;/h3&gt;</code></pre>
-  </div>
-  <dl class="sage-specs" data-label="Heading 3 specifications">
-    <dt class="sage-specs__property">Font weight</dt>
-    <dd class="sage-specs__value">700</dd>
-    <dt class="sage-specs__property">Font size</dt>
-    <dd class="sage-specs__value">pt<br/>1.728rem</dd>
-    <dt class="sage-specs__property">Line height</dt>
-    <dd class="sage-specs__value">pt<br/>1.265</dd>
-    <dt class="sage-specs__property">Letter spacing</dt>
-    <dd class="sage-specs__value">0.5px</dd>
-  </dl>
-</div>
+  <p>
+    For setting text in open areas where simpler markup is desired, or where a content management system controls the
+    markup being output, we recommend applying the <code>sage-type</code> class on a container around such content. This
+    leads to some default styling applied to the tags within the container include our preferred colors and block spacing.
+    The type specs above map logically to corresponding HTML elements, as well as the following:
+  </p>
 
-<div class="sage-panel">
-  <h4 id="h4" class="t-sage-heading-4">Heading 4: Empowering experts, entrepreneurs, and influencers to build online businesses.</h4>
-  <div class="sage-code-snippet">
-    <pre class="prettyprint"><code>&lt;h4 class="t-sage-heading-4"&gt;Empowering experts, entrepreneurs, and influencers to build online businesses.&lt;/h4&gt;</code></pre>
-  </div>
-  <dl class="sage-specs" data-label="Heading 4 specifications">
-    <dt class="sage-specs__property">Font weight</dt>
-    <dd class="sage-specs__value">600</dd>
-    <dt class="sage-specs__property">Font size</dt>
-    <dd class="sage-specs__value">pt<br/>1.44rem</dd>
-    <dt class="sage-specs__property">Line height</dt>
-    <dd class="sage-specs__value">pt<br/>1.258</dd>
-    <dt class="sage-specs__property">Letter spacing</dt>
-    <dd class="sage-specs__value">0.5px</dd>
-  </dl>
-</div>
-
-<div class="sage-panel">
-  <h5 id="h5" class="t-sage-heading-5">Heading 5: Empowering experts, entrepreneurs, and influencers to build online businesses.</h5>
-  <div class="sage-code-snippet">
-    <pre class="prettyprint"><code>&lt;h5 class="t-sage-heading-5"&gt;Empowering experts, entrepreneurs, and influencers to build online businesses.&lt;/h5&gt;</code></pre>
-  </div>
-  <dl class="sage-specs" data-label="Heading 5 specifications">
-    <dt class="sage-specs__property">Font weight</dt>
-    <dd class="sage-specs__value">600</dd>
-    <dt class="sage-specs__property">Font size</dt>
-    <dd class="sage-specs__value">pt<br/>1.2rem</dd>
-    <dt class="sage-specs__property">Line height</dt>
-    <dd class="sage-specs__value">pt<br/>1.25</dd>
-    <dt class="sage-specs__property">Letter spacing</dt>
-    <dd class="sage-specs__value">0.3px</dd>
-  </dl>
-</div>
-
-<div class="sage-panel">
-  <h6 id="h6" class="t-sage-heading-6">Heading 6: Empowering experts, entrepreneurs, and influencers to build online businesses.</h6>
-  <div class="sage-code-snippet">
-    <pre class="prettyprint"><code>&lt;h6 class="t-sage-heading-6"&gt;Empowering experts, entrepreneurs, and influencers to build online businesses.&lt;/h6&gt;</code></pre>
-  </div>
-  <dl class="sage-specs" data-label="Heading 6 specifications">
-    <dt class="sage-specs__property">Font weight</dt>
-    <dd class="sage-specs__value">600</dd>
-    <dt class="sage-specs__property">Font size</dt>
-    <dd class="sage-specs__value">pt<br/>1rem</dd>
-    <dt class="sage-specs__property">Line height</dt>
-    <dd class="sage-specs__value">pt<br/>1.25</dd>
-    <dt class="sage-specs__property">Letter spacing</dt>
-    <dd class="sage-specs__value">0.3px</dd>
-  </dl>
-</div>
-
-<div class="sage-panel">
-  <p id="p" class="t-sage-body">Body: Empowering experts, entrepreneurs, and influencers to build online businesses.</p>
-  <div class="sage-code-snippet">
-    <pre class="prettyprint"><code>&lt;p class="t-sage-body"&gt;Empowering experts, entrepreneurs, and influencers to build online businesses.&lt;/p&gt;</code></pre>
-  </div>
-  <dl class="sage-specs" data-label="P specifications">
-    <dt class="sage-specs__property">Font weight</dt>
-    <dd class="sage-specs__value">400</dd>
-    <dt class="sage-specs__property">Font size</dt>
-    <dd class="sage-specs__value">pt<br/>1rem</dd>
-    <dt class="sage-specs__property">Line height</dt>
-    <dd class="sage-specs__value">pt<br/>1.5</dd>
-    <dt class="sage-specs__property">Letter spacing</dt>
-    <dd class="sage-specs__value">0.3px</dd>
-  </dl>
-</div>
-
-<div class="sage-panel">
-  <p id="list-ul">Unordered list:</p>
   <ul>
-    <li>List item one</li>
-    <li>List item two
-      <ul>
-        <li>Subitem one</li>
-        <li>Subitem two</li>
-      </ul>
+    <li>
+      <span class="t-sage-body">Body</span> is used as the default type style, and is thus applied to elements such as
+      <code>li</code>, <code>dd</code>, <code>td</code>, <code>blockquote</code>, and more.
     </li>
-    <li>List item three</li>
+    <li>
+      <strong>Body Bold</strong> is used for elements that are typically bolded such as
+      <code>tr</code>, <code>dt</code>, <code>strong</code>, and <code>b</code>.
+    </li>
   </ul>
-  <div class="sage-code-snippet">
-    <pre class="prettyprint"><code>&lt;ul&gt;
-  &lt;li&gt;List item one&lt;/li&gt;
-  &lt;li&gt;List item two
-    &lt;ul&gt;
-      &lt;li&gt;Subitem one&lt;/li&gt;
-      &lt;li&gt;Subitem two&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;List item three&lt;/li&gt;
-&lt;/ul&gt;</code></pre>
-  </div>
-  <dl class="sage-specs" data-label="UL specifications">
-    <dt class="sage-specs__property">Font weight</dt>
-    <dd class="sage-specs__value">400</dd>
-    <dt class="sage-specs__property">Font size</dt>
-    <dd class="sage-specs__value">pt<br/>1rem</dd>
-    <dt class="sage-specs__property">Line height</dt>
-    <dd class="sage-specs__value">pt<br/>1.5</dd>
-    <dt class="sage-specs__property">Letter spacing</dt>
-    <dd class="sage-specs__value">0.3px</dd>
-  </dl>
-</div>
 
-<div class="sage-panel">
-  <p id="list-ol">Ordered list:</p>
-  <ol>
-    <li>List item one</li>
-    <li>List item two
-      <ol>
-        <li>Subitem one</li>
-        <li>Subitem two</li>
-      </ol>
-    </li>
-    <li>List item three</li>
-  </ol>
-  <div class="sage-code-snippet">
-    <pre class="prettyprint"><code>&lt;ol&gt;
-  &lt;li&gt;List item one&lt;/li&gt;
-  &lt;li&gt;List item two
-    &lt;ol&gt;
-      &lt;li&gt;Subitem one&lt;/li&gt;
-      &lt;li&gt;Subitem two&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;List item three&lt;/li&gt;
-&lt;/ol&gt;</code></pre>
-  </div>
-  <dl class="sage-specs" data-label="OL specifications">
-    <dt class="sage-specs__property">Font weight</dt>
-    <dd class="sage-specs__value">400</dd>
-    <dt class="sage-specs__property">Font size</dt>
-    <dd class="sage-specs__value">16pt<br/>1rem</dd>
-    <dt class="sage-specs__property">Line height</dt>
-    <dd class="sage-specs__value">pt<br/>1.5</dd>
-    <dt class="sage-specs__property">Letter spacing</dt>
-    <dd class="sage-specs__value">0.3px</dd>
-  </dl>
 </div>
