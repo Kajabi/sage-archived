@@ -14,19 +14,6 @@ module Sage
       [
         # Sage Generated Elements
         {
-          title: "form_textarea",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", 
-          scss_design:  "todo",
-          scss_dev:     "todo",
-          scss_doc:     "todo",
-          rails_design: "todo",
-          rails_dev:    "todo",
-          rails_doc:    "todo",
-          react_design: "todo",
-          react_dev:    "todo",
-          react_doc:    "todo"
-        },
-        {
           title: "tooltip",
           description: "Tooltips display helpful text when users hover over an element.",
           scss_design:  "done",
@@ -42,6 +29,19 @@ module Sage
         {
           title: "form_input",
           description: "Basic text input form fields with 'floating' labels",
+          scss_design:  "done",
+          scss_dev:     "done",
+          scss_doc:     "done",
+          rails_design: "no",
+          rails_dev:    "no",
+          rails_doc:    "no",
+          react_design: "no",
+          react_dev:    "no",
+          react_doc:    "no"
+        },
+        {
+          title: "form_textarea",
+          description: "Basic text area input field with 'floating' label",
           scss_design:  "done",
           scss_dev:     "done",
           scss_doc:     "done",
