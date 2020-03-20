@@ -26,7 +26,6 @@
 .sage-textarea__field {
   @mixin floating-label {
     transform: translateY(-$sage-textarea-padding-offset);
-    background-color: rgba(sage-color(grey, 100), 0.9);
     opacity: 1;
   }
 
@@ -36,7 +35,7 @@
   padding: $sage-textarea-padding $sage-textarea-padding $sage-textarea-padding;
   color: $sage-textarea-color-default;
   line-height: $sage-textarea-line-height;
-  border: $sage-textarea-border-width solid $sage-textarea-color-default;
+  border: $sage-textarea-border-width solid $sage-textarea-border-color;
   border-radius: $sage-textarea-border-radius;
   background: transparent;
   transition: border 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
