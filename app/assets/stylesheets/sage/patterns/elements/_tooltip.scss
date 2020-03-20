@@ -13,7 +13,7 @@
   width: max-content;
   max-width: $tooltip-maxwidth;
   padding: $tooltip-padding;
-  line-height: sage-font-height();
+  line-height: sage-line-height();
   text-align: left;
   color: $tooltip-font-color;
   font-size: sage-font-size(sm);

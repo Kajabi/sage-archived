@@ -26,14 +26,14 @@ $sage-body-font-version: 3.12 !default;
 // Text
 $sage-body-font-size: 1rem !default; // 16px
 $sage-body-font-weight: sage-font-weight() !default;
-$sage-body-font-line-height: sage-font-height() !default;
+$sage-body-font-line-height: sage-line-height() !default;
 $sage-body-font-color: sage-color(charcoal, 400) !default;
 $sage-body-letter-spacing: sage-letter-spacing(sm) !default;  // 3px
 $sage-body-margin-bottom: sage-spacing() !default;
 
 // Headings
 $sage-heading-font-weight: sage-font-weight(bold) !default;
-$sage-heading-font-line-height: sage-font-height(sm) !default;
+$sage-heading-font-line-height: sage-line-height(sm) !default;
 $sage-heading-font-color: sage-color(charcoal, 500) !default;
 $sage-heading-margin-bottom: sage-spacing() !default;
 

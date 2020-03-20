@@ -67,37 +67,37 @@ $type-specs: (
   // Body
   "body": $t-base-spec,
   "body-med": map-merge($t-base-spec, (
-    weight: sage-weight(medium)
+    weight: sage-font-weight(medium)
   )),
   "body-semi": map-merge($t-base-spec, (
-    weight: sage-weight(semibold)
+    weight: sage-font-weight(semibold)
   )),
   "body-bold": map-merge($t-base-spec, (
-    weight: sage-weight(bold)
+    weight: sage-font-weight(bold)
   )),
 
   // Body Small
   "body-small": $t-body-small-spec,
-  "body-med-small": map-merge($t-body-small-spec, (
-    weight: sage-weight(medium)
+  "body-small-med": map-merge($t-body-small-spec, (
+    weight: sage-font-weight(medium)
   )),
-  "body-semi-small": map-merge($t-body-small-spec, (
-    weight: sage-weight(semibold)
+  "body-small-semi": map-merge($t-body-small-spec, (
+    weight: sage-font-weight(semibold)
   )),
-  "body-bold-small": map-merge($t-body-small-spec, (
-    weight: sage-weight(bold)
+  "body-small-bold": map-merge($t-body-small-spec, (
+    weight: sage-font-weight(bold)
   )),
 
   // Body XSmall
   "body-xsmall": $t-body-xsmall-spec,
-  "body-med-xsmall": map-merge($t-body-xsmall-spec, (
-    weight: sage-weight(medium)
+  "body-xsmall-med": map-merge($t-body-xsmall-spec, (
+    weight: sage-font-weight(medium)
   )),
-  "body-semi-xsmall": map-merge($t-body-xsmall-spec, (
-    weight: sage-weight(semibold)
+  "body-xsmall-semi": map-merge($t-body-xsmall-spec, (
+    weight: sage-font-weight(semibold)
   )),
-  "body-bold-xsmall": map-merge($t-body-xsmall-spec, (
-    weight: sage-weight(bold)
+  "body-xsmall-bold": map-merge($t-body-xsmall-spec, (
+    weight: sage-font-weight(bold)
   )),
 
   // Additional custom specs
@@ -156,7 +156,8 @@ body {
   p:not([class]),
   ul:not([class]),
   ol:not([class]),
-  dl:not([class]) {
+  dl:not([class]),
+  [class*="t-sage-body"] {
     @include t-block-spacing($sage-body-margin-bottom);
   }
 

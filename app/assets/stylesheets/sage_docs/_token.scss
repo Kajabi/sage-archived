@@ -49,9 +49,9 @@
     }
   }
   &-font-height::after {
-    content: "#{sage-font-height()}";
+    content: "#{sage-line-height()}";
   }
-  @each $name, $token in $sage-font-heights {
+  @each $name, $token in $sage-line-heights {
     &-font-height-#{$name}::after {
       content: "#{$token}";
     }
