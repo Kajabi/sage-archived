@@ -4,24 +4,18 @@
 
 ================================================== */
 
-// TODO: clean up and/or make a global mixin
-@mixin floating-label {
-  $-ie-label-offset: -($sage-inputfield-font-size + $sage-inputfield-padding-filled);
-
-  transform: translateY($-ie-label-offset); // IE doesn't support calc in transforms
-  transform: translateY(calc(-50% - (#{$sage-textarea-font-size} - #{$sage-textarea-padding-filled})));
-  opacity: 1;
-}
-
 .sage-textarea {
   position: relative;
+
+  &:not(:last-child) {
+    margin-bottom: $sage-textarea-spacing;
+  }
 }
 
 .sage-textarea__label {
   position: absolute;
-  transform: translateY(calc(#{$sage-textarea-font-size} * -1));
   left: $sage-textarea-padding;
-  top: 50%;
+  top: $sage-textarea-padding;
   color: inherit;
   font-size: $sage-textarea-label-font-size; // 11px
   font-weight: $sage-textarea-label-font-weight;
@@ -30,9 +24,18 @@
 }
 
 .sage-textarea__field {
+  @mixin floating-label {
+    transform: translateY(-$sage-textarea-padding-offset);
+    background-color: rgba(sage-color(grey, 100), 0.9);
+    opacity: 1;
+  }
+
+  min-height: $sage-textarea-min-height;
   height: 100%;
   width: 100%;
-  padding: $sage-textarea-padding-offset $sage-textarea-padding;
+  padding: $sage-textarea-padding $sage-textarea-padding $sage-textarea-padding;
+  color: $sage-textarea-color-default;
+  line-height: $sage-textarea-line-height;
   border: $sage-textarea-border-width solid $sage-textarea-color-default;
   border-radius: $sage-textarea-border-radius;
   background: transparent;
@@ -44,7 +47,7 @@
 
   &:focus:not(:disabled),
   &:active:not(:disabled) {
-    padding-bottom: $sage-textarea-padding-filled;
+    padding-top: $sage-textarea-padding-filled;
     border-color: currentColor;
     outline: none;
 
@@ -53,7 +56,7 @@
     }
 
     .sage-textarea--no-label & {
-      padding-bottom: $sage-textarea-padding;
+      padding-top: $sage-textarea-padding;
     }
 
     ~ .sage-textarea__label {
@@ -61,5 +64,45 @@
 
       transition: opacity 0.15s ease-out, transform 0.15s ease-in-out, color 0.15s ease-out;
     }
+  }
+
+  &:valid:not(:placeholder-shown),
+  &:required:not(:placeholder-shown) {
+    padding-top: $sage-textarea-padding-filled;
+
+    ~ .sage-textarea__label {
+      @include floating-label();
+
+      transition: opacity 0.15s ease-out, transform 0.15s ease-in-out, color 0.15s ease-out;
+    }
+
+    .sage-textarea--no-label & {
+      padding-top: $sage-textarea-padding;
+    }
+  }
+
+  &:valid:not(:placeholder-shown) {
+    border-color: $sage-textarea-color-success;
+    box-shadow: $sage-textarea-box-shadow-size $sage-textarea-color-success;
+
+    ~ .sage-textarea__label {
+      color: $sage-textarea-color-success;
+    }
+  }
+
+  &:required:not(:placeholder-shown):not(:valid) {
+    border-color: $sage-textarea-color-error;
+    box-shadow: $sage-textarea-box-shadow-size $sage-textarea-color-error;
+
+    ~ .sage-textarea__label {
+      color: $sage-textarea-color-error;
+    }
+  }
+
+  &:disabled {
+    color: $sage-textarea-color-disabled;
+    background-color: $sage-textarea-bg-disabled;
+    cursor: not-allowed;
+    resize: none;
   }
 }

@@ -138,6 +138,7 @@ $sage-inputfield-bg-disabled: sage-color(grey, 100) !default;
 // ==================================================
 
 $sage-textarea-font-size: $sage-inputfield-font-size !default;
+$sage-textarea-line-height: calc(30 / 16) !default;
 $sage-textarea-letter-spacing: $sage-inputfield-letter-spacing !default;
 
 // Floating label
@@ -150,9 +151,13 @@ $sage-textarea-border-width: $sage-inputfield-border-width !default;
 $sage-textarea-box-shadow-size: $sage-inputfield-box-shadow-size !default;
 
 // Sizing
+$sage-textarea-min-height: $sage-inputfield-height !default;
 $sage-textarea-padding: $sage-inputfield-padding !default;
-$sage-textarea-padding-offset: $sage-textarea-padding - $sage-textarea-border-width;
-$sage-textarea-padding-filled: 0.25rem !default;
+$sage-textarea-padding-offset: 0.5rem !default;
+$sage-textarea-padding-filled: 1.75rem !default;
+
+// Spacing
+$sage-textarea-spacing: $sage-inputfield-spacing !default;
 
 // Colors
 $sage-textarea-color-default: $sage-inputfield-color-default !default;
