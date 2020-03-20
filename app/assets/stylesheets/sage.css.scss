@@ -9,6 +9,7 @@
 @import "sage/tokens/font_height";
 @import "sage/tokens/font_size";
 @import "sage/tokens/font_weight";
+@import "sage/tokens/icon";
 @import "sage/tokens/shadow";
 @import "sage/tokens/sidebar";
 @import "sage/tokens/spacing";
@@ -21,11 +22,9 @@
 @import "sage/core/functions";
 @import "sage/core/mixins";
 @import "sage/core/fonts";
+@import "sage/core/icons";
 @import "sage/core/animations";
 @import "sage/core/typography";
-
-// Icons
-@import "sage/icons/icons";
 
 // Layout
 @import "sage/layout/container";
