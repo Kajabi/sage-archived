@@ -4,7 +4,7 @@
 }
 
 $sage-letter-spacings: (
-  sm: 0.01875rem, // 3px
-  md: 0.03125rem, // 0.5px
-  lg: 0.05rem, // 0.8px
+  sm: rem(0.3),
+  md: rem(0.5),
+  lg: rem(0.8),
 );

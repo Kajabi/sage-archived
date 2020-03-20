@@ -30,31 +30,31 @@ $type-specs: (
   "heading-1": (
     weight: sage-font-weight(xbold),
     size: sage-font-size(4xl),
-    leading: calc(50 / 39.81),
+    leading: sage-line-height(sm),
     kerning: sage-letter-spacing(lg),
   ),
   "heading-2": (
     weight: sage-font-weight(xbold),
     size: sage-font-size(3xl),
-    leading: calc(41 / 33.18),
+    leading: sage-line-height(sm),
     kerning: sage-letter-spacing(lg),
   ),
   "heading-3": (
     weight: sage-font-weight(bold),
     size: sage-font-size(2xl),
-    leading: calc(35 / 27.65),
+    leading: sage-line-height(sm),
     kerning: sage-letter-spacing(md),
   ),
   "heading-4": (
     weight: sage-font-weight(semibold),
     size: sage-font-size(xl),
-    leading: calc(29 / 23.04),
+    leading: sage-line-height(sm),
     kerning: sage-letter-spacing(md),
   ),
   "heading-5": (
     weight: sage-font-weight(semibold),
     size: sage-font-size(lg),
-    leading: calc(24 / 19.2),
+    leading: sage-line-height(sm),
     kerning: 0,
   ),
   "heading-6": (

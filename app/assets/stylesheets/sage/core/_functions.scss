@@ -12,7 +12,7 @@
 ================================================== */
 
 @function rem($value) {
-  @return $value / 16 * 1rem;
+  @return strip-unit($value) / 16 * 1rem;
 }
 
 
@@ -33,4 +33,3 @@
 
   @return $number;
 }
-

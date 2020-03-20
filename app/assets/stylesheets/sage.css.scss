@@ -1,6 +1,9 @@
 // Reset
 @import "sage/vendor/reboot";
 
+// Functions
+@import "sage/core/functions";
+
 // Variable Tokens
 @import "sage/tokens/color_palette";
 @import "sage/tokens/border";
@@ -16,8 +19,7 @@
 @import "sage/tokens/spacing";
 @import "sage/tokens/z_index";
 
-// Mixins and functions
-@import "sage/core/functions";
+// Mixins
 @import "sage/core/mixins";
 
 // Global Variables
