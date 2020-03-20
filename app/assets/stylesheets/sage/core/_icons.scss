@@ -1,0 +1,96 @@
+// ==================================================
+// Variables
+// ==================================================
+
+$sage-icon-font-path: "sage" !default;
+$sage-icon-background-color: #eee !default;
+$sage-icon-li-margin-right: 0.4em !default;
+
+
+// ==================================================
+// Font setup
+// ==================================================
+
+@font-face {
+  font-family: "Sage";
+  src: url("#{$sage-icon-font-path}/Sage.eot");
+  src: url("#{$sage-icon-font-path}/Sage.eot") format("embedded-opentype"),
+    url("#{$sage-icon-font-path}/Sage.woff2") format("woff2"),
+    url("#{$sage-icon-font-path}/Sage.woff") format("woff"),
+    url("#{$sage-icon-font-path}/Sage.ttf") format("truetype"),
+    url("#{$sage-icon-font-path}/Sage.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+// ==================================================
+// Mixins
+// ==================================================
+
+@mixin sage-icon-rotate($degrees, $rotation) {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=#{$rotation});
+  transform: rotate($degrees);
+}
+
+@mixin sage-icon-flip($horiz, $vert, $rotation) {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=#{$rotation});
+  transform: scale($horiz, $vert);
+}
+
+
+// ==================================================
+// Base class definition
+// ==================================================
+
+%sage-icon {
+  display: inline-block;
+  text-transform: none;
+  font: normal normal normal 1em/1 "Sage";
+  speak: none;
+  /* Better Font Rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  &.is-spinning {
+    animation: sage-icon-spin 2s infinite linear;
+  }
+
+  &.rotate-90 {
+    @include sage-icon-rotate(90deg, 1);
+  }
+
+  &.rotate-180 {
+    @include sage-icon-rotate(180deg, 2);
+  }
+
+  &.rotate-270 {
+    @include sage-icon-rotate(270deg, 3);
+  }
+
+  &.flip-y {
+    @include sage-icon-flip(-1, 1, 0);
+  }
+
+  &.flip-x {
+    @include sage-icon-flip(1, -1, 2);
+  }
+}
+
+// Build icons as `sage-icon-icon-name` based on the map in `tokens/_icon`
+@each $icon-name, $icon-code in $sage-icons {
+  .sage-icon-#{$icon-name}::before {
+    @extend %sage-icon;
+
+    content: sage-icon($icon-name);
+  }
+}
+
+@keyframes sage-icon-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
