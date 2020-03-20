@@ -14,6 +14,19 @@ module Sage
       [
         # Sage Generated Objects
         {
+          title: "live_active_mic",
+          description: "The Live Active Mic icon is an animatable icon that shows a fill color rise and fall in the icon shape based on a given volume level.",
+          scss_design:  "doing",
+          scss_dev:     "doing",
+          scss_doc:     "doing",
+          rails_design: "todo",
+          rails_dev:    "todo",
+          rails_doc:    "todo",
+          react_design: "todo",
+          react_dev:    "todo",
+          react_doc:    "todo"
+        },
+        {
           title: "live_avatar",
           description: "The Live Avatar object shows a user's profile image in a circular frame and allows for a few helpful modifications for different uses.",
           scss_design:  "doing",

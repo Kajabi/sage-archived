@@ -8,6 +8,7 @@
 @import "sage/tokens/container";
 @import "sage/tokens/font_size";
 @import "sage/tokens/font_weight";
+@import "sage/tokens/icon";
 @import "sage/tokens/letter_spacing";
 @import "sage/tokens/line_height";
 @import "sage/tokens/shadow";
@@ -24,11 +25,9 @@
 
 // Base Styles
 @import "sage/core/fonts";
+@import "sage/core/icons";
 @import "sage/core/animations";
 @import "sage/core/typography";
-
-// Icons
-@import "sage/icons/icons";
 
 // Layout
 @import "sage/layout/container";
@@ -56,6 +55,7 @@
 @import "sage/patterns/elements/overlay";
 
 // Objects
+@import "sage/patterns/objects/live_active_mic";
 @import "sage/patterns/objects/live_avatar";
 @import "sage/patterns/objects/form_section";
 @import "sage/patterns/objects/tabs";

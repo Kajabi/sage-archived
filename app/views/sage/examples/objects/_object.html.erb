@@ -35,7 +35,9 @@
 <div class="sage-panel">
   <h2 id="code" class="t-sage-heading-2 example__title">Code</h2>
   <div class="example__code">
-    <pre class="prettyprint"><code><%= CGI.unescapeHTML(CGI.escapeHTML render "sage/examples/objects/#{@title}/preview") %></code></pre>
+    <div class="sage-code-snippet">
+      <pre class="prettyprint"><code><%= CGI.unescapeHTML(CGI.escapeHTML render "sage/examples/objects/#{@title}/preview") %></code></pre>
+    </div>
   </div>
 </div>
 <div id="props" class="sage-panel sage-type">
