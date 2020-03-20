@@ -2,18 +2,18 @@
   <div class="sage-media">
     <div class="sage-media-body">
       <%= link_to pages_element_url(title: title, description: description) do %>
-        <h2 id="<%= title %>" class="t-heading-2 example__title"><%= title.titleize %></h2>
+        <h2 id="<%= title %>" class="t-sage-heading-2 example__title"><%= title.titleize %></h2>
       <% end %>
     </div>
     <%= link_to pages_breakout_url(type: "element", title: title, description: description), target: "_blank", class: "example__link" do %>
       <i class="sage-icon sage-icon-launch-app"></i>
     <% end %>
   </div>
-  <h3 class="t-heading-6 example__label">Preview</h3>
+  <h3 class="t-sage-heading-6 example__label">Preview</h3>
   <div class="example__preview">
     <%= render "sage/examples/elements/#{title}/preview" %>
   </div>
-  <h3 class="t-heading-6 example__label">Code</h3>
+  <h3 class="t-sage-heading-6 example__label">Code</h3>
   <div class="example__code">
     <pre class="prettyprint"><code><%= CGI.unescapeHTML(CGI.escapeHTML render "sage/examples/elements/#{title}/preview") %></code></pre>
   </div>

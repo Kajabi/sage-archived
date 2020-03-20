@@ -1,10 +1,10 @@
 <div class="sage-panel">
   <div class="sage-media">
     <div class="sage-media-body">
-      <h2 id="<%= title %>" class="t-heading-2 example__title"><%= title.titleize %></h2>
+      <h2 id="<%= title %>" class="t-sage-heading-2 example__title"><%= title.titleize %></h2>
     </div>
   </div>
 
-  <h3 class="t-heading-6 example__label">Code</h3>
+  <h3 class="t-sage-heading-6 example__label">Code</h3>
   <pre class="prettyprint"><code><%= CGI.unescapeHTML(CGI.escapeHTML render "sage/examples/utilities/#{title}/preview") %></code></pre>
 </div>

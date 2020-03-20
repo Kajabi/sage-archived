@@ -13,18 +13,14 @@ $t-base-spec: (
   leading: $sage-body-font-line-height,
   kerning: $sage-body-letter-spacing
 );
-$t-body-small-spec: (
-  weight: $sage-body-font-weight,
-  size: sage-font-size(sm),
-  leading: $sage-body-font-line-height,
-  kerning: $sage-body-letter-spacing
-);
-$t-body-xsmall-spec: (
-  weight: $sage-body-font-weight,
-  size: sage-font-size(xs),
-  leading: $sage-body-font-line-height,
-  kerning: $sage-body-letter-spacing
-);
+
+$t-body-small-spec: map-merge($t-base-spec, (
+  size: sage-font-size(sm)
+));
+
+$t-body-xsmall-spec: map-merge($t-base-spec, (
+  size: sage-font-size(xs)
+));
 
 // The following map is used to generate both `.t-` classeses for each
 // entry as well as `%t-` of the same for limited use with `@extend`
@@ -110,15 +106,15 @@ $type-specs: (
 
 // Automate setting up base specs to extend in context.
 @each $spec-name, $spec in $type-specs {
-  %t-#{$spec-name} {
+  %t-sage-#{$spec-name} {
     font-weight: map-get($spec, weight);
     font-size: map-get($spec, size);
     letter-spacing: map-get($spec, kerning);
     line-height: map-get($spec, leading);
   }
 
-  .t-#{$spec-name} {
-    @extend %t-#{$spec-name};
+  .t-sage-#{$spec-name} {
+    @extend %t-sage-#{$spec-name};
   }
 }
 
@@ -171,7 +167,7 @@ body {
   h4:not([class]),
   h5:not([class]),
   h6:not([class]),
-  [class*="t-heading-"] {
+  [class*="t-sage-heading-"] {
     color: $sage-heading-font-color;
 
     @include t-block-spacing($sage-heading-margin-bottom);
@@ -179,27 +175,27 @@ body {
 
   // Elements with no classes extend related type specs
   h1:not([class]) {
-    @extend %t-heading-1;
+    @extend %t-sage-heading-1;
   }
 
   h2:not([class]) {
-    @extend %t-heading-2;
+    @extend %t-sage-heading-2;
   }
 
   h3:not([class]) {
-    @extend %t-heading-3;
+    @extend %t-sage-heading-3;
   }
 
   h4:not([class]) {
-    @extend %t-heading-4;
+    @extend %t-sage-heading-4;
   }
 
   h5:not([class]) {
-    @extend %t-heading-5;
+    @extend %t-sage-heading-5;
   }
 
   h6:not([class]) {
-    @extend %t-heading-6;
+    @extend %t-sage-heading-6;
   }
 
   // Hyperlinks get some default coloring applied
