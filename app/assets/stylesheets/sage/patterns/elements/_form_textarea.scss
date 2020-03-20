@@ -15,29 +15,30 @@
 .sage-textarea__label {
   position: absolute;
   left: $sage-textarea-padding;
-  top: $sage-textarea-padding;
+  top: $sage-textarea-border-width;
+  width: $sage-textarea-label-width;
+  margin-bottom: $sage-textarea-label-margin-bottom;
+  padding-top: $sage-textarea-label-padding-top;
+  padding-bottom: $sage-textarea-label-padding-bottom;
   color: inherit;
-  font-size: $sage-textarea-label-font-size; // 11px
+  font-size: $sage-textarea-label-font-size;
   font-weight: $sage-textarea-label-font-weight;
+  line-height: $sage-textarea-label-line-height;
+  background-color: $sage-textarea-label-bg-color;
   pointer-events: none;
   opacity: 0;
 }
 
 .sage-textarea__field {
-  @mixin floating-label {
-    transform: translateY(-$sage-textarea-padding-offset);
-    opacity: 1;
-  }
-
   min-height: $sage-textarea-min-height;
-  height: 100%;
-  width: 100%;
+  height: $sage-textarea-height;
+  width: $sage-textarea-width;
   padding: $sage-textarea-padding $sage-textarea-padding $sage-textarea-padding;
   color: $sage-textarea-color-default;
   line-height: $sage-textarea-line-height;
   border: $sage-textarea-border-width solid $sage-textarea-border-color;
   border-radius: $sage-textarea-border-radius;
-  background: transparent;
+  background: $sage-textarea-bg-default;
   transition: border 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 
   @include placeholder {
@@ -59,9 +60,8 @@
     }
 
     ~ .sage-textarea__label {
-      @include floating-label();
-
       transition: opacity 0.15s ease-out, transform 0.15s ease-in-out, color 0.15s ease-out;
+      opacity: 1;
     }
   }
 
@@ -70,9 +70,8 @@
     padding-top: $sage-textarea-padding-filled;
 
     ~ .sage-textarea__label {
-      @include floating-label();
-
       transition: opacity 0.15s ease-out, transform 0.15s ease-in-out, color 0.15s ease-out;
+      opacity: 1;
     }
 
     .sage-textarea--no-label & {
