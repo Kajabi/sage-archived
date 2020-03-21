@@ -23,7 +23,7 @@
     transition: background 0.3s ease-out;
     cursor: pointer;
 
-    & + label {
+    + label {
       display: inline-block;
       margin-left: sage-spacing(2xs);
       vertical-align: top;
@@ -43,9 +43,9 @@
 
     &::before { // switch background
       transform: translate3d(-50%, -50%, 0) scale(0.94);
-      width: calc(100% + ((#{$sage-switch-focus-outline-width}px ) + (#{$sage-switch-focus-outline-spacing} * 2)));
-      height: calc(100% + ((#{$sage-switch-focus-outline-width}px) + (#{$sage-switch-focus-outline-spacing} * 2)));
-      border: calc(#{$sage-switch-focus-outline-width}px) solid $sage-switch-focus-outline-color;
+      width: calc(100% + ((#{$sage-switch-focus-outline-width} * 1px ) + (#{$sage-switch-focus-outline-spacing} * 2)));
+      height: calc(100% + ((#{$sage-switch-focus-outline-width} * 1px) + (#{$sage-switch-focus-outline-spacing} * 2)));
+      border: calc(#{$sage-switch-focus-outline-width} * 1px) solid $sage-switch-focus-outline-color;
       border-radius: $sage-switch-border-radius;
       transition: opacity 0.15s ease-out 0.05s, transform 0.2s ease-in-out;
       pointer-events: none;
@@ -58,8 +58,14 @@
       width: $sage-switch-toggle-size;
       background: #fff;
       border-radius: sage-border(radius-round);
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.18), 0 1px 3px rgba(0, 0, 0, 0.1);
-      transition: transform 0.2s ease-in-out;
+      box-shadow: sage-shadow(sm);
+      transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    }
+
+    &:hover:not(:disabled):not(:checked) {
+      &::after {
+        box-shadow: sage-shadow(md);
+      }
     }
 
     // checked
@@ -81,7 +87,7 @@
         box-shadow: none;
       }
 
-      & + label {
+      + label {
         color: $sage-switch-color-disabled-text;
         cursor: inherit;
       }
@@ -90,7 +96,7 @@
       &:checked {
         background: $sage-switch-color-disabled-checked;
 
-        & + label {
+        + label {
           color: $sage-switch-color-disabled-checked-text;
         }
       }
