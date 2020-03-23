@@ -12,7 +12,7 @@ $-live-user-control-focus-width: $sage-btn-focus-outline-width * 1px;
 $-live-user-control-color: $sage-btn-primary-bg-color;
 $-live-user-control-color-hover: $sage-btn-primary-bg-hover-color;
 $-live-user-control-inactive-color: sage-color(grey, 400);
-$-live-user-control-inactive-color-hover: sage-color(grey);
+$-live-user-control-inactive-color-hover: sage-color(grey, 500);
 
 .sage-live-user-control {
   display: flex;
@@ -67,11 +67,9 @@ $-live-user-control-inactive-color-hover: sage-color(grey);
 }
 
 .sage-live-user-control__icon {
-  width: $-live-user-control-icon-size;
-  height: $-live-user-control-icon-size;
+  text-align: center;
   color: inherit;
   border-radius: sage-border(radius-round);
-  background-color: currentColor;
   transition: $sage-btn-transition;
   transition-property: background-color;
 }
