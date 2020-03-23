@@ -27,21 +27,21 @@
 <% end %>
 
 <div class="sage-panel">
-  <h3 id="preview" class="example__title">Preview</h3>
+  <h2 id="preview" class="t-sage-heading-2 example__title">Preview</h2>
   <div class="example__preview">
     <%= render "sage/examples/elements/#{@title}/preview" %>
   </div>
 </div>
 <div class="sage-panel">
-  <h3 id="code" class="example__title">Code</h3>
+  <h2 id="code" class="t-sage-heading-2 example__title">Code</h2>
   <div class="example__code">
     <div class="sage-code-snippet">
       <pre class="prettyprint"><code><%= CGI.unescapeHTML(CGI.escapeHTML render "sage/examples/elements/#{@title}/preview") %></code></pre>
     </div>
   </div>
 </div>
-<div id="props" class="sage-panel">
-  <h3 class="example__title">Properties</h3>
+<div id="props" class="sage-panel sage-type">
+  <h2 class="t-sage-heading-2 example__title">Properties</h2>
   <table>
     <tr>
       <th>Property</th>
@@ -52,17 +52,16 @@
     <%= render "sage/examples/elements/#{@title}/props" %>
   </table>
 </div>
-<div id="best" class="sage-panel">
-  <h3 class="example__title">Best Practices</h3>
+<div id="best" class="sage-panel sage-type">
+  <h2 class="t-sage-heading-2 example__title">Best Practices</h2>
   <div class="sage-row">
     <div class="sage-col--md-6">
-      <h5>Do</h5>
+      <h3 class="t-sage-heading-6">Do</h3>
       <%= render "sage/examples/elements/#{@title}/rules_do" %>
     </div>
     <div class="sage-col--md-6">
-      <h5>Don't</h5>
+      <h3 class="t-sage-heading-6">Don't</h3>
       <%= render "sage/examples/elements/#{@title}/rules_dont" %>
     </div>
   </div>
 </div>
-

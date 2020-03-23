@@ -5,33 +5,21 @@
 ================================================== */
 
 .sage-specs {
-  position: relative;
-  columns: 2;
-  margin-bottom: sage-spacing(lg);
-  padding: 2.5rem sage-spacing(sm) sage-spacing(xs);
-  font-size: sage-font-size(sm);
-  border: 1px solid sage-color(grey, 300);
-  border-radius: sage-border(radius);
-
-  @media (min-width: sage-breakpoint(xl-min)) {
-    columns: 4;
+  th {
+    padding: 4px;
+    color: sage-color(charcoal, 200);
+    border-bottom: 1px solid sage-color(grey, 300);
   }
 
-  &::before {
-    content: attr(data-label);
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: sage-spacing(xs) sage-spacing(sm);
-    color: sage-color(sage, 400);
+  td {
+    padding: 4px;
     font-size: sage-font-size(xs);
-    text-transform: uppercase;
+    vertical-align: baseline;
+    border-bottom: 1px solid sage-color(grey, 200);
+  }
+
+  tfoot td {
+    padding-top: 12px;
+    border-bottom-color: transparent;
   }
 }
-
-.sage-specs__property {
-  font-size: sage-font-size(xs);
-  text-transform: uppercase;
-}
-
