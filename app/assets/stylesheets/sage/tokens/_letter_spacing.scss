@@ -1,0 +1,10 @@
+@function sage-letter-spacing($key: sm) {
+  $value: map-get($sage-letter-spacings, $key);
+  @return $value;
+}
+
+$sage-letter-spacings: (
+  sm: rem(0.3),
+  md: rem(0.5),
+  lg: rem(0.8),
+);

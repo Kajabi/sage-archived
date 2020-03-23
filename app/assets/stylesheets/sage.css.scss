@@ -1,26 +1,31 @@
 // Reset
 @import "sage/vendor/reboot";
 
+// Functions
+@import "sage/core/functions";
+
 // Variable Tokens
 @import "sage/tokens/color_palette";
 @import "sage/tokens/border";
 @import "sage/tokens/breakpoints";
 @import "sage/tokens/container";
-@import "sage/tokens/font_height";
 @import "sage/tokens/font_size";
 @import "sage/tokens/font_weight";
 @import "sage/tokens/icon";
+@import "sage/tokens/letter_spacing";
+@import "sage/tokens/line_height";
 @import "sage/tokens/shadow";
 @import "sage/tokens/sidebar";
 @import "sage/tokens/spacing";
 @import "sage/tokens/z_index";
 
+// Mixins
+@import "sage/core/mixins";
+
 // Global Variables
 @import "sage/core/variables";
 
 // Base Styles
-@import "sage/core/functions";
-@import "sage/core/mixins";
 @import "sage/core/fonts";
 @import "sage/core/icons";
 @import "sage/core/animations";

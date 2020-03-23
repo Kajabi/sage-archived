@@ -49,9 +49,9 @@
     }
   }
   &-font-height::after {
-    content: "#{sage-font-height()}";
+    content: "#{sage-line-height()}";
   }
-  @each $name, $token in $sage-font-heights {
+  @each $name, $token in $sage-line-heights {
     &-font-height-#{$name}::after {
       content: "#{$token}";
     }
@@ -69,6 +69,14 @@
   }
   @each $name, $token in $sage-font-weights {
     &-font-weight-#{$name}::after {
+      content: "#{$token}";
+    }
+  }
+  &-letter-spacing::after {
+    content: "#{sage-letter-spacing()}";
+  }
+  @each $name, $token in $sage-letter-spacings {
+    &-letter-spacing-#{$name}::after {
       content: "#{$token}";
     }
   }

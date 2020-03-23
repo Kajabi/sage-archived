@@ -3,93 +3,209 @@
 
 ================================================== */
 
+// ==================================================
+// TYPE SPECS
+// ==================================================
+
+$t-base-spec: (
+  weight: $sage-body-font-weight,
+  size: $sage-body-font-size,
+  leading: $sage-body-font-line-height,
+  kerning: $sage-body-letter-spacing
+);
+
+$t-body-small-spec: map-merge($t-base-spec, (
+  size: sage-font-size(sm)
+));
+
+$t-body-xsmall-spec: map-merge($t-base-spec, (
+  size: sage-font-size(xs)
+));
+
+// The following map is used to generate both `.t-` classeses for each
+// entry as well as `%t-` of the same for limited use with `@extend`
+
+$type-specs: (
+  // Headings
+  "heading-1": (
+    weight: sage-font-weight(xbold),
+    size: sage-font-size(4xl),
+    leading: sage-line-height(sm),
+    kerning: sage-letter-spacing(lg),
+  ),
+  "heading-2": (
+    weight: sage-font-weight(xbold),
+    size: sage-font-size(3xl),
+    leading: sage-line-height(sm),
+    kerning: sage-letter-spacing(lg),
+  ),
+  "heading-3": (
+    weight: sage-font-weight(bold),
+    size: sage-font-size(2xl),
+    leading: sage-line-height(sm),
+    kerning: sage-letter-spacing(md),
+  ),
+  "heading-4": (
+    weight: sage-font-weight(semibold),
+    size: sage-font-size(xl),
+    leading: sage-line-height(sm),
+    kerning: sage-letter-spacing(md),
+  ),
+  "heading-5": (
+    weight: sage-font-weight(semibold),
+    size: sage-font-size(lg),
+    leading: sage-line-height(sm),
+    kerning: 0,
+  ),
+  "heading-6": (
+    weight: sage-font-weight(semibold),
+    size: $sage-body-font-size,
+    leading: $sage-body-font-line-height,
+    kerning: $sage-body-letter-spacing
+  ),
+
+  // Body
+  "body": $t-base-spec,
+  "body-med": map-merge($t-base-spec, (
+    weight: sage-font-weight(medium)
+  )),
+  "body-semi": map-merge($t-base-spec, (
+    weight: sage-font-weight(semibold)
+  )),
+  "body-bold": map-merge($t-base-spec, (
+    weight: sage-font-weight(bold)
+  )),
+
+  // Body Small
+  "body-small": $t-body-small-spec,
+  "body-small-med": map-merge($t-body-small-spec, (
+    weight: sage-font-weight(medium)
+  )),
+  "body-small-semi": map-merge($t-body-small-spec, (
+    weight: sage-font-weight(semibold)
+  )),
+  "body-small-bold": map-merge($t-body-small-spec, (
+    weight: sage-font-weight(bold)
+  )),
+
+  // Body XSmall
+  "body-xsmall": $t-body-xsmall-spec,
+  "body-xsmall-med": map-merge($t-body-xsmall-spec, (
+    weight: sage-font-weight(medium)
+  )),
+  "body-xsmall-semi": map-merge($t-body-xsmall-spec, (
+    weight: sage-font-weight(semibold)
+  )),
+  "body-xsmall-bold": map-merge($t-body-xsmall-spec, (
+    weight: sage-font-weight(bold)
+  )),
+
+  // Additional custom specs
+  // TBD
+);
+
+// Automate setting up base specs to extend in context.
+@each $spec-name, $spec in $type-specs {
+  %t-sage-#{$spec-name} {
+    font-weight: map-get($spec, weight);
+    font-size: map-get($spec, size);
+    letter-spacing: map-get($spec, kerning);
+    line-height: map-get($spec, leading);
+  }
+
+  .t-sage-#{$spec-name} {
+    @extend %t-sage-#{$spec-name};
+  }
+}
+
+
+// ==================================================
+// MIXINS
+// ==================================================
+
+@mixin t-block-spacing($block-spacing) {
+  margin-bottom: $block-spacing;
+
+  &.no-margin-bottom {
+    margin-bottom: 0;
+  }
+}
+
+
+// ==================================================
+// STYLES
+// ==================================================
+
 body {
-  margin-bottom: sage-spacing();
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-size-adjust: 100%;
-  color: sage-color(charcoal, 400);
-  font-family: "Inter", $sage-font-stack;
-  font-weight: sage-font-weight();
-  font-size: sage-font-size();
-  letter-spacing: $sage-body-letter-spacing;
-  line-height: sage-font-height();
+  color: $sage-body-font-color;
+  font-family: $sage-body-font-stack;
 
   @supports (font-variation-settings: normal) {
-    font-family: "Inter var", $sage-font-stack;
+    font-family: "Inter var", $sage-body-font-stack;
   }
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin-bottom: sage-spacing();
-  color: sage-color(charcoal, 500);
-  font-weight: sage-font-weight(bold);
-  line-height: sage-font-height(sm);
-}
+// For simpler markup styling in blocks of CMS-like text, use this container
+.sage-type {
 
-h1 {
-  font-size: sage-font-size(4xl);
-  letter-spacing: 0.05rem; // 0.8px
-  line-height: calc(50 / 39.81);
-}
-
-h2 {
-  font-size: sage-font-size(3xl);
-  letter-spacing: 0.05rem; // 0.8px
-  line-height: calc(41 / 33.18);
-}
-
-h3 {
-  font-size: sage-font-size(2xl);
-  letter-spacing: 0.03125rem; // 0.5px
-  line-height: calc(35 / 27.65);
-}
-
-h4 {
-  font-size: sage-font-size(xl);
-  font-weight: sage-font-weight(semibold);
-  letter-spacing: 0.03125rem; // 0.5px
-  line-height: calc(29 / 23.04);
-}
-
-h5 {
-  font-size: sage-font-size(lg);
-  font-weight: sage-font-weight(semibold);
-  line-height: calc(24 / 19.2);
-}
-
-h6 {
-  font-size: sage-font-size(md);
-  font-weight: sage-font-weight(semibold);
-}
-
-p {
-  margin-bottom: sage-spacing();
-
-  &.no-margin-bottom {
-    margin-bottom: 0;
+  // Body-like elements get spacing below
+  p:not([class]),
+  ul:not([class]),
+  ol:not([class]),
+  dl:not([class]),
+  [class*="t-sage-body"] {
+    @include t-block-spacing($sage-body-margin-bottom);
   }
-}
 
-ul,
-ol,
-dl {
-  margin-bottom: sage-spacing();
+  // Heading-like elements get spacing below as well
+  h1:not([class]),
+  h2:not([class]),
+  h3:not([class]),
+  h4:not([class]),
+  h5:not([class]),
+  h6:not([class]),
+  [class*="t-sage-heading-"] {
+    color: $sage-heading-font-color;
 
-  &.no-margin-bottom {
-    margin-bottom: 0;
+    @include t-block-spacing($sage-heading-margin-bottom);
+  }
+
+  // Elements with no classes extend related type specs
+  h1:not([class]) {
+    @extend %t-sage-heading-1;
+  }
+
+  h2:not([class]) {
+    @extend %t-sage-heading-2;
+  }
+
+  h3:not([class]) {
+    @extend %t-sage-heading-3;
+  }
+
+  h4:not([class]) {
+    @extend %t-sage-heading-4;
+  }
+
+  h5:not([class]) {
+    @extend %t-sage-heading-5;
+  }
+
+  h6:not([class]) {
+    @extend %t-sage-heading-6;
+  }
+
+  // Hyperlinks get some default coloring applied
+  a:not([class]) {
+    color: sage-color(primary);
   }
 }
 
 a {
-  color: sage-color(primary);
-
   &:hover,
   &:focus {
     color: inherit;
@@ -103,6 +219,7 @@ hr {
   border-top: sage-border();
 }
 
+// TODO: Cosolidate with other label styles to avoid unnecessary overrides
 label {
   margin-bottom: $sage-form-element-spacing;
 }
