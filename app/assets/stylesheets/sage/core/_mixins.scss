@@ -110,6 +110,30 @@
   left: $offset;
 }
 
+/* ==================================================
+** Icon base
+  Usage: `@include icon-base();`
+
+  Sets up an element to implement the sage icon font and basic settings related
+  to displaying the icon. Usually implemented on a pseudo-element.
+
+  If an `$icon` is passed in this mixin also
+  arguments: $icon | null|[string]
+================================================== */
+
+@mixin icon-base($icon: null) {
+  display: inline-block;
+  text-transform: none;
+  font: normal normal normal 1rem/1 "Sage";
+  speak: none;
+  /* Better Font Rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @if ($icon) {
+    content: sage-icon($icon);
+  }
+}
 
 /* ==================================================
 ** Live Avatar Ring
