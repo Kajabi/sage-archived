@@ -12,11 +12,12 @@ $-live-profile-card-avatar-size: 38px;
   flex-flow: row wrap;
   align-items: center;
   padding: sage-spacing(2xs) sage-spacing(sm);
-  box-shadow: 0 0 1px sage-color(charcoal);
 
   // Specific to preview
   .sage-docs .example__preview > & {
+    margin-top: sage-spacing(xs);
     margin-bottom: sage-spacing(md);
+    box-shadow: 0 2px 6px sage-color(grey, 300);
   }
 }
 

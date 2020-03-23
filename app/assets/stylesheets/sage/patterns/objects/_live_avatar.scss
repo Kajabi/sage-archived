@@ -17,14 +17,14 @@ $-live-avatar-ring-colors: (
 );
 
 .sage-live-avatar {
+  @extend %t-sage-body-small-bold;
+
   display: inline-block;
   position: relative;
   min-width: $-live-avatar-min-size;
   min-height: $-live-avatar-min-size;
   max-width: $-live-avatar-max-size;
   max-height: $-live-avatar-max-size;
-  font-size: sage-font-size(sm);
-  font-weight: sage-font-weight(bold);
   color: sage-color(primary);
 
   // Start a transparent border tucked behind the image and smaller
