@@ -49,16 +49,14 @@ $-live-profile-card-avatar-size: 38px;
 
 .sage-live-profile-card__user-name {
   margin-bottom: 0;
-  font-size: sage-font-size(sm);
-  font-weight: sage-font-weight(medium);
-  line-height: rem(25);
   color: sage-color(charcoal, 500);
+
+  @extend %t-sage-body-small-med;
 }
 
 .sage-live-profile-card__user-email {
   margin-bottom: 0;
-  font-size: sage-font-size(xs);
-  font-weight: sage-font-weight(regular);
-  line-height: rem(20.8);
   color: sage-color(grey, 500);
+
+  @extend %t-sage-body-xsmall;
 }
