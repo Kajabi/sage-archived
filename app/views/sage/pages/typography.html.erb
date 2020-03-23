@@ -31,27 +31,6 @@
     wide range of flexibility for applying a desired style to an element while still using the most semantic element possible
     for a given context.
   </p>
-  <p>As an example, see here how the "Heading 3" type spec can be applied to any element desired:</p>
-</div>
-
-<div class="sage-panel">
-  <h3 class="t-sage-heading-3">Type spec applied to an H3 element</h3>
-  <span class="t-sage-heading-3">Type spec applied to a SPAN element</span>
-  <div class="sage-type">
-    <h3>User-generated content</h3>
-    <p>See how content inside this <code>sage-type</code> container automatically recieves corresponding type specs?</p>
-  </div>
-  <div class="sage-code-snippet">
-    <pre class="prettyprint"><code>&lt;h3 class="t-sage-heading-3"&gt;Type spec applied to an H3 element&lt;/h3&gt;
-&lt;span class="t-sage-heading-3"&gt;Type spec applied to a SPAN element&lt;/span&gt;
-&lt;div class="sage-type"&gt;
-  &lt;h3&gt;User-generated content&lt;/h3&gt;
-  &lt;p&gt;See how content inside this &lt;code&gt;sage-type&lt;/code&gt; container automatically recieves corresponding type specs?&lt;/p&gt;
-&lt;/div&gt;</code></pre>
-  </div>
-</div>
-
-<div class="sage-type">
   <p>
     Setting styles individual styles manually should be avoided, but where needed, should be sure to use the appropriate
     <%= link_to "design tokens", pages_token_url %>.
@@ -158,9 +137,6 @@
   </table>
 
   <p>
-    For setting text in open areas where simpler markup is desired, or where a content management system controls the
-    markup being output, we recommend applying the <code>sage-type</code> class on a container around such content. This
-    leads to some default styling applied to the tags within the container include our preferred colors and block spacing.
     The type specs above map logically to corresponding HTML elements, as well as the following:
   </p>
 
@@ -175,4 +151,54 @@
     </li>
   </ul>
 
+  <p>
+    As an example, see here how the "Heading 3" type spec can be applied to an
+    <code>h3</code> element:
+  </p>
+</div>
+
+<div class="sage-panel">
+  <h3 class="t-sage-heading-3">Lorem ipsum dolor sit</h3>
+  <div class="sage-code-snippet">
+    <pre class="prettyprint"><code>&lt;h3 class="t-sage-heading-3"&gt;Lorem ipsum dolor sit&lt;/h3&gt;</code></pre>
+  </div>
+</div>
+
+<div class="sage-type">
+  <p>
+    But the exact specs can also be applied to any element such as a <code>span</code>.
+    This is not meant to be an excuse for using non-semantic markup, but rather,
+    to free a spec to be applied to the most semantic element in context regardless
+    of the spec's name.
+  </p>
+</div>
+
+<div class="sage-panel">
+  <span class="t-sage-heading-3">Lorem ipsum dolor sit</span>
+  <div class="sage-code-snippet">
+    <pre class="prettyprint"><code>&lt;span class="t-sage-heading-3"&gt;Lorem ipsum dolor sit&lt;/span&gt;</code></pre>
+  </div>
+</div>
+
+<div class="sage-type">
+  <p>
+    For setting text in open areas where simpler markup is desired, or where a
+    content management system controls the markup being output, we recommend applying
+    the <code>sage-type</code> class on a container around such content. This
+    leads to some default styling applied to the tags within the container
+    include our preferred colors and block spacing.
+  </p>
+</div>
+
+<div class="sage-panel">
+  <div class="sage-type">
+    <h3>User-generated content</h3>
+    <p>See how content inside this <code>sage-type</code> container automatically recieves corresponding type specs?</p>
+  </div>
+  <div class="sage-code-snippet">
+    <pre class="prettyprint"><code>&lt;div class="sage-type"&gt;
+  &lt;h3&gt;User-generated content&lt;/h3&gt;
+  &lt;p&gt;See how content inside this &lt;code&gt;sage-type&lt;/code&gt; container automatically recieves corresponding type specs?&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+  </div>
 </div>
