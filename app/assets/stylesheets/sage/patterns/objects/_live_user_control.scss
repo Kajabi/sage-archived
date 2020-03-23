@@ -45,16 +45,14 @@ $-live-user-control-inactive-color-hover: sage-color(grey, 500);
   &::after {
     content: "";
     position: absolute;
-    top: $-live-user-control-focus-offset;
-    right: $-live-user-control-focus-offset;
-    bottom: $-live-user-control-focus-offset;
-    left: $-live-user-control-focus-offset;
-    transform: scale(0.9);
+    transform: scale(0.8);
     border-radius: sage-border(radius-round);
     border: 1px solid currentColor;
     transition: $sage-btn-transition;
     transition-property: opacity, transform;
     opacity: 0;
+
+    @include position-full($-live-user-control-focus-offset);
   }
 }
 
@@ -67,9 +65,8 @@ $-live-user-control-inactive-color-hover: sage-color(grey, 500);
 }
 
 .sage-live-user-control__icon {
-  text-align: center;
+  transform: translate(0.5px, 1px); // Tiny offsets for better viusally centering inside circular frame on focus
   color: inherit;
-  border-radius: sage-border(radius-round);
   transition: $sage-btn-transition;
-  transition-property: background-color;
+  transition-property: color;
 }
