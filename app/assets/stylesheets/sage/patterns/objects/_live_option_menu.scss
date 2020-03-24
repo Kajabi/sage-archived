@@ -23,6 +23,7 @@ $-live-option-menu-width: 224px;
     @include position-full(0);
   }
 
+  // Specific to preview
   .sage-docs .example__preview > & {
     display: flex;
     align-items: center;

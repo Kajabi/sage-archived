@@ -25,7 +25,7 @@ $-live-profile-card-avatar-size: 38px;
   width: $-live-profile-card-avatar-size;
   height: $-live-profile-card-avatar-size;
   margin-top: sage-spacing(2xs);
-  margin-right: 16px;
+  margin-right: sage-spacing(sm);
   margin-bottom: sage-spacing(2xs);
 }
 
@@ -42,20 +42,18 @@ $-live-profile-card-avatar-size: 38px;
   opacity: 0;
 
   .sage-live-profile-card:hover &,
-  &:focus {
+  .sage-live-profile-card:focus-within & {
     opacity: 1;
   }
 }
 
 .sage-live-profile-card__user-name {
-  margin-bottom: 0;
   color: sage-color(charcoal, 500);
 
   @extend %t-sage-body-small-med;
 }
 
 .sage-live-profile-card__user-email {
-  margin-bottom: 0;
   color: sage-color(grey, 500);
 
   @extend %t-sage-body-xsmall;
