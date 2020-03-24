@@ -4,36 +4,28 @@
 
 ================================================== */
 
-.sage-nav {
-  &__link {
-    display: flex;
-    align-items: center;
-    margin: sage-spacing(2xs) 0;
-    padding: sage-spacing(2xs) sage-spacing(xs);
-    font-weight: 500;
-    color: sage-color(charcoal, 400);
-    border-radius: sage-border(radius);
-    &:hover {
-      background: sage-color(grey, 300);
-      i {
-        color: sage-color(primary);
-      }
-    }
-    &--sub {
-      @extend .sage-nav__link;
-      margin: sage-spacing(xs);
-      font-size: sage-font-size(sm);
-      &:hover {
-        background: sage-color(grey, 300);
-      }
-    }
-    &--active {
-      background: sage-color(grey, 300);
-    }
-    i {
-      margin-right: sage-spacing(xs);
-      font-size: sage-spacing();
-      color: sage-color(grey, 500);
-    }
+.sage-nav__link {
+  display: flex;
+  align-items: center;
+  padding: sage-spacing(2xs) sage-spacing(xs);
+  color: sage-color(charcoal, 400);
+  border-radius: sage-border(radius);
+
+  &:not(.sage-nav__link--sub) {
+    @extend %t-sage-body-med;
   }
+
+  &:hover {
+    background: sage-color(grey, 300);
+  }
+}
+
+.sage-nav__link--sub {
+  margin-left: sage-spacing(xs);
+
+  @extend %t-sage-body-small-med;
+}
+
+.sage-nav__link--active {
+  background: sage-color(grey, 300);
 }
