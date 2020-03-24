@@ -87,7 +87,7 @@ $-live-option-menu-width: 224px;
   text-align: left;
 
   &::after {
-    $-live-option-menu-focus-offset: 50%;
+    $-live-option-menu-focus-offset-inline: 50%;
     content: "";
     display: block;
     position: absolute;
