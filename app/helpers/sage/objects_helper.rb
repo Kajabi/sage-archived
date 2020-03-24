@@ -28,7 +28,7 @@ module Sage
         },
         {
           title: "live_profile_card",
-          description: "Live Profile Cards are used to show the users logged into a Live session. Their role in the session will affect what content is visible and whether or not they are also given a ring around their avatar.",
+          description: "Live Profile Cards are used to show the users logged into a Live session. Their role in the session will affect what content is visible and whether or not they are also given a ring around their avatar. They are organized into groups based on their role in the meeting.",
           scss_design:  "done",
           scss_dev:     "done",
           scss_doc:     "done",
