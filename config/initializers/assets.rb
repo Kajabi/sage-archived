@@ -8,5 +8,10 @@ Rails.application.config.assets.version = '1.0'
 
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
-Rails.application.config.assets.precompile += %w( sage_docs.js )
-Rails.application.config.assets.precompile += %w( sage.js )
+Rails.application.config.assets.precompile << /\.(?:svg|png|jpg|eot|woff|ttf)$/
+
+Rails.application.config.assets.precompile += %w( sage/sage_system.css )
+Rails.application.config.assets.precompile += %w( sage/sage_docs.css )
+
+Rails.application.config.assets.precompile += %w( sage/sage_system.js )
+Rails.application.config.assets.precompile += %w( sage/sage_docs.js )
