@@ -5,7 +5,10 @@
 
 ================================================== */
 
+$-live-option-menu-button-height: 40px;
 $-live-option-menu-offset-inline: 10px;
+$-live-option-menu-offset-block: 24px;
+$-live-option-menu-width: 224px;
 
 .sage-live-option-menu-anchor {
   position: relative;
@@ -42,16 +45,17 @@ $-live-option-menu-offset-inline: 10px;
 
 .sage-live-option-menu {
   position: absolute;
-  top: 24px;
+  top: $-live-option-menu-offset-block;
   z-index: sage-z-index(modal);
   transform: rotate3d(1, 0, 0, -90deg);
   transform-origin: top center;
   min-width: min-content;
-  width: 224px;
+  width: $-live-option-menu-width;
   padding: 0;
   background-color: sage-color(white);
   box-shadow: sage-shadow(md);
-  transition: 0.1s ease-in-out transform;
+  transition: $sage-btn-transition;
+  transition-property: transform;
 
   &:not(.sage-live-option-menu--anchored-left) {
     right: $-live-option-menu-offset-inline;
@@ -78,7 +82,7 @@ $-live-option-menu-offset-inline: 10px;
 
   position: relative;
   width: 100%;
-  height: 40px;
+  height: $-live-option-menu-button-height;
   padding: 0 sage-spacing(sm);
   text-align: left;
 
@@ -87,9 +91,9 @@ $-live-option-menu-offset-inline: 10px;
     content: "";
     display: block;
     position: absolute;
-    right: $-live-option-menu-focus-offset;
+    right: $-live-option-menu-focus-offset-inline;
     bottom: 0;
-    left: $-live-option-menu-focus-offset;
+    left: $-live-option-menu-focus-offset-inline;
     border-bottom: 2px solid transparent;
     transition: 0.1s ease-in-out;
     transition-property: border-bottom-color, left, right;

@@ -39,11 +39,11 @@
   }
 }
 
-// TODO: Re-evaluate whethere these need to be "on" these elemets by default.
+// TODO: Re-evaluate whether these need to be "on" these elemets by default.
 button,
 input[type="submit"],
 input[type="search"] {
-  .sage-type & {
+  .sage-type & { // Enables this only in user-generated content or open text boxes
     @include button-style-base;
   }
 }
