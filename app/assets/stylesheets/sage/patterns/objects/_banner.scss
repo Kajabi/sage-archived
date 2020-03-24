@@ -4,23 +4,12 @@
 
 ================================================== */
 
-// TODO: clean up mixin to remove extend
-@mixin sage-banner-color($name, $color) {
-  &--#{$name} {
-    @extend .sage-banner;
-    border-color: sage-color($color);
-    background: sage-color($color, 100);
-
-    .sage-banner {
-      &__title {
-        color: sage-color($color, 500);
-      }
-      &__copy {
-        color: sage-color($color, 400);
-      }
-    }
-  }
-}
+$-banner-colors: (
+  primary: primary,
+  success: sage,
+  warning: yellow,
+  danger: red
+);
 
 .sage-banner {
   margin-bottom: sage-spacing();
@@ -30,20 +19,35 @@
   border-bottom-left-radius: sage-border(radius);
   border-bottom-left-radius: sage-border(radius);
   box-shadow: sage-shadow();
+}
 
-  &__title {
-    margin-bottom: 0;
-    color: sage-color(charcoal, 500);
-    font-weight: sage-font-weight(simibold);
+@each $name, $color in $-banner-colors {
+  .sage-banner--#{$name} {
+    border-color: sage-color($color);
+    background: sage-color($color, 100);
   }
+}
 
-  &__copy {
-    margin-bottom: 0;
-    font-size: sage-font-size(sm);
+.sage-banner__title {
+  color: sage-color(charcoal, 500);
+
+  @extend %t-sage-body-semi;
+
+  @each $name, $color in $-banner-colors {
+    .sage-banner--#{$name} & {
+      color: sage-color($color, 500);
+    }
   }
+}
 
-  @include sage-banner-color(primary, primary);
-  @include sage-banner-color(success, sage);
-  @include sage-banner-color(warning, yellow);
-  @include sage-banner-color(danger, red);
+.sage-banner__copy {
+  color: sage-color(charcoal, 300);
+
+  @extend %t-sage-body-small;
+
+  @each $name, $color in $-banner-colors {
+    .sage-banner--#{$name} & {
+      color: sage-color($color, 400);
+    }
+  }
 }
