@@ -56,6 +56,7 @@ module Sage
           tokens: [
             { name: "sm" },
             { name: "md" },
+            { name: "lg" },
           ]
         },
         {

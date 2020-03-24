@@ -1,0 +1,10 @@
+@function sage-font-height($key: md) {
+  $value: map-get($sage-font-heights, $key);
+  @return $value;
+}
+
+$sage-font-heights: (
+  sm: 1.25,
+  md: 1.5,
+  lg: 1.875
+);
