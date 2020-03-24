@@ -24,7 +24,7 @@
   transition: background 0.3s ease-out;
   cursor: pointer;
 
-  + label {
+  + .sage-switch__label {
     display: inline-block;
     margin-left: sage-spacing(2xs);
     vertical-align: top;
@@ -101,7 +101,7 @@
     &:checked {
       background: $sage-switch-color-disabled-checked;
 
-      + label {
+      + .sage-switch__label {
         color: $sage-switch-color-disabled-checked-text;
       }
     }
