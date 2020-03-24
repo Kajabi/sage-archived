@@ -198,6 +198,10 @@ body {
     @extend %t-sage-heading-6;
   }
 
+  p:not([class]) {
+    @extend %t-sage-body;
+  }
+
   // Hyperlinks get some default coloring applied
   a:not([class]) {
     color: sage-color(primary);
