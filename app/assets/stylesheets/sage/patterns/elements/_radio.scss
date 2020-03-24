@@ -6,6 +6,11 @@
 ================================================== */
 
 .sage-radio {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  margin-bottom: $sage-form-element-spacing;
+
   input[type="radio"] {
     display: inline-block;
     position: relative;
@@ -24,11 +29,11 @@
 
     + label {
       display: inline-block;
-      margin-left: sage-spacing(2xs);
-      font-size: sage-font-size();
-      line-height: sage-line-height();
+      margin-left: sage-spacing(sm);
       vertical-align: top;
       cursor: pointer;
+
+      @extend %t-sage-body;
     }
 
     &::before,

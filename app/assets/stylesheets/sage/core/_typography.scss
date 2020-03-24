@@ -101,7 +101,6 @@ $type-specs: (
   )),
 
   // Additional custom specs
-  // TBD
 );
 
 // Automate setting up base specs to extend in context.
@@ -221,5 +220,5 @@ hr {
 
 // TODO: Cosolidate with other label styles to avoid unnecessary overrides
 label {
-  margin-bottom: $sage-form-element-spacing;
+  // margin-bottom: $sage-form-element-spacing;
 }

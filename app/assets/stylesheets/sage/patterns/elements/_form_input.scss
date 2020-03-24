@@ -15,22 +15,22 @@
 
 .sage-input__label {
   position: absolute;
-  transform: translateY(calc(#{$sage-inputfield-font-size} * -1));
+  transform: translateY(calc(#{$sage-body-font-size} * -1));
   left: $sage-inputfield-padding;
   top: 50%;
   color: inherit;
-  font-size: $sage-inputfield-label-font-size; // 11px
-  font-weight: $sage-inputfield-label-font-weight;
   pointer-events: none;
   opacity: 0;
+
+  @extend %t-sage-body-xsmall-semi;
 }
 
 .sage-input__field {
-  $-ie-label-offset: -($sage-inputfield-font-size + $sage-inputfield-padding-filled);
+  $-ie-label-offset: -($sage-body-font-size + $sage-inputfield-padding-filled);
 
   @mixin floating-label {
     transform: translateY($-ie-label-offset); // IE doesn't support calc in transforms
-    transform: translateY(calc(-50% - (#{$sage-inputfield-font-size} - #{$sage-inputfield-padding-filled})));
+    transform: translateY(calc(-50% - (#{$sage-body-font-size} - #{$sage-inputfield-padding-filled})));
     opacity: 1;
   }
 
@@ -108,4 +108,3 @@
     cursor: not-allowed;
   }
 }
-
