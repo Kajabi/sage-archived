@@ -19,13 +19,10 @@
 @import "sage/tokens/spacing";
 @import "sage/tokens/z_index";
 
-// Mixins
-@import "sage/core/mixins";
-
-// Global Variables
-@import "sage/core/variables";
-
 // Base Styles
+@import "sage/core/functions";
+@import "sage/core/variables";
+@import "sage/core/mixins";
 @import "sage/core/fonts";
 @import "sage/core/icons";
 @import "sage/core/animations";
