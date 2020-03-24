@@ -92,7 +92,7 @@
       box-shadow: none;
     }
 
-    + label {
+    + .sage-switch__label {
       color: $sage-switch-color-disabled-text;
       cursor: inherit;
     }
