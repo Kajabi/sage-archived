@@ -22,10 +22,7 @@ $-live-user-control-inactive-color-hover: sage-color(grey, 500);
   position: relative;
   width: $-live-user-control-size;
   height: $-live-user-control-size;
-  margin: 0;
-  padding: 0;
   color: $-live-user-control-color;
-  box-shadow: none;
   border: 0;
   border-radius: sage-border(radius-round);
 
@@ -65,7 +62,7 @@ $-live-user-control-inactive-color-hover: sage-color(grey, 500);
 }
 
 .sage-live-user-control__icon {
-  transform: translate(0.5px, 1px); // Tiny offsets for better viusally centering inside circular frame on focus
+  transform: translate(0.5px, 2px); // Tiny offsets for better viusally centering inside circular frame on focus
   color: inherit;
   transition: $sage-btn-transition;
   transition-property: color;
