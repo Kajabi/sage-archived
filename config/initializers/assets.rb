@@ -13,5 +13,5 @@ Rails.application.config.assets.precompile << /\.(?:svg|png|jpg|eot|woff|ttf)$/
 Rails.application.config.assets.precompile += %w( sage/sage_system.css )
 Rails.application.config.assets.precompile += %w( sage/sage_docs.css )
 
-Rails.application.config.assets.precompile += %w( sage_docs.js )
-Rails.application.config.assets.precompile += %w( sage.js )
+Rails.application.config.assets.precompile += %w( sage/sage_system.js )
+Rails.application.config.assets.precompile += %w( sage/sage_docs.js )
