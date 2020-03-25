@@ -12,7 +12,7 @@
   margin-bottom: $sage-form-element-spacing;
   color: $sage-switch-color-default-text;
 
-  input[type="checkbox"] {
+  .sage-switch__input {
     display: inline-block;
     position: relative;
     height: $sage-switch-height;
@@ -27,7 +27,7 @@
     transition: background 0.3s ease-out;
     cursor: pointer;
 
-    + label {
+    + .sage-switch__label {
       display: inline-block;
       margin-left: sage-spacing(sm);
       vertical-align: top;
@@ -64,6 +64,14 @@
       border-radius: sage-border(radius-round);
       box-shadow: 0 1px 2px rgba(0, 0, 0, 0.18), 0 1px 3px rgba(0, 0, 0, 0.1);
       transition: transform 0.2s ease-in-out;
+    }
+
+    &:invalid {
+      background-color: sage-color(red);
+
+      + .sage-switch__label {
+        color: sage-color(red);
+      }
     }
 
     // checked
