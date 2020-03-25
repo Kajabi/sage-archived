@@ -6,7 +6,7 @@
 
 $-live-avatar-min-size: rem(36);
 $-live-avatar-max-size: rem(128);
-$-live-avatar-ring-transition: $sage-btn-transition;
+$-live-avatar-ring-transition: $sage-transition;
 $-live-avatar-ring-colors: (
   charcoal,
   purple,
@@ -49,7 +49,7 @@ $-live-avatar-ring-colors: (
     justify-content: center;
     align-items: center;
     position: absolute;
-    z-index: 1;
+    z-index: sage-z-index(default, 1);
     color: sage-color(primary);
     border-radius: sage-border(radius-round);
     background-color: sage-color(primary, 100);
@@ -72,7 +72,7 @@ $-live-avatar-ring-colors: (
 }
 
 .sage-live-avatar--ring {
-  @include sage-live-avatar-ring();
+  @include sage-feature-live-avatar-ring();
 }
 
 // Set up color variations
@@ -94,14 +94,14 @@ $-live-avatar-ring-colors: (
     }
 
     &.sage-live-avatar--ring {
-      @include sage-live-avatar-ring($color);
+      @include sage-feature-live-avatar-ring($color);
     }
   }
 }
 
 .sage-live-avatar__image {
   position: relative;
-  z-index: 2;
+  z-index: sage-z-index(default, 2);
   max-width: 100%;
   max-height: 100%;
   border-radius: sage-border(radius-round);

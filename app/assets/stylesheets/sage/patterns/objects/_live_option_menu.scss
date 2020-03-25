@@ -5,10 +5,10 @@
 
 ================================================== */
 
-$-live-option-menu-button-height: 40px;
-$-live-option-menu-offset-inline: 10px;
-$-live-option-menu-offset-block: 24px;
-$-live-option-menu-width: 224px;
+$-live-option-menu-button-height: rem(40px);
+$-live-option-menu-offset-inline: rem(10px);
+$-live-option-menu-offset-block: rem(24px);
+$-live-option-menu-width: rem(224px);
 
 .sage-live-option-menu-anchor {
   position: relative;
@@ -25,11 +25,12 @@ $-live-option-menu-width: 224px;
 
   // Specific to preview
   .sage-docs .example__preview > & {
+    $-live-option-menu-anchro-demo-size: rem(48px);
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 48px;
-    height: 48px;
+    width: $-live-option-menu-anchro-demo-size;
+    height: $-live-option-menu-anchro-demo-size;
     margin-left: auto;
     border: 1px solid sage-color(charcoal);
     border-radius: sage-border(radius-round);
@@ -55,7 +56,7 @@ $-live-option-menu-width: 224px;
   padding: 0;
   background-color: sage-color(white);
   box-shadow: sage-shadow(md);
-  transition: $sage-btn-transition;
+  transition: $sage-transition;
   transition-property: transform;
 
   &:not(.sage-live-option-menu--anchored-left) {

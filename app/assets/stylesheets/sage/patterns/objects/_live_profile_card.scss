@@ -5,7 +5,7 @@
 
 ================================================== */
 
-$-live-profile-card-avatar-size: 38px;
+$-live-profile-card-avatar-size: rem(38px);
 
 .sage-live-profile-cards {
   padding: 0;
@@ -33,7 +33,7 @@ $-live-profile-card-avatar-size: 38px;
 }
 
 .sage-live-profile-card__info {
-  margin-right: 16px;
+  margin-right: sage-spacing(sm);
 }
 
 .sage-live-profile-card__options {

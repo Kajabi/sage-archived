@@ -126,9 +126,6 @@
   text-transform: none;
   font: normal normal normal 1rem/1 "Sage";
   speak: none;
-  /* Better Font Rendering */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 
   @if ($icon) {
     content: sage-icon($icon);
@@ -143,7 +140,7 @@
   arguments: $color | [valid system color]
 ================================================== */
 
-@mixin sage-live-avatar-ring($color: primary) {
+@mixin sage-feature-live-avatar-ring($color: primary) {
   $-live-avatar-ring-offset: -($sage-live-avatar-ring-width + 2px);
   $-live-avatar-right-color: sage-color($color);
 

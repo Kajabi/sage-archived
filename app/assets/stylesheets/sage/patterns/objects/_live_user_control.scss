@@ -5,8 +5,8 @@
 
 ================================================== */
 
-$-live-user-control-size: 36px;
-$-live-user-control-icon-size: 24px;
+$-live-user-control-size: rem(36px);
+$-live-user-control-icon-size: rem(24px);
 $-live-user-control-focus-offset: 0;
 $-live-user-control-focus-width: $sage-btn-focus-outline-width * 1px;
 $-live-user-control-color: $sage-btn-primary-bg-color;
@@ -23,6 +23,7 @@ $-live-user-control-inactive-color-hover: sage-color(grey, 500);
   width: $-live-user-control-size;
   height: $-live-user-control-size;
   color: $-live-user-control-color;
+  background-color: transparent;
   border: 0;
   border-radius: sage-border(radius-round);
 
@@ -45,7 +46,7 @@ $-live-user-control-inactive-color-hover: sage-color(grey, 500);
     transform: scale(0.8);
     border-radius: sage-border(radius-round);
     border: 1px solid currentColor;
-    transition: $sage-btn-transition;
+    transition: $sage-transition;
     transition-property: opacity, transform;
     opacity: 0;
 
@@ -64,6 +65,6 @@ $-live-user-control-inactive-color-hover: sage-color(grey, 500);
 .sage-live-user-control__icon {
   transform: translate(0.5px, 2px); // Tiny offsets for better viusally centering inside circular frame on focus
   color: inherit;
-  transition: $sage-btn-transition;
+  transition: $sage-transition;
   transition-property: color;
 }
