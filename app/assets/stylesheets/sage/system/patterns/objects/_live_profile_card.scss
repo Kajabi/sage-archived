@@ -39,7 +39,10 @@ $-live-profile-card-avatar-size: rem(38px);
 .sage-live-profile-card__options {
   opacity: 0;
 
-  .sage-live-profile-card:hover &,
+  .sage-live-profile-card:hover & {
+    opacity: 1;
+  }
+
   .sage-live-profile-card:focus-within & {
     opacity: 1;
   }
