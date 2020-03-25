@@ -3,14 +3,14 @@ class SageObjectGenerator < Rails::Generators::NamedBase
   def create_sage_object
 
     # Style Variables
-    style_file = "app/assets/stylesheets/sage/patterns/objects/_#{file_name}.scss"
-    style_include_file = "app/assets/stylesheets/sage.css.scss"
+    style_file = "app/assets/stylesheets/sage/system/patterns/objects/_#{file_name}.scss"
+    style_include_file = "app/assets/stylesheets/sage/sage_system.css.scss"
     style_include_line = "// Objects"
     # Create Style File
     template "style.scss", style_file
     # Include Style File
     gsub_file style_include_file, /(#{Regexp.escape(style_include_line)})/mi do |match|
-      "#{match}\n@import \"sage/patterns/objects/#{file_name}\";"
+      "#{match}\n@import \"system/patterns/objects/#{file_name}\";"
     end
     
     # Markup Variables

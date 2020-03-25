@@ -196,7 +196,7 @@ $sage-switch-toggle-size: 1.25rem !default;
 // Focus state
 $sage-switch-focus-outline-spacing: sage-spacing(2xs) !default;
 $sage-switch-focus-outline-width: 1 !default;
-$sage-switch-focus-outline-color: currentColor !default;
+$sage-switch-focus-outline-color: sage-color(primary) !default;
 
 
 // ==================================================
