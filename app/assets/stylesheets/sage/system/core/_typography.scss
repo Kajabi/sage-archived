@@ -218,3 +218,8 @@ hr {
   border: 0;
   border-top: sage-border();
 }
+
+// TODO: Cosolidate with other label styles to avoid unnecessary overrides
+label {
+  // margin-bottom: $sage-form-element-spacing;
+}
