@@ -13,12 +13,12 @@ $sage-icon-li-margin-right: 0.4em !default;
 
 @font-face {
   font-family: "Sage";
-  src: url("#{$sage-icon-font-path}/Sage.eot");
-  src: url("#{$sage-icon-font-path}/Sage.eot") format("embedded-opentype"),
-    url("#{$sage-icon-font-path}/Sage.woff2") format("woff2"),
-    url("#{$sage-icon-font-path}/Sage.woff") format("woff"),
-    url("#{$sage-icon-font-path}/Sage.ttf") format("truetype"),
-    url("#{$sage-icon-font-path}/Sage.svg") format("svg");
+  src: asset-url("#{$sage-icon-font-path}/Sage.eot");
+  src: asset-url("#{$sage-icon-font-path}/Sage.eot") format("embedded-opentype"),
+    asset-url("#{$sage-icon-font-path}/Sage.woff2") format("woff2"),
+    asset-url("#{$sage-icon-font-path}/Sage.woff") format("woff"),
+    asset-url("#{$sage-icon-font-path}/Sage.ttf") format("truetype"),
+    asset-url("#{$sage-icon-font-path}/Sage.svg") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -43,15 +43,7 @@ $sage-icon-li-margin-right: 0.4em !default;
 // Base class definition
 // ==================================================
 
-%sage-icon {
-  display: inline-block;
-  text-transform: none;
-  font: normal normal normal 1em/1 "Sage";
-  speak: none;
-  /* Better Font Rendering */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
+%sage-icon-extensions {
   &.is-spinning {
     animation: sage-icon-spin 2s infinite linear;
   }
@@ -80,9 +72,8 @@ $sage-icon-li-margin-right: 0.4em !default;
 // Build icons as `sage-icon-icon-name` based on the map in `tokens/_icon`
 @each $icon-name, $icon-code in $sage-icons {
   .sage-icon-#{$icon-name}::before {
-    @extend %sage-icon;
-
-    content: sage-icon($icon-name);
+    @include icon-base($icon-name);
+    @extend %sage-icon-extensions;
   }
 }
 

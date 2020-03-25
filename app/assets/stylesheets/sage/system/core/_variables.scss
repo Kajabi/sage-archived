@@ -14,6 +14,11 @@
 
 
 // ==================================================
+// MISC GLOBAL STANDARDS
+// ==================================================
+$sage-transition: 0.1s ease-in-out !default;
+
+// ==================================================
 // TYPOGRAPHY
 // ==================================================
 
@@ -59,7 +64,7 @@ $sage-form-element-spacing: 1rem !default;
 // ==================================================
 
 // Base styles
-$sage-btn-transition: 0.1s ease-in-out !default;
+$sage-btn-transition: $sage-transition !default;
 $sage-btn-border-width: 0.125rem !default;
 $sage-btn-border-radius: sage-border(radius) !default;
 $sage-btn-letter-spacing: $sage-body-letter-spacing !default;
@@ -73,14 +78,16 @@ $sage-btn-focus-outline-color: currentColor !default;
 
 // Primary button
 $sage-btn-primary-bg-color: sage-color(primary) !default;
-$sage-btn-primary-text-color: #fff !default;
+$sage-btn-primary-bg-active-color: darken($sage-btn-primary-bg-color, 11%) !default;
+$sage-btn-primary-bg-hover-color: lighten($sage-btn-primary-bg-color, 9%) !default;
+$sage-btn-primary-text-color: sage-color(white) !default;
 
 // Secondary button
 $sage-btn-secondary-text-color: sage-color(charcoal, 400) !default;
 
 // Danger button
 $sage-btn-danger-bg-color: sage-color(red) !default;
-$sage-btn-danger-text-color: #fff !default;
+$sage-btn-danger-text-color: sage-color(white) !default;
 
 // Menu button
 $sage-menubtn-toggle-size: 1.5rem !default; // 24px
@@ -143,7 +150,7 @@ $sage-checkbox-transition: 0.15s ease-in-out !default;
 $sage-checkbox-marker-border: 0.125rem !default;
 $sage-checkbox-marker-height: 0.75rem !default;
 $sage-checkbox-marker-width: 0.375rem !default;
-$sage-checkbox-marker-color: #fff !default;
+$sage-checkbox-marker-color: sage-color(white) !default;
 $sage-checkbox-marker-rotate: 42.5deg !default;
 $sage-checkbox-marker-offset: $sage-checkbox-marker-border * 2 !default;
 
@@ -168,7 +175,7 @@ $sage-radio-button-size: 1.5rem !default;
 $sage-radio-border-radius: sage-border(radius-round) !default;
 $sage-radio-transition: 0.15s ease-in-out !default;
 $sage-radio-selected-indicator-size: 1rem !default;
-$sage-radio-selected-indicator-color: #fff !default;
+$sage-radio-selected-indicator-color: sage-color(white) !default;
 
 // Focus state
 $sage-radio-focus-outline-size: sage-spacing(2xs) !default;
@@ -230,7 +237,7 @@ $sage-overlay-transition-backdrop-filter: backdrop-filter 0.7s ease-in-out !defa
 // PANEL
 // ==================================================
 
-$sage-panel-bg-color: #fff !default;
+$sage-panel-bg-color: sage-color(white) !default;
 $sage-panel-padding: sage-spacing(lg) !default;
 $sage-panel-border-radius: sage-border(radius) !default;
 $sage-panel-box-shadow: sage-shadow(sm) !default;
@@ -278,8 +285,8 @@ $sage-live-avatar-ring-width: 1px !default;
 // ==================================================
 
 $tooltip-background-color: sage-color(charcoal, 400) !default;
-$tooltip-light-background-color: #fff !default;
-$tooltip-font-color: #fff !default;
+$tooltip-light-background-color: sage-color(white) !default;
+$tooltip-font-color: sage-color(white) !default;
 $tooltip-light-font-color: sage-color(charcoal, 400) !default;
 $tooltip-padding: sage-spacing(2xs) sage-spacing(sm) !default;
 $tooltip-zindex: sage-z_index(nuclear) !default;

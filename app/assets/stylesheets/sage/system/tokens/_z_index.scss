@@ -4,9 +4,9 @@
   Z-index system
 ================================================== */
 
-@function sage-z-index($key: default) {
+@function sage-z-index($key: default, $increment: 0) {
   $value: map-get($sage-z-indexes, $key);
-  @return $value;
+  @return $value + $increment;
 }
 
 $sage-z-indexes: (
