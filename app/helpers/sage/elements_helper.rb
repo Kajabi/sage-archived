@@ -15,7 +15,7 @@ module Sage
         # Sage Generated Elements
         {
           title: "tooltip",
-          description: "Tooltips display helpful text when users hover over an element.", 
+          description: "Tooltips display helpful text when users hover over an element.",
           scss_design:  "done",
           scss_dev:     "done",
           scss_doc:     "done",
@@ -80,7 +80,7 @@ module Sage
         },
         {
           title: "switch",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+          description: "Checkbox or radio element styled to appear as a toggle",
           scss_design:  "todo",
           scss_dev:     "todo",
           scss_doc:     "todo",
