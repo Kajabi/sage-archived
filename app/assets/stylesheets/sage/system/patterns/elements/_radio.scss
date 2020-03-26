@@ -21,8 +21,8 @@
     color: $sage-radio-color-default;
     vertical-align: top;
     outline: none;
-    background-color: #fff;
-    border: 1px solid $sage-radio-color-default;
+    background-color: sage-color(white);
+    border: rem(1px) solid $sage-radio-color-default;
     border-radius: $sage-radio-border-radius;
     transition: background 0.2s ease-in-out, box-shadow $sage-radio-transition, border $sage-radio-transition;
     cursor: pointer;

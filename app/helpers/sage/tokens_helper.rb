@@ -93,6 +93,8 @@ module Sage
           tokens: [
             { name: "default" },
             { name: "radius" },
+            { name: "radius-large" },
+            { name: "radius-round" },
           ]
         },
         {
