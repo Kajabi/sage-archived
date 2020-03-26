@@ -8,28 +8,28 @@
 if (document.querySelector('.sage-docs') !== null) {
 
   // Variables
-  const sageBody = document.querySelector('.sage-docs').classList;
-  const sageToggleBtn = document.querySelector('[data-js="sage-sidebar-menu"]');
-  const sageNavOverlay = document.querySelector('.sage-overlay');
+  var sageBody = document.querySelector('.sage-docs').classList;
+  var sageToggleBtn = document.querySelector('[data-js="sage-sidebar-menu"]');
+  var sageNavOverlay = document.querySelector('.sage-overlay');
 
 
   // Functions
 
   // toggle overlay display
   // TODO: move to global utils
-  const toggleOverlay = function (overlayClass) {
-    const bodyClassName = overlayClass ? overlayClass : 'overlay-is-open';
+  var toggleOverlay = function (overlayClass) {
+    var bodyClassName = overlayClass ? overlayClass : 'overlay-is-open';
     return sageBody.contains(bodyClassName) ? sageBody.remove(bodyClassName) : sageBody.add(bodyClassName);
   };
 
   // retrieve button target id
-  const getBtnTarget = function(e) {
+  var getBtnTarget = function(e) {
     return e.target.getAttribute('aria-controls') ? e.target.getAttribute('aria-controls') : e.target.getAttribute('data-js');
   };
 
   // reset sidenav state to closed/default
-  const resetSideNav = function() {
-    const openSidebar = document.querySelector('.sage-sidebar');
+  var resetSideNav = function() {
+    var openSidebar = document.querySelector('.sage-sidebar');
 
     openSidebar.classList.remove('is-open');
     sageToggleBtn.setAttribute('aria-expanded', false);
@@ -41,7 +41,7 @@ if (document.querySelector('.sage-docs') !== null) {
 
   // Toggle sidebar on menu button click
   sageToggleBtn.addEventListener('click', function(e) {
-    const buttonTarget = document.getElementById(getBtnTarget(e));
+    var buttonTarget = document.getElementById(getBtnTarget(e));
 
     buttonTarget.classList.toggle('is-open');
 
@@ -63,7 +63,7 @@ if (document.querySelector('.sage-docs') !== null) {
 
   // Close overlay and menu on esc keypress
   document.addEventListener('keyup', function(e) {
-    const keyNum = 'which' in e ? e.which : e.keyCode;
+    var keyNum = 'which' in e ? e.which : e.keyCode;
 
     if (keyNum === 27 && document.querySelector('.sage-sidebar.is-open') !== null) {  // esc key
       resetSideNav();
@@ -72,8 +72,8 @@ if (document.querySelector('.sage-docs') !== null) {
 
   // Simulate contextual menu
   document.querySelector('.sage-live-option-menu-anchor').addEventListener('click', function(e) {
-    const target = e.currentTarget;
-    const isExpanded = target.getAttribute('aria-expanded') == 'true';
+    var target = e.currentTarget;
+    var isExpanded = target.getAttribute('aria-expanded') == 'true';
     target.setAttribute('aria-expanded', !isExpanded);
   });
 

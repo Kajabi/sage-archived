@@ -133,12 +133,6 @@ $sage-inputfield-bg-disabled: sage-color(grey, 100) !default;
 // TEXTAREAS
 // ==================================================
 
-$sage-textarea-font-size: $sage-inputfield-font-size !default;
-$sage-textarea-line-height: sage-font-height(lg) !default;
-$sage-textarea-letter-spacing: $sage-inputfield-letter-spacing !default;
-$sage-textarea-label-font-size: sage-font-size(xs) !default;
-$sage-textarea-label-line-height: 1 !default;
-
 // Border
 $sage-textarea-border-color: $sage-inputfield-border-color !default;
 $sage-textarea-border-radius: $sage-inputfield-border-radius !default;
@@ -150,7 +144,7 @@ $sage-textarea-label-padding-top: rem(12) !default;
 $sage-textarea-label-padding-bottom: rem(6) !default;
 $sage-textarea-label-margin-bottom: 0 !default;
 $sage-textarea-padding: $sage-inputfield-padding !default;
-$sage-textarea-padding-filled: $sage-textarea-label-font-size + $sage-textarea-label-padding-top + $sage-textarea-label-padding-bottom !default; // height of label
+$sage-textarea-padding-filled: $sage-body-font-size + $sage-textarea-label-padding-top + $sage-textarea-label-padding-bottom !default; // height of label
 
 // Sizing
 $sage-textarea-min-height: rem(130) !default;
