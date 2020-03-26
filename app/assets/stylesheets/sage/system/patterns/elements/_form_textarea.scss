@@ -13,6 +13,8 @@
 }
 
 .sage-textarea__label {
+  @extend %t-sage-body-xsmall-semi;
+
   position: absolute;
   left: $sage-textarea-padding;
   top: $sage-textarea-border-width;
@@ -21,8 +23,6 @@
   padding-top: $sage-textarea-label-padding-top;
   padding-bottom: $sage-textarea-label-padding-bottom;
   color: inherit;
-  font-size: $sage-textarea-label-font-size;
-  font-weight: $sage-textarea-label-font-weight;
   line-height: $sage-textarea-label-line-height;
   background-color: $sage-textarea-label-bg-color;
   pointer-events: none;

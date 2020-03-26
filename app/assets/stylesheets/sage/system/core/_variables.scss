@@ -136,8 +136,7 @@ $sage-inputfield-bg-disabled: sage-color(grey, 100) !default;
 $sage-textarea-font-size: $sage-inputfield-font-size !default;
 $sage-textarea-line-height: sage-font-height(lg) !default;
 $sage-textarea-letter-spacing: $sage-inputfield-letter-spacing !default;
-$sage-textarea-label-font-size: $sage-inputfield-label-font-size !default;
-$sage-textarea-label-font-weight: $sage-inputfield-label-font-weight !default;
+$sage-textarea-label-font-size: sage-font-size(xs) !default;
 $sage-textarea-label-line-height: 1 !default;
 
 // Border
