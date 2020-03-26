@@ -78,7 +78,7 @@
   transition: transform 0.2s ease-out, opacity 0.15s ease-in-out;
 
   &:not(:first-child) {
-    margin-top: rem(6);
+    margin-top: rem(6px);
   }
 
   &:nth-child(1) {

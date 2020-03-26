@@ -14,7 +14,7 @@
   @extend %t-sage-body-med;
 
   position: relative;
-  padding: rem(12) sage-spacing(sm);
+  padding: rem(12px) sage-spacing(sm);
   margin-bottom: sage-spacing(sm);
   margin-right: sage-spacing(2xs);
   letter-spacing: $sage-btn-letter-spacing;
