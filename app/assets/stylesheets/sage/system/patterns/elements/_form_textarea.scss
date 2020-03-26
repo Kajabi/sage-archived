@@ -1,0 +1,106 @@
+/* ==================================================
+  ** form_textarea
+  type: element
+
+================================================== */
+
+.sage-textarea {
+  position: relative;
+
+  &:not(:last-child) {
+    margin-bottom: $sage-textarea-spacing;
+  }
+}
+
+.sage-textarea__label {
+  position: absolute;
+  left: $sage-textarea-padding;
+  top: $sage-textarea-border-width;
+  width: $sage-textarea-label-width;
+  margin-bottom: $sage-textarea-label-margin-bottom;
+  padding-top: $sage-textarea-label-padding-top;
+  padding-bottom: $sage-textarea-label-padding-bottom;
+  color: inherit;
+  font-size: $sage-textarea-label-font-size;
+  font-weight: $sage-textarea-label-font-weight;
+  line-height: $sage-textarea-label-line-height;
+  background-color: $sage-textarea-label-bg-color;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.sage-textarea__field {
+  min-height: $sage-textarea-min-height;
+  height: $sage-textarea-height;
+  width: $sage-textarea-width;
+  padding: $sage-textarea-padding $sage-textarea-padding $sage-textarea-padding;
+  color: $sage-textarea-color-default;
+  line-height: $sage-textarea-line-height;
+  border: $sage-textarea-border-width solid $sage-textarea-border-color;
+  border-radius: $sage-textarea-border-radius;
+  background: $sage-textarea-bg-default;
+  transition: border 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+
+  @include placeholder {
+    color: inherit;
+  }
+
+  &:focus:not(:disabled),
+  &:active:not(:disabled) {
+    padding-top: $sage-textarea-padding-filled;
+    border-color: currentColor;
+    outline: none;
+
+    @include placeholder {
+      opacity: 0;
+    }
+
+    .sage-textarea--no-label & {
+      padding-top: $sage-textarea-padding;
+    }
+
+    ~ .sage-textarea__label {
+      transition: opacity 0.15s ease-out, transform 0.15s ease-in-out, color 0.15s ease-out;
+      opacity: 1;
+    }
+  }
+
+  &:valid:not(:placeholder-shown),
+  &:required:not(:placeholder-shown) {
+    padding-top: $sage-textarea-padding-filled;
+
+    ~ .sage-textarea__label {
+      transition: opacity 0.15s ease-out, transform 0.15s ease-in-out, color 0.15s ease-out;
+      opacity: 1;
+    }
+
+    .sage-textarea--no-label & {
+      padding-top: $sage-textarea-padding;
+    }
+  }
+
+  &:valid:not(:placeholder-shown) {
+    border-color: $sage-textarea-color-success;
+    box-shadow: $sage-textarea-box-shadow-size $sage-textarea-color-success;
+
+    ~ .sage-textarea__label {
+      color: $sage-textarea-color-success;
+    }
+  }
+
+  &:required:not(:placeholder-shown):not(:valid) {
+    border-color: $sage-textarea-color-error;
+    box-shadow: $sage-textarea-box-shadow-size $sage-textarea-color-error;
+
+    ~ .sage-textarea__label {
+      color: $sage-textarea-color-error;
+    }
+  }
+
+  &:disabled {
+    color: $sage-textarea-color-disabled;
+    background-color: $sage-textarea-bg-disabled;
+    cursor: not-allowed;
+    resize: none;
+  }
+}
