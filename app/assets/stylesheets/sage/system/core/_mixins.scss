@@ -96,6 +96,43 @@
 
 
 /* ==================================================
+** Absolute Positioning shorthand
+  Usage: `@include position-full(4px);`
+
+  Sets an element's positioning offsets all to the value provided.
+  arguments: $offset | [length]
+================================================== */
+
+@mixin position-full($offset: 0) {
+  top: $offset;
+  right: $offset;
+  bottom: $offset;
+  left: $offset;
+}
+
+/* ==================================================
+** Icon base
+  Usage: `@include icon-base();`
+
+  Sets up an element to implement the sage icon font and basic settings related
+  to displaying the icon. Usually implemented on a pseudo-element.
+
+  If an `$icon` is passed in this mixin also
+  arguments: $icon | null|[string]
+================================================== */
+
+@mixin icon-base($icon: null) {
+  display: inline-block;
+  text-transform: none;
+  font: normal normal normal 1rem/1 "Sage";
+  speak: none;
+
+  @if ($icon) {
+    content: sage-icon($icon);
+  }
+}
+
+/* ==================================================
 ** Live Avatar Ring
   Usage: `@include sage-live-avatar-ring();`
 
@@ -103,14 +140,17 @@
   arguments: $color | [valid system color]
 ================================================== */
 
-@mixin sage-live-avatar-ring($color: primary) {
+@mixin sage-feature-live-avatar-ring($color: primary) {
   $-live-avatar-ring-offset: -($sage-live-avatar-ring-width + 2px);
+  $-live-avatar-right-color: sage-color($color);
+
+  @if ($color == charcoal) {
+    $-live-avatar-right-color: sage-color($color, 500);
+  }
 
   &::before {
-    top: $-live-avatar-ring-offset;
-    right: $-live-avatar-ring-offset;
-    bottom: $-live-avatar-ring-offset;
-    left: $-live-avatar-ring-offset;
-    border-color: sage-color($color);
+    border-color: $-live-avatar-right-color;
+
+    @include position-full($-live-avatar-ring-offset);
   }
 }

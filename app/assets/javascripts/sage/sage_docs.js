@@ -70,5 +70,11 @@ if (document.querySelector('.sage-docs') !== null) {
     }
   });
 
+  // Simulate contextual menu
+  document.querySelector('.sage-live-option-menu-anchor').addEventListener('click', function(e) {
+    const target = e.currentTarget;
+    const isExpanded = target.getAttribute('aria-expanded') == 'true';
+    target.setAttribute('aria-expanded', !isExpanded);
+  });
 
 }

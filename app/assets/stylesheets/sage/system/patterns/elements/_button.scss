@@ -38,11 +38,11 @@
   }
 }
 
-
+// TODO: Re-evaluate whether these need to be "on" these elements by default.
 button,
 input[type="submit"],
 input[type="search"] {
-  .sage-type {
+  .sage-type & {
     @include button-style-base;
   }
 }

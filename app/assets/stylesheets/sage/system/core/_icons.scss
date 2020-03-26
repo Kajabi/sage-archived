@@ -43,15 +43,7 @@ $sage-icon-li-margin-right: 0.4em !default;
 // Base class definition
 // ==================================================
 
-%sage-icon {
-  display: inline-block;
-  text-transform: none;
-  font: normal normal normal 1em/1 "Sage";
-  speak: none;
-  /* Better Font Rendering */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
+%sage-icon-extensions {
   &.is-spinning {
     animation: sage-icon-spin 2s infinite linear;
   }
@@ -80,9 +72,8 @@ $sage-icon-li-margin-right: 0.4em !default;
 // Build icons as `sage-icon-icon-name` based on the map in `tokens/_icon`
 @each $icon-name, $icon-code in $sage-icons {
   .sage-icon-#{$icon-name}::before {
-    @extend %sage-icon;
-
-    content: sage-icon($icon-name);
+    @include icon-base($icon-name);
+    @extend %sage-icon-extensions;
   }
 }
 

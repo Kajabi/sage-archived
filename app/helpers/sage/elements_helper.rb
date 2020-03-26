@@ -40,6 +40,19 @@ module Sage
           react_doc:    "no"
         },
         {
+          title: "form_textarea",
+          description: "Basic text area input field with 'floating' label",
+          scss_design:  "done",
+          scss_dev:     "done",
+          scss_doc:     "done",
+          rails_design: "no",
+          rails_dev:    "no",
+          rails_doc:    "no",
+          react_design: "no",
+          react_dev:    "no",
+          react_doc:    "no"
+        },
+        {
           title: "loader",
           description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
           scss_design:  "todo",

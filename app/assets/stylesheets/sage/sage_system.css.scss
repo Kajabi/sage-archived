@@ -50,6 +50,7 @@
 @import "system/patterns/elements/icon_button";
 @import "system/patterns/elements/menu_button";
 @import "system/patterns/elements/form_input";
+@import "system/patterns/elements/form_textarea";
 @import "system/patterns/elements/checkbox";
 @import "system/patterns/elements/radio";
 @import "system/patterns/elements/switch";
@@ -57,6 +58,9 @@
 @import "system/patterns/elements/overlay";
 
 // Objects
+@import "system/patterns/objects/live_option_menu";
+@import "system/patterns/objects/live_profile_card";
+@import "system/patterns/objects/live_user_control";
 @import "system/patterns/objects/live_active_mic";
 @import "system/patterns/objects/live_avatar";
 @import "system/patterns/objects/form_section";
