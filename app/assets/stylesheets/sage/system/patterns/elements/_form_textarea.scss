@@ -21,12 +21,11 @@
   padding-top: $sage-textarea-label-padding-top;
   padding-bottom: $sage-textarea-label-padding-bottom;
   color: inherit;
-  font-size: $sage-textarea-label-font-size;
-  font-weight: $sage-textarea-label-font-weight;
-  line-height: $sage-textarea-label-line-height;
   background-color: $sage-textarea-label-bg-color;
   pointer-events: none;
   opacity: 0;
+
+  @extend %t-sage-body-xsmall-semi;
 }
 
 .sage-textarea__field {
@@ -35,7 +34,6 @@
   width: $sage-textarea-width;
   padding: $sage-textarea-padding $sage-textarea-padding $sage-textarea-padding;
   color: $sage-textarea-color-default;
-  line-height: $sage-textarea-line-height;
   border: $sage-textarea-border-width solid $sage-textarea-border-color;
   border-radius: $sage-textarea-border-radius;
   background: $sage-textarea-bg-default;
