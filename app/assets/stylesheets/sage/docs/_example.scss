@@ -17,14 +17,14 @@
 
   &__label {
     display: inline-block;
-    min-width: 100px;
+    min-width: rem(100px);
     margin: sage-spacing() 0;
     padding: sage-spacing(xs) sage-spacing();
     color: sage-color(charcoal, 500);
     text-align: center;
-    background: #fff;
+    background: sage-color(white);
     box-shadow: sage-shadow();
-    border-radius: 20px;
+    border-radius: rem(20px);
   }
 
   &__preview {
