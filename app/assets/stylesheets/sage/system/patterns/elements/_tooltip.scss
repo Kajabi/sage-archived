@@ -6,34 +6,33 @@
 
 .sage-tooltip {
   display: flex;
-  position: absolute;
   flex-basis: content;
   flex-wrap: wrap;
-  z-index: $tooltip-zindex;
+  position: absolute;
+  z-index: $sage-tooltip-zindex;
   width: max-content;
-  max-width: $tooltip-maxwidth;
-  padding: $tooltip-padding;
+  max-width: $sage-tooltip-maxwidth;
+  padding: $sage-tooltip-padding;
   text-align: left;
-  color: $tooltip-font-color;
+  color: $sage-tooltip-font-color;
   white-space: normal;
   border-radius: sage-border(radius);
-  background-color: $tooltip-background-color;
-  box-shadow: sage-shadow(xl);
+  background-color: $sage-tooltip-bg-color;
+  box-shadow: $sage-tooltip-shadow;
 
   @extend %t-sage-body-small;
 
   &::after {
     content: "";
     position: absolute;
-    clear: both;
   }
   &-top {
     &::after {
       left: 50%;
       top: 100%;
-      border-left: rem(6px) solid transparent;
-      border-right: rem(6px) solid transparent;
-      border-top: rem(6px) solid $tooltip-background-color;
+      border-left: $sage-tooltip-arrow-inactive;
+      border-right: $sage-tooltip-arrow-inactive;
+      border-top: $sage-tooltip-arrow-active;
     }
   }
   &-bottom {
@@ -41,9 +40,9 @@
       left: 50%;
       bottom: 100%;
       transform: translate3d(-50%, 0, 0);
-      border-left: rem(6px) solid transparent;
-      border-right: rem(6px) solid transparent;
-      border-bottom: rem(6px) solid $tooltip-background-color;
+      border-left: $sage-tooltip-arrow-inactive;
+      border-right: $sage-tooltip-arrow-inactive;
+      border-bottom: $sage-tooltip-arrow-active;
     }
   }
   &-left {
@@ -51,9 +50,9 @@
       left: 100%;
       bottom: 50%;
       transform: translate3d(0, 50%, 0);
-      border-top: rem(6px) solid transparent;
-      border-bottom: rem(6px) solid transparent;
-      border-left: rem(6px) solid $tooltip-background-color;
+      border-top: $sage-tooltip-arrow-inactive;
+      border-bottom: $sage-tooltip-arrow-inactive;
+      border-left: $sage-tooltip-arrow-active;
     }
   }
   &-right {
@@ -61,14 +60,14 @@
       left: 0;
       bottom: 50%;
       transform: translate3d(-100%, 50%, 0);
-      border-top: rem(6px) solid transparent;
-      border-bottom: rem(6px) solid transparent;
-      border-right: rem(6px) solid $tooltip-background-color;
+      border-top: $sage-tooltip-arrow-inactive;
+      border-bottom: $sage-tooltip-arrow-inactive;
+      border-right: $sage-tooltip-arrow-active;
     }
   }
   &--light {
-    color: $tooltip-light-font-color;
-    background: $tooltip-light-background-color;
+    color: $sage-tooltip-light-font-color;
+    background: $sage-tooltip-light-bg-color;
 
     &.sage-tooltip-top::after {
       border-top-color: sage-color(white);

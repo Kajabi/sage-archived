@@ -315,10 +315,19 @@ $sage-live-avatar-ring-width: 1px !default;
 // TOOLTIPS
 // ==================================================
 
-$tooltip-background-color: sage-color(charcoal, 400) !default;
-$tooltip-light-background-color: sage-color(white) !default;
-$tooltip-font-color: sage-color(white) !default;
-$tooltip-light-font-color: sage-color(charcoal, 400) !default;
-$tooltip-padding: sage-spacing(2xs) sage-spacing(sm) !default;
-$tooltip-zindex: sage-z_index(nuclear) !default;
-$tooltip-maxwidth: rem(200px) !default;
+// Colors
+$sage-tooltip-bg-color: sage-color(charcoal, 400) !default;
+$sage-tooltip-light-bg-color: sage-color(white) !default;
+$sage-tooltip-font-color: sage-color(white) !default;
+$sage-tooltip-light-font-color: sage-color(charcoal, 400) !default;
+
+// Indicator arrow
+$sage-tooltip-arrow-size: rem(6px) !default;
+$sage-tooltip-arrow-inactive: $sage-tooltip-arrow-size solid transparent !default;
+$sage-tooltip-arrow-active: $sage-tooltip-arrow-size solid $sage-tooltip-bg-color !default;
+
+// Styling
+$sage-tooltip-shadow: sage-shadow(xl) !default;
+$sage-tooltip-padding: sage-spacing(2xs) sage-spacing(sm) !default;
+$sage-tooltip-zindex: sage-z_index(modal) !default;
+$sage-tooltip-maxwidth: rem(200px) !default;
