@@ -4,7 +4,7 @@
 }
 
 $sage-sidebars: (
-  sm: 15rem, // 240px
-  md: 20rem, // 320px
-  lg: 25rem, // 400px
+  sm: rem(240px),
+  md: rem(320px),
+  lg: rem(400px)
 );

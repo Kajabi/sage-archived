@@ -4,9 +4,9 @@
 }
 
 $sage-spacings: (
-  2xs: 0.25rem, // 4px
-  xs: 0.5rem, // 8px
-  sm: 1rem, // 16px
-  md: 1.5rem, // 24px
-  lg: 2rem // 32px
+  2xs: rem(4px),
+  xs: rem(8px),
+  sm: rem(16px),
+  md: rem(24px),
+  lg: rem(32px)
 );
