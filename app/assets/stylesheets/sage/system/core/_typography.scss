@@ -101,7 +101,6 @@ $type-specs: (
   )),
 
   // Additional custom specs
-  // TBD
 );
 
 // Automate setting up base specs to extend in context.
@@ -199,6 +198,10 @@ body {
     @extend %t-sage-heading-6;
   }
 
+  p:not([class]) {
+    @extend %t-sage-body;
+  }
+
   // Hyperlinks get some default coloring applied
   a:not([class]) {
     color: sage-color(primary);
@@ -217,9 +220,4 @@ hr {
   margin: sage-spacing() 0;
   border: 0;
   border-top: sage-border();
-}
-
-// TODO: Cosolidate with other label styles to avoid unnecessary overrides
-label {
-  // margin-bottom: $sage-form-element-spacing;
 }

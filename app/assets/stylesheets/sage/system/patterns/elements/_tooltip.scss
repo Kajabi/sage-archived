@@ -1,7 +1,7 @@
 /* ==================================================
   ** tooltip
   type: element
-  
+
 ================================================== */
 
 .sage-tooltip {
@@ -13,15 +13,15 @@
   width: max-content;
   max-width: $tooltip-maxwidth;
   padding: $tooltip-padding;
-  line-height: sage-line-height();
   text-align: left;
   color: $tooltip-font-color;
-  font-size: sage-font-size(sm);
-  font-weight: normal;
   white-space: normal;
   border-radius: sage-border(radius);
   background-color: $tooltip-background-color;
   box-shadow: sage-shadow(xl);
+
+  @extend %t-sage-body-small;
+
   &::after {
     content: "";
     position: absolute;

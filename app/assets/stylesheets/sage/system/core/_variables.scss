@@ -106,10 +106,6 @@ $sage-menubtn-focus-outline-color: currentColor !default;
 $sage-inputfield-font-size: $sage-body-font-size !default;
 $sage-inputfield-letter-spacing: $sage-body-letter-spacing !default;
 
-// Floating label
-$sage-inputfield-label-font-size: 0.6875rem !default; // 11px
-$sage-inputfield-label-font-weight: sage-font-weight(semibold) !default;
-
 // Border
 $sage-inputfield-border-color: sage-color(grey, 300) !default;
 $sage-inputfield-border-radius: sage-border(radius) !default;
@@ -308,7 +304,6 @@ $sage-tabs-default-transition: 0.2s ease-in-out !default;
 
 // Active tab
 $sage-tabs-active-color: sage-color(charcoal, 500) !default;
-$sage-tabs-active-font-weight: sage-font-weight(semibold) !default;
 
 // Active tab indicator
 $sage-tabs-active-border-height: 0.25rem !default; // 4px

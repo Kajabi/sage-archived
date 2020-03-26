@@ -5,41 +5,41 @@
 ================================================== */
 
 .sage-tabs {
+  display: flex;
   margin-bottom: sage-spacing();
+}
 
-  &__tab {
-    margin-right: sage-spacing();
-    color: $sage-tabs-default-color;
-    transition: color $sage-tabs-default-transition;
+.sage-tabs__tab {
+  margin-right: sage-spacing();
+  color: $sage-tabs-default-color;
+  transition: color $sage-tabs-default-transition;
 
-    &:last-of-type {
-      margin-right: 0;
-    }
+  @extend %t-sage-body-small-semi;
 
-    &::after {
-      content: "";
-      display: inline-block;
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      height: $sage-tabs-active-border-height;
-      width: $sage-tabs-active-border-width;
-      background: $sage-tabs-active-border-color;
-      border-radius: $sage-tabs-active-border-radius;
-      transition: opacity $sage-tabs-default-transition, transform $sage-tabs-default-transition;
-      opacity: 0;
-    }
+  &:last-of-type {
+    margin-right: 0;
+  }
 
-    &--active {
-      display: inline-block;
-      position: relative;
-      padding-bottom: sage-spacing(xs);
-      color: $sage-tabs-active-color;
-      font-weight: $sage-tabs-active-font-weight;
-    }
+  &::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: $sage-tabs-active-border-height;
+    background: $sage-tabs-active-border-color;
+    border-radius: $sage-tabs-active-border-radius;
+    transition: opacity $sage-tabs-default-transition, transform $sage-tabs-default-transition;
+    opacity: 0;
+  }
+}
 
-    &--active::after {
-      opacity: 1;
-    }
+.sage-tabs__tab--active {
+  position: relative;
+  padding-bottom: sage-spacing(xs);
+  color: $sage-tabs-active-color;
+
+  &::after {
+    opacity: 1;
   }
 }

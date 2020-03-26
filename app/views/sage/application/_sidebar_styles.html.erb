@@ -1,8 +1,8 @@
 <%= content_for :sidebar_styles do %>
-  <%= link_to "Tokens", pages_token_url, class: "#{current? "sage-nav__link--active", pages_token_url} sage-nav__link--sub" %>
-  <%= link_to "Colors", pages_color_url, class: "#{current? "sage-nav__link--active", pages_color_url} sage-nav__link--sub" %>
-  <%= link_to "Typography", pages_typography_url, class: "#{current? "sage-nav__link--active", pages_typography_url} sage-nav__link--sub" %>
-  <%= link_to "Icons", pages_icon_url, class: "#{current? "sage-nav__link--active", pages_icon_url} sage-nav__link--sub" %>
-  <%= link_to "Containers", pages_container_url, class: "#{current? "sage-nav__link--active", pages_container_url} sage-nav__link--sub" %>
-  <%= link_to "Grid", pages_grid_url, class: "#{current? "sage-nav__link--active", pages_grid_url} sage-nav__link--sub" %>
+  <%= link_to "Tokens", pages_token_url, class: "sage-nav__link #{current? "sage-nav__link--active", pages_token_url} sage-nav__link--sub" %>
+  <%= link_to "Colors", pages_color_url, class: "sage-nav__link #{current? "sage-nav__link--active", pages_color_url} sage-nav__link--sub" %>
+  <%= link_to "Typography", pages_typography_url, class: "sage-nav__link #{current? "sage-nav__link--active", pages_typography_url} sage-nav__link--sub" %>
+  <%= link_to "Icons", pages_icon_url, class: "sage-nav__link #{current? "sage-nav__link--active", pages_icon_url} sage-nav__link--sub" %>
+  <%= link_to "Containers", pages_container_url, class: "sage-nav__link #{current? "sage-nav__link--active", pages_container_url} sage-nav__link--sub" %>
+  <%= link_to "Grid", pages_grid_url, class: "sage-nav__link #{current? "sage-nav__link--active", pages_grid_url} sage-nav__link--sub" %>
 <% end %>

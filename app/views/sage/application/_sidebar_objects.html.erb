@@ -1,6 +1,6 @@
 <%= content_for :sidebar_objects do %>
   <% sorted_sage_objects.each do |object| %>
-    <%= link_to pages_object_url(title: object[:title], description: object[:description]), class: "#{current? "sage-nav__link--active", pages_object_url(title: object[:title], description: object[:description])} sage-nav__link--sub" do %>
+    <%= link_to pages_object_url(title: object[:title], description: object[:description]), class: "sage-nav__link #{current? "sage-nav__link--active", pages_object_url(title: object[:title], description: object[:description])} sage-nav__link--sub" do %>
       <%= object[:title].titleize %>
     <% end %>
   <% end %>

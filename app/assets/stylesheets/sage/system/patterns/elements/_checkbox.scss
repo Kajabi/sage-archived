@@ -6,6 +6,11 @@
 ================================================== */
 
 .sage-checkbox {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  margin-bottom: $sage-form-element-spacing;
+
   input[type="checkbox"] {
     appearance: none;
     display: inline-block;
@@ -23,11 +28,11 @@
 
     + label {
       display: inline-block;
-      margin-left: sage-spacing(2xs);
-      font-size: sage-font-size();
-      line-height: sage-line-height();
+      margin-left: sage-spacing(sm);
       vertical-align: top;
       cursor: pointer;
+
+      @extend %t-sage-body;
     }
 
     &::before,
@@ -44,9 +49,9 @@
     // focus outline
     &::before {
       transform: translate3d(-50%, -50%, 0) scale(0.94);
-      width: calc(100% + ((#{$sage-checkbox-focus-outline-width} * 1px ) + (#{$sage-checkbox-focus-outline-size} * 2)));
-      height: calc(100% + ((#{$sage-checkbox-focus-outline-width} * 1px) + (#{$sage-checkbox-focus-outline-size} * 2)));
-      border: calc(#{$sage-checkbox-focus-outline-width} * 1px) solid $sage-checkbox-focus-outline-color;
+      width: calc(100% + (#{$sage-checkbox-focus-outline-width * 1px} + #{$sage-checkbox-focus-outline-size * 2}));
+      height: calc(100% + (#{$sage-checkbox-focus-outline-width * 1px} + #{$sage-checkbox-focus-outline-size * 2}));
+      border: ($sage-checkbox-focus-outline-width * 1px) solid $sage-checkbox-focus-outline-color;
       border-radius: $sage-checkbox-border-radius;
       pointer-events: none;
       opacity: 0;
