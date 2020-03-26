@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
   s.test_files = Dir["test/**/*"]
 
   s.add_dependency "rails", "~> 4.2.11.1"
-  s.add_dependency "sass-rails", "~> 5"
+  s.add_dependency "sass-rails"
   s.add_dependency "autoprefixer-rails"
   s.add_dependency "inline_svg"
 
