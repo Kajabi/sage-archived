@@ -5,82 +5,58 @@
 
 ================================================== */
 
-$sage-label-padding: 0 sage-spacing(2xs);
-$sage-label-font-size: 75%;
-$sage-label-border-radius: sage-border(radius);
-
-$sage-label-draft-color: sage-color(charcoal, 200);
-$sage-label-draft-background: sage-color(grey, 200);
-$sage-label-draft-border-color: sage-color(grey, 200);
-
-$sage-label-success-color: sage-color(sage, 400);
-$sage-label-success-background: sage-color(sage, 100);
-$sage-label-success-border-color: sage-color(sage, 100);
-
-$sage-label-warning-color: sage-color(yellow, 500);
-$sage-label-warning-background: sage-color(yellow, 200);
-$sage-label-warning-border-color: sage-color(yellow, 200);
-
-$sage-label-danger-color: sage-color(red, 400);
-$sage-label-danger-background: sage-color(red, 200);
-$sage-label-danger-border-color: sage-color(red, 200);
-
-$sage-label-subtle-background: sage-color(white);
-$sage-label-subtle-draft-border-color: sage-color(grey, 400);
-$sage-label-subtle-success-border-color: sage-color(sage, 300);
-$sage-label-subtle-warning-border-color: sage-color(yellow, 300);
-$sage-label-subtle-danger-border-color: sage-color(red, 300);
+$-sage-label-subtle-background: sage-color(white);
+$-sage-label-subtle-draft-border: sage-color(grey, 400);
+$-sage-label-subtle-success-border: sage-color(sage, 300);
+$-sage-label-subtle-warning-border: sage-color(yellow, 300);
+$-sage-label-subtle-warning-color: sage-color(yellow, 400);
+$-sage-label-subtle-danger-border: sage-color(red, 300);
+$-sage-label-subtle-danger-color: sage-color(red, 400);
 
 .sage-label {
-  display: inline-block;
   padding: $sage-label-padding;
   font-size: $sage-label-font-size;
+  font-weight: $sage-label-font-weight;
   text-align: center;
   white-space: nowrap;
   border-radius: $sage-label-border-radius;
-  border-width: 1px;
+  border-width: rem(1px);
   border-style: solid;
   &--draft {
-    color: $sage-label-draft-color;
-    background-color: $sage-label-draft-background;
-    border-color: $sage-label-draft-border-color;
+    color: $sage-label-draft-text-color;
+    background-color: $sage-label-draft-color;
+    border-color: $sage-label-draft-color;
   }
   &--success {
-    color: $sage-label-success-color;
-    background-color: $sage-label-success-background;
-    border-color: $sage-label-success-border-color;
+    color: $sage-label-success-text-color;
+    background-color: $sage-label-success-color;
+    border-color: $sage-label-success-color;
   }
   &--warning {
-    color: $sage-label-warning-color;
-    background-color: $sage-label-warning-background;
-    border-color: $sage-label-warning-border-color;
+    color: $sage-label-warning-text-color;
+    background-color: $sage-label-warning-color;
+    border-color: $sage-label-warning-color;
   }
   &--danger {
-    color: $sage-label-danger-color;
-    background-color: $sage-label-danger-background;
-    border-color: $sage-label-danger-border-color;
+    color: $sage-label-danger-text-color;
+    background-color: $sage-label-danger-color;
+    border-color: $sage-label-danger-color;
   }
-  .sage-btn & {
-    display: inline;
-    padding: 0 sage-spacing(2xs);
-  }
-}
-
-.sage-label-subtle {
-  @extend .sage-label;
-  background-color: $sage-label-subtle-background;
-  &.sage-label {
-    &--draft {
-      border-color: $sage-label-subtle-draft-border-color;
+  &--subtle {
+    background: $-sage-label-subtle-background;
+    &.sage-label--draft {
+      border-color: $-sage-label-subtle-draft-border;
     }
-    &--success {
-      border-color: $sage-label-subtle-success-border-color;
+    &.sage-label--success {
+      border-color: $-sage-label-subtle-success-border;
     }
-    &--warning {
-      border-color: $sage-label-subtle-warning-border-color;
+    &.sage-label--warning {
+      color: $-sage-label-subtle-warning-color;
+      border-color: $-sage-label-subtle-warning-border;
     }
-    &--danger {
-      border-color: $sage-label-subtle-danger-border-color;
+    &.sage-label--danger {
+      color: $-sage-label-subtle-danger-color;
+      border-color: $-sage-label-subtle-danger-border;
     }
   }
 }
