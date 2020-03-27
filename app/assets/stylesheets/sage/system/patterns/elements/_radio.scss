@@ -73,6 +73,7 @@
     color: $sage-radio-color-checked;
     background-color: $sage-radio-color-checked;
     border-color: transparent;
+    box-shadow: sage-shadow(sm);
 
     &::after {
       transform: translate3d(-50%, -50%, 0) scale(0.5);
@@ -100,6 +101,15 @@
     }
   }
 
+  &:invalid {
+    background: sage-color(red, 100);
+    border-color: sage-color(red);
+
+    + .sage-radio__label {
+      color: sage-color(red);
+    }
+  }
+
   &:disabled {
     background: $sage-radio-color-disabled;
     border-color: $sage-radio-color-disabled-checked;
@@ -109,6 +119,7 @@
     // disabled & checked
     &:checked {
       background: $sage-radio-color-disabled-checked;
+      box-shadow: none;
     }
 
     + .sage-radio__label {
