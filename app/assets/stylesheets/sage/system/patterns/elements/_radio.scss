@@ -61,7 +61,7 @@
     }
 
     &::after {
-      transform: scale(0);
+      transform: translate3d(-50%, -50%, 0) scale(0);
       height: $sage-radio-selected-indicator-size;
       width: $sage-radio-selected-indicator-size;
       background-color: $sage-radio-selected-indicator-color;
