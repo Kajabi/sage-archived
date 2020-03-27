@@ -39,6 +39,7 @@
   padding: $sage-inputfield-padding-offset $sage-inputfield-padding;
   color: $sage-inputfield-color-default;
   line-height: 1;
+  appearance: none;
   border: $sage-inputfield-border-width solid $sage-inputfield-border-color;
   border-radius: $sage-inputfield-border-radius;
   background: transparent;
