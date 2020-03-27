@@ -54,7 +54,7 @@
   // focus outline
   &::before {
     transform: translate3d(-50%, -50%, 0) scale(0.94);
-    width: calc(100% + ((#{$sage-radio-focus-outline-width} * 1px ) + (#{$sage-radio-focus-outline-size} * 2)));
+    width: calc(100% + ((#{$sage-radio-focus-outline-width} * 1px) + (#{$sage-radio-focus-outline-size} * 2)));
     height: calc(100% + ((#{$sage-radio-focus-outline-width} * 1px) + (#{$sage-radio-focus-outline-size} * 2)));
     border: calc(#{$sage-radio-focus-outline-width} * 1px) solid $sage-radio-focus-outline-color;
     pointer-events: none;
