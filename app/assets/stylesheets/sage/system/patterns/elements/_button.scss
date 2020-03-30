@@ -187,6 +187,45 @@ input[type="search"] {
   }
 }
 
+.sage-btn--tertiary {
+  color: $sage-btn-tertiary-text-color;
+  background: sage-color(white);
+  border: none;
+  box-shadow: none;
+
+  &::after {
+    border-color: sage-color(primary);
+  }
+
+  &:hover:not(:focus):not(:active):not(:disabled):not(.disabled) {
+    color: $sage-btn-tertiary-text-color;
+    // border-color: transparent;
+    // box-shadow: $sage-btn-shadow-hover;
+    background-color: sage-color(grey, 200);
+  }
+
+  &:focus {
+    color: $sage-btn-tertiary-text-color;
+    background: sage-color(white);
+    border-color: sage-color(white);
+    box-shadow: none;
+  }
+
+  &:active {
+    color: $sage-btn-tertiary-text-color;
+    background-color: sage-color(grey, 300);
+    box-shadow: none;
+  }
+
+  &:disabled,
+  &.disabled {
+    @include button-style-disabled;
+
+    color: sage-color(primary, 200);
+    background-color: transparent;
+  }
+}
+
 .sage-btn--danger {
   color: $sage-btn-danger-text-color;
   background: $sage-btn-danger-bg-color;
