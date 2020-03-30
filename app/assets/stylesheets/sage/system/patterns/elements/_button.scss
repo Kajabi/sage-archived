@@ -229,10 +229,35 @@ input[type="search"] {
   }
 }
 
-.sage-btn--link {
-  // TBD
+@mixin button-icon-generator($direction) {
+  $right: null;
+
+  @if $direction == right {
+    $right: true;
+  } @else if $direction == left {
+    $right: false;
+  } @else {
+    @error "button-icon-generator() requires argument value of either `right` or `left`";
+  }
+
+  @each $icon-name, $icon-code in $sage-icons {
+    .sage-btn--icon-#{if($right, "right", "left")}-#{$icon-name} {
+      display: inline-flex;
+      align-items: baseline;
+      flex-direction: if($right, row-reverse, row);
+
+      &::before {
+        @include icon-base($icon-name);
+        margin: if($right, 0 0 0 sage-spacing(xs), 0 sage-spacing(xs) 0 0);
+        align-self: center;
+      }
+    }
+  }
 }
 
-.sage-btn--icon {
-  display: inline-flex;
+@include button-icon-generator(left);
+@include button-icon-generator(right);
+
+.sage-btn--link {
+  // TBD
 }
