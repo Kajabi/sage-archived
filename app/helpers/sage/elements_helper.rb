@@ -14,6 +14,19 @@ module Sage
       [
         # Sage Generated Elements
         {
+          title: "label",
+          description: "Labels show concise metadata or indicate status in a compact format.", 
+          scss_design:  "done",
+          scss_dev:     "doing",
+          scss_doc:     "doing",
+          rails_design: "todo",
+          rails_dev:    "todo",
+          rails_doc:    "todo",
+          react_design: "todo",
+          react_dev:    "todo",
+          react_doc:    "todo"
+        },
+        {
           title: "tooltip",
           description: "Tooltips display helpful text when users hover over an element.",
           scss_design:  "done",

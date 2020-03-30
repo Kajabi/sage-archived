@@ -331,3 +331,23 @@ $sage-tooltip-shadow: sage-shadow(xl) !default;
 $sage-tooltip-padding: sage-spacing(2xs) sage-spacing(sm) !default;
 $sage-tooltip-zindex: sage-z_index(modal) !default;
 $sage-tooltip-maxwidth: rem(200px) !default;
+
+// ==================================================
+// LABELS
+// ==================================================
+
+// Colors
+$sage-label-draft-text-color: sage-color(charcoal, 200) !default;
+$sage-label-draft-color: sage-color(grey, 200) !default;
+$sage-label-success-text-color: sage-color(sage, 400) !default;
+$sage-label-success-color: sage-color(sage, 100) !default;
+$sage-label-warning-text-color: sage-color(yellow, 500) !default;
+$sage-label-warning-color: sage-color(yellow, 200) !default;
+$sage-label-danger-text-color: sage-color(red, 500) !default;
+$sage-label-danger-color: sage-color(red, 200) !default;
+
+// Styling
+$sage-label-padding: sage-spacing(2xs) sage-spacing(xs) !default;
+$sage-label-font-size: rem(13px) !default;
+$sage-label-font-weight: sage-font-weight(medium) !default;
+$sage-label-border-radius: sage-border(radius) !default;
