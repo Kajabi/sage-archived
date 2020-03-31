@@ -354,3 +354,12 @@ $sage-label-padding: sage-spacing(2xs) sage-spacing(xs) !default;
 $sage-label-font-size: rem(13px) !default;
 $sage-label-font-weight: sage-font-weight(medium) !default;
 $sage-label-border-radius: sage-border(radius) !default;
+
+// ==================================================
+// CARDS
+// ==================================================
+
+$sage-card-shadow: sage-shadow(sm);
+$sage-card-radius: sage-border(radius);
+$sage-card-spacing: sage-spacing(md);
+$sage-card-text-color: sage-color(charcoal, 200);

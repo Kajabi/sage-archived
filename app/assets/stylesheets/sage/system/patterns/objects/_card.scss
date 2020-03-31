@@ -5,12 +5,6 @@
 
 ================================================== */
 
-$sage-card-shadow: sage-shadow(sm);
-$sage-card-radius: sage-border(radius);
-$sage-card-spacing: sage-spacing(md);
-$sage-card-text-color: sage-color(charcoal, 200);
-
-// sage-card
 .sage-card {
   margin: 0 0 rem(32px) 0;
   border-radius: $sage-card-radius;
