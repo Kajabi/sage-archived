@@ -62,8 +62,8 @@ input[type="search"] {
     left: 50%;
     top: 50%;
     transform: translate3d(-50%, -50%, 0) scale(0.94);
-    width: calc(100% + (#{$sage-btn-focus-outline-width * 1px} + #{$sage-btn-focus-outline-size * 1.8}));
-    height: calc(100% + (#{$sage-btn-focus-outline-width * 1px} + #{$sage-btn-focus-outline-size * 1.8}));
+    width: calc(100% + (#{$sage-btn-focus-outline-width * 1px} + #{$sage-btn-focus-outline-size * 2}));
+    height: calc(100% + (#{$sage-btn-focus-outline-width * 1px} + #{$sage-btn-focus-outline-size * 2}));
     border: ($sage-btn-focus-outline-width * 1px) solid $sage-btn-focus-outline-color;
     border-radius: sage-border(radius-large);
     transition: opacity 0.15s ease-out 0.05s, transform 0.2s ease-in-out;
@@ -199,8 +199,6 @@ input[type="search"] {
 
   &:hover:not(:focus):not(:active):not(:disabled):not(.disabled) {
     color: $sage-btn-tertiary-text-color;
-    // border-color: transparent;
-    // box-shadow: $sage-btn-shadow-hover;
     background-color: sage-color(grey, 200);
   }
 
