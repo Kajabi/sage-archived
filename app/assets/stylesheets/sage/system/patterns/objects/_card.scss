@@ -1,0 +1,112 @@
+/* ==================================================
+  ** card
+  type: object
+
+
+
+================================================== */
+
+$sage-card-shadow: sage-shadow(sm);
+$sage-card-radius: sage-border(radius);
+$sage-card-spacing: sage-spacing(md);
+
+// sage-card
+.sage-card {
+  margin: 0 0 rem(32px) 0;
+  border-radius: $sage-card-radius;
+  box-shadow: $sage-card-shadow;
+
+  &__title {
+    word-wrap: break-word;
+    margin: 0 0 rem(16px) 0;
+  }
+
+  &__text {
+    margin-bottom: rem(16px);
+    color: sage-color(charcoal, 200);
+    word-wrap: break-word;
+    
+  }
+
+  .sage-card-body {
+    padding: $sage-card-spacing;
+  }
+}
+
+.sage-card-img {
+  width: 100%;
+  border-radius: $sage-card-radius $sage-card-radius 0 0;
+}
+
+// compact card
+
+.sage-card--compact {
+  display: flex;
+  flex: none;
+  flex-direction: row;
+  .sage-card-body {
+    padding: $sage-card-spacing;
+  }
+  .sage-card-img {
+    width: rem(215px);
+    height: auto;
+    border-radius: $sage-card-radius 0 0 $sage-card-radius;
+  }
+  &.sage-card--spaced {
+    align-items: normal;
+    .sage-card-body {
+      padding: 0 $sage-card-spacing;
+    }
+    .sage-card-img {
+      margin: 0;
+      width: rem(215px);
+    }
+  }
+}
+
+// spaced card
+.sage-card--spaced {
+  padding: $sage-card-spacing;
+  .sage-card-body {
+    padding: 0;
+  }
+  .sage-card-img {
+    height: 100%;
+    margin: 0 0 $sage-card-spacing 0;
+    border-radius: $sage-card-radius;
+  }
+}
+
+
+@media (max-width: sage-breakpoint()) {
+  /* card responsive styles */
+
+  .sage-car {
+    &__text {
+      line-height: sage-line-height(md);
+      
+    }
+  }
+ 
+
+  .sage-card--compact {
+    flex-wrap: wrap;
+    .sage-card-img {
+      max-height: rem(215px);
+      width: 100%;
+      border-radius: $sage-card-radius $sage-card-radius 0 0;
+    }
+    &.sage-card--spaced {
+      align-items: center;
+      .sage-card-body {
+        padding: $sage-card-spacing 0 0 0;
+      }
+      .sage-card-img {
+        border-radius: $sage-card-radius;
+        width: 100%;
+      }
+    }
+  }
+
+  
+}
