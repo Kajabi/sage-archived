@@ -3,43 +3,40 @@
   type: object
 
 
-
 ================================================== */
 
 $sage-card-shadow: sage-shadow(sm);
 $sage-card-radius: sage-border(radius);
 $sage-card-spacing: sage-spacing(md);
+$sage-card-text-color: sage-color(charcoal, 200);
 
 // sage-card
 .sage-card {
   margin: 0 0 rem(32px) 0;
   border-radius: $sage-card-radius;
   box-shadow: $sage-card-shadow;
-
   &__title {
-    word-wrap: break-word;
     margin: 0 0 rem(16px) 0;
+    word-wrap: break-word;
   }
-
   &__text {
     margin-bottom: rem(16px);
-    color: sage-color(charcoal, 200);
+    color: $sage-card-text-color;
     word-wrap: break-word;
-    
   }
-
   .sage-card-body {
     padding: $sage-card-spacing;
+    :last-child {
+      margin: 0;
+    }
   }
 }
-
 .sage-card-img {
   width: 100%;
   border-radius: $sage-card-radius $sage-card-radius 0 0;
 }
 
 // compact card
-
 .sage-card--compact {
   display: flex;
   flex: none;
@@ -48,26 +45,27 @@ $sage-card-spacing: sage-spacing(md);
     padding: $sage-card-spacing;
   }
   .sage-card-img {
-    width: 35%;
-    max-width: rem(215px);
+    max-width: rem(216px);
     height: auto;
     border-radius: $sage-card-radius 0 0 $sage-card-radius;
   }
   &.sage-card--spaced {
-    align-items: normal;
     .sage-card-body {
+      align-items: center;
+      justify-content: center;
       padding: 0 $sage-card-spacing;
     }
     .sage-card-img {
+      width: 100%;
+      max-width: rem(180px);
       margin: 0;
-      width: 40%;
-      max-width: rem(215px);
     }
   }
 }
 
 // spaced card
 .sage-card--spaced {
+  align-items: center;
   padding: $sage-card-spacing;
   .sage-card-body {
     padding: 0;
@@ -79,38 +77,28 @@ $sage-card-spacing: sage-spacing(md);
   }
 }
 
-
 @media (max-width: sage-breakpoint()) {
-  /* card responsive styles */
-
-  .sage-car {
+  .sage-card {
     &__text {
       line-height: sage-line-height(md);
-      
     }
   }
- 
-
   .sage-card--compact {
     flex-wrap: wrap;
     .sage-card-img {
-      max-height: rem(215px);
       width: 100%;
       max-width: 100%;
       border-radius: $sage-card-radius $sage-card-radius 0 0;
     }
     &.sage-card--spaced {
-      align-items: center;
       .sage-card-body {
         padding: $sage-card-spacing 0 0 0;
       }
       .sage-card-img {
-        border-radius: $sage-card-radius;
         width: 100%;
         max-width: 100%;
+        border-radius: $sage-card-radius;
       }
     }
   }
-
-  
 }
