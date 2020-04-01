@@ -150,7 +150,7 @@
 ================================================== */
 
 @mixin icon-base($icon: null) {
-  display: inline-block;
+  display: inline-flex;
   text-transform: none;
   font: normal normal normal 1rem/1 "Sage";
   speak: none;

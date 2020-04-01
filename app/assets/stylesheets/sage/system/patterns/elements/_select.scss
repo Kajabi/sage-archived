@@ -7,8 +7,98 @@
 ================================================== */
 
 .sage-select {
+  position: relative;
+  height: $sage-inputfield-height;
 
-  @media (max-width: sage-breakpoint()) {
-    /* select responsive styles */
+  &:not(:last-child) {
+    margin-bottom: $sage-inputfield-spacing;
+  }
+
+  &::after {
+    @include icon-base(caret-down);
+    top: 0;
+    bottom: 0;
+    right: sage-spacing(sm);
+    margin: auto 0;
+    position: absolute;
+    align-items: center;
+    color: sage-color(grey, 500);
+  }
+
+  &.sage-select--active::after {
+    @include icon-base(caret-up);
+    color: sage-color(primary);
+  }
+}
+
+.sage-select__field {
+  height: 100%;
+  width: 100%;
+  padding: $sage-inputfield-padding-offset $sage-inputfield-padding;
+  color: $sage-inputfield-color-default;
+  line-height: 1;
+  appearance: none;
+  border: $sage-inputfield-border-width solid $sage-inputfield-border-color;
+  border-radius: $sage-inputfield-border-radius;
+  background: transparent;
+  transition: border 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+
+  @include placeholder {
+    color: inherit;
+  }
+
+  .sage-select--active & {
+    border-color: $sage-inputfield-color-success;
+    box-shadow: $sage-inputfield-box-shadow-size $sage-inputfield-color-success;
+    border-radius: $sage-inputfield-border-radius $sage-inputfield-border-radius 0 0;
+    padding-bottom: $sage-inputfield-padding-filled;
+  }
+}
+
+.sage-select__label {
+  position: absolute;
+  transform: translateY(calc(#{$sage-body-font-size} * -1));
+  left: $sage-inputfield-padding;
+  top: 50%;
+  color: inherit;
+  pointer-events: none;
+  opacity: 0;
+
+  @extend %t-sage-body-xsmall-semi;
+
+  .sage-select--active & {
+    transform: translateY(-($sage-body-font-size + $sage-inputfield-padding-filled)); // IE doesn't support calc in transforms
+    transform: translateY(calc(-50% - (#{$sage-body-font-size} - #{$sage-inputfield-padding-filled})));
+    opacity: 1;
+    color: $sage-inputfield-color-success;
+    transition: opacity 0.15s ease-out, transform 0.15s ease-in-out, color 0.15s ease-out;
+  }
+}
+
+.sage-select__dropdown {
+  padding: 0;
+  margin: 1px -1px 0;
+  border-radius: 0 0 $sage-inputfield-border-radius $sage-inputfield-border-radius;
+  background: sage-color(white);
+  z-index: 1000000;
+  position: relative;
+  box-shadow: sage-shadow(sm);
+  display: none;
+
+  .sage-select--active & {
+    display: block;
+  }
+}
+
+.sage-select__dropdown-item {
+  padding: sage-spacing(xs) $sage-inputfield-padding;
+  margin: 0;
+  list-style: none;
+  cursor: pointer;
+
+  &:hover {
+    border-left-color: sage-color(primary);
+    box-shadow: inset 2px 0 0 0 sage-color(primary);
+    background: sage-color(grey, 100);
   }
 }
