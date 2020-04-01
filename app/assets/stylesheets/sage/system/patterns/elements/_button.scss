@@ -187,6 +187,43 @@ input[type="search"] {
   }
 }
 
+.sage-btn--tertiary {
+  color: $sage-btn-tertiary-text-color;
+  background: sage-color(white);
+  border: none;
+  box-shadow: none;
+
+  &::after {
+    border-color: sage-color(primary);
+  }
+
+  &:hover:not(:focus):not(:active):not(:disabled):not(.disabled) {
+    color: $sage-btn-tertiary-text-color;
+    background-color: sage-color(grey, 200);
+  }
+
+  &:focus {
+    color: $sage-btn-tertiary-text-color;
+    background: sage-color(white);
+    border-color: sage-color(white);
+    box-shadow: none;
+  }
+
+  &:active {
+    color: $sage-btn-tertiary-text-color;
+    background-color: sage-color(grey, 300);
+    box-shadow: none;
+  }
+
+  &:disabled,
+  &.disabled {
+    @include button-style-disabled;
+
+    color: sage-color(primary, 200);
+    background-color: transparent;
+  }
+}
+
 .sage-btn--danger {
   color: $sage-btn-danger-text-color;
   background: $sage-btn-danger-bg-color;
@@ -229,10 +266,35 @@ input[type="search"] {
   }
 }
 
-.sage-btn--link {
-  // TBD
+@mixin button-icon-generator($direction) {
+  $right: null;
+
+  @if $direction == right {
+    $right: true;
+  } @else if $direction == left {
+    $right: false;
+  } @else {
+    @error "button-icon-generator() requires argument value of either `right` or `left`";
+  }
+
+  @each $icon-name, $icon-code in $sage-icons {
+    .sage-btn--icon-#{if($right, "right", "left")}-#{$icon-name} {
+      display: inline-flex;
+      align-items: baseline;
+      flex-direction: if($right, row-reverse, row);
+
+      &::before {
+        @include icon-base($icon-name);
+        margin: if($right, 0 0 0 sage-spacing(xs), 0 sage-spacing(xs) 0 0);
+        align-self: center;
+      }
+    }
+  }
 }
 
-.sage-btn--icon {
-  display: inline-flex;
+@include button-icon-generator(left);
+@include button-icon-generator(right);
+
+.sage-btn--link {
+  // TBD
 }
