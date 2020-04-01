@@ -14,6 +14,19 @@ module Sage
       [
         # Sage Generated Objects
         {
+          title: "card",
+          description: "A card presents content and can guide the user toward a related action.", 
+          scss_design:  "done",
+          scss_dev:     "done",
+          scss_doc:     "done",
+          rails_design: "todo",
+          rails_dev:    "todo",
+          rails_doc:    "todo",
+          react_design: "todo",
+          react_dev:    "todo",
+          react_doc:    "todo"
+        },
+        {
           title: "live_option_menu",
           description: "Live option menu is an accessible contextual menu to be used within the Live feature set. When the user clicks on an anchor the menu appears and stays until the user clicks somewhere else or on a given command from the menu.",
           scss_design:  "done",
