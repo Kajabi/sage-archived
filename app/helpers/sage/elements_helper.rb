@@ -14,6 +14,19 @@ module Sage
       [
         # Sage Generated Elements
         {
+          title: "live_stream_wrapper",
+          description: "A simple wrapper element for the Live stream application", 
+          scss_design:  "done",
+          scss_dev:     "done",
+          scss_doc:     "done",
+          rails_design: "todo",
+          rails_dev:    "todo",
+          rails_doc:    "todo",
+          react_design: "todo",
+          react_dev:    "todo",
+          react_doc:    "todo"
+        },
+        {
           title: "label",
           description: "Labels show concise metadata or indicate status in a compact format.", 
           scss_design:  "done",

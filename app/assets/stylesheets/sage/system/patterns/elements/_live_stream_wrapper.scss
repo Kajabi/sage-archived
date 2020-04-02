@@ -1,0 +1,19 @@
+/* ==================================================
+  ** live_stream_wrapper
+  type: object
+
+
+
+================================================== */
+
+.sage-live-stream-wrapper {
+  position: relative;
+  padding: $sage-live-stream-header-height 0 $sage-live-stream-footer-height;
+  background-color: sage-color(charcoal, 500);
+
+  .example__preview & {
+    &:not(:last-child) {
+      margin-bottom: sage-spacing(md);
+    }
+  }
+}
