@@ -1,0 +1,53 @@
+/* ==================================================
+  ** live_stream_header
+  type: object
+
+
+
+================================================== */
+
+$-live-stream-header-gradient: linear-gradient(180deg, $sage-live-stream-wrap-gradient-start, $sage-live-stream-wrap-gradient-end);
+$-live-stream-header-recording-marker-size: 8px;
+
+.sage-live-stream-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: $sage-live-stream-header-height;
+  padding: 0 sage-spacing(md);
+  color: sage-color(white);
+
+  .sage-live-stream-wrapper--awake & {
+    background: $-live-stream-header-gradient;
+  }
+}
+
+.sage-live-stream-header__title {
+  @extend %t-sage-body-med;
+  opacity: 0;
+
+  .sage-live-stream-wrapper--awake & {
+    opacity: 1;
+  }
+}
+
+.sage-live-stream-header__running-time {
+  @extend %t-sage-body-med;
+}
+
+.sage-live-stream-header__running-time--recording {
+  &::before {
+    content: "";
+    display: inline-block;
+    background-color: sage-color(red, 300);
+    width: $-live-stream-header-recording-marker-size;
+    height: $-live-stream-header-recording-marker-size;
+    border-radius: sage-border(radius-round);
+    margin-right: sage-spacing(2xs);
+    transform: translateY(-1px);
+  }
+}

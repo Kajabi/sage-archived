@@ -27,6 +27,19 @@ module Sage
           react_doc:    "todo"
         },
         {
+          title: "live_stream_header",
+          description: "Header component for the Live stream application. Contains an \"awake\" variation as well as the constant form. Must be nested within a wrapper as shown below.", 
+          scss_design:  "done",
+          scss_dev:     "done",
+          scss_doc:     "done",
+          rails_design: "no",
+          rails_dev:    "no",
+          rails_doc:    "no",
+          react_design: "todo",
+          react_dev:    "todo",
+          react_doc:    "todo"
+        },
+        {
           title: "card",
           description: "A card presents content and can guide the user toward a related action.", 
           scss_design:  "done",
