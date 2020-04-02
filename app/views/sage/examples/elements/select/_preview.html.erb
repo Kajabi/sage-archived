@@ -1,44 +1,76 @@
-<fieldset>
+<%# <fieldset>
   <div class="sage-select" data-js-sage-select>
-    <input class="sage-select__field" type="text" placeholder="Favorite Food" id="form__favoritefood" name="form__favoritefood" data-js-sage-select-field>
+    <input class="sage-select__field" type="text" placeholder="Favorite Food" id="form__favoritefood" name="form__favoritefood" data-js-sage-select-field disabled>
     <label class="sage-select__label" for="form__favoritefood">Favorite Food</label>
     <ul class="sage-select__dropdown" data-js-sage-select-dropdown>
-      <li class="sage-select__dropdown-item">
+      <li class="sage-select__item">
         <h3 class="t-sage-heading-6">Lorem ipsum dolor sit</h3>
         <p class="t-sage-body-xsmall">Lorem ipsum dolor sit</p>
       </li>
-      <li class="sage-select__dropdown-item">
+      <li class="sage-select__item">
         <h3 class="t-sage-heading-6">Lorem ipsum dolor sit</h3>
         <p class="t-sage-body-xsmall">Lorem ipsum dolor sit</p>
       </li>
-      <li class="sage-select__dropdown-item">
+      <li class="sage-select__item">
         <h3 class="t-sage-heading-6">Lorem ipsum dolor sit</h3>
         <p class="t-sage-body-xsmall">Lorem ipsum dolor sit</p>
       </li>
     </ul>
   </div>
-</fieldset>
+</fieldset> %>
 
 <br>
+
+<%# <fieldset>
+  <div class="sage-select sage-select--selected" data-js-sage-select>
+    <label class="sage-select__label" for="form__favoritefood">Favorite Food</label>
+    <input class="sage-select__field" type="text" value="pizza" placeholder="Favorite Food" id="form__favoritefood" name="form__favoritefood" data-js-sage-select-field disabled>
+    <ul class="sage-select__dropdown" data-js-sage-select-dropdown>
+      <li class="sage-select__item">
+        <h3 class="t-sage-heading-6">Lorem ipsum dolor sit</h3>
+        <p class="t-sage-body-xsmall">Lorem ipsum dolor sit</p>
+      </li>
+      <li class="sage-select__item">
+        <h3 class="t-sage-heading-6">Lorem ipsum dolor sit</h3>
+        <p class="t-sage-body-xsmall">Lorem ipsum dolor sit</p>
+      </li>
+      <li class="sage-select__item">
+        <h3 class="t-sage-heading-6">Lorem ipsum dolor sit</h3>
+        <p class="t-sage-body-xsmall">Lorem ipsum dolor sit</p>
+      </li>
+    </ul>
+  </div>
+</fieldset> %>
+
+<br>
+
+
+sage-select--active
+sage-select--selected
 
 <fieldset>
-  <div class="sage-select sage-select--active" data-js-sage-select>
-    <input class="sage-select__field" type="text" placeholder="Favorite Food" id="form__favoritefood" name="form__favoritefood" data-js-sage-select-field>
+  <div class="sage-select" data-js-sageselect>
+    <input class="sage-select__field" type="text" placeholder="Favorite Food" id="form__favoritefood" name="form__favoritefood" data-js-sageselect-field disabled>
     <label class="sage-select__label" for="form__favoritefood">Favorite Food</label>
-    <ul class="sage-select__dropdown" data-js-sage-select-dropdown>
-      <li class="sage-select__dropdown-item">
-        <p class="t-sage-body">Lorem ipsum dolor sit</p>
-        <p class="t-sage-body-xsmall">Lorem ipsum dolor sit</p>
-      </li>
-      <li class="sage-select__dropdown-item">
-        <p class="t-sage-body">Lorem ipsum dolor sit</p>
-        <p class="t-sage-body-xsmall">Lorem ipsum dolor sit</p>
-      </li>
-      <li class="sage-select__dropdown-item">
-        <p class="t-sage-body">Lorem ipsum dolor sit</p>
-        <p class="t-sage-body-xsmall">Lorem ipsum dolor sit</p>
-      </li>
-    </ul>
+    <div class="sage-select__dropdown" data-js-sageselect-dropdown>
+      <div class="sage-select__search-container">
+        <input class="sage-select__search-field" type="text" placeholder="Search..." data-js-sageselect-search>
+      </div>
+      <ul class="sage-select__option-container">
+        <li class="sage-select__option" data-js-sageselect-option="Pizza">
+          <p class="t-sage-body">Pizza</p>
+          <p class="t-sage-body-xsmall">Lorem ipsum dolor sit</p>
+        </li>
+        <li class="sage-select__option" data-js-sageselect-option="Hot Dog">
+          <p class="t-sage-body">Hot Dog</p>
+          <p class="t-sage-body-xsmall">Lorem ipsum dolor sit</p>
+        </li>
+        <li class="sage-select__option" data-js-sageselect-option="Ramen">
+          <p class="t-sage-body">Ramen</p>
+          <p class="t-sage-body-xsmall">Lorem ipsum dolor sit</p>
+        </li>
+      </ul>
+    </div>
   </div>
 </fieldset>
 
@@ -50,30 +82,31 @@
 <br>
 <br>
 <br>
-
-<span class="">Lorem ipsum dolor sit</span>
-<br>
-<span class="t-sage-body">Lorem ipsum dolor sit</span>
 <br>
 <br>
 
-<fieldset>
+<%# <fieldset>
   <div class="sage-select sage-select--active" data-js-sage-select>
-    <input class="sage-select__field" type="text" placeholder="Favorite Food" id="form__favoritefood" name="form__favoritefood" data-js-sage-select-field>
+    <input class="sage-select__field" type="text" placeholder="Favorite Food" id="form__favoritefood" name="form__favoritefood" data-js-sage-select-field disabled>
     <label class="sage-select__label" for="form__favoritefood">Favorite Food</label>
-    <ul class="sage-select__dropdown" data-js-sage-select-dropdown>
-      <li class="sage-select__dropdown-item">
-        <span class="t-sage-body">Lorem ipsum dolor sit</span>
-      </li>
-      <li class="sage-select__dropdown-item">
-        <span class="t-sage-body">Lorem ipsum dolor sit</span>
-      </li>
-      <li class="sage-select__dropdown-item">
-        <span class="t-sage-body">Lorem ipsum dolor sit</span>
-      </li>
-    </ul>
+    <div class="sage-select__dropdown" data-js-sage-select-dropdown>
+      <div class="sage-select__search-container">
+        <input class="sage-select__search-field" type="text" placeholder="Search..." data-js-sage-select-search>
+      </div>
+      <ul class="sage-select__items" data-js-sage-select-dropdown>
+        <li class="sage-select__item">
+          <span class="t-sage-body">Lorem ipsum dolor sit</span>
+        </li>
+        <li class="sage-select__item">
+          <span class="t-sage-body">Lorem ipsum dolor sit</span>
+        </li>
+        <li class="sage-select__item">
+          <span class="t-sage-body">Lorem ipsum dolor sit</span>
+        </li>
+      </ul>
+    </div>
   </div>
-</fieldset>
+</fieldset> %>
 
 
 
