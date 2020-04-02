@@ -6,7 +6,7 @@
 
 ================================================== */
 
-.sage-select {
+.sage-dropdown {
   position: relative;
   height: $sage-inputfield-height;
 
@@ -25,7 +25,7 @@
     color: sage-color(grey, 500);
   }
 
-  &.sage-select--active::after {
+  &.sage-dropdown--active::after {
     @include icon-base(caret-up);
     color: sage-color(primary);
   }
@@ -35,7 +35,7 @@
   }
 }
 
-.sage-select__field {
+.sage-dropdown__field {
   height: 100%;
   width: 100%;
   padding: $sage-inputfield-padding-offset $sage-inputfield-padding;
@@ -51,14 +51,14 @@
 
   @include placeholder { color: inherit; }
 
-  .sage-select:hover & {
+  .sage-dropdown:hover & {
     border-color: $sage-inputfield-color-success;
     box-shadow: $sage-inputfield-box-shadow-size $sage-inputfield-color-success;
 
     @include placeholder { color: transparent; }
   }
 
-  .sage-select--active & {
+  .sage-dropdown--active & {
     border-color: $sage-inputfield-color-success;
     box-shadow: $sage-inputfield-box-shadow-size $sage-inputfield-color-success;
     border-radius: $sage-inputfield-border-radius $sage-inputfield-border-radius 0 0;
@@ -67,14 +67,14 @@
     @include placeholder { color: transparent; }
   }
 
-  .sage-select--selected & {
+  .sage-dropdown--selected & {
     padding-bottom: $sage-inputfield-padding-filled;
 
     @include placeholder { color: transparent; }
   }
 }
 
-.sage-select__label {
+.sage-dropdown__label {
   position: absolute;
   transform: translateY(calc(#{$sage-body-font-size} * -1));
   left: $sage-inputfield-padding;
@@ -91,22 +91,22 @@
     opacity: 1;
   }
 
-  .sage-select:hover &,
-  .sage-select--active & {
+  .sage-dropdown:hover &,
+  .sage-dropdown--active & {
     @include floating-label();
 
     color: $sage-inputfield-color-success;
     transition: opacity 0.15s ease-out, transform 0.15s ease-in-out, color 0.15s ease-out;
   }
 
-  .sage-select--selected & {
+  .sage-dropdown--selected & {
     @include floating-label();
 
     transition: opacity 0.15s ease-out, transform 0.15s ease-in-out, color 0.15s ease-out;
   }
 }
 
-.sage-select__dropdown {
+.sage-dropdown__dropdown {
   padding: 0;
   margin: 1px -1px 0;
   border-radius: 0 0 $sage-inputfield-border-radius $sage-inputfield-border-radius;
@@ -116,12 +116,12 @@
   box-shadow: sage-shadow(sm);
   display: none;
 
-  .sage-select--active & {
+  .sage-dropdown--active & {
     display: block;
   }
 }
 
-.sage-select__search-container {
+.sage-dropdown__search-container {
   position: relative;
 
   &::before {
@@ -135,7 +135,7 @@
   }
 }
 
-.sage-select__search-field {
+.sage-dropdown__search-field {
   padding: sage-spacing(sm) $sage-inputfield-padding sage-spacing(sm) 44px;
   appearance: none;
   border: 0;
@@ -150,12 +150,12 @@
   }
 }
 
-.sage-select__option-container {
+.sage-dropdown__option-container {
   padding: 0;
   margin: 0;
 }
 
-.sage-select__option {
+.sage-dropdown__option {
   padding: sage-spacing(xs) $sage-inputfield-padding;
   margin: 0;
   list-style: none;
@@ -167,4 +167,13 @@
     box-shadow: inset 2px 0 0 0 sage-color(primary);
     background: sage-color(grey, 100);
   }
+}
+
+.sage-dropdown__overlay {
+  background: transparentize;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }

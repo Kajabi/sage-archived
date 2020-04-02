@@ -10,8 +10,8 @@ Sage.Dropdown.prototype = {
 
     self.elements = {
       parent: el,
-      field: el.querySelector('[data-js-sageselect-field]'),
-      options: el.querySelectorAll('[data-js-sageselect-option]'),
+      field: el.querySelector('[data-js-sagedropdown-field]'),
+      options: el.querySelectorAll('[data-js-sagedropdown-option]'),
     };
 
     self.elements.field.addEventListener('click', function() {
@@ -26,25 +26,46 @@ Sage.Dropdown.prototype = {
   },
 
   toggle: function() {
-    var activeClass = 'sage-select--active',
+    var activeClass = 'sage-dropdown--active',
         parentClassList = this.elements.parent.classList;
 
     if (parentClassList.contains(activeClass) ) {
       parentClassList.remove(activeClass);
+      this.overlay(false);
     } else {
       parentClassList.add(activeClass);
+      this.overlay(true);
+    }
+  },
+
+  overlay(show) {
+    var overlayClass = 'sage-dropdown__overlay',
+        self = this;
+
+    if (show) {
+      var el = document.createElement('div');
+      el.className = overlayClass;
+      self.elements.parent.appendChild(el);
+
+      el.addEventListener('click', el.clickListener = function fn() {
+        self.toggle()
+      }, false);
+    } else {
+      var el = self.elements.parent.getElementsByClassName(overlayClass)[0];
+      el.removeEventListener('click', el.clickListener, false);
+      self.elements.parent.removeChild(el);
     }
   },
 
   select: function(option) {
-    var value = option.dataset.jsSageselectOption,
-        selectedClass = 'sage-select--selected',
+    var value = option.dataset.jsSagedropdownOption,
+        selectedClass = 'sage-dropdown--selected',
         parentClassList = this.elements.parent.classList;
 
     this.toggle();
     this.elements.field.value = value;
 
-    if (option.dataset.jsSageselectOption.length) {
+    if (option.dataset.jsSagedropdownOption.length) {
       parentClassList.add(selectedClass);
     } else {
       parentClassList.remove(selectedClass);
@@ -52,6 +73,6 @@ Sage.Dropdown.prototype = {
   }
 };
 
-document.querySelectorAll('[data-js-sageselect]').forEach(function(el) {
-    new Sage.Dropdown(el);
+document.querySelectorAll('[data-js-sagedropdown]').forEach(function(el) {
+  new Sage.Dropdown(el);
 });
