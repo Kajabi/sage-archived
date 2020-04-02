@@ -1,0 +1,21 @@
+/* ==================================================
+  ** description
+  type: element
+
+
+
+================================================== */
+
+.sage-description {
+  margin-bottom: sage-spacing();
+  &__title {
+    color: sage-color(charcoal, 300);
+    text-transform: uppercase;
+  }
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+  @media (max-width: sage-breakpoint()) {
+    /* description responsive styles */
+  }
+}
