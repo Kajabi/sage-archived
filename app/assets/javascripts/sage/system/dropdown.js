@@ -6,27 +6,27 @@ Sage.Dropdown = function(el) {
 
 Sage.Dropdown.prototype = {
   init: function(el){
-    var self = this;
+    var _this = this;
 
-    self.elements = {
+    _this.elements = {
       parent: el,
       field: el.querySelector('[data-js-sagedropdown-field]'),
       search: el.querySelector('[data-js-sagedropdown-search]'),
       options: el.querySelectorAll('[data-js-sagedropdown-option]'),
     };
 
-    self.elements.field.addEventListener('click', function() {
-      self.toggle();
+    _this.elements.field.addEventListener('click', function() {
+      _this.toggle();
     }, false);
 
-    self.elements.search.addEventListener('keyup', function(evt) {
+    _this.elements.search.addEventListener('keyup', function(evt) {
       // DO TO: Throttle this function
-      self.filter(evt.target.value);
+      _this.filter(evt.target.value);
     }, false);
 
-    self.elements.options.forEach(function(item) {
+    _this.elements.options.forEach(function(item) {
       item.addEventListener('click', function(evt) {
-        self.select(evt.currentTarget);
+        _this.select(evt.currentTarget);
       }, false);
     });
   },
@@ -37,32 +37,33 @@ Sage.Dropdown.prototype = {
 
     if (parentClassList.contains(activeClass) ) {
       parentClassList.remove(activeClass);
-      this.overlay(false);
+      this.buildOverlay(false);
       this.bindKeyActions(false);
-      this.clearFilter();
+      this.filter("");
+      this.elements.search.value = "";
     } else {
       parentClassList.add(activeClass);
-      this.overlay(true);
+      this.buildOverlay(true);
       this.bindKeyActions(true);
     }
   },
 
-  overlay(show) {
+  buildOverlay(bool) {
     var overlayClass = 'sage-dropdown__overlay',
-        self = this;
+        _this = this;
 
-    if (show) {
+    if (bool) {
       var el = document.createElement('div');
       el.className = overlayClass;
-      self.elements.parent.appendChild(el);
+      _this.elements.parent.appendChild(el);
 
       el.addEventListener('click', el.clickListener = function fn() {
-        self.toggle()
+        _this.toggle()
       }, false);
     } else {
-      var el = self.elements.parent.getElementsByClassName(overlayClass)[0];
+      var el = _this.elements.parent.getElementsByClassName(overlayClass)[0];
       el.removeEventListener('click', el.clickListener, false);
-      self.elements.parent.removeChild(el);
+      _this.elements.parent.removeChild(el);
     }
   },
 
@@ -99,17 +100,12 @@ Sage.Dropdown.prototype = {
     });
   },
 
-  clearFilter: function() {
-    this.elements.search.value = "";
-    this.filter("");
-  },
-
   bindKeyActions(bool) {
-    var self = this;
+    var _this = this;
 
     if (bool) {
       document.addEventListener('keydown', window.Sage.DropdownKeyListener = function fn(evt) {
-        self.keyAction(evt.key);
+        _this.keyAction(evt.key);
       }, false);
     } else {
       document.removeEventListener('keydown', window.Sage.DropdownKeyListener, false);
@@ -133,9 +129,7 @@ Sage.Dropdown.prototype = {
         // this.toggle();
       break;
     }
-  },
-
-
+  }
 };
 
 document.querySelectorAll('[data-js-sagedropdown]').forEach(function(el) {
