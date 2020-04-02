@@ -162,11 +162,16 @@
   cursor: pointer;
   user-select: none;
 
-  &:hover {
-    border-left-color: sage-color(primary);
+  &.sage-dropdown__option--active {
+    box-shadow: inset 2px 0 0 0 sage-color(primary);
+    background: sage-color(primary, 100);
+  }
+
+  &:hover:not(.sage-dropdown__option--active) {
     box-shadow: inset 2px 0 0 0 sage-color(primary);
     background: sage-color(grey, 100);
   }
+
 }
 
 .sage-dropdown__overlay {

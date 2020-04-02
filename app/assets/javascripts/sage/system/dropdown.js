@@ -57,16 +57,21 @@ Sage.Dropdown.prototype = {
     }
   },
 
-  select: function(option) {
-    var value = option.dataset.jsSagedropdownOption,
+  select: function(elOption) {
+    var value = elOption.dataset.jsSagedropdownOption,
         selectedClass = 'sage-dropdown--selected',
         parentClassList = this.elements.parent.classList;
 
     this.toggle();
     this.elements.field.value = value;
 
-    if (option.dataset.jsSagedropdownOption.length) {
+    this.elements.options.forEach(function(elOptions) {
+      elOptions.classList.remove('sage-dropdown__option--active');
+    });
+
+    if (elOption.dataset.jsSagedropdownOption.length) {
       parentClassList.add(selectedClass);
+      elOption.classList.add('sage-dropdown__option--active');
     } else {
       parentClassList.remove(selectedClass);
     }
