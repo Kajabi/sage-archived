@@ -1,0 +1,56 @@
+/* ==================================================
+  ** live_stream_footer
+  type: object
+
+
+
+================================================== */
+
+$-live-stream-footer-height: rem(72px);
+$-live-stream-footer-gradient: linear-gradient(0deg, $sage-live-stream-wrap-gradient-start, $sage-live-stream-wrap-gradient-end);
+
+.sage-live-stream-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: $-live-stream-footer-height;
+  padding: 0 sage-spacing(md);
+
+  .sage-live-stream-wrapper--awake & {
+    background: $-live-stream-footer-gradient;
+  }
+}
+
+.sage-live-stream-footer__settings {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 25%;
+  min-width: max-content;
+  margin-right: auto;
+}
+
+.sage-live-stream-footer__stream-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sage-live-stream-footer__chat-controls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 25%;
+  min-width: max-content;
+  margin-left: auto;
+}
+
+.sage-live-stream-wrapper {
+  position: relative;
+  height: 100px;
+  border: 1px solid sage-color(grey);
+}
