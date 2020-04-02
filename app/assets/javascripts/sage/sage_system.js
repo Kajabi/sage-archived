@@ -6,5 +6,6 @@
 //= require sage/system/overlay
 //= require sage/system/banner
 //= require sage/system/alert
+//= require sage/system/dropdown
 
 //= require sage/system/init

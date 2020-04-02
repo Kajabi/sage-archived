@@ -47,6 +47,7 @@
   background: transparent;
   transition: border 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
   cursor: pointer;
+  outline: none;
 
   @include placeholder { color: inherit; }
 
@@ -149,12 +150,12 @@
   }
 }
 
-.sage-select__items {
+.sage-select__option-container {
   padding: 0;
   margin: 0;
 }
 
-.sage-select__item {
+.sage-select__option {
   padding: sage-spacing(xs) $sage-inputfield-padding;
   margin: 0;
   list-style: none;
