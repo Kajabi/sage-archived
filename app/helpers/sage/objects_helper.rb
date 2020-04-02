@@ -15,7 +15,7 @@ module Sage
         # Sage Generated Objects
         {
           title: "live_stream_control",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", 
+          description: "The Live Stream Controls are a special class of button used in the frame for Live Streams.", 
           scss_design:  "done",
           scss_dev:     "done",
           scss_doc:     "done",
