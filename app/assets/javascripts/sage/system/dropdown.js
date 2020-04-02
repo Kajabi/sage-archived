@@ -11,11 +11,17 @@ Sage.Dropdown.prototype = {
     self.elements = {
       parent: el,
       field: el.querySelector('[data-js-sagedropdown-field]'),
+      search: el.querySelector('[data-js-sagedropdown-search]'),
       options: el.querySelectorAll('[data-js-sagedropdown-option]'),
     };
 
     self.elements.field.addEventListener('click', function() {
-      self.toggle()
+      self.toggle();
+    }, false);
+
+    self.elements.search.addEventListener('keyup', function(evt) {
+      // DO TO: Throttle this function
+      self.filter(evt.target.value);
     }, false);
 
     self.elements.options.forEach(function(item) {
@@ -32,6 +38,7 @@ Sage.Dropdown.prototype = {
     if (parentClassList.contains(activeClass) ) {
       parentClassList.remove(activeClass);
       this.overlay(false);
+      this.clearSearch();
     } else {
       parentClassList.add(activeClass);
       this.overlay(true);
@@ -65,8 +72,8 @@ Sage.Dropdown.prototype = {
     this.toggle();
     this.elements.field.value = value;
 
-    this.elements.options.forEach(function(elOptions) {
-      elOptions.classList.remove('sage-dropdown__option--active');
+    this.elements.options.forEach(function(elOption) {
+      elOption.classList.remove('sage-dropdown__option--active');
     });
 
     if (elOption.dataset.jsSagedropdownOption.length) {
@@ -75,6 +82,24 @@ Sage.Dropdown.prototype = {
     } else {
       parentClassList.remove(selectedClass);
     }
+  },
+
+  filter: function(value) {
+    this.elements.options.forEach(function(elOption) {
+      if (
+        !elOption.dataset.jsSagedropdownOption.length ||
+        elOption.dataset.jsSagedropdownOption.toUpperCase().startsWith(value.toUpperCase())
+      ) {
+        elOption.classList.remove('sage-dropdown__option--hidden');
+      } else {
+        elOption.classList.add('sage-dropdown__option--hidden');
+      }
+    });
+  },
+
+  clearSearch: function() {
+    this.elements.search.value = "";
+    this.filter("");
   }
 };
 

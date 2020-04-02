@@ -162,6 +162,10 @@
   cursor: pointer;
   user-select: none;
 
+  &.sage-dropdown__option--hidden:not(.sage-dropdown__option--active) {
+    display: none;
+  }
+
   &.sage-dropdown__option--active {
     box-shadow: inset 2px 0 0 0 sage-color(primary);
     background: sage-color(primary, 100);
@@ -171,7 +175,6 @@
     box-shadow: inset 2px 0 0 0 sage-color(primary);
     background: sage-color(grey, 100);
   }
-
 }
 
 .sage-dropdown__overlay {
