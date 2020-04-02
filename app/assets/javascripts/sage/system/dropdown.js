@@ -38,10 +38,12 @@ Sage.Dropdown.prototype = {
     if (parentClassList.contains(activeClass) ) {
       parentClassList.remove(activeClass);
       this.overlay(false);
-      this.clearSearch();
+      this.bindKeyActions(false);
+      this.clearFilter();
     } else {
       parentClassList.add(activeClass);
       this.overlay(true);
+      this.bindKeyActions(true);
     }
   },
 
@@ -97,10 +99,43 @@ Sage.Dropdown.prototype = {
     });
   },
 
-  clearSearch: function() {
+  clearFilter: function() {
     this.elements.search.value = "";
     this.filter("");
-  }
+  },
+
+  bindKeyActions(bool) {
+    var self = this;
+
+    if (bool) {
+      document.addEventListener('keydown', window.Sage.DropdownKeyListener = function fn(evt) {
+        self.keyAction(evt.key);
+      }, false);
+    } else {
+      document.removeEventListener('keydown', window.Sage.DropdownKeyListener, false);
+    }
+  },
+
+  keyAction(key) {
+    // Need to know which focus is happening here
+
+    switch(key) {
+      case "Escape" || "Tab":
+        this.toggle();
+      break;
+      case "ArrowDown":
+        // this.toggle();
+      break;
+      case "ArrowUp":
+        // this.toggle();
+      break;
+      case "Enter":
+        // this.toggle();
+      break;
+    }
+  },
+
+
 };
 
 document.querySelectorAll('[data-js-sagedropdown]').forEach(function(el) {
