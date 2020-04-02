@@ -14,6 +14,19 @@ module Sage
       [
         # Sage Generated Objects
         {
+          title: "live_stream_control",
+          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", 
+          scss_design:  "done",
+          scss_dev:     "done",
+          scss_doc:     "done",
+          rails_design: "no",
+          rails_dev:    "no",
+          rails_doc:    "no",
+          react_design: "todo",
+          react_dev:    "todo",
+          react_doc:    "todo"
+        },
+        {
           title: "card",
           description: "A card presents content and can guide the user toward a related action.", 
           scss_design:  "done",
@@ -32,12 +45,12 @@ module Sage
           scss_design:  "done",
           scss_dev:     "done",
           scss_doc:     "done",
-          rails_design: "todo",
-          rails_dev:    "todo",
-          rails_doc:    "todo",
-          react_design: "todo",
-          react_dev:    "todo",
-          react_doc:    "todo"
+          rails_design: "no",
+          rails_dev:    "no",
+          rails_doc:    "no",
+          react_design: "done",
+          react_dev:    "done",
+          react_doc:    "done"
         },
         {
           title: "live_profile_card",
@@ -45,12 +58,12 @@ module Sage
           scss_design:  "done",
           scss_dev:     "done",
           scss_doc:     "done",
-          rails_design: "todo",
-          rails_dev:    "todo",
-          rails_doc:    "todo",
-          react_design: "doing",
-          react_dev:    "doing",
-          react_doc:    "doing"
+          rails_design: "no",
+          rails_dev:    "no",
+          rails_doc:    "no",
+          react_design: "done",
+          react_dev:    "done",
+          react_doc:    "done"
         },
         {
           title: "live_user_control",
@@ -61,9 +74,9 @@ module Sage
           rails_design: "no",
           rails_dev:    "no",
           rails_doc:    "no",
-          react_design: "todo",
-          react_dev:    "todo",
-          react_doc:    "todo"
+          react_design: "done",
+          react_dev:    "done",
+          react_doc:    "done"
         },
         {
           title: "live_active_mic",
@@ -74,9 +87,9 @@ module Sage
           rails_design: "no",
           rails_dev:    "no",
           rails_doc:    "no",
-          react_design: "todo",
-          react_dev:    "todo",
-          react_doc:    "todo"
+          react_design: "done",
+          react_dev:    "done",
+          react_doc:    "done"
         },
         {
           title: "live_avatar",
@@ -84,12 +97,12 @@ module Sage
           scss_design:  "done",
           scss_dev:     "done",
           scss_doc:     "done",
-          rails_design: "todo",
-          rails_dev:    "todo",
-          rails_doc:    "todo",
-          react_design: "todo",
-          react_dev:    "todo",
-          react_doc:    "todo"
+          rails_design: "no",
+          rails_dev:    "no",
+          rails_doc:    "no",
+          react_design: "done",
+          react_dev:    "done",
+          react_doc:    "done"
         },
         {
           title: "form_section",
