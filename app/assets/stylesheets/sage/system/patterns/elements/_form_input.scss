@@ -22,18 +22,22 @@
   padding-right: $sage-inputfield-padding-label;
   color: inherit;
   font-weight: sage-font-weight(semibold);
+  white-space: nowrap;
   background-color: $sage-inputfield-bg-label;
   pointer-events: none;
   opacity: 0;
 
   @extend %t-sage-body-xsmall-semi;
+
+  @media (min-width(sage-breakpoint(sm-min))) {
+    white-space: normal;
+  }
 }
 
 .sage-input__field {
   @mixin floating-label-active {
     transform: translateY(-($sage-body-font-size + $sage-inputfield-padding-filled * 2)); // IE doesn't support calc in transforms so we provide a fallback
     transform: translateY(calc(-50% - (#{$sage-body-font-size} + #{$sage-inputfield-padding-filled}))); // we calculate the centered position minus the offset of the text height plus the spacing height
-    // line-height: 1;
     transition: opacity 0.1s ease-in, transform 0.15s ease-in-out, color 0.15s ease-out;
     opacity: 1;
   }
