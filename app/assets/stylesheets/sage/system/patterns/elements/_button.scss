@@ -19,7 +19,7 @@
   margin-right: sage-spacing(2xs);
   letter-spacing: $sage-btn-letter-spacing;
   color: sage-color(charcoal, 500);
-  border: $sage-btn-border-width solid currentColor;
+  border: 0;
   border-radius: $sage-btn-border-radius;
   box-shadow: $sage-btn-shadow-base;
   transition: border $sage-btn-transition, background-color $sage-btn-transition, box-shadow $sage-btn-transition;
@@ -33,7 +33,6 @@
   &:hover:not(:focus):not(:active):not(:disabled):not(.disabled),
   &:focus,
   &:active {
-    border-color: transparent;
     outline: none;
   }
 }
@@ -62,8 +61,8 @@ input[type="search"] {
     left: 50%;
     top: 50%;
     transform: translate3d(-50%, -50%, 0) scale(0.94);
-    width: calc(100% + (#{$sage-btn-focus-outline-width * 1px} + #{$sage-btn-focus-outline-size * 2}));
-    height: calc(100% + (#{$sage-btn-focus-outline-width * 1px} + #{$sage-btn-focus-outline-size * 2}));
+    width: calc(100% + #{$sage-btn-focus-outline-width * 2px} + #{$sage-btn-focus-outline-spacing * 2});
+    height: calc(100% + #{$sage-btn-focus-outline-width * 2px} + #{$sage-btn-focus-outline-spacing * 2});
     border: ($sage-btn-focus-outline-width * 1px) solid $sage-btn-focus-outline-color;
     border-radius: sage-border(radius-large);
     transition: opacity 0.15s ease-out 0.05s, transform 0.2s ease-in-out;
@@ -75,7 +74,6 @@ input[type="search"] {
   &:focus,
   &:active {
     color: sage-color(charcoal, 200);
-    border-color: sage-color(charcoal, 100);
   }
 
   &:focus {
@@ -93,7 +91,6 @@ input[type="search"] {
 
   &:active {
     color: sage-color(charcoal, 400);
-    border-color: sage-color(charcoal, 200);
     box-shadow: none;
   }
 
@@ -109,7 +106,6 @@ input[type="search"] {
 .sage-btn--primary {
   color: $sage-btn-primary-text-color;
   background-color: $sage-btn-primary-bg-color;
-  border-color: $sage-btn-primary-bg-color;
 
   &::after {
     border-color: $sage-btn-primary-bg-color;
@@ -119,7 +115,6 @@ input[type="search"] {
   &:focus,
   &:active {
     color: $sage-btn-primary-text-color;
-    border-color: transparent;
   }
 
   &:hover:not(:focus):not(:active):not(:disabled):not(.disabled) {
@@ -142,14 +137,12 @@ input[type="search"] {
 
     color: sage-color(primary, 200);
     background-color: sage-color(primary, 100);
-    border-color: transparent;
   }
 }
 
 .sage-btn--secondary {
   color: $sage-btn-secondary-text-color;
   background: sage-color(white);
-  border: 1px solid transparent;
 
   &::after {
     border-color: sage-color(primary);
@@ -157,17 +150,11 @@ input[type="search"] {
 
   &:hover:not(:focus):not(:active):not(:disabled):not(.disabled) {
     color: $sage-btn-secondary-text-color;
-    border-color: transparent;
     box-shadow: $sage-btn-shadow-hover;
-  }
-
-  &:focus {
-    border: 1px solid sage-color(grey, 300);
   }
 
   &:active {
     background-color: sage-color(grey, 200);
-    border: 1px solid sage-color(grey, 300);
   }
 
   &:disabled,
@@ -176,12 +163,10 @@ input[type="search"] {
 
     color: sage-color(grey, 400);
     background-color: sage-color(grey, 200);
-    border-color: transparent;
 
     &:hover,
     &:focus,
     &:active {
-      border-color: transparent;
       box-shadow: none;
     }
   }
@@ -190,7 +175,7 @@ input[type="search"] {
 .sage-btn--tertiary {
   color: $sage-btn-tertiary-text-color;
   background: sage-color(white);
-  border: none;
+  border: 0;
   box-shadow: none;
 
   &::after {
@@ -205,7 +190,6 @@ input[type="search"] {
   &:focus {
     color: $sage-btn-tertiary-text-color;
     background: sage-color(white);
-    border-color: sage-color(white);
     box-shadow: none;
   }
 
@@ -227,7 +211,6 @@ input[type="search"] {
 .sage-btn--danger {
   color: $sage-btn-danger-text-color;
   background: $sage-btn-danger-bg-color;
-  border-color: transparent;
   box-shadow: $sage-btn-shadow-base;
 
   &::after {
@@ -239,7 +222,6 @@ input[type="search"] {
   &:focus,
   &:active {
     color: $sage-btn-danger-text-color;
-    border-color: transparent;
   }
 
   &:hover:not(:focus):not(:active):not(:disabled):not(.disabled) {
@@ -262,7 +244,6 @@ input[type="search"] {
 
     color: sage-color(red, 200);
     background-color: sage-color(red, 100);
-    border-color: transparent;
   }
 }
 
@@ -271,9 +252,11 @@ input[type="search"] {
 
   @if $direction == right {
     $right: true;
-  } @else if $direction == left {
+  }
+  @else if $direction == left {
     $right: false;
-  } @else {
+  }
+  @else {
     @error "button-icon-generator() requires argument value of either `right` or `left`";
   }
 
@@ -285,8 +268,8 @@ input[type="search"] {
 
       &::before {
         @include icon-base($icon-name);
-        margin: if($right, 0 0 0 sage-spacing(xs), 0 sage-spacing(xs) 0 0);
         align-self: center;
+        margin: if($right, 0 0 0 sage-spacing(xs), 0 sage-spacing(xs) 0 0);
       }
     }
   }
@@ -295,6 +278,3 @@ input[type="search"] {
 @include button-icon-generator(left);
 @include button-icon-generator(right);
 
-.sage-btn--link {
-  // TBD
-}
