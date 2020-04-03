@@ -37,6 +37,8 @@ $-live-stream-footer-gradient: linear-gradient(0deg, $sage-live-stream-wrap-grad
   display: flex;
   align-items: center;
   justify-content: center;
+  min-width: max-content;
+  padding: 0 sage-spacing(sm);
 } 
 
 .sage-live-stream-footer__chat-controls {

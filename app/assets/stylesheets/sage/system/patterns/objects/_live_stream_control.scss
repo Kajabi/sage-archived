@@ -51,6 +51,12 @@ $-sage-live-stream-control-stop-color: sage-color(white);
       margin-right: sage-spacing(md);
     }
   }
+
+  .sage-live-stream-footer & {
+    &:not(:last-child) {
+      margin-right: sage-spacing(sm);
+    }
+  }
 }
 
 .sage-live-stream-control--pill {

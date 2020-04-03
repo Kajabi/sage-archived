@@ -8,6 +8,7 @@
 
 .sage-live-stream-wrapper {
   position: relative;
+  min-width: rem(460px);
   padding: $sage-live-stream-header-height 0 $sage-live-stream-footer-height;
   background-color: sage-color(charcoal, 500);
 
