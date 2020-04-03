@@ -16,7 +16,7 @@ $-live-stream-footer-gradient: linear-gradient(0deg, $sage-live-stream-wrap-grad
   left: 0;
   bottom: 0;
   right: 0;
-  height: $sage-live-stream-footer-height;
+  height: $sage-live-stream-header-footer-height;
   padding: 0 sage-spacing(md);
 
   .sage-live-stream-wrapper--awake & {

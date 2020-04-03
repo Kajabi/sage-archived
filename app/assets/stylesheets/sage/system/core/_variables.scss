@@ -315,10 +315,9 @@ $sage-tabs-active-border-radius: sage-border(radius) !default;
 $sage-live-avatar-ring-width: 1px !default;
 
 // Overall stream styles
-$sage-live-stream-footer-height: rem(72px);
-$sage-live-stream-header-height: rem(78px);
-$sage-live-stream-wrap-gradient-start: rgba(0, 0, 0, 1) 0%;
-$sage-live-stream-wrap-gradient-end: rgba(0, 0, 0, 0) 100%;
+$sage-live-stream-header-footer-height: rem(72px);
+$sage-live-stream-wrap-gradient-start: rgba(sage-color(black), 1) 0%;
+$sage-live-stream-wrap-gradient-end: rgba(sage-color(black), 0) 100%;
 
 // ==================================================
 // TOOLTIPS
