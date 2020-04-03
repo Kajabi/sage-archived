@@ -117,9 +117,11 @@ $sage-inputfield-box-shadow-size: 0 0 0 rem(1px) !default;
 
 // Sizing
 $sage-inputfield-height: rem(40px) !default;
-$sage-inputfield-padding: rem(18px) !default;
+$sage-inputfield-padding: rem(12px) !default;
+$sage-inputfield-padding-x: rem(16px) !default;
 $sage-inputfield-padding-offset: $sage-inputfield-padding - $sage-inputfield-border-width;
 $sage-inputfield-padding-filled: rem(4px) !default;
+$sage-inputfield-padding-label: rem(3px) !default;
 
 // Spacing
 $sage-inputfield-spacing: sage-spacing(lg) !default;
@@ -129,6 +131,7 @@ $sage-inputfield-color-default: sage-color(charcoal) !default;
 $sage-inputfield-color-disabled: sage-color(grey, 400) !default;
 $sage-inputfield-color-success: sage-color(primary) !default;
 $sage-inputfield-color-error: sage-color(red) !default;
+$sage-inputfield-bg-label: sage-color(white) !default;
 $sage-inputfield-bg-disabled: sage-color(grey, 100) !default;
 
 
