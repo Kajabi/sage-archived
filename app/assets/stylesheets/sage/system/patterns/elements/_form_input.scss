@@ -14,6 +14,8 @@
 }
 
 .sage-input__label {
+  @extend %t-sage-body-xsmall-semi;
+
   position: absolute;
   transform: translateY(calc(#{$sage-body-font-size} * -1));
   left: $sage-inputfield-padding-x;
@@ -26,8 +28,6 @@
   background-color: $sage-inputfield-bg-label;
   pointer-events: none;
   opacity: 0;
-
-  @extend %t-sage-body-xsmall-semi;
 
   @media screen and (min-width: sage-breakpoint(sm-min)) {
     white-space: normal;
