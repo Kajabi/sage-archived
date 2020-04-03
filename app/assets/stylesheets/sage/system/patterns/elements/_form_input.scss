@@ -29,7 +29,7 @@
 
   @extend %t-sage-body-xsmall-semi;
 
-  @media (min-width(sage-breakpoint(sm-min))) {
+  @media screen and (min-width: sage-breakpoint(sm-min)) {
     white-space: normal;
   }
 }
