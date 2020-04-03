@@ -14,6 +14,19 @@ module Sage
       [
         # Sage Generated Objects
         {
+          title: "live_stream_video_grid",
+          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", 
+          scss_design:  "todo",
+          scss_dev:     "todo",
+          scss_doc:     "todo",
+          rails_design: "todo",
+          rails_dev:    "todo",
+          rails_doc:    "todo",
+          react_design: "todo",
+          react_dev:    "todo",
+          react_doc:    "todo"
+        },
+        {
           title: "live_stream_control",
           description: "The Live Stream Controls are a special class of button used in the frame for Live Streams.", 
           scss_design:  "done",
