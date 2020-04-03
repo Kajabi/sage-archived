@@ -6,29 +6,27 @@ Sage.Dropdown = function(el) {
 
 Sage.Dropdown.prototype = {
   init: function(el){
-    var _this = this;
-
-    _this.elements = {
+    this.elements = {
       parent: el,
       field: el.querySelector('[data-js-sagedropdown-field]'),
       search: el.querySelector('[data-js-sagedropdown-search]'),
       options: el.querySelectorAll('[data-js-sagedropdown-option]'),
     };
 
-    _this.elements.field.addEventListener('click', function() {
-      _this.toggle();
-    }, false);
+    this.elements.field.addEventListener('click', function() {
+      this.toggle();
+    }.bind(this), false);
 
-    _this.elements.search.addEventListener('keyup', function(evt) {
-      // DO TO: Throttle this function
-      _this.filter(evt.target.value);
-    }, false);
+    this.elements.search.addEventListener('keyup', function(evt) {
+      // TO DO: Throttle this function
+      this.filter(evt.target.value);
+    }.bind(this), false);
 
-    _this.elements.options.forEach(function(item) {
+    this.elements.options.forEach(function(item) {
       item.addEventListener('click', function(evt) {
-        _this.select(evt.currentTarget);
-      }, false);
-    });
+        this.select(evt.currentTarget);
+      }.bind(this), false);
+    }, this);
   },
 
   toggle: function() {
@@ -49,21 +47,20 @@ Sage.Dropdown.prototype = {
   },
 
   buildOverlay(bool) {
-    var overlayClass = 'sage-dropdown__overlay',
-        _this = this;
+    var overlayClass = 'sage-dropdown__overlay';
 
     if (bool) {
       var el = document.createElement('div');
       el.className = overlayClass;
-      _this.elements.parent.appendChild(el);
+      this.elements.parent.appendChild(el);
 
       el.addEventListener('click', el.clickListener = function fn() {
-        _this.toggle()
-      }, false);
+        this.toggle()
+      }.bind(this), false);
     } else {
-      var el = _this.elements.parent.getElementsByClassName(overlayClass)[0];
+      var el = this.elements.parent.getElementsByClassName(overlayClass)[0];
       el.removeEventListener('click', el.clickListener, false);
-      _this.elements.parent.removeChild(el);
+      this.elements.parent.removeChild(el);
     }
   },
 
@@ -101,12 +98,10 @@ Sage.Dropdown.prototype = {
   },
 
   bindKeyActions(bool) {
-    var _this = this;
-
     if (bool) {
       document.addEventListener('keydown', window.Sage.DropdownKeyListener = function fn(evt) {
-        _this.keyAction(evt.key);
-      }, false);
+        this.keyAction(evt.key);
+      }.bind(this), false);
     } else {
       document.removeEventListener('keydown', window.Sage.DropdownKeyListener, false);
     }
