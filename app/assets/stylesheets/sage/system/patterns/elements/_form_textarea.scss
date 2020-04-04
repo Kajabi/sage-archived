@@ -18,21 +18,30 @@
   position: absolute;
   left: $sage-textarea-padding;
   top: $sage-textarea-border-width;
-  width: $sage-textarea-label-width;
-  margin-bottom: $sage-textarea-label-margin-bottom;
-  padding-top: $sage-textarea-label-padding-top;
-  padding-bottom: $sage-textarea-label-padding-bottom;
+  padding-left: $sage-textarea-label-padding;
+  padding-right: $sage-textarea-label-padding;
   color: inherit;
+  white-space: nowrap;
   background-color: $sage-textarea-label-bg-color;
   pointer-events: none;
   opacity: 0;
+
+  @media screen and (min-width: sage-breakpoint(sm-min)) {
+    white-space: normal;
+  }
 }
 
 .sage-textarea__field {
+  @mixin floating-label-textarea-active {
+    transform: translateY(-$sage-textarea-padding);
+    transition: opacity 0.1s ease-in, transform 0.15s ease-in-out, color 0.15s ease-out;
+    opacity: 1;
+  }
+
   min-height: $sage-textarea-min-height;
   height: $sage-textarea-height;
   width: $sage-textarea-width;
-  padding: $sage-textarea-padding $sage-textarea-padding $sage-textarea-padding;
+  padding: $sage-textarea-padding;
   color: $sage-textarea-color-default;
   appearance: none;
   border: $sage-textarea-border-width solid $sage-textarea-border-color;
@@ -46,7 +55,6 @@
 
   &:focus:not(:disabled),
   &:active:not(:disabled) {
-    padding-top: $sage-textarea-padding-filled;
     border-color: currentColor;
     outline: none;
 
@@ -54,30 +62,20 @@
       opacity: 0;
     }
 
-    .sage-textarea--no-label & {
-      padding-top: $sage-textarea-padding;
-    }
-
     ~ .sage-textarea__label {
-      transition: opacity 0.15s ease-out, transform 0.15s ease-in-out, color 0.15s ease-out;
-      opacity: 1;
+      @include floating-label-textarea-active();
     }
   }
 
+  /* Separated so IE/Edge does not ignore focus styles. Note that Edge will not support these states */
   &:valid:not(:placeholder-shown),
   &:required:not(:placeholder-shown) {
-    padding-top: $sage-textarea-padding-filled;
-
     ~ .sage-textarea__label {
-      transition: opacity 0.15s ease-out, transform 0.15s ease-in-out, color 0.15s ease-out;
-      opacity: 1;
-    }
-
-    .sage-textarea--no-label & {
-      padding-top: $sage-textarea-padding;
+      @include floating-label-textarea-active();
     }
   }
 
+  // TODO: add support for Simpleform classes
   &:valid:not(:placeholder-shown) {
     border-color: $sage-textarea-color-success;
     box-shadow: $sage-textarea-box-shadow-size $sage-textarea-color-success;
@@ -87,6 +85,7 @@
     }
   }
 
+  // TODO: add support for Simpleform classes
   &:required:not(:placeholder-shown):not(:valid) {
     border-color: $sage-textarea-color-error;
     box-shadow: $sage-textarea-box-shadow-size $sage-textarea-color-error;

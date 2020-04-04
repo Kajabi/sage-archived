@@ -146,17 +146,13 @@ $sage-textarea-border-width: $sage-inputfield-border-width !default;
 $sage-textarea-box-shadow-size: $sage-inputfield-box-shadow-size !default;
 
 // Padding
-$sage-textarea-label-padding-top: rem(12px) !default;
-$sage-textarea-label-padding-bottom: rem(6px) !default;
-$sage-textarea-label-margin-bottom: 0 !default;
+$sage-textarea-label-padding: rem(3px) !default;
 $sage-textarea-padding: $sage-inputfield-padding !default;
-$sage-textarea-padding-filled: $sage-body-font-size + $sage-textarea-label-padding-top + $sage-textarea-label-padding-bottom !default; // height of label
 
 // Sizing
 $sage-textarea-min-height: rem(130px) !default;
 $sage-textarea-height: 100% !default;
 $sage-textarea-width: 100% !default;
-$sage-textarea-label-width: calc(100% - #{$sage-textarea-padding} * 2) !default;
 
 // Spacing
 $sage-textarea-spacing: $sage-inputfield-spacing !default;
