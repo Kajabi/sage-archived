@@ -14,23 +14,31 @@
 }
 
 .sage-input__label {
+  @extend %t-sage-body-xsmall-semi;
+
   position: absolute;
   transform: translateY(calc(#{$sage-body-font-size} * -1));
-  left: $sage-inputfield-padding;
+  left: $sage-inputfield-padding-x;
   top: 50%;
+  padding-left: $sage-inputfield-padding-label;
+  padding-right: $sage-inputfield-padding-label;
   color: inherit;
+  font-weight: sage-font-weight(semibold);
+  white-space: nowrap;
+  background-color: $sage-inputfield-bg-label;
   pointer-events: none;
   opacity: 0;
 
-  @extend %t-sage-body-xsmall-semi;
+  @media screen and (min-width: sage-breakpoint(sm-min)) {
+    white-space: normal;
+  }
 }
 
 .sage-input__field {
-  $-ie-label-offset: -($sage-body-font-size + $sage-inputfield-padding-filled);
-
-  @mixin floating-label {
-    transform: translateY($-ie-label-offset); // IE doesn't support calc in transforms
-    transform: translateY(calc(-50% - (#{$sage-body-font-size} - #{$sage-inputfield-padding-filled})));
+  @mixin floating-label-active {
+    transform: translateY(-($sage-body-font-size + $sage-inputfield-padding-filled * 2)); // IE doesn't support calc in transforms so we provide a fallback
+    transform: translateY(calc(-50% - (#{$sage-body-font-size} + #{$sage-inputfield-padding-filled}))); // we calculate the centered position minus the offset of the text height plus the spacing height
+    transition: opacity 0.1s ease-in, transform 0.15s ease-in-out, color 0.15s ease-out;
     opacity: 1;
   }
 
@@ -38,7 +46,6 @@
   width: 100%;
   padding: $sage-inputfield-padding-offset $sage-inputfield-padding;
   color: $sage-inputfield-color-default;
-  line-height: 1;
   appearance: none;
   border: $sage-inputfield-border-width solid $sage-inputfield-border-color;
   border-radius: $sage-inputfield-border-radius;
@@ -51,7 +58,6 @@
 
   &:focus:not(:disabled),
   &:active:not(:disabled) {
-    padding-bottom: $sage-inputfield-padding-filled;
     border-color: currentColor;
     outline: none;
 
@@ -59,32 +65,20 @@
       opacity: 0;
     }
 
-    .sage-input--no-label & {
-      padding-bottom: $sage-inputfield-padding;
-    }
-
     ~ .sage-input__label {
-      @include floating-label();
-
-      transition: opacity 0.15s ease-out, transform 0.15s ease-in-out, color 0.15s ease-out;
+      @include floating-label-active();
     }
   }
 
+  /* Separated so IE/Edge does not ignore focus styles. Note that Edge will not support these states */
   &:valid:not(:placeholder-shown),
   &:required:not(:placeholder-shown) {
-    padding-bottom: $sage-inputfield-padding-filled;
-
     ~ .sage-input__label {
-      @include floating-label();
-
-      transition: opacity 0.15s ease-out, transform 0.15s ease-in-out, color 0.15s ease-out;
-    }
-
-    .sage-input--no-label & {
-      padding-bottom: $sage-inputfield-padding;
+      @include floating-label-active();
     }
   }
 
+  // TODO: add support for Simpleform classes
   &:valid:not(:placeholder-shown) {
     border-color: $sage-inputfield-color-success;
     box-shadow: $sage-inputfield-box-shadow-size $sage-inputfield-color-success;
@@ -94,6 +88,7 @@
     }
   }
 
+  // TODO: add support for Simpleform classes
   &:required:not(:placeholder-shown):not(:valid) {
     border-color: $sage-inputfield-color-error;
     box-shadow: $sage-inputfield-box-shadow-size $sage-inputfield-color-error;
@@ -107,5 +102,13 @@
     color: $sage-inputfield-color-disabled;
     background-color: $sage-inputfield-bg-disabled;
     cursor: not-allowed;
+  }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  .sage-input__label,
+  .sage-input__field {
+    transition: none !important; /* stylelint-disable-line declaration-no-important */
   }
 }
