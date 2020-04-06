@@ -68,7 +68,7 @@ $-live-stream-tile-gapper: calc(100% / 6);
   align-items: center;
   overflow: hidden;
   position: relative;
-  border-radius: rem(4px);
+  border-radius: sage-border(radius);
   
   @for $i from 1 to 6 {
     &:nth-child(#{$i}) {
