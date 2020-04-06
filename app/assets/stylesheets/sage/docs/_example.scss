@@ -4,38 +4,51 @@
   For Sage documentation use
 ================================================== */
 
-.example {
-  &__title {
-    color: sage-color(charcoal, 500);
-    text-transform: capitalize;
-  }
+.example__title {
+  color: sage-color(charcoal, 500);
+  text-transform: capitalize;
+}
 
-  &__ink {
-    color: sage-color(charcoal, 500);
-    font-size: sage-font-size(lg);
-  }
+.example__ink {
+  color: sage-color(charcoal, 500);
+  font-size: sage-font-size(lg);
+}
 
-  &__label {
-    display: inline-block;
-    min-width: rem(100px);
-    margin: sage-spacing() 0;
-    padding: sage-spacing(xs) sage-spacing();
-    color: sage-color(charcoal, 500);
-    text-align: center;
-    background: sage-color(white);
-    box-shadow: sage-shadow();
-    border-radius: rem(20px);
-  }
+.example__label {
+  display: inline-block;
+  min-width: rem(100px);
+  margin: sage-spacing() 0;
+  padding: sage-spacing(xs) sage-spacing();
+  color: sage-color(charcoal, 500);
+  text-align: center;
+  background: sage-color(white);
+  box-shadow: sage-shadow();
+  border-radius: rem(20px);
+}
 
-  &__preview {
-    margin: sage-spacing() 0;
-  }
+.example__preview {
+  margin: sage-spacing() 0;
+}
 
-  &__code {
-    margin: sage-spacing() 0;
+.example__block {
+  margin-top: sage-spacing(sm);
+  margin-bottom: sage-spacing(sm);
+}
 
-    .prettyprint {
-      margin-bottom: 0;
-    }
+.example__block--md {
+  margin-top: sage-spacing(md);
+  margin-bottom: sage-spacing(md);
+}
+
+.example__block--lg {
+  margin-top: sage-spacing(lg);
+  margin-bottom: sage-spacing(lg);
+}
+
+.example__code {
+  margin: sage-spacing() 0;
+
+  .prettyprint {
+    margin-bottom: 0;
   }
 }
