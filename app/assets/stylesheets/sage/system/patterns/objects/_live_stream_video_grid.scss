@@ -16,9 +16,15 @@ $-live-stream-tile-gapper: calc(100% / 6);
   grid-template-rows: repeat(2, 1fr);
   grid-gap: sage-spacing(lg);
   width: 100%;
-  height: 500px;
-  padding: sage-spacing(sm);
+  height: 100%;
+  padding: 0 sage-spacing(md);
   background-color: sage-color(charcoal, 500);
+}
+
+.sage-live-stream-video-grid--2-up {
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  grid-template-areas: "t1 t2";
 }
 
 .sage-live-stream-video-grid--3-up {
@@ -49,40 +55,38 @@ $-live-stream-tile-gapper: calc(100% / 6);
     "t4 t4 t5 t5 t6 t6";
 }
 
-// Modification for when only two participants
-// .sage-live-stream-video-grid--2-up {}
-
-// Modification for solo or presenter mode
 .sage-live-stream-video-grid--solo {
+  display: block;
   position: absolute;
   z-index: sage-z-index(default, 1);
+  padding: 0;
+  margin: 0;
 
   @include position-full;
 }
 
 .sage-live-stream-video-grid__tile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
   position: relative;
   border-radius: rem(4px);
-  overflow: hidden;
-  align-self: center;
-
-  &::after {
-    content: "";
-    display: block;
-    padding-top: 100% * $-live-stream-video-tile-ratio;
-    background-color: sage-color(sage, 200);
-  }
   
   @for $i from 1 to 6 {
     &:nth-child(#{$i}) {
       grid-area: t#{$i};
     }
   }
+
+  .sage-live-stream-video-grid--solo & {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .sage-live-stream-video-grid__video {
-  position: absolute;
   object-fit: cover;
-
-  @include position-full;
+  width: 100%;
+  height: 100%;
 }

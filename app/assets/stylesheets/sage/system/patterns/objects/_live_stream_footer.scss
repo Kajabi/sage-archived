@@ -12,6 +12,7 @@
   left: 0;
   bottom: 0;
   right: 0;
+  z-index: sage-z-index(overlay);
   height: $sage-live-stream-header-footer-height;
   padding: 0 sage-spacing(md);
 
