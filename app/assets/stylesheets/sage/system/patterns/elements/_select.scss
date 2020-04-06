@@ -36,6 +36,7 @@
 }
 
 .sage-dropdown__field {
+  position: relative;
   height: 100%;
   width: 100%;
   padding: $sage-inputfield-padding-offset $sage-inputfield-padding;
@@ -63,6 +64,7 @@
     box-shadow: $sage-inputfield-box-shadow-size $sage-inputfield-color-success;
     border-radius: $sage-inputfield-border-radius $sage-inputfield-border-radius 0 0;
     padding-bottom: $sage-inputfield-padding-filled;
+    z-index: 9999;
 
     @include placeholder { color: transparent; }
   }
@@ -114,7 +116,11 @@
   z-index: 1000000;
   position: relative;
   box-shadow: sage-shadow(sm);
-  display: none;
+  visibility: hidden;
+  opacity: 0;
+  max-height: 0;
+  transition: 0.2s opacity ease,
+              0.4s max-height ease;
 
   &::after {
     $-height: 25px;
@@ -133,7 +139,9 @@
   }
 
   .sage-dropdown--active & {
-    display: block;
+    visibility: visible;
+    opacity: 1;
+    max-height: 500px;
   }
 }
 
@@ -169,8 +177,8 @@
 .sage-dropdown__option-container {
   padding: 0;
   margin: 0;
-  max-height: 40vh;
   overflow: scroll;
+  max-height: 300px;
   padding: 0 0 sage-spacing(sm);
 }
 

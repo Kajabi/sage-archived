@@ -38,7 +38,7 @@ Sage.Dropdown.prototype = {
 
     this.elements.options.forEach(function(item) {
       item.addEventListener('click', function(evt) {
-        this.select(evt.currentTarget);
+        this.setSelection(evt.currentTarget);
       }.bind(this), false);
     }, this);
   },
@@ -91,7 +91,7 @@ Sage.Dropdown.prototype = {
     }, this);
   },
 
-  select: function(elOption) {
+  setSelection: function(elOption) {
     const parentClassList = this.elements.parent.classList;
 
     this.toggle();
@@ -111,33 +111,37 @@ Sage.Dropdown.prototype = {
 
   bindKeyActions(bool) {
     if (bool) {
-      document.addEventListener('keyup', window.Sage.DropdownKeyListener = function fn(evt) {
-        this.keyAction(evt.key);
+      document.addEventListener('keydown', window.Sage.DropdownKeyListener = function fn(evt) {
+        this.keyAction(evt);
       }.bind(this), false);
     } else {
-      document.removeEventListener('keyup', window.Sage.DropdownKeyListener, false);
+      document.removeEventListener('keydown', window.Sage.DropdownKeyListener, false);
     }
   },
 
-  keyAction(key) {
-    switch(key) {
+  keyAction(evt) {
+    switch(evt.key) {
       case 'Escape':
+        evt.preventDefault();
         this.toggle();
       break;
       case 'Tab':
         this.toggle();
       break;
       case 'ArrowDown':
+        evt.preventDefault();
         this.keyboardHighlightDirection('down');
         break;
       case 'ArrowUp':
+        evt.preventDefault();
         this.keyboardHighlightDirection('up');
       break;
       case 'Enter':
+        evt.preventDefault();
         this.elements.options.forEach(function(elOption) {
           if (elOption.classList.contains(this.classNames.optionFocus)) {
             console.log('SELECT', elOption)
-            this.select(elOption);
+            this.setSelection(elOption);
           }
         }, this);
       break;
