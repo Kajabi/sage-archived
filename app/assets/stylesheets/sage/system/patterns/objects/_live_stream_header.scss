@@ -2,11 +2,8 @@
   ** live_stream_header
   type: object
 
-
-
 ================================================== */
 
-$-live-stream-header-gradient: linear-gradient(180deg, $sage-live-stream-wrap-gradient-start, $sage-live-stream-wrap-gradient-end);
 $-live-stream-header-recording-marker-size: 8px;
 
 .sage-live-stream-header {
@@ -22,7 +19,7 @@ $-live-stream-header-recording-marker-size: 8px;
   color: sage-color(white);
 
   .sage-live-stream-wrapper--awake & {
-    background: $-live-stream-header-gradient;
+    background: linear-gradient(180deg, $sage-live-stream-wrap-gradient-start, $sage-live-stream-wrap-gradient-end);
   }
 }
 

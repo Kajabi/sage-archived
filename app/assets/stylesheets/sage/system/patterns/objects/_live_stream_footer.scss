@@ -2,11 +2,7 @@
   ** live_stream_footer
   type: object
 
-
-
 ================================================== */
-
-$-live-stream-footer-gradient: linear-gradient(0deg, $sage-live-stream-wrap-gradient-start, $sage-live-stream-wrap-gradient-end);
 
 .sage-live-stream-footer {
   display: flex;
@@ -20,7 +16,7 @@ $-live-stream-footer-gradient: linear-gradient(0deg, $sage-live-stream-wrap-grad
   padding: 0 sage-spacing(md);
 
   .sage-live-stream-wrapper--awake & {
-    background: $-live-stream-footer-gradient;
+    background: linear-gradient(0deg, $sage-live-stream-wrap-gradient-start, $sage-live-stream-wrap-gradient-end);
   }
 }
 
