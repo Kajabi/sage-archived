@@ -21,6 +21,7 @@
     right: sage-spacing(sm);
     margin: auto 0;
     position: absolute;
+    z-index: -1;
     align-items: center;
     color: sage-color(grey, 500);
   }
@@ -47,7 +48,7 @@
   border-radius: $sage-inputfield-border-radius;
   background: transparent;
   transition: border 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-  cursor: pointer;
+  cursor: context-menu;
   outline: none;
 
   @include placeholder { color: inherit; }
@@ -118,9 +119,11 @@
   box-shadow: sage-shadow(sm);
   visibility: hidden;
   opacity: 0;
+  top: 0;
   max-height: 0;
-  transition: 0.2s opacity ease,
-              0.4s max-height ease;
+  overflow: hidden;
+  transition: 0.3s opacity ease,
+              0.2s max-height ease;
 
   &::after {
     $-height: 25px;
@@ -133,9 +136,9 @@
     height: $-height;
     position: absolute;
     background: linear-gradient(
-                  rgba(sage-color(white), 0),
-                  rgba(sage-color(white), 1)
-                );
+      rgba(sage-color(white), 0),
+      rgba(sage-color(white), 1)
+    );
   }
 
   .sage-dropdown--active & {
