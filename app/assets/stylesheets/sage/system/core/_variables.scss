@@ -72,7 +72,7 @@ $sage-btn-shadow-base: sage-shadow(sm) !default;
 $sage-btn-shadow-hover: sage-shadow(md) !default;
 
 // Focus outline
-$sage-btn-focus-outline-size: sage-spacing(xs) !default;
+$sage-btn-focus-outline-spacing: sage-spacing(2xs) !default;
 $sage-btn-focus-outline-width: 1 !default;
 $sage-btn-focus-outline-color: currentColor !default;
 
