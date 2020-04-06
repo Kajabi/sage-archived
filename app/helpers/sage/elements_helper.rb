@@ -15,7 +15,7 @@ module Sage
         # Sage Generated Elements
         {
           title: "live_stream_wrapper",
-          description: "A simple wrapper element for the Live stream application", 
+          description: "A simple wrapper element for the Live stream application",
           scss_design:  "done",
           scss_dev:     "done",
           scss_doc:     "done",
@@ -94,15 +94,15 @@ module Sage
         {
           title: "loader",
           description: "Stylized loading animations for use with elements or objects",
-          scss_design:  "todo",
-          scss_dev:     "todo",
-          scss_doc:     "todo",
-          rails_design: "todo",
-          rails_dev:    "todo",
-          rails_doc:    "todo",
-          react_design: "todo",
-          react_dev:    "todo",
-          react_doc:    "todo"
+          scss_design:  "done",
+          scss_dev:     "done",
+          scss_doc:     "done",
+          rails_design: "no",
+          rails_dev:    "no",
+          rails_doc:    "no",
+          react_design: "no",
+          react_dev:    "no",
+          react_doc:    "no"
         },
         {
           title: "checkbox",
