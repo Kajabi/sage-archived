@@ -4,7 +4,6 @@
 
 ================================================== */
 
-// TODO: refactor @extend
 .sage-sidebar {
   display: flex;
   flex-direction: column;
@@ -13,16 +12,6 @@
   border-right: sage-border();
   background: sage-color(grey, 200);
   overscroll-behavior-y: contain;
-
-  &--md {
-    @extend .sage-sidebar;
-    width: sage-sidebar(md);
-  }
-
-  &--lg {
-    @extend .sage-sidebar;
-    width: sage-sidebar(lg);
-  }
 
   @media (max-width: sage-breakpoint()) {
     position: fixed;
@@ -38,19 +27,15 @@
       box-shadow: sage-shadow();
       opacity: 1;
     }
-
-    .example__preview & {
-      z-index: sage-z-index();
-      position: relative;
-      top: auto;
-      left: auto;
-      transform: none;
-      height: auto;
-      box-shadow: none;
-      transition: none;
-      opacity: 1;
-    }
   }
+}
+
+.sage-sidebar--md {
+  width: sage-sidebar(md);
+}
+
+.sage-sidebar--lg {
+  width: sage-sidebar(lg);
 }
 
 .sage-sidebar__body {
