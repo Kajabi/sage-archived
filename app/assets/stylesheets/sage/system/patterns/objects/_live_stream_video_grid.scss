@@ -70,7 +70,7 @@ $-live-stream-tile-gapper: calc(100% / 6);
   position: relative;
   border-radius: sage-border(radius);
   
-  @for $i from 1 to 6 {
+  @for $i from 1 through 6 {
     &:nth-child(#{$i}) {
       grid-area: t#{$i};
     }
