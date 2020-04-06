@@ -116,6 +116,22 @@
   box-shadow: sage-shadow(sm);
   display: none;
 
+  &::after {
+    $-height: 25px;
+
+    content: "";
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: $-height;
+    position: absolute;
+    background: linear-gradient(
+                  rgba(sage-color(white), 0),
+                  rgba(sage-color(white), 1)
+                );
+  }
+
   .sage-dropdown--active & {
     display: block;
   }
@@ -146,13 +162,16 @@
   &:hover,
   &:focus,
   &:active {
-    background: sage-color(grey, 200);
+    background: sage-color(grey, 100);
   }
 }
 
 .sage-dropdown__option-container {
   padding: 0;
   margin: 0;
+  max-height: 40vh;
+  overflow: scroll;
+  padding: 0 0 sage-spacing(sm);
 }
 
 .sage-dropdown__option {
@@ -162,8 +181,13 @@
   cursor: pointer;
   user-select: none;
 
-  &.sage-dropdown__option--hidden:not(.sage-dropdown__option--selected) {
+  &.sage-dropdown__option--hidden {
     display: none;
+  }
+
+  &:hover:not(.sage-dropdown__option--selected):not(.sage-dropdown__option--focused) {
+    box-shadow: inset 2px 0 0 0 sage-color(primary);
+    background: sage-color(grey, 100);
   }
 
   &.sage-dropdown__option--selected {
@@ -171,27 +195,28 @@
     background: sage-color(primary, 100);
   }
 
-  &.sage-dropdown__option--selected.sage-dropdown__option--focused {
-    box-shadow: inset 2px 0 0 0 sage-color(primary);
-    background: sage-color(primary, 200);
+  &.sage-dropdown__option--selected:hover {
+    box-shadow: inset 4px 0 0 0 sage-color(primary);
   }
 
-  &:hover:not(.sage-dropdown__option--selected),
-  &.sage-dropdown__option--focused:not(.sage-dropdown__option--selected) {
-    box-shadow: inset 2px 0 0 0 sage-color(primary);
-    background: sage-color(grey, 100);
+  &.sage-dropdown__option--focused {
+    box-shadow: inset 0 0 0 1px sage-color(primary);
+  }
+
+  &.sage-dropdown__option--focused:hover {
+    box-shadow: inset 2px 0 0 1px sage-color(primary);
+  }
+
+  &.sage-dropdown__option--focused.sage-dropdown__option--selected {
+    box-shadow: inset 4px 0 0 1px sage-color(primary);
   }
 }
 
 .sage-dropdown__overlay {
-  background: transparentize;
+  background: transparent;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-}
-
-.sage-dropdown__option--focus {
-  background: red !important;
 }

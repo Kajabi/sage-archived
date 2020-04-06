@@ -1,3 +1,7 @@
+
+// css slide animation
+
+
 window.Sage = window.Sage || {};
 
 Sage.Dropdown = function(el) {
@@ -10,18 +14,18 @@ Sage.Dropdown.prototype = {
       parent: el,
       field: el.querySelector('[data-js-sagedropdown-field]'),
       search: el.querySelector('[data-js-sagedropdown-search]'),
+      optionContainer: el.querySelector('[data-js-sagedropdown-optioncontainer]'),
       options: el.querySelectorAll('[data-js-sagedropdown-option]'),
     };
 
     this.classNames = {
+      parentSelected: 'sage-dropdown--selected',
       parentActive: 'sage-dropdown--active',
       optionSelected: 'sage-dropdown__option--selected',
       optionHidden: 'sage-dropdown__option--hidden',
-      optionFocus: 'sage-dropdown__option--focus',
+      optionFocus: 'sage-dropdown__option--focused',
       overlay: 'sage-dropdown__overlay',
     }
-
-    this.setFocus(this.elements.options[0]);
 
     this.elements.field.addEventListener('click', function() {
       this.toggle();
@@ -40,25 +44,27 @@ Sage.Dropdown.prototype = {
   },
 
   toggle: function() {
-    var parentClassList = this.elements.parent.classList;
+    const parentClassList = this.elements.parent.classList;
 
     if (parentClassList.contains(this.classNames.parentActive) ) {
       parentClassList.remove(this.classNames.parentActive);
       this.buildOverlay(false);
       this.bindKeyActions(false);
+      this.setKeyboardHighlight(false);
       this.setFilter('');
       this.elements.search.value = '';
     } else {
       parentClassList.add(this.classNames.parentActive);
       this.buildOverlay(true);
       this.bindKeyActions(true);
+      this.setKeyboardHighlight(this.elements.options[0]);
       this.elements.search.focus();
     }
   },
 
   buildOverlay(bool) {
     if (bool) {
-      var el = document.createElement('div');
+      const el = document.createElement('div');
       el.className = this.classNames.overlay;
       this.elements.parent.appendChild(el);
 
@@ -86,20 +92,20 @@ Sage.Dropdown.prototype = {
   },
 
   select: function(elOption) {
-    var parentClassList = this.elements.parent.classList;
+    const parentClassList = this.elements.parent.classList;
 
     this.toggle();
     this.elements.field.value = elOption.dataset.jsSagedropdownOption;
 
     this.elements.options.forEach(function(elOption) {
       elOption.classList.remove(this.classNames.optionSelected);
-    });
+    }, this);
 
     if (elOption.dataset.jsSagedropdownOption.length) {
-      parentClassList.add(this.classNames.optionSelected);
+      parentClassList.add(this.classNames.parentSelected);
       elOption.classList.add(this.classNames.optionSelected);
     } else {
-      parentClassList.remove(this.classNames.optionSelected);
+      parentClassList.remove(this.classNames.parentSelected);
     }
   },
 
@@ -122,14 +128,15 @@ Sage.Dropdown.prototype = {
         this.toggle();
       break;
       case 'ArrowDown':
-        this.focusDirection('down');
+        this.keyboardHighlightDirection('down');
         break;
       case 'ArrowUp':
-        this.focusDirection('up');
+        this.keyboardHighlightDirection('up');
       break;
       case 'Enter':
         this.elements.options.forEach(function(elOption) {
           if (elOption.classList.contains(this.classNames.optionFocus)) {
+            console.log('SELECT', elOption)
             this.select(elOption);
           }
         }, this);
@@ -137,21 +144,23 @@ Sage.Dropdown.prototype = {
     }
   },
 
-  focusDirection(direction) {
-    var newIndex;
+  keyboardHighlightDirection(direction) {
+    let newIndex;
 
     this.elements.options.forEach(function(elOption, index, optionsArray) {
       if (
         direction == 'up' &&
         elOption.classList.contains(this.classNames.optionFocus) &&
-        index != 0
+        index != 0 &&
+        !this.elements.options[index - 1].classList.contains(this.classNames.optionHidden)
       ) {
         elOption.classList.remove(this.classNames.optionFocus);
         newIndex = index - 1;
       } else if (
         direction == 'down' &&
         elOption.classList.contains(this.classNames.optionFocus) &&
-        index != (optionsArray.length - 1)
+        index != (optionsArray.length - 1) &&
+        !this.elements.options[index + 1].classList.contains(this.classNames.optionHidden)
       ) {
         elOption.classList.remove(this.classNames.optionFocus);
         newIndex = index + 1;
@@ -159,12 +168,32 @@ Sage.Dropdown.prototype = {
     }, this);
 
     if (newIndex !== undefined) {
-      this.setFocus(this.elements.options[newIndex]);
+      this.setKeyboardHighlight(this.elements.options[newIndex]);
     }
   },
 
-  setFocus(elOption) {
-    elOption.classList.add(this.classNames.optionFocus);
+  setKeyboardHighlight(elOption) {
+    if (elOption) {
+      elOption.classList.add(this.classNames.optionFocus);
+      this.maintainScrollVisibility(elOption);
+    } else {
+      this.elements.options.forEach(function(elOption) {
+        elOption.classList.remove(this.classNames.optionFocus);
+      }, this);
+    }
+  },
+
+  maintainScrollVisibility(elOption) {
+    const { offsetHeight, offsetTop } = elOption,
+          { offsetHeight: parentOffsetHeight, scrollTop } = this.elements.optionContainer,
+          isAbove = (offsetTop + offsetHeight) < scrollTop,
+          isBelow = (offsetTop + offsetHeight) > scrollTop;
+
+    if (isAbove) {
+      this.elements.optionContainer.scrollTo(0, offsetTop);
+    } else if (isBelow) {
+      this.elements.optionContainer.scrollTo(0, offsetTop - parentOffsetHeight + offsetHeight);
+    }
   }
 };
 
