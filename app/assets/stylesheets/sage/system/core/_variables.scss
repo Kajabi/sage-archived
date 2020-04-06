@@ -314,6 +314,11 @@ $sage-tabs-active-border-radius: sage-border(radius) !default;
 // Avatars
 $sage-live-avatar-ring-width: 1px !default;
 
+// Overall stream styles
+$sage-live-stream-header-footer-height: rem(72px);
+$sage-live-stream-wrap-gradient-start: rgba(sage-color(black), 1) 0%;
+$sage-live-stream-wrap-gradient-end: rgba(sage-color(black), 0) 100%;
+
 // ==================================================
 // TOOLTIPS
 // ==================================================

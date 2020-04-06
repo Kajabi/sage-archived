@@ -63,7 +63,7 @@
       width: $sage-switch-toggle-size;
       background: sage-color(white);
       border-radius: sage-border(radius-round);
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.18), 0 1px 3px rgba(0, 0, 0, 0.1);
+      box-shadow: sage-shadow(sm);
       transition: transform 0.2s ease-in-out;
     }
 

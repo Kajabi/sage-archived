@@ -60,4 +60,15 @@
       border-radius: sage-border(radius);
     }
   }
+  &-black {
+    &-100,
+    &-200,
+    &-300,
+    &-400,
+    &-500 {
+      color: sage-color(white);
+      box-shadow: inset 0 0 1px sage-color(charcoal);
+      border-radius: sage-border(radius);
+    }
+  }
 }

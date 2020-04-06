@@ -45,6 +45,7 @@
 @import "system/utilities/hidden";
 
 // Elements
+@import "system/patterns/elements/live_stream_wrapper";
 @import "system/patterns/elements/description";
 @import "system/patterns/elements/label";
 @import "system/patterns/elements/tooltip";
@@ -59,6 +60,8 @@
 @import "system/patterns/elements/overlay";
 
 // Objects
+@import "system/patterns/objects/live_stream_footer";
+@import "system/patterns/objects/live_stream_header";
 @import "system/patterns/objects/card";
 @import "system/patterns/objects/live_stream_control";
 @import "system/patterns/objects/live_option_menu";
