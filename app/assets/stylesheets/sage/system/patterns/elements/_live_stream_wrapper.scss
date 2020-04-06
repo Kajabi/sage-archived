@@ -8,13 +8,23 @@
 
 .sage-live-stream-wrapper {
   position: relative;
+  // These are set to ensure video and controls are visible 
+  // but should adjust once responsive is fully considered
   min-width: rem(460px);
+  min-height: rem(320px);
   padding: $sage-live-stream-header-footer-height 0;
   background-color: sage-color(charcoal, 500);
+
+  @include position-full;
 
   .example__preview & {
     &:not(:last-child) {
       margin-bottom: sage-spacing(md);
     }
   }
+}
+
+.sage-live-stream-wrapper--fullscreen-demo {
+  position: absolute;
+  z-index: sage-z-index(nuclear);
 }
