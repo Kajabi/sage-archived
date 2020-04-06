@@ -33,16 +33,16 @@
 .example__block {
   margin-top: sage-spacing(sm);
   margin-bottom: sage-spacing(sm);
+}
 
-  &--md {
-    margin-top: sage-spacing(md);
-    margin-bottom: sage-spacing(md);
-  }
+.example__block--md {
+  margin-top: sage-spacing(md);
+  margin-bottom: sage-spacing(md);
+}
 
-  &--lg {
-    margin-top: sage-spacing(lg);
-    margin-bottom: sage-spacing(lg);
-  }
+.example__block--lg {
+  margin-top: sage-spacing(lg);
+  margin-bottom: sage-spacing(lg);
 }
 
 .example__code {
