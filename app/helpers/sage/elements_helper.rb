@@ -28,7 +28,7 @@ module Sage
         },
         {
           title: "description",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", 
+          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
           scss_design:  "done",
           scss_dev:     "done",
           scss_doc:     "todo",
@@ -41,7 +41,7 @@ module Sage
         },
         {
           title: "label",
-          description: "Labels show concise metadata or indicate status in a compact format.", 
+          description: "Labels show concise metadata or indicate status in a compact format.",
           scss_design:  "done",
           scss_dev:     "done",
           scss_doc:     "done",
@@ -93,7 +93,7 @@ module Sage
         },
         {
           title: "loader",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+          description: "Stylized loading animations for use with elements or objects",
           scss_design:  "todo",
           scss_dev:     "todo",
           scss_doc:     "todo",
@@ -106,7 +106,7 @@ module Sage
         },
         {
           title: "checkbox",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+          description: "Base checkbox styling",
           scss_design:  "done",
           scss_dev:     "done",
           scss_doc:     "done",
