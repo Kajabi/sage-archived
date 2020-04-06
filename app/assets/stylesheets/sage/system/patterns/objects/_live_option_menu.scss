@@ -13,6 +13,10 @@ $-live-option-menu-width: rem(224px);
 .sage-live-option-menu-anchor {
   position: relative;
 
+  &:focus {
+    outline: none;
+  }
+
   // Fill the window to create active space to click off of to turn off menu
   &[aria-expanded="true"]::before {
     content: "";
@@ -48,7 +52,7 @@ $-live-option-menu-width: rem(224px);
 .sage-live-option-menu {
   position: absolute;
   top: $-live-option-menu-offset-block;
-  z-index: sage-z-index(modal);
+  z-index: sage-z-index(default, -1);
   transform: rotate3d(1, 0, 0, -90deg);
   transform-origin: top center;
   min-width: min-content;
@@ -57,7 +61,7 @@ $-live-option-menu-width: rem(224px);
   background-color: sage-color(white);
   box-shadow: sage-shadow(md);
   transition: $sage-transition;
-  transition-property: transform;
+  transition-property: transform, z-index;
 
   &:not(.sage-live-option-menu--anchored-left) {
     right: $-live-option-menu-offset-inline;
@@ -65,6 +69,7 @@ $-live-option-menu-width: rem(224px);
 
   [aria-expanded="true"] & {
     transform: rotate3d(0, 0, 0, 0);
+    z-index: sage-z-index(modal);
   }
 }
 
