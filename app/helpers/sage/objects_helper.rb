@@ -15,7 +15,7 @@ module Sage
         # Sage Generated Objects
         {
           title: "live_stream_video_grid",
-          description: "Adds the video grid setup for live stream. Toggle the `--fullscreen-demo` modifier on the wrapper to see at full screen.", 
+          description: "Adds the video grid setup for live stream. Toggle the `--fullscreen-demo` modifier on the wrapper to see at full screen.",
           scss_design:  "done",
           scss_dev:     "done",
           scss_doc:     "done",
@@ -28,7 +28,7 @@ module Sage
         },
         {
           title: "live_stream_footer",
-          description: "Footer component for the Live stream application. Contains an \"awake\" variation as well as the constant form. Must be nested within a wrapper as shown below.", 
+          description: "Footer component for the Live stream application. Contains an \"awake\" variation as well as the constant form. Must be nested within a wrapper as shown below.",
           scss_design:  "done",
           scss_dev:     "done",
           scss_doc:     "done",
@@ -41,7 +41,7 @@ module Sage
         },
         {
           title: "live_stream_header",
-          description: "Header component for the Live stream application. Contains an \"awake\" variation as well as the constant form. Must be nested within a wrapper as shown below.", 
+          description: "Header component for the Live stream application. Contains an \"awake\" variation as well as the constant form. Must be nested within a wrapper as shown below.",
           scss_design:  "done",
           scss_dev:     "done",
           scss_doc:     "done",
@@ -54,7 +54,7 @@ module Sage
         },
         {
           title: "live_stream_control",
-          description: "The Live Stream Controls are a special class of button used in the frame for Live Streams.", 
+          description: "The Live Stream Controls are a special class of button used in the frame for Live Streams.",
           scss_design:  "done",
           scss_dev:     "done",
           scss_doc:     "done",
@@ -67,7 +67,7 @@ module Sage
         },
         {
           title: "card",
-          description: "A card presents content and can guide the user toward a related action.", 
+          description: "A card presents content and can guide the user toward a related action.",
           scss_design:  "done",
           scss_dev:     "done",
           scss_doc:     "done",
@@ -223,10 +223,10 @@ module Sage
         },
         {
           title: "sidebar",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-          scss_design:  "todo",
-          scss_dev:     "todo",
-          scss_doc:     "todo",
+          description: "The sidebar object is a fixed, vertical panel that typically displays navigation and/or page hierarchy",
+          scss_design:  "done",
+          scss_dev:     "done",
+          scss_doc:     "done",
           rails_design: "todo",
           rails_dev:    "todo",
           rails_doc:    "todo",
