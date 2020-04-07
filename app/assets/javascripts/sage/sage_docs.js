@@ -1,23 +1,17 @@
-/**
-  * docs.js
-  *
-  * Sage documentation app functions
-  *
-*/
+//= require sage/system/define
 
+//= require sage/docs/live-option-menu
+
+
+// SAGE DOCUMENTATION USE ONLY
+
+// Conditional routing
+// NOTE: modules must be imported above to be initialized below
 if (document.querySelector('.sage-docs') !== null) {
 
-
-  // Live option menu
   if (document.querySelector('.sage-live-option-menu-anchor') !== null) {
-    var sageLiveOptionMenu = document.querySelector('.sage-live-option-menu-anchor');
-
-    // Simulate contextual menu
-    sageLiveOptionMenu.addEventListener('click', function(e) {
-      var target = e.currentTarget;
-      var isExpanded = target.getAttribute('aria-expanded') == 'true';
-      target.setAttribute('aria-expanded', !isExpanded);
-    });
+    Sage.docs.liveOptionMenu.init();
   }
+
 
 }
