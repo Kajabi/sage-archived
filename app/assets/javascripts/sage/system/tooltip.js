@@ -1,8 +1,16 @@
-window.sage = window.sage || {};
+Sage.tooltip = function() {
 
-sage.Tooltip = function() {
+  // ==================================================
+  // Variables
+  // ==================================================
+  var toolTips = document.querySelectorAll("[data-tooltip]");
 
-  document.querySelectorAll("[data-tooltip]").forEach(function(item) {
+
+  // ==================================================
+  // Functions
+  // ==================================================
+
+  toolTips.forEach(function(item) {
     item.addEventListener("mouseover", function(e) {
       if (!e.target.hasAttribute("data-tooltip")) return;
       var pos = e.target.getAttribute("data-position") || "top";
@@ -25,6 +33,7 @@ sage.Tooltip = function() {
       }
     });
   });
+
 
   function positionTooltip(parent, tooltip, position) {
     var parentCoords = parent.getBoundingClientRect(),
@@ -62,5 +71,3 @@ sage.Tooltip = function() {
     tooltip.classList.add("sage-tooltip-" + position);
   }
 };
-
-var tooltip = new sage.Tooltip();
