@@ -14,7 +14,7 @@
 
   // Sidebar
   if (document.querySelector('.sage-sidebar') !== null) {
-    Sage.sidebar.bindEvents();
+    Sage.sidebar.init();
   }
 
 

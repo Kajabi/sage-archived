@@ -1,4 +1,4 @@
-Sage.sidebar = (function(Sage) {
+Sage.sidebar = (function() {
 
   // ==================================================
   // Variables
@@ -40,7 +40,7 @@ Sage.sidebar = (function(Sage) {
   // Event handlers
   // ==================================================
 
-  function bindEvents() {
+  function init() {
 
     // Toggle sidebar on menu button click
     sageToggleBtn.addEventListener('click', function(e) {
@@ -59,8 +59,8 @@ Sage.sidebar = (function(Sage) {
 
 
   return {
-    bindEvents: bindEvents,
+    init: init,
     resetSideNav: resetSideNav
   };
 
-})(Sage);
+})();
