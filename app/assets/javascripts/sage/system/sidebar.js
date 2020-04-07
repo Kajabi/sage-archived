@@ -22,17 +22,17 @@ Sage.sidebar = (function() {
       ele.setAttribute('aria-expanded', false);
     }
 
-    toggleOverlay();
+    Sage.overlay.toggleOverlay();
   }
 
 
   // reset sidenav state to closed/default
   function resetSideNav() {
-    var openSidebar = document.querySelector('.sage-sidebar');
+    var openSidebar = document.querySelector('.sage-sidebar.is-open');
 
     openSidebar.classList.remove('is-open');
     sageToggleBtn.setAttribute('aria-expanded', false);
-    toggleOverlay();
+    Sage.overlay.toggleOverlay();
   }
 
 
