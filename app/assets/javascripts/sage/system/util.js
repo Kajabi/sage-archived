@@ -6,8 +6,15 @@ Sage.util = (function(Sage) {
   }
 
 
+  // convert nodelist to array for iteration
+  function nodelistToArray(selection) {
+    return Array.prototype.slice.apply(selection);
+  }
+
+
   return {
-    getBtnTarget: getBtnTarget
+    getBtnTarget: getBtnTarget,
+    nodelistToArray: nodelistToArray
   };
 
 })(Sage);
