@@ -21,11 +21,6 @@
   transition: transform 0.2s ease-out, opacity 0.15s ease-in-out;
   opacity: 0;
 
-  &.is-open {
-    transform: none;
-    opacity: 1;
-  }
-
   @media (min-width: $sage-sidebar-breakpoint) {
     z-index: sage-z_index();
     position: static;
@@ -35,6 +30,11 @@
     transition: none;
     opacity: 1;
   }
+}
+
+.sage-sidebar--open {
+  transform: none;
+  opacity: 1;
 }
 
 .sage-sidebar--md {

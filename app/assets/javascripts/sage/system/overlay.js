@@ -3,28 +3,26 @@ Sage.overlay = (function() {
   // ==================================================
   // Variables
   // ==================================================
-  var sageBody = document.querySelector('.sage-docs').classList;
   var sageNavOverlay = document.querySelector('.sage-overlay');
+  var bodyClassName = 'sage-overlay--open';
 
 
   // ==================================================
   // Functions
   // ==================================================
 
-  function toggleOverlay(overlayClass) {
-    var bodyClassName = overlayClass ? overlayClass : 'overlay-is-open';
-    return sageBody.contains(bodyClassName) ? sageBody.remove(bodyClassName) : sageBody.add(bodyClassName);
+  // open or close overlay
+  function toggleOverlay(open) {
+    return open === 'open' ? sageNavOverlay.classList.add(bodyClassName) : sageNavOverlay.classList.remove(bodyClassName)
   }
 
 
   function init() {
-
-    // Close overlay and menu on click
+    // Close overlay and sidebar menu on click
     sageNavOverlay.addEventListener('click', function(e) {
-      if (document.querySelector('.sage-sidebar.is-open') !== null) {
+      if (document.querySelector('.sage-overlay--open') !== null) {
+        toggleOverlay('close');
         Sage.sidebar.resetSideNav();
-      } else if (document.querySelector('.overlay-is-open') !== null) {
-        toggleOverlay();
       }
     });
 
