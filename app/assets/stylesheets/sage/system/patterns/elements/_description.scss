@@ -14,7 +14,7 @@
 }
 
 .sage-description__title {
-  @extend %t-sage-body-semi;
+  @extend %t-sage-body-small-semi;
   color: sage-color(charcoal, 300);
   text-transform: uppercase;
 }
