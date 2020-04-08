@@ -33,7 +33,7 @@ module Sage
           scss_dev:     "done",
           scss_doc:     "todo",
           rails_design: "done",
-          rails_dev:    "doing",
+          rails_dev:    "done",
           rails_doc:    "todo",
           react_design: "done",
           react_dev:    "todo",
