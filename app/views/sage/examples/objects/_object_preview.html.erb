@@ -1,12 +1,10 @@
 <div class="sage-panel">
   <div class="sage-media">
     <div class="sage-media-body">
-      <%= link_to pages_object_url(title: title, description: description) do %>
-        <h2 id="<%= title %>" class="t-sage-heading-2 example__title"><%= title.titleize %></h2>
-      <% end %>
+      <h2 id="object-<%= title %>" class="t-sage-heading-2 example__title"><%= link_to pages_object_url(title: title, description: description), class: "example__link" do %><%= title.titleize %><% end %></h2>
     </div>
-    <%= link_to pages_breakout_url(type: "object", title: title, description: description), target: "_blank", class: "example__link" do %>
-      <i class="sage-icon-launch"></i>
+    <%= link_to pages_breakout_url(type: "object", title: title, description: description), target: "_blank", class: "example__link example__link--breakout" do %>
+      <i class="sage-icon-launch" aria-hidden="true"></i><span class="visually-hidden">Opens <%= title.titleize %> in a new window</span>
     <% end %>
   </div>
   <h3 class="t-sage-heading-6 example__label">Preview</h3>
