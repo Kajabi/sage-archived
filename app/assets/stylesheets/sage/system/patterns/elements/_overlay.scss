@@ -22,7 +22,7 @@
   }
 
   @media (max-width: sage-breakpoint()) {
-    .overlay-is-open & {
+    &.sage-overlay--open {
       visibility: visible;
       z-index: $sage-overlay-z-index;
       height: 100%;
