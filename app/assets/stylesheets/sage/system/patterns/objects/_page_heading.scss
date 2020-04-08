@@ -1,0 +1,25 @@
+/* ==================================================
+  ** page_heading
+  type: object
+
+
+
+================================================== */
+
+.sage-page-heading {
+  margin-bottom: sage-spacing();
+}
+
+.sage-page-heading__title {
+  @extend %t-sage-heading-1;
+}
+
+.sage-page-heading__back {
+  @extend %t-sage-body;
+  color: sage-color(charcoal, 100);
+}
+
+.sage-page-heading__icon {
+  transform: translateY(2px);
+  display: inline-block;
+}
