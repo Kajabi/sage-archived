@@ -18,11 +18,11 @@ Sage.sidebar = (function() {
 
     if (buttonTarget.classList.contains('sage-sidebar--open')) {
       ele.setAttribute('aria-expanded', true);
+      Sage.overlay.toggleOverlay('open');
     } else {
       ele.setAttribute('aria-expanded', false);
+      Sage.overlay.toggleOverlay('closed');
     }
-
-    Sage.overlay.toggleOverlay('open');
   }
 
 
