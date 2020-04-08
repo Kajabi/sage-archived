@@ -9,7 +9,7 @@
     <ul class="quick-links__body t-sage-body-small">
       <% sorted_sage_elements.each do |element| %>
         <li class="quick-links__item">
-          <a href="#<%= element[:title] %>" class="quick-links__link"><%= element[:title].titleize %></a>
+          <a href="#element-<%= element[:title] %>" class="quick-links__link"><%= element[:title].titleize %></a>
         </li>
       <% end %>
     </ul>

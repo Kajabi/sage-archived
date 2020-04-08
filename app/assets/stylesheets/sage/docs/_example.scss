@@ -9,9 +9,30 @@
   text-transform: capitalize;
 }
 
-.example__ink {
-  color: sage-color(charcoal, 500);
-  font-size: sage-font-size(lg);
+.example__link {
+  color: inherit;
+  transition: color 0.1s ease-in-out;
+
+  &:hover {
+    color: sage-color(charcoal, 100);
+  }
+
+  &:focus,
+  &:active {
+    text-decoration: underline;
+    outline: none;
+  }
+}
+
+.example__link--breakout {
+  color: sage-color(sage);
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: sage-color(charcoal, 500);
+    text-decoration: none;
+  }
 }
 
 .example__label {
