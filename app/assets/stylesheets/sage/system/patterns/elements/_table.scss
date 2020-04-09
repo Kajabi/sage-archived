@@ -1,0 +1,37 @@
+/* ==================================================
+  ** sage_table
+  type: element
+
+================================================== */
+
+$-table-overflow-indicator-width: 1rem;
+$-table-overflow-indicator-color: sage-color(white);
+$-table-overflow-indicator-opacity: 0.9;
+
+.sage-table {
+  table-layout: initial;
+}
+
+.sage-table__wrapper {
+  .sage-table--responsive & {
+    overflow: hidden;
+    overflow-x: auto;
+    padding-right: ($-table-overflow-indicator-width / 2);
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+.sage-table--responsive {
+  position: relative;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: $-table-overflow-indicator-width;
+    background: linear-gradient(90deg, transparent 0%, rgba($-table-overflow-indicator-color, $-table-overflow-indicator-opacity) 100%);
+  }
+}

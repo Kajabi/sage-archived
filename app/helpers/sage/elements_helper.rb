@@ -182,6 +182,19 @@ module Sage
           react_dev:    "no",
           react_doc:    "no"
         },
+        {
+          title: "table",
+          description: "Basic table element",
+          scss_design:  "done",
+          scss_dev:     "done",
+          scss_doc:     "done",
+          rails_design: "no",
+          rails_dev:    "no",
+          rails_doc:    "no",
+          react_design: "no",
+          react_dev:    "no",
+          react_doc:    "no"
+        }
       ]
     end
 
