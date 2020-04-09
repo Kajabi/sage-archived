@@ -1,0 +1,8 @@
+<button class="sage-live-stream-control <%= modifiers %>">
+  <i class="sage-live-stream-control__icon sage-icon-<%= icon %>"></i>
+  <% if isPill -%>
+    <span class="sage-live-stream-control__label"><%= label %></span>
+  <% else -%>
+    <span class="visually-hidden"><%= label %></span>
+  <%- end %>
+</button>

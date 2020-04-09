@@ -26,6 +26,7 @@ $-live-stream-header-recording-marker-size: 8px;
 
 .sage-live-stream-header__title {
   @extend %t-sage-body-med;
+  color: inherit;
   opacity: 0;
 
   .sage-live-stream-wrapper--awake & {

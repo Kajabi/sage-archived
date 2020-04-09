@@ -28,6 +28,13 @@
   width: 25%;
   min-width: max-content;
   margin-right: auto;
+  opacity: 0;
+  transition: $sage-transition;
+  transition-property: opacity;
+
+  .sage-live-stream-wrapper--awake & {
+    opacity: 1;
+  }
 }
 
 .sage-live-stream-footer__stream-controls {
@@ -36,6 +43,13 @@
   justify-content: center;
   min-width: max-content;
   padding: 0 sage-spacing(sm);
+  opacity: 0;
+  transition: $sage-transition;
+  transition-property: opacity;
+
+  .sage-live-stream-wrapper--awake & {
+    opacity: 1;
+  }
 } 
 
 .sage-live-stream-footer__chat-controls {
