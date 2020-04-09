@@ -8,12 +8,12 @@ $-live-avatar-min-size: rem(36px);
 $-live-avatar-max-size: rem(128px);
 $-live-avatar-ring-transition: $sage-transition;
 $-live-avatar-ring-colors: (
-  "charcoal",
-  "purple",
-  "sage",
-  "yellow",
-  "orange",
-  "red"
+  charcoal,
+  purple,
+  sage,
+  yellow,
+  orange,
+  red
 );
 
 .sage-live-avatar {
@@ -77,7 +77,7 @@ $-live-avatar-ring-colors: (
 
 // Set up color variations
 @each $color in $-live-avatar-ring-colors {
-  .sage-live-avatar--#{$color} {
+  .sage-live-avatar--#{"" + $color} {
     $-main-color: sage-color($color);
     $-bg-color: sage-color($color, 100);
 
