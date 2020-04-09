@@ -2,9 +2,5 @@
   <h1 class="sage-live-stream-header__title">
     <%= title %>
   </h1>
-  <% if isRecording %>
-  <p class="sage-live-stream-header__running-time sage-live-stream-header__running-time--recording"><%= runningTime %></p>
-  <% else %>
-  <p class="sage-live-stream-header__running-time"><%= runningTime %></p>
-  <% end %>
+  <p class="sage-live-stream-header__running-time <% if isRecording %>sage-live-stream-header__running-time--recording<% end %>"><%= runningTime %></p>
 </div>
