@@ -4,36 +4,60 @@
   For Sage documentation use
 ================================================== */
 
-.status-table {
+$-status-table-border: 2px solid sage-color(grey);
+$-status-table-cell-padding: sage-spacing(xs) sage-spacing(sm);
+$-status-table-heading-font-size: sage-font-size(sm);
+$-status-table-heading-padding: sage-spacing(xs) sage-spacing(sm);
+
+.sage-table--status {
   width: 100%;
 
-  th {
-    padding: sage-spacing(xs) sage-spacing(sm);
-    font-size: sage-font-size(sm);
-    border-bottom: 2px solid sage-color(grey);
+  thead {
+    font-size: $-status-table-heading-font-size;
+  }
 
-    &:nth-child(1) {
-      padding-left: 0;
+  tbody {
+    tr:nth-child(3n) {
+      border-bottom: $-status-table-border;
     }
-    &:nth-child(5) {
+
+    tr:last-child {
+      border-bottom: 0;
+    }
+  }
+
+  th {
+    padding: $-status-table-heading-padding;
+    text-align: center;
+    border-bottom: $-status-table-border;
+
+    &:first-child {
+      padding-left: 0;
+      text-align: left;
+      text-align: inline-start;
+    }
+
+    &:nth-child(2) {
+      text-align: left;
+      text-align: inline-start;
+    }
+
+    &:last-child {
       padding-right: 0;
     }
   }
 
   td {
-    padding: sage-spacing(xs) sage-spacing(sm);
-    vertical-align: top;
+    padding: $-status-table-cell-padding;
+    vertical-align: middle;
 
-    &:nth-child(1) {
-      // TODO: refactor fixed width block
-      width: 10000px;
+    &:first-child {
       padding-left: 0;
+      vertical-align: top;
       font-weight: sage-font-weight(semibold);
     }
 
     &:nth-child(2) {
-      // TODO: refactor fixed width block
-      width: 4000px;
       border-bottom: sage-border();
     }
 
@@ -44,18 +68,8 @@
       border-bottom: sage-border();
     }
 
-    &:nth-child(5) {
-      padding-right: 0;
-    }
-  }
-
-  tr {
-    &:nth-child(3n + 1) {
-      border-bottom: 2px solid sage-color(grey);
-    }
-
     &:last-child {
-      border-bottom: 0;
+      padding-right: 0;
     }
   }
 }
