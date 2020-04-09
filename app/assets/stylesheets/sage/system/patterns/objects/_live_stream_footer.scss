@@ -16,8 +16,22 @@
   height: $sage-live-stream-header-footer-height;
   padding: 0 sage-spacing(md);
 
-  .sage-live-stream-wrapper--awake & {
+  &::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
     background: linear-gradient(0deg, $sage-live-stream-wrap-gradient-start, $sage-live-stream-wrap-gradient-end);
+    transition: $sage-transition;
+    transition-property: opacity;
+    opacity: 0;
+
+    @include position-full;
+  }
+
+  .sage-live-stream-wrapper--awake & {
+    &::after {
+      opacity: 1;
+    }
   }
 }
 
