@@ -1,11 +1,11 @@
 @mixin sage-container-default {
-  max-width: sage-container(md);
   margin: 0 auto;
   padding: 0 sage-spacing(md);
 }
 
 .sage-container {
   @include sage-container-default();
+  max-width: sage-container(md);
 }
 
 .sage-container--xs {
@@ -27,4 +27,3 @@
   @include sage-container-default();
   max-width: sage-container(fluid);
 }
-
