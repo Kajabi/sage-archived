@@ -85,7 +85,7 @@ $-live-avatar-ring-colors: (
 
 // Set up color variations
 @each $color, $settings in $-live-avatar-ring-colors {
-  .sage-live-avatar--#{$color} {
+  .sage-live-avatar--#{"" + $color} {
     color: map-get($settings, main);
     background-color: map-get($settings, bg);
 
@@ -105,7 +105,7 @@ $-live-avatar-ring-colors: (
   @extend %t-sage-body-small-bold;
 
   @each $color, $settings in $-live-avatar-ring-colors {
-    .sage-live-avatar--#{$color} & {
+    .sage-live-avatar--#{"" + $color} & {
       color: map-get($settings, main);
       fill: map-get($settings, main);
     }

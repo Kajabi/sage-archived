@@ -19,13 +19,28 @@ $-live-stream-header-recording-marker-size: 8px;
   padding: 0 sage-spacing(md);
   color: sage-color(white);
 
-  .sage-live-stream-wrapper--awake & {
+  &::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
     background: linear-gradient(180deg, $sage-live-stream-wrap-gradient-start, $sage-live-stream-wrap-gradient-end);
+    transition: $sage-transition;
+    transition-property: opacity;
+    opacity: 0;
+
+    @include position-full;
+  }
+
+  .sage-live-stream-wrapper--awake & {
+    &::after {
+      opacity: 1;
+    }
   }
 }
 
 .sage-live-stream-header__title {
   @extend %t-sage-body-med;
+  color: inherit;
   opacity: 0;
 
   .sage-live-stream-wrapper--awake & {
