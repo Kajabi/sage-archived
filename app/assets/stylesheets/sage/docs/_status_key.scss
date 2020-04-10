@@ -7,17 +7,18 @@
 .status-key {
   display: flex;
   align-items: center;
-
-  + .status-key {
-    margin-left: sage-spacing();
-  }
+  flex-wrap: wrap;
+  flex-grow: 1;
+  margin-right: sage-spacing(sm);
 
   &__wrapper {
     display: flex;
+    flex-wrap: wrap;
     margin-bottom: sage-spacing();
   }
 
   &__icon {
+    display: inline-block;
     flex: 0 0 $status-key-icon-size;
     width: $status-key-icon-size;
     height: $status-key-icon-size;
@@ -52,5 +53,13 @@
     font-size: sage-font-size(sm);
     font-weight: sage-font-weight(semibold);
     color: sage-color(charcoal, 200);
+  }
+
+  @media screen and (min-width: sage-breakpoint(lg-min)) {
+    flex-grow: 0;
+  }
+
+  @media screen and (min-width: sage-breakpoint(xl-min)) {
+    margin-right: sage-spacing(lg);
   }
 }

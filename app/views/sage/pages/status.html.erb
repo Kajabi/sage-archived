@@ -26,31 +26,43 @@
 <% end %>
 <div class="sage-panel">
   <h2 class="t-sage-heading-2">Elements</h2>
-  <table class="status-table">
-    <tr>
-      <th>Element</th>
-      <th>Platforms</th>
-      <th>Design</th>
-      <th>Development</th>
-      <th>Documentation</th>
-    </tr>
-    <% sorted_sage_elements.each do |element| %>
-      <%= render "status_item", item: element %>
-    <% end %>
-  </table>
+  <div class="sage-table-wrapper">
+    <div class="sage-table-wrapper__overflow">
+      <table class="sage-table sage-table--status">
+        <thead>
+          <tr>
+            <th>Element</th>
+            <th>Platforms</th>
+            <th>Design</th>
+            <th>Development</th>
+            <th>Documentation</th>
+          </tr>
+        </thead>
+        <% sorted_sage_elements.each do |element| %>
+          <%= render "status_item", item: element %>
+        <% end %>
+      </table>
+    </div>
+  </div>
 </div>
 <div class="sage-panel">
   <h2 class="t-sage-heading-2">Objects</h2>
-  <table class="status-table">
-    <tr>
-      <th>Object</th>
-      <th>Platforms</th>
-      <th>Design</th>
-      <th>Development</th>
-      <th>Documentation</th>
-    </tr>
-    <% sorted_sage_objects.each do |object| %>
-      <%= render "status_item", item: object %>
-    <% end %>
-  </table>
+  <div class="sage-table-wrapper">
+    <div class="sage-table-wrapper__overflow">
+      <table class="sage-table sage-table--status">
+        <thead>
+          <tr>
+            <th>Object</th>
+            <th>Platforms</th>
+            <th>Design</th>
+            <th>Development</th>
+            <th>Documentation</th>
+          </tr>
+        </thead>
+        <% sorted_sage_objects.each do |object| %>
+          <%= render "status_item", item: object %>
+        <% end %>
+      </table>
+    </div>
+  </div>
 </div>
