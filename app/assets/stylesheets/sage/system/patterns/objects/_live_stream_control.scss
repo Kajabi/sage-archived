@@ -27,10 +27,11 @@ $-live-stream-control-ring-offset: rem(5px);
   justify-content: center;
   flex-flow: row wrap;
   position: relative;
+  box-sizing: border-box;
   height: $-live-stream-control-size;
   padding: 0;
   color: $-live-stream-control-color;
-  border: 0;
+  border: 1px solid transparent;
   border-radius: sage-border(radius-round);
   background-color: $-live-stream-control-background-color;
   transition: $sage-transition;
@@ -151,8 +152,9 @@ $-live-stream-control-ring-offset: rem(5px);
 }
 
 .sage-live-stream-demo-wrapper {
-  background-color: black;
   display: flex;
+  flex-flow: row wrap;
   justify-content: center;
   padding: sage-spacing(md);
+  background-color: sage-color(charcoal, 500);
 }
