@@ -8,12 +8,30 @@ $-live-avatar-min-size: rem(36px);
 $-live-avatar-max-size: rem(128px);
 $-live-avatar-ring-transition: $sage-transition;
 $-live-avatar-ring-colors: (
-  charcoal,
-  purple,
-  sage,
-  yellow,
-  orange,
-  red
+  charcoal: (
+    main: sage-color(charcoal, 500),
+    bg: sage-color(grey, 200)
+  ),
+  purple: (
+    main: sage-color(purple),
+    bg: sage-color(purple, 100)
+  ),
+  sage: (
+    main: sage-color(sage),
+    bg: sage-color(sage, 100)
+  ),
+  yellow: (
+    main: sage-color(yellow),
+    bg: sage-color(yellow, 100)
+  ),
+  orange: (
+    main: sage-color(orange),
+    bg: sage-color(orange, 100)
+  ),
+  red: (
+    main: sage-color(red),
+    bg: sage-color(red, 100)
+  )
 );
 
 .sage-live-avatar {
@@ -66,26 +84,13 @@ $-live-avatar-ring-colors: (
 }
 
 // Set up color variations
-@each $color in $-live-avatar-ring-colors {
+@each $color, $settings in $-live-avatar-ring-colors {
   .sage-live-avatar--#{$color} {
-    $-main-color: sage-color($color);
-    $-bg-color: sage-color($color, 100);
-
-    @if ($color == charcoal) {
-      $-main-color: sage-color(charcoal, 500);
-      $-bg-color: sage-color(grey, 200);
-    }
-
-    color: $-main-color;
-    background-color: $-bg-color;
+    color: map-get($settings, main);
+    background-color: map-get($settings, bg);
 
     &.sage-live-avatar--ring {
       @include sage-feature-live-avatar-ring($color);
-    }
-
-    .sage-live-avatar__initials {
-      color: $-main-color;
-      fill: $-main-color;
     }
   }
 }
@@ -98,6 +103,13 @@ $-live-avatar-ring-colors: (
   fill: sage-color(primary);
 
   @extend %t-sage-body-small-bold;
+
+  @each $color, $settings in $-live-avatar-ring-colors {
+    .sage-live-avatar--#{$color} & {
+      color: map-get($settings, main);
+      fill: map-get($settings, main);
+    }
+  }
 }
 
 .sage-live-avatar__image {
