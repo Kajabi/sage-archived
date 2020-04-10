@@ -4,24 +4,16 @@
 
 ================================================== */
 
-$-table-border: rem(1px) solid sage-color(grey);
-$-table-heading-color: sage-color(grey, 400);
-$-table-cell-padding: sage-spacing(xs) sage-spacing(sm);
-$-table-overflow-indicator-width: 1rem;
-$-table-overflow-indicator-color: sage-color(white);
-$-table-overflow-indicator-opacity: 0.9;
-
-:root {
-  --table-cell-padding: #{sage-spacing(xs)} #{sage-spacing(sm)};
-}
-
 .sage-table {
+  --table-cell-padding: #{sage-spacing(sm)} #{sage-spacing(xs)};
+
   table-layout: initial;
   width: 100%;
+  max-width: $sage-table-max-width;
 
   thead {
-    color: $-table-heading-color;
-    border-bottom: $-table-border;
+    color: $sage-table-heading-text-color;
+    border-bottom: $sage-table-border;
 
     td {
       @extend %t-sage-heading-6;
@@ -29,16 +21,19 @@ $-table-overflow-indicator-opacity: 0.9;
   }
 
   tbody {
+    color: $sage-table-cell-text-color;
+
     tr {
-      border-bottom: $-table-border;
+      border-bottom: $sage-table-border;
     }
   }
 
   td {
     @extend %t-sage-body-small;
 
-    padding: $-table-cell-padding;
+    padding: $sage-table-cell-padding;
     padding: var(--table-cell-padding);
+    color: inherit;
     line-height: sage-line-height(md);
 
     &:first-child {
@@ -51,7 +46,7 @@ $-table-overflow-indicator-opacity: 0.9;
   }
 
   @media screen and (min-width: sage-breakpoint(md-min)) {
-    --table-cell-padding: #{sage-spacing(sm)} #{sage-spacing(md)};
+    --table-cell-padding: #{sage-spacing(md)} #{sage-spacing(sm)};
   }
 }
 
@@ -74,8 +69,8 @@ $-table-overflow-indicator-opacity: 0.9;
     top: 0;
     right: 0;
     height: 100%;
-    width: $-table-overflow-indicator-width;
-    background: linear-gradient(90deg, transparent 0%, rgba($-table-overflow-indicator-color, $-table-overflow-indicator-opacity) 100%);
+    width: $sage-table-overflow-indicator-width;
+    background: $sage-table-overflow-indicator-gradient;
   }
 }
 
@@ -84,7 +79,7 @@ $-table-overflow-indicator-opacity: 0.9;
   .sage-table--responsive & {
     overflow: hidden;
     overflow-x: auto;
-    padding-right: ($-table-overflow-indicator-width / 2);
+    padding-right: ($sage-table-overflow-indicator-width / 2);
     -webkit-overflow-scrolling: touch;
   }
 }
