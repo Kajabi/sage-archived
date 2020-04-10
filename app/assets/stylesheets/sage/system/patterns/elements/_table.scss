@@ -7,21 +7,25 @@
 .sage-table {
   --table-cell-padding: #{sage-spacing(sm)} #{sage-spacing(xs)};
 
-  table-layout: initial;
   width: 100%;
   max-width: $sage-table-max-width;
 
+  caption {
+    @extend #{$sage-table-caption-font-size};
+    text-align: $sage-table-caption-alignment;
+  }
+
   thead {
-    color: $sage-table-heading-text-color;
+    color: $sage-table-heading-font-color;
     border-bottom: $sage-table-border;
 
     td {
-      @extend %t-sage-heading-6;
+      @extend #{$sage-table-heading-font-size};
     }
   }
 
   tbody {
-    color: $sage-table-cell-text-color;
+    color: $sage-table-cell-font-color;
 
     tr {
       border-bottom: $sage-table-border;
@@ -29,7 +33,7 @@
   }
 
   td {
-    @extend %t-sage-body-small;
+    @extend #{$sage-table-cell-font-size};
 
     padding: $sage-table-cell-padding;
     padding: var(--table-cell-padding);
@@ -58,9 +62,17 @@
   }
 }
 
-// Allows overflow scrolling when content exceeds container width
-.sage-table--responsive {
+// Wrapper div required for responsive tables
+.sage-table-wrapper {
   position: relative;
+}
+
+// Allows overflow scrolling when content exceeds container width
+.sage-table-wrapper--overflow {
+  overflow: hidden;
+  overflow-x: auto;
+  padding-right: ($sage-table-overflow-indicator-width / 2);
+  -webkit-overflow-scrolling: touch;
 
   &::after {
     content: "";
@@ -71,16 +83,6 @@
     height: 100%;
     width: $sage-table-overflow-indicator-width;
     background: $sage-table-overflow-indicator-gradient;
-  }
-}
-
-// Additional wrapper div required for responsive tables
-.sage-table__wrapper {
-  .sage-table--responsive & {
-    overflow: hidden;
-    overflow-x: auto;
-    padding-right: ($sage-table-overflow-indicator-width / 2);
-    -webkit-overflow-scrolling: touch;
   }
 }
 
