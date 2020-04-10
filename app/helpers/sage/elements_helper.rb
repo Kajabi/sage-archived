@@ -185,15 +185,15 @@ module Sage
         {
           title: "table",
           description: "Basic table element",
-          scss_design:  "done",
-          scss_dev:     "done",
-          scss_doc:     "done",
-          rails_design: "no",
-          rails_dev:    "no",
-          rails_doc:    "no",
-          react_design: "no",
-          react_dev:    "no",
-          react_doc:    "no"
+          scss_design:  "doing",
+          scss_dev:     "doing",
+          scss_doc:     "doing",
+          rails_design: "todo",
+          rails_dev:    "todo",
+          rails_doc:    "todo",
+          react_design: "todo",
+          react_dev:    "todo",
+          react_doc:    "todo"
         }
       ]
     end
