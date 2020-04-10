@@ -17,6 +17,10 @@ $-status-table-heading-padding: sage-spacing(xs) sage-spacing(sm);
   }
 
   tbody {
+    tr {
+      border-bottom: 0;
+    }
+
     tr:nth-child(3n) {
       border-bottom: $-status-table-border;
     }
