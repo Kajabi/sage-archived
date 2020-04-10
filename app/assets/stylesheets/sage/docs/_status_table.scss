@@ -4,7 +4,7 @@
   For Sage documentation use
 ================================================== */
 
-$-status-table-border: 2px solid sage-color(grey);
+$-status-table-border: rem(2px) solid sage-color(grey);
 $-status-table-cell-padding: sage-spacing(xs) sage-spacing(sm);
 $-status-table-heading-font-size: sage-font-size(sm);
 $-status-table-heading-padding: sage-spacing(xs) sage-spacing(sm);
