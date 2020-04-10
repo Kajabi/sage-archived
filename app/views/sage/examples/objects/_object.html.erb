@@ -39,15 +39,21 @@
 </div>
 <div id="<%= @title %>-example-props" class="sage-panel sage-type">
   <h2 class="t-sage-heading-2 example__title">Properties</h2>
-  <table>
-    <tr>
-      <th>Property</th>
-      <th>Description</th>
-      <th>Type</th>
-      <th>Default</th>
-    </tr>
-    <%= render "sage/examples/objects/#{@title}/props" %>
-  </table>
+  <div class="sage-table-wrapper">
+    <div class="sage-table-wrapper__overflow">
+      <table class="sage-table sage-table--properties">
+        <thead>
+          <tr>
+            <th>Property</th>
+            <th>Description</th>
+            <th>Type</th>
+            <th>Default</th>
+          </tr>
+        </thead>
+        <%= render "sage/examples/objects/#{@title}/props" %>
+      </table>
+    </div>
+  </div>
 </div>
 <div id="<%= @title %>-example-best-practices" class="sage-panel sage-type">
   <h2 class="t-sage-heading-2 example__title">Best Practices</h2>
