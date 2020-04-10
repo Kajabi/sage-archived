@@ -2,13 +2,11 @@
   ** live_stream_wrapper
   type: object
 
-
-
 ================================================== */
 
 .sage-live-stream-wrapper {
   position: absolute;
-  // These are set to ensure video and controls are visible 
+  // These are set to ensure video and controls are visible
   // but should adjust once responsive is fully considered
   min-width: rem(460px);
   min-height: rem(320px);
