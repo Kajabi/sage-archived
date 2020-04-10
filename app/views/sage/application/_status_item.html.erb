@@ -1,21 +1,21 @@
 <tr id="<%= item[:title] %>">
   <td><%= item[:title].titleize %></td>
   <td>SCSS</td>
-  <td><div class="status-key__icon status-key__icon--<%= item[:scss_design] %>"></div></td>
-  <td><div class="status-key__icon status-key__icon--<%= item[:scss_dev] %>"></div></td>
-  <td><div class="status-key__icon status-key__icon--<%= item[:scss_doc] %>"></div></td>
+  <td><span class="status-key__icon status-key__icon--<%= item[:scss_design] %>"><span class="visually-hidden"><%= item[:scss_design].titleize %></span></span></td>
+  <td><span class="status-key__icon status-key__icon--<%= item[:scss_dev] %>"><span class="visually-hidden"><%= item[:scss_dev].titleize %></span></span></td>
+  <td><span class="status-key__icon status-key__icon--<%= item[:scss_doc] %>"><span class="visually-hidden"><%= item[:scss_doc].titleize %></span></span></td>
 </tr>
 <tr>
   <td></td>
   <td>Rails</td>
-  <td><div class="status-key__icon status-key__icon--<%= item[:rails_design] %>"></div></td>
-  <td><div class="status-key__icon status-key__icon--<%= item[:rails_dev] %>"></div></td>
-  <td><div class="status-key__icon status-key__icon--<%= item[:rails_doc] %>"></div></td>
+  <td><span class="status-key__icon status-key__icon--<%= item[:rails_design] %>"><span class="visually-hidden"><%= item[:rails_design].titleize %></span></span></td>
+  <td><span class="status-key__icon status-key__icon--<%= item[:rails_dev] %>"><span class="visually-hidden"><%= item[:rails_dev].titleize %></span></span></td>
+  <td><span class="status-key__icon status-key__icon--<%= item[:rails_doc] %>"><span class="visually-hidden"><%= item[:rails_doc].titleize %></span></span></td>
 </tr>
 <tr>
   <td></td>
   <td>React</td>
-  <td><div class="status-key__icon status-key__icon--<%= item[:react_design] %>"></div></td>
-  <td><div class="status-key__icon status-key__icon--<%= item[:react_dev] %>"></div></td>
-  <td><div class="status-key__icon status-key__icon--<%= item[:react_doc] %>"></div></td>
+  <td><span class="status-key__icon status-key__icon--<%= item[:react_design] %>"><span class="visually-hidden"><%= item[:react_design].titleize %></span></span></td>
+  <td><span class="status-key__icon status-key__icon--<%= item[:react_dev] %>"><span class="visually-hidden"><%= item[:react_dev].titleize %></span></span></td>
+  <td><span class="status-key__icon status-key__icon--<%= item[:react_doc] %>"><span class="visually-hidden"><%= item[:react_doc].titleize %></span></span></td>
 </tr>
