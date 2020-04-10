@@ -1,25 +1,127 @@
-<!-- Wrappers for demonstration purposes only -->
 <div class="sage-live-avatar-wrapper">
   <!-- Showing default -->
-  <div class="sage-live-avatar" data-initials="CJ"></div>
+  <%= render "sage/examples/objects/live_avatar/markup",
+    initials: "JC",
+    color: "",
+    hasRing: false,
+    url: "",
+    scale: false,
+    custom_class: ""
+  %>
 
   <!-- Showing color variation -->
-  <div class="sage-live-avatar sage-live-avatar--purple" data-initials="PS"></div>
+  <%= render "sage/examples/objects/live_avatar/markup",
+    initials: "PS",
+    color: "purple",
+    hasRing: false,
+    url: "",
+    scale: false,
+    custom_class: ""
+  %>
 
   <!-- Showing with avatar image -->
-  <div class="sage-live-avatar" data-initials="LJ">
-    <img src="/assets/sage/avatar/jay.png" class="sage-live-avatar__image" alt="User's name"/>
-  </div>
-</div>
-<div class="sage-live-avatar-wrapper">
+  <%= render "sage/examples/objects/live_avatar/markup",
+    initials: "LJ",
+    color: "",
+    hasRing: false,
+    url: "/assets/sage/avatar/jay.png",
+    scale: false,
+    custom_class: ""
+  %>
+
   <!-- Showing with ring color -->
-  <div class="sage-live-avatar sage-live-avatar--ring" data-initials="CJ"></div>
+  <%= render "sage/examples/objects/live_avatar/markup",
+    initials: "CM",
+    color: "",
+    hasRing: true,
+    url: "",
+    scale: false,
+    custom_class: ""
+  %>
 
   <!-- Showing sample specific ring color -->
-  <div class="sage-live-avatar sage-live-avatar--orange sage-live-avatar--ring" data-initials="CJ"></div>
+  <%= render "sage/examples/objects/live_avatar/markup",
+    initials: "JJ",
+    color: "orange",
+    hasRing: true,
+    url: "",
+    scale: false,
+    custom_class: ""
+  %>
 
   <!-- Showing sample defajlt no ring color -->
-  <div class="sage-live-avatar sage-live-avatar--sage sage-live-avatar--ring" data-initials="CJ">
-    <img src="/assets/sage/avatar/cj.png" class="sage-live-avatar__image" alt="User's name"/>
+  <%= render "sage/examples/objects/live_avatar/markup",
+    initials: "CJ",
+    color: "sage",
+    hasRing: true,
+    url: "/assets/sage/avatar/cj.png",
+    scale: false,
+    custom_class: ""
+  %>
+</div>
+
+<div class="sage-live-avatar-wrapper">
+  <div style="width: 40px; height: 40px;">
+    <%= render "sage/examples/objects/live_avatar/markup",
+      initials: "JC",
+      color: "purple",
+      hasRing: false,
+      url: "",
+      scale: true,
+      custom_class: ""
+    %>
+  </div>
+  <div style="width: 128px; height: 128px;">
+    <%= render "sage/examples/objects/live_avatar/markup",
+      initials: "JC",
+      color: "purple",
+      hasRing: false,
+      url: "",
+      scale: true,
+      custom_class: ""
+    %>
+  </div>
+  <div style="width: 256px; height: 256px;">
+    <%= render "sage/examples/objects/live_avatar/markup",
+      initials: "JC",
+      color: "purple",
+      hasRing: false,
+      url: "",
+      scale: true,
+      custom_class: ""
+    %>
+  </div>
+</div>
+
+<div class="sage-live-avatar-wrapper">
+  <div style="width: 40px; height: 40px;">
+    <%= render "sage/examples/objects/live_avatar/markup",
+      initials: "LJ",
+      color: "",
+      hasRing: false,
+      url: "/assets/sage/avatar/jay.png",
+      scale: true,
+      custom_class: ""
+    %>
+  </div>
+  <div style="width: 128px; height: 128px;">
+    <%= render "sage/examples/objects/live_avatar/markup",
+      initials: "LJ",
+      color: "",
+      hasRing: false,
+      url: "/assets/sage/avatar/jay.png",
+      scale: true,
+      custom_class: ""
+    %>
+  </div>
+  <div style="width: 256px; height: 256px;">
+    <%= render "sage/examples/objects/live_avatar/markup",
+      initials: "LJ",
+      color: "",
+      hasRing: false,
+      url: "/assets/sage/avatar/jay.png",
+      scale: true,
+      custom_class: ""
+    %>
   </div>
 </div>
