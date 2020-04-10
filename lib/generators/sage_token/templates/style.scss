@@ -2,9 +2,7 @@
   ** <%= file_name %>
   type: token
 
-
 ================================================== */
-// TODO: refactor function block to avoid bypassing stylelint
 
 /* stylelint-disable */
 @function sage-<%= file_name %>($key: default) {
