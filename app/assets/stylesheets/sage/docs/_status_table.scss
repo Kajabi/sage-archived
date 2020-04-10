@@ -6,6 +6,7 @@
 
 $-status-table-border: rem(2px) solid sage-color(grey);
 $-status-table-cell-padding: sage-spacing(xs) sage-spacing(sm);
+$-status-table-heading-color: sage-color(charcoal, 100);
 $-status-table-heading-font-size: sage-font-size(sm);
 $-status-table-heading-padding: sage-spacing(xs) sage-spacing(sm);
 
@@ -13,6 +14,7 @@ $-status-table-heading-padding: sage-spacing(xs) sage-spacing(sm);
   width: 100%;
 
   thead {
+    color: $-status-table-heading-color;
     font-size: $-status-table-heading-font-size;
   }
 

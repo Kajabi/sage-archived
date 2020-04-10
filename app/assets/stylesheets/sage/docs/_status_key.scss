@@ -18,6 +18,7 @@
   }
 
   &__icon {
+    display: inline-block;
     flex: 0 0 $status-key-icon-size;
     width: $status-key-icon-size;
     height: $status-key-icon-size;
