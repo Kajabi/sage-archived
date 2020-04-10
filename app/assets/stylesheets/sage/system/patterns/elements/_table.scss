@@ -68,7 +68,7 @@
 }
 
 // Allows overflow scrolling when content exceeds container width
-.sage-table-wrapper--overflow {
+.sage-table-wrapper__overflow {
   overflow: hidden;
   overflow-x: auto;
   padding-right: ($sage-table-overflow-indicator-width / 2);
