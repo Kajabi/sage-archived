@@ -7,7 +7,7 @@
 ================================================== */
 
 .sage-live-stream-wrapper {
-  position: relative;
+  position: absolute;
   // These are set to ensure video and controls are visible 
   // but should adjust once responsive is fully considered
   min-width: rem(460px);
@@ -18,6 +18,8 @@
   @include position-full;
 
   .example__preview & {
+    position: relative;
+
     &:not(:last-child) {
       margin-bottom: sage-spacing(md);
     }

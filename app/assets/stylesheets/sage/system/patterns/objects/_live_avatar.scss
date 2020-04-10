@@ -77,7 +77,7 @@ $-live-avatar-ring-colors: (
 
 // Set up color variations
 @each $color in $-live-avatar-ring-colors {
-  .sage-live-avatar--#{$color} {
+  .sage-live-avatar--#{"" + $color} {
     $-main-color: sage-color($color);
     $-bg-color: sage-color($color, 100);
 

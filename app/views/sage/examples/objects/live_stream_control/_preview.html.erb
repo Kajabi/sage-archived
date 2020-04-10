@@ -1,34 +1,52 @@
 <div class="sage-live-stream-demo-wrapper">
-  <button class="sage-live-stream-control">
-    <i class="sage-live-stream-control__icon sage-icon-microphone"></i>
-    <span class="visually-hidden">Button label</span>
-  </button>
+  <%= render "sage/examples/objects/live_stream_control/markup", 
+    modifiers: '',
+    icon: 'microphone',
+    iconLabel: 'Toggle Microphone', 
+    isPill: false,
+    label: ''
+  %>
 
   <!-- Inactive variation -->
-  <button class="sage-live-stream-control sage-live-stream-control--inactive">
-    <i class="sage-live-stream-control__icon sage-icon-microphone-off"></i>
-    <span class="visually-hidden">Button label</span>
-  </button>
+  <%= render "sage/examples/objects/live_stream_control/markup", 
+    modifiers: 'sage-live-stream-control--inactive',
+    icon: 'microphone-off',
+    iconLabel: 'Toggle Microphone', 
+    isPill: false,
+    label: ''
+  %>
 
   <!-- Flat variation -->
-  <button class="sage-live-stream-control sage-live-stream-control--flat">
-    <i class="sage-live-stream-control__icon sage-icon-microphone"></i>
-    <span class="visually-hidden">Button label</span>
-  </button>
+  <%= render "sage/examples/objects/live_stream_control/markup", 
+    modifiers: 'sage-live-stream-control--flat',
+    icon: 'microphone',
+    iconLabel: 'Toggle Microphone', 
+    isPill: false,
+    label: ''
+  %>
 
   <!-- Start/stop variation -->
-  <button class="sage-live-stream-control sage-live-stream-control--start">
-    <i class="sage-live-stream-control__icon sage-icon-play"></i>
-    <span class="visually-hidden">Play</span>
-  </button>
-  <button class="sage-live-stream-control sage-live-stream-control--stop">
-    <i class="sage-live-stream-control__icon sage-icon-stop"></i>
-    <span class="visually-hidden">Stop</span>
-  </button>
+  <%= render "sage/examples/objects/live_stream_control/markup", 
+    modifiers: 'sage-live-stream-control--start',
+    icon: 'play',
+    iconLabel: 'Start Recording', 
+    isPill: false,
+    label: ''
+  %>
+  <%= render "sage/examples/objects/live_stream_control/markup", 
+    modifiers: 'sage-live-stream-control--stop',
+    icon: 'stop',
+    iconLabel: 'Stop Recording', 
+    isPill: false,
+    label: ''
+  %>
 
   <!-- Pill variation -->
-  <button class="sage-live-stream-control sage-live-stream-control--pill">
-    <i class="sage-live-stream-control__icon sage-icon-users"></i>
-    <span class="sage-live-stream-control__label">324</span>
-  </button>
+  <%= render "sage/examples/objects/live_stream_control/markup", 
+    modifiers: 'sage-live-stream-control--pill',
+    icon: 'users',
+    iconLabel: 'Toggle Microphone', 
+    isPill: true,
+    label: '108'
+  %>
 </div>
