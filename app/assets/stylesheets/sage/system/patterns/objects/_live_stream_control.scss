@@ -53,6 +53,7 @@ $-live-stream-control-ring-offset: rem(5px);
     transform: scale($-live-stream-control-hover-scale);
   }
 
+  &:active,
   &:focus {
     outline: none;
 
