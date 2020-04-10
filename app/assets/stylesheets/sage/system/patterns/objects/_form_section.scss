@@ -4,11 +4,11 @@
 
 ================================================== */
 
-// TODO: refactor @extend
 .sage-form_section {
-  @extend .sage-row;
+  @include sage-row();
   margin-bottom: sage-spacing();
 
+  // TODO: refactor extends following final design of form section
   &__info {
     @extend .sage-col--md-4;
   }
@@ -27,9 +27,5 @@
 
   &__panel {
     @extend .sage-panel;
-  }
-
-  @media (max-width: sage-breakpoint()) {
-    /* form_section responsive styles */
   }
 }
