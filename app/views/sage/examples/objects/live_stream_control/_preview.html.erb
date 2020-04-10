@@ -1,46 +1,52 @@
 <div class="sage-live-stream-demo-wrapper">
   <%= render "sage/examples/objects/live_stream_control/markup", 
-    modifiers: '', 
-    label: 'Button label', 
+    modifiers: '',
     icon: 'microphone',
-    isPill: false
+    iconLabel: 'Toggle Microphone', 
+    isPill: false,
+    label: ''
   %>
 
   <!-- Inactive variation -->
   <%= render "sage/examples/objects/live_stream_control/markup", 
     modifiers: 'sage-live-stream-control--inactive',
-    label: 'Button label', 
     icon: 'microphone-off',
-    isPill: false
+    iconLabel: 'Toggle Microphone', 
+    isPill: false,
+    label: ''
   %>
 
   <!-- Flat variation -->
   <%= render "sage/examples/objects/live_stream_control/markup", 
     modifiers: 'sage-live-stream-control--flat',
-    label: 'Button label', 
     icon: 'microphone',
-    isPill: false
+    iconLabel: 'Toggle Microphone', 
+    isPill: false,
+    label: ''
   %>
 
   <!-- Start/stop variation -->
   <%= render "sage/examples/objects/live_stream_control/markup", 
     modifiers: 'sage-live-stream-control--start',
-    label: 'Stop recording', 
     icon: 'play',
-    isPill: false
+    iconLabel: 'Start Recording', 
+    isPill: false,
+    label: ''
   %>
   <%= render "sage/examples/objects/live_stream_control/markup", 
     modifiers: 'sage-live-stream-control--stop',
-    label: 'Start recording', 
     icon: 'stop',
-    isPill: false 
+    iconLabel: 'Stop Recording', 
+    isPill: false,
+    label: ''
   %>
 
   <!-- Pill variation -->
   <%= render "sage/examples/objects/live_stream_control/markup", 
     modifiers: 'sage-live-stream-control--pill',
-    label: '324', 
     icon: 'users',
-    isPill: true 
+    iconLabel: 'Toggle Microphone', 
+    isPill: true,
+    label: '108'
   %>
 </div>

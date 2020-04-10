@@ -1,50 +1,57 @@
 <div class="sage-live-stream-footer">
   <div class="sage-live-stream-footer__settings">
     <%= render "sage/examples/objects/live_stream_control/markup", 
-      modifiers: '', 
-      label: 'Settings', 
+      modifiers: '',
       icon: 'gear',
-      isPill: false
+      iconLabel: 'Settings', 
+      isPill: false,
+      label: ''
     %>
   </div>
   <div class="sage-live-stream-footer__stream-controls">
     <%= render "sage/examples/objects/live_stream_control/markup", 
-      modifiers: '', 
-      label: 'Toggle Microphone', 
+      modifiers: '',
       icon: 'microphone',
-      isPill: false
+      iconLabel: 'Toggle Microphone', 
+      isPill: false,
+      label: ''
     %>
     <%= render "sage/examples/objects/live_stream_control/markup", 
-      modifiers: '', 
-      label: 'Toggle Camera', 
+      modifiers: '',
       icon: 'video-on',
-      isPill: false
+      iconLabel: 'Toggle Camera', 
+      isPill: false,
+      label: ''
     %>
     <%= render "sage/examples/objects/live_stream_control/markup", 
-      modifiers: 'sage-live-stream-control--inactive', 
-      label: 'Toggle Screen Share', 
+      modifiers: 'sage-live-stream-control--inactive',
       icon: 'screen-share-on',
-      isPill: false
+      iconLabel: 'Toggle Screen Share', 
+      isPill: false,
+      label: ''
     %>
     <%= render "sage/examples/objects/live_stream_control/markup", 
-      modifiers: 'sage-live-stream-control--start', 
-      label: 'Toggle Recording', 
+      modifiers: 'sage-live-stream-control--start',
       icon: 'play',
-      isPill: false
+      iconLabel: 'Toggle Recording', 
+      isPill: false,
+      label: ''
     %>
   </div>
   <div class="sage-live-stream-footer__chat-controls">
     <%= render "sage/examples/objects/live_stream_control/markup", 
       modifiers: 'sage-live-stream-control--pill' + (!isAwake ? ' sage-live-stream-control--flat' : ''), 
-      label: '108', 
       icon: 'users',
-      isPill: true
+      iconLabel: 'TOggle Participant List',
+      isPill: true,
+      label: '108'
     %>
     <%= render "sage/examples/objects/live_stream_control/markup", 
       modifiers: !isAwake ? 'sage-live-stream-control--flat' : '', 
-      label: 'Toggle Chat', 
       icon: 'conversation',
-      isPill: false
+      label: 'Toggle Chat', 
+      isPill: false,
+      label: ''
     %>
   </div>
 </div>
