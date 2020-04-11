@@ -230,4 +230,8 @@
   left: 0;
   right: 0;
   bottom: 0;
+
+  // @supports (backdrop-filter: blur(10px)) {
+  //   backdrop-filter: $sage-overlay-backdrop-filter;
+  // }
 }
