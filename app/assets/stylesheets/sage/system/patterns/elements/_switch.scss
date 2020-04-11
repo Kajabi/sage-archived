@@ -11,110 +11,110 @@
   align-items: center;
   margin-bottom: $sage-form-element-spacing;
   color: $sage-switch-color-default-text;
+}
 
-  .sage-switch__input {
+.sage-switch__input {
+  display: inline-block;
+  position: relative;
+  height: $sage-switch-height;
+  width: $sage-switch-width;
+  margin: 0;
+  vertical-align: top;
+  appearance: none;
+  color: $sage-switch-color-default;
+  background: $sage-switch-color-default;
+  border: 0;
+  border-radius: $sage-switch-border-radius;
+  outline: none;
+  transition: background 0.3s ease-out;
+  cursor: pointer;
+
+  + .sage-switch__label {
     display: inline-block;
-    position: relative;
-    height: $sage-switch-height;
-    width: $sage-switch-width;
-    margin: 0;
+    margin-left: sage-spacing(sm);
     vertical-align: top;
-    appearance: none;
-    color: $sage-switch-color-default;
-    background: $sage-switch-color-default;
-    border: 0;
-    border-radius: $sage-switch-border-radius;
-    outline: none;
-    transition: background 0.3s ease-out;
     cursor: pointer;
 
+    @extend %t-sage-body;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+  }
+
+  &::before { // switch background
+    transform: translate3d(-50%, -50%, 0) scale(0.94);
+    width: calc(100% + (#{$sage-switch-focus-outline-width * 1px} + #{$sage-switch-focus-outline-spacing * 2}));
+    height: calc(100% + (#{$sage-switch-focus-outline-width * 1px} + #{$sage-switch-focus-outline-spacing * 2}));
+    border: ($sage-switch-focus-outline-width * 1px) solid $sage-switch-focus-outline-color;
+    border-radius: $sage-switch-border-radius;
+    transition: opacity 0.15s ease-out 0.05s, transform 0.2s ease-in-out;
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  &::after {  // switch toggle
+    transform: translate3d(-100%, -50%, 0);
+    height: $sage-switch-toggle-size;
+    width: $sage-switch-toggle-size;
+    background: sage-color(white);
+    border-radius: sage-border(radius-round);
+    box-shadow: sage-shadow(sm);
+    transition: transform 0.2s ease-in-out;
+  }
+
+  &:invalid {
+    background-color: sage-color(red);
+
     + .sage-switch__label {
-      display: inline-block;
-      margin-left: sage-spacing(sm);
-      vertical-align: top;
-      cursor: pointer;
-
-      @extend %t-sage-body;
+      color: sage-color(red);
     }
+  }
 
-    &::before,
+  // checked
+  &:checked {
+    color: $sage-switch-color-checked;
+    background: $sage-switch-color-checked;
+
     &::after {
-      content: "";
-      display: block;
-      position: absolute;
-      left: 50%;
-      top: 50%;
+      transform: translate3d(0, -50%, 0);
+    }
+  }
+
+  // disabled
+  &:disabled {
+    background: $sage-switch-color-disabled;
+    cursor: not-allowed;
+
+    &::after {
+      box-shadow: none;
     }
 
-    &::before { // switch background
-      transform: translate3d(-50%, -50%, 0) scale(0.94);
-      width: calc(100% + (#{$sage-switch-focus-outline-width * 1px} + #{$sage-switch-focus-outline-spacing * 2}));
-      height: calc(100% + (#{$sage-switch-focus-outline-width * 1px} + #{$sage-switch-focus-outline-spacing * 2}));
-      border: ($sage-switch-focus-outline-width * 1px) solid $sage-switch-focus-outline-color;
-      border-radius: $sage-switch-border-radius;
-      transition: opacity 0.15s ease-out 0.05s, transform 0.2s ease-in-out;
-      pointer-events: none;
-      opacity: 0;
+    + .sage-switch__label {
+      color: $sage-switch-color-disabled-text;
+      cursor: inherit;
     }
 
-    &::after {  // switch toggle
-      transform: translate3d(-100%, -50%, 0);
-      height: $sage-switch-toggle-size;
-      width: $sage-switch-toggle-size;
-      background: sage-color(white);
-      border-radius: sage-border(radius-round);
-      box-shadow: sage-shadow(sm);
-      transition: transform 0.2s ease-in-out;
-    }
-
-    &:invalid {
-      background-color: sage-color(red);
+    // disabled & checked
+    &:checked {
+      background: $sage-switch-color-disabled-checked;
 
       + .sage-switch__label {
-        color: sage-color(red);
+        color: $sage-switch-color-disabled-checked-text;
       }
     }
+  }
 
-    // checked
-    &:checked {
-      color: $sage-switch-color-checked;
-      background: $sage-switch-color-checked;
-
-      &::after {
-        transform: translate3d(0, -50%, 0);
-      }
-    }
-
-    // disabled
-    &:disabled {
-      background: $sage-switch-color-disabled;
-      cursor: not-allowed;
-
-      &::after {
-        box-shadow: none;
-      }
-
-      + label {
-        color: $sage-switch-color-disabled-text;
-        cursor: inherit;
-      }
-
-      // disabled & checked
-      &:checked {
-        background: $sage-switch-color-disabled-checked;
-
-        + label {
-          color: $sage-switch-color-disabled-checked-text;
-        }
-      }
-    }
-
-    &:focus:not(:disabled),
-    &:active:not(:disabled) {
-      &::before {
-        transform: translate3d(-50%, -50%, 0);
-        opacity: 1;
-      }
+  &:focus:not(:disabled),
+  &:active:not(:disabled) {
+    &::before {
+      transform: translate3d(-50%, -50%, 0);
+      opacity: 1;
     }
   }
 }
