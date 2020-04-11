@@ -56,11 +56,11 @@ $-live-stream-header-recording-marker-size: 8px;
   &::before {
     content: "";
     display: inline-block;
-    background-color: sage-color(red, 300);
+    transform: translateY(-1px);
     width: $-live-stream-header-recording-marker-size;
     height: $-live-stream-header-recording-marker-size;
-    border-radius: sage-border(radius-round);
     margin-right: sage-spacing(2xs);
-    transform: translateY(-1px);
+    background-color: sage-color(red, 300);
+    border-radius: sage-border(radius-round);
   }
 }
