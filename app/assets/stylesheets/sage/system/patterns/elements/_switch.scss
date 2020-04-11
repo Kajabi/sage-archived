@@ -103,10 +103,10 @@
     // disabled & checked
     &:checked {
       background: $sage-switch-color-disabled-checked;
+    }
 
-      + .sage-switch__label {
-        color: $sage-switch-color-disabled-checked-text;
-      }
+    &:checked + .sage-switch__label {
+      color: $sage-switch-color-disabled-checked-text;
     }
   }
 
