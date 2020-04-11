@@ -2,8 +2,6 @@
   ** live_stream_control
   type: element
 
-
-
 ================================================== */
 
 $-live-stream-control-size: rem(40px);
@@ -36,7 +34,7 @@ $-live-stream-control-ring-offset: rem(5px);
   background-color: $-live-stream-control-background-color;
   transition: $sage-transition;
   transition-property: background-color, color;
-  
+
   &::after {
     content: "";
     position: absolute;
@@ -49,7 +47,7 @@ $-live-stream-control-ring-offset: rem(5px);
 
     @include position-full(-$-live-stream-control-ring-offset);
   }
-  
+
   &:hover {
     transform: scale($-live-stream-control-hover-scale);
   }
