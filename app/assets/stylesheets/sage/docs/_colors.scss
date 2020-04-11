@@ -10,7 +10,7 @@
   border-radius: sage-border(radius);
 }
 
-.color {
+%color {
   padding: sage-spacing(sm) sage-spacing();
   font-size: sage-font-size(sm);
   font-weight: sage-font-weight(simibold);
@@ -20,13 +20,14 @@
     float: right;
     text-transform: uppercase;
   }
+}
 
-  // TODO: flatten into mixin or function
+.color {
   @each $name, $color in $sage-colors {
     &-#{$name} {
       @each $tone, $hex in $color {
         &-#{$tone} {
-          @extend .color;
+          @extend %color;
           background: $hex;
 
           @if (lightness($hex) > 50) {
@@ -40,6 +41,7 @@
       }
     }
   }
+
   &-grey {
     &-100,
     &-200,
@@ -49,6 +51,7 @@
       color: sage-color(charcoal, 500);
     }
   }
+
   &-white {
     &-100,
     &-200,
@@ -60,6 +63,7 @@
       border-radius: sage-border(radius);
     }
   }
+
   &-black {
     &-100,
     &-200,
