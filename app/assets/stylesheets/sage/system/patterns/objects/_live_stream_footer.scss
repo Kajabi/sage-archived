@@ -42,9 +42,9 @@
   width: 25%;
   min-width: max-content;
   margin-right: auto;
-  opacity: 0;
   transition: $sage-transition;
   transition-property: opacity;
+  opacity: 0;
 
   .sage-live-stream-wrapper--awake & {
     opacity: 1;
@@ -57,14 +57,14 @@
   justify-content: center;
   min-width: max-content;
   padding: 0 sage-spacing(sm);
-  opacity: 0;
   transition: $sage-transition;
   transition-property: opacity;
+  opacity: 0;
 
   .sage-live-stream-wrapper--awake & {
     opacity: 1;
   }
-} 
+}
 
 .sage-live-stream-footer__chat-controls {
   display: flex;
