@@ -5,7 +5,8 @@
 ================================================== */
 
 .sage-table {
-  --table-cell-padding: #{sage-spacing(sm)} #{sage-spacing(xs)};
+  --table-cell-padding: #{$sage-table-cell-padding-sm};
+  --table-heading-padding: #{$sage-table-heading-padding-sm};
 
   width: 100%;
   max-width: $sage-table-max-width;
@@ -15,12 +16,25 @@
     text-align: $sage-table-caption-alignment;
   }
 
-  thead {
+  thead,
+  tfoot {
     color: $sage-table-heading-font-color;
     border-bottom: $sage-table-border;
 
-    td {
+    td,
+    th {
       @extend #{$sage-table-heading-font-size};
+
+      padding: $sage-table-heading-padding-sm;
+      padding: var(--table-heading-padding);
+
+      &:first-child {
+        padding-left: 0;
+      }
+
+      &:last-child {
+        padding-right: 0;
+      }
     }
   }
 
@@ -35,7 +49,7 @@
   td {
     @extend #{$sage-table-cell-font-size};
 
-    padding: $sage-table-cell-padding;
+    padding: $sage-table-cell-padding-sm;
     padding: var(--table-cell-padding);
     color: inherit;
     line-height: sage-line-height(md);
@@ -50,7 +64,8 @@
   }
 
   @media screen and (min-width: sage-breakpoint(md-min)) {
-    --table-cell-padding: #{sage-spacing(md)} #{sage-spacing(sm)};
+    --table-cell-padding: #{$sage-table-cell-padding-lg};
+    --table-heading-padding: #{$sage-table-heading-padding-lg};
   }
 }
 

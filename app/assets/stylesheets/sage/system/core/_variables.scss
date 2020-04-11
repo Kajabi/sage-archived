@@ -250,7 +250,10 @@ $sage-switch-focus-outline-color: sage-color(primary) !default;
 
 // Borders and sizing
 $sage-table-border: rem(1px) solid sage-color(grey);
-$sage-table-cell-padding: sage-spacing(sm) sage-spacing(xs);
+$sage-table-cell-padding-sm: sage-spacing(sm) sage-spacing(xs);
+$sage-table-cell-padding-lg: sage-spacing(md) sage-spacing(sm);
+$sage-table-heading-padding-sm: sage-spacing(sm) sage-spacing(xs);
+$sage-table-heading-padding-lg: sage-spacing(md) sage-spacing(sm);
 $sage-table-max-width: none;
 
 // Text
