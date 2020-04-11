@@ -4,36 +4,26 @@
   For Sage documentation use
 ================================================== */
 
-.sage-icon {
-  &__wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    padding-left: sage-spacing();
-    list-style-type: none;
+.sage-icon__example-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: sage-spacing();
+  list-style-type: none;
+}
 
-    /*
-      TODO: use classes over element selectors
-      eventually we'll want to refactor this whole block
-    */
-    li {
-      flex: 1;
-      min-width: 30%;
-      margin-bottom: sage-spacing();
-      margin-right: sage-spacing();
-      padding: sage-spacing();
-      text-align: center;
-      border: sage-border();
+.sage-icon__example {
+  flex: 1;
+  min-width: 30%;
+  margin-bottom: sage-spacing();
+  margin-right: sage-spacing();
+  padding: sage-spacing();
+  text-align: center;
+  border: sage-border();
+}
 
-      i {
-        font-size: sage-font-size(xl);
-      }
-
-      p {
-        margin-bottom: 0;
-        font-size: sage-font-size(sm);
-        font-weight: sage-font-weight(semibold);
-        white-space: nowrap;
-      }
-    }
-  }
+.sage-icon__label {
+  margin-bottom: 0;
+  font-size: sage-font-size(sm);
+  font-weight: sage-font-weight(semibold);
+  white-space: nowrap;
 }
