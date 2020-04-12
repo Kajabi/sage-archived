@@ -1,11 +1,13 @@
+"use strict";
+
 window.Sage = window.Sage || {};
 
 Sage.Dropdown = function(el) {
-  this.init(el)
+  this.init(el);
 };
 
 Sage.Dropdown.prototype = {
-  init: function(el){
+  init(el){
     this.elements = {
       parent: el,
       field: el.querySelector('[data-js-sagedropdown-field]'),
@@ -23,19 +25,15 @@ Sage.Dropdown.prototype = {
       overlay: 'sage-dropdown__overlay',
     }
 
-    this.elements.field.addEventListener('click', function() {
-      this.toggle();
-    }.bind(this), false);
+    this.elements.field.addEventListener('click', () => this.toggle());
 
-    this.elements.options.forEach(function(item) {
-      item.addEventListener('click', function(evt) {
-        this.setSelectedOption(evt.currentTarget);
-      }.bind(this), false);
-    }, this);
+    this.elements.options.forEach(item => {
+      item.addEventListener('click', evt => this.setSelectedOption(evt.currentTarget));
+    });
   },
 
-  toggle: function() {
-    let parentClassList = this.elements.parent.classList;
+  toggle() {
+    const parentClassList = this.elements.parent.classList;
 
     if (parentClassList.contains(this.classNames.parentActive) ) {
       parentClassList.remove(this.classNames.parentActive);
@@ -78,9 +76,11 @@ Sage.Dropdown.prototype = {
   },
 
   setFocusedOption(elOption){
-    let removeAllFocused = () => this.elements.options.forEach(elOption =>
-      elOption.classList.remove(this.classNames.optionFocus)
-    );
+    const removeAllFocused = () => {
+      this.elements.options.forEach(elOption => {
+        elOption.classList.remove(this.classNames.optionFocus);
+      });
+    };
 
     if (elOption) {
       removeAllFocused();
@@ -97,9 +97,9 @@ Sage.Dropdown.prototype = {
     this.toggle();
     this.elements.field.value = elOption.dataset.jsSagedropdownOption;
 
-    this.elements.options.forEach(function(elOption) {
+    this.elements.options.forEach(elOption => {
       elOption.classList.remove(this.classNames.optionSelected);
-    }, this);
+    });
 
     if (elOption.dataset.jsSagedropdownOption.length) {
       parentClassList.add(this.classNames.parentSelected);
@@ -121,14 +121,14 @@ Sage.Dropdown.prototype = {
         this.toggle()
       }.bind(this), false);
     } else {
-      var el = this.elements.parent.getElementsByClassName(this.classNames.overlay)[0];
+      const el = this.elements.parent.getElementsByClassName(this.classNames.overlay)[0];
       el.removeEventListener('click', el.clickListener, false);
       this.elements.parent.removeChild(el);
     }
   },
 
-  filter: function(value) {
-    this.elements.options.forEach(function(elOption, index) {
+  filter(value) {
+    this.elements.options.forEach(elOption => {
       if (
         !elOption.dataset.jsSagedropdownOption.length ||
         elOption.dataset.jsSagedropdownOption.toUpperCase().startsWith(value.toUpperCase())
@@ -137,7 +137,7 @@ Sage.Dropdown.prototype = {
       } else {
         elOption.classList.add(this.classNames.optionHidden);
       }
-    }, this);
+    });
 
     this.setFocusedOption(this.getVisibleOptions()[0]);
   },
@@ -170,25 +170,16 @@ Sage.Dropdown.prototype = {
   },
 
   keyboardFocusDirection(direction) {
-    const visibleOptions = this.getVisibleOptions();
-    const focusedOption = this.getFocusedOption();
+    const visibleOptions = this.getVisibleOptions(),
+          focusedOption = this.getFocusedOption(),
+          currentIndex = visibleOptions.findIndex((elOption) => elOption == focusedOption);
     let newIndex;
 
-    visibleOptions.forEach(function(elOption, index, optionsArray) {
-      if (
-        direction == 'up' &&
-        elOption == focusedOption &&
-        index != 0
-      ) {
-        newIndex = index - 1;
-      } else if (
-        direction == 'down' &&
-        elOption == focusedOption &&
-        index != (optionsArray.length - 1)
-      ) {
-        newIndex = index + 1;
-      }
-    }, this);
+    if (direction == 'up' && currentIndex != 0) {
+      newIndex = currentIndex - 1;
+    } else if (direction == 'down' && currentIndex != (visibleOptions.length - 1)) {
+      newIndex = currentIndex + 1;
+    }
 
     if (newIndex != undefined) this.setFocusedOption(visibleOptions[newIndex]);
   },
