@@ -1,12 +1,14 @@
-<%= render "sage/examples/objects/live_option_menu/markup",
-  options: [
-    {
-      label: "Option item",
-      isDanger: false
-    },
-    {
-      label: "Dangerous option item",
-      isDanger: true
-    }
-  ]
-%>
+<div class="sage-live-option-menu-anchor" aria-has-popup="true" aria-expanded="false" tabindex="0" role="button">
+  <%= render "sage/examples/objects/live_option_menu/markup",
+    options: [
+      {
+        label: "Option item",
+        isDanger: false
+      },
+      {
+        label: "Dangerous option item",
+        isDanger: true
+      }
+    ]
+  %>
+</div>
