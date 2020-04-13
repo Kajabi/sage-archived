@@ -11,13 +11,13 @@
   border-radius: $sage-panel-border-radius;
   box-shadow: $sage-panel-box-shadow;
 
-  &__img {
-    display: block;
-    max-width: 100%;
-    margin-bottom: sage-spacing();
-  }
-
   > :last-child {
     margin-bottom: 0;
   }
+}
+
+.sage-panel__img {
+  display: block;
+  max-width: 100%;
+  margin-bottom: sage-spacing();
 }
