@@ -1,6 +1,6 @@
 Sage.init = function(elementNamesToInit) {
   var shouldInit = function(elementName, selector) {
-    return elementNamesToInit.contains(elementName) && document.querySelector(selector) !== null;
+    return elementNamesToInit.includes(elementName) && document.querySelector(selector) !== null;
   };
 
   // Initialize Tooltip
