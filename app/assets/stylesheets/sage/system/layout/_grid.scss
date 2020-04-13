@@ -2,14 +2,13 @@
   ** sage grid
   type: style
 
-
 ================================================== */
 
 // ============================================
 // Rows
 // ============================================
 
-.sage-row {
+@mixin sage-row {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -17,60 +16,70 @@
   margin-right: calc(#{$sage-grid-gap-md} / -2);
 }
 
+.sage-row {
+  @include sage-row();
+}
+
 // ============================================
 // Columns
 // ============================================
 
-%sage-col {
+@mixin sage-col {
   flex: 1 1 auto;
   max-width: 100%;
   padding: 0 calc(#{$sage-grid-gap-md} / 2);
 }
 
-.sage-col {
-  // TODO: refactor this to replace extend
-  @extend %sage-col;
-
-  @for $sage-i from 1 through $sage-grid-columns {
-    &--sm-#{$sage-i},
-    &--md-#{$sage-i},
-    &--lg-#{$sage-i} {
-      // TODO: refactor this to replace extend
-      @extend %sage-col;
-      flex: 0 0 100%;
-    }
+@for $sage-i from 1 through $sage-grid-columns {
+  .sage-col--sm-#{$sage-i},
+  .sage-col--md-#{$sage-i},
+  .sage-col--lg-#{$sage-i} {
+    @include sage-col();
+    flex: 0 0 100%;
   }
 }
 
 @media (min-width: sage-breakpoint(sm-min)) {
-  .sage-col {
-    @for $sage-i from 1 through $sage-grid-columns {
-      &--sm-#{$sage-i} {
-        flex: 0 1 auto;
-        width: percentage($sage-i / $sage-grid-columns);
-      }
+  @for $sage-i from 1 through $sage-grid-columns {
+    .sage-col--sm-#{$sage-i} {
+      flex: 0 1 auto;
+      width: percentage($sage-i / $sage-grid-columns);
     }
+  }
+}
+
+@media (max-width: sage-breakpoint(sm-max)) {
+  .sage-col--sm-hide {
+    display: none;
   }
 }
 
 @media (min-width: sage-breakpoint(md-min)) {
-  .sage-col {
-    @for $sage-i from 1 through $sage-grid-columns {
-      &--md-#{$sage-i} {
-        flex: 0 1 auto;
-        width: percentage($sage-i / $sage-grid-columns);
-      }
+  @for $sage-i from 1 through $sage-grid-columns {
+    .sage-col--md-#{$sage-i} {
+      flex: 0 1 auto;
+      width: percentage($sage-i / $sage-grid-columns);
     }
   }
 }
 
+@media (max-width: sage-breakpoint(md-max)) {
+  .sage-col--md-hide {
+    display: none;
+  }
+}
+
 @media (min-width: sage-breakpoint(lg-min)) {
-  .sage-col {
-    @for $sage-i from 1 through $sage-grid-columns {
-      &--lg-#{$sage-i} {
-        flex: 0 1 auto;
-        width: percentage($sage-i / $sage-grid-columns);
-      }
+  @for $sage-i from 1 through $sage-grid-columns {
+    .sage-col--lg-#{$sage-i} {
+      flex: 0 1 auto;
+      width: percentage($sage-i / $sage-grid-columns);
     }
+  }
+}
+
+@media (max-width: sage-breakpoint(lg-max)) {
+  .sage-col--lg-hide {
+    display: none;
   }
 }

@@ -27,14 +27,16 @@
 
       padding: $sage-table-heading-padding-sm;
       padding: var(--table-heading-padding);
+    }
 
-      &:first-child {
-        padding-left: 0;
-      }
+    td:first-child,
+    th:first-child {
+      padding-left: 0;
+    }
 
-      &:last-child {
-        padding-right: 0;
-      }
+    td:last-child,
+    th:last-child {
+      padding-right: 0;
     }
   }
 

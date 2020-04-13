@@ -44,28 +44,24 @@
       content: "";
     }
 
-    &:focus {
-      &::after {
-        transform: translate3d(-50%, -50%, 0) scale(1);
-        border-color: sage-color(charcoal, 100);
-        opacity: 1;
-      }
+    &:focus::after {
+      transform: translate3d(-50%, -50%, 0) scale(1);
+      border-color: sage-color(charcoal, 100);
+      opacity: 1;
     }
 
     &:active {
       color: sage-color(grey, 400);
-
-      &::after {
-        border-color: sage-color(charcoal, 200);
-      }
     }
 
-    &[aria-expanded="true"] {
-      &::after {
-        transform: translate3d(-50%, -50%, 0) scale(1);
-        border-color: sage-color(sage);
-        opacity: 1;
-      }
+    &:active::after {
+      border-color: sage-color(charcoal, 200);
+    }
+
+    &[aria-expanded="true"]::after {
+      transform: translate3d(-50%, -50%, 0) scale(1);
+      border-color: sage-color(sage);
+      opacity: 1;
     }
   }
 }

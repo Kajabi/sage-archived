@@ -2,14 +2,8 @@
   ** <%= file_name %>
   type: object
 
-
-
 ================================================== */
 
 .sage-<%= file_name %> {
-
-  @media (max-width: sage-breakpoint()) {
-    /* <%= file_name %> responsive styles */
-
-  }
+  // Styles here
 }

@@ -2,12 +2,11 @@
   ** description
   type: element
 
-
-
 ================================================== */
 
 .sage-description {
   margin-bottom: sage-spacing();
+
   &:last-of-type {
     margin-bottom: 0;
   }
@@ -20,5 +19,5 @@
 }
 
 .sage-description__data {
-  @extend %t-sage-body
+  @extend %t-sage-body;
 }

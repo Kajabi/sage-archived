@@ -89,13 +89,9 @@
     }
   }
 
-  &:hover {
-    &:not(:checked) {
-      &:not(:disabled) {
-        border-color: sage-color(grey, 500);
-        box-shadow: sage-shadow(sm);
-      }
-    }
+  &:hover:not(:checked):not(:disabled) {
+    border-color: sage-color(grey, 500);
+    box-shadow: sage-shadow(sm);
   }
 
   &:focus:not(:disabled),
@@ -121,10 +117,10 @@
       border-color: $sage-checkbox-color-disabled-checked;
       box-shadow: none;
       opacity: 1;
+    }
 
-      &::before {
-        display: none;
-      }
+    &:checked::before {
+      display: none;
     }
   }
 
