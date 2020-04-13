@@ -1,0 +1,11 @@
+<div class="sage-live-option-menu-anchor" aria-has-popup="true" aria-expanded="false" tabindex="0" role="button">
+  <ul class="sage-live-option-menu" role="menu" aria-label="Participant options">
+    <% options.each do |option| %>
+      <li role="none" class="sage-live-option-menu__item">
+        <button role="menuitem" class="sage-live-option-menu__command <%= option[:isDanger] ? "sage-live-option-menu__command--danger" : "" %>">
+          <%= option[:label] %>
+        </button>
+      </li>
+    <% end %>
+  </ul>
+</div>
