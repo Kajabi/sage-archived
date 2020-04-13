@@ -1,7 +1,5 @@
 "use strict";
 
-window.Sage = window.Sage || {};
-
 Sage.Dropdown = function(el) {
   this.init(el);
 };
@@ -197,7 +195,3 @@ Sage.Dropdown.prototype = {
     }
   }
 };
-
-document.querySelectorAll('[data-js-sagedropdown]').forEach(function(el) {
-  new Sage.Dropdown(el);
-});

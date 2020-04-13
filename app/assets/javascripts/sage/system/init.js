@@ -23,4 +23,10 @@ Sage.init = function(elementNamesToInit) {
     Sage.alert.init();
   }
 
+  // Initialize Overlay
+  if ( shouldInit('dropdown', '[data-js-sagedropdown]') ) {
+    document.querySelectorAll('[data-js-sagedropdown]').forEach(function(el) {
+      new Sage.Dropdown(el);
+    });
+  }
 }
