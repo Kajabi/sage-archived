@@ -2,7 +2,7 @@ Sage.docs.liveOptionMenu = (function() {
   // ==================================================
   // Variables
   // ==================================================
-  var sageLiveOptionMenu = document.querySelector('.sage-live-option-menu-anchor');
+  var sageLiveOptionMenu = document.querySelectorAll('.sage-live-option-menu-anchor');
 
 
   // ==================================================
@@ -12,10 +12,13 @@ Sage.docs.liveOptionMenu = (function() {
   function init() {
 
     // Simulate contextual menu
-    sageLiveOptionMenu.addEventListener('click', function(e) {
-      var target = e.currentTarget;
-      var isExpanded = target.getAttribute('aria-expanded') == 'true';
-      target.setAttribute('aria-expanded', !isExpanded);
+    sageLiveOptionMenu.forEach(function(anchor) {
+      anchor.addEventListener('click', function(e) {
+        var target = e.currentTarget;
+        if (!target) return;
+        var isExpanded = target.getAttribute('aria-expanded') == 'true';
+        target.setAttribute('aria-expanded', !isExpanded);
+      });
     });
   }
 
