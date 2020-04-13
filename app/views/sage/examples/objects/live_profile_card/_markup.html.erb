@@ -15,32 +15,35 @@
   </div>
   <div class="sage-live-profile-card__controls">
     <% if isModerator || isPublisher %>
-      <button class="sage-live-profile-card__cam-control sage-live-user-control <%= iconsActive ? "" : "sage-live-user-control--inactive" %>">
-        <i class="sage-live-user-control__icon sage-icon-microphone"></i>
-        <span class="visually-hidden">Toggle Microphone</span>
-      </button>
-      <button class="sage-live-profile-card__mic-control sage-live-user-control <%= iconsActive ? "" : "sage-live-user-control--inactive" %>">
-        <i class="sage-live-user-control__icon sage-icon-video-on"></i>
-        <span class="visually-hidden">Toggle Camera</span>
-      </button>
+      <%= render "sage/examples/objects/live_user_control/markup", 
+        icon: 'microphone',
+        label: 'Toggle Microphone',
+        active: iconsActive
+      %>
+      <%= render "sage/examples/objects/live_user_control/markup", 
+        icon: 'video-on',
+        label: 'Toggle Camera',
+        active: iconsActive
+      %>
     <% end %>
     <div class="sage-live-profile-card__options sage-live-option-menu-anchor" aria-has-popup="true" aria-expanded="false">
-      <button class="sage-live-user-control sage-live-user-control--inactive">
-        <i class="sage-live-user-control__icon sage-icon-3-dot-menu"></i>
-        <span class="visually-hidden">More options</span>
-      </button>
-      <ul class="sage-live-option-menu" role="menu" aria-label="Participant options">
-        <li role="none" class="sage-live-option-menu__item">
-          <button role="menuitem" class="sage-live-option-menu__command">
-            Turn off sharing permissions
-          </button>
-        </li>
-        <li role="none" class="sage-live-option-menu__item">
-          <button role="menuitem" class="sage-live-option-menu__command sage-live-option-menu__command--danger">
-            Remove participant
-          </button>
-        </li>
-      </ul>
+      <%= render "sage/examples/objects/live_user_control/markup", 
+        icon: '3-dot-menu',
+        label: 'More options',
+        active: false
+      %>
+      <%= render "sage/examples/objects/live_option_menu/markup",
+        options: [
+          {
+            label: "Turn off sharing permissions",
+            isDanger: false
+          },
+          {
+            label: "Remove participant",
+            isDanger: true
+          }
+        ]
+      %>
     </div>
   </div>
 </li>
