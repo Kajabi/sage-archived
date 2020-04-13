@@ -1,11 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Sage | <%= @title.titleize %></title>
     <%= render "meta" %>
-    <%= stylesheet_link_tag "sage/sage_system", media: "all" %>
-    <%= stylesheet_link_tag "sage/sage_docs", media: "all" %>
-    <%= csrf_meta_tags %>
+    <%= render "styles" %>
   </head>
   <body class="sage-page">
     <div class="sage-stage">
@@ -18,8 +15,6 @@
       </div>
     </div>
     <div class="sage-overlay" aria-hidden="true"></div>
-    <script src="//cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
-    <%= javascript_include_tag "sage/sage_system", :cache => true %>
-    <%= javascript_include_tag "sage/sage_docs", :cache => true %>
+    <%= render "scripts" %>
   </body>
 </html>
