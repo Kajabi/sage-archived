@@ -117,7 +117,9 @@
   Sets up an element to implement the sage icon font and basic settings related
   to displaying the icon. Usually implemented on a pseudo-element.
 
-  If an `$icon` is passed in this mixin also
+  If an `$icon` is passed in this mixin also displays the icon as content for the
+  element. 
+  
   arguments: $icon | null|[string]
 ================================================== */
 
