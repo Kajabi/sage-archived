@@ -13,8 +13,8 @@
 %color {
   padding: sage-spacing(sm) sage-spacing();
   font-size: sage-font-size(sm);
-  font-weight: sage-font-weight(simibold);
-  color: #fff;
+  font-weight: sage-font-weight(semibold);
+  color: sage-color(white);
 
   &::after {
     float: right;
@@ -30,7 +30,11 @@
           @extend %color;
           background: $hex;
 
-          @if (lightness($hex) > 50) {
+          @if (($name == grey) or ($name == white)) {
+            color: sage-color(charcoal, 500);
+          }
+
+          @else if (lightness($hex) > 50) {
             color: sage-color($name, 500);
           }
 
@@ -41,38 +45,16 @@
       }
     }
   }
+}
 
-  &-grey {
-    &-100,
-    &-200,
-    &-300,
-    &-400,
-    &-500 {
-      color: sage-color(charcoal, 500);
-    }
-  }
+[class^="color-white-"] {
+  box-shadow: inset 0 0 rem(1px) sage-color(charcoal);
+}
 
-  &-white {
-    &-100,
-    &-200,
-    &-300,
-    &-400,
-    &-500 {
-      color: sage-color(charcoal, 500);
-      box-shadow: inset 0 0 1px sage-color(charcoal);
-      border-radius: sage-border(radius);
-    }
-  }
+[class^="color-black-"] {
+  color: sage-color(white);
+}
 
-  &-black {
-    &-100,
-    &-200,
-    &-300,
-    &-400,
-    &-500 {
-      color: sage-color(white);
-      box-shadow: inset 0 0 1px sage-color(charcoal);
-      border-radius: sage-border(radius);
-    }
-  }
+[class^="color-"]:only-child {
+  border-radius: sage-border(radius);
 }
