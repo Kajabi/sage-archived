@@ -8,9 +8,9 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+}
 
-  &__icon {
-    height: 60px;
-    margin-bottom: sage-spacing();
-  }
+.sage-page__icon {
+  height: 60px;
+  margin-bottom: sage-spacing();
 }
