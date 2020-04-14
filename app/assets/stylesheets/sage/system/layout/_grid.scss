@@ -20,10 +20,24 @@
   @include sage-row();
 }
 
+// horizontal alignment
+.sage-row--align-center {
+  justify-content: center;
+}
+.sage-row--align-end {
+  justify-content: flex-end;
+}
+.sage-row--align-space-between {
+  justify-content: space-between;
+}
+.sage-row--align-space-around {
+  justify-content: space-around;
+}
+
+// vertical alignment
 .sage-row--valign-center {
   align-items: center;
 }
-
 .sage-row--valign-bottom {
   align-items: flex-end;
 }
@@ -52,6 +66,15 @@
     flex: 0 1 auto;
     width: percentage($sage-i / $sage-grid-columns);
   }
+}
+
+.sage-col--align-start {
+  text-align: left;
+  text-align: start;
+}
+.sage-col--align-end {
+  text-align: right;
+  text-align: end;
 }
 
 @media (min-width: sage-breakpoint(sm-min)) {
