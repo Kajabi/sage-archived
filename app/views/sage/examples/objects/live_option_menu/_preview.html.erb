@@ -1,14 +1,14 @@
 <div class="sage-live-option-menu-anchor" aria-has-popup="true" aria-expanded="false" tabindex="0" role="button">
-  <ul class="sage-live-option-menu" role="menu" aria-label="Participant options">
-    <li role="none" class="sage-live-option-menu__item">
-      <button role="menuitem" class="sage-live-option-menu__command">
-        Turn on sharing permissions
-      </button>
-    </li>
-    <li role="none" class="sage-live-option-menu__item">
-      <button role="menuitem" class="sage-live-option-menu__command sage-live-option-menu__command--danger">
-        Remove participant
-      </button>
-    </li>
-  </ul>
+  <%= render "sage/examples/objects/live_option_menu/markup",
+    options: [
+      {
+        label: "Option item",
+        isDanger: false
+      },
+      {
+        label: "Dangerous option item",
+        isDanger: true
+      }
+    ]
+  %>
 </div>

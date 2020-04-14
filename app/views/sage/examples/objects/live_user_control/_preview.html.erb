@@ -1,9 +1,13 @@
 <!-- Showing default/active state -->
-<button class="sage-live-user-control">
-  <i class="sage-live-user-control__icon sage-icon-video-on" aria-label="Toggle Camera"></i>
-</button>
+<%= render "sage/examples/objects/live_user_control/markup", 
+  icon: 'video-on',
+  label: 'Toggle Camera',
+  active: true
+%>
 
 <!-- Showing inactive state -->
-<button class="sage-live-user-control sage-live-user-control--inactive">
-  <i class="sage-live-user-control__icon sage-icon-microphone-off" aria-label="Toggle Microphone"></i>
-</button>
+<%= render "sage/examples/objects/live_user_control/markup", 
+  icon: 'microphone-off',
+  label: 'Toggle Camera',
+  active: false
+%>

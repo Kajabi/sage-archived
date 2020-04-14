@@ -31,6 +31,7 @@ $-live-user-control-inactive-color-hover: sage-color(grey, 500);
     color: $-live-user-control-color-hover;
   }
 
+  &:active,
   &:focus {
     outline: none;
 
