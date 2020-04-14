@@ -1,8 +1,14 @@
-<div class="sage-live-stream-video-grid sage-live-stream-video-grid--<%= numVideos > 1 ? "#{numVideos}-up": "solo" %>">
-  <% for video in (1..numVideos) %>
+<div class="sage-live-stream-video-grid sage-live-stream-video-grid--<%= videos.size > 1 ? "#{videos.size}-up": "solo" %>">
+  <% videos.each do |video| %>
     <div class="sage-live-stream-video-grid__tile">
-      <!-- NOTE: This is just placeholder as it will be replaced with actual video containers in the interface -->
-      <img src="https://source.unsplash.com/random/780x540" class="sage-live-stream-video-grid__video" alt="Video placeholder" />
+      <%= render "sage/examples/objects/live_avatar/markup",
+        initials: video[:initials],
+        color: video[:color],
+        hasRing: false,
+        url: video[:avatarURL],
+        scale: true,
+        custom_class: "sage-live-stream-video-grid__video sage-live-avatar--tile"
+      %>
     </div>
   <% end %>
 </div>

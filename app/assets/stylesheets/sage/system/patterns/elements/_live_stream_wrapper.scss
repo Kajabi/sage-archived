@@ -21,10 +21,10 @@
     &:not(:last-child) {
       margin-bottom: sage-spacing(md);
     }
-  }
-}
 
-.sage-live-stream-wrapper--fullscreen-demo {
-  position: absolute;
-  z-index: sage-z-index(nuclear);
+    &.sage-live-stream-wrapper--fullscreen-demo {
+      position: absolute;
+      z-index: sage-z-index(nuclear);
+    }
+  }
 }
