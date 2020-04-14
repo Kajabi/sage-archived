@@ -120,10 +120,8 @@
   visibility: hidden;
   opacity: 0;
   top: 0;
-  max-height: 0;
   overflow: hidden;
   transform: scaleY(0);
-  max-height: 300px;
   transform-origin: top;
   will-change: opacity, transform, visibility;
   transition: 0.15s opacity ease-in-out,
@@ -167,7 +165,7 @@
 }
 
 .sage-dropdown__search-field {
-  padding: sage-spacing(sm) $sage-inputfield-padding sage-spacing(sm) 44px;
+  padding: sage-spacing(xs) $sage-inputfield-padding sage-spacing(xs) 44px;
   appearance: none;
   border: 0;
   width: 100%;
@@ -206,24 +204,32 @@
     background: sage-color(grey, 100);
   }
 
-  &.sage-dropdown__option--selected {
+  // Selected
+  &.sage-dropdown__option--selected:not(.sage-dropdown__option--focused) {
     box-shadow: inset 2px 0 0 0 sage-color(primary);
     background: sage-color(primary, 100);
   }
 
-  &.sage-dropdown__option--selected:hover {
-    box-shadow: inset 4px 0 0 0 sage-color(primary);
+  &.sage-dropdown__option--selected:not(.sage-dropdown__option--focused):hover {
+    box-shadow: inset 2px 0 0 0 sage-color(primary);
   }
 
-  &.sage-dropdown__option--focused {
+  // Keyboard-Focused
+  &.sage-dropdown__option--focused:not(.sage-dropdown__option--selected) {
     box-shadow: inset 1px 0 0 1px sage-color(primary);
   }
 
-  &.sage-dropdown__option--focused:hover {
+  &.sage-dropdown__option--focused:not(.sage-dropdown__option--selected):hover {
     box-shadow: inset 2px 0 0 1px sage-color(primary);
   }
 
+  // Selected & Keyboard-Focused
   &.sage-dropdown__option--focused.sage-dropdown__option--selected {
+    box-shadow: inset 1px 0 0 1px sage-color(primary);
+    background: sage-color(primary, 100);
+  }
+
+  &.sage-dropdown__option--focused.sage-dropdown__option--selected:hover {
     box-shadow: inset 3px 0 0 1px sage-color(primary);
   }
 }

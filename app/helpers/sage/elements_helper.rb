@@ -19,6 +19,12 @@ module Sage
           scss_design:  "done",
           scss_dev:     "done",
           scss_doc:     "done",
+          rails_design: "todo",
+          rails_dev:    "todo",
+          rails_doc:    "todo",
+          react_design: "todo",
+          react_dev:    "todo",
+          react_doc:    "todo"
         },
         {
           title: "dropdown",

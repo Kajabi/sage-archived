@@ -37,14 +37,13 @@ Sage.Dropdown.prototype = {
       parentClassList.remove(this.classNames.parentActive);
       this.clickOverlay(false);
       this.bindKeyboardListener(false);
-      this.setFocusedOption(false);
       this.filter('');
       this.elements.search.value = '';
     } else {
       parentClassList.add(this.classNames.parentActive);
       this.clickOverlay(true);
       this.bindKeyboardListener(true);
-      this.setFocusedOption(this.elements.options[0]);
+      this.setFocusedOption(this.getSelectedOption() || this.elements.options[0]);
       this.elements.search.focus();
     }
   },
@@ -73,6 +72,12 @@ Sage.Dropdown.prototype = {
     )[0];
   },
 
+  getSelectedOption(){
+    return this.elements.options.filter(elOption =>
+      elOption.classList.contains(this.classNames.optionSelected)
+    )[0];
+  },
+
   setFocusedOption(elOption){
     const removeAllFocused = () => {
       this.elements.options.forEach(elOption => {
@@ -83,7 +88,7 @@ Sage.Dropdown.prototype = {
     if (elOption) {
       removeAllFocused();
       elOption.classList.add(this.classNames.optionFocus);
-      this.maintainScrollVisibility(elOption);
+      this.scrollToOption(elOption);
     } else if (elOption === false) {
       removeAllFocused();
     }
@@ -171,18 +176,15 @@ Sage.Dropdown.prototype = {
     const visibleOptions = this.getVisibleOptions(),
           focusedOption = this.getFocusedOption(),
           currentIndex = visibleOptions.findIndex((elOption) => elOption == focusedOption);
-    let newIndex;
 
     if (direction == 'up' && currentIndex != 0) {
-      newIndex = currentIndex - 1;
+      this.setFocusedOption(visibleOptions[currentIndex - 1]);
     } else if (direction == 'down' && currentIndex != (visibleOptions.length - 1)) {
-      newIndex = currentIndex + 1;
+      this.setFocusedOption(visibleOptions[currentIndex + 1]);
     }
-
-    if (newIndex != undefined) this.setFocusedOption(visibleOptions[newIndex]);
   },
 
-  maintainScrollVisibility(elOption) {
+  scrollToOption(elOption) {
     const { offsetHeight, offsetTop } = elOption,
           { offsetHeight: parentOffsetHeight, scrollTop } = this.elements.optionContainer,
           isAbove = (offsetTop + offsetHeight) < scrollTop,
