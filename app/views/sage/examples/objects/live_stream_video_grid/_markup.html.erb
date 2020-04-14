@@ -1,0 +1,8 @@
+<div class="sage-live-stream-video-grid sage-live-stream-video-grid--<%= numVideos > 1 ? "#{numVideos}-up": "solo" %>">
+  <% for video in (1..numVideos) %>
+    <div class="sage-live-stream-video-grid__tile">
+      <!-- NOTE: This is just placeholder as it will be replaced with actual video containers in the interface -->
+      <img src="https://source.unsplash.com/random/780x540" class="sage-live-stream-video-grid__video" alt="Video placeholder" />
+    </div>
+  <% end %>
+</div>
