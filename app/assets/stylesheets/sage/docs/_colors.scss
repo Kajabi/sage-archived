@@ -4,75 +4,76 @@
   For Sage documentation use
 ================================================== */
 
+// ==================================================
+// MIXINS
+// ==================================================
+
+@mixin color-block-output {
+  padding: sage-spacing(sm) sage-spacing();
+  font-size: sage-font-size(sm);
+  color: sage-color(white);
+
+  &::after {
+    text-transform: uppercase;
+  }
+}
+
+@mixin generate-color-tones($color, $tone, $hex) {
+  &-#{$tone} {
+    @include color-block-output();
+    background: $hex;
+
+    @if (($color == grey) or ($color == white)) {
+      color: sage-color(charcoal, 500);
+    }
+
+    @else if (lightness($hex) > 60) {
+      color: sage-color($color, 500);
+    }
+
+    &::after {
+      content: "#{$hex}";
+      padding-left: sage-spacing(xs);
+      font-weight: sage-font-weight(semibold);
+    }
+  }
+}
+
+// color block groupings
 .colors {
   overflow: hidden;
   margin-bottom: sage-spacing();
   border-radius: sage-border(radius);
 }
 
-%color {
-  padding: sage-spacing(sm) sage-spacing();
-  font-size: sage-font-size(sm);
-  font-weight: sage-font-weight(simibold);
-  color: #fff;
+.colors__block {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-between;
 
-  &::after {
-    float: right;
-    text-transform: uppercase;
+  @media screen and (min-width: sage-breakpoint(lg-min)) {
+    flex-direction: row;
   }
 }
 
-.color {
-  @each $name, $color in $sage-colors {
-    &-#{$name} {
-      @each $tone, $hex in $color {
-        &-#{$tone} {
-          @extend %color;
-          background: $hex;
-
-          @if (lightness($hex) > 50) {
-            color: sage-color($name, 500);
-          }
-
-          &::after {
-            content: "#{$hex}";
-          }
-        }
-      }
+// build individual color blocks
+@each $name, $color in $sage-colors {
+  .color-#{$name} {
+    @each $tone, $hex in $color {
+      @include generate-color-tones($name, $tone, $hex);
     }
   }
+}
 
-  &-grey {
-    &-100,
-    &-200,
-    &-300,
-    &-400,
-    &-500 {
-      color: sage-color(charcoal, 500);
-    }
-  }
+[class*="color-"]:only-child {
+  border-radius: sage-border(radius);
+}
 
-  &-white {
-    &-100,
-    &-200,
-    &-300,
-    &-400,
-    &-500 {
-      color: sage-color(charcoal, 500);
-      box-shadow: inset 0 0 1px sage-color(charcoal);
-      border-radius: sage-border(radius);
-    }
-  }
+[class*="color-white-"] {
+  box-shadow: inset 0 0 rem(1px) sage-color(charcoal);
+}
 
-  &-black {
-    &-100,
-    &-200,
-    &-300,
-    &-400,
-    &-500 {
-      color: sage-color(white);
-      box-shadow: inset 0 0 1px sage-color(charcoal);
-      border-radius: sage-border(radius);
-    }
-  }
+[class*="color-black-"] {
+  color: sage-color(white);
 }
