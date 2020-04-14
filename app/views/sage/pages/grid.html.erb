@@ -7,20 +7,43 @@
     <h2 class="quick-links__title t-sage-heading-6">Contents</h2>
     <ul class="quick-links__body t-sage-body-small">
       <li class="quick-links__item">
-        <a href="#grid-quick-start" class="quick-links__link">How to use</a>
-        <a href="#grid-setting-widths" class="quick-links__link">Setting widths</a>
+        <a href="#grid-how-to" class="quick-links__link">How to use</a>
+      </li>
+      <li class="quick-links__item">
+        <a href="#grid-setting-widths" class="quick-links__link quick-links__link--secondary">Setting widths</a>
+      </li>
+      <li class="quick-links__item">
+        <a href="#grid-columns" class="quick-links__link quick-links__link--secondary">Column combinations</a>
+      </li>
+      <li class="quick-links__item">
         <a href="#grid-breakpoints" class="quick-links__link">Breakpoints</a>
+      </li>
+      <li class="quick-links__item">
+        <a href="#grid-breakpoints-showhide" class="quick-links__link quick-links__link--secondary">Showing or hiding content</a>
+      </li>
+      <li class="quick-links__item">
+        <a href="#grid-alignment" class="quick-links__link">Alignment</a>
+      </li>
+      <li class="quick-links__item quick-links__link--secondary">
+        <a href="#grid-alignment-vertical" class="quick-links__link">Vertical alignment</a>
+      </li>
+      <li class="quick-links__item quick-links__link--secondary">
+        <a href="#grid-alignment-horizontal" class="quick-links__link">Horizontal alignment</a>
+      </li>
+      <li class="quick-links__item">
+        <a href="#grid-spacing" class="quick-links__link">Spacing</a>
       </li>
     </ul>
   </div>
 <% end %>
 <div class="sage-panel sage-type">
-  <h2 id="grid-quick-start">How to use</h2>
-  <p>Similar to other grid structures you might be familiar with, such as <a href="https://getbootstrap.com/docs/4.0/layout/grid/" rel="nofollow">Bootstrap</a> or <a href="https://get.foundation/sites/docs/grid.html" rel="nofollow">Foundation</a>, the Sage layout grid is constructed of individual columns (<code>.sage-col</code>) grouped within rows (<code>.sage-row</code>).</p>
+  <h2 id="grid-how-to">How to use the Sage grid</h2>
+  <p>You may be familiar with grid systems from popular front-end frameworks, such as <a href="https://getbootstrap.com/docs/4.0/layout/grid/" rel="nofollow">Bootstrap</a> or <a href="https://get.foundation/sites/docs/grid.html" rel="nofollow">Foundation</a>. Similar to these, the Sage layout grid is constructed of individual columns (<code>.sage-col</code>) grouped within rows (<code>.sage-row</code>).</p>
+  <hr>
   <h3 class="t-heading-5" id="grid-setting-widths">Setting widths</h3>
-  <p>Our default grid consists of <strong>12 columns</strong> per row. Each column's width can be independently sized using classes in the form of <code>.sage-col-&lt;number of columns&gt;</code>.</p>
-  <p>For example, a three-column wide <code>.sage-col-3</code> would be one-quarter (25%) of the width of one row, because 3 columns divided by the 12 (total) columns in the row equals 25 percent.</p>
-  <p>As a result, it would take four <code>.sage-col-3</code> columns to fill out one row:
+  <p>Our default grid consists of <strong>12 columns</strong> per row. Each column's width is independently sized using classes in the form of <code>.sage-col-&lt;number of columns&gt;</code>, where <code>number of columns</code> is an integer ranging from the minimum number of columns (1) through the maximum number of columns (12).
+  <p>For example, a three-column wide <code>.sage-col-3</code> would be one-quarter (25%) the width of one <code>.sage-row</code>, since 3 columns divided by the 12 total columns in the row equals 25 percent.</p>
+  <p>As a result, four <code>.sage-col-3</code> columns are needed to fill out one row:
 
   <div class="sage-row">
     <div class="sage-col-3"><div class="grid-item">25%</div></div>
@@ -28,9 +51,9 @@
     <div class="sage-col-3"><div class="grid-item">25%</div></div>
     <div class="sage-col-3"><div class="grid-item">25%</div></div>
   </div>
-</div>
-<div class="sage-panel sage-type">
-  <p>You can see how the columns add up below, where each <code>.sage-col</code> example is named with the number of columns it represents:</p>
+
+  <h3 class="t-heading-5" id="grid-columns">Column combinations</h3>
+  <p>In the example below, each <code>.sage-col</code> example is named with the number of columns it represents. Generally, a single column (<code>.sage-col-1</code>) is too small for content, so <code>.sage-col-2</code> is the smallest width recommended for use.</p>
   <% 1.upto(9) do |num| %>
     <div class="sage-row">
       <div class="sage-col--md-<%= num + 1%>"><div class="grid-item"><%= num + 1%></div></div>
@@ -38,8 +61,15 @@
     </div>
   <% end %>
 </div>
+
 <div class="sage-panel sage-type">
-  <h2 id="grid-breakpoints">Breakpoints</h2>
+  <h2 id="grid-breakpoints">Grid breakpoints</h2>
+  <p>Viewing the <a href="#grid-columns">column combinations example above</a>, you may have noticed that the columns display as full-width blocks when viewed at smaller screen sizes. To account for the increased or decreased space available, we can target specific screen sizes (called <em>breakpoints</em>) by modifying the classnames used in each column. This gives us greater flexibility in our layouts, and is referred to as <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design" rel="nofollow" class="sage-link--external">responsive design</a>.</p>
+  <h3 class="t-heading-5">Mobile first</h3>
+  <p>There are normally two approaches to responsive design: <em>desktop-first</em> and <em>mobile-first</em>. While the full details of these approaches is beyond the scope of this documentation, you should be aware that Sage follows the mobile-first approach wherever possible. This means that styles are geared towards small screens/mobile devices, with additional styles added at <code>min-width</code> (minimum width) breakpoints. Think of a bottom-up approach, where the minimal amount of styles necessary are </p>
+  <p>The classnames for responsive columns follow this pattern:</p>
+  <p><code>.sage-col--&lt;breakpoint&gt;-&lt;number of columns&gt;</code></p>
+  <p>Where <code>breakpoint</code> is the breakpoint
   <h3 class="t-heading-5">Medium breakpoint:</h3>
   <div class="sage-row">
     <div class="sage-col--md-4"><div class="grid-item">Col</div></div>
@@ -64,5 +94,84 @@
   &lt;div class=&quot;sage-col--lg-3&quot;&gt;Col&lt;/div&gt;
   &lt;div class=&quot;sage-col--lg-3&quot;&gt;Col&lt;/div&gt;
 &lt;/div&gt;</code></pre>
+
+</div>
+
+<div class="sage-panel sage-type">
+  <h2 id="grid-alignment">Alignment</h2>
+  <h3 class="t-heading-5" id="grid-alignment-vertical">Vertical alignment</h3>
+  <p>The default alignment for each <code>.sage-row</code> aligns the columns it contains to the top of the <code>.sage-row</code> container. This can be changed by adding <code>sage-row--valign</code> classes:</p>
+
+  <div class="sage-table-wrapper">
+    <div class="sage-table-wrapper__overflow">
+      <table class="sage-table">
+        <thead>
+          <tr>
+            <th>Property</th>
+            <th>Vertical alignment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Default (<code>.sage-row</code>)</td>
+            <td>Top</td>
+          </tr>
+          <tr>
+            <td><code>.sage-row--valign-center</code</td>
+            <td>Middle (center)</td>
+          </tr>
+          <tr>
+            <td><code>.sage-row--valign-bottom</code</td>
+            <td>Bottom</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <br>
+
+  <h3 class="t-heading-5" id="grid-alignment-horizontal">Horizontal alignment</h3>
+  <p>The default alignment for each <code>.sage-row</code> aligns the columns it contains to the top of the <code>.sage-row</code> container. This can be changed by adding <code>sage-row--align</code> classes:</p>
+
+  <div class="sage-table-wrapper">
+    <div class="sage-table-wrapper__overflow">
+      <table class="sage-table">
+        <thead>
+          <tr>
+            <th>Property</th>
+            <th>Horizontal alignment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Default (<code>.sage-row</code>)</td>
+            <td>Left</td>
+          </tr>
+          <tr>
+            <td><code>.sage-row--align-center</code</td>
+            <td>Center</td>
+          </tr>
+          <tr>
+            <td><code>.sage-row--align-end</code</td>
+            <td>Right</td>
+          </tr>
+          <tr>
+            <td><code>.sage-row--align-space-between</code</td>
+            <td>Extra space is distributed between columns</td>
+          </tr>
+          <tr>
+            <td><code>.sage-row--align-space-around</code</td>
+            <td>Extra space is distributed around columns</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<div class="sage-panel sage-type">
+  <h2 id="grid-spacing">Grid spacing</h2>
 
 </div>
