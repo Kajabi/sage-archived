@@ -20,6 +20,15 @@
   @include sage-row();
 }
 
+.sage-row--valign-center {
+  align-items: center;
+}
+
+.sage-row--valign-bottom {
+  align-items: flex-end;
+}
+
+
 // ============================================
 // Columns
 // ============================================
