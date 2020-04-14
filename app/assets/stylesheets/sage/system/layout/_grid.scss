@@ -68,15 +68,6 @@
   }
 }
 
-.sage-col--align-start {
-  text-align: left;
-  text-align: start;
-}
-.sage-col--align-end {
-  text-align: right;
-  text-align: end;
-}
-
 @media (min-width: $sage-grid-breakpoint-sm) {
   @for $sage-i from 1 through $sage-grid-columns {
     .sage-col--sm-#{$sage-i} {
