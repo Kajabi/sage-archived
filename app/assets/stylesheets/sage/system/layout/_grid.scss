@@ -31,11 +31,17 @@
 }
 
 @for $sage-i from 1 through $sage-grid-columns {
+  .sage-col-#{$sage-i},
   .sage-col--sm-#{$sage-i},
   .sage-col--md-#{$sage-i},
   .sage-col--lg-#{$sage-i} {
     @include sage-col();
     flex: 0 0 100%;
+  }
+
+  .sage-col-#{$sage-i} {
+    flex: 0 1 auto;
+    width: percentage($sage-i / $sage-grid-columns);
   }
 }
 
