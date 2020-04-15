@@ -51,26 +51,26 @@
   <h3 class="t-heading-5" id="grid-setting-widths">Setting widths</h3>
   <p>Our default grid consists of <strong>12 columns per row</strong>.</p>
   <div class="sage-row" aria-hidden="true">
-    <div class="sage-col-1 sage-col--lg-show"><div class="grid-item grid-item--small">1</div></div>
-    <div class="sage-col-1 sage-col--lg-show"><div class="grid-item grid-item--small">2</div></div>
-    <div class="sage-col-1 sage-col--lg-show"><div class="grid-item grid-item--small">3</div></div>
-    <div class="sage-col-1 sage-col--lg-show"><div class="grid-item grid-item--small">4</div></div>
-    <div class="sage-col-1 sage-col--lg-show"><div class="grid-item grid-item--small">5</div></div>
-    <div class="sage-col-1 sage-col--lg-show"><div class="grid-item grid-item--small">6</div></div>
-    <div class="sage-col-1 sage-col--lg-show"><div class="grid-item grid-item--small">7</div></div>
-    <div class="sage-col-1 sage-col--lg-show"><div class="grid-item grid-item--small">8</div></div>
-    <div class="sage-col-1 sage-col--lg-show"><div class="grid-item grid-item--small">9</div></div>
-    <div class="sage-col-1 sage-col--lg-show"><div class="grid-item grid-item--small">10</div></div>
-    <div class="sage-col-1 sage-col--lg-show"><div class="grid-item grid-item--small">11</div></div>
-    <div class="sage-col-1 sage-col--lg-show"><div class="grid-item grid-item--small">12</div></div>
+    <div class="sage-col-1 sage-col--md-hide"><div class="grid-item grid-item--small">1</div></div>
+    <div class="sage-col-1 sage-col--md-hide"><div class="grid-item grid-item--small">2</div></div>
+    <div class="sage-col-1 sage-col--md-hide"><div class="grid-item grid-item--small">3</div></div>
+    <div class="sage-col-1 sage-col--md-hide"><div class="grid-item grid-item--small">4</div></div>
+    <div class="sage-col-1 sage-col--md-hide"><div class="grid-item grid-item--small">5</div></div>
+    <div class="sage-col-1 sage-col--md-hide"><div class="grid-item grid-item--small">6</div></div>
+    <div class="sage-col-1 sage-col--md-hide"><div class="grid-item grid-item--small">7</div></div>
+    <div class="sage-col-1 sage-col--md-hide"><div class="grid-item grid-item--small">8</div></div>
+    <div class="sage-col-1 sage-col--md-hide"><div class="grid-item grid-item--small">9</div></div>
+    <div class="sage-col-1 sage-col--md-hide"><div class="grid-item grid-item--small">10</div></div>
+    <div class="sage-col-1 sage-col--md-hide"><div class="grid-item grid-item--small">11</div></div>
+    <div class="sage-col-1 sage-col--md-hide"><div class="grid-item grid-item--small">12</div></div>
   </div>
   <p>Each <code>.sage-col</code>'s width is independently sized using classes in the form of <code>.sage-col-&lt;# of columns&gt;</code>, where <code>&lt;# of columns&gt;</code> is an integer ranging from the minimum number of columns (1) through the maximum number of columns (12).
   <p>For example, a three-column wide <code>.sage-col-3</code> would be one-quarter (25%) the width of one <code>.sage-row</code>, since 3 columns divided by the 12 total columns in the row equals 25 percent.</p>
   <p>As a result, four <code>.sage-col-3</code> columns are needed to fill out one row.</p>
 
   <div class="sage-row" aria-hidden="true">
-    <div class="sage-col-3 sage-col--lg-hide"><div class="grid-item">25% hide</div></div>
-    <div class="sage-col-3 sage-col--lg-show"><div class="grid-item">25% show</div></div>
+    <div class="sage-col-3"><div class="grid-item">25%</div></div>
+    <div class="sage-col-3"><div class="grid-item">25%</div></div>
     <div class="sage-col-3"><div class="grid-item">25%</div></div>
     <div class="sage-col-3"><div class="grid-item">25%</div></div>
   </div>
@@ -98,11 +98,11 @@
 
   <h4 class="t-heading-6">Preventing responsive layouts</h4>
   <p>At screen sizes below <code>sm</code> (&lt; 545px), all responsive columns will display as full-width, regardless of the breakpoint keyword in use. <strong>This behavior cannot be overridden</strong>.</p>
-  <p>If your layout does not follow this pattern and must keep its column structure, you will need to use the classname <em>without</em> responsive keywords, <a href="#grid-setting-widths">as illustrated above</a>.</p>
+  <p>If your layout does not follow this pattern and must keep its column structure, you will need to use the classname <em>without</em> responsive keywords, as illustrated in the <a href="#grid-setting-widths">"setting widths" section</a>.</p>
 
   <h3 class="t-heading-5" id="grid-responsive-naming">Naming conventions</h3>
   <p>Classnames for responsive columns follow this pattern: <code>.sage-col--&lt;breakpoint&gt;-&lt;# of columns&gt;</code></p>
-  <p>Here, <code>&lt;breakpoint&gt;</code> is the screen size at which the layout will change, and <code>&lt;# of columns&gt;</code> sets the width of the column, <a href="#grid-setting-widths">as mentioned above</a>.</p>
+  <p>Here, <code>&lt;breakpoint&gt;</code> is the screen size at which the layout will change, and <code>&lt;# of columns&gt;</code> sets the width of the column, <a href="#grid-setting-widths">noted in the sections above</a>.</p>
   <p>The predefined breakpoints keywords are <code>sm</code>, <code>md</code>, and <code>lg</code>:</p>
   <div class="sage-table-wrapper">
     <div class="sage-table-wrapper__overflow">
@@ -177,8 +177,8 @@
   <h3 class="t-heading-5" id="grid-responsive-show-hide">Hiding and showing content</h3>
   <p>In cases where content will be hidden or shown at specific screen sizes, classes using breakpoint keywords are available. These classes use sizing from <code>sage-breakpoint()</code> to affect where content is displayed.</p>
   <p>Classnames for showing and hiding columns are composed in the following pattern: <code>.sage-col--&lt;breakpoint&gt;-&lt;show or hide&gt;</code>.</p>
-  <p>As with the naming conventions for responsive columns, <code>&lt;breakpoint&gt;</code> corresponds to the breakpoint keyword, and <code>&lt;show or hide&gt;</code> indicates wher the content should <code>show</code> or <code>hide</code> for this breakpoint.</p>
-  <p><strong>IMPORTANT:</strong> the difference between <code>show</code> and <code>hide</code> is that <code>show</code> displays the content for <em>that specified screen size only</em>, but <code>hide</code> will continue to hide content for all screen sizes <strong>below</strong> the breakpoint specified. Refer to the chart below for more detail.</p>
+  <p>As with the naming conventions for responsive columns, <code>&lt;breakpoint&gt;</code> corresponds to the breakpoint keyword, and <code>&lt;show or hide&gt;</code> indicates whether the content should be displayed with this breakpoint.</p>
+  <p><strong>IMPORTANT:</strong> the difference between <code>show</code> and <code>hide</code> is that <code>show</code> displays the content for <em>that specified screen size only</em>, but <code>hide</code> will continue to hide content for <strong>all screen sizes below</strong> the breakpoint specified. Refer to the chart below for more detail.</p>
 
   <div class="sage-table-wrapper">
     <div class="sage-table-wrapper__overflow">
