@@ -28,7 +28,7 @@
         <a href="#grid-responsive-naming" class="quick-links__link quick-links__link--secondary">Naming conventions</a>
       </li>
       <li class="quick-links__item">
-        <a href="#grid-responsive-show-hide" class="quick-links__link quick-links__link--secondary">Showing or hiding content</a>
+        <a href="#grid-responsive-show-hide" class="quick-links__link quick-links__link--secondary">Hiding and showing content</a>
       </li>
       <li class="quick-links__item">
         <a href="#grid-alignment" class="quick-links__link">Alignment</a>
@@ -69,8 +69,8 @@
   <p>As a result, four <code>.sage-col-3</code> columns are needed to fill out one row.</p>
 
   <div class="sage-row" aria-hidden="true">
-    <div class="sage-col-3"><div class="grid-item">25%</div></div>
-    <div class="sage-col-3"><div class="grid-item">25%</div></div>
+    <div class="sage-col-3 sage-col--lg-hide"><div class="grid-item">25% hide</div></div>
+    <div class="sage-col-3 sage-col--lg-show"><div class="grid-item">25% show</div></div>
     <div class="sage-col-3"><div class="grid-item">25%</div></div>
     <div class="sage-col-3"><div class="grid-item">25%</div></div>
   </div>
@@ -174,10 +174,100 @@
 &lt;/div&gt;</code></pre>
 
 
-<h3 class="t-heading-5" id="grid-responsive-show-hide">Showing or hiding content</h3>
+  <h3 class="t-heading-5" id="grid-responsive-show-hide">Hiding and showing content</h3>
+  <p>In cases where content will be hidden or shown at specific screen sizes, classes using breakpoint keywords are available. These classes use sizing from <code>sage-breakpoint()</code> to affect where content is displayed.</p>
+  <p>Classnames for showing and hiding columns are composed in the following pattern: <code>.sage-col--&lt;breakpoint&gt;-&lt;show or hide&gt;</code>.</p>
+  <p>As with the naming conventions for responsive columns, <code>&lt;breakpoint&gt;</code> corresponds to the breakpoint keyword, and <code>&lt;show or hide&gt;</code> indicates wher the content should <code>show</code> or <code>hide</code> for this breakpoint.</p>
+  <p><strong>IMPORTANT:</strong> the difference between <code>show</code> and <code>hide</code> is that <code>show</code> displays the content for <em>that specified screen size only</em>, but <code>hide</code> will continue to hide content for all screen sizes <strong>below</strong> the breakpoint specified. Refer to the chart below for more detail.</p>
 
-<p>Classnames for showing and hiding columns follow this pattern: <code>.sage-col--&lt;breakpoint&gt;-&lt;show/hide&gt;</code></p>
-
+  <div class="sage-table-wrapper">
+    <div class="sage-table-wrapper__overflow">
+      <table class="sage-table">
+        <caption>In this table, "visible" denotes that content will be shown at that breakpoint</caption>
+        <thead>
+          <tr>
+            <th>Classname</th>
+            <th>sm-min (545px)</th>
+            <th>sm-max (767px)</th>
+            <th>md-min (768px)</th>
+            <th>md-max (991px)</th>
+            <th>lg-min (992px)</th>
+            <th>lg-max (1199px)</th>
+            <th>xl-min (1200px)</th>
+            <th>xl-max (1440px+)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>.sage-col--sm-hide</code></td>
+            <td>hidden</td>
+            <td>hidden</td>
+            <td><b>visible</b></td>
+            <td><b>visible</b></td>
+            <td><b>visible</b></td>
+            <td><b>visible</b></td>
+            <td><b>visible</b></td>
+            <td><b>visible</b></td>
+          </tr>
+          <tr>
+            <td><code>.sage-col--sm-show</code></td>
+            <td><b>visible</b></td>
+            <td><b>visible</b></td>
+            <td>hidden</td>
+            <td>hidden</td>
+            <td>hidden</td>
+            <td>hidden</td>
+            <td>hidden</td>
+            <td>hidden</td>
+          </tr>
+          <tr>
+            <td><code>.sage-col--md-hide</code></td>
+            <td>hidden</td>
+            <td>hidden</td>
+            <td>hidden</td>
+            <td>hidden</td>
+            <td><b>visible</b></td>
+            <td><b>visible</b></td>
+            <td><b>visible</b></td>
+            <td><b>visible</b></td>
+          </tr>
+          <tr>
+            <td><code>.sage-col--md-show</code></td>
+            <td>hidden</td>
+            <td>hidden</td>
+            <td><b>visible</b></td>
+            <td><b>visible</b></td>
+            <td>hidden</td>
+            <td>hidden</td>
+            <td>hidden</td>
+            <td>hidden</td>
+          </tr>
+          <tr>
+            <td><code>.sage-col--lg-hide</code></td>
+            <td>hidden</td>
+            <td>hidden</td>
+            <td>hidden</td>
+            <td>hidden</td>
+            <td>hidden</td>
+            <td>hidden</td>
+            <td><b>visible</b></td>
+            <td><b>visible</b></td>
+          </tr>
+          <tr>
+            <td><code>.sage-col--lg-show</code></td>
+            <td>hidden</td>
+            <td>hidden</td>
+            <td>hidden</td>
+            <td>hidden</td>
+            <td><b>visible</b></td>
+            <td><b>visible</b></td>
+            <td>hidden</td>
+            <td>hidden</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 
 </div>
 
