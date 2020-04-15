@@ -19,6 +19,13 @@
   &.prettyprinted {
     padding: sage-spacing();
   }
+
+  code {
+    display: inline;
+    padding: 0;
+    font-size: inherit;
+    background-color: transparent;
+  }
 }
 pre .nocode {
   color: sage-color(charcoal, 500);
