@@ -28,6 +28,10 @@
   color: sage-color(charcoal, 100);
 }
 
+.quick-links__link--secondary {
+  margin-left: sage-spacing(sm);
+}
+
 .quick-links__subhead {
   margin-top: sage-spacing(sm);
   margin-bottom: sage-spacing(2xs);
