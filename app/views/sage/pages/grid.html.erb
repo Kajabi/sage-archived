@@ -41,7 +41,7 @@
   <p>You may be familiar with grid systems from popular front-end frameworks, such as <a href="https://getbootstrap.com/docs/4.0/layout/grid/" rel="nofollow">Bootstrap</a> or <a href="https://get.foundation/sites/docs/grid.html" rel="nofollow">Foundation</a>. Similar to these, the Sage layout grid is constructed of individual columns (<code>.sage-col</code>) grouped within rows (<code>.sage-row</code>).</p>
   <hr>
   <h3 class="t-heading-5" id="grid-setting-widths">Setting widths</h3>
-  <p>Our default grid consists of <strong>12 columns</strong> per row. Each column's width is independently sized using classes in the form of <code>.sage-col-&lt;number of columns&gt;</code>, where <code>number of columns</code> is an integer ranging from the minimum number of columns (1) through the maximum number of columns (12).
+  <p>Our default grid consists of <strong>12 columns</strong> per row. Each column's width is independently sized using classes in the form of <code>.sage-col-&lt;number of columns&gt;</code>, where <code>&lt;number of columns&gt;</code> is an integer ranging from the minimum number of columns (1) through the maximum number of columns (12).
   <p>For example, a three-column wide <code>.sage-col-3</code> would be one-quarter (25%) the width of one <code>.sage-row</code>, since 3 columns divided by the 12 total columns in the row equals 25 percent.</p>
   <p>As a result, four <code>.sage-col-3</code> columns are needed to fill out one row:
 
@@ -64,13 +64,63 @@
 
 <div class="sage-panel sage-type">
   <h2 id="grid-breakpoints">Grid breakpoints</h2>
-  <p>Viewing the <a href="#grid-columns">column combinations example above</a>, you may have noticed that the columns display as full-width blocks when viewed at smaller screen sizes. To account for the increased or decreased space available, we can target specific screen sizes (called <em>breakpoints</em>) by modifying the classnames used in each column. This gives us greater flexibility in our layouts, and is referred to as <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design" rel="nofollow" class="sage-link--external">responsive design</a>.</p>
+  <p>Viewing the <a href="#grid-columns">column combinations example above</a>, you may have noticed that the columns display as full-width blocks when viewed at smaller screen sizes. To account for the increased or decreased space available, we can target specific screen sizes (called <em>breakpoints</em>) by modifying the classnames used in each column. This is referred to as <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design" rel="nofollow">responsive design</a>, giving us greater flexibility in our layouts.</p>
   <h3 class="t-heading-5">Mobile first</h3>
-  <p>There are normally two approaches to responsive design: <em>desktop-first</em> and <em>mobile-first</em>. While the full details of these approaches is beyond the scope of this documentation, you should be aware that Sage follows the mobile-first approach wherever possible. This means that styles are geared towards small screens/mobile devices, with additional styles added at <code>min-width</code> (minimum width) breakpoints. Think of a bottom-up approach, where the minimal amount of styles necessary are </p>
+  <p>There are two primary methods to responsive design: <em>desktop-first</em> and <em>mobile-first</em>. While the full details of these approaches is beyond the scope of this documentation, you should be aware that <strong>Sage follows the mobile-first approach wherever possible</strong>. This means that base CSS is geared towards small screens/mobile devices, with additional styles added at increasing <code>min-width</code> (minimum width) breakpoints. Think of a bottom-up approach, where the minimal amount of styling necessary is used, and as the screen size increases, additional styles are then layered on top. This can help positively influence both real and perceived performance on mobile devices.</p>
   <p>The classnames for responsive columns follow this pattern:</p>
-  <p><code>.sage-col--&lt;breakpoint&gt;-&lt;number of columns&gt;</code></p>
-  <p>Where <code>breakpoint</code> is the breakpoint
-  <h3 class="t-heading-5">Medium breakpoint:</h3>
+  <p><code>.sage-col--&lt;breakpoint keyword&gt;-&lt;number of columns&gt;</code></p>
+  <p>Here, <code>&lt;breakpoint keyword&gt;</code> is the screen size at which the layout will change, and <code>&lt;number of columns&gt;</code> sets the width of the column, <a href="#grid-setting-widths">as mentioned above</a>.</p>
+  <p>The predefined breakpoints keywords are <code>sm</code>, <code>md</code>, and <code>lg</code>:</p>
+  <div class="sage-table-wrapper">
+    <div class="sage-table-wrapper__overflow">
+      <table class="sage-table">
+        <caption>Minimum and maximum screen sizes refer to the range during which the keyword takes effect</caption>
+        <thead>
+          <tr>
+            <th>Breakpoint keyword</th>
+            <th>Minimum screen size (in pixels)</th>
+            <th>Maximum screen size (in pixels)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>sm</td>
+            <td>545px</td>
+            <td>767px</td>
+          </tr>
+          <tr>
+            <td>md</td>
+            <td>768px</td>
+            <td>991px</td>
+          </tr>
+          <tr>
+            <td>lg</td>
+            <td>992px</td>
+            <td>&infin;</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <br>
+
+  <h3 class="t-heading-5">Overriding responsive classes</h3>
+  <p>At screen sizes below <code>sm</code> (&lt; 545px), all columns will display as full-width, regardless of the breakpoint keyword in use. You may use the classname <em>without</em> responsive keywords to circumvent this, for example <code>.sage-col-4</code>.</p>
+
+  <h3 class="t-heading-5">Sample breakpoint layouts</h3>
+  <br>
+
+  <h4 class="t-heading-6">Small breakpoint</h4>
+  <div class="sage-row">
+    <div class="sage-col--sm-6"><div class="grid-item">Col</div></div>
+    <div class="sage-col--sm-6"><div class="grid-item">Col</div></div>
+  </div>
+  <pre class="prettyprint"><code>&lt;div class=&quot;sage-row&quot;&gt;
+  &lt;div class=&quot;sage-col--sm-6&quot;&gt;Col&lt;/div&gt;
+  &lt;div class=&quot;sage-col--sm-6&quot;&gt;Col&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+  <h4 class="t-heading-6">Medium breakpoint</h4>
   <div class="sage-row">
     <div class="sage-col--md-4"><div class="grid-item">Col</div></div>
     <div class="sage-col--md-4"><div class="grid-item">Col</div></div>
@@ -81,7 +131,7 @@
   &lt;div class=&quot;sage-col--md-4&quot;&gt;Col&lt;/div&gt;
   &lt;div class=&quot;sage-col--md-4&quot;&gt;Col&lt;/div&gt;
 &lt;/div&gt;</code></pre>
-  <h3 class="t-heading-5">Large breakpoint:</h3>
+  <h4 class="t-heading-6">Large breakpoint</h4>
   <div class="sage-row">
     <div class="sage-col--lg-3"><div class="grid-item">Col</div></div>
     <div class="sage-col--lg-3"><div class="grid-item">Col</div></div>
@@ -117,11 +167,11 @@
             <td>Top</td>
           </tr>
           <tr>
-            <td><code>.sage-row--valign-center</code</td>
+            <td><code>.sage-row--valign-center</code></td>
             <td>Middle (center)</td>
           </tr>
           <tr>
-            <td><code>.sage-row--valign-bottom</code</td>
+            <td><code>.sage-row--valign-bottom</code></td>
             <td>Bottom</td>
           </tr>
         </tbody>
@@ -149,19 +199,19 @@
             <td>Left</td>
           </tr>
           <tr>
-            <td><code>.sage-row--align-center</code</td>
+            <td><code>.sage-row--align-center</code></td>
             <td>Center</td>
           </tr>
           <tr>
-            <td><code>.sage-row--align-end</code</td>
+            <td><code>.sage-row--align-end</code></td>
             <td>Right</td>
           </tr>
           <tr>
-            <td><code>.sage-row--align-space-between</code</td>
+            <td><code>.sage-row--align-space-between</code></td>
             <td>Extra space is distributed between columns</td>
           </tr>
           <tr>
-            <td><code>.sage-row--align-space-around</code</td>
+            <td><code>.sage-row--align-space-around</code></td>
             <td>Extra space is distributed around columns</td>
           </tr>
         </tbody>
