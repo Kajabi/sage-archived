@@ -78,7 +78,8 @@
 }
 
 @media (max-width: $sage-grid-breakpoint-sm-max) {
-  .sage-col--sm-hide {
+  .sage-col--sm-hide,
+  .sage-col--md-show {
     display: none;
   }
 }
@@ -118,6 +119,12 @@
 
 @media (max-width: $sage-grid-breakpoint-lg-max) {
   .sage-col--lg-hide {
+    display: none;
+  }
+}
+
+@media (min-width: $sage-grid-breakpoint-xl) {
+  .sage-col--lg-show {
     display: none;
   }
 }
