@@ -16,6 +16,8 @@
 
 .sage-pagination__link {
   @extend %t-sage-body-semi;
+  display: flex;
+  align-items: center;
   color: sage-color(primary);
   padding: 0 sage-spacing(xs);
 }
@@ -25,8 +27,8 @@
 }
 
 .sage-pagination__icon {
-  display: inline-block;
-  transform: translateY(2px);
+  display: inherit;  
+  padding: 0 sage-spacing(2xs)
 }
 
 .sage-pagination__pages {
