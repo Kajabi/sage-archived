@@ -35,6 +35,11 @@ $-live-avatar-ring-colors: (
 );
 $-live-avatar-tile-size: rem(216px);
 
+@mixin live-avatar-scaling() {
+  width: 100%;
+  height: 100%;
+}
+
 .sage-live-avatar {
   display: grid;
   grid-template-columns: 100%;
@@ -79,14 +84,11 @@ $-live-avatar-tile-size: rem(216px);
   @include sage-feature-live-avatar-ring();
 }
 
-.sage-live-avatar--scaling {
-  width: 100%;
-  height: 100%;
-}
-
 .sage-live-avatar--tile {
   padding: sage-spacing(md);
   border-radius: initial;
+
+  @include live-avatar-scaling;
 }
 
 // Set up color variations
