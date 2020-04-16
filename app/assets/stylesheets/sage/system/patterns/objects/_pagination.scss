@@ -5,33 +5,42 @@
 ================================================== */
 
 .sage-pagination {
-  
+  display: flex;
+  margin-bottom: sage-spacing();
 }
 
 .sage-pagination__count {
-
+  @extend %t-sage-body;
+  padding-right: sage-spacing();
 }
 
 .sage-pagination__link {
-
+  @extend %t-sage-body-semi;
+  color: sage-color(primary);
+  padding: 0 sage-spacing(xs);
 }
 
 .sage-pagination__link--disabled {
-
+  color: sage-color(grey, 400);
 }
 
 .sage-pagination__icon {
-  
+  display: inline-block;
+  transform: translateY(2px);
 }
 
 .sage-pagination__pages {
-
+  display: flex;
+  padding-left: 0;
+  list-style-type: none;
 }
 
 .sage-pagination__page {
-
+  @extend %t-sage-body-semi;
+  color: sage-color(primary);
+  padding: 0 sage-spacing(2xs);
 }
 
-.sage-pagination__page--gap {
-
+.sage-pagination__page--active {
+  color: sage-color(grey, 400);
 }
