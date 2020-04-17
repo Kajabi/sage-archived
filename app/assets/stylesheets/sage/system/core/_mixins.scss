@@ -110,6 +110,32 @@
   left: $offset;
 }
 
+
+/* ==================================================
+** Positioning shorthand
+  Usage: `@include position-full(10px, auto, unset, auto);`
+
+  Sets an element's position with margin/padding shorthand (top, right, bottom, left)
+  arguments: $offset | [length]
+================================================== */
+
+@mixin position($top, $right, $bottom, $left) {
+  top: _position-print-value("top", $top);
+  right: _position-print-value("right", $right);
+  bottom: _position-print-value("bottom", $bottom);
+  left: _position-print-value("left", $left);
+}
+
+@function _position-print-value($key, $value) {
+  @if not $value {
+    @error 'position() mixin requires all 4 position values (top, right, bottom, left): #{$key} is missing.';
+  } @else if $value != unset {
+    @return $value;
+  } @else {
+    @return false;
+  }
+}
+
 /* ==================================================
 ** Icon base
   Usage: `@include icon-base();`
@@ -118,8 +144,8 @@
   to displaying the icon. Usually implemented on a pseudo-element.
 
   If an `$icon` is passed in this mixin also displays the icon as content for the
-  element. 
-  
+  element.
+
   arguments: $icon | null|[string]
 ================================================== */
 

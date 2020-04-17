@@ -114,6 +114,11 @@ $type-specs: (
 
   .t-sage-#{$spec-name} {
     @extend %t-sage-#{$spec-name};
+
+    &-error {
+      @extend %t-sage-#{$spec-name};
+      color: sage-color(red, 300);
+    }
   }
 }
 
