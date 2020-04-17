@@ -8,6 +8,12 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+
+  &.system-alert-active {
+    transform: translateY(#{$sage-global-banner-height});
+    height: calc(100% - #{$sage-global-banner-height});
+    transition: transform 0.25s ease-in-out 0.15s;
+  }
 }
 
 .sage-page__icon {
