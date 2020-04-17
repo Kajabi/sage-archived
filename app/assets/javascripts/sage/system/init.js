@@ -17,4 +17,11 @@ Sage.init = function(elementNamesToInit) {
   if ( shouldInit('overlay', '.sage-overlay') ) {
     Sage.overlay.init();
   }
+
+  // Initialize Banner
+  if ( shouldInit('overlay', '.sage-banner--active') ) {
+    Sage.banner.init();
+  }
+
+
 }
