@@ -1,0 +1,15 @@
+<% if do_content.present? || dont_content.present? %>
+  <div id="<%= @title %>-example-best-practices" class="sage-panel sage-type">
+    <h2 class="t-sage-heading-2 example__title">Best Practices</h2>
+    <div class="sage-row">
+      <div class="sage-col--md-6">
+        <h3 class="t-sage-heading-6">Do</h3>
+        <%= do_content %>
+      </div>
+      <div class="sage-col--md-6">
+        <h3 class="t-sage-heading-6">Don't</h3>
+        <%= dont_content %>
+      </div>
+    </div>
+  </div>
+<% end %>

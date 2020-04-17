@@ -2,30 +2,12 @@
 <% do_content = render partial: "sage/examples/objects/#{@title}/rules_do" %>
 <% dont_content = render partial: "sage/examples/objects/#{@title}/rules_dont" %>
 
-<%= content_for :heading do %>
-  <h1><%= @title.titleize %></h1>
-  <p><%= @description %></p>
-<% end %>
+<%= render "sage/examples/shared/heading" %>
 
-<%= content_for :quick_links do %>
-  <div class="quick-links">
-    <h2 class="quick-links__title t-sage-heading-6">Contents</h2>
-    <ul class="quick-links__body t-sage-body-small">
-      <li class="quick-links__item">
-        <a href="#<%= @title %>-example-preview" class="quick-links__link">Preview</a>
-      </li>
-      <li class="quick-links__item">
-        <a href="#<%= @title %>-example-code" class="quick-links__link">Code</a>
-      </li>
-      <li class="quick-links__item">
-        <a href="#<%= @title %>-example-props" class="quick-links__link">Properties</a>
-      </li>
-      <li class="quick-links__item">
-        <a href="#<%= @title %>-example-best-practices" class="quick-links__link">Best Practices</a>
-      </li>
-    </ul>
-  </div>
-<% end %>
+<%= render "sage/examples/shared/quick_links", 
+  props_content: props_content, 
+  do_content: do_content, 
+  dont_content: dont_content %>
 
 <div class="sage-panel">
   <h2 id="<%= @title %>-example-preview" class="t-sage-heading-2 example__title">Preview</h2>
@@ -43,39 +25,12 @@
   </div>
 </div>
 
-<% if props_content.present? %>
-  <div id="<%= @title %>-example-props" class="sage-panel sage-type">
-    <h2 class="t-sage-heading-2 example__title">Properties</h2>
-    <div class="sage-table-wrapper">
-      <div class="sage-table-wrapper__overflow">
-        <table class="sage-table sage-table--properties">
-          <thead>
-            <tr>
-              <th>Property</th>
-              <th>Description</th>
-              <th>Type</th>
-              <th>Default</th>
-            </tr>
-          </thead>
-          <%= props_content %>
-        </table>
-      </div>
-    </div>
-  </div>
-<% end %>
+<%= render "sage/examples/shared/props", 
+  props_content: props_content, 
+  do_content: do_content, 
+  dont_content: dont_content %>
 
-<% if do_content.present? || dont_content.present? %>
-  <div id="<%= @title %>-example-best-practices" class="sage-panel sage-type">
-    <h2 class="t-sage-heading-2 example__title">Best Practices</h2>
-    <div class="sage-row">
-      <div class="sage-col--md-6">
-        <h3 class="t-sage-heading-6">Do</h3>
-        <%= do_content %>
-      </div>
-      <div class="sage-col--md-6">
-        <h3 class="t-sage-heading-6">Don't</h3>
-        <%= dont_content %>
-      </div>
-    </div>
-  </div>
-<% end %>
+<%= render "sage/examples/shared/rules", 
+  props_content: props_content, 
+  do_content: do_content, 
+  dont_content: dont_content %>
