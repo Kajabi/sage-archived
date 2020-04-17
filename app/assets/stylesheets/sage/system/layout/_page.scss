@@ -9,9 +9,9 @@
   flex-direction: column;
   height: 100%;
 
-  &.system-alert-active {
-    transform: translateY(#{$sage-global-banner-height});
-    height: calc(100% - #{$sage-global-banner-height});
+  &.banner-active {
+    transform: translateY(#{$sage-banner-height});
+    height: calc(100% - #{$sage-banner-height});
     transition: transform 0.25s ease-in-out 0.15s;
   }
 }

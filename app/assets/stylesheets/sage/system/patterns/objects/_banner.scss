@@ -7,42 +7,51 @@
 $-banner-colors: (
   default: primary,
   success: sage,
-  warning: orange,
+  warning: yellow,
   danger: red
 );
 
 .sage-banner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   position: fixed;
   left: 0;
-  top: -$sage-global-banner-height;
-  height: $sage-global-banner-height;
+  top: -$sage-banner-height;
+  height: $sage-banner-height;
   width: 100%;
   padding: sage-spacing(xs) sage-spacing(sm);
+  color: sage-color(white);
+  background: sage-color(primary);
 }
 
 @each $name, $color in $-banner-colors {
   .sage-banner--#{$name} {
-    color: sage-color(white);
     background: sage-color($color, 300);
   }
 }
 
 .sage-banner__content {
-  flex: 1;
+  display: flex;
+  align-items: center;
+  @extend %t-sage-body-semi;
 }
 
 .sage-banner__text {
-  @extend %t-sage-body-semi;
   color: inherit;
 }
 
 .sage-banner__close {
+  // TODO: replace with .sage-btn-link styles
   padding: sage-spacing(2xs);
   margin: 0;
-  color: sage-color(grey, 200);
+  color: inherit;
+  font-weight: inherit;
+  text-decoration: underline;
   border-radius: sage-border(radius-round);
   box-shadow: none;
+
+  &:focus,
+  &:active,
+  &:hover {
+    color: inherit;
+    box-shadow: none;
+  }
 }
