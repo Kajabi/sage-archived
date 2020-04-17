@@ -1,8 +1,10 @@
-// Global Mixins and Functions
-@import "system/core/functions";
-@import "system/core/mixins";
+// Reset
+@import "system/vendor/reboot";
 
-// Design Tokens
+// Functions
+@import "system/core/functions";
+
+// Variable Tokens
 @import "system/tokens/color_palette";
 @import "system/tokens/border";
 @import "system/tokens/breakpoints";
@@ -16,6 +18,18 @@
 @import "system/tokens/sidebar";
 @import "system/tokens/spacing";
 @import "system/tokens/z_index";
+
+// Mixins
+@import "system/core/mixins";
+
+// Global Variables
+@import "system/core/variables";
+
+// Base Styles
+@import "system/core/fonts";
+@import "system/core/icons";
+@import "system/core/animations";
+@import "system/core/typography";
 
 // Documentation Variables
 @import "docs/variables";

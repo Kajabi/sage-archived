@@ -5,14 +5,7 @@
       <i class="sage-icon-launch" aria-hidden="true"></i><span class="visually-hidden">Opens <%= title.titleize %> in a new window</span>
     <% end %>
   </div>
-  <h3 class="t-sage-heading-6 example__label">Preview</h3>
   <div class="example__preview">
     <%= render "sage/examples/elements/#{title}/preview" %>
-  </div>
-  <h3 class="t-sage-heading-6 example__label">Code</h3>
-  <div class="example__code">
-    <div class="sage-code-snippet">
-      <pre class="prettyprint"><code><%= CGI.unescapeHTML(CGI.escapeHTML render "sage/examples/elements/#{title}/preview") %></code></pre>
-    </div>
   </div>
 </div>
