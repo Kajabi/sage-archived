@@ -173,6 +173,40 @@ $sage-textarea-label-bg-color: $sage-textarea-bg-default !default;
 
 
 // ==================================================
+// TEXTAREAS
+// ==================================================
+
+$sage-dropdown-font-size: $sage-body-font-size !default;
+$sage-dropdown-letter-spacing: $sage-body-letter-spacing !default;
+
+// Border
+$sage-dropdown-border-color: sage-color(grey, 300) !default;
+$sage-dropdown-border-radius: sage-border(radius) !default;
+$sage-dropdown-border-width: rem(1px) !default;
+$sage-dropdown-box-shadow-size: 0 0 0 rem(1px) !default;
+
+// Sizing
+$sage-dropdown-height: $sage-inputfield-height !default;
+$sage-dropdown-padding: $sage-inputfield-padding !default;
+$sage-dropdown-padding-x: $sage-inputfield-padding-x !default;
+$sage-dropdown-padding-offset: $sage-dropdown-padding - $sage-dropdown-border-width;
+$sage-dropdown-padding-filled: $sage-inputfield-padding-filled !default;
+$sage-dropdown-padding-label: $sage-inputfield-padding-label !default;
+
+// Spacing
+$sage-dropdown-spacing: sage-spacing(lg) !default;
+
+// Colors
+$sage-dropdown-color-default: $sage-inputfield-color-default !default;
+// $sage-dropdown-color-disabled: sage-color(grey, 400) !default;
+$sage-dropdown-color-success: $sage-inputfield-color-success !default;
+// $sage-dropdown-color-error: sage-color(red) !default;
+$sage-dropdown-bg-label: sage-color(white) !default;
+// $sage-dropdown-bg-disabled: sage-color(grey, 100) !default;
+
+
+
+// ==================================================
 // CHECKBOXES
 // ==================================================
 

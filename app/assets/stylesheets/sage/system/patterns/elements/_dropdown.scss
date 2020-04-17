@@ -8,10 +8,10 @@
 
 .sage-dropdown {
   position: relative;
-  height: $sage-inputfield-height;
+  height: $sage-dropdown-height;
 
   &:not(:last-child) {
-    margin-bottom: $sage-inputfield-spacing;
+    margin-bottom: $sage-dropdown-spacing;
   }
 
   &::after {
@@ -21,7 +21,6 @@
     right: sage-spacing(sm);
     margin: auto 0;
     position: absolute;
-    z-index: -1;
     align-items: center;
     color: sage-color(grey, 500);
   }
@@ -40,12 +39,12 @@
   position: relative;
   height: 100%;
   width: 100%;
-  padding: $sage-inputfield-padding-offset $sage-inputfield-padding;
-  color: $sage-inputfield-color-default;
+  padding: $sage-dropdown-padding-offset $sage-dropdown-padding-x;
+  color: $sage-dropdown-color-default;
   line-height: 1;
   appearance: none;
-  border: $sage-inputfield-border-width solid $sage-inputfield-border-color;
-  border-radius: $sage-inputfield-border-radius;
+  border: $sage-dropdown-border-width solid $sage-dropdown-border-color;
+  border-radius: $sage-dropdown-border-radius;
   background: transparent;
   transition: border 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
   cursor: context-menu;
@@ -54,43 +53,51 @@
   @include placeholder { color: inherit; }
 
   .sage-dropdown:hover & {
-    border-color: $sage-inputfield-color-success;
-    box-shadow: $sage-inputfield-box-shadow-size $sage-inputfield-color-success;
+    border-color: $sage-dropdown-color-success;
+    box-shadow: $sage-dropdown-box-shadow-size $sage-dropdown-color-success;
 
     @include placeholder { color: transparent; }
   }
 
   .sage-dropdown--active & {
-    border-color: $sage-inputfield-color-success;
-    box-shadow: $sage-inputfield-box-shadow-size $sage-inputfield-color-success;
-    border-radius: $sage-inputfield-border-radius $sage-inputfield-border-radius 0 0;
-    padding-bottom: $sage-inputfield-padding-filled;
+    border-color: $sage-dropdown-color-success;
+    box-shadow: $sage-dropdown-box-shadow-size $sage-dropdown-color-success;
+    border-radius: $sage-dropdown-border-radius $sage-dropdown-border-radius 0 0;
+    padding-bottom: $sage-dropdown-padding-filled;
     z-index: 9999;
 
     @include placeholder { color: transparent; }
   }
 
   .sage-dropdown--selected & {
-    padding-bottom: $sage-inputfield-padding-filled;
+    padding-bottom: $sage-dropdown-padding-filled;
 
     @include placeholder { color: transparent; }
   }
 }
 
 .sage-dropdown__label {
+  @extend %t-sage-body-xsmall-semi;
+
   position: absolute;
   transform: translateY(calc(#{$sage-body-font-size} * -1));
-  left: $sage-inputfield-padding;
+  left: $sage-dropdown-padding-x;
+  padding: 0 $sage-dropdown-padding-label;
+  font-weight: sage-font-weight(semibold);
   top: 50%;
+  white-space: nowrap;
   color: inherit;
+  background-color: $sage-dropdown-bg-label;
   pointer-events: none;
   opacity: 0;
 
-  @extend %t-sage-body-xsmall-semi;
+  @media screen and (min-width: sage-breakpoint(sm-min)) {
+    white-space: normal;
+  }
 
   @mixin floating-label {
-    transform: translateY(-($sage-body-font-size + $sage-inputfield-padding-filled)); // IE doesn't support calc in transforms
-    transform: translateY(calc(-50% - (#{$sage-body-font-size} - #{$sage-inputfield-padding-filled})));
+    transform: translateY(-($sage-body-font-size + $sage-dropdown-padding-filled)); // IE doesn't support calc in transforms
+    transform: translateY(calc(-50% - (#{$sage-body-font-size} - #{$sage-dropdown-padding-filled})));
     opacity: 1;
   }
 
@@ -98,7 +105,7 @@
   .sage-dropdown--active & {
     @include floating-label();
 
-    color: $sage-inputfield-color-success;
+    color: $sage-dropdown-color-success;
     transition: opacity 0.15s ease-out, transform 0.15s ease-in-out, color 0.15s ease-out;
   }
 
@@ -112,7 +119,7 @@
 .sage-dropdown__dropdown {
   padding: 0;
   margin: 1px -1px 0;
-  border-radius: 0 0 $sage-inputfield-border-radius $sage-inputfield-border-radius;
+  border-radius: 0 0 $sage-dropdown-border-radius $sage-dropdown-border-radius;
   background: sage-color(white);
   z-index: 1000000;
   position: relative;
@@ -158,19 +165,19 @@
     position: absolute;
     top: 0;
     bottom: 0;
-    left: $sage-inputfield-padding;
+    left: $sage-dropdown-padding;
     color: sage-color(grey, 500);
     align-items: center;
   }
 }
 
 .sage-dropdown__search-field {
-  padding: sage-spacing(xs) $sage-inputfield-padding sage-spacing(xs) 44px;
+  padding: sage-spacing(xs) $sage-dropdown-padding sage-spacing(xs) 44px;
   appearance: none;
   border: 0;
   width: 100%;
   outline: none;
-  border-bottom: $sage-inputfield-border-width solid $sage-inputfield-border-color;
+  border-bottom: $sage-dropdown-border-width solid $sage-dropdown-border-color;
 
   &:hover,
   &:focus,
@@ -189,7 +196,7 @@
 }
 
 .sage-dropdown__option {
-  padding: sage-spacing(xs) $sage-inputfield-padding;
+  padding: sage-spacing(xs) $sage-dropdown-padding;
   margin: 0;
   list-style: none;
   cursor: pointer;
@@ -211,7 +218,7 @@
   }
 
   &.sage-dropdown__option--selected:not(.sage-dropdown__option--focused):hover {
-    box-shadow: inset 2px 0 0 0 sage-color(primary);
+    box-shadow: inset 3px 0 0 0 sage-color(primary);
   }
 
   // Keyboard-Focused
@@ -230,7 +237,7 @@
   }
 
   &.sage-dropdown__option--focused.sage-dropdown__option--selected:hover {
-    box-shadow: inset 3px 0 0 1px sage-color(primary);
+    box-shadow: inset 2px 0 0 1px sage-color(primary);
   }
 }
 
