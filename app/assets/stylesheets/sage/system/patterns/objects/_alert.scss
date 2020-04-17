@@ -1,0 +1,53 @@
+/* ==================================================
+  ** .sage-alert
+  type: object
+
+================================================== */
+
+$-alert-colors: (
+  primary: primary,
+  success: sage,
+  warning: yellow,
+  danger: red
+);
+
+.sage-alert {
+  margin-bottom: sage-spacing();
+  padding: sage-spacing();
+  background: sage-color(gray, 200);
+  border-top: 4px solid;
+  border-bottom-left-radius: sage-border(radius);
+  border-bottom-left-radius: sage-border(radius);
+  box-shadow: sage-shadow();
+}
+
+@each $name, $color in $-alert-colors {
+  .sage-alert--#{$name} {
+    border-color: sage-color($color);
+    background: sage-color($color, 100);
+  }
+}
+
+.sage-alert__title {
+  color: sage-color(charcoal, 500);
+
+  @extend %t-sage-body-semi;
+
+  @each $name, $color in $-alert-colors {
+    .sage-alert--#{$name} & {
+      color: sage-color($color, 500);
+    }
+  }
+}
+
+.sage-alert__copy {
+  color: sage-color(charcoal, 300);
+
+  @extend %t-sage-body-small;
+
+  @each $name, $color in $-alert-colors {
+    .sage-alert--#{$name} & {
+      color: sage-color($color, 400);
+    }
+  }
+}

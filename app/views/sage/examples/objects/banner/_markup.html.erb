@@ -1,0 +1,12 @@
+<div class="sage-banner <%= color != "" ? " sage-banner--#{color}" : "" %><% if dismissable %> sage-banner--dismissable<% end %>">
+  <div class="sage-banner__content">
+    <% if content %>
+    <p class="sage-banner__text"><%= content %></p>
+    <% end %>
+  </div>
+  <div class="sage-banner__action">
+  <% if dismissable %>
+    <button class="sage-btn sage-btn-link sage-banner__close"><i class="sage-icon-remove"></i><span class="visually-hidden">Close banner</span></button>
+  <% end %>
+  </div>
+</div>
