@@ -13,5 +13,7 @@ if (document.querySelector('.sage-docs') !== null) {
     Sage.docs.liveOptionMenu.init();
   }
 
-
+  if (document.querySelector('.sage-system-alert') !== null) {
+    document.querySelector('body').classList.add('system-alert-active');
+  }
 }
