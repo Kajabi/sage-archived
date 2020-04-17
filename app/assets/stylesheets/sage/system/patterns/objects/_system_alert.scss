@@ -12,6 +12,9 @@ $-sys-alert-colors: (
 );
 
 .sage-system-alert {
+  position: fixed;
+  left: 0;
+  top: -$sage-global-banner-height;
   height: $sage-global-banner-height;
   width: 100%;
   padding: sage-spacing(xs) sage-spacing();
@@ -23,12 +26,6 @@ $-sys-alert-colors: (
     border-color: sage-color($color);
     background: sage-color($color, 300);
   }
-}
-
-.sage-system-alert--sticky {
-  position: fixed;
-  left: 0;
-  top: -$sage-global-banner-height;
 }
 
 .sage-system-alert__wrapper {
