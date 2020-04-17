@@ -24,11 +24,12 @@
 
 .sage-pagination__link--disabled {
   color: sage-color(grey, 400);
+  pointer-events: none;
 }
 
 .sage-pagination__icon {
   display: inherit;  
-  padding: 0 sage-spacing(2xs)
+  padding: 0 sage-spacing(2xs);
 }
 
 .sage-pagination__pages {
