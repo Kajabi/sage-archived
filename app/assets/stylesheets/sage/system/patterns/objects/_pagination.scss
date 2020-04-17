@@ -18,8 +18,8 @@
   @extend %t-sage-body-semi;
   display: flex;
   align-items: center;
-  color: sage-color(primary);
   padding: 0 sage-spacing(xs);
+  color: sage-color(primary);
 }
 
 .sage-pagination__link--disabled {
@@ -40,8 +40,8 @@
 
 .sage-pagination__page {
   @extend %t-sage-body-semi;
-  color: sage-color(primary);
   padding: 0 sage-spacing(2xs);
+  color: sage-color(primary);
 }
 
 .sage-pagination__page--active {
