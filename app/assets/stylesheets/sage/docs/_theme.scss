@@ -20,5 +20,6 @@ a {
 
 // Version Number
 .version-number {
+  @extend %t-sage-body-small-bold;
   color: #fff;
 }
