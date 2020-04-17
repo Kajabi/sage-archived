@@ -12,40 +12,64 @@ $-banner-colors: (
 );
 
 .sage-banner {
-  position: fixed;
-  left: 0;
-  top: -$sage-banner-height;
+  display: flex;
+  align-items: center;
   height: $sage-banner-height;
   width: 100%;
   padding: sage-spacing(xs) sage-spacing(sm);
-  color: sage-color(white);
+  font-weight: sage-font-weight(semibold);
+  color: $sage-banner-text-color;
   background: sage-color(primary);
 }
 
 @each $name, $color in $-banner-colors {
   .sage-banner--#{$name} {
     background: sage-color($color, 300);
+
+    @if ($name == "success") or ($name == "warning") {
+      color: $sage-banner-text-color-dark;
+    }
   }
 }
 
-.sage-banner__content {
-  display: flex;
-  align-items: center;
-  @extend %t-sage-body-semi;
+.sage-banner--active {
+  position: fixed;
+  left: 0;
+  top: -$sage-banner-height;
 }
 
 .sage-banner__text {
+  display: inline-flex;
+  align-items: center;
   color: inherit;
 }
 
+.sage-banner__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: $sage-banner-icon-size;
+  width: $sage-banner-icon-size;
+}
+
+.sage-banner__link,
 .sage-banner__close {
-  // TODO: replace with .sage-btn-link styles
-  padding: sage-spacing(2xs);
-  margin: 0;
+  margin: 0 0 0 sage-spacing(xs);
   color: inherit;
-  font-weight: inherit;
   text-decoration: underline;
-  border-radius: sage-border(radius-round);
+}
+
+.sage-banner__link {
+  &.sage-banner__btn {
+    text-decoration: none;
+  }
+}
+
+.sage-banner__btn {
+  // TODO: may replace with new .sage-btn styles
+  padding: sage-spacing(xs) sage-spacing(sm);
+  font-size: sage-font-size(sm);
+  font-weight: inherit;
   box-shadow: none;
 
   &:focus,
