@@ -4,7 +4,11 @@ Sage.banner = (function() {
   // Variables
   // ==================================================
 
-  var allBanners = document.querySelectorAll('.sage-banner');
+  var bannerClass = ".sage-banner--active";
+  var bodyClass = "banner-active";
+
+  var activeBanner = document.querySelector(bannerClass);
+  var bannerCloseBtn = activeBanner.querySelector('.sage-banner__close');
 
 
   // ==================================================
@@ -13,28 +17,34 @@ Sage.banner = (function() {
 
   // check to see if an active banner exists
   function bannerIsEnabled() {
-    return document.querySelector('.sage-banner--active') !== null;
+    return document.querySelector(bannerClass) !== null;
   }
 
+  function toggleBodyBanner(bodyClass) {
+    document.querySelector('body').classList.toggle(bodyClass);
+  }
 
-  function closeBanner() {
-    if (!bannerIsEnabled()) {
-      console.info('no banner active');
-      return;
-    };
+  function bindEvents() {
+    bannerCloseBtn.addEventListener('click', function(e) {
+      e.target.parentElement.classList.toggle('sage-banner--active');
+      toggleBodyBanner(bodyClass);
+    });
   }
 
 
 
   function init() {
     if (bannerIsEnabled()) {
-      document.querySelector('body').classList.add('banner-active');
+      document.querySelector('body').classList.add(bodyClass);
+
+      bindEvents();
     }
   }
 
 
   return {
-    init: init
+    init: init,
+    bannerIsEnabled: bannerIsEnabled
   };
 
 })();
