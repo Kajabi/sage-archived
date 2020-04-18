@@ -6,7 +6,7 @@
 
 .sage-pagination {
   display: flex;
-  margin-bottom: sage-spacing();
+  justify-content: flex-end;
 }
 
 .sage-pagination__count {
