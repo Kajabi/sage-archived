@@ -1,11 +1,9 @@
-<div class="sage-assistant">
-  <button class="sage-menubutton" aria-expanded="false" aria-controls="example-sidebar-menu" data-js-btn-target="example-sidebar-menu" data-js-target-type="sidebar">
-    <span class="sage-menubutton__bar"></span><span class="sage-menubutton__bar"></span><span class="sage-menubutton__bar"></span>
-    <span class="visually-hidden">Toggle main menu</span>
-  </button>
-  <%= image_tag("sage/sage.svg", class: "sage-assistant__branding")%>
-  <div class="sage-assistant__body">
-    <div class="sage-container--sm"></div>
-  </div>
-  <div class="sage-assistant__actions"></div>
-</div>
+<h3 class="t-sage-heading-6">With menu button (mobile only)</h3>
+<%= render "sage/examples/objects/assistant/markup",
+  menu_button: true
+-%>
+<br>
+<h3 class="t-sage-heading-6">Without menu button</h3>
+<%= render "sage/examples/objects/assistant/markup",
+  menu_button: false
+-%>
