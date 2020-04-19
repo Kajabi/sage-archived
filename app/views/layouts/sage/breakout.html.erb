@@ -5,7 +5,9 @@
     <%= render "styles" %>
   </head>
   <body class="sage-page sage-docs sage-page--breakout">
-    <%= render "content_skip" -%>
+    <%= render "content_skip_link",
+      link_id: "main-content"
+    -%>
     <header class="sage-header">
       <%= render "assistant",
         menu_button: false
