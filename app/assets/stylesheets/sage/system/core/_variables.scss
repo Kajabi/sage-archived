@@ -403,6 +403,7 @@ $sage-label-font-size: rem(13px) !default;
 $sage-label-font-weight: sage-font-weight(medium) !default;
 $sage-label-border-radius: sage-border(radius) !default;
 
+
 // ==================================================
 // CARDS
 // ==================================================
@@ -411,3 +412,18 @@ $sage-card-shadow: sage-shadow(sm);
 $sage-card-radius: sage-border(radius);
 $sage-card-spacing: sage-spacing(md);
 $sage-card-text-color: sage-color(charcoal, 200);
+
+
+// ==================================================
+// ALERTS
+// ==================================================
+
+
+// ==================================================
+// BANNERS
+// ==================================================
+
+$sage-banner-height: rem(48px);
+$sage-banner-text-color: sage-color(white);
+$sage-banner-text-color-dark: sage-color(charcoal);
+$sage-banner-icon-size: rem(22px);

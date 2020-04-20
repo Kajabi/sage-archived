@@ -15,20 +15,33 @@ module Sage
         # Sage Generated Objects
         {
           title: "pagination",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", 
+          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
           scss_design:  "done",
           scss_dev:     "done",
-          scss_doc:     "todo",
-          rails_design: "done",
-          rails_dev:    "doing",
+          scss_doc:     "done",
+          rails_design: "todo",
+          rails_dev:    "todo",
           rails_doc:    "todo",
-          react_design: "done",
+          react_design: "todo",
+          react_dev:    "todo",
+          react_doc:    "todo"
+        },
+        {
+          title: "banner",
+          description: "A banner that displays at the top of the page, used for systemwide notifications and events",
+          scss_design:  "done",
+          scss_dev:     "done",
+          scss_doc:     "done",
+          rails_design: "done",
+          rails_dev:    "done",
+          rails_doc:    "done",
+          react_design: "todo",
           react_dev:    "todo",
           react_doc:    "todo"
         },
         {
           title: "page_heading",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", 
+          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
           scss_design:  "done",
           scss_dev:     "done",
           scss_doc:     "doing",
@@ -196,8 +209,8 @@ module Sage
           react_doc:    "todo"
         },
         {
-          title: "banner",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+          title: "alert",
+          description: "Alerts are used to indicate user-driven notifications.",
           scss_design:  "done",
           scss_dev:     "done",
           scss_doc:     "done",

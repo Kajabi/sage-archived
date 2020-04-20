@@ -1,25 +1,60 @@
-<!-- Default -->
-<div class="sage-banner">
-  <p class="sage-banner__title">Our privacy policy has changed</p>
-  <p class="sage-banner__copy">Make sure you know how these changes affect you.</p>
-</div>
-<!-- Primary -->
-<div class="sage-banner sage-banner--primary">
-  <p class="sage-banner__title">Our privacy policy has changed</p>
-  <p class="sage-banner__copy">Make sure you know how these changes affect you.</p>
-</div>
-<!-- Success -->
-<div class="sage-banner sage-banner--success">
-  <p class="sage-banner__title">Account settings updated</p>
-  <p class="sage-banner__copy">Make sure you know how these changes affect you.</p>
-</div>
-<!-- Warning -->
-<div class="sage-banner sage-banner--warning">
-  <p class="sage-banner__title">Exceeded product amount limit</p>
-  <p class="sage-banner__copy">Make sure you know how these changes affect you.</p>
-</div>
-<!-- Danger -->
-<div class="sage-banner sage-banner--danger">
-  <p class="sage-banner__title">App outage tonight at 12am</p>
-  <p class="sage-banner__copy">Make sure you know how these changes affect you.</p>
-</div>
+<h3 class="t-sage-heading-6">Primary (default) (enabled)</h3>
+<p>See active example at top of page</p>
+<%= render "sage/examples/objects/banner/markup",
+  color: "",
+  content: "Another happy landing.",
+  sage_icon_name: "",
+  enabled: true,
+  link: false,
+  link_is_button: false,
+  link_text: "",
+  link_url: "",
+  dismissable: true,
+  dismiss_text: "Dismiss"
+%>
+
+<br>
+<h3 class="t-sage-heading-6">Success (with link)</h3>
+<%= render "sage/examples/objects/banner/markup",
+  color: "success",
+  content: "Now this is podracing.",
+  sage_icon_name: "",
+  enabled: false,
+  link: true,
+  link_is_button: false,
+  link_text: "Link here",
+  link_url: "#",
+  dismissable: false,
+  dismiss_text: "Dismiss"
+%>
+
+<br>
+<h3 class="t-sage-heading-6">Warning (with button)</h3>
+<%= render "sage/examples/objects/banner/markup",
+  color: "warning",
+  content: "Execute Order 66.",
+  sage_icon_name: "sage-icon-warning",
+  enabled: false,
+  link: true,
+  link_is_button: true,
+  link_text: "Okay",
+  link_url: "#",
+  dismissable: true,
+  dismiss_text: "Dismiss"
+%>
+
+<br>
+<h3 class="t-sage-heading-6">Danger (dismiss disabled)</h3>
+<%= render "sage/examples/objects/banner/markup",
+  color: "danger",
+  content: "It's over, Anakin. I have the high ground.",
+  sage_icon_name: "",
+  enabled: false,
+  link: false,
+  link_is_button: false,
+  link_text: "",
+  link_url: "",
+  dismissable: false,
+  dismiss_text: "Dismiss"
+%>
+

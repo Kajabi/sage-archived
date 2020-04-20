@@ -17,4 +17,5 @@ Sage.init = function(elementNamesToInit) {
   if ( shouldInit('overlay', '.sage-overlay') ) {
     Sage.overlay.init();
   }
+
 }

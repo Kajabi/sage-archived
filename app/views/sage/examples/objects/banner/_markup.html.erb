@@ -1,0 +1,17 @@
+<div class="sage-banner<%= color != "" ? " sage-banner--#{color}" : "" %><% if enabled %> sage-banner--active<% end %>" role="banner">
+  <% if content %>
+    <p class="sage-banner__text">
+      <% if sage_icon_name != "" %>
+        <i class="sage-banner__icon <%= sage_icon_name %>" aria-hidden="true"></i>
+      <% end %>
+      <%=- content -%>
+    </p>
+  <% end %>
+  <% if link and link_url %>
+    <a href="<%= link_url %>" class="<% if link_is_button %>sage-btn sage-btn--secondary sage-banner__btn <% end %>sage-banner__link">
+      <%= link_text != "" ? " #{link_text}" : "link" -%>
+    </a>
+  <% elsif dismissable %>
+    <button class="sage-btn sage-banner__btn sage-banner__close"><%= dismiss_text != "" ? " #{dismiss_text}" : "" %></button>
+  <% end %>
+</div>
