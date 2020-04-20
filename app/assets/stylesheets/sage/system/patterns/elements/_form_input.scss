@@ -17,8 +17,6 @@
 
   position: absolute;
   transform: translateY(calc(#{$sage-body-font-size} * -1));
-  left: $sage-inputfield-padding-x;
-  top: $sage-inputfield-height / 2;
   padding-left: $sage-inputfield-padding-label;
   padding-right: $sage-inputfield-padding-label;
   color: inherit;
@@ -28,6 +26,8 @@
   pointer-events: none;
   opacity: 0;
   line-height: initial;
+
+  @include position(($sage-inputfield-height / 2), unset, unset, $sage-inputfield-padding-x);
 
   @media screen and (min-width: sage-breakpoint(sm-min)) {
     white-space: normal;

@@ -25,7 +25,7 @@
   background: $sage-switch-color-default;
   border: 0;
   border-radius: $sage-switch-border-radius;
-  outline: none !important; // Override Bootstrap Conflict
+  outline: none !important; /* Override Bootstrap Conflict, stylelint-disable-line declaration-no-important */
   transition: background 0.3s ease-out;
   cursor: pointer;
 
