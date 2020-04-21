@@ -116,10 +116,10 @@
   Usage: `@include position-full(10px, auto, unset, auto);`
 
   Sets an element's position with margin/padding shorthand (top, right, bottom, left)
-  arguments: $offset | [length]
+  arguments: $top, $right, $bottom, $left | [length]
 ================================================== */
 
-@mixin position($top, $right, $bottom, $left) {
+@mixin position($top: false, $right: false, $bottom: false, $left: false) {
   top: _position-print-value("top", $top);
   right: _position-print-value("right", $right);
   bottom: _position-print-value("bottom", $bottom);
