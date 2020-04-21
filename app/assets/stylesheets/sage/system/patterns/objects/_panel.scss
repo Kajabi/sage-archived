@@ -16,8 +16,24 @@
   }
 }
 
+.sage-panel__header {
+  margin-bottom: $sage-panel-padding;
+}
+
+.sage-panel__body {
+  overflow: auto;
+}
+
+.sage-panel__footer {
+  margin-top: $sage-panel-padding;
+}
+
+.sage-panel__title {
+  @extend %t-sage-heading-4;
+}
+
 .sage-panel__img {
   display: block;
   max-width: 100%;
-  margin-bottom: sage-spacing();
+  margin-bottom: $sage-panel-padding;
 }
