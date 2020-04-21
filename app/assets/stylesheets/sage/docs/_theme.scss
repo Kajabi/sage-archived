@@ -18,6 +18,13 @@ a {
   }
 }
 
+// Images
+.sage-panel__img {
+  display: block;
+  max-width: 100%;
+  margin-bottom: $sage-panel-padding;
+}
+
 // Version Number
 .version-number {
   @extend %t-sage-body-small-bold;

@@ -31,9 +31,3 @@
 .sage-panel__title {
   @extend %t-sage-heading-4;
 }
-
-.sage-panel__img {
-  display: block;
-  max-width: 100%;
-  margin-bottom: $sage-panel-padding;
-}
