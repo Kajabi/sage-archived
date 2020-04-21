@@ -15,8 +15,7 @@
 
   position: relative;
   padding: rem(12px) sage-spacing(sm);
-  margin-bottom: sage-spacing(sm);
-  margin-right: sage-spacing(2xs);
+  margin-left: sage-spacing(2xs);
   letter-spacing: $sage-btn-letter-spacing;
   color: sage-color(charcoal, 500);
   border: 0;
@@ -49,9 +48,8 @@ input[type="search"] {
 .sage-btn {
   @include button-style-base;
 
-  // add space between adjacent buttons
-  + .sage-btn {
-    margin-left: sage-spacing(xs);
+  &:first-of-type {
+    margin-left: 0;
   }
 
   &::after {
@@ -101,6 +99,17 @@ input[type="search"] {
     color: sage-color(grey);
     background-color: sage-color(grey, 100);
   }
+}
+
+.sage-btn--small {
+  @extend %t-sage-body-small-med;
+
+  padding-top: sage-spacing(xs);
+  padding-bottom: sage-spacing(xs);
+}
+
+.sage-btn--full-width {
+  width: 100%;
 }
 
 .sage-btn--primary {
