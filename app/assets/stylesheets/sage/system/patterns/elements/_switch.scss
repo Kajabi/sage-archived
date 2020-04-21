@@ -13,6 +13,14 @@
   color: $sage-switch-color-default-text;
 }
 
+.sage-switch__message {
+  width: 100%;
+  padding: 0 0 0 ($sage-switch-width + $sage-switch-label-left-spacing);
+  line-height: 1;
+
+  @extend %t-sage-body-xsmall;
+}
+
 .sage-switch__input {
   display: inline-block;
   position: relative;
@@ -31,7 +39,7 @@
 
   + .sage-switch__label {
     display: inline-block;
-    margin-left: sage-spacing(sm);
+    margin-left: $sage-switch-label-left-spacing;
     vertical-align: top;
     cursor: pointer;
 
@@ -68,10 +76,12 @@
     transition: transform 0.2s ease-in-out;
   }
 
+  .sage-switch--error &,
   &:invalid {
     background-color: sage-color(red);
 
-    + .sage-switch__label {
+    ~ .sage-switch__label,
+    ~ .sage-switch__message {
       color: sage-color(red);
     }
   }
@@ -95,7 +105,8 @@
       box-shadow: none;
     }
 
-    + .sage-switch__label {
+    ~ .sage-switch__label,
+    ~ .sage-switch__message {
       color: $sage-switch-color-disabled-text;
       cursor: inherit;
     }
@@ -105,8 +116,11 @@
       background: $sage-switch-color-disabled-checked;
     }
 
-    &:checked + .sage-switch__label {
-      color: $sage-switch-color-disabled-checked-text;
+    &:checked {
+        ~ .sage-switch__label,
+        ~ .sage-switch__message {
+        color: $sage-switch-color-disabled-checked-text;
+      }
     }
   }
 
