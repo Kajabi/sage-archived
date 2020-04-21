@@ -4,15 +4,26 @@
     <%= render "meta" %>
     <%= render "styles" %>
   </head>
-  <body class="sage-page">
+  <body class="sage-page sage-docs sage-page--breakout">
+    <%= render "content_skip_link",
+      link_id: "main-content"
+    -%>
+    <header class="sage-header">
+      <%= render "assistant",
+        menu_button: false
+      -%>
+    </header>
     <div class="sage-stage">
-      <div class="sage-content">
+      <main class="sage-content" id="main-content">
         <div class="sage-container--sm">
-          <%= image_tag("sage/sage_icon.svg", class: "sage-page__icon")%>
-          <%= yield :heading %>
+          <div class="sage-row">
+            <div class="sage-col-12 sage-type">
+              <%= yield :heading %>
+            </div>
+          </div>
           <%= yield %>
         </div>
-      </div>
+      </main>
     </div>
     <div class="sage-overlay" aria-hidden="true"></div>
     <%= render "scripts" %>

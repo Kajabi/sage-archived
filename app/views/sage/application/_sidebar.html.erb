@@ -1,6 +1,6 @@
 <div class="sage-sidebar" data-js-sidebar="sage-sidebar-menu" id="sage-sidebar-menu">
   <div class="sage-sidebar__body">
-    <div class="sage-nav">
+    <nav class="sage-nav" aria-label="Main">
       <%= link_to "Introduction", pages_index_url, class: "#{current? "sage-nav__link--active", pages_index_url} sage-nav__link" %>
       <%= link_to "Styles", pages_token_url, class: "sage-nav__link" %>
       <%= yield :sidebar_styles %>
@@ -10,13 +10,13 @@
       <%= yield :sidebar_objects %>
       <%= link_to "Utilities", pages_utilities_url, class: "sage-nav__link #{current? "sage-nav__link--active", pages_utilities_url}" %>
       <%= link_to "Code Status", pages_status_url, class: "sage-nav__link #{current? "sage-nav__link--active", pages_status_url}" %>
-    </div>
+    </nav>
   </div>
   <div class="sage-sidebar__footer">
-    <div class="sage-nav">
+    <nav class="sage-nav" aria-label="Secondary">
       <%= link_to "Guidelines", "https://github.com/Kajabi/sage/wiki", class: "sage-nav__link", target: "_blank" %>
       <%= link_to "Github", "https://github.com/Kajabi/sage", class: "sage-nav__link", target: "_blank" %>
       <%= link_to "Changelog", "https://github.com/Kajabi/sage/releases", class: "sage-nav__link", target: "_blank" %>
-    </div>
+    </nav>
   </div>
 </div>
