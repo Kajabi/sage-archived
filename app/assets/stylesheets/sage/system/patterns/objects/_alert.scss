@@ -67,9 +67,9 @@ $-alert-colors: (
 .sage-alert__close {
   transform: translateY(rem(-2px));
   position: absolute;
-  top: sage-spacing();
-  right: sage-spacing();
-  padding: 0;
+  top: 0;
+  right: 0;
+  padding: sage-spacing();
   font-size: rem(28px);
   line-height: 1;
   background-color: transparent;
