@@ -59,10 +59,8 @@ $-banner-colors: (
   text-decoration: underline;
 }
 
-.sage-banner__link {
-  &.sage-banner__btn {
-    text-decoration: none;
-  }
+.sage-banner__link--btn {
+  text-decoration: none;
 }
 
 .sage-banner__close {
