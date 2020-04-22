@@ -5,6 +5,7 @@ module Sage
     def sage_utilities
       [
         # Sage Generated Utilities
+        { title: "spacer" },
         { title: "media" },
       ]
     end
