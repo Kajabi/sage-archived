@@ -63,14 +63,3 @@ $-banner-colors: (
   text-decoration: none;
 }
 
-.sage-banner__close {
-  box-shadow: none;
-
-  &:focus,
-  &:active,
-  &:hover {
-    color: inherit;
-    box-shadow: none;
-  }
-}
-
