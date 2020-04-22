@@ -68,12 +68,6 @@ input[type="search"] {
     opacity: 0;
   }
 
-  &:hover,
-  &:focus,
-  &:active {
-    color: sage-color(charcoal, 200);
-  }
-
   &:focus {
     box-shadow: $sage-btn-shadow-base;
     outline: none;
@@ -104,7 +98,7 @@ input[type="search"] {
 .sage-btn--small {
   @extend %t-sage-body-small-med;
 
-  padding-top: sage-spacing(xs);
+  padding-top: rem(9px); // add 1px to offset odd line-height #
   padding-bottom: sage-spacing(xs);
 }
 
