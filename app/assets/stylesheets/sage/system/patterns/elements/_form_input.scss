@@ -6,7 +6,6 @@
 
 .sage-input {
   position: relative;
-  height: $sage-inputfield-height;
 
   &:not(:last-child) {
     margin-bottom: $sage-inputfield-spacing;
@@ -18,8 +17,6 @@
 
   position: absolute;
   transform: translateY(calc(#{$sage-body-font-size} * -1));
-  left: $sage-inputfield-padding-x;
-  top: 50%;
   padding-left: $sage-inputfield-padding-label;
   padding-right: $sage-inputfield-padding-label;
   color: inherit;
@@ -28,6 +25,9 @@
   background-color: $sage-inputfield-bg-label;
   pointer-events: none;
   opacity: 0;
+  line-height: initial;
+
+  @include position(($sage-inputfield-height / 2), unset, unset, $sage-inputfield-padding-x);
 
   @media screen and (min-width: sage-breakpoint(sm-min)) {
     white-space: normal;
@@ -42,7 +42,7 @@
     opacity: 1;
   }
 
-  height: 100%;
+  height: $sage-inputfield-height;
   width: 100%;
   padding: $sage-inputfield-padding-offset $sage-inputfield-padding;
   color: $sage-inputfield-color-default;
@@ -78,7 +78,6 @@
     }
   }
 
-  // TODO: add support for Simpleform classes
   &:valid:not(:placeholder-shown) {
     border-color: $sage-inputfield-color-success;
     box-shadow: $sage-inputfield-box-shadow-size $sage-inputfield-color-success;
@@ -88,7 +87,8 @@
     }
   }
 
-  // TODO: add support for Simpleform classes
+  .sage-input--error &,
+  .sage-input--error &:not(:placeholder-shown),
   &:required:not(:placeholder-shown):not(:valid) {
     border-color: $sage-inputfield-color-error;
     box-shadow: $sage-inputfield-box-shadow-size $sage-inputfield-color-error;
@@ -105,6 +105,13 @@
   }
 }
 
+.sage-input__message {
+  @extend %t-sage-body-small;
+
+  .sage-input--error & {
+    color: $sage-inputfield-color-error;
+  }
+}
 
 @media (prefers-reduced-motion: reduce) {
   .sage-input__label,
