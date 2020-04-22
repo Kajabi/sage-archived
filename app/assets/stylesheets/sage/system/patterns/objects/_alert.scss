@@ -5,10 +5,10 @@
 ================================================== */
 
 $-alert-colors: (
-  primary: primary,
+  info: primary,
   success: sage,
   warning: yellow,
-  danger: red
+  danger: red,
 );
 
 .sage-alert {
@@ -23,15 +23,15 @@ $-alert-colors: (
   box-shadow: sage-shadow();
 }
 
-.sage-alert-copy {
-  padding-right: rem(16px);
-}
-
 @each $name, $color in $-alert-colors {
   .sage-alert--#{$name} {
     border-color: sage-color($color);
     background: sage-color($color, 100);
   }
+}
+
+.sage-alert-copy {
+  padding-right: rem(16px);
 }
 
 .sage-alert__title {
@@ -45,7 +45,7 @@ $-alert-colors: (
 }
 
 .sage-alert__desc {
-  color: sage-color(charcoal, 300);
+  color: sage-color(charcoal, 400);
   @extend %t-sage-body-small;
   @each $name, $color in $-alert-colors {
     .sage-alert--#{$name} & {
@@ -56,7 +56,8 @@ $-alert-colors: (
 
 .sage-alert__icon {
   transform: translateY(rem(2px));
-  margin-right: rem(16px);
+  margin: 0 rem(16px) 0 0;
+  color: sage-color(charcoal, 200);
   @each $name, $color in $-alert-colors {
     .sage-alert--#{$name} & {
       color: sage-color($color, 300);
@@ -65,11 +66,12 @@ $-alert-colors: (
 }
 
 .sage-alert__close {
-  transform: translateY(rem(-2px));
+  overflow: hidden;
   position: absolute;
-  top: 0;
-  right: 0;
-  padding: sage-spacing();
+  top: sage-spacing();
+  right: sage-spacing();
+  height: 30px;
+  padding: 0;
   font-size: rem(28px);
   line-height: 1;
   background-color: transparent;
