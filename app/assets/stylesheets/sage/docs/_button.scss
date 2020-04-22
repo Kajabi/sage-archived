@@ -1,0 +1,13 @@
+/* ==================================================
+  ** _button.scss
+
+  For Sage documentation use
+================================================== */
+
+
+.sage-btn {
+  .example__preview & {
+    margin-bottom: sage-spacing(sm);
+    margin-left: sage-spacing(sm);
+  }
+}
