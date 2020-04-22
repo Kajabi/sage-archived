@@ -249,6 +249,16 @@ input[type="search"] {
   }
 }
 
+.sage-btn--link {
+  box-shadow: none;
+
+  &:focus,
+  &:active,
+  &:hover {
+    box-shadow: none;
+  }
+}
+
 @mixin button-icon-generator($direction) {
   $right: null;
 
