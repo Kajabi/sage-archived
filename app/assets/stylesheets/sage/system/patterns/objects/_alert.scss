@@ -12,6 +12,8 @@ $-alert-colors: (
 );
 
 .sage-alert {
+  display: flex;
+  position: relative;
   margin-bottom: sage-spacing();
   padding: sage-spacing();
   background: sage-color(gray, 200);
@@ -25,6 +27,16 @@ $-alert-colors: (
   .sage-alert--#{$name} {
     border-color: sage-color($color);
     background: sage-color($color, 100);
+  }
+}
+
+.sage-alert__icon {
+  transform: translateY(rem(2px));
+  margin-right: rem(16px);
+  @each $name, $color in $-alert-colors {
+    .sage-alert--#{$name} & {
+      color: sage-color($color, 300);
+    }
   }
 }
 
