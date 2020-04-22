@@ -1,0 +1,8 @@
+<div class="sage-alert<%= color != "" ? " sage-alert--#{color}" : "" %>">
+  <% if sage_icon_name != "" %><i class="sage-alert__icon <%= sage_icon_name %>" aria-hidden="true"></i><% end %>
+  <div class="sage-alert-copy">
+    <p class="sage-alert__title"><%= sage_alert_title %></p>
+    <p class="sage-alert__desc"><%= sage_alert_desc %></p>
+    <% if dismissable %><button type="button" class="sage-alert__close" aria-label="Close"><span aria-hidden="true">&times;</span></button><% end %>
+  </div>
+</div>
