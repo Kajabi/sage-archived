@@ -41,6 +41,7 @@ $-banner-colors: (
 .sage-banner__text {
   display: inline-flex;
   align-items: center;
+  margin-right: sage-spacing(xs);
   color: inherit;
 }
 
@@ -54,7 +55,6 @@ $-banner-colors: (
 
 .sage-banner__link,
 .sage-banner__close {
-  margin: 0 0 0 sage-spacing(2xs);
   color: inherit;
   text-decoration: underline;
 }
@@ -65,11 +65,7 @@ $-banner-colors: (
   }
 }
 
-.sage-banner__btn {
-  // TODO: may replace with new .sage-btn styles
-  padding: sage-spacing(xs) sage-spacing(sm);
-  font-size: sage-font-size(sm);
-  font-weight: inherit;
+.sage-banner__close {
   box-shadow: none;
 
   &:focus,
@@ -79,3 +75,4 @@ $-banner-colors: (
     box-shadow: none;
   }
 }
+
