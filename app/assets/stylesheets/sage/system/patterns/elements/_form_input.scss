@@ -105,6 +105,13 @@
   }
 }
 
+.sage-input__message {
+  @extend %t-sage-body-small;
+
+  .sage-input--error & {
+    color: $sage-inputfield-color-error;
+  }
+}
 
 @media (prefers-reduced-motion: reduce) {
   .sage-input__label,

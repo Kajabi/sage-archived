@@ -128,7 +128,7 @@
 
 @function _position-print-value($key, $value) {
   @if not $value {
-    @error 'position() mixin requires all 4 position values (top, right, bottom, left): #{$key} is missing.';
+    @error "position() mixin requires all 4 position values (top, right, bottom, left): #{$key} is missing or invalid.";
   } @else if $value != unset {
     @return $value;
   } @else {
