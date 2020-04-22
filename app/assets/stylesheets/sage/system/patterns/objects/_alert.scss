@@ -23,10 +23,34 @@ $-alert-colors: (
   box-shadow: sage-shadow();
 }
 
+.sage-alert-copy {
+  padding-right: rem(16px);
+}
+
 @each $name, $color in $-alert-colors {
   .sage-alert--#{$name} {
     border-color: sage-color($color);
     background: sage-color($color, 100);
+  }
+}
+
+.sage-alert__title {
+  color: sage-color(charcoal, 500);
+  @extend %t-sage-body-semi;
+  @each $name, $color in $-alert-colors {
+    .sage-alert--#{$name} & {
+      color: sage-color($color, 500);
+    }
+  }
+}
+
+.sage-alert__desc {
+  color: sage-color(charcoal, 300);
+  @extend %t-sage-body-small;
+  @each $name, $color in $-alert-colors {
+    .sage-alert--#{$name} & {
+      color: sage-color($color, 400);
+    }
   }
 }
 
@@ -40,26 +64,23 @@ $-alert-colors: (
   }
 }
 
-.sage-alert__title {
-  color: sage-color(charcoal, 500);
-
-  @extend %t-sage-body-semi;
-
-  @each $name, $color in $-alert-colors {
-    .sage-alert--#{$name} & {
-      color: sage-color($color, 500);
-    }
-  }
-}
-
-.sage-alert__copy {
-  color: sage-color(charcoal, 300);
-
-  @extend %t-sage-body-small;
-
+.sage-alert__close {
+  transform: translateY(rem(-2px));
+  position: absolute;
+  top: sage-spacing();
+  right: sage-spacing();
+  padding: 0;
+  font-size: rem(28px);
+  line-height: 1;
+  background-color: transparent;
+  border: 0;
+  appearance: none;
   @each $name, $color in $-alert-colors {
     .sage-alert--#{$name} & {
       color: sage-color($color, 400);
     }
+  }
+  &:hover {
+    opacity: 0.7;
   }
 }
