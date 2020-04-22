@@ -8,10 +8,10 @@
     </p>
   <% end %>
   <% if link and link_url %>
-    <a href="<%= link_url %>" class="<% if link_is_button %>sage-btn sage-btn--secondary sage-banner__btn <% end %>sage-banner__link">
+    <a href="<%= link_url %>" class="sage-banner__link<% if link_is_button %> sage-btn sage-btn--small sage-btn--secondary sage-banner__link--btn<% end %>">
       <%= link_text != "" ? " #{link_text}" : "link" -%>
     </a>
   <% elsif dismissable %>
-    <button class="sage-btn sage-banner__btn sage-banner__close"><%= dismiss_text != "" ? " #{dismiss_text}" : "" %></button>
+    <button class="sage-btn sage-btn--small sage-btn--link sage-banner__close"><%= dismiss_text != "" ? " #{dismiss_text}" : "" %></button>
   <% end %>
 </div>

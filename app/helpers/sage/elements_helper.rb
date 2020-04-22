@@ -171,13 +171,13 @@ module Sage
         },
         {
           title: "button",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+          description: "Standard button styling with multiple display options. Can be applied on both button and link elements.",
           scss_design:  "done",
           scss_dev:     "done",
-          scss_doc:     "todo",
-          rails_design: "no",
-          rails_dev:    "no",
-          rails_doc:    "no",
+          scss_doc:     "done",
+          rails_design: "done",
+          rails_dev:    "done",
+          rails_doc:    "done",
           react_design: "no",
           react_dev:    "no",
           react_doc:    "no"
