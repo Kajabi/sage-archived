@@ -8,6 +8,7 @@
 .sage-btn {
   .example__preview:not(.example__preview--page) & {
     margin-bottom: sage-spacing(sm);
-    margin-left: sage-spacing(xs);
+    margin-left: 0;
+    margin-right: sage-spacing(xs);
   }
 }

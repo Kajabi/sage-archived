@@ -96,10 +96,9 @@ input[type="search"] {
 }
 
 .sage-btn--small {
-  @extend %t-sage-body-small-med;
-
   padding-top: rem(9px); // add 1px to offset odd line-height #
   padding-bottom: sage-spacing(xs);
+  font-size: sage-font-size(sm);
 }
 
 .sage-btn--full-width {
