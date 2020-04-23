@@ -20,40 +20,51 @@ Sage.Dropdown.prototype = {
       optionSelected: 'sage-dropdown__option--selected',
       optionHidden: 'sage-dropdown__option--hidden',
       optionFocus: 'sage-dropdown__option--focused',
-      overlay: 'sage-dropdown__overlay',
     }
 
-    this.elements.field.addEventListener('click', () => this.toggle());
+    this.htmlInit();
+
+    this.elements.field.addEventListener('click', () => {
+      if (this.elements.search == document.activeElement) {
+        this.elements.search.blur()
+      } else {
+        this.elements.search.active()
+      }
+    });
+
+    this.elements.search.addEventListener('blur', () => this.showDropdown(false));
+    this.elements.search.addEventListener('focus', () => this.showDropdown(true));
 
     this.elements.options.forEach(item => {
-      item.addEventListener('click', evt => this.setSelectedOption(evt.currentTarget));
+      item.addEventListener('click', (evt) => {
+        this.showDropdown(false);
+      });
     });
   },
 
-  toggle() {
-    const parentClassList = this.elements.parent.classList;
-
-    if (parentClassList.contains(this.classNames.parentActive) ) {
-      parentClassList.remove(this.classNames.parentActive);
-      this.clickOverlay(false);
-      this.bindKeyboardListener(false);
-      this.filter('');
-      this.elements.search.value = '';
-    } else {
-      parentClassList.add(this.classNames.parentActive);
-      this.clickOverlay(true);
-      this.bindKeyboardListener(true);
-      this.setFocusedOption(this.getSelectedOption() || this.elements.options[0]);
-      this.elements.search.focus();
-    }
+  htmlInit() {
+    this.elements.search.setAttribute("tabIndex", 0);
+    this.elements.field.setAttribute("tabIndex", -1);
+    this.elements.field.setAttribute("readonly", true);
   },
 
-  bindKeyboardListener(bool) {
-    if (bool) {
+  showDropdown(show) {
+    const parentClassList = this.elements.parent.classList;
+
+    if (show) {
+      parentClassList.add(this.classNames.parentActive);
+      this.setFocusedOption(this.getSelectedOption() || this.elements.options[0]);
+
       document.addEventListener('keyup', window.Sage.DropdownKeyboardListener = function fn(evt) {
+        evt.preventDefault();
         this.keyAction(evt);
-      }.bind(this), false);
+    }.bind(this), false);
+
     } else {
+      parentClassList.remove(this.classNames.parentActive);
+      this.filter('');
+      this.elements.search.value = '';
+
       document.removeEventListener('keyup', window.Sage.DropdownKeyboardListener, false);
     }
   },
@@ -97,7 +108,6 @@ Sage.Dropdown.prototype = {
   setSelectedOption: function(elOption) {
     const parentClassList = this.elements.parent.classList;
 
-    this.toggle();
     this.elements.field.value = elOption.dataset.jsSagedropdownOption;
 
     this.elements.options.forEach(elOption => {
@@ -109,24 +119,6 @@ Sage.Dropdown.prototype = {
       elOption.classList.add(this.classNames.optionSelected);
     } else {
       parentClassList.remove(this.classNames.parentSelected);
-    }
-  },
-
-  // -----------------------------
-
-  clickOverlay(bool) {
-    if (bool) {
-      const el = document.createElement('div');
-      el.className = this.classNames.overlay;
-      this.elements.parent.appendChild(el);
-
-      el.addEventListener('click', el.clickListener = function fn() {
-        this.toggle()
-      }.bind(this), false);
-    } else {
-      const el = this.elements.parent.getElementsByClassName(this.classNames.overlay)[0];
-      el.removeEventListener('click', el.clickListener, false);
-      this.elements.parent.removeChild(el);
     }
   },
 
@@ -148,23 +140,17 @@ Sage.Dropdown.prototype = {
   keyAction(evt) {
     switch(evt.key) {
       case 'Escape':
-        evt.preventDefault();
-        this.toggle();
-      break;
-      case 'Tab':
-        this.toggle();
+        this.showDropdown(false);
       break;
       case 'ArrowDown':
-        evt.preventDefault();
         this.keyboardFocusDirection('down');
         break;
       case 'ArrowUp':
-        evt.preventDefault();
         this.keyboardFocusDirection('up');
       break;
       case 'Enter':
-        evt.preventDefault();
         this.setSelectedOption(this.getFocusedOption());
+        this.showDropdown(false);
       break;
       default:
         this.filter(this.elements.search.value);

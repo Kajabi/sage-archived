@@ -124,7 +124,6 @@
   z-index: 1000000;
   position: relative;
   box-shadow: sage-shadow(sm);
-  visibility: hidden;
   opacity: 0;
   top: 0;
   overflow: hidden;
@@ -239,17 +238,4 @@
   &.sage-dropdown__option--focused.sage-dropdown__option--selected:hover {
     box-shadow: inset 2px 0 0 1px sage-color(primary);
   }
-}
-
-.sage-dropdown__overlay {
-  background: transparent;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-
-  // @supports (backdrop-filter: blur(10px)) {
-  //   backdrop-filter: $sage-overlay-backdrop-filter;
-  // }
 }
