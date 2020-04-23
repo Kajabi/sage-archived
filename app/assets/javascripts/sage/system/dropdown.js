@@ -25,51 +25,67 @@ Sage.Dropdown.prototype = {
     this.htmlInit();
 
     this.elements.field.addEventListener('click', () => {
-      if (this.elements.search == document.activeElement) {
+      if (this.isDropdownActive()) {
         this.elements.search.blur()
       } else {
-        this.elements.search.active()
+        this.elements.search.focus()
       }
     });
 
-    this.elements.search.addEventListener('blur', () => this.showDropdown(false));
-    this.elements.search.addEventListener('focus', () => this.showDropdown(true));
+    this.elements.search.addEventListener('blur', () => this.setDropdownActive(false));
+    this.elements.search.addEventListener('focus', () => this.setDropdownActive(true));
 
     this.elements.options.forEach(item => {
       item.addEventListener('click', (evt) => {
-        this.showDropdown(false);
+        this.setDropdownActive(false);
       });
     });
   },
 
   htmlInit() {
+    // Keyboard Focus -------------------
+    // Note: Dropdown show/hide is tied to the focus of the search field
+    //       removing these breaks the show/hide functionality.
     this.elements.search.setAttribute("tabIndex", 0);
     this.elements.field.setAttribute("tabIndex", -1);
     this.elements.field.setAttribute("readonly", true);
+    // Keyboard Focus End ---------------
+
+    // A11Y -----------------------------
+    const uniqId = this.elements.parent.name;
+
+    this.elements.parent.setAttribute("aria-haspopup", "listbox");
+    this.elements.parent.setAttribute("role", "combobox");
+    this.elements.parent.setAttribute("aria-owns", uniqId);
+
+    this.elements.optionContainer.setAttribute("role", "listbox");
+    this.elements.optionContainer.id = uniqId;
+    // A11Y End -------------------------
   },
 
-  showDropdown(show) {
-    const parentClassList = this.elements.parent.classList;
+  // Getters & Setters ------------------
+  isDropdownActive(){
+    this.elements.parent.classList.contains(this.classNames.parentSelected)
+  },
 
-    if (show) {
-      parentClassList.add(this.classNames.parentActive);
+  setDropdownActive(show) {
+    if (show && !this.isDropdownActive()) {
+      this.elements.parent.classList.add(this.classNames.parentActive);
       this.setFocusedOption(this.getSelectedOption() || this.elements.options[0]);
 
       document.addEventListener('keyup', window.Sage.DropdownKeyboardListener = function fn(evt) {
         evt.preventDefault();
         this.keyAction(evt);
-    }.bind(this), false);
+      }.bind(this), false);
 
-    } else {
-      parentClassList.remove(this.classNames.parentActive);
+    } else if (!show && this.isDropdownActive()) {
+      this.elements.parent.classList.remove(this.classNames.parentActive);
       this.filter('');
       this.elements.search.value = '';
 
       document.removeEventListener('keyup', window.Sage.DropdownKeyboardListener, false);
     }
   },
-
-  // GETTERS & SETTERS -----------
 
   getVisibleOptions(){
     return this.elements.options.filter(elOption =>
@@ -121,6 +137,7 @@ Sage.Dropdown.prototype = {
       parentClassList.remove(this.classNames.parentSelected);
     }
   },
+  // Getters & Setters End -----------------
 
   filter(value) {
     this.elements.options.forEach(elOption => {
@@ -140,7 +157,7 @@ Sage.Dropdown.prototype = {
   keyAction(evt) {
     switch(evt.key) {
       case 'Escape':
-        this.showDropdown(false);
+        this.setDropdownActive(false);
       break;
       case 'ArrowDown':
         this.keyboardFocusDirection('down');
@@ -150,7 +167,7 @@ Sage.Dropdown.prototype = {
       break;
       case 'Enter':
         this.setSelectedOption(this.getFocusedOption());
-        this.showDropdown(false);
+        this.setDropdownActive(false);
       break;
       default:
         this.filter(this.elements.search.value);
