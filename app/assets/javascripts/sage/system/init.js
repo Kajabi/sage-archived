@@ -18,4 +18,9 @@ Sage.init = function(elementNamesToInit) {
     Sage.overlay.init();
   }
 
+   // Initialize Alert
+   if ( shouldInit('alert', '.sage-alert') ) {
+    Sage.alert.init();
+  }
+
 }
