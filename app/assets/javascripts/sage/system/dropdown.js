@@ -15,7 +15,7 @@ Sage.Dropdown.prototype = {
     };
 
     this.classNames = {
-      parentSelected: 'sage-dropdown--selected',
+      parentHasValue: 'sage-dropdown--has-value',
       parentActive: 'sage-dropdown--active',
       optionSelected: 'sage-dropdown__option--selected',
       optionHidden: 'sage-dropdown__option--hidden',
@@ -23,35 +23,27 @@ Sage.Dropdown.prototype = {
     }
 
     this.htmlInit();
+    this.inputFieldInit();
+    this.bindOpenClickHandler(true);
 
-    this.elements.field.addEventListener('click', () => {
-      if (this.isDropdownActive()) {
-        this.elements.search.blur()
-      } else {
-        this.elements.search.focus()
-      }
-    });
-
-    this.elements.search.addEventListener('blur', () => this.setDropdownActive(false));
     this.elements.search.addEventListener('focus', () => this.setDropdownActive(true));
+    this.elements.search.addEventListener('blur', () => this.setDropdownActive(false));
 
     this.elements.options.forEach(item => {
-      item.addEventListener('click', (evt) => {
-        this.setDropdownActive(false);
-      });
+      item.addEventListener('mousedown', (evt) => this.setSelectedOption(evt.currentTarget));
     });
   },
 
   htmlInit() {
-    // Keyboard Focus -------------------
+    // Keyboard Focus ---------------------------------
     // Note: Dropdown show/hide is tied to the focus of the search field
     //       removing these breaks the show/hide functionality.
     this.elements.search.setAttribute("tabIndex", 0);
     this.elements.field.setAttribute("tabIndex", -1);
     this.elements.field.setAttribute("readonly", true);
-    // Keyboard Focus End ---------------
+    // Keyboard Focus END -----------------------------
 
-    // A11Y -----------------------------
+    // A11Y -------------------------------------------
     const uniqId = this.elements.parent.name;
 
     this.elements.parent.setAttribute("aria-haspopup", "listbox");
@@ -60,31 +52,38 @@ Sage.Dropdown.prototype = {
 
     this.elements.optionContainer.setAttribute("role", "listbox");
     this.elements.optionContainer.id = uniqId;
-    // A11Y End -------------------------
+    // A11Y END ---------------------------------------
   },
 
-  // Getters & Setters ------------------
-  isDropdownActive(){
-    this.elements.parent.classList.contains(this.classNames.parentSelected)
-  },
-
-  setDropdownActive(show) {
-    if (show && !this.isDropdownActive()) {
-      this.elements.parent.classList.add(this.classNames.parentActive);
-      this.setFocusedOption(this.getSelectedOption() || this.elements.options[0]);
-
-      document.addEventListener('keyup', window.Sage.DropdownKeyboardListener = function fn(evt) {
-        evt.preventDefault();
-        this.keyAction(evt);
-      }.bind(this), false);
-
-    } else if (!show && this.isDropdownActive()) {
-      this.elements.parent.classList.remove(this.classNames.parentActive);
-      this.filter('');
-      this.elements.search.value = '';
-
-      document.removeEventListener('keyup', window.Sage.DropdownKeyboardListener, false);
+  // Auto-Select Value In Options On Init -------------
+  inputFieldInit() {
+    const fieldValue = this.elements.field.value;
+    if (fieldValue) {
+      this.setSelectedOption(
+        this.elements.options.filter(elOption => elOption.dataset.jsSagedropdownOption == fieldValue)
+      );
     }
+  },
+  // Auto-Select Value In Options On Init END ---------
+
+  // Bind Open Click Handler --------------------------
+  // Note: We undbind the click handler when the dropdown is active
+  //       to avoid conflicts with the search blur handle.
+  bindOpenClickHandler(bool){
+    if (bool) {
+      this.elements.parent.addEventListener('mousedown',  this.elements.parent._clickListener = function fn(evt) {
+        evt.preventDefault();
+        this.elements.search.focus();
+      }.bind(this), false);
+    } else if (!bool) {
+      this.elements.parent.removeEventListener('mousedown', this.elements.parent._clickListener, false);
+    }
+  },
+  // Bind Open Click Handler END ----------------------
+
+  // Getters & Setters --------------------------------
+  isDropdownActive(){
+    return !!this.elements.parent.classList.contains(this.classNames.parentActive)
   },
 
   getVisibleOptions(){
@@ -105,6 +104,26 @@ Sage.Dropdown.prototype = {
     )[0];
   },
 
+  setDropdownActive(show) {
+    if (show && !this.isDropdownActive()) {
+      this.bindOpenClickHandler(false);
+      this.elements.parent.classList.add(this.classNames.parentActive);
+      this.setFocusedOption(this.getSelectedOption() || this.elements.options[0]);
+
+      document.addEventListener('keyup', window.Sage._keyboardListenerDropdown = function fn(evt) {
+        this.keyAction(evt);
+      }.bind(this), false);
+
+    } else if (!show && this.isDropdownActive()) {
+      this.bindOpenClickHandler(true);
+      this.elements.parent.classList.remove(this.classNames.parentActive);
+      this.filter('');
+      this.elements.search.value = '';
+
+      document.removeEventListener('keyup', window.Sage._keyboardListenerDropdown, false);
+    }
+  },
+
   setFocusedOption(elOption){
     const removeAllFocused = () => {
       this.elements.options.forEach(elOption => {
@@ -123,7 +142,6 @@ Sage.Dropdown.prototype = {
 
   setSelectedOption: function(elOption) {
     const parentClassList = this.elements.parent.classList;
-
     this.elements.field.value = elOption.dataset.jsSagedropdownOption;
 
     this.elements.options.forEach(elOption => {
@@ -131,13 +149,13 @@ Sage.Dropdown.prototype = {
     });
 
     if (elOption.dataset.jsSagedropdownOption.length) {
-      parentClassList.add(this.classNames.parentSelected);
+      parentClassList.add(this.classNames.parentHasValue);
       elOption.classList.add(this.classNames.optionSelected);
     } else {
-      parentClassList.remove(this.classNames.parentSelected);
+      parentClassList.remove(this.classNames.parentHasValue);
     }
   },
-  // Getters & Setters End -----------------
+  // Getters & Setters END -------------------------------
 
   filter(value) {
     this.elements.options.forEach(elOption => {
