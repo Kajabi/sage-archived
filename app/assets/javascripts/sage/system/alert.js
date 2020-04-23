@@ -11,7 +11,7 @@ Sage.alert = (function () {
 
   alertCloseBtns.forEach(function (btn) {
     var alert = btn.closest(".sage-alert");
-    btn.addEventListener("click", function (e) {
+    btn.addEventListener("click", function () {
       alert.style.display = "none";
     });
   });
