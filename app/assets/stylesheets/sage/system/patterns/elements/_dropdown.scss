@@ -1,5 +1,5 @@
 /* ==================================================
-  ** dropdown
+  ** Dropdown
   type: element
 
 
@@ -8,7 +8,7 @@
 
 .sage-dropdown {
   position: relative;
-  height: $sage-dropdown-height;
+  height: $sage-dropdown-fieldheight;
 
   &:not(:last-child) {
     margin-bottom: $sage-dropdown-spacing;
@@ -37,11 +37,10 @@
 
 .sage-dropdown__field {
   position: relative;
-  height: 100%;
+  height: $sage-dropdown-fieldheight;
   width: 100%;
   padding: $sage-dropdown-padding-offset $sage-dropdown-padding-x;
   color: $sage-dropdown-color-default;
-  line-height: 1;
   appearance: none;
   border: $sage-dropdown-border-width solid $sage-dropdown-border-color;
   border-radius: $sage-dropdown-border-radius;
@@ -64,12 +63,11 @@
     box-shadow: $sage-dropdown-box-shadow-size $sage-dropdown-color-success;
     border-radius: $sage-dropdown-border-radius $sage-dropdown-border-radius 0 0;
     padding-bottom: $sage-dropdown-padding-filled;
-    z-index: 9999;
 
     @include placeholder { color: transparent; }
   }
 
-  .sage-dropdown--selected & {
+  .sage-dropdown--has-value & {
     padding-bottom: $sage-dropdown-padding-filled;
 
     @include placeholder { color: transparent; }
@@ -80,7 +78,7 @@
   @extend %t-sage-body-xsmall-semi;
 
   position: absolute;
-  transform: translateY(calc(#{$sage-body-font-size} * -1));
+  transform: translateY(calc(#{$sage-dropdown-font-size} * -1));
   left: $sage-dropdown-padding-x;
   padding: 0 $sage-dropdown-padding-label;
   font-weight: sage-font-weight(semibold);
@@ -91,26 +89,29 @@
   pointer-events: none;
   opacity: 0;
 
+  @include position(($sage-dropdown-fieldheight / 2), unset, unset, $sage-dropdown-padding-x);
+
   @media screen and (min-width: sage-breakpoint(sm-min)) {
     white-space: normal;
   }
 
-  @mixin floating-label {
-    transform: translateY(-($sage-body-font-size + $sage-dropdown-padding-filled)); // IE doesn't support calc in transforms
-    transform: translateY(calc(-50% - (#{$sage-body-font-size} - #{$sage-dropdown-padding-filled})));
+  @mixin floating-label-active {
+    transform: translateY(-($sage-dropdown-font-size + $sage-dropdown-padding-filled * 2)); // IE doesn't support calc in transforms so we provide a fallback
+    transform: translateY(calc(-50% - (#{$sage-dropdown-font-size} + #{$sage-dropdown-padding-filled}))); // we calculate the centered position minus the offset of the text height plus the spacing height
+    transition: opacity 0.1s ease-in, transform 0.15s ease-in-out, color 0.15s ease-out;
     opacity: 1;
   }
 
   .sage-dropdown:hover &,
   .sage-dropdown--active & {
-    @include floating-label();
+    @include floating-label-active();
 
     color: $sage-dropdown-color-success;
     transition: opacity 0.15s ease-out, transform 0.15s ease-in-out, color 0.15s ease-out;
   }
 
-  .sage-dropdown--selected & {
-    @include floating-label();
+  .sage-dropdown--has-value & {
+    @include floating-label-active();
 
     transition: opacity 0.15s ease-out, transform 0.15s ease-in-out, color 0.15s ease-out;
   }
@@ -121,7 +122,7 @@
   margin: 1px -1px 0;
   border-radius: 0 0 $sage-dropdown-border-radius $sage-dropdown-border-radius;
   background: sage-color(white);
-  z-index: 1000000;
+  z-index: sage-z-index(priority);
   position: relative;
   box-shadow: sage-shadow(sm);
   opacity: 0;
@@ -171,7 +172,7 @@
 }
 
 .sage-dropdown__search-field {
-  padding: sage-spacing(xs) $sage-dropdown-padding sage-spacing(xs) 44px;
+  padding: sage-spacing(xs) $sage-dropdown-padding sage-spacing(xs) rem(44px);
   appearance: none;
   border: 0;
   width: 100%;

@@ -179,7 +179,7 @@ Sage.Dropdown.prototype = {
   keyAction(evt) {
     switch(evt.key) {
       case 'Escape':
-        this.setDropdownActive(false);
+        this.elements.search.blur();
       break;
       case 'ArrowDown':
         this.keyboardFocusDirection('down');
@@ -189,7 +189,7 @@ Sage.Dropdown.prototype = {
       break;
       case 'Enter':
         this.setSelectedOption(this.getFocusedOption());
-        this.setDropdownActive(false);
+        this.elements.search.blur();
       break;
       default:
         this.filter(this.elements.search.value);
