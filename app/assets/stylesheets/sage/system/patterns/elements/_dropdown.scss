@@ -25,12 +25,12 @@
     color: sage-color(grey, 500);
   }
 
-  &.sage-dropdown--active::after {
+  &.sage-dropdown--active:not(.sage-dropdown--disabled)::after {
     @include icon-base(caret-up);
     color: sage-color(primary);
   }
 
-  &:hover::after {
+  &:not(.sage-dropdown--disabled):hover::after {
     color: sage-color(primary);
   }
 }
@@ -51,14 +51,14 @@
 
   @include placeholder { color: inherit; }
 
-  .sage-dropdown:hover & {
+  .sage-dropdown:not(.sage-dropdown--disabled):hover & {
     border-color: $sage-dropdown-color-success;
     box-shadow: $sage-dropdown-box-shadow-size $sage-dropdown-color-success;
 
     @include placeholder { color: transparent; }
   }
 
-  .sage-dropdown--active & {
+  .sage-dropdown--active:not(.sage-dropdown--disabled) & {
     border-color: $sage-dropdown-color-success;
     box-shadow: $sage-dropdown-box-shadow-size $sage-dropdown-color-success;
     border-radius: $sage-dropdown-border-radius $sage-dropdown-border-radius 0 0;
@@ -71,6 +71,12 @@
     padding-bottom: $sage-dropdown-padding-filled;
 
     @include placeholder { color: transparent; }
+  }
+
+  .sage-dropdown--disabled & {
+    color: $sage-dropdown-color-disabled;
+    background-color: $sage-dropdown-bg-disabled;
+    cursor: not-allowed;
   }
 }
 
@@ -102,8 +108,8 @@
     opacity: 1;
   }
 
-  .sage-dropdown:hover &,
-  .sage-dropdown--active & {
+  .sage-dropdown:hover:not(.sage-dropdown--disabled) &,
+  .sage-dropdown--active:not(.sage-dropdown--disabled) & {
     @include floating-label-active();
 
     color: $sage-dropdown-color-success;
@@ -150,7 +156,7 @@
     );
   }
 
-  .sage-dropdown--active & {
+  .sage-dropdown--active:not(.sage-dropdown--disabled) & {
     visibility: visible;
     opacity: 1;
     transform: scaleY(1);

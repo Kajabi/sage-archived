@@ -197,11 +197,10 @@ $sage-dropdown-spacing: sage-spacing(lg) !default;
 
 // Colors
 $sage-dropdown-color-default: $sage-inputfield-color-default !default;
-// $sage-dropdown-color-disabled: sage-color(grey, 400) !default;
+$sage-dropdown-color-disabled: sage-color(grey, 400) !default;
 $sage-dropdown-color-success: $sage-inputfield-color-success !default;
-// $sage-dropdown-color-error: sage-color(red) !default;
 $sage-dropdown-bg-label: sage-color(white) !default;
-// $sage-dropdown-bg-disabled: sage-color(grey, 100) !default;
+$sage-dropdown-bg-disabled: sage-color(grey, 100) !default;
 
 
 
