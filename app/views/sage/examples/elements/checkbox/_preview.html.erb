@@ -1,30 +1,48 @@
 <!-- Default -->
-<div class="sage-checkbox">
-  <input id="c1" type="checkbox" class="sage-checkbox__input">
-  <label for="c1" class="sage-checkbox__label">Checkbox</label>
-</div>
+<%= render "sage/examples/elements/checkbox/markup",
+id: "c1",
+label_text: "Checkbox",
+checked: false,
+disabled: false,
+has_error: false
+%>
 <!-- Checked -->
-<div class="sage-checkbox">
-  <input id="c2" type="checkbox" class="sage-checkbox__input" checked>
-  <label for="c2" class="sage-checkbox__label">Checked</label>
-</div>
+<%= render "sage/examples/elements/checkbox/markup",
+id: "c2",
+label_text: "Checked",
+checked: true,
+disabled: false,
+has_error: false
+%>
 <!-- Disabled -->
-<div class="sage-checkbox">
-  <input id="c3" type="checkbox" class="sage-checkbox__input" disabled>
-  <label for="c3" class="sage-checkbox__label">Disabled</label>
-</div>
+<%= render "sage/examples/elements/checkbox/markup",
+id: "c3",
+label_text: "Disabled",
+checked: false,
+disabled: true,
+has_error: false
+%>
 <!-- Checked & Disabled -->
-<div class="sage-checkbox">
-  <input id="c4" type="checkbox" class="sage-checkbox__input" checked disabled>
-  <label for="c4" class="sage-checkbox__label">Checked and disabled</label>
-</div>
+<%= render "sage/examples/elements/checkbox/markup",
+id: "c4",
+label_text: "Checked and disabled",
+checked: true,
+disabled: true,
+has_error: false
+%>
 <!-- Error -->
-<div class="sage-checkbox sage-checkbox--error">
-  <input id="c5" type="checkbox" class="sage-checkbox__input">
-  <label for="c5" class="sage-checkbox__label">Error</label>
-</div>
+<%= render "sage/examples/elements/checkbox/markup",
+id: "c5",
+label_text: "Error",
+checked: false,
+disabled: false,
+has_error: true
+%>
 <!-- Checked & Error -->
-<div class="sage-checkbox sage-checkbox--error">
-  <input id="c6" type="checkbox" class="sage-checkbox__input" checked>
-  <label for="c6" class="sage-checkbox__label">Checked &amp; Error</label>
-</div>
+<%= render "sage/examples/elements/checkbox/markup",
+id: "c6",
+label_text: "Checked & Error",
+checked: true,
+disabled: false,
+has_error: true
+%>
