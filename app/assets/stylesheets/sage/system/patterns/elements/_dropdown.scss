@@ -213,7 +213,7 @@
 
   &:hover:not(.sage-dropdown__option--selected):not(.sage-dropdown__option--focused) {
     box-shadow: inset 2px 0 0 0 sage-color(primary);
-    background: sage-color(grey, 100);
+    background: sage-color(grey, 200);
   }
 
   // Selected
@@ -233,6 +233,7 @@
 
   &.sage-dropdown__option--focused:not(.sage-dropdown__option--selected):hover {
     box-shadow: inset 2px 0 0 1px sage-color(primary);
+    background: sage-color(grey, 200);
   }
 
   // Selected & Keyboard-Focused
