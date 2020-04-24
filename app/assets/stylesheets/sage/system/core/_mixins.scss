@@ -116,7 +116,6 @@
   Usage: `@include position-full(10px, auto, unset, auto);`
 
   Sets an element's position with margin/padding shorthand (top, right, bottom, left)
-
   arguments: $top, $right, $bottom, $left | [length]
 ================================================== */
 
@@ -130,9 +129,11 @@
 @function _position-print-value($key, $value) {
   @if not $value {
     @error "position() mixin requires all 4 position values (top, right, bottom, left): #{$key} is missing or invalid.";
-  } @else if $value != unset {
+  }
+  @else if $value != unset {
     @return $value;
-  } @else {
+  }
+  @else {
     @return false;
   }
 }

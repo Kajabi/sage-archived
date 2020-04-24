@@ -3,7 +3,6 @@
   type: element
 
 
-
 ================================================== */
 
 .sage-dropdown {
@@ -16,12 +15,11 @@
 
   &::after {
     @include icon-base(caret-down);
-    top: 0;
-    bottom: 0;
+    @include position(0, unset, 0, unset);
     right: sage-spacing(sm);
-    margin: auto 0;
     position: absolute;
     align-items: center;
+    margin: auto 0;
     color: sage-color(grey, 500);
   }
 
@@ -45,32 +43,40 @@
   border: $sage-dropdown-border-width solid $sage-dropdown-border-color;
   border-radius: $sage-dropdown-border-radius;
   background: transparent;
+  outline: none;
   transition: border 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
   cursor: context-menu;
-  outline: none;
 
-  @include placeholder { color: inherit; }
+  @include placeholder {
+    color: inherit;
+  }
 
   .sage-dropdown:not(.sage-dropdown--disabled):hover & {
     border-color: $sage-dropdown-color-success;
     box-shadow: $sage-dropdown-box-shadow-size $sage-dropdown-color-success;
 
-    @include placeholder { color: transparent; }
+    @include placeholder {
+      color: transparent;
+    }
   }
 
   .sage-dropdown--active:not(.sage-dropdown--disabled) & {
+    padding-bottom: $sage-dropdown-padding-filled;
     border-color: $sage-dropdown-color-success;
     box-shadow: $sage-dropdown-box-shadow-size $sage-dropdown-color-success;
     border-radius: $sage-dropdown-border-radius $sage-dropdown-border-radius 0 0;
-    padding-bottom: $sage-dropdown-padding-filled;
 
-    @include placeholder { color: transparent; }
+    @include placeholder {
+      color: transparent;
+    }
   }
 
   .sage-dropdown--has-value & {
     padding-bottom: $sage-dropdown-padding-filled;
 
-    @include placeholder { color: transparent; }
+    @include placeholder {
+      color: transparent;
+    }
   }
 
   .sage-dropdown--disabled & {
@@ -85,10 +91,8 @@
 
   position: absolute;
   transform: translateY(calc(#{$sage-dropdown-font-size} * -1));
-  left: $sage-dropdown-padding-x;
   padding: 0 $sage-dropdown-padding-label;
   font-weight: sage-font-weight(semibold);
-  top: 50%;
   white-space: nowrap;
   color: inherit;
   background-color: $sage-dropdown-bg-label;
@@ -124,42 +128,40 @@
 }
 
 .sage-dropdown__dropdown {
-  padding: 0;
-  margin: 1px -1px 0;
-  border-radius: 0 0 $sage-dropdown-border-radius $sage-dropdown-border-radius;
-  background: sage-color(white);
+  @include position(0, unset, unset, unset);
   z-index: sage-z-index(priority);
   position: relative;
-  box-shadow: sage-shadow(sm);
-  opacity: 0;
-  top: 0;
   overflow: hidden;
   transform: scaleY(0);
+  padding: 0;
   transform-origin: top;
+  margin: $sage-dropdown-border-width -$sage-dropdown-border-width 0;
+  border-radius: 0 0 $sage-dropdown-border-radius $sage-dropdown-border-radius;
+  background: sage-color(white);
+  box-shadow: sage-shadow(sm);
+  transition: 0.15s opacity ease-in-out, 0.15s transform ease-in-out;
+  opacity: 0;
   will-change: opacity, transform, visibility;
-  transition: 0.15s opacity ease-in-out,
-              0.15s transform ease-in-out;
 
   &::after {
     $-height: 20px;
 
+    @include position(unset, 0, 0, 0);
     content: "";
-    bottom: 0;
-    left: 0;
-    right: 0;
+    position: absolute;
     width: 100%;
     height: $-height;
-    position: absolute;
     background: linear-gradient(
       rgba(sage-color(white), 0),
       rgba(sage-color(white), 1)
     );
+
   }
 
   .sage-dropdown--active:not(.sage-dropdown--disabled) & {
     visibility: visible;
-    opacity: 1;
     transform: scaleY(1);
+    opacity: 1;
   }
 }
 
@@ -168,20 +170,18 @@
 
   &::before {
     @include icon-base(search);
+    @include position(0, unset, 0, $sage-dropdown-padding);
     position: absolute;
-    top: 0;
-    bottom: 0;
-    left: $sage-dropdown-padding;
-    color: sage-color(grey, 500);
     align-items: center;
+    color: sage-color(grey, 500);
   }
 }
 
 .sage-dropdown__search-field {
+  width: 100%;
   padding: sage-spacing(xs) $sage-dropdown-padding sage-spacing(xs) rem(44px);
   appearance: none;
   border: 0;
-  width: 100%;
   outline: none;
   border-bottom: $sage-dropdown-border-width solid $sage-dropdown-border-color;
 
@@ -193,11 +193,10 @@
 }
 
 .sage-dropdown__option-container {
-  padding: 0;
-  margin: 0;
   overflow: scroll;
-  scroll-behavior: smooth;
   max-height: 300px;
+  margin: 0;
+  scroll-behavior: smooth;
   padding: 0 0 sage-spacing(sm);
 }
 
