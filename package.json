@@ -12,7 +12,7 @@
     "dummy": "cd test/dummy && rails s",
     "sync": "browser-sync start --port 4000 --proxy localhost:3000 --files 'app/**/*.*' --startPath 'sage/pages/index'",
     "stylelint": "stylelint \"**/*.scss\"",
-    "start": "npm-run-all -p dummy sync"
+    "start": "npm-run-all -p dummy stylelint sync"
   },
   "repository": {
     "type": "git",
