@@ -1,13 +1,45 @@
-<!-- Dark tooltip -->
-<button class="sage-btn sage-btn--secondary" data-tooltip="Tooltip on top" data-position="top">Top</button>
-<button class="sage-btn sage-btn--secondary" data-tooltip="Tooltip on bottom" data-position="bottom">Bottom</button>
-<button class="sage-btn sage-btn--secondary" data-tooltip="Tooltip on left" data-position="left">Left</button>
-<button class="sage-btn sage-btn--secondary" data-tooltip="Tooltip on right" data-position="right">Right</button>
+<!-- Dark tooltips -->
+<%= render "sage/examples/elements/tooltip/markup",
+position: "top",
+text: "Tooltip on top",
+theme: ""
+%>
+<%= render "sage/examples/elements/tooltip/markup",
+position: "bottom",
+text: "Tooltip on bottom",
+theme: ""
+%>
+<%= render "sage/examples/elements/tooltip/markup",
+position: "left",
+text: "Tooltip on left",
+theme: ""
+%>
+<%= render "sage/examples/elements/tooltip/markup",
+position: "right",
+text: "Tooltip on right",
+theme: ""
+%>
 
-<br><br>
+<br/><br/>
 
-<!-- Light tooltip -->
-<button class="sage-btn sage-btn--secondary" data-tooltip="Tooltip on top" data-position="top" data-tooltip-theme="light">Top</button>
-<button class="sage-btn sage-btn--secondary" data-tooltip="Tooltip on bottom" data-position="bottom" data-tooltip-theme="light">Bottom</button>
-<button class="sage-btn sage-btn--secondary" data-tooltip="Tooltip on left" data-position="left" data-tooltip-theme="light">Left</button>
-<button class="sage-btn sage-btn--secondary" data-tooltip="Tooltip on right" data-position="right" data-tooltip-theme="light">Right</button>
+<!-- Light tooltips -->
+<%= render "sage/examples/elements/tooltip/markup",
+position: "top",
+text: "Tooltip on top",
+theme: "light"
+%>
+<%= render "sage/examples/elements/tooltip/markup",
+position: "bottom",
+text: "Tooltip on bottom",
+theme: "light"
+%>
+<%= render "sage/examples/elements/tooltip/markup",
+position: "left",
+text: "Tooltip on left",
+theme: "light"
+%>
+<%= render "sage/examples/elements/tooltip/markup",
+position: "right",
+text: "Tooltip on right",
+theme: "light"
+%>
