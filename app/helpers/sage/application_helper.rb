@@ -5,9 +5,5 @@ module Sage
       "#{key}" if current_page? path
     end
 
-    def sage_version
-      Sage::VERSION
-    end
-
   end
 end
