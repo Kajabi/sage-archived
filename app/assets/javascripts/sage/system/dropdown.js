@@ -112,6 +112,8 @@ Sage.Dropdown.prototype = {
       this.elements.parent.setAttribute("aria-expanded", true);
       this.elements.parent.classList.add(this.classNames.parentActive);
       this.setFocusedOption(this.getSelectedOption() || this.elements.options[0]);
+      this.filter('');
+      this.elements.search.value = '';
 
       document.addEventListener('keyup', window.Sage._keyboardListenerDropdown = function fn(evt) {
         this.keyAction(evt);
@@ -121,8 +123,6 @@ Sage.Dropdown.prototype = {
       this.elements.parent.setAttribute("aria-expanded", false);
       this.bindOpenClickHandler(true);
       this.elements.parent.classList.remove(this.classNames.parentActive);
-      this.filter('');
-      this.elements.search.value = '';
 
       document.removeEventListener('keyup', window.Sage._keyboardListenerDropdown, false);
     }
