@@ -22,6 +22,7 @@ Sage.Dropdown.prototype = {
       optionFocus: 'sage-dropdown__option--focused',
     }
 
+
     this.htmlInit();
     this.inputFieldInit();
     this.bindOpenClickHandler(true);
@@ -44,14 +45,15 @@ Sage.Dropdown.prototype = {
     // Keyboard Focus END -----------------------------
 
     // A11Y -------------------------------------------
-    const uniqId = this.elements.parent.name;
+    const UNIQUE_ID = this.elements.field.getAttribute("placeholder").replace(/\s/g, '');
 
     this.elements.parent.setAttribute("aria-haspopup", "listbox");
     this.elements.parent.setAttribute("role", "combobox");
-    this.elements.parent.setAttribute("aria-owns", uniqId);
+    this.elements.parent.setAttribute("aria-owns", UNIQUE_ID);
+    this.elements.parent.setAttribute("aria-expanded", false);
 
     this.elements.optionContainer.setAttribute("role", "listbox");
-    this.elements.optionContainer.id = uniqId;
+    this.elements.optionContainer.id = UNIQUE_ID;
     // A11Y END ---------------------------------------
   },
 
@@ -107,6 +109,7 @@ Sage.Dropdown.prototype = {
   setDropdownActive(show) {
     if (show && !this.isDropdownActive()) {
       this.bindOpenClickHandler(false);
+      this.elements.parent.setAttribute("aria-expanded", true);
       this.elements.parent.classList.add(this.classNames.parentActive);
       this.setFocusedOption(this.getSelectedOption() || this.elements.options[0]);
 
@@ -115,6 +118,7 @@ Sage.Dropdown.prototype = {
       }.bind(this), false);
 
     } else if (!show && this.isDropdownActive()) {
+      this.elements.parent.setAttribute("aria-expanded", false);
       this.bindOpenClickHandler(true);
       this.elements.parent.classList.remove(this.classNames.parentActive);
       this.filter('');
