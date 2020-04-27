@@ -1,8 +1,8 @@
 <div class="sage-switch">
-  <input id="<%= id %>" type="<%= type %>" class="sage-switch__input<%= has_error ? " sage-switch--error" : "" %>" name="<%= name %>" value="<%= id %>"<%= checked  ? " checked" : "" %><%= disabled ? " disabled" : "" %><%= required ? " required" : "" %>>
-  <label for="<%= id %>" class="sage-switch__label"><%= label_text %></label>
-  <% if message != "" %>
-  <div class="sage-switch__message">Additional Info</div>
-  <% else %>
-  <% end %>
-</div>
+      <input type="<%= type %>" id="<%= id %>" class="sage-switch__input<%= has_error ? " sage-switch--error" : "" %>" name="<%= name %>" value="<%= id %>"<%= checked  ? " checked" : "" %><%= disabled ? " disabled" : "" %><%= required ? " required" : "" %>>
+      <label for="<%= id %>" class="sage-switch__label"><%= label_text %></label>
+      <% if message != "" %>
+      <div class="sage-switch__message">Additional Info</div>
+      <% else %>
+      <% end %>
+    </div>
