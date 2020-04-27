@@ -1,24 +1,49 @@
 <!-- Default -->
-<div class="sage-radio">
-  <input id="r1" type="radio" class="sage-radio__input" name="radio1" value="1" checked>
-  <label for="r1" class="sage-radio__label">Option 1</label>
-</div>
-<div class="sage-radio">
-  <input id="r2" type="radio" class="sage-radio__input" name="radio1" value="2">
-  <label for="r2" class="sage-radio__label">Option 2</label>
-</div>
+<%= render "sage/examples/elements/radio/markup",
+id: "r1",
+name: "radio1",
+value: "1",
+label_text: "Option 1",
+checked: true,
+disabled: false,
+required: false
+%>
+<%= render "sage/examples/elements/radio/markup",
+id: "r2",
+name: "radio1",
+value: "2",
+label_text: "Option 2",
+checked: false,
+disabled: false,
+required: false
+%>
 <!-- Disabled -->
-<div class="sage-radio">
-  <input id="r3" type="radio" class="sage-radio__input" name="radio2" value="3" disabled>
-  <label for="r3" class="sage-radio__label">Disabled</label>
-</div>
+<%= render "sage/examples/elements/radio/markup",
+id: "r3",
+name: "radio2",
+value: "3",
+label_text: "Disabled",
+checked: false,
+disabled: true,
+required: false
+%>
 <!-- Checked & Disabled -->
-<div class="sage-radio">
-  <input id="r4" type="radio" class="sage-radio__input" name="radio3" value="4" checked disabled>
-  <label for="r4" class="sage-radio__label">Disabled and selected</label>
-</div>
+<%= render "sage/examples/elements/radio/markup",
+id: "r4",
+name: "radio3",
+value: "4",
+label_text: "Checked & Disabled",
+checked: true,
+disabled: true,
+required: false
+%>
 <!-- Errror -->
-<div class="sage-radio">
-  <input id="r5" type="radio" class="sage-radio__input" name="radio4" value="5" required>
-  <label for="r5" class="sage-radio__label">Error</label>
-</div>
+<%= render "sage/examples/elements/radio/markup",
+id: "r5",
+name: "radio4",
+value: "5",
+label_text: "Error",
+checked: false,
+disabled: false,
+required: true
+%>
