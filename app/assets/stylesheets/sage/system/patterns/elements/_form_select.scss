@@ -1,0 +1,65 @@
+/* ==================================================
+  ** _form_select.scss
+  type: element
+
+================================================== */
+
+.sage-select {
+  position: relative;
+
+  &:not(:last-child) {
+    margin-bottom: $sage-inputfield-spacing;
+  }
+}
+
+.sage-select__label {
+  position: absolute;
+  white-space: nowrap;
+  pointer-events: none;
+  line-height: initial;
+
+  @include position((($sage-inputfield-height / 2) - $sage-body-font-size), unset, unset, $sage-inputfield-padding-x);
+}
+
+%sage-select__label--active {
+  @extend %t-sage-body-xsmall-semi;
+
+  padding: 0 $sage-inputfield-padding-label;
+  color: inherit;
+  background-color: $sage-inputfield-bg-label;
+  transform: translateY(calc(-50% - (#{$sage-body-font-size} / 4)));
+  transition: transform 0.15s ease-in-out, color 0.15s ease-out;
+}
+
+%sage-select__label--inactive {
+  @extend %t-sage-body;
+
+  color: $sage-inputfield-color-default;
+}
+
+.sage-select__field {
+  height: $sage-inputfield-height;
+  width: 100%;
+  padding: $sage-inputfield-padding-offset $sage-inputfield-padding-x 0;
+  appearance: none;
+  color: transparent;
+  border: $sage-inputfield-border-width solid $sage-inputfield-border-color;
+  border-radius: $sage-inputfield-border-radius;
+  background: transparent;
+  outline: none;
+
+  &:not(:invalid) {
+    color: $sage-inputfield-color-default;
+    border-color: currentColor;
+
+    ~ .sage-select__label {
+      @extend %sage-select__label--active;
+    }
+  }
+
+  &:invalid {
+    ~ .sage-select__label {
+      @extend %sage-select__label--inactive;
+    }
+  }
+}
