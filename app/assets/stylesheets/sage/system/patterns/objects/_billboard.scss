@@ -12,7 +12,9 @@ $-billboard-title-spacing: sage-spacing(sm);
 .sage-billboard {
   display: flex;
   height: 100%;
-  background: $-billboard-background-color;
+  background-color: $-billboard-background-color;
+  background-position: center center;
+  background-size: cover;
   padding: $-billboard-spacing;
 }
 
