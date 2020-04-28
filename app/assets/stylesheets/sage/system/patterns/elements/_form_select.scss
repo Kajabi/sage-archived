@@ -29,12 +29,22 @@
   background-color: $sage-inputfield-bg-label;
   transform: translateY(calc(-50% - (#{$sage-body-font-size} / 4)));
   transition: transform 0.15s ease-in-out, color 0.15s ease-out;
+  color: $sage-inputfield-color-success;
 }
 
 %sage-select__label--inactive {
   @extend %t-sage-body;
 
   color: $sage-inputfield-color-default;
+}
+
+.sage-select__arrow::before {
+  @include icon-base(caret-down);
+  @include position(0, sage-spacing(sm), unset, unset);
+  position: absolute;
+  align-items: center;
+  height: $sage-inputfield-height;
+  color: sage-color(grey, 500);
 }
 
 .sage-select__field {
@@ -47,19 +57,58 @@
   border-radius: $sage-inputfield-border-radius;
   background: transparent;
   outline: none;
+  cursor: pointer;
 
-  &:not(:invalid) {
+  // The <Select> is set as [required] & therefore is invalid when the value
+  // is empty, we're mapping :invalid to "empty" for more legible code.
+  $empty: "invalid";
+
+  &:hover:#{$empty} {
+    border-color: sage-color(grey, 500);
+  }
+
+  &:hover {
+    ~ .sage-select__arrow::before {
+      color: $sage-inputfield-color-success;
+    }
+  }
+
+  &:not(:#{$empty}) {
     color: $sage-inputfield-color-default;
     border-color: currentColor;
+    border-color: $sage-inputfield-color-success;
+    box-shadow: $sage-inputfield-box-shadow-size $sage-inputfield-color-success;
 
     ~ .sage-select__label {
       @extend %sage-select__label--active;
     }
   }
 
-  &:invalid {
+  &:#{$empty} {
     ~ .sage-select__label {
       @extend %sage-select__label--inactive;
     }
+  }
+
+  .sage-select--error &,
+  .sage-select--error &:#{$empty} {
+    border-color: $sage-inputfield-color-error;
+    box-shadow: $sage-inputfield-box-shadow-size $sage-inputfield-color-error;
+
+    ~ .sage-select__arrow::before {
+      color: $sage-inputfield-color-error;
+    }
+
+    ~ .sage-select__label {
+      color: $sage-inputfield-color-error;
+    }
+  }
+}
+
+.sage-select__message {
+  @extend %t-sage-body-small;
+
+  .sage-select--error & {
+    color: $sage-inputfield-color-error;
   }
 }
