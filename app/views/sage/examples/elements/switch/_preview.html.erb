@@ -1,73 +1,172 @@
 <div class="sage-row">
   <div class="sage-col--md-6">
-    <!-- Default, checkbox -->
-    <div class="sage-switch">
-      <input type="checkbox" class="sage-switch__input" id="sage-switch-1" name="sage-switch-1" value="switch-1-value">
-      <label class="sage-switch__label" for="sage-switch-1">Switch (checkbox)</label>
-    </div>
-    <!-- Error -->
-    <div class="sage-switch sage-switch--error">
-      <input type="checkbox" class="sage-switch__input" id="sage-switch-6" name="sage-switch-6" value="switch-6-value" required>
-      <label class="sage-switch__label" for="sage-switch-6">Switch error</label>
-    </div>
+    <!-- Checkbox Default -->
+    <%= render "sage/examples/elements/switch/markup",
+      type: "checkbox",
+      name: "sage-switch-1",
+      id: "sage-switch-1",
+      value: "switch-1-value",
+      label_text: "Switch (checkbox)",
+      has_error: false,
+      checked: false,
+      disabled: false,
+      required: false,
+      message: ""
+    %>
+    <!-- Checkbox Error -->
+    <%= render "sage/examples/elements/switch/markup",
+      type: "checkbox",
+      id: "sage-switch-2",
+      name: "sage-switch-2",
+      value: "switch-2-value",
+      label_text: "Switch (checkbox)",
+      has_error: true,
+      checked: false,
+      disabled: false,
+      required: true,
+      message: ""
+    %>
+    <!-- Checkbox Disabled -->
+    <%= render "sage/examples/elements/switch/markup",
+      type: "checkbox",
+      id: "sage-switch-3",
+      name: "sage-switch-3",
+      value: "switch-3-value",
+      label_text: "Switch disabled",
+      has_error: false,
+      checked: false,
+      disabled: true,
+      required: false,
+      message: ""
+    %>
+    <!-- Checkbox On & Disabled -->
+    <%= render "sage/examples/elements/switch/markup",
+      type: "checkbox",
+      id: "sage-switch-4",
+      name: "sage-switch-4",
+      value: "switch-5-value",
+      label_text: "Switch on disabled",
+      has_error: false,
+      checked: true,
+      disabled: true,
+      required: false,
+      message: ""
+    %>
+    <!-- Checkbox w/ Message -->
+    <%= render "sage/examples/elements/switch/markup",
+      type: "checkbox",
+      name: "sage-switch-5",
+      id: "sage-switch-5",
+      value: "switch-5-value",
+      label_text: "Switch (checkbox)",
+      has_error: false,
+      checked: false,
+      disabled: false,
+      required: false,
+      message: "Additional Info"
+    %>
+    <%= render "sage/examples/elements/switch/markup",
+      type: "checkbox",
+      name: "sage-switch-5",
+      id: "sage-switch-5",
+      value: "switch-5-value",
+      label_text: "Switch (checkbox)",
+      has_error: true,
+      checked: false,
+      disabled: false,
+      required: true,
+      message: "Additional Info"
+    %>
   </div>
   <div class="sage-col--md-6">
-    <!-- Default, radio -->
-    <div class="sage-switch">
-      <input type="radio" class="sage-switch__input" id="sage-switch-2a" name="sage-switch-2" value="switch-2a-value" checked>
-      <label class="sage-switch__label" for="sage-switch-2a">Switch (radio)</label>
-    </div>
-    <div class="sage-switch">
-      <input type="radio" class="sage-switch__input" id="sage-switch-2b" name="sage-switch-2" value="switch-2b-value">
-      <label class="sage-switch__label" for="sage-switch-2b">Switch (radio)</label>
-    </div>
+    <!-- Radio Default -->
+    <%= render "sage/examples/elements/switch/markup",
+      type: "radio",
+      name: "sage-switch-6",
+      id: "sage-switch-6",
+      value: "switch-6-value",
+      label_text: "Switch (radio)",
+      has_error: false,
+      checked: true,
+      disabled: false,
+      required: false,
+      message: ""
+    %>
+    <%= render "sage/examples/elements/switch/markup",
+      type: "radio",
+      id: "sage-switch-7",
+      name: "sage-switch-6",
+      value: "switch-6-value",
+      label_text: "Switch (radio)",
+      has_error: false,
+      checked: false,
+      disabled: false,
+      required: false,
+      message: ""
+    %>
+    <hr/>
+    <!-- Radio Error -->
+    <%= render "sage/examples/elements/switch/markup",
+      type: "radio",
+      id: "sage-switch-8",
+      name: "sage-switch-8",
+      value: "switch-8-value",
+      label_text: "Switch error",
+      has_error: true,
+      checked: false,
+      disabled: false,
+      required: true,
+      message: ""
+    %>
+    <!-- Radio Disabled -->
+    <%= render "sage/examples/elements/switch/markup",
+      type: "radio",
+      id: "sage-switch-9",
+      name: "sage-switch-9",
+      value: "switch-9-value",
+      label_text: "Switch disabled",
+      has_error: false,
+      checked: false,
+      disabled: true,
+      required: false,
+      message: ""
+    %>
+    <!-- Radio On & Disabled -->
+    <%= render "sage/examples/elements/switch/markup",
+      type: "radio",
+      id: "sage-switch-10",
+      name: "sage-switch-10",
+      value: "switch-10-value",
+      label_text: "Switch on disabled",
+      has_error: false,
+      checked: true,
+      disabled: true,
+      required: false,
+      message: ""
+    %>
+    <!-- Radio w/ Message -->
+    <%= render "sage/examples/elements/switch/markup",
+      type: "radio",
+      name: "sage-switch-11",
+      id: "sage-switch-11",
+      value: "switch-11-value",
+      label_text: "Switch (radio)",
+      has_error: false,
+      checked: false,
+      disabled: false,
+      required: false,
+      message: "Additional Info"
+    %>
+    <%= render "sage/examples/elements/switch/markup",
+      type: "radio",
+      name: "sage-switch-12",
+      id: "sage-switch-12",
+      value: "switch-12-value",
+      label_text: "Switch (radio)",
+      has_error: true,
+      checked: false,
+      disabled: false,
+      required: true,
+      message: "Additional Info"
+    %>
   </div>
-</div>
-
-<div class="sage-row">
-  <div class="sage-col--md-6">
-    <!-- Disabled -->
-    <div class="sage-switch">
-      <input type="checkbox" class="sage-switch__input" id="sage-switch-4" name="sage-switch-4" value="switch-4-value" disabled>
-      <label class="sage-switch__label" for="sage-switch-4">Switch disabled</label>
-    </div>
-  </div>
-  <div class="sage-col--md-6">
-    <!-- Checked & Disabled -->
-    <div class="sage-switch">
-      <input type="checkbox" class="sage-switch__input" id="sage-switch-5" name="sage-switch-5" value="switch-5-value" checked disabled>
-      <label class="sage-switch__label" for="sage-switch-5">Switch on disabled</label>
-    </div>
-  </div>
-</div>
-
-<div class="sage-row">
-  <div class="sage-col--md-6">
-    <!-- Default, checkbox -->
-    <div class="sage-switch">
-      <input type="checkbox" class="sage-switch__input" id="sage-switch-7" name="sage-switch-7" value="switch-7-value">
-      <label class="sage-switch__label" for="sage-switch-7">Switch (checkbox)</label>
-      <div class="sage-switch__message">Additional Info</div>
-    </div>
-    <!-- Error -->
-    <div class="sage-switch sage-switch--error">
-      <input type="checkbox" class="sage-switch__input" id="sage-switch-10" name="sage-switch-10" value="switch-10-value" required>
-      <label class="sage-switch__label" for="sage-switch-10">Switch error</label>
-      <div class="sage-switch__message">Additional Info</div>
-    </div>
-  </div>
-  <div class="sage-col--md-6">
-    <!-- Disabled -->
-    <div class="sage-switch">
-      <input type="checkbox" class="sage-switch__input" id="sage-switch-8" name="sage-switch-8" value="switch-8-value" disabled>
-      <label class="sage-switch__label" for="sage-switch-8">Switch disabled</label>
-      <div class="sage-switch__message">Additional Info</div>
-    </div>
-    <!-- Checked & Disabled -->
-    <div class="sage-switch">
-      <input type="checkbox" class="sage-switch__input" id="sage-switch-9" name="sage-switch-9" value="switch-9-value" checked disabled>
-      <label class="sage-switch__label" for="sage-switch-9">Switch on disabled</label>
-      <div class="sage-switch__message">Additional Info</div>
-    </div>
-  </div>
-</div>
