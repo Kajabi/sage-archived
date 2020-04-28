@@ -32,8 +32,8 @@ $-sage-selectfield-color-error:               $sage-inputfield-color-error;
 .sage-select__label {
   position: absolute;
   white-space: nowrap;
-  pointer-events: none;
   line-height: initial;
+  pointer-events: none;
 
   @include position((($-sage-selectfield-height / 2) - $sage-body-font-size), unset, unset, $-sage-selectfield-padding-x);
 }
@@ -41,12 +41,11 @@ $-sage-selectfield-color-error:               $sage-inputfield-color-error;
 %sage-select__label--active {
   @extend %t-sage-body-xsmall-semi;
 
-  padding: 0 $-sage-selectfield-padding-label;
-  color: inherit;
-  background-color: $-sage-selectfield-bg-label;
   transform: translateY(calc(-50% - (#{$sage-body-font-size} / 4)));
-  transition: transform 0.15s ease-in-out, color 0.15s ease-out;
+  padding: 0 $-sage-selectfield-padding-label;
   color: $-sage-selectfield-color-success;
+  background-color: $-sage-selectfield-bg-label;
+  transition: transform 0.15s ease-in-out, color 0.15s ease-out;
 }
 
 %sage-select__label--inactive {
@@ -76,10 +75,17 @@ $-sage-selectfield-color-error:               $sage-inputfield-color-error;
   outline: none;
   cursor: pointer;
 
-  // The <Select> is set as [required] & therefore is invalid when the value
+  // Firefox allows setting the color of <options> within a <select>.
+  // This prevents color from being inherited from <select>.
+  option:not(:disabled) {
+    color: $sage-body-font-color;
+  }
+
+  // The <select> is set as [required] & therefore is invalid when the value
   // is empty, we're mapping :invalid to "empty" for more legible code.
   $empty: "invalid";
 
+  &:focus:#{$empty},
   &:hover:#{$empty} {
     border-color: $-sage-selectfield-border-color-hover;
   }
