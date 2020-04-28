@@ -16,8 +16,14 @@
   }
 }
 
-.sage-panel__img {
-  display: block;
-  max-width: 100%;
-  margin-bottom: sage-spacing();
+.sage-panel__header {
+  margin-bottom: $sage-panel-padding;
+}
+
+.sage-panel__body {
+  overflow: auto;
+}
+
+.sage-panel__footer {
+  margin-top: $sage-panel-padding;
 }
