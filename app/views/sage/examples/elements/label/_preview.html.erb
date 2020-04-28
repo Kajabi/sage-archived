@@ -1,11 +1,33 @@
-<span class="sage-label sage-label--draft">Draft</span>
-<span class="sage-label sage-label--success">Success</span>
-<span class="sage-label sage-label--warning">Warning</span>
-<span class="sage-label sage-label--danger">Danger</span>
-
-<br>
-
-<span class="sage-label sage-label-subtle sage-label--draft">Draft</span>
-<span class="sage-label sage-label-subtle sage-label--success">Success</span>
-<span class="sage-label sage-label-subtle sage-label--warning">Warning</span>
-<span class="sage-label sage-label-subtle sage-label--danger">Danger</span>
+<%= render "sage/examples/elements/label/markup",
+type: "draft",
+is_subtle: false
+%>
+<%= render "sage/examples/elements/label/markup",
+type: "success",
+is_subtle: false
+%>
+<%= render "sage/examples/elements/label/markup",
+type: "warning",
+is_subtle: false
+%>
+<%= render "sage/examples/elements/label/markup",
+type: "danger",
+is_subtle: false
+%>
+<br/>
+<%= render "sage/examples/elements/label/markup",
+type: "draft",
+is_subtle: true
+%>
+<%= render "sage/examples/elements/label/markup",
+type: "success",
+is_subtle: true
+%>
+<%= render "sage/examples/elements/label/markup",
+type: "warning",
+is_subtle: true
+%>
+<%= render "sage/examples/elements/label/markup",
+type: "danger",
+is_subtle: true
+%>
