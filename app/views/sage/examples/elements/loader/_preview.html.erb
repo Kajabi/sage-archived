@@ -1,8 +1,12 @@
 <div class="sage-row">
   <div class="sage-col--md-6 example__block--lg">
-    <div class="sage-loading sage-loading--bar" data-loading="true"></div>
+    <%= render "sage/examples/elements/loader/markup",
+      loader_type: "bar"
+    %>
   </div>
   <div class="sage-col--md-6 example__block--lg">
-    <div class="sage-loading sage-loading--spinner" data-loading="true"></div>
+    <%= render "sage/examples/elements/loader/markup",
+      loader_type: "spinner"
+    %>
   </div>
 </div>
