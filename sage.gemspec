@@ -21,6 +21,8 @@ Gem::Specification.new do |s|
   s.add_dependency "sass-rails"
   s.add_dependency "autoprefixer-rails"
   s.add_dependency "inline_svg"
+  s.add_dependency "webpacker", "4.2.2"
 
   s.add_development_dependency "sqlite3", "~> 1.3.0"
+  s.add_development_dependency "pry"
 end
