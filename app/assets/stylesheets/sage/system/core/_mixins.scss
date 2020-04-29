@@ -132,7 +132,7 @@
   } @else if $value != unset {
     @return $value;
   } @else {
-    @return false;
+    @return null;
   }
 }
 
@@ -150,7 +150,7 @@
 ================================================== */
 
 @mixin icon-base($icon: null) {
-  display: inline-block;
+  display: inline-flex;
   text-transform: none;
   font: normal normal normal 1rem/1 "Sage";
   speak: none;
