@@ -9,7 +9,6 @@ $-sage-table-row-hover: sage-color(grey, 200);
 
 .sage-table {
   --table-cell-padding: #{$sage-table-cell-padding-sm};
-  --table-cell-padding-end: #{sage-spacing(xs)} / 2;
   --table-heading-padding: #{$sage-table-heading-padding-sm};
 
   width: 100%;
@@ -35,14 +34,12 @@ $-sage-table-row-hover: sage-color(grey, 200);
 
     td:first-child,
     th:first-child {
-      padding-left: #{sage-spacing(xs)} / 2;
-      padding-left: var(--table-cell-padding-end);
+      padding-left: #{sage-spacing(sm)} / 2;
     }
 
     td:last-child,
     th:last-child {
-      padding-right: #{sage-spacing(xs)} / 2;
-      padding-right: var(--table-cell-padding-end);
+      padding-right: #{sage-spacing(sm)} / 2;
     }
   }
 
@@ -63,19 +60,16 @@ $-sage-table-row-hover: sage-color(grey, 200);
     line-height: sage-line-height(md);
 
     &:first-child {
-      padding-left: #{sage-spacing(xs)} / 2;
-      padding-left: var(--table-cell-padding-end);
+      padding-left: #{sage-spacing(sm)} / 2;
     }
 
     &:last-child {
-      padding-right: #{sage-spacing(xs)} / 2;
-      padding-right: var(--table-cell-padding-end);
+      padding-right: #{sage-spacing(sm)} / 2;
     }
   }
 
   @media screen and (min-width: sage-breakpoint(md-min)) {
     --table-cell-padding: #{$sage-table-cell-padding-lg};
-    --table-cell-padding-end: #{sage-spacing(sm)} / 2;
     --table-heading-padding: #{$sage-table-heading-padding-lg};
   }
 }
