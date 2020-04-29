@@ -1,0 +1,1 @@
+<<%= element %><% if element != "button" %> href="#"<% end %> class="sage-btn sage-btn--danger<% if element != "button" && disabled %> disabled<%end%>"<% if element != "a" && disabled %> disabled<%end%><% if aria_disabled %> aria-disabled="true"<% end %>><%= text %></<%= element %>>
