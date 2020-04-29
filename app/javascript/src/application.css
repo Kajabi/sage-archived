@@ -1,0 +1,9 @@
+body::before {
+  content: "WEBPACKER LOADED";
+  color: red;
+  display: fixed;
+  background: blue;
+  padding: 40px;
+  top: 0;
+  right: 0;
+}
