@@ -2,7 +2,6 @@ require "webpacker"
 
 module Sage
   module WebpackerHelper
-    # binding.pry
     include ::Webpacker::Helper
 
     def current_webpacker_instance

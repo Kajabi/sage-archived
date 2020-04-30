@@ -1,5 +1,9 @@
 module Sage
-  module SharedHelper
+
+  # NOTE: Sage::SageHelper is publicly exposed in Kajabi-Products.
+  #       Please only add helpers here for use within the main app.
+
+  module SageHelper
     include Sage::WebpackerHelper
 
     def sage_system_stylesheet
@@ -9,12 +13,5 @@ module Sage
     def sage_system_javascript
       javascript_pack_tag("application")
     end
-
-    private
-
-    def local_sage_gem
-      ENV["LOCAL_SAGE_GEM"] == "true"
-    end
-
   end
 end
