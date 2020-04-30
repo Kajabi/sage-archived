@@ -14,6 +14,8 @@ module Sage
     isolate_namespace Sage
 
     # binding.pry
+    ## AJM – This is the proxy server for web-pack-dev-server
+    ## AJM – Currently broken bc Sage.webpacker == nil
     initializer "webpacker.proxy" do |app|
       insert_middleware = begin
         Sage.webpacker.config.dev_server.present?
