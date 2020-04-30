@@ -23,4 +23,9 @@ Sage.init = function(elementNamesToInit) {
     Sage.alert.init();
   }
 
+   // Initialize Banner
+   if ( shouldInit('banner', '.sage-banner--active') && !document.querySelector('.sage-docs') ) {
+    Sage.banner.init();
+  }
+
 }
