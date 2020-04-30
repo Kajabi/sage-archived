@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'pages/index'
-
+  root to: redirect("sage/pages/index")
   mount Sage::Engine => "/sage"
+
 end
