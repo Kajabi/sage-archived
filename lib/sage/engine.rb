@@ -13,6 +13,7 @@ module Sage
   class Engine < ::Rails::Engine
     isolate_namespace Sage
 
+    # binding.pry
     initializer "webpacker.proxy" do |app|
       insert_middleware = begin
         Sage.webpacker.config.dev_server.present?
@@ -21,7 +22,6 @@ module Sage
       end
 
       next unless insert_middleware
-
       app.middleware.insert_before(
         0,
         "Webpacker::DevServerProxy", # "Webpacker::DevServerProxy" as a string if Rails version < 5
