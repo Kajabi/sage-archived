@@ -13,9 +13,12 @@ module Sage
   class Engine < ::Rails::Engine
     isolate_namespace Sage
 
-    # binding.pry
-    ## AJM – This is the proxy server for web-pack-dev-server
-    ## AJM – Currently broken bc Sage.webpacker == nil
+    config.app_middleware.use(
+      Rack::Static,
+      urls: ['/sage/packs'],
+      root: Sage::Engine.root.join("public")
+    )
+
     initializer "webpacker.proxy" do |app|
       insert_middleware = begin
         Sage.webpacker.config.dev_server.present?
