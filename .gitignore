@@ -11,8 +11,8 @@ test/dummy/.sass-cache
 node_modules
 
 tmp/
-test/dummy/public/packs
-test/dummy/public/packs-test
+public/sage/packs
+public/sage/packs-test
 yarn-error.log
 yarn-debug.log*
 .yarn-integrity
