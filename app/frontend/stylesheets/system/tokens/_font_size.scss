@@ -1,0 +1,15 @@
+@function sage-font-size($key: md) {
+  $value: map-get($sage-font-sizes, $key);
+  @return $value;
+}
+
+$sage-font-sizes: (
+  xs: rem(11.11px),
+  sm: rem(13.33px),
+  md: rem(16px),
+  lg: rem(19.2px),
+  xl: rem(23.04px),
+  2xl: rem(27.65px),
+  3xl: rem(33.18px),
+  4xl: rem(39.81px)
+);

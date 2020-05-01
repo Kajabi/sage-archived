@@ -1,0 +1,10 @@
+@function sage-line-height($key: md) {
+  $value: map-get($sage-line-heights, $key);
+  @return $value;
+}
+
+$sage-line-heights: (
+  sm: 1.25,
+  md: 1.5,
+  lg: 1.875,
+);

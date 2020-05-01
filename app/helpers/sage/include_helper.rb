@@ -4,7 +4,7 @@ module Sage
   #       Please _only_ define helpers here for use within the main application.
 
   module IncludeHelper
-    PACK_NAME = "application"
+    PACK_NAME = "sageSystem"
 
     include Sage::WebpackerHelper
 
@@ -27,8 +27,7 @@ module Sage
     private
 
     def use_production_assets?
-      false
-      # ENV["RAILS_ENV"] == "production" || !ENV["SAGE_RUN_AS_DEVELOPMENT"]
+      ENV["RAILS_ENV"] == "production" || !ENV["SAGE_RUN_AS_DEVELOPMENT"]
     end
 
   end
