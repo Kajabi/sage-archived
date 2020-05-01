@@ -1,6 +1,8 @@
 import 'core-js/stable'
 import 'regenerator-runtime/runtime'
-import 'stylesheets/application.css' // REQUIRES POST CSS CONFIG
+
+import 'stylesheets/application.css'
+import 'javascript/application.js'
 
 console.warn("WEBPACKER")
 
