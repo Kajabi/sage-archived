@@ -1,0 +1,23 @@
+/* ==================================================
+  ** _z_index.scss
+
+  Z-index system
+================================================== */
+
+@function sage-z-index($key: default, $increment: 0) {
+  $value: map-get($sage-z-indexes, $key);
+  @return $value + $increment;
+}
+
+$sage-z-indexes: (
+  negative: -1,
+  default: 0,
+  raised: 10,
+  alert: 20,
+  underlay: 40,
+  nav: 50,
+  overlay: 60,
+  modal: 70,
+  priority: 80,
+  nuclear: 100
+);

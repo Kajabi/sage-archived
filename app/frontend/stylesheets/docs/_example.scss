@@ -1,0 +1,75 @@
+/* ==================================================
+  ** _example.scss
+
+  For Sage documentation use
+================================================== */
+
+.example__title {
+  color: sage-color(charcoal, 500);
+  text-transform: capitalize;
+}
+
+.example__link {
+  color: inherit;
+  transition: color 0.1s ease-in-out;
+
+  &:hover {
+    color: sage-color(charcoal, 100);
+  }
+
+  &:focus,
+  &:active {
+    text-decoration: underline;
+    outline: none;
+  }
+}
+
+.example__link--breakout {
+  color: sage-color(sage);
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: sage-color(charcoal, 500);
+    text-decoration: none;
+  }
+}
+
+.example__label {
+  display: inline-block;
+  min-width: rem(100px);
+  margin: sage-spacing() 0;
+  padding: sage-spacing(xs) sage-spacing();
+  color: sage-color(charcoal, 500);
+  text-align: center;
+  background: sage-color(white);
+  box-shadow: sage-shadow();
+  border-radius: rem(20px);
+}
+
+.example__preview {
+  margin: sage-spacing() 0;
+}
+
+.example__block {
+  margin-top: sage-spacing(sm);
+  margin-bottom: sage-spacing(sm);
+}
+
+.example__block--md {
+  margin-top: sage-spacing(md);
+  margin-bottom: sage-spacing(md);
+}
+
+.example__block--lg {
+  margin-top: sage-spacing(lg);
+  margin-bottom: sage-spacing(lg);
+}
+
+.example__code {
+  margin: sage-spacing() 0;
+
+  .prettyprint {
+    margin-bottom: 0;
+  }
+}
