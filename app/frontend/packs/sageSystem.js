@@ -1,6 +1,4 @@
-// --- Webpacker Dependancies ---
-import "core-js/stable"
-import "regenerator-runtime/runtime"
+import "./shared"
 
 // --- Sage System --------------
 import "stylesheets/system/index.scss"
