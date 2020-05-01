@@ -2,7 +2,7 @@
 // Variables
 // ==================================================
 
-$sage-icon-font-path: "sage" !default;
+$sage-icon-font-path: "../../fonts/sage" !default;
 $sage-icon-background-color: #eee !default;
 $sage-icon-li-margin-right: 0.4em !default;
 
@@ -11,18 +11,17 @@ $sage-icon-li-margin-right: 0.4em !default;
 // Font setup
 // ==================================================
 
-// AJM COMMENT OUT BROKEN FONT INCLUDE
-// @font-face {
-//   font-family: "Sage";
-//   src: asset-url("#{$sage-icon-font-path}/Sage.eot");
-//   src: asset-url("#{$sage-icon-font-path}/Sage.eot") format("embedded-opentype"),
-//     asset-url("#{$sage-icon-font-path}/Sage.woff2") format("woff2"),
-//     asset-url("#{$sage-icon-font-path}/Sage.woff") format("woff"),
-//     asset-url("#{$sage-icon-font-path}/Sage.ttf") format("truetype"),
-//     asset-url("#{$sage-icon-font-path}/Sage.svg") format("svg");
-//   font-weight: normal;
-//   font-style: normal;
-// }
+@font-face {
+  font-family: "Sage";
+  src: asset-url("#{$sage-icon-font-path}/Sage.eot");
+  src: asset-url("#{$sage-icon-font-path}/Sage.eot") format("embedded-opentype"),
+    asset-url("#{$sage-icon-font-path}/Sage.woff2") format("woff2"),
+    asset-url("#{$sage-icon-font-path}/Sage.woff") format("woff"),
+    asset-url("#{$sage-icon-font-path}/Sage.ttf") format("truetype"),
+    asset-url("#{$sage-icon-font-path}/Sage.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
 
 
 // ==================================================
