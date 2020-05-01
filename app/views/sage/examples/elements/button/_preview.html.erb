@@ -9,6 +9,7 @@
   style_primary: true,
   style_secondary: false,
   style_tertiary: false,
+  style_danger: false,
   style_small: false,
   sage_icon_name: ""
 %>
@@ -22,6 +23,7 @@
   style_primary: true,
   style_secondary: false,
   style_tertiary: false,
+  style_danger: false,
   style_small: false,
   sage_icon_name: ""
 %>
@@ -35,6 +37,7 @@
   style_primary: true,
   style_secondary: false,
   style_tertiary: false,
+  style_danger: false,
   style_small: false,
   sage_icon_name: "sage-btn--icon-left-menu"
 %>
@@ -48,6 +51,7 @@
   style_primary: true,
   style_secondary: false,
   style_tertiary: false,
+  style_danger: false,
   style_small: false,
   sage_icon_name: ""
 %>
@@ -64,6 +68,7 @@
   style_primary: true,
   style_secondary: false,
   style_tertiary: false,
+  style_danger: false,
   style_small: false,
   sage_icon_name: ""
 %>
@@ -77,6 +82,7 @@
   style_primary: true,
   style_secondary: false,
   style_tertiary: false,
+  style_danger: false,
   style_small: false,
   sage_icon_name: ""
 %>
@@ -90,6 +96,7 @@
   style_primary: true,
   style_secondary: false,
   style_tertiary: false,
+  style_danger: false,
   style_small: false,
   sage_icon_name: "sage-btn--icon-left-users"
 %>
@@ -103,6 +110,7 @@
   style_primary: true,
   style_secondary: false,
   style_tertiary: false,
+  style_danger: false,
   style_small: false,
   sage_icon_name: "sage-btn--icon-right-launch"
 %>
@@ -119,6 +127,7 @@
   style_primary: false,
   style_secondary: true,
   style_tertiary: false,
+  style_danger: false,
   style_small: false,
   sage_icon_name: ""
 %>
@@ -132,6 +141,7 @@
   style_primary: false,
   style_secondary: true,
   style_tertiary: false,
+  style_danger: false,
   style_small: false,
   sage_icon_name: ""
 %>
@@ -145,6 +155,7 @@
   style_primary: false,
   style_secondary: true,
   style_tertiary: false,
+  style_danger: false,
   style_small: false,
   sage_icon_name: "sage-btn--icon-left-gear"
 %>
@@ -158,6 +169,7 @@
   style_primary: false,
   style_secondary: true,
   style_tertiary: false,
+  style_danger: false,
   style_small: false,
   sage_icon_name: "sage-btn--icon-right-search"
 %>
@@ -174,6 +186,7 @@
   style_primary: false,
   style_secondary: true,
   style_tertiary: false,
+  style_danger: false,
   style_small: false,
   sage_icon_name: ""
 %>
@@ -187,6 +200,7 @@
   style_primary: false,
   style_secondary: true,
   style_tertiary: false,
+  style_danger: false,
   style_small: false,
   sage_icon_name: ""
 %>
@@ -200,6 +214,7 @@
   style_primary: false,
   style_secondary: true,
   style_tertiary: false,
+  style_danger: false,
   style_small: false,
   sage_icon_name: "sage-btn--icon-left-send-message"
 %>
@@ -213,6 +228,7 @@
   style_primary: false,
   style_secondary: true,
   style_tertiary: false,
+  style_danger: false,
   style_small: false,
   sage_icon_name: "sage-btn--icon-right-arrow-right"
 %>
@@ -229,6 +245,7 @@
   style_primary: false,
   style_secondary: false,
   style_tertiary: true,
+  style_danger: false,
   style_small: false,
   sage_icon_name: ""
 %>
@@ -242,6 +259,7 @@
   style_primary: false,
   style_secondary: false,
   style_tertiary: true,
+  style_danger: false,
   style_small: false,
   sage_icon_name: ""
 %>
@@ -255,6 +273,7 @@
   style_primary: false,
   style_secondary: false,
   style_tertiary: true,
+  style_danger: false,
   style_small: false,
   sage_icon_name: "sage-btn--icon-left-3-dot-menu"
 %>
@@ -268,6 +287,7 @@
   style_primary: false,
   style_secondary: false,
   style_tertiary: true,
+  style_danger: false,
   style_small: false,
   sage_icon_name: "sage-btn--icon-right-microphone"
 %>
@@ -284,6 +304,7 @@
   style_primary: false,
   style_secondary: false,
   style_tertiary: true,
+  style_danger: false,
   style_small: false,
   sage_icon_name: ""
 %>
@@ -297,6 +318,7 @@
   style_primary: false,
   style_secondary: false,
   style_tertiary: true,
+  style_danger: false,
   style_small: false,
   sage_icon_name: ""
 %>
@@ -310,6 +332,7 @@
   style_primary: false,
   style_secondary: false,
   style_tertiary: true,
+  style_danger: false,
   style_small: false,
   sage_icon_name: "sage-btn--icon-left-comment"
 %>
@@ -323,9 +346,116 @@
   style_primary: false,
   style_secondary: false,
   style_tertiary: true,
+  style_danger: false,
   style_small: false,
   sage_icon_name: "sage-btn--icon-right-preview-off"
 %>
+
+<br><br>
+<h3 class="t-sage-heading-6">Danger</h3>
+
+<!-- Danger button -->
+<%= render "sage/examples/elements/button/markup",
+  text: "Button",
+  is_link_btn: false,
+  link_url: "",
+  is_disabled: false,
+  style_primary: false,
+  style_secondary: false,
+  style_tertiary: false,
+  style_danger: true,
+  style_small: false,
+  sage_icon_name: ""
+%>
+
+<!-- Danger button (link) -->
+<%= render "sage/examples/elements/button/markup",
+  text: "Link",
+  is_link_btn: true,
+  link_url: "#",
+  is_disabled: false,
+  style_primary: false,
+  style_secondary: false,
+  style_tertiary: false,
+  style_danger: true,
+  style_small: false,
+  sage_icon_name: ""
+%>
+
+<!-- Danger button (icon-left) -->
+<%= render "sage/examples/elements/button/markup",
+  text: "Button (icon-left)",
+  is_link_btn: false,
+  link_url: "",
+  is_disabled: false,
+  style_primary: false,
+  style_secondary: false,
+  style_tertiary: false,
+  style_danger: true,
+  style_small: false,
+  sage_icon_name: "sage-btn--icon-left-microphone"
+%>
+
+<!-- Danger button (icon-right) -->
+<%= render "sage/examples/elements/button/markup",
+  text: "Button (icon-right)",
+  is_link_btn: false,
+  link_url: "",
+  is_disabled: false,
+  style_primary: false,
+  style_secondary: false,
+  style_tertiary: false,
+  style_danger: true,
+  style_small: false,
+  sage_icon_name: "sage-btn--icon-right-enlarge"
+%>
+
+
+<br>
+<h3 class="t-sage-heading-6">Danger (disabled)</h3>
+
+<!-- Danger button (disabled) -->
+<%= render "sage/examples/elements/button/markup",
+  text: "Button",
+  is_link_btn: false,
+  link_url: "",
+  is_disabled: true,
+  style_primary: false,
+  style_secondary: false,
+  style_tertiary: false,
+  style_danger: true,
+  style_small: false,
+  sage_icon_name: ""
+%>
+
+<!-- Danger button link (disabled) -->
+<%= render "sage/examples/elements/button/markup",
+  text: "Link",
+  is_link_btn: true,
+  link_url: "#",
+  is_disabled: true,
+  style_primary: false,
+  style_secondary: false,
+  style_tertiary: false,
+  style_danger: true,
+  style_small: false,
+  sage_icon_name: ""
+%>
+
+<!-- Danger button link (icon-left, disabled) -->
+<%= render "sage/examples/elements/button/markup",
+  text: "Link (icon-left)",
+  is_link_btn: true,
+  link_url: "#",
+  is_disabled: true,
+  style_primary: false,
+  style_secondary: false,
+  style_tertiary: false,
+  style_danger: true,
+  style_small: false,
+  sage_icon_name: "sage-btn--icon-left-tag"
+%>
+
 
 <br><br>
 <h3 class="t-sage-heading-6">Small</h3>
@@ -339,6 +469,7 @@
   style_primary: true,
   style_secondary: false,
   style_tertiary: false,
+  style_danger: false,
   style_small: true,
   sage_icon_name: ""
 %>
@@ -353,8 +484,9 @@
   style_primary: true,
   style_secondary: false,
   style_tertiary: false,
+  style_danger: false,
   style_small: true,
-  sage_icon_name: ""
+  sage_icon_name: "sage-btn--icon-left-folder"
 %>
 
 <!-- Secondary small -->
@@ -366,8 +498,9 @@
   style_primary: false,
   style_secondary: true,
   style_tertiary: false,
+  style_danger: false,
   style_small: true,
-  sage_icon_name: ""
+  sage_icon_name: "sage-btn--icon-left-lock"
 %>
 
 <!-- Tertiary small -->
@@ -379,6 +512,7 @@
   style_primary: false,
   style_secondary: false,
   style_tertiary: true,
+  style_danger: false,
   style_small: true,
   sage_icon_name: ""
 %>
