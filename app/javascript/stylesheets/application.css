@@ -1,9 +1,0 @@
-body::before {
-  content: "WEBPACKER IS LOADED SICK COOL!";
-  color: pink;
-  display: fixed;
-  background: blue;
-  padding: 40px;
-  top: 0;
-  right: 0;
-}

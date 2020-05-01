@@ -1,0 +1,49 @@
+/* ==================================================
+  ** pagination
+  type: object
+
+================================================== */
+
+.sage-pagination {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.sage-pagination__count {
+  @extend %t-sage-body;
+  padding-right: sage-spacing();
+}
+
+.sage-pagination__link {
+  @extend %t-sage-body-semi;
+  display: flex;
+  align-items: center;
+  padding: 0 sage-spacing(xs);
+  color: sage-color(primary);
+}
+
+.sage-pagination__link--disabled {
+  color: sage-color(grey, 400);
+  pointer-events: none;
+}
+
+.sage-pagination__icon {
+  display: inherit;
+  padding: 0 sage-spacing(2xs);
+}
+
+.sage-pagination__pages {
+  display: flex;
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.sage-pagination__page {
+  @extend %t-sage-body-semi;
+  padding: 0 sage-spacing(2xs);
+  color: sage-color(primary);
+}
+
+.sage-pagination__page--active {
+  color: sage-color(grey, 400);
+}

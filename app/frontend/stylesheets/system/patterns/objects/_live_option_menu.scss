@@ -1,0 +1,133 @@
+/* ==================================================
+  ** live_option_menu
+  type: object
+
+
+================================================== */
+
+$-live-option-menu-button-height: rem(40px);
+$-live-option-menu-offset-inline: rem(10px);
+$-live-option-menu-offset-block: rem(24px);
+$-live-option-menu-width: rem(224px);
+
+.sage-live-option-menu-anchor {
+  position: relative;
+
+  &:focus {
+    outline: none;
+  }
+
+  // Fill the window to create active space to click off of to turn off menu
+  &[aria-expanded="true"]::before {
+    content: "";
+    position: fixed;
+    z-index: sage-z-index(modal);
+    background-color: transparent;
+
+    @include position-full(0);
+  }
+
+  // Specific to preview
+  .sage-docs .example__preview > & {
+    $-live-option-menu-anchro-demo-size: rem(48px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: $-live-option-menu-anchro-demo-size;
+    height: $-live-option-menu-anchro-demo-size;
+    margin-left: auto;
+    border: 1px solid sage-color(charcoal);
+    border-radius: sage-border(radius-round);
+
+    &::after {
+      content: "Click";
+      display: block;
+      text-transform: uppercase;
+
+      @extend %t-sage-body-xsmall-bold;
+    }
+  }
+}
+
+.sage-live-option-menu {
+  position: absolute;
+  top: $-live-option-menu-offset-block;
+  z-index: sage-z-index(default, -1);
+  transform: rotate3d(1, 0, 0, -90deg);
+  transform-origin: top center;
+  min-width: min-content;
+  width: $-live-option-menu-width;
+  padding: 0;
+  background-color: sage-color(white);
+  box-shadow: sage-shadow(md);
+  transition: $sage-transition;
+  transition-property: transform, z-index;
+
+  &:not(.sage-live-option-menu--anchored-left) {
+    right: $-live-option-menu-offset-inline;
+  }
+
+  [aria-expanded="true"] & {
+    transform: rotate3d(0, 0, 0, 0);
+    z-index: sage-z-index(modal);
+  }
+}
+
+.sage-live-option-menu--anchored-left {
+  left: $-live-option-menu-offset-inline;
+}
+
+.sage-live-option-menu__item {
+  width: 100%;
+  list-style: none;
+
+  @extend %t-sage-body-small;
+}
+
+.sage-live-option-menu__command {
+  @include button-style-reset();
+
+  position: relative;
+  width: 100%;
+  height: $-live-option-menu-button-height;
+  padding: 0 sage-spacing(sm);
+  text-align: left;
+
+  &::after {
+    $-live-option-menu-focus-offset-inline: 50%;
+    content: "";
+    display: block;
+    position: absolute;
+    right: $-live-option-menu-focus-offset-inline;
+    bottom: 0;
+    left: $-live-option-menu-focus-offset-inline;
+    border-bottom: 2px solid transparent;
+    transition: 0.1s ease-in-out;
+    transition-property: border-bottom-color, left, right;
+  }
+
+  &:hover {
+    color: sage-color(charcoal, 500);
+    background-color: sage-color(grey, 200);
+  }
+
+  &:focus {
+    outline: none;
+
+    &::after {
+      $-live-option-menu-focus-offset: sage-spacing(sm);
+      right: $-live-option-menu-focus-offset;
+      left: $-live-option-menu-focus-offset;
+      border-bottom-color: currentColor;
+    }
+  }
+}
+
+.sage-live-option-menu__command--danger {
+  color: sage-color(red);
+
+  &:hover {
+    color: sage-color(red, 400);
+    background-color: sage-color(red, 100);
+  }
+}
