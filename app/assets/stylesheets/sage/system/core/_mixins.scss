@@ -120,13 +120,13 @@
 ================================================== */
 
 @mixin position($top: false, $right: false, $bottom: false, $left: false) {
-  top: _position-print-value("top", $top);
-  right: _position-print-value("right", $right);
-  bottom: _position-print-value("bottom", $bottom);
-  left: _position-print-value("left", $left);
+  top: position-print-value("top", $top);
+  right: position-print-value("right", $right);
+  bottom: position-print-value("bottom", $bottom);
+  left: position-print-value("left", $left);
 }
 
-@function _position-print-value($key, $value) {
+@function position-print-value($key, $value) {
   @if not $value {
     @error "position() mixin requires all 4 position values (top, right, bottom, left): #{$key} is missing or invalid.";
   }
