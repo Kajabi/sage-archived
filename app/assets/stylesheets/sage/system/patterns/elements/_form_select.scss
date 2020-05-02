@@ -4,22 +4,44 @@
 
 ================================================== */
 
-$-sage-selectfield-height:                    $sage-inputfield-height;
-$-sage-selectfield-bg-label:                  $sage-inputfield-bg-label;
-$-sage-selectfield-padding-x:                 $sage-inputfield-padding-x;
-$-sage-selectfield-filled-top-padding:        rem(6);
-$-sage-selectfield-padding-label:             $sage-inputfield-padding-label;
-$-sage-selectfield-bottom-spacing:            $sage-inputfield-spacing;
+$-sage-selectfield-height: $sage-inputfield-height;
+$-sage-selectfield-bg-label: $sage-inputfield-bg-label;
+$-sage-selectfield-padding-x: $sage-inputfield-padding-x;
+$-sage-selectfield-filled-top-padding: rem(6);
+$-sage-selectfield-padding-label: $sage-inputfield-padding-label;
+$-sage-selectfield-bottom-spacing: $sage-inputfield-spacing;
 
-$-sage-selectfield-border-radius:             $sage-inputfield-border-radius;
-$-sage-selectfield-border-width:              $sage-inputfield-border-width;
-$-sage-selectfield-border-color:              $sage-inputfield-border-color;
-$-sage-selectfield-border-color-hover:        sage-color(grey, 500);
-$-sage-selectfield-border-box-shadow-size:    $sage-inputfield-box-shadow-size;
+$-sage-selectfield-border-radius: $sage-inputfield-border-radius;
+$-sage-selectfield-border-width: $sage-inputfield-border-width;
+$-sage-selectfield-border-color: $sage-inputfield-border-color;
+$-sage-selectfield-border-color-hover: sage-color(grey, 500);
+$-sage-selectfield-border-box-shadow-size: $sage-inputfield-box-shadow-size;
 
-$-sage-selectfield-color-default:             $sage-inputfield-color-default;
-$-sage-selectfield-color-success:             $sage-inputfield-color-success;
-$-sage-selectfield-color-error:               $sage-inputfield-color-error;
+$-sage-selectfield-color-default: $sage-inputfield-color-default;
+$-sage-selectfield-color-success: $sage-inputfield-color-success;
+$-sage-selectfield-color-error: $sage-inputfield-color-error;
+
+// The <select> is set as [required] & therefore is invalid when the value
+// is empty, we're mapping :invalid to "empty" for more legible code.
+$-empty: "invalid";
+
+
+%sage-select__label--active {
+  @extend %t-sage-body-xsmall-semi;
+
+  transform: translateY(calc(-50% - (#{$sage-body-font-size} / 4)));
+  padding: 0 $-sage-selectfield-padding-label;
+  color: $-sage-selectfield-color-success;
+  background-color: $-sage-selectfield-bg-label;
+  transition: transform 0.15s ease-in-out, color 0.15s ease-out;
+}
+
+%sage-select__label--inactive {
+  @extend %t-sage-body;
+
+  color: $-sage-selectfield-color-default;
+}
+
 
 .sage-select {
   position: relative;
@@ -36,22 +58,6 @@ $-sage-selectfield-color-error:               $sage-inputfield-color-error;
   pointer-events: none;
 
   @include position((($-sage-selectfield-height / 2) - $sage-body-font-size), unset, unset, $-sage-selectfield-padding-x);
-}
-
-%sage-select__label--active {
-  @extend %t-sage-body-xsmall-semi;
-
-  transform: translateY(calc(-50% - (#{$sage-body-font-size} / 4)));
-  padding: 0 $-sage-selectfield-padding-label;
-  color: $-sage-selectfield-color-success;
-  background-color: $-sage-selectfield-bg-label;
-  transition: transform 0.15s ease-in-out, color 0.15s ease-out;
-}
-
-%sage-select__label--inactive {
-  @extend %t-sage-body;
-
-  color: $-sage-selectfield-color-default;
 }
 
 .sage-select__arrow::before {
@@ -81,12 +87,8 @@ $-sage-selectfield-color-error:               $sage-inputfield-color-error;
     color: $sage-body-font-color;
   }
 
-  // The <select> is set as [required] & therefore is invalid when the value
-  // is empty, we're mapping :invalid to "empty" for more legible code.
-  $empty: "invalid";
-
-  &:focus:#{$empty},
-  &:hover:#{$empty} {
+  &:focus:#{$-empty},
+  &:hover:#{$-empty} {
     border-color: $-sage-selectfield-border-color-hover;
   }
 
@@ -96,7 +98,7 @@ $-sage-selectfield-color-error:               $sage-inputfield-color-error;
     }
   }
 
-  &:not(:#{$empty}) {
+  &:not(:#{$-empty}) {
     color: $-sage-selectfield-color-default;
     border-color: $-sage-selectfield-color-success;
     box-shadow: $-sage-selectfield-border-box-shadow-size $-sage-selectfield-color-success;
@@ -106,14 +108,14 @@ $-sage-selectfield-color-error:               $sage-inputfield-color-error;
     }
   }
 
-  &:#{$empty} {
+  &:#{$-empty} {
     ~ .sage-select__label {
       @extend %sage-select__label--inactive;
     }
   }
 
   .sage-select--error &,
-  .sage-select--error &:#{$empty} {
+  .sage-select--error &:#{$-empty} {
     border-color: $-sage-selectfield-color-error;
     box-shadow: $-sage-selectfield-border-box-shadow-size $-sage-selectfield-color-error;
 

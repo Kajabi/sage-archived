@@ -143,6 +143,7 @@
     "scss/dimension-no-non-numeric-values": true,
     "scss/dollar-variable-pattern": "^[-]?[a-z]+([a-z0-9-]+[a-z0-9]+)?$",
     "scss/operator-no-unspaced": true,
+    "scss/percent-placeholder-pattern": null,
     "scss/no-duplicate-mixins": true,
     "selector-no-qualifying-type": [true, { "ignore": ["attribute"] }],
     "string-quotes": ["double", { "severity": "error" }],
