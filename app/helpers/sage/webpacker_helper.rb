@@ -1,5 +1,3 @@
-require "webpacker"
-
 module Sage
   module WebpackerHelper
     include ::Webpacker::Helper

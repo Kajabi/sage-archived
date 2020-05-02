@@ -1,13 +1,6 @@
-require "sass-rails" # DELETE AJM
-require "autoprefixer-rails" # DELETE AJM
-require "inline_svg" # DELETE AJM
-
-# module Sage
-#   class Engine < ::Rails::Engine
-#     isolate_namespace Sage
-#   end
-# end
-# require "webpacker" ## AJM
+require "sass-rails" # AJM – REMOVE ON ASSETPIPELINE RIP
+require "autoprefixer-rails" # AJM – REMOVE ON ASSETPIPELINE RIP
+require "inline_svg" # AJM – REMOVE ON ASSETPIPELINE RIP
 
 module Sage
   class Engine < ::Rails::Engine
@@ -27,6 +20,7 @@ module Sage
       end
 
       next unless insert_middleware
+
       app.middleware.insert_before(
         0,
         "Webpacker::DevServerProxy", # "Webpacker::DevServerProxy" as a string if Rails version < 5
