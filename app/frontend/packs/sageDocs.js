@@ -1,7 +1,7 @@
 import "./shared"
 
 // --- Sage Images --------------
-require.context("../images", true)
+// require.context("../images/docs", true)
 
 // --- Sage Docs ---------------
 import "stylesheets/docs/index.scss"
