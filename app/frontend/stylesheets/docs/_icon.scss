@@ -1,0 +1,21 @@
+/* ==================================================
+  ** .sage-icon
+
+  For Sage documentation use
+================================================== */
+
+.sage-icon-block {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-bottom: sage-spacing();
+  padding: sage-spacing(lg) sage-spacing(sm);
+  text-align: center;
+  border: sage-border();
+}
+
+.sage-icon-block__label {
+  margin-bottom: 0;
+  font-size: sage-font-size(sm);
+  font-weight: sage-font-weight(semibold);
+}

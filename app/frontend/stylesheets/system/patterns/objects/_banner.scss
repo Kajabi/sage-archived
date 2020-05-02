@@ -1,0 +1,65 @@
+/* ==================================================
+  ** banner
+  type: object
+
+================================================== */
+
+$-banner-colors: (
+  default: primary,
+  success: sage,
+  warning: yellow,
+  danger: red
+);
+
+.sage-banner {
+  @extend %t-sage-body-small-semi;
+  display: flex;
+  align-items: center;
+  height: $sage-banner-height;
+  width: 100%;
+  padding: sage-spacing(xs) sage-spacing(sm);
+  color: $sage-banner-text-color;
+  background: sage-color(primary);
+}
+
+@each $name, $color in $-banner-colors {
+  .sage-banner--#{$name} {
+    background: sage-color($color, 300);
+
+    @if ($name == "success") or ($name == "warning") {
+      color: $sage-banner-text-color-dark;
+    }
+  }
+}
+
+.sage-banner--active {
+  position: fixed;
+  left: 0;
+  top: -$sage-banner-height;
+}
+
+.sage-banner__text {
+  display: inline-flex;
+  align-items: center;
+  margin-right: sage-spacing(xs);
+  color: inherit;
+}
+
+.sage-banner__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: $sage-banner-icon-size;
+  width: $sage-banner-icon-size;
+}
+
+.sage-banner__link,
+.sage-banner__close {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.sage-banner__link--btn {
+  text-decoration: none;
+}
+
