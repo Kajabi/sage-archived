@@ -1,4 +1,5 @@
 require "sage/engine"
+# require "sage/asset_delivery_helper"
 
 module Sage
   ROOT_PATH = Pathname.new(File.join(__dir__, ".."))

@@ -1,7 +1,7 @@
-# Monkey Patch Webacker's Watched File Location
-# Info & Patch Source: https://github.com/rails/webpacker/issues/2487
-require 'webpacker'
+require "webpacker"
 
+# Patch Webacker's Watched File Location
+# Info & Patch Source: https://github.com/rails/webpacker/issues/2487
 module Webpacker
   module WatchedFilesDigestPatch
     private
