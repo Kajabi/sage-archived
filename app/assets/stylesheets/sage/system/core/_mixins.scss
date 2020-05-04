@@ -152,7 +152,7 @@
 @mixin icon-base($icon: null) {
   display: inline-flex;
   text-transform: none;
-  font: normal normal normal 1rem/1 "Sage";
+  font: normal normal normal 1em/1 "Sage";
   speak: none;
 
   @if ($icon) {
