@@ -10,9 +10,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dummy": "cd test/dummy && rails s",
-    "sync": "browser-sync start --port 4000 --proxy localhost:3000 --files 'app/**/*.*' --startPath 'sage/pages/index'",
     "stylelint": "stylelint \"**/*.scss\"",
-    "start": "npm-run-all -p dummy stylelint sync"
+    "webpack": "./bin/webpack",
+    "webpack:clobber": "rm -rf ./public/sage/packs",
+    "webpack:server": "./bin/webpack-dev-server",
+    "start": "npm-run-all --parallel webpack:server dummy"
   },
   "repository": {
     "type": "git",
@@ -29,7 +31,6 @@
     "left-pad": "^1.2.0"
   },
   "devDependencies": {
-    "browser-sync": "^2.26.7",
     "npm-run-all": "^4.1.5",
     "right-pad": "^1.0.1",
     "stylelint": "^13.2.0",
