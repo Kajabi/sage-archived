@@ -18,6 +18,7 @@ $-live-stream-control-start-color: sage-color(white);
 $-live-stream-control-stop-background-color: sage-color(red, 300);
 $-live-stream-control-stop-color: sage-color(white);
 $-live-stream-control-ring-offset: rem(5px);
+$-live-stream-control-active-mic-size: rem(20px);
 
 .sage-live-stream-control {
   display: inline-flex;
@@ -138,8 +139,8 @@ $-live-stream-control-ring-offset: rem(5px);
 }
 
 .sage-live-stream-control__icon--active-mic {
-  width: 20px;
-  height: 20px;
+  width: $-live-stream-control-active-mic-size;
+  height: $-live-stream-control-active-mic-size;
 }
 
 .sage-live-stream-control__label {

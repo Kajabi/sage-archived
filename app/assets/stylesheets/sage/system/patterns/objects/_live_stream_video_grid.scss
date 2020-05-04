@@ -4,8 +4,14 @@
 
 ================================================== */
 
-$-live-stream-video-tile-ratio: 0.69;
+$-live-stream-video-tile-ratio: 1.618;
 $-live-stream-tile-gapper: calc(100% / 6);
+$-live-stream-grid-gap: sage-spacing(lg);
+
+@function tile-height($num-rows: 1, $num-cols: 2) {
+  $total-trimmed-space: ($-live-stream-grid-gap * $num-rows) + ($sage-live-stream-header-footer-height * 2);
+  @return calc((100vh - #{$total-trimmed-space}) / #{$num-rows} * #{$-live-stream-video-tile-ratio} * #{$num-cols} + #{$num-cols * $-live-stream-grid-gap});
+}
 
 // Default is for 3 or more participants
 .sage-live-stream-video-grid {
@@ -16,12 +22,14 @@ $-live-stream-tile-gapper: calc(100% / 6);
   width: 100%;
   height: 100%;
   padding: 0 sage-spacing(md);
+  margin: 0 auto;
 }
 
 .sage-live-stream-video-grid--2-up {
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(1, 1fr);
   grid-template-areas: "t1 t2";
+  max-width: tile-height(1, 2);
 }
 
 .sage-live-stream-video-grid--3-up {
@@ -29,6 +37,7 @@ $-live-stream-tile-gapper: calc(100% / 6);
   grid-template-areas:
     ".  t1 t1 . "
     "t2 t2 t3 t3";
+  max-width: tile-height(2, 2);
 }
 
 .sage-live-stream-video-grid--4-up {
@@ -36,6 +45,7 @@ $-live-stream-tile-gapper: calc(100% / 6);
   grid-template-areas:
     "t1 t1 t2 t2"
     "t3 t3 t4 t4";
+  max-width: tile-height(2, 2);
 }
 
 .sage-live-stream-video-grid--5-up {
@@ -43,6 +53,7 @@ $-live-stream-tile-gapper: calc(100% / 6);
   grid-template-areas:
     ".  t1 t1 t2 t2 . "
     "t3 t3 t4 t4 t5 t5";
+  max-width: tile-height(2, 3);
 }
 
 .sage-live-stream-video-grid--6-up {
@@ -50,6 +61,7 @@ $-live-stream-tile-gapper: calc(100% / 6);
   grid-template-areas:
     "t1 t1 t2 t2 t3 t3"
     "t4 t4 t5 t5 t6 t6";
+  max-width: tile-height(2, 3);
 }
 
 .sage-live-stream-video-grid--solo {
