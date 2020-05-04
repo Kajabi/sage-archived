@@ -1,0 +1,10 @@
+<div class="sage-card<%= is_compact ? " sage-card--compact" : "" %><%= is_spaced ? " sage-card--spaced" : "" %>">
+  <% if has_img %>
+  <img class="sage-card__img" src="<%= img_path %>" alt="<%= img_alt %>">
+  <% end %>
+  <div class="sage-card__body">
+    <h2 class="sage-card__title t-sage-heading-5"><%= title %></h2>
+    <p class="sage-card__text"><%= text %></p>
+    <a href="#" class="sage-btn <% if action_style_primary %> sage-btn--primary <% elsif action_style_tertiary %> sage-btn--tertiary sage-btn--icon-right-caret-right<% end %>"><%= action_text %></a>
+  </div>
+</div>

@@ -1,98 +1,138 @@
 <div class="sage-row">
   <div class="sage-col--md-6">
-    <div class="sage-card">
-      <img class="sage-card__img" src="/assets/sage/card/card-placeholder-lg.png" alt="">
-      <div class="sage-card__body">
-        <h2 class="sage-card__title t-sage-heading-5">Card w/ Image</h2>
-        <p class="sage-card__text">Diam in auctor sit quam laoreet imperdiet aliquam. Habitant nunc lacus semper lacus, nec a, sit enim.</p>
-        <button class="sage-btn sage-btn--primary">Action Button</button>
-      </div>
-    </div>
+    <%= render "sage/examples/objects/card/markup",
+      is_compact: false,
+      is_spaced: false,
+      title: "Card w/ Image",
+      text: "Diam in auctor sit quam laoreet imperdiet aliquam. Habitant nunc lacus semper lacus, nec a, sit enim.",
+      action_text: "Action Button",
+      action_style_primary: true,
+      action_style_tertiary: false,
+      has_img: true,
+      img_path: "/assets/sage/card/card-placeholder-lg.png",
+      img_alt: "Alternative text for image"
+    %>
   </div>
   <div class="sage-col--md-6">
-    <div class="sage-card">
-      <img class="sage-card__img" src="/assets/sage/card/card-placeholder-lg.png" alt="">
-      <div class="sage-card__body">
-        <h2 class="sage-card__title t-sage-heading-5">Card w/ Image</h2>
-        <p class="sage-card__text">Diam in auctor sit quam laoreet imperdiet aliquam. Habitant nunc lacus semper lacus, nec a, sit enim.</p>
-        <button class="sage-btn sage-btn--tertiary sage-btn--icon-right-caret-right">Action Button</button>
-      </div>
-    </div>
+    <%= render "sage/examples/objects/card/markup",
+      is_compact: false,
+      is_spaced: false,
+      title: "Card w/ Image",
+      text: "Diam in auctor sit quam laoreet imperdiet aliquam. Habitant nunc lacus semper lacus, nec a, sit enim.",
+      action_text: "Action Button",
+      action_style_primary: false,
+      action_style_tertiary: true,
+      has_img: true,
+      img_path: "/assets/sage/card/card-placeholder-lg.png",
+      img_alt: "Alternative text for image"
+    %>
   </div>
   <div class="sage-col--md-12">
-    <div class="sage-card sage-card--compact">
-      <img class="sage-card__img" src="/assets/sage/card/card-placeholder-sm.png" alt="">
-      <div class="sage-card__body">
-        <h2 class="sage-card__title t-sage-heading-5">Compact Card w/ Image</h2>
-        <p class="sage-card__text">Diam in auctor sit quam laoreet imperdiet aliquam. Habitant nunc lacus semper lacus, nec a, sit enim.</p>
-        <button class="sage-btn sage-btn--primary">Action Button</button>
-      </div>
-    </div>
-    <div class="sage-card sage-card--compact">
-      <img class="sage-card__img" src="/assets/sage/card/card-placeholder-sm.png" alt="">
-      <div class="sage-card__body">
-        <h2 class="sage-card__title t-sage-heading-5">Compact Card w/ Image</h2>
-        <p class="sage-card__text">Diam in auctor sit quam laoreet imperdiet aliquam. Habitant nunc lacus semper lacus, nec a, sit enim.</p>
-        <button class="sage-btn sage-btn--tertiary sage-btn--icon-right-caret-right">Action Button</button>
-      </div>
-    </div>
+    <%= render "sage/examples/objects/card/markup",
+      is_compact: true,
+      is_spaced: false,
+      title: "Compact Card w/ Image",
+      text: "Diam in auctor sit quam laoreet imperdiet aliquam. Habitant nunc lacus semper lacus, nec a, sit enim.",
+      action_text: "Action Button",
+      action_style_primary: true,
+      action_style_tertiary: false,
+      has_img: true,
+      img_path: "/assets/sage/card/card-placeholder-sm.png",
+      img_alt: "Alternative text for image"
+    %>
+    <%= render "sage/examples/objects/card/markup",
+      is_compact: true,
+      is_spaced: false,
+      title: "Compact Card w/ Image",
+      text: "Diam in auctor sit quam laoreet imperdiet aliquam. Habitant nunc lacus semper lacus, nec a, sit enim.",
+      action_text: "Action Button",
+      action_style_primary: false,
+      action_style_tertiary: true,
+       has_img: true,
+      img_path: "/assets/sage/card/card-placeholder-sm.png",
+      img_alt: "Alternative text for image"
+    %>
   </div>
   <div class="sage-col--md-6">
-    <div class="sage-card sage-card--spaced">
-      <img class="sage-card__img" src="/assets/sage/card/card-placeholder-lg.png" alt="">
-      <div class="sage-card__body">
-        <h2 class="sage-card__title t-sage-heading-5">Spaced Card w/ Image</h2>
-        <p class="sage-card__text">Diam in auctor sit quam laoreet imperdiet aliquam. Habitant nunc lacus semper lacus, nec a, sit enim.</p>
-        <button class="sage-btn sage-btn--primary">Action Button</button>
-      </div>
-    </div>
+    <%= render "sage/examples/objects/card/markup",
+      is_compact: false,
+      is_spaced: true,
+      title: "Spaced Card w/ Image",
+      text: "Diam in auctor sit quam laoreet imperdiet aliquam. Habitant nunc lacus semper lacus, nec a, sit enim.",
+      action_text: "Action Button",
+      action_style_primary: true,
+      action_style_tertiary: false,
+      has_img: true,
+      img_path: "/assets/sage/card/card-placeholder-lg.png",
+      img_alt: "Alternative text for image"
+    %>
   </div>
   <div class="sage-col--md-6">
-    <div class="sage-card sage-card--spaced">
-      <img class="sage-card__img" src="/assets/sage/card/card-placeholder-lg.png" alt="">
-      <div class="sage-card__body">
-        <h2 class="sage-card__title t-sage-heading-5">Spaced Card w/ Image</h2>
-        <p class="sage-card__text">Diam in auctor sit quam laoreet imperdiet aliquam. Habitant nunc lacus semper lacus, nec a, sit enim.</p>
-        <button class="sage-btn sage-btn--tertiary sage-btn--icon-right-caret-right">Action Button</button>
-      </div>
-    </div>
+    <%= render "sage/examples/objects/card/markup",
+      is_compact: false,
+      is_spaced: true,
+      title: "Spaced Card w/ Image",
+      text: "Diam in auctor sit quam laoreet imperdiet aliquam. Habitant nunc lacus semper lacus, nec a, sit enim.",
+      action_text: "Action Button",
+      action_style_primary: false,
+      action_style_tertiary: true,
+       has_img: true,
+      img_path: "/assets/sage/card/card-placeholder-lg.png",
+      img_alt: "Alternative text for image"
+    %>
   </div>
   <div class="sage-col--md-12">
-    <div class="sage-card sage-card--compact sage-card--spaced">
-      <img class="sage-card__img" src="/assets/sage/card/card-placeholder-sm.png" alt="">
-      <div class="sage-card__body">
-        <h2 class="sage-card__title t-sage-heading-5">Spaced &amp; Compact w/ Image</h2>
-        <p class="sage-card__text">Diam in auctor sit quam laoreet imperdiet aliquam. Habitant nunc lacus semper lacus, nec a, sit enim.</p>
-        <button class="sage-btn sage-btn--primary">Action Button</button>
-      </div>
-    </div>
-  </div>
-  <div class="sage-col--md-12">
-    <div class="sage-card sage-card--compact sage-card--spaced">
-      <img class="sage-card__img" src="/assets/sage/card/card-placeholder-sm.png" alt="">
-      <div class="sage-card__body">
-        <h2 class="sage-card__title t-sage-heading-5">Spaced &amp; Compact w/ Image</h2>
-        <p class="sage-card__text">Diam in auctor sit quam laoreet imperdiet aliquam. Habitant nunc lacus semper lacus, nec a, sit enim.</p>
-        <button class="sage-btn sage-btn--tertiary sage-btn--icon-right-caret-right">Action Button</button>
-      </div>
-    </div>
-  </div>
-  <div class="sage-col--md-6">
-    <div class="sage-card">
-      <div class="sage-card__body">
-        <h2 class="sage-card__title t-sage-heading-5">Card w/ No Image</h2>
-        <p class="sage-card__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt nobis perferendis soluta illum dicta.</p>
-        <button class="sage-btn sage-btn--primary">Action Button</button>
-      </div>
-    </div>
+    <%= render "sage/examples/objects/card/markup",
+      is_compact: true,
+      is_spaced: true,
+      title: "Spaced & Compact w/ Image",
+      text: "Diam in auctor sit quam laoreet imperdiet aliquam. Habitant nunc lacus semper lacus, nec a, sit enim.",
+      action_text: "Action Button",
+      action_style_primary: true,
+      action_style_tertiary: false,
+      has_img: true,
+      img_path: "/assets/sage/card/card-placeholder-sm.png",
+      img_alt: "Alternative text for image"
+    %>
+    <%= render "sage/examples/objects/card/markup",
+      is_compact: true,
+      is_spaced: true,
+      title: "Spaced & Compact w/ Image",
+      text: "Diam in auctor sit quam laoreet imperdiet aliquam. Habitant nunc lacus semper lacus, nec a, sit enim.",
+      action_text: "Action Button",
+      action_style_primary: false,
+      action_style_tertiary: true,
+      has_img: true,
+      img_path: "/assets/sage/card/card-placeholder-sm.png",
+      img_alt: "Alternative text for image"
+    %>
   </div>
   <div class="sage-col--md-6">
-    <div class="sage-card">
-      <div class="sage-card__body">
-        <h2 class="sage-card__title t-sage-heading-5">Card w/ No Image</h2>
-        <p class="sage-card__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt nobis perferendis soluta illum dicta.</p>
-        <button class="sage-btn sage-btn--tertiary sage-btn--icon-right-caret-right">Action Button</button>
-      </div>
-    </div>
+    <%= render "sage/examples/objects/card/markup",
+      is_compact: false,
+      is_spaced: false,
+      title: "Card w/ No Image",
+      text: "Diam in auctor sit quam laoreet imperdiet aliquam. Habitant nunc lacus semper lacus, nec a, sit enim.",
+      action_text: "Action Button",
+      action_style_primary: true,
+      action_style_tertiary: false,
+      has_img: false,
+      img_path: "",
+      img_alt: ""
+    %>
+  </div>
+  <div class="sage-col--md-6">
+    <%= render "sage/examples/objects/card/markup",
+      is_compact: false,
+      is_spaced: false,
+      title: "Card w/ No Image",
+      text: "Diam in auctor sit quam laoreet imperdiet aliquam. Habitant nunc lacus semper lacus, nec a, sit enim.",
+      action_text: "Action Button",
+      action_style_primary: false,
+      action_style_tertiary: true,
+      has_img: false,
+      img_path: "",
+      img_alt: ""
+    %>
   </div>
 </div>
