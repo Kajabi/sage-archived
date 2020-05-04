@@ -1,0 +1,13 @@
+{
+  "defaults": {
+    "timeout": 30000,
+    "ignore": [ "notice" ]
+  },
+  "urls": [
+    "http://localhost:3000/sage/pages/index",
+    "http://localhost:3000/sage/pages/token",
+    "http://localhost:3000/sage/pages/elements",
+    "http://localhost:3000/sage/pages/objects",
+    "http://localhost:3000/sage/pages/utilities"
+  ]
+}
