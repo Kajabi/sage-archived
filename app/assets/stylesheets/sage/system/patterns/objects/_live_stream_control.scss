@@ -137,6 +137,11 @@ $-live-stream-control-ring-offset: rem(5px);
   width: $-live-stream-control-icon-size;
 }
 
+.sage-live-stream-control__icon--active-mic {
+  width: 20px;
+  height: 20px;
+}
+
 .sage-live-stream-control__label {
   display: block;
   width: max-content;
