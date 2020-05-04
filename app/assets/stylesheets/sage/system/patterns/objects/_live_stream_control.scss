@@ -133,8 +133,13 @@ $-live-stream-control-ring-offset: rem(5px);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: $-live-stream-control-icon-size;
   width: $-live-stream-control-icon-size;
+  height: $-live-stream-control-icon-size;
+}
+
+.sage-live-stream-control__icon--active-mic {
+  width: $-live-stream-control-icon-size;
+  height: $-live-stream-control-icon-size;
 }
 
 .sage-live-stream-control__label {
