@@ -8,12 +8,25 @@ $-live-stream-video-tile-ratio: 1.618;
 $-live-stream-tile-gapper: calc(100% / 6);
 $-live-stream-grid-gap: sage-spacing(lg);
 
-@function tile-height($num-rows: 1, $num-cols: 2) {
+
+/* ==================================================
+  ** Calculate Grid Size by Ratio
+  Usage: `grid-size-by-ratio(2, 3)`
+
+  Creates a calc() that calculates the space needed for tiles to appear at a consistent maximum ratio:
+    - 100vh minus the height of the header and footer plus any row gutters gives us total space occupied by actual tiles
+    - This divided by the number of rows gives us one tile's height
+    - This times desired ration times however many columns plus however many column gutters gives maximum width for the overall grid
+    arguments: {Number} $num-rows, {Number} $num-cols, {Number} $raio, 
+    @return {string} - Calc function
+================================================== */
+
+@function grid-size-by-ratio($num-rows, $num-cols, $ratio: $-live-stream-video-tile-ratio) {
   $total-trimmed-space: ($-live-stream-grid-gap * $num-rows) + ($sage-live-stream-header-footer-height * 2);
-  @return calc((100vh - #{$total-trimmed-space}) / #{$num-rows} * #{$-live-stream-video-tile-ratio} * #{$num-cols} + #{$num-cols * $-live-stream-grid-gap});
+  $column-gutter-space: ($num-cols - 1) * $-live-stream-grid-gap;
+  @return calc(((100vh - #{$total-trimmed-space}) / #{$num-rows }) * #{$ratio * $num-cols} + #{$column-gutter-space});
 }
 
-// Default is for 3 or more participants
 .sage-live-stream-video-grid {
   display: grid;
   position: relative;
@@ -29,7 +42,7 @@ $-live-stream-grid-gap: sage-spacing(lg);
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(1, 1fr);
   grid-template-areas: "t1 t2";
-  max-width: tile-height(1, 2);
+  max-width: grid-size-by-ratio(1, 2);
 }
 
 .sage-live-stream-video-grid--3-up {
@@ -37,7 +50,7 @@ $-live-stream-grid-gap: sage-spacing(lg);
   grid-template-areas:
     ".  t1 t1 . "
     "t2 t2 t3 t3";
-  max-width: tile-height(2, 2);
+  max-width: grid-size-by-ratio(2, 2);
 }
 
 .sage-live-stream-video-grid--4-up {
@@ -45,7 +58,7 @@ $-live-stream-grid-gap: sage-spacing(lg);
   grid-template-areas:
     "t1 t1 t2 t2"
     "t3 t3 t4 t4";
-  max-width: tile-height(2, 2);
+  max-width: grid-size-by-ratio(2, 2);
 }
 
 .sage-live-stream-video-grid--5-up {
@@ -53,7 +66,7 @@ $-live-stream-grid-gap: sage-spacing(lg);
   grid-template-areas:
     ".  t1 t1 t2 t2 . "
     "t3 t3 t4 t4 t5 t5";
-  max-width: tile-height(2, 3);
+  max-width: grid-size-by-ratio(2, 3);
 }
 
 .sage-live-stream-video-grid--6-up {
@@ -61,7 +74,7 @@ $-live-stream-grid-gap: sage-spacing(lg);
   grid-template-areas:
     "t1 t1 t2 t2 t3 t3"
     "t4 t4 t5 t5 t6 t6";
-  max-width: tile-height(2, 3);
+  max-width: grid-size-by-ratio(2, 3);
 }
 
 .sage-live-stream-video-grid--solo {
