@@ -9,12 +9,12 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dummy": "cd test/dummy && rails s",
     "stylelint": "stylelint \"**/*.scss\"",
-    "webpack": "./bin/webpack",
-    "webpack:clobber": "rm -rf ./public/sage/packs",
+    "rails:dummy": "cd test/dummy && rails s",
+    "webpack:build": "./bin/webpack",
     "webpack:server": "./bin/webpack-dev-server",
-    "start": "npm-run-all --parallel webpack:server dummy"
+    "webpack:clobber": "rm -rf ./public/sage/packs",
+    "start": "npm-run-all --parallel webpack:server rails:dummy"
   },
   "repository": {
     "type": "git",
