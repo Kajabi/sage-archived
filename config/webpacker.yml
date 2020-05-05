@@ -57,9 +57,6 @@ development:
     host: localhost
     port: 3035
     public: localhost:3035
-    # public_path: test/dummy/public # AJM THIS CHANGES FOR ENV
-    # content_base: test/dummy/public # AJM THIS CHANGES FOR ENV
-    # content_base_public_path: test/dummy/public # AJM THIS CHANGES FOR ENV
     hmr: false
     # Inline should be set to true if using HMR
     inline: true
