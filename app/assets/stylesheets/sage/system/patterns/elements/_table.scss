@@ -77,6 +77,18 @@ $-sage-table-cell-truncate-width: 6.5em;
   }
 }
 
+.sage-table--condensed {
+  thead,
+  tfoot,
+  tbody {
+    td,
+    th {
+      padding-top: $sage-table-cell-padding-xs;
+      padding-bottom: $sage-table-cell-padding-xs;
+    }
+  }
+}
+
 
 // Alternating rows of striped colors
 .sage-table--striped {
@@ -132,7 +144,7 @@ $-sage-table-cell-truncate-width: 6.5em;
 }
 
 
-// Text overflow treatment in cells
+// Text overflow treatment in individual cells
 .sage-table-cell--truncate {
   overflow: hidden;
   max-width: $-sage-table-cell-truncate-width;
@@ -143,7 +155,7 @@ $-sage-table-cell-truncate-width: 6.5em;
 
 // Stacked block content within cells
 .sage-table-cell__block {
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
   color: inherit;
 }
