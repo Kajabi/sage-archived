@@ -23,7 +23,7 @@ module Sage
 
       app.middleware.insert_before(
         0,
-        "Webpacker::DevServerProxy", # "Webpacker::DevServerProxy" as a string if Rails version < 5
+        "Webpacker::DevServerProxy", # use a string if Rails version < 5
         ssl_verify_none: true,
         webpacker: Sage.webpacker
       )

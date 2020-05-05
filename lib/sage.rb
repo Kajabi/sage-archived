@@ -1,8 +1,7 @@
 require "sage/engine"
-# require "sage/asset_delivery_helper"
 
 module Sage
-  ROOT_PATH = Pathname.new(File.join(__dir__, ".."))
+  ROOT_PATH = Sage::Engine.root
 
   class << self
     def webpacker
