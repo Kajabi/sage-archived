@@ -1,10 +1,103 @@
-  <h3 class="t-sage-heading-6">Responsive table</h3>
-  <%= render "sage/examples/elements/table/markup",
-    caption: "Responsive table requires two parent containers",
-    striped: false
-  %>
-  <h3 class="t-sage-heading-6">Table with row striping</h3>
-  <%= render "sage/examples/elements/table/markup",
-    caption: "",
-    striped: true
-  %>
+<h3 class="t-sage-heading-6">Responsive table</h3>
+<%= render "sage/examples/elements/table/markup",
+  caption: "Responsive table requires two parent containers",
+  condensed: false,
+  striped: false,
+  selectable: false
+%>
+
+<h3 class="t-sage-heading-6">Striped table</h3>
+<%= render "sage/examples/elements/table/markup",
+  caption: "",
+  condensed: false,
+  striped: true,
+  selectable: false
+%>
+
+<h3 class="t-sage-heading-6">Striped table with condensed padding</h3>
+<%= render "sage/examples/elements/table/markup",
+  caption: "",
+  condensed: true,
+  striped: true,
+  selectable: false
+%>
+
+<h3 class="t-sage-heading-6">Table with highlighted rows and block cells</h3>
+<table class="sage-table sage-table--selectable">
+  <thead>
+    <tr>
+      <td>Mattis</td>
+      <td>Justo Inceptos</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="sage-row--selectable">
+      <td class="sage-table-cell">
+        <a href="#" class="sage-table-cell__block">
+          <div class="sage-table-cell__heading">
+            <p class="sage-table-cell__title">First item</p>
+            <span class="sage-table-cell__label sage-label sage-label--success">Accepted</span>
+          </div>
+          <div class="sage-table-cell__body">
+            Maecenas sed diam eget risus varius blandit sit amet non
+          </div>
+        </a>
+      </td>
+      <td class="sage-table-cell">
+        <a href="#" class="sage-table-cell__block">Porta Ipsum</a>
+      </td>
+    </tr>
+    <tr class="sage-row--selectable">
+      <td class="sage-table-cell">
+        <a href="#" class="sage-table-cell__block">
+          <div class="sage-table-cell__heading">
+            <p class="sage-table-cell__title">Second item</p>
+            <span class="sage-table-cell__label sage-label sage-label--warning">On hold</span>
+          </div>
+          <div class="sage-table-cell__body">
+            Pellentesque ornare sem lacinia quam venenatis vestibulum
+          </div>
+        </a>
+      </td>
+      <td class="sage-table-cell">
+        <a href="#" class="sage-table-cell__block">Dapibus Vulputate</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 class="t-sage-heading-6">Striped table with selectively truncated cells</h3>
+<p>Individual cells should be assigned the <code>.sage-table-cell--truncate</code> class. Not suggested for use with long strings of <em>important</em> text: use the responsive (scrolling) table instead.</p>
+<table class="sage-table sage-table--striped sage-table--truncate">
+  <thead>
+    <tr>
+      <td>Malesuada</td>
+      <td>Amet Cras</td>
+      <td>Consectetur</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="sage-row--selectable">
+      <td class="sage-table-cell">
+        <span class="sage-table-cell__label sage-label sage-label--danger">Warning</span>
+      </td>
+      <td class="sage-table-cell">
+        $20,323.30 USD
+      </td>
+      <td class="sage-table-cell sage-table-cell--truncate">
+        Sed posuere consectetur
+      </td>
+    </tr>
+    <tr class="sage-row--selectable">
+      <td class="sage-table-cell">
+        <span class="sage-table-cell__label sage-label sage-label--draft">Draft</span>
+      </td>
+      <td class="sage-table-cell">
+        $1,101,444.31 USD
+      </td>
+      <td class="sage-table-cell sage-table-cell--truncate">
+        Curabitur blandit tempus
+      </td>
+    </tr>
+  </tbody>
+</table>
