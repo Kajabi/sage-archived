@@ -4,7 +4,10 @@
 
 ================================================== */
 
-$-sage-table-row-hover: sage-color(grey, 200);
+$-sage-table-row-color-stripe: sage-color(grey, 100);
+$-sage-table-row-color-hover: sage-color(grey, 200);
+$-sage-table-cell-focus: sage-color(charcoal);
+$-sage-table-cell-truncate-width: 6.5em;
 
 
 .sage-table {
@@ -79,7 +82,7 @@ $-sage-table-row-hover: sage-color(grey, 200);
 .sage-table--striped {
   tbody {
     tr:nth-child(odd) {
-      background-color: sage-color(grey, 100);
+      background-color: $-sage-table-row-color-stripe;
     }
   }
 }
@@ -94,23 +97,11 @@ $-sage-table-row-hover: sage-color(grey, 200);
     &:hover,
     &:focus,
     &:active {
-      background-color: $-sage-table-row-hover;
+      background-color: $-sage-table-row-color-hover;
     }
 
     &:focus-within {
-      background-color: $-sage-table-row-hover;
-    }
-  }
-}
-
-
-// Forces cell widths to expand to content
-.sage-table--nowrap {
-  .sage-table-wrapper__overflow & {
-    thead th,
-    thead td,
-    tbody td {
-      white-space: nowrap;
+      background-color: $-sage-table-row-color-hover;
     }
   }
 }
@@ -140,7 +131,17 @@ $-sage-table-row-hover: sage-color(grey, 200);
   }
 }
 
-// Stacked cell content
+
+// Text overflow treatment in cells
+.sage-table-cell--truncate {
+  overflow: hidden;
+  max-width: $-sage-table-cell-truncate-width;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+
+// Stacked block content within cells
 .sage-table-cell__block {
   display: inline-flex;
   flex-direction: column;
@@ -153,12 +154,40 @@ $-sage-table-row-hover: sage-color(grey, 200);
   align-items: center;
 }
 
+.sage-table-cell__title {
+  font-weight: sage-font-weight(semibold);
+}
+
 .sage-table-cell__body {
   margin-top: sage-spacing(2xs);
 }
 
-.sage-table-cell__title {
-  margin-right: sage-spacing(xs);
-  font-weight: sage-font-weight(semibold);
+.sage-table-cell__link {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  color: inherit;
+
+  &:focus,
+  &:hover,
+  &:active {
+    text-decoration: underline;
+  }
+
+  &:focus {
+    outline: 1px dotted $-sage-table-cell-focus;
+    outline-offset: 1px;
+  }
+
+  .sage-table-cell--truncate & {
+    display: inline;
+  }
 }
 
+.sage-table-cell__label {
+  .sage-table-cell__block &,
+  .sage-table-cell__link & {
+    margin-left: 0.5em;
+    text-decoration: none;
+  }
+}
