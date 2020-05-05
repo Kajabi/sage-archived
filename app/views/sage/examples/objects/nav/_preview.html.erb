@@ -1,4 +1,12 @@
-<div class="sage-nav">
-  <a href="#" class="sage-nav__link">Nav Link</a>
-  <a href="#" class="sage-nav__link sage-nav__link--sub">Nav Sub Link</a>
-</div>
+<%= render "sage/examples/objects/nav/markup",
+  nav_links: [
+    {
+      text: "Nav Link",
+      is_sublink: false
+    },
+    {
+      text: "Nav Sub Link",
+      is_sublink: true
+    }
+  ]
+%>
