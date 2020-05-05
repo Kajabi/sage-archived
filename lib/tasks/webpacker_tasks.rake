@@ -1,13 +1,13 @@
 namespace :sage do
   namespace :webpacker do
-    desc "Install deps with yarn"
+    desc "Install Sage deps with yarn"
     task :yarn_install do
-      Dir.chdir(File.join(__dir__, "../..")) do
+      Dir.chdir(Sage::Engine.root) do
         system "yarn install --no-progress --production"
       end
     end
 
-    desc "Compile JavaScript packs using webpack for production with digests"
+    desc "Compile Sage frontend packs using webpack for production with digests"
     task compile: [:yarn_install, :environment] do
       Webpacker.with_node_env("production") do
         ensure_log_goes_to_stdout do
@@ -20,13 +20,21 @@ namespace :sage do
         end
       end
     end
+
+    desc "Remove Sage compiled frontend pack directory"
+    task clobber: [:environment] do
+      ensure_log_goes_to_stdout do
+        Sage.webpacker.commands.clobber
+        $stdout.puts "Removed webpack output path directory #{Sage.webpacker.config.public_output_path}"
+      end
+    end
   end
 end
 
 def ensure_log_goes_to_stdout
-  old_logger = Webpacker.logger
-  Webpacker.logger = ActiveSupport::Logger.new(STDOUT)
+  old_logger = Sage.webpacker.logger
+  Sage.webpacker.logger = ActiveSupport::Logger.new(STDOUT)
   yield
 ensure
-  Webpacker.logger = old_logger
+  Sage.webpacker.logger = old_logger
 end
