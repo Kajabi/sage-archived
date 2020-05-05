@@ -1,0 +1,5 @@
+<div class="sage-nav">
+  <% nav_links.each do |link| %>
+  <a href="#" class="sage-nav__link <%= link[:is_sublink] ? "sage-nav__link--sub" : "" %>"><%= link[:text] %></a>
+  <% end %>
+</div>
