@@ -3,6 +3,8 @@
   <div class="sage-alert-copy">
     <h3 class="sage-alert__title"><%= sage_alert_title %></h3>
     <p class="sage-alert__desc"><%= sage_alert_desc %></p>
+    <% if dismissable %>
     <button type="button" class="sage-alert__close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <% end %>
   </div>
 </div>
