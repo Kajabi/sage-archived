@@ -11,9 +11,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "stylelint": "stylelint \"**/*.scss\"",
     "rails:dummy": "cd test/dummy && rails s",
-    "webpack:build": "./bin/webpack",
+    "webpack": "./bin/webpack",
     "webpack:server": "./bin/webpack-dev-server",
-    "webpack:clobber": "rm -rf ./public/sage/packs",
     "start": "npm-run-all --parallel webpack:server rails:dummy"
   },
   "repository": {

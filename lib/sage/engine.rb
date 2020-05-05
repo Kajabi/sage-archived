@@ -9,7 +9,7 @@ module Sage
     config.app_middleware.use(
       Rack::Static,
       urls: ['/sage/packs'],
-      root: Sage::Engine.root.join("public")
+      root: Sage::Engine.root.join("tmp")
     )
 
     initializer "webpacker.proxy" do |app|

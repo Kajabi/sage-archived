@@ -3,7 +3,7 @@
 default: &default
   source_path: app/frontend
   source_entry_path: packs
-  public_root_path: public # AJM THIS CHANGES FOR ENV
+  public_root_path: tmp
   public_output_path: sage/packs
   cache_path: tmp/cache/webpacker
   webpack_compile_output: true
@@ -80,7 +80,7 @@ test:
   compile: true
 
 staging:
-    <<: *default
+  <<: *default
 
   # Production depends on precompilation of packs prior to booting for performance.
   compile: false
