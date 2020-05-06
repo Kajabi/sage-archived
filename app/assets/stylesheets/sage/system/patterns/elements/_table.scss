@@ -4,6 +4,12 @@
 
 ================================================== */
 
+$-sage-table-row-color-stripe: sage-color(grey, 100);
+$-sage-table-row-color-hover: sage-color(grey, 200);
+$-sage-table-cell-focus: sage-color(charcoal);
+$-sage-table-cell-truncate-width: 6.5em;
+
+
 .sage-table {
   --table-cell-padding: #{$sage-table-cell-padding-sm};
   --table-heading-padding: #{$sage-table-heading-padding-sm};
@@ -31,12 +37,12 @@
 
     td:first-child,
     th:first-child {
-      padding-left: 0;
+      padding-left: sage-spacing(sm) / 2;
     }
 
     td:last-child,
     th:last-child {
-      padding-right: 0;
+      padding-right: sage-spacing(sm) / 2;
     }
   }
 
@@ -57,11 +63,11 @@
     line-height: sage-line-height(md);
 
     &:first-child {
-      padding-left: 0;
+      padding-left: sage-spacing(sm) / 2;
     }
 
     &:last-child {
-      padding-right: 0;
+      padding-right: sage-spacing(sm) / 2;
     }
   }
 
@@ -71,13 +77,48 @@
   }
 }
 
-.sage-table--striped {
+.sage-table--condensed {
+  thead,
+  tfoot,
   tbody {
-    tr:nth-child(odd) {
-      background-color: sage-color(grey, 100);
+    td,
+    th {
+      padding-top: $sage-table-cell-padding-xs;
+      padding-bottom: $sage-table-cell-padding-xs;
     }
   }
 }
+
+
+// Alternating rows of striped colors
+.sage-table--striped {
+  tbody {
+    tr:nth-child(odd) {
+      background-color: $-sage-table-row-color-stripe;
+    }
+  }
+}
+
+
+// Selectable rows with checkbox or radio inputs
+.sage-table--selectable {
+  .sage-row--selectable,
+  .sage-row--selectable:nth-child(odd) {
+    transition: $sage-transition;
+    transition-property: background;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: $-sage-table-row-color-hover;
+    }
+
+    &:focus-within {
+      background-color: $-sage-table-row-color-hover;
+    }
+  }
+}
+
 
 // Wrapper div required for responsive tables
 .sage-table-wrapper {
@@ -103,3 +144,59 @@
   }
 }
 
+
+// Text overflow treatment in individual cells
+.sage-table-cell--truncate {
+  overflow: hidden;
+  max-width: $-sage-table-cell-truncate-width;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+
+// Stacked block content within cells
+.sage-table-cell__block {
+  display: flex;
+  flex-direction: column;
+  color: inherit;
+}
+
+.sage-table-cell__heading,
+.sage-table-cell__body {
+  display: inline-flex;
+  align-items: center;
+}
+
+.sage-table-cell__title {
+  font-weight: sage-font-weight(semibold);
+}
+
+.sage-table-cell__body {
+  margin-top: sage-spacing(2xs);
+}
+
+.sage-table-cell__link {
+  color: inherit;
+
+  &:focus,
+  &:active {
+    text-decoration: underline;
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: 1px dotted $-sage-table-cell-focus;
+    outline-offset: 1px;
+  }
+
+  .sage-table-cell--truncate & {
+    display: inline;
+  }
+}
+
+.sage-table-cell__label {
+  .sage-table-cell__block &,
+  .sage-table-cell__link & {
+    margin-left: 0.5em;
+  }
+}
