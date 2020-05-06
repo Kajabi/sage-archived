@@ -1,13 +1,51 @@
 <%= render "sage/examples/objects/nav/markup",
   nav_links: [
     {
-      text: "Nav Link",
+      text: "Nav Link 1",
       is_sublink: false,
+      is_active: false,
+      url: "#"
+    },
+    {
+      text: "Nav Link 2",
+      is_sublink: false,
+      is_active: false,
+      url: "#"
+    },
+    {
+      text: "Sub Link 1",
+      is_sublink: true,
+      is_active: false,
+      url: "#"
+    },
+    {
+      text: "Sub Link 2",
+      is_sublink: true,
+      is_active: false,
       url: "#"
     },
     {
       text: "Nav Sub Link",
       is_sublink: true,
+      is_active: true,
+      url: "#"
+    },
+    {
+      text: "Nav Link 3",
+      is_sublink: false,
+      is_active: false,
+      url: "#"
+    },
+    {
+      text: "Nav Link 4",
+      is_sublink: false,
+      is_active: false,
+      url: "#"
+    },
+    {
+      text: "Nav Link 5",
+      is_sublink: false,
+      is_active: false,
       url: "#"
     }
   ]
