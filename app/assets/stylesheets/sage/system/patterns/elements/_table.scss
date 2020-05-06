@@ -175,18 +175,15 @@ $-sage-table-cell-truncate-width: 6.5em;
 }
 
 .sage-table-cell__link {
-  display: inline-flex;
-  align-items: center;
-  flex-wrap: wrap;
   color: inherit;
 
   &:focus,
-  &:hover,
   &:active {
     text-decoration: underline;
+    outline: none;
   }
 
-  &:focus {
+  &:focus-visible {
     outline: 1px dotted $-sage-table-cell-focus;
     outline-offset: 1px;
   }
@@ -200,6 +197,5 @@ $-sage-table-cell-truncate-width: 6.5em;
   .sage-table-cell__block &,
   .sage-table-cell__link & {
     margin-left: 0.5em;
-    text-decoration: none;
   }
 }
