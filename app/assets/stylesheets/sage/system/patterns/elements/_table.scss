@@ -104,7 +104,8 @@ $-sage-table-cell-truncate-width: 6.5em;
 .sage-table--selectable {
   .sage-row--selectable,
   .sage-row--selectable:nth-child(odd) {
-    transition: background 0.1s ease-in-out;
+    transition: $sage-transition;
+    transition-property: background;
 
     &:hover,
     &:focus,
