@@ -1,4 +1,4 @@
-import "./shared"
+import "sharedDependancies"
 
 // --- Sage Images --------------
 // require.context("../images/docs", true)
