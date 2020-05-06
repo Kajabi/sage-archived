@@ -1,4 +1,4 @@
-import "./shared"
+import "sharedDependancies"
 
 // --- Sage System --------------
 import "stylesheets/system/index.scss"
