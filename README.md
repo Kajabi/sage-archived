@@ -29,11 +29,9 @@ gem 'sage', git: 'https://github.com/Kajabi/sage.git'
 ```
 
 And then execute:
-
     $ bundle
 
 Or install it yourself as:
-
     $ gem install sage_design_system
 
 ## Usage
