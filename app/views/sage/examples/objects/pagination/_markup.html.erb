@@ -1,0 +1,20 @@
+<nav class="sage-pagination" aria-label="Pagination">
+  <span class="sage-pagination__count"><strong><%= total_count %></strong> Records</span>
+  <a class="sage-pagination__link" rel="prev" href="<%= prev_link %>"><i class="sage-pagination__icon sage-icon-caret-left"></i> <%= prev_text %></a>
+  <ul class="sage-pagination__pages">
+    <% pagination_items.each do |item| %>
+    <li>
+      <%- if item[:is_link] -%>
+      <a href="<%= item[:link] %>" class="sage-pagination__page" aria-label="<%= item[:aria_label] %>"><%= item[:page_number] %></a>
+      <% end %>
+      <%- if item[:is_gap] -%>
+      <span class="sage-pagination__page sage-pagination__page--gap">&hellip;</span>
+      <% end %>
+      <%- if item[:is_current] -%>
+      <span class="sage-pagination__page sage-pagination__page--active" aria-current="page"><%= item[:page_number] %></span>
+      <% end %>
+    </li>
+    <% end %>
+  </ul>
+  <a href="<%= next_link %>" class="sage-pagination__link sage-pagination__link--disabled" aria-disabled="true"><%= next_text %> <i class="sage-pagination__icon sage-icon-caret-right"></i></a>
+</nav>
