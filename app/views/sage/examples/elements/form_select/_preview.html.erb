@@ -1,30 +1,111 @@
-<div class="sage-select">
-  <select name="pets" id="pets" class="sage-select__field" required>
-    <option value="" disabled selected>-- Please Select A Character --</option>
-    <option value="none">None</option>
-    <option value="mario">Mario</option>
-    <option value="Luigi">Luigi</option>
-    <option value="princess-peach">Princess Peach</option>
-    <option value="daisy">Daisy</option>
-    <option value="toad">Toad</option>
-  </select>
-  <label for="pets" class="sage-select__label">Character</label>
-  <i class="sage-select__arrow" aria-hidden="true"></i>
-  <div class="sage-select__message">This is a message</div>
-</div>
+<%= render "sage/examples/elements/form_select/markup",
+  name: "characters",
+  id: "characters",
+  label: "Characters",
+  is_required: true,
+  has_error: false,
+  select_options: [
+    {
+      text: "-- Please Select a Character --",
+      value: "",
+      disabled: true,
+      selected: true,
+    },
+    {
+      text: "None",
+      value: "none",
+      disabled: false,
+      selected: false,
+    },
+    {
+      text: "Mario",
+      value: "mario",
+      disabled: false,
+      selected: false,
+    },
+    {
+      text: "Luigi",
+      value: "luigi",
+      disabled: false,
+      selected: false,
+    },
+    {
+      text: "Princess Peach",
+      value: "princess-peach",
+      disabled: false,
+      selected: false,
+    },
+    {
+      text: "Daisy",
+      value: "daisy",
+      disabled: false,
+      selected: false,
+    },
+    {
+      text: "Toad",
+      value: "toad",
+      disabled: false,
+      selected: false,
+    },
+  ],
+  message: "This is a message"
+%>
 
-<div class="sage-select sage-select--error">
-  <select name="pet" id="pet" class="sage-select__field" required>
-    <option value="" disabled selected>-- Please Select A Pet --</option>
-    <option value="none">None</option>
-    <option value="dog">Dog</option>
-    <option value="cat">Cat</option>
-    <option value="hamster">Hamster</option>
-    <option value="parrot">Parrot</option>
-    <option value="spider">Spider</option>
-    <option value="goldfish">Goldfish</option>
-  </select>
-  <label for="pet" class="sage-select__label">Pet</label>
-  <i class="sage-select__arrow" aria-hidden="true"></i>
-  <div class="sage-select__message">This is a message</div>
-</div>
+<%= render "sage/examples/elements/form_select/markup",
+  name: "pets",
+  id: "pets",
+  label: "Pets",
+  is_required: true,
+  has_error: true,
+  select_options: [
+    {
+      text: "-- Please Select a Pet --",
+      value: "",
+      disabled: true,
+      selected: true,
+    },
+    {
+      text: "None",
+      value: "none",
+      disabled: false,
+      selected: false,
+    },
+    {
+      text: "Dog",
+      value: "dog",
+      disabled: false,
+      selected: false,
+    },
+    {
+      text: "Cat",
+      value: "cat",
+      disabled: false,
+      selected: false,
+    },
+    {
+      text: "Hamster",
+      value: "hamster",
+      disabled: false,
+      selected: false,
+    },
+    {
+      text: "Parrot",
+      value: "parrot",
+      disabled: false,
+      selected: false,
+    },
+    {
+      text: "Spider",
+      value: "spider",
+      disabled: false,
+      selected: false,
+    },
+    {
+      text: "Goldfish",
+      value: "goldfish",
+      disabled: false,
+      selected: false,
+    },
+  ],
+  message: "This is a message"
+%>
