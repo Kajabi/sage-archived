@@ -2,7 +2,7 @@
   <% if responsive %>
   <div class="sage-table-wrapper__overflow">
   <% end %>
-    <table class="sage-table<%= striped ? " sage-table--striped" : "" %><%= selectable ? " sage-table--selectable" : "" %><%= condensed ? " sage-table--condensed" : "" %>">
+    <table class="sage-table<%= striped ? " sage-table--striped" : "" %><%= selectable ? " sage-table--selectable" : "" %><%= condensed ? " sage-table--condensed" : "" %><%= sortable ? " sage-table--sortable" : ""%>">
       <% if caption != "" %><caption><%= caption %></caption><% end %>
       <thead>
         <tr>
