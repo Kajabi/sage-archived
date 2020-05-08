@@ -1,23 +1,23 @@
 <nav class="sage-pagination" aria-label="pagination">
-    <span class="sage-pagination__count"><strong><%= total_count %></strong> Records</span>
-    <ul class="sage-pagination__pages">
-    <% pagination_items.each do |item| %>
-      <li>
+  <span class="sage-pagination__count"><strong><%= total_count %></strong> Records</span>
+  <ul class="sage-pagination__pages">
+  <% pagination_items.each do |item| %>
+    <li>
       <%- if item[:is_link] -%>
-        <a href="<%= item[:link_url] %>" class="sage-pagination__link<%= item[:is_disabled] ? " sage-pagination__link--disabled" : "" %><%= item[:is_current] ? " sage-pagination__link--current" : "" %>"<% if item[:is_disabled] %> aria-disabled="true"<% end %><% if item[:is_current] %> aria-current="page"<% end %>>
-        <% if item[:is_prev] %>
-          <i class="sage-pagination__icon sage-icon-caret-left" aria-hidden="true"></i>Prev <span class="visually-hidden">Page</span>
-        <% elsif item[:is_next] %>
-          Next <i class="sage-pagination__icon sage-icon-caret-right" aria-hidden="true"></i> <span class="visually-hidden">Page</span>
-        <% else %>
-          <span class="visually-hidden">Page</span> <%= item[:page_number] %>
-        <% end %>
-        </a>
+      <a href="<%= item[:link_url] %>" class="sage-pagination__link<%= item[:is_disabled] ? " sage-pagination__link--disabled" : "" %><%= item[:is_current] ? " sage-pagination__link--current" : "" %>"<% if item[:is_disabled] %> aria-disabled="true"<% end %><% if item[:is_current] %> aria-current="page"<% end %>>
+      <% if item[:is_prev] %>
+      <i class="sage-pagination__icon sage-icon-caret-left" aria-hidden="true"></i>Prev <span class="visually-hidden">Page</span>
+      <% elsif item[:is_next] %>
+      Next <i class="sage-pagination__icon sage-icon-caret-right" aria-hidden="true"></i> <span class="visually-hidden">Page</span>
+      <% else %>
+        <span class="visually-hidden">Page</span> <%= item[:page_number] %>
       <% end %>
-      <%- if item[:is_gap] -%>
-        <span class="sage-pagination__page sage-pagination__page--gap">&hellip;</span>
-      <% end %>
-      </li>
-       <% end %>
-    </ul>
-  </nav>
+      </a>
+    <% end %>
+    <%- if item[:is_gap] -%>
+      <span class="sage-pagination__page sage-pagination__page--gap">&hellip;</span>
+    <% end %>
+    </li>
+  <% end %>
+  </ul>
+</nav>
