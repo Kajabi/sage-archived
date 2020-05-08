@@ -11,6 +11,10 @@
   align-items: center;
   margin-bottom: $sage-form-element-spacing;
   color: $sage-switch-color-default-text;
+
+  + & {
+    margin-top: -($sage-form-element-spacing / 2);
+  }
 }
 
 .sage-switch__message {
