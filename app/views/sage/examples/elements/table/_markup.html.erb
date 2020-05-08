@@ -6,11 +6,11 @@
       <% if caption != "" %><caption><%= caption %></caption><% end %>
       <thead>
         <tr>
-          <th>Cras Porta</th>
-          <th>Dapibus Ridiculus</th>
-          <th>Purus</th>
-          <th>Mollis</th>
-          <th>Ridiculus</th>
+          <th><% if sortable %><a href="#" class="sage-table__sort sage-table__sort--selected"><% end %>Cras Porta<% if sortable %></a><% end %></th>
+          <th><% if sortable %><a href="#" class="sage-table__sort"><% end %>Dapibus Ridiculus<% if sortable %></a><% end %></th>
+          <th><% if sortable %><a href="#" class="sage-table__sort"><% end %>Purus<% if sortable %></a><% end %></th>
+          <th><% if sortable %><a href="#" class="sage-table__sort"><% end %>Mollis<% if sortable %></a><% end %></th>
+          <th><% if sortable %><a href="#" class="sage-table__sort"><% end %>Ridiculus<% if sortable %></a><% end %></th>
         </tr>
       </thead>
       <tbody>

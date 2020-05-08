@@ -8,7 +8,8 @@ $-sage-table-row-color-stripe: sage-color(grey, 100);
 $-sage-table-row-color-hover: sage-color(grey, 200);
 $-sage-table-cell-focus: sage-color(charcoal);
 $-sage-table-cell-truncate-width: 6.5em;
-
+$-sage-table-sort-indicator-width: rem(5px);
+$-sage-table-sort-indicator-direction: rem(7px);
 
 .sage-table {
   --table-cell-padding: #{$sage-table-cell-padding-sm};
@@ -77,6 +78,7 @@ $-sage-table-cell-truncate-width: 6.5em;
   }
 }
 
+// Decreased vertical padding
 .sage-table--condensed {
   thead,
   tfoot,
@@ -95,6 +97,58 @@ $-sage-table-cell-truncate-width: 6.5em;
   tbody {
     tr:nth-child(odd) {
       background-color: $-sage-table-row-color-stripe;
+    }
+  }
+}
+
+
+// Sortable rows
+.sage-table--sortable {
+  .sage-table__sort {
+    color: inherit;
+    transition: $sage-transition;
+    transition-property: color;
+    cursor: pointer;
+
+    &::after {
+      content: none;
+      display: block;
+      height: 0;
+      width: 0;
+      margin-left: sage-spacing(2xs);
+      border-left: $-sage-table-sort-indicator-width solid transparent;
+      border-right: $-sage-table-sort-indicator-width solid transparent;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: sage-color(charcoal, 300);
+    }
+
+    &:focus,
+    &:active {
+      outline: 1px dotted sage-color(charcoal, 100);
+    }
+  }
+
+  .sage-table__sort--selected {
+    display: flex;
+    align-items: center;
+    position: relative;
+    color: sage-color(charcoal, 100);
+    text-decoration: underline;
+
+    &::after {
+      content: "";
+      border-top: $-sage-table-sort-indicator-direction solid currentColor;
+    }
+  }
+
+  .sage-table__sort--ascending {
+    &::after {
+      border-top: 0;
+      border-bottom: $-sage-table-sort-indicator-direction solid currentColor;
     }
   }
 }
