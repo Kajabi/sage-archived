@@ -1,6 +1,7 @@
 <h3 class="t-sage-heading-6">Responsive table</h3>
 <%= render "sage/examples/elements/table/markup",
   caption: "Responsive table requires two parent containers",
+  responsive: true,
   condensed: false,
   striped: false,
   selectable: false
@@ -9,6 +10,7 @@
 <h3 class="t-sage-heading-6">Striped table</h3>
 <%= render "sage/examples/elements/table/markup",
   caption: "",
+  responsive: true,
   condensed: false,
   striped: true,
   selectable: false
@@ -17,6 +19,7 @@
 <h3 class="t-sage-heading-6">Striped table with condensed padding</h3>
 <%= render "sage/examples/elements/table/markup",
   caption: "",
+  responsive: true,
   condensed: true,
   striped: true,
   selectable: false
@@ -26,8 +29,8 @@
 <table class="sage-table sage-table--selectable">
   <thead>
     <tr>
-      <td>Mattis</td>
-      <td>Justo Inceptos</td>
+      <th>Mattis</th>
+      <th>Justo Inceptos</th>
     </tr>
   </thead>
   <tbody>
@@ -71,9 +74,9 @@
 <table class="sage-table sage-table--striped sage-table--truncate">
   <thead>
     <tr>
-      <td>Malesuada</td>
-      <td>Amet Cras</td>
-      <td>Consectetur</td>
+      <th>Malesuada</th>
+      <th>Amet Cras</th>
+      <th>Consectetur</th>
     </tr>
   </thead>
   <tbody>

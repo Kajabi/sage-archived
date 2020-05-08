@@ -1,14 +1,16 @@
 <div class="sage-table-wrapper">
+  <% if responsive %>
   <div class="sage-table-wrapper__overflow">
+  <% end %>
     <table class="sage-table<%= striped ? " sage-table--striped" : "" %><%= selectable ? " sage-table--selectable" : "" %><%= condensed ? " sage-table--condensed" : "" %>">
       <% if caption != "" %><caption><%= caption %></caption><% end %>
       <thead>
         <tr>
-          <td>Cras Porta</td>
-          <td>Dapibus Ridiculus</td>
-          <td>Purus</td>
-          <td>Mollis</td>
-          <td>Ridiculus</td>
+          <th>Cras Porta</th>
+          <th>Dapibus Ridiculus</th>
+          <th>Purus</th>
+          <th>Mollis</th>
+          <th>Ridiculus</th>
         </tr>
       </thead>
       <tbody>
@@ -42,5 +44,7 @@
         </tr>
       </tbody>
     </table>
+  <% if responsive %>
   </div>
+  <% end %>
 </div>
