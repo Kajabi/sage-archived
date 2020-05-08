@@ -105,19 +105,25 @@ $-sage-table-sort-indicator-direction: rem(7px);
 // Sortable rows
 .sage-table--sortable {
   .sage-table__sort {
+    display: flex;
+    align-items: center;
     color: inherit;
     transition: $sage-transition;
     transition-property: color;
     cursor: pointer;
 
     &::after {
-      content: none;
+      content: "";
       display: block;
+      flex: 0 1 $-sage-table-sort-indicator-width;
       height: 0;
       width: 0;
       margin-left: sage-spacing(2xs);
       border-left: $-sage-table-sort-indicator-width solid transparent;
       border-right: $-sage-table-sort-indicator-width solid transparent;
+      transition: $sage-transition;
+      transition-property: opacity;
+      opacity: 0;
     }
 
     &:hover,
@@ -133,15 +139,12 @@ $-sage-table-sort-indicator-direction: rem(7px);
   }
 
   .sage-table__sort--selected {
-    display: flex;
-    align-items: center;
-    position: relative;
     color: sage-color(charcoal, 100);
     text-decoration: underline;
 
     &::after {
-      content: "";
       border-top: $-sage-table-sort-indicator-direction solid currentColor;
+      opacity: 1;
     }
   }
 
