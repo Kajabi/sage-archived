@@ -1,65 +1,98 @@
 <%= render "sage/examples/objects/pagination/markup",
   total_count: "32",
-  prev_text: "Prev",
-  prev_link: "#",
-  next_text: "Next",
-  next_link: "#",
   pagination_items: [
     {
+      # prev link
       is_link: true,
       is_gap: false,
-      is_current: false,
+      is_prev: true,
+      is_next: false,
+      page_number: "",
+      link_url: "#",
+      is_disabled: false,
+      is_current: false
+    },
+    {
+      is_link: true,
+      is_gap: false,
+      is_prev: false,
+      is_next: false,
       page_number: "1",
-      link: "#",
-      aria_label: "Go to page 1"
+      link_url: "#",
+      is_disabled: false,
+      is_current: false
     },
     {
       is_link: true,
       is_gap: false,
-      is_current: false,
+      is_prev: false,
+      is_next: false,
       page_number: "2",
-      link: "#",
-      aria_label: "Go to page 2"
+      link_url: "#",
+      is_disabled: false,
+      is_current: false
     },
     {
       is_link: true,
       is_gap: false,
-      is_current: false,
+      is_prev: false,
+      is_next: false,
       page_number: "3",
-      link: "#",
-      aria_label: "Go to page 3"
+      link_url: "#",
+      is_disabled: false,
+      is_current: false
     },
     {
+      # gap
       is_link: false,
       is_gap: true,
-      is_current: false,
+      is_prev: false,
+      is_next: false,
       page_number: "",
-      link: "",
-      aria_label: ""
-    },
-     {
-      is_link: true,
-      is_gap: false,
-      is_current: false,
-      page_number: "18",
-      link: "#",
-      aria_label: "Go to page 18"
-    },
-     {
-      is_link: true,
-      is_gap: false,
-      is_current: false,
-      page_number: "19",
-      link: "#",
-      aria_label: "Go to page 19"
+      link_url: "#",
+      is_disabled: false,
+      is_current: false
     },
     {
-      is_link: false,
+      is_link: true,
       is_gap: false,
-      is_current: true,
+      is_prev: false,
+      is_next: false,
+      page_number: "18",
+      link_url: "#",
+      is_disabled: false,
+      is_current: false
+    },
+    {
+      is_link: true,
+      is_gap: false,
+      is_prev: false,
+      is_next: false,
+      page_number: "19",
+      link_url: "#",
+      is_disabled: false,
+      is_current: false
+    },
+    {
+      is_link: true,
+      is_gap: false,
+      is_prev: false,
+      is_next: false,
       page_number: "20",
-      link: "",
-      aria_label: "",
+      link_url: "#",
+      is_disabled: false,
+      is_current: true
+    },
+    {
+      # next link
+      is_link: true,
+      is_gap: false,
+      is_prev: false,
+      is_next: true,
+      page_number: "",
+      link_url: "#",
+      is_disabled: true,
+      is_current: false
     },
   ]
 %>

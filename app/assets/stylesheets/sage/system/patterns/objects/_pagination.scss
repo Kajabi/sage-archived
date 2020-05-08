@@ -18,11 +18,12 @@
   @extend %t-sage-body-semi;
   display: flex;
   align-items: center;
-  padding: 0 sage-spacing(xs);
+  margin: 0 sage-spacing(2xs);
   color: sage-color(primary);
 }
 
-.sage-pagination__link--disabled {
+.sage-pagination__link--disabled,
+.sage-pagination__link--current {
   color: sage-color(grey, 400);
   pointer-events: none;
 }
@@ -42,8 +43,4 @@
   @extend %t-sage-body-semi;
   padding: 0 sage-spacing(2xs);
   color: sage-color(primary);
-}
-
-.sage-pagination__page--active {
-  color: sage-color(grey, 400);
 }
