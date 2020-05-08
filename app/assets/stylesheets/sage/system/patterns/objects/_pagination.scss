@@ -7,6 +7,7 @@
 .sage-pagination {
   display: flex;
   justify-content: flex-end;
+  flex-flow: row wrap;
 }
 
 .sage-pagination__count {
@@ -17,6 +18,7 @@
 .sage-pagination__link {
   @extend %t-sage-body-semi;
   display: flex;
+  flex-flow: row wrap;
   align-items: center;
   margin: 0 sage-spacing(2xs);
   color: sage-color(primary);
@@ -35,6 +37,7 @@
 
 .sage-pagination__pages {
   display: flex;
+  flex-flow: row wrap;
   padding-left: 0;
   list-style-type: none;
 }
