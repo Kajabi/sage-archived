@@ -259,6 +259,10 @@ input[type="search"] {
   }
 }
 
+.sage-btn--align-right {
+  float: right;
+}
+
 @mixin button-icon-generator($direction) {
   $right: null;
 
@@ -289,4 +293,3 @@ input[type="search"] {
 
 @include button-icon-generator(left);
 @include button-icon-generator(right);
-
