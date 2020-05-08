@@ -5,7 +5,7 @@ Sage.init = function(elementNamesToInit) {
 
   // Initialize Table
   if ( shouldInit('table', '.sage-table') ) {
-    Sage.table();
+    Sage.table.init();
   }
 
   // Initialize Tooltip
