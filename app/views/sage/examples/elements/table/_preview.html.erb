@@ -1,33 +1,50 @@
 <h3 class="t-sage-heading-6">Responsive table</h3>
 <%= render "sage/examples/elements/table/markup",
-  caption: "Responsive table requires two parent containers",
+  caption: "Responsive tables require the use of two parent containers",
   condensed: false,
-  striped: false,
-  selectable: false
+  responsive: true,
+  selectable: false,
+  sortable: false,
+  striped: false
 %>
 
 <h3 class="t-sage-heading-6">Striped table</h3>
 <%= render "sage/examples/elements/table/markup",
-  caption: "",
+  caption: "Striped tables display a background color on odd-numbered rows",
   condensed: false,
-  striped: true,
-  selectable: false
+  responsive: true,
+  selectable: false,
+  sortable: false,
+  striped: true
 %>
 
 <h3 class="t-sage-heading-6">Striped table with condensed padding</h3>
 <%= render "sage/examples/elements/table/markup",
-  caption: "",
+  caption: "Condensed tables use decreased vertical padding in table cells",
   condensed: true,
-  striped: true,
-  selectable: false
+  responsive: true,
+  selectable: false,
+  sortable: false,
+  striped: true
+%>
+
+<h3 class="t-sage-heading-6">Sortable table with condensed padding</h3>
+<%= render "sage/examples/elements/table/markup",
+  caption: "NOTE: this example is for mockup purposes only and does not implement sorting cells",
+  condensed: true,
+  responsive: true,
+  selectable: false,
+  sortable: true,
+  striped: true
 %>
 
 <h3 class="t-sage-heading-6">Table with highlighted rows and block cells</h3>
 <table class="sage-table sage-table--selectable">
+  <caption>Block cells can be used with anchor tags to link the entire cell, or <code>&lt;div&gt;</code> and <code>&lt;span&gt;</code> elements for content</caption>
   <thead>
     <tr>
-      <td>Mattis</td>
-      <td>Justo Inceptos</td>
+      <th>Mattis</th>
+      <th>Justo Inceptos</th>
     </tr>
   </thead>
   <tbody>
@@ -71,9 +88,9 @@
 <table class="sage-table sage-table--striped sage-table--truncate">
   <thead>
     <tr>
-      <td>Malesuada</td>
-      <td>Amet Cras</td>
-      <td>Consectetur</td>
+      <th>Malesuada</th>
+      <th>Amet Cras</th>
+      <th>Consectetur</th>
     </tr>
   </thead>
   <tbody>

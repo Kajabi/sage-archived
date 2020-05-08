@@ -1,14 +1,16 @@
 <div class="sage-table-wrapper">
+  <% if responsive %>
   <div class="sage-table-wrapper__overflow">
-    <table class="sage-table<%= striped ? " sage-table--striped" : "" %><%= selectable ? " sage-table--selectable" : "" %><%= condensed ? " sage-table--condensed" : "" %>">
+  <% end %>
+    <table class="sage-table<%= striped ? " sage-table--striped" : "" %><%= selectable ? " sage-table--selectable" : "" %><%= condensed ? " sage-table--condensed" : "" %><%= sortable ? " sage-table--sortable" : ""%>">
       <% if caption != "" %><caption><%= caption %></caption><% end %>
       <thead>
         <tr>
-          <td>Cras Porta</td>
-          <td>Dapibus Ridiculus</td>
-          <td>Purus</td>
-          <td>Mollis</td>
-          <td>Ridiculus</td>
+          <th><% if sortable %><a href="#" class="sage-table__sort sage-table__sort--selected"><% end %>Cras Porta<% if sortable %></a><% end %></th>
+          <th><% if sortable %><a href="#" class="sage-table__sort"><% end %>Dapibus Ridiculus<% if sortable %></a><% end %></th>
+          <th><% if sortable %><a href="#" class="sage-table__sort"><% end %>Purus<% if sortable %></a><% end %></th>
+          <th><% if sortable %><a href="#" class="sage-table__sort"><% end %>Mollis<% if sortable %></a><% end %></th>
+          <th><% if sortable %><a href="#" class="sage-table__sort"><% end %>Ridiculus<% if sortable %></a><% end %></th>
         </tr>
       </thead>
       <tbody>
@@ -42,5 +44,7 @@
         </tr>
       </tbody>
     </table>
+  <% if responsive %>
   </div>
+  <% end %>
 </div>

@@ -3,6 +3,11 @@ Sage.init = function(elementNamesToInit) {
     return elementNamesToInit.includes(elementName) && document.querySelector(selector) !== null;
   };
 
+  // Initialize Table
+  if ( shouldInit('table', '.sage-table') ) {
+    Sage.table.init();
+  }
+
   // Initialize Tooltip
   if ( shouldInit('tooltip', '[data-tooltip]') ) {
     Sage.tooltip();
