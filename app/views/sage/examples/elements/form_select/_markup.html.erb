@@ -1,10 +1,11 @@
-<div class="sage-select<%= has_error ? " sage-select--error" : "" %>">
-  <select name="<%= name %>" id="<%= id %>" class="sage-select__field" <%= is_required ? "required" : "" %>>
+<% selectID = name.downcase.dasherize %>
+
+<div class="sage-select <%= "sage-select--error" if has_error %>">
+  <select class="sage-select__field" name="<%= selectID %>" id="<%= selectID %>">
     <% select_options.each do |option| %>
-    <option value="<%= option[:value] %>"<%= option[:disabled] ? " disabled" : "" %><%= option[:selected] ? " selected" : "" %>><%= option[:text] %></option>
+      <option value="<%= option[:value] %>"><%= option[:text] %></option>
     <% end %>
   </select>
-  <label for="<%= id %>" class="sage-select__label"><%= label %></label>
-  <i class="sage-select__arrow" aria-hidden="true"></i>
+  <label class="sage-select__label" for="<%= selectID %>"><%= name %></label>
   <div class="sage-select__message"><%= message %></div>
 </div>
