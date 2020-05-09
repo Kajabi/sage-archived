@@ -4,6 +4,10 @@
   For Sage documentation use
 ================================================== */
 
+$-example-code-preview-height: 8rem;
+$-example-code-preview-button-color: sage-color(primary, 200);
+$-example-code-preview-button-blur: blur(2px);
+
 .example__title {
   color: sage-color(charcoal, 500);
   text-transform: capitalize;
@@ -90,7 +94,7 @@
   &:hover,
   &:focus,
   &:active {
-    color: sage-color(primary, 200);
+    color: $-example-code-preview-button-color;
     background-color: transparent;
   }
 
@@ -100,7 +104,7 @@
   }
 
   @supports (backdrop-filter: blur(2px)) {
-    backdrop-filter: blur(2px);
+    backdrop-filter: $-example-code-preview-button-blur;
     background-color: rgba(sage-color(primary, 500), 0.15);
   }
 }
@@ -108,7 +112,7 @@
 .example__code {
   overflow: hidden;
   position: relative;
-  max-height: 8rem;
+  max-height: $-example-code-preview-height;
   margin: sage-spacing() 0;
 
   .prettyprint {
