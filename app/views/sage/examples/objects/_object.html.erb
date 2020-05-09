@@ -4,9 +4,9 @@
 
 <%= render "sage/examples/shared/heading" %>
 
-<%= render "sage/examples/shared/quick_links", 
-  props_content: props_content, 
-  do_content: do_content, 
+<%= render "sage/examples/shared/quick_links",
+  props_content: props_content,
+  do_content: do_content,
   dont_content: dont_content %>
 
 <div class="sage-panel">
@@ -19,18 +19,19 @@
 <div class="sage-panel">
   <h2 id="<%= @title %>-example-code" class="t-sage-heading-2 example__title">Code</h2>
   <div class="example__code">
+    <button class="example__expand-btn">Expand this code snippet</button>
     <div class="sage-code-snippet">
       <pre class="prettyprint"><code><%= CGI.unescapeHTML(CGI.escapeHTML render "sage/examples/objects/#{@title}/preview") %></code></pre>
     </div>
   </div>
 </div>
 
-<%= render "sage/examples/shared/props", 
-  props_content: props_content, 
-  do_content: do_content, 
+<%= render "sage/examples/shared/props",
+  props_content: props_content,
+  do_content: do_content,
   dont_content: dont_content %>
 
-<%= render "sage/examples/shared/rules", 
-  props_content: props_content, 
-  do_content: do_content, 
+<%= render "sage/examples/shared/rules",
+  props_content: props_content,
+  do_content: do_content,
   dont_content: dont_content %>

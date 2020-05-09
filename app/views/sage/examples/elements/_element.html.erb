@@ -19,6 +19,7 @@
 <div class="sage-panel">
   <h2 id="<%= @title %>-example-code" class="t-sage-heading-2 example__title">Code</h2>
   <div class="example__code">
+    <button class="example__expand-btn">Expand this code snippet</button>
     <div class="sage-code-snippet">
       <pre class="prettyprint"><code><%= CGI.unescapeHTML(CGI.escapeHTML render "sage/examples/elements/#{@title}/preview") %></code></pre>
     </div>
