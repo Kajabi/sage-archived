@@ -66,10 +66,75 @@
   margin-bottom: sage-spacing(lg);
 }
 
+.example__expand-btn {
+  @include button-style-reset();
+  position: absolute;
+  z-index: sage-z_index(raised);
+  bottom: sage-spacing(lg);
+  left: 50%;
+  transform: translateX(-50%);
+  padding: rem(12px) sage-spacing(sm);
+  color: sage-color(white);
+  background-color: rgba(sage-color(primary, 500), 0.75);
+  border: 1px solid rgba(sage-color(white), 0.8);
+  border-radius: $sage-btn-border-radius;
+  transition: $sage-transition;
+  transition-property: color;
+
+  @extend %t-sage-body-med;
+
+  .example__code--expanded & {
+    visibility: hidden;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: sage-color(primary, 200);
+    background-color: transparent;
+  }
+
+  &:focus,
+  &:active {
+    outline: 1px dotted sage-color(primary, 300);
+  }
+
+  @supports (backdrop-filter: blur(2px)) {
+    backdrop-filter: blur(2px);
+    background-color: rgba(sage-color(primary, 500), 0.15);
+  }
+}
+
 .example__code {
+  overflow: hidden;
+  position: relative;
+  max-height: 8rem;
   margin: sage-spacing() 0;
 
   .prettyprint {
     margin-bottom: 0;
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    z-index: sage-z-index(default, 1);
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    background-image: linear-gradient(to bottom, rgba(sage-color(primary, 500), 0.3) 0%, rgba(sage-color(primary, 500), 0.9) 100%);
+    transition: $sage-transition;
+    transition-property: opacity;
+    pointer-events: none;
+  }
+
+  &.example__code--expanded {
+    max-height: none;
+
+    &::before {
+      opacity: 0;
+    }
   }
 }
