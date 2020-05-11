@@ -2,6 +2,7 @@
 
 //= require sage/docs/live-option-menu
 //= require sage/docs/banner
+//= require sage/docs/example
 
 
 // SAGE DOCUMENTATION USE ONLY
@@ -16,6 +17,10 @@ if (document.querySelector('.sage-docs') !== null) {
 
   if (document.querySelector('.sage-banner--active') !== null && document.querySelector('.example__preview--page') !== null) {
     Sage.docs.banner.init();
+  }
+
+  if (document.querySelector('.example__code') !== null && document.querySelector('.example__expand-btn') !== null) {
+    Sage.docs.example.init();
   }
 
 }
