@@ -4,9 +4,14 @@
   For Sage documentation use
 ================================================== */
 
+$-example-link-color: inherit;
+$-example-link-color-hover: sage-color(charcoal, 100);
+
 $-example-code-preview-height: 8rem;
-$-example-code-preview-button-color: sage-color(primary, 200);
+$-example-code-preview-button-color: sage-color(white);
+$-example-code-preview-button-color-hover: sage-color(sage, 200);
 $-example-code-preview-button-blur: blur(2px);
+$-example-code-preview-button-bg: rgba(sage-color(primary, 500), 0.75);
 
 .example__title {
   color: sage-color(charcoal, 500);
@@ -14,11 +19,12 @@ $-example-code-preview-button-blur: blur(2px);
 }
 
 .example__link {
-  color: inherit;
-  transition: color 0.1s ease-in-out;
+  color: $-example-link-color;
+  transition: $sage-transition;
+  transition-property: color;
 
   &:hover {
-    color: sage-color(charcoal, 100);
+    color: $-example-link-color-hover;
   }
 
   &:focus,
@@ -74,18 +80,16 @@ $-example-code-preview-button-blur: blur(2px);
   @include button-style-reset();
   position: absolute;
   z-index: sage-z_index(raised);
-  bottom: sage-spacing(lg);
-  left: 50%;
-  transform: translateX(-50%);
-  padding: rem(12px) sage-spacing(sm);
-  color: sage-color(white);
-  background-color: rgba(sage-color(primary, 500), 0.75);
-  border: 1px solid rgba(sage-color(white), 0.8);
-  border-radius: $sage-btn-border-radius;
+  bottom: sage-spacing(xs);
+  left: 0;
+  width: 100%;
+  padding: sage-spacing(xs);
+  color: $-example-code-preview-button-color;
+  background-color: $-example-code-preview-button-bg;
   transition: $sage-transition;
   transition-property: color;
 
-  @extend %t-sage-body-med;
+  @extend %t-sage-body-small-med;
 
   .example__code--expanded & {
     visibility: hidden;
@@ -94,13 +98,14 @@ $-example-code-preview-button-blur: blur(2px);
   &:hover,
   &:focus,
   &:active {
-    color: $-example-code-preview-button-color;
+    color: $-example-code-preview-button-color-hover;
     background-color: transparent;
+    cursor: ns-resize;
   }
 
   &:focus,
   &:active {
-    outline: 1px dotted sage-color(primary, 300);
+    outline: 1px dotted sage-color(sage);
   }
 
   @supports (backdrop-filter: blur(2px)) {
