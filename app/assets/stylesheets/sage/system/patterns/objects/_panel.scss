@@ -11,10 +11,6 @@
   background: $sage-panel-bg-color;
   border-radius: $sage-panel-border-radius;
   box-shadow: $sage-panel-box-shadow;
-
-  > :last-child {
-    margin-bottom: 0;
-  }
 }
 
 .sage-panel__header {
@@ -24,6 +20,10 @@
 .sage-panel__body {
   position: relative;
   overflow: auto;
+
+  > :last-child {
+    margin-bottom: 0;
+  }
 }
 
 .sage-panel__footer {
