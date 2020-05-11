@@ -83,13 +83,3 @@
 @import "system/patterns/objects/assistant";
 @import "system/patterns/objects/nav";
 @import "system/patterns/objects/sidebar";
-
-
-body::before {
-  position: fixed;
-  top: 0;
-  z-index: 99999999;
-  content: "sad";
-  padding: 20px;
-  background: pink !important;
-}
