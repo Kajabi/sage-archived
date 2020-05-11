@@ -87,12 +87,19 @@ $-example-code-preview-button-bg: rgba(sage-color(primary, 500), 0.75);
   color: $-example-code-preview-button-color;
   background-color: $-example-code-preview-button-bg;
   transition: $sage-transition;
-  transition-property: color;
+  transition-property: color, opacity;
 
   @extend %t-sage-body-small-med;
 
   .example__code--expanded & {
-    visibility: hidden;
+    opacity: 0.4;
+
+    &:hover,
+    &:focus,
+    &:active {
+      opacity: 1;
+      cursor: n-resize;
+    }
   }
 
   &:hover,
@@ -100,7 +107,7 @@ $-example-code-preview-button-bg: rgba(sage-color(primary, 500), 0.75);
   &:active {
     color: $-example-code-preview-button-color-hover;
     background-color: transparent;
-    cursor: ns-resize;
+    cursor: s-resize;
   }
 
   &:focus,
@@ -111,6 +118,10 @@ $-example-code-preview-button-bg: rgba(sage-color(primary, 500), 0.75);
   @supports (backdrop-filter: blur(2px)) {
     backdrop-filter: $-example-code-preview-button-blur;
     background-color: rgba(sage-color(primary, 500), 0.15);
+
+    .example__code--expanded & {
+      backdrop-filter: none;
+    }
   }
 }
 
