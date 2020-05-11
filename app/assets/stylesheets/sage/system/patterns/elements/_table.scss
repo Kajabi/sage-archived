@@ -116,13 +116,14 @@ $-sage-table-sort-indicator-direction: rem(7px);
       content: "";
       display: block;
       flex: 0 1 $-sage-table-sort-indicator-width;
+      transform-origin: center center;
       height: 0;
       width: 0;
       margin-left: sage-spacing(2xs);
       border-left: $-sage-table-sort-indicator-width solid transparent;
       border-right: $-sage-table-sort-indicator-width solid transparent;
-      transition: $sage-transition;
-      transition-property: opacity;
+      transition: 0.15s ease-out;
+      transition-property: opacity, transform;
       opacity: 0;
     }
 
@@ -150,8 +151,7 @@ $-sage-table-sort-indicator-direction: rem(7px);
 
   .sage-table__sort--ascending {
     &::after {
-      border-top: 0;
-      border-bottom: $-sage-table-sort-indicator-direction solid currentColor;
+      transform: scaleY(-1);
     }
   }
 }
