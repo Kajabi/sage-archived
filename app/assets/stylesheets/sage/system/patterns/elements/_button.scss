@@ -259,8 +259,8 @@ input[type="search"] {
   }
 }
 
-.sage-btn--align-right {
-  float: right;
+.sage-btn--align-end {
+  align-self: flex-end;
 }
 
 @mixin button-icon-generator($direction) {
