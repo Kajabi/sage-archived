@@ -37,15 +37,6 @@
   }
 }
 
-// TODO: Re-evaluate whether these need to be "on" these elements by default.
-button,
-input[type="submit"],
-input[type="search"] {
-  .sage-type & {
-    @include button-style-base;
-  }
-}
-
 .sage-btn {
   @include button-style-base;
 
