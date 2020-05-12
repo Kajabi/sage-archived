@@ -118,3 +118,47 @@
     </tr>
   </tbody>
 </table>
+
+<h3 class="t-sage-heading-6">Hiding and showing cell content</h3>
+<p>Individual cells can make use of the <a href="grid">Sage Grid</a> classes for responsive display of content. Refer to the <a href="grid#grid-responsive-show-hide">Grid documentation</a> for more details.</p>
+<p>Remember to apply the same classes equally to <strong>all related vertical columns</strong>, or the structure of the table will be misaligned.</p>
+<table class="sage-table sage-table--condensed">
+  <thead>
+    <tr>
+      <th>Malesuada</th>
+      <th>Amet Cras</th>
+      <th class="sage-col--sm-hide">Hidden &lt; <code>sm</code> breakpoint</th>
+      <th class="sage-col--lg-hide">Hidden &lt; <code>lg</code> breakpoint</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="sage-row--selectable">
+      <td class="sage-table-cell">
+        Donec sed odio dui
+      </td>
+      <td class="sage-table-cell">
+        <span class="sage-table-cell__label sage-label sage-label--draft">Draft</span>
+      </td>
+      <td class="sage-table-cell sage-col--sm-hide">
+        Lorem Tristique
+      </td>
+      <td class="sage-table-cell sage-col--lg-hide">
+        Cras justo odio, dapibus ac facilisis
+      </td>
+    </tr>
+    <tr class="sage-row--selectable">
+      <td class="sage-table-cell">
+        Nulla non metus
+      </td>
+      <td class="sage-table-celle">
+        <span class="sage-table-cell__label sage-label sage-label--success">Complete</span>
+      </td>
+      <td class="sage-table-cell sage-col--sm-hide">
+        Euismod Dapibus
+      </td>
+      <td class="sage-table-cell sage-col--lg-hide">
+        Curabitur blandit tempus
+      </td>
+    </tr>
+  </tbody>
+</table>
