@@ -20,6 +20,8 @@
 .sage-panel__body {
   position: relative;
   overflow: auto;
+  display: flex;
+  flex-direction: column;
 
   > :last-child {
     margin-bottom: 0;
