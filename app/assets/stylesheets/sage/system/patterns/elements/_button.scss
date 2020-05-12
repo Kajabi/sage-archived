@@ -22,6 +22,7 @@
   border-radius: $sage-btn-border-radius;
   box-shadow: $sage-btn-shadow-base;
   transition: border $sage-btn-transition, background-color $sage-btn-transition, box-shadow $sage-btn-transition;
+  align-self: flex-start;
 }
 
 @mixin button-style-disabled {
@@ -103,6 +104,7 @@ input[type="search"] {
 
 .sage-btn--full-width {
   width: 100%;
+  align-self: stretch;
 }
 
 .sage-btn--primary {
@@ -261,6 +263,7 @@ input[type="search"] {
 
 .sage-btn--align-end {
   align-self: flex-end;
+  float: right;
 }
 
 @mixin button-icon-generator($direction) {
