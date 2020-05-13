@@ -4,23 +4,16 @@
     id="<%= id %>"
     class="sage-input__field"
     name="<%= id %>"
-    placeholder="<%= placeholder %>" <%= required ? "required" : "" %>
-    <% if input_mode != "" %> inputmode="<%= input_mode %>"<% end %>
-    <% if pattern != "" %> pattern="<%= pattern %>"<% end %>
-    <% if max != "" %> max="<%= max %>"<% end %>
-    <% if minlength != "" %> minlength="<%= minlength %>"<% end %>
-    <% if maxlength != "" %> maxlength="<%= maxlength %>"<% end %>>
-  <% if group %>
+    placeholder="<%= placeholder -%>"
+    <%= required ? "required" : "" -%>
+<%- if input_mode != "" -%> inputmode="<%= input_mode -%>"<%- end -%><%- if pattern != "" -%> pattern="<%= pattern -%>"<%- end -%><%- if max != "" -%> max="<%= max %>"<%- end -%><%- if minlength != "" -%> minlength="<%= minlength -%>"<%- end -%><%- if maxlength != "" -%> maxlength="<%= maxlength -%>"<%- end -%><%- if value != "" -%> value="<%= value -%>"<%- end -%><%- if disabled == true %> disabled<%- end -%>>
+  <%- if group %>
     <button
-      class="sage-input__button<% if input_type == "password" %> sage-input__button--toggle<% end %> <% if group_button_icon %> <%= group_button_icon %><% end %>"
-      <% if input_type == "password" %>data-js-mask="password"<% end %>
-      <% if group_button_tooltip != "" %>
-      data-tooltip="<%= group_button_tooltip %>"
-      data-position="top"
-      <% end %>>
-        <span class="visually-hidden"><%= group_button_text %></span>
+      class="sage-input__button<% if input_type == "password" %> sage-input__button--toggle<% end %><% if group_button_icon %> <%= group_button_icon %><% end %>"
+      <% if input_type == "password" %> data-js-mask="password"<% end %><% if group_button_tooltip != "" %> data-tooltip="<%= group_button_tooltip %>" data-position="top"<% end %>>
+      <span class="visually-hidden"><%= group_button_text %></span>
     </button>
-  <% end %>
+  <%- end -%>
   <label for="<%= id %>" class="sage-input__label"><%= label_text %></label>
   <% if message_text != "" %><div class="sage-input__message"><%= message_text %></div><% end %>
 </div>
