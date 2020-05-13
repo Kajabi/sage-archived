@@ -9,4 +9,4 @@
 
 // require("./init")
 
-console.warn("JS System!")
+console.warn('JS System!');

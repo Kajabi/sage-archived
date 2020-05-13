@@ -1,7 +1,7 @@
-import "../sharedDependancies"
+import '../sharedDependancies'
 
 // --- Sage System --------------
-import "../stylesheets/system/index.scss"
-import "../javascript/system/index"
+import '../stylesheets/system/index.scss'
+import '../javascript/system/index'
 
-console.warn("WEBPACKER SYSTEM HAS LOADED")
+console.warn('WEBPACKER SYSTEM HAS LOADED');
