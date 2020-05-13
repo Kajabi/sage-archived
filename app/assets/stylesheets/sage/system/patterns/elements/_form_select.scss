@@ -37,7 +37,6 @@ $-sage-selectfield-color-error: $sage-inputfield-color-error;
   line-height: initial;
   pointer-events: none;
   color: $-sage-selectfield-color-default;
-  line-height: inherit;
 
   @include position((($-sage-selectfield-height / 2) - $sage-body-font-size), unset, unset, $-sage-selectfield-padding-x);
 
