@@ -23,18 +23,23 @@ Sage.init = function(elementNamesToInit) {
     Sage.overlay.init();
   }
 
-   // Initialize Alert
-   if ( shouldInit('alert', '.sage-alert') ) {
+  // Initialize Alert
+  if ( shouldInit('alert', '.sage-alert') ) {
     Sage.alert.init();
   }
 
-   // Initialize Alert
-   if ( shouldInit('select', '.sage-select') ) {
+  // Initialize Select
+    if ( shouldInit('select', '.sage-select') ) {
     Sage.select.init();
   }
 
-   // Initialize Banner
-   if ( shouldInit('banner', '.sage-banner--active') && !document.querySelector('.sage-docs') ) {
+  // Initialize Input groups
+  if ( shouldInit('input', '.sage-input--group') ) {
+    Sage.inputgroup.init();
+  }
+
+  // Initialize Banner
+  if ( shouldInit('banner', '.sage-banner--active') && !document.querySelector('.sage-docs') ) {
     Sage.banner.init();
   }
 
