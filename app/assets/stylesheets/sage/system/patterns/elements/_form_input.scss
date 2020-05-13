@@ -17,11 +17,6 @@ $-pw-font-size-sm: sage-font-size(sm);
   }
 }
 
-// Fields grouped with buttons
-.sage-input--group {
-  height: auto;
-}
-
 .sage-input__label {
   @extend %t-sage-body-xsmall-semi;
 
