@@ -4,6 +4,12 @@
 
 ================================================== */
 
+.sage-nav__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 .sage-nav__link {
   display: flex;
   align-items: center;
