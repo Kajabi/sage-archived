@@ -31,6 +31,10 @@
   }
 }
 
+.sage-textarea__message {
+  @extend %t-sage-body-small;
+}
+
 .sage-textarea__field {
   @mixin floating-label-textarea-active {
     transform: translateY(-$sage-textarea-padding);
@@ -75,7 +79,6 @@
     }
   }
 
-  // TODO: add support for Simpleform classes
   &:valid:not(:placeholder-shown) {
     border-color: $sage-textarea-color-success;
     box-shadow: $sage-textarea-box-shadow-size $sage-textarea-color-success;
@@ -86,9 +89,14 @@
   }
 
   // TODO: add support for Simpleform classes
+  .sage-textarea--error &,
   &:required:not(:placeholder-shown):not(:valid) {
     border-color: $sage-textarea-color-error;
     box-shadow: $sage-textarea-box-shadow-size $sage-textarea-color-error;
+
+    ~ .sage-textarea__label {
+      color: $sage-textarea-color-error;
+    }
 
     ~ .sage-textarea__label {
       color: $sage-textarea-color-error;

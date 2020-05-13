@@ -4,16 +4,13 @@
 
 ================================================== */
 
+%sage-panel,
 .sage-panel {
   margin-bottom: sage-spacing();
   padding: $sage-panel-padding;
   background: $sage-panel-bg-color;
   border-radius: $sage-panel-border-radius;
   box-shadow: $sage-panel-box-shadow;
-
-  > :last-child {
-    margin-bottom: 0;
-  }
 }
 
 .sage-panel__header {
@@ -23,6 +20,12 @@
 .sage-panel__body {
   position: relative;
   overflow: auto;
+  display: flex;
+  flex-direction: column;
+
+  > :last-child {
+    margin-bottom: 0;
+  }
 }
 
 .sage-panel__footer {

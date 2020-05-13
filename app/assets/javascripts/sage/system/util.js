@@ -11,10 +11,14 @@ Sage.util = (function(Sage) {
     return Array.prototype.slice.apply(selection);
   }
 
+  function isEmptyString(str) {
+    return (!str || 0 === str.length);
+  }
 
   return {
     getBtnTarget: getBtnTarget,
-    nodelistToArray: nodelistToArray
+    nodelistToArray: nodelistToArray,
+    isEmptyString: isEmptyString
   };
 
 })(Sage);
