@@ -5,5 +5,40 @@
 ================================================== */
 
 .sage-input-group {
-  height: auto;
+  position: relative;
 }
+
+.sage-input-group__button {
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
+  right: 0;
+
+  &::before {
+    margin-right: 0;
+  }
+}
+
+.sage-input-group__toggle {
+  @include button-style-reset;
+
+  right: $-pw-field-button-offset;
+  min-width: 1em;
+  color: sage-color(grey, 400);
+  border: 0;
+  transition: 0.1s ease-in;
+  transition-property: color;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: sage-color(charcoal, 100);
+  }
+
+  &:focus,
+  &:active {
+    outline: 1px dotted sage-color(grey, 300);
+  }
+}
+
+

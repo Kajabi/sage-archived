@@ -1,1 +1,27 @@
-<%= render "sage/examples/objects/input_group/markup" %>
+<fieldset class="sage-type">
+  <h3 class="t-sage-heading-6">Input group with password reveal toggle</h3>
+  <%= render "sage/examples/objects/input_group/markup",
+    has_button: true,
+    group_button_type: "password",
+    group_button_label: "Password",
+    group_button_style: "",
+    group_button_icon: "sage-btn--icon-left-preview-on",
+    group_button_text: "Toggle password visibility",
+    group_button_text_hidden: true,
+    group_button_tooltip: true,
+    group_button_tooltip_text: "Reveal password"
+  %>
+
+  <h3 class="t-sage-heading-6">Input group with primary button</h3>
+  <%= render "sage/examples/objects/input_group/markup",
+    has_button: true,
+    group_button_type: "search",
+    group_button_label: "Search",
+    group_button_style: "sage-btn--primary",
+    group_button_icon: "sage-btn--icon-left-search",
+    group_button_text: "Submit search",
+    group_button_text_hidden: true,
+    group_button_tooltip: true,
+    group_button_tooltip_text: "Search this site"
+  %>
+</fieldset>
