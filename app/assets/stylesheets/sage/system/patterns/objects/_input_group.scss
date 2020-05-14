@@ -4,6 +4,14 @@
 
 ================================================== */
 
+$-pw-field-button-size: 1.75rem;
+$-pw-field-button-offset: 0.75rem;
+$-pw-field-button-color-text: sage-color(grey, 400);
+$-pw-field-button-color-text-hover: sage-color(charcoal, 100);
+$-pw-field-button-outline: 1px dotted sage-color(grey, 300);
+$-pw-font-size-sm: sage-font-size(sm);
+
+
 .sage-input-group {
   position: relative;
 }
@@ -24,7 +32,7 @@
 
   right: $-pw-field-button-offset;
   min-width: 1em;
-  color: sage-color(grey, 400);
+  color: $-pw-field-button-color-text;
   border: 0;
   transition: 0.1s ease-in;
   transition-property: color;
@@ -32,13 +40,11 @@
   &:hover,
   &:focus,
   &:active {
-    color: sage-color(charcoal, 100);
+    color: $-pw-field-button-color-text-hover;
   }
 
   &:focus,
   &:active {
-    outline: 1px dotted sage-color(grey, 300);
+    outline: $-pw-field-button-outline;
   }
 }
-
-
