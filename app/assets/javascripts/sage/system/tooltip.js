@@ -4,7 +4,7 @@ Sage.tooltip = function() {
   // Variables
   // ==================================================
   var toolTips = document.querySelectorAll("[data-tooltip]");
-  var tooltipClassName = ".sage-tooltip";
+  var toolTipClassname = ".sage-tooltip";
 
 
   // ==================================================
@@ -29,16 +29,14 @@ Sage.tooltip = function() {
 
     item.addEventListener("mouseout", function(e) {
       if (e.target.hasAttribute("data-tooltip")) {
-        window.requestAnimationFrame(function(){
-          removeTooltip(tooltipClassName);
-        });
+        window.requestAnimationFrame(removeTooltip);
       }
     });
   });
 
 
-  function removeTooltip(className) {
-    document.body.removeChild(document.querySelector(className));
+  function removeTooltip() {
+    document.body.removeChild(document.querySelector(toolTipClassname));
   }
 
 
