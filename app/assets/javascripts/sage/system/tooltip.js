@@ -4,6 +4,7 @@ Sage.tooltip = function() {
   // Variables
   // ==================================================
   var toolTips = document.querySelectorAll("[data-tooltip]");
+  var tooltipClassName = ".sage-tooltip";
 
 
   // ==================================================
@@ -13,6 +14,7 @@ Sage.tooltip = function() {
   toolTips.forEach(function(item) {
     item.addEventListener("mouseover", function(e) {
       if (!e.target.hasAttribute("data-tooltip")) return;
+
       var pos = e.target.getAttribute("data-position") || "top";
       var tooltip = document.createElement("div");
       tooltip.className = "sage-tooltip";
@@ -27,12 +29,17 @@ Sage.tooltip = function() {
 
     item.addEventListener("mouseout", function(e) {
       if (e.target.hasAttribute("data-tooltip")) {
-        setTimeout(function() {
-          document.body.removeChild(document.querySelector(".sage-tooltip"));
-        }, 0);
+        window.requestAnimationFrame(function(){
+          removeTooltip(tooltipClassName);
+        });
       }
     });
   });
+
+
+  function removeTooltip(className) {
+    document.body.removeChild(document.querySelector(className));
+  }
 
 
   function positionTooltip(parent, tooltip, position) {
