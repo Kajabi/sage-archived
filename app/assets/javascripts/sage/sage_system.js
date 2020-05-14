@@ -8,5 +8,6 @@
 //= require sage/system/banner
 //= require sage/system/alert
 //= require sage/system/select
+//= require sage/system/inputgroup
 
 //= require sage/system/init
