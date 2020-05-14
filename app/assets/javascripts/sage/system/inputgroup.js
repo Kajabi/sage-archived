@@ -3,11 +3,8 @@ Sage.inputgroup = (function() {
   // ==================================================
   // Variables
   // ==================================================
-  var pwShowBtn = document.querySelectorAll("[data-js-mask]");
-  var pwField = document.getElementById("user_pw");
   var spcChar = /(?=.*[~`!@#$%^&*|(){}/=+-])/g;
   var numChar = /(?=[0-9])/g;
-
 
 
   // ==================================================
@@ -62,6 +59,9 @@ Sage.inputgroup = (function() {
 
 
   function bindPWEvents() {
+    var pwShowBtn = Sage.util.nodelistToArray(document.querySelectorAll("[data-js-mask='password']"));
+    var pwField = document.getElementById("input-group-password");
+
     // show/hide password text; assumes multiple password fields
     pwShowBtn.forEach(function(btn) {
       btn.addEventListener("click", function (e) {
@@ -90,7 +90,7 @@ Sage.inputgroup = (function() {
 
 
   function init() {
-    if (document.querySelector(".sage-input__button--toggle").length !== null) {
+    if (document.querySelector(".sage-input-group__toggle").length !== null) {
       bindPWEvents();
     }
   }
