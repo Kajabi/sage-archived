@@ -34,7 +34,7 @@ Sage.init = function(elementNamesToInit) {
   }
 
   // Initialize Input groups
-  if ( shouldInit('input', '.sage-input--group') ) {
+  if ( shouldInit('inputgroup', '.sage-input-group') ) {
     Sage.inputgroup.init();
   }
 

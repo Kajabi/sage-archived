@@ -64,7 +64,8 @@ Sage.inputgroup = (function() {
 
     // show/hide password text; assumes multiple password fields
     pwShowBtn.forEach(function(btn) {
-      btn.addEventListener("click", function (e) {
+      btn.addEventListener("click", function(e) {
+        console.info('click');
         togglePasswordDisplay(e);
       });
     });
