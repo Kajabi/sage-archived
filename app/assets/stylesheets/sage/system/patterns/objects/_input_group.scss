@@ -35,12 +35,18 @@ $-pw-font-size-sm: sage-font-size(sm);
   color: $-pw-field-button-color-text;
   border: 0;
   transition: 0.1s ease-in;
-  transition-property: color;
+  transition-property: color, opacity;
+  opacity: 0;
 
   &:hover,
   &:focus,
   &:active {
     color: $-pw-field-button-color-text-hover;
+    opacity: 1;
+  }
+
+  .sage-input-group:focus-within & {
+    opacity: 1;
   }
 
   &:focus,
