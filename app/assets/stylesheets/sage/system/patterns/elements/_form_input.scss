@@ -15,6 +15,10 @@ $-pw-font-size-sm: sage-font-size(sm);
   &:not(:last-child) {
     margin-bottom: $sage-inputfield-spacing;
   }
+
+  .sage-input-group & {
+    height: auto;
+  }
 }
 
 .sage-input__label {
@@ -108,35 +112,6 @@ $-pw-font-size-sm: sage-font-size(sm);
     color: $sage-inputfield-color-disabled;
     background-color: $sage-inputfield-bg-disabled;
     cursor: not-allowed;
-  }
-}
-
-.sage-input__button {
-  @include button-style-reset;
-
-  position: absolute;
-  transform: translateY(-50%);
-  top: 50%;
-  right: $-pw-field-button-offset;
-  min-width: 1em;
-  color: sage-color(grey, 400);
-  border: 0;
-  transition: 0.1s ease-in;
-  transition-property: color;
-
-  &::before {
-    margin-right: 0;
-  }
-
-  &:hover,
-  &:focus,
-  &:active {
-    color: sage-color(charcoal, 100);
-  }
-
-  &:focus,
-  &:active {
-    outline: 1px dotted sage-color(grey, 300);
   }
 }
 
