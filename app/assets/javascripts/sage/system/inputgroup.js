@@ -65,7 +65,6 @@ Sage.inputgroup = (function() {
     // show/hide password text; assumes multiple password fields
     pwShowBtn.forEach(function(btn) {
       btn.addEventListener("click", function(e) {
-        console.info('click');
         togglePasswordDisplay(e);
       });
     });
@@ -77,15 +76,15 @@ Sage.inputgroup = (function() {
 
       inputContainer.classList.add("sage-input--error");
 
-      testCriteria(pwLength(pwText), "pw-hint-characters");
-      testCriteria(pwSpecial(pwText), "pw-hint-symbols");
-      testCriteria(pwNumber(pwText), "pw-hint-numbers");
+      // testCriteria(pwLength(pwText), "pw-hint-characters");
+      // testCriteria(pwSpecial(pwText), "pw-hint-symbols");
+      // testCriteria(pwNumber(pwText), "pw-hint-numbers");
 
-      if (pwLength(pwText) && pwSpecial(pwText) && pwNumber(pwText)) {
-        inputContainer.classList.remove("sage-input--error");
-      }
+      // if (pwLength(pwText) && pwSpecial(pwText) && pwNumber(pwText)) {
+      //   inputContainer.classList.remove("sage-input--error");
+      // }
 
-      updateStrength(pwField.value);
+      // updateStrength(pwField.value);
     });
   }
 
