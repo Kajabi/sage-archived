@@ -1,4 +1,4 @@
-# Run help run: sage-local-link --help
+# For usage help run: sage-local-link --help
 
 YELLOW='\033[0;33m'
 GREEN='\033[0;32m'
@@ -22,12 +22,11 @@ function echo_divider() {
 }
 
 function bundle_and_yarn() {
-  bundle install --quiet
-  # yarn install --force --silent
+  bundle install --quiet && yarn install --silent --force
 }
 
 function help() {
-  echo_green "Run from within kajabi-products:"
+  echo_green "Run inside the of root the Kajabi-Products project:"
   echo "> sage-local-link <RELATIVE DIRECTORY OF SAGE GEM> <BOOLEAN>"
   echo_green "Inspect the status for local bundle with:"
   echo "> sage-local-link"
@@ -38,7 +37,7 @@ if [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
   help
 fi
 
-if [ -z "$1" ] || [ -z "$2"]; then
+if [ -z "$1" ] || [ -z "$2" ]; then
   echo_red "ERROR: Requires the relative path of Sage gem"
   help
 fi
@@ -51,11 +50,11 @@ if [ "$2" = "false" ]; then
 
   echo_yellow "YARN: Removing local Sage frontend package"
   echo_divider
-  yarn unlink file:./$1
+  yarn unlink sage
   (cd $1; yarn unlink)
 
   bundle_and_yarn
-  echo_green "Production Sage is now being used."
+  echo_green "PRODUCTION SAGE is now being used ✅"
 
 elif [ "$2" = "true" ]; then
 
@@ -67,16 +66,16 @@ elif [ "$2" = "true" ]; then
   echo_yellow "YARN: Use the local Sage frontend package located at: $1"
   echo_divider
   (cd $1; yarn link)
-  yarn link file:./$1
+  yarn link sage
 
   bundle_and_yarn
-  echo_green "SSSSSSSET LOCAL SAGE GEM 🐍"
+  echo_green "LOCAL SAGE is now being used ✅"
 fi;
 
-echo_yellow "CURRENT BUNDLE CONFIG"
+echo_green "CURRENT BUNDLE CONFIG 💎"
 echo_divider
 bundle config
 
-echo_yellow "CURRENT LINKED FRONTEND PACKAGES"
+echo_green "CURRENT LINKED FRONTEND PACKAGES ⚒️"
 echo_divider
-( ls -l node_modules ; ls -l node_modules/@* ) | grep ^l
+( ls -l node_modules ; ls -l node_modules/@* ) | grep ^l # <-- This looks up the sage symlink
