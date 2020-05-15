@@ -13,12 +13,15 @@ Sage.inputgroup = (function() {
 
   function togglePasswordDisplay(evt) {
     var parentEle = evt.target.parentElement,
-       field = parentEle.querySelector(".sage-input__field");
+       field = parentEle.querySelector(".sage-input__field"),
+       activeClassName = "sage-input-group--visible";
 
     if (field.type === "password") {
       field.type = "text";
+      parentEle.classList.add(activeClassName);
     } else {
       field.type = "password";
+      parentEle.classList.remove(activeClassName);
     }
 
     field.focus();

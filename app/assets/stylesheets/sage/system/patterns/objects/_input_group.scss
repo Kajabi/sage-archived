@@ -38,6 +38,20 @@ $-pw-font-size-sm: sage-font-size(sm);
   transition-property: color, opacity;
   opacity: 0;
 
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0) rotate(-45deg);
+    height: rem(1px);
+    width: calc(100% + 4px);
+    background-color: currentColor;
+    transition: $sage-transition;
+    transition-property: opacity, transform;
+  }
+
   &:hover,
   &:focus,
   &:active {
@@ -45,12 +59,21 @@ $-pw-font-size-sm: sage-font-size(sm);
     opacity: 1;
   }
 
+  &:focus,
+  &:active {
+    outline: $-pw-field-button-outline;
+  }
+
   .sage-input-group:focus-within & {
     opacity: 1;
   }
 
-  &:focus,
-  &:active {
-    outline: $-pw-field-button-outline;
+  .sage-input-group--visible & {
+    opacity: 1;
+
+    &::after {
+      transform: translate3d(-50%, -50%, 0) rotate(-45deg) scale(0);
+      opacity: 0;
+    }
   }
 }
