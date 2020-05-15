@@ -4,6 +4,66 @@
 
 ================================================== */
 
-.sage-input-hint {
-  // Styles here
+$sage-hint-min-height: 5em;
+$sage-hint-max-width: rem(320px);
+$sage-hint-padding: sage-spacing(sm);
+$sage-hint-pointer-size: rem(12px);
+$sage-hint-color-bg: sage-color(charcoal, 400);
+$sage-hint-color-text: sage-color(white);
+$sage-hint-color-list-default: sage-color(grey, 200);
+$sage-hint-color-list-success: sage-color(grey, 500);
+
+
+.sage-input-helper {
+  @extend %t-sage-body-small;
+
+  position: relative;
+  z-index: 1;
+  top: calc(100% + #{$sage-hint-pointer-size});
+  left: 0;
+  width: 100%;
+  max-width: $sage-hint-max-width;
+  min-height: $sage-hint-min-height;
+  padding: $sage-hint-padding;
+  color: $sage-hint-color-text;
+  background-color: $sage-hint-color-bg;
+  border-radius: sage-border(radius);
+  box-shadow: sage-shadow(md);
+  transition: $sage-transition;
+  transition-property: opacity, transform;
+  pointer-events: none;
+  // opacity: 0;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -#{$sage-hint-pointer-size};
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: $sage-hint-pointer-size solid transparent;
+    border-right: $sage-hint-pointer-size solid transparent;
+    border-bottom: $sage-hint-pointer-size solid $sage-hint-color-bg;
+  }
 }
+
+.sage-hint__description {
+  margin-bottom: sage-spacing(xs);
+}
+
+.sage-hint__list {
+  padding-left: sage-spacing(sm);
+  color: $sage-hint-color-list-default;
+}
+
+.sage-hint__list-item {
+  position: relative;
+  transition: $sage-transition;
+  transition-property: color;
+
+  &.passed {
+    color: $sage-hint-color-list-success;
+    text-decoration: line-through;
+  }
+}
+
