@@ -3,7 +3,7 @@ Sage.tooltip = function() {
   // ==================================================
   // Variables
   // ==================================================
-  var toolTips = document.querySelectorAll("[data-tooltip]");
+  var toolTips = Sage.util.nodelistToArray(document.querySelectorAll("[data-tooltip]"));
   var toolTipClassname = ".sage-tooltip";
 
 
@@ -13,7 +13,7 @@ Sage.tooltip = function() {
 
   toolTips.forEach(function(item) {
     item.addEventListener("mouseover", function(e) {
-      createToolTip(e);
+      buildToolTip(e);
     });
 
     item.addEventListener("mouseout", function(e) {
@@ -25,7 +25,7 @@ Sage.tooltip = function() {
 
 
   // tooltip template
-  function createToolTip(e) {
+  function buildToolTip(e) {
     if (!e.target.hasAttribute("data-tooltip")) return;
 
     var pos = e.target.getAttribute("data-position") || "top";
