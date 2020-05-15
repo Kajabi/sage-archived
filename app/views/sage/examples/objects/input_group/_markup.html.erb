@@ -1,4 +1,4 @@
-<div class="sage-input-group sage-input-group--<%= group_button_type -%>">
+<div class="sage-input-group sage-input-group--<%= group_button_type -%>" role="group" aria-labelledby="input-group-<%= group_button_type %>">
   <%= render "sage/examples/elements/form_input/markup",
     id: "input-group-#{ group_button_type }",
     input_type: "#{ group_button_type}",
@@ -18,7 +18,7 @@
   <% if has_button %>
   <button
     class="sage-input-group__button <% if group_button_style != "" %>sage-btn <%= group_button_style %> <%- else -%>sage-input-group__toggle<% end %><% if group_button_icon %> <%= group_button_icon %><% end %>"
-    <% if group_button_type == "password" %> data-js-mask="password"<% end %><% if group_button_tooltip %> data-tooltip="<%= group_button_tooltip_text %>" data-position="top"<% end %>>
+    <% if group_button_type == "password" %> data-js-mask="password"<% end %><% if group_button_tooltip %> data-tooltip="<%= group_button_tooltip_text %>" data-position="<% group_button_tooltip_position %>"<% if group_button_tooltip_size != "" %> data-tooltip-size="<%= group_button_tooltip_size %>"<% end %><% end %>>
     <%- if group_button_text_hidden -%><span class="visually-hidden"><% end %><%= group_button_text %><%- if group_button_text_hidden -%></span><% end %>
   </button>
   <% end %>
