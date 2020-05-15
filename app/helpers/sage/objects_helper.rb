@@ -14,6 +14,19 @@ module Sage
       [
         # Sage Generated Objects
         {
+          title: "input_helper",
+          description: "Provides an extended tooltip/popup for text inputs",
+          scss_design:  "doing",
+          scss_dev:     "doing",
+          scss_doc:     "doing",
+          rails_design: "todo",
+          rails_dev:    "todo",
+          rails_doc:    "todo",
+          react_design: "todo",
+          react_dev:    "todo",
+          react_doc:    "todo"
+        },
+        {
           title: "input_group",
           description: "Allows inline grouping of text inputs with buttons",
           scss_design:  "done",
