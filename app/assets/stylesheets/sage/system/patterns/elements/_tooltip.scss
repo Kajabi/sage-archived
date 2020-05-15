@@ -88,12 +88,12 @@
 }
 
 .sage-tooltip--small {
-  padding-left: sage-spacing(xs);
-  padding-right: sage-spacing(xs);
+  padding: $sage-tooltip-small-padding;
 
-  @extend %t-sage-body-med;
+  @extend %t-sage-body-xsmall-semi;
 }
 
 .sage-tooltip--large {
-  max-width: $sage-tooltip-maxwidth-large;
+  max-width: $sage-tooltip-large-maxwidth;
+  padding: $sage-tooltip-large-padding;
 }

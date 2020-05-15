@@ -381,10 +381,11 @@ $sage-tooltip-arrow-active: $sage-tooltip-arrow-size solid $sage-tooltip-bg-colo
 // Styling
 $sage-tooltip-shadow: sage-shadow(xl) !default;
 $sage-tooltip-padding: sage-spacing(2xs) sage-spacing(sm) !default;
+$sage-tooltip-small-padding: sage-spacing(2xs) sage-spacing(xs) !default;
+$sage-tooltip-large-padding: sage-spacing(xs) sage-spacing(xs) !default;
 $sage-tooltip-zindex: sage-z_index(modal) !default;
 $sage-tooltip-maxwidth: rem(200px) !default;
-$sage-tooltip-maxwidth-small: 0 !default;
-$sage-tooltip-maxwidth-large: rem(320px) !default;
+$sage-tooltip-large-maxwidth: rem(320px) !default;
 
 
 // ==================================================
