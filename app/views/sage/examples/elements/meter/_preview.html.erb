@@ -1,2 +1,9 @@
 <!-- Default -->
-<%= render "sage/examples/elements/meter/markup" %>
+<%= render "sage/examples/elements/meter/markup",
+  id: "pw-hint-meter",
+  label: "Password strength",
+  value: 3,
+  max_value: 4,
+  optimum_value: 3,
+  fallback_text: "Fallback goes here"
+%>
