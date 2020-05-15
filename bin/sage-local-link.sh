@@ -28,20 +28,20 @@ function bundle_and_yarn() {
 
 function help() {
   echo_green "Run from within kajabi-products:"
-  echo "> sage-local-link <RELATIVE DIRECTORY SAGE GEM> <BOOLEAN>"
+  echo "> sage-local-link <RELATIVE DIRECTORY OF SAGE GEM> <BOOLEAN>"
   echo_green "Inspect the status for local bundle with:"
   echo "> sage-local-link"
   exit 1
 }
 
-# if [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
-#   help
-# fi
+if [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
+  help
+fi
 
-# if [ -z "$1" ] || [ -z "$2"]; then
-#   echo_red "ERROR: Requires the relative path of Sage gem"
-#   help
-# fi
+if [ -z "$1" ] || [ -z "$2"]; then
+  echo_red "ERROR: Requires the relative path of Sage gem"
+  help
+fi
 
 if [ "$2" = "false" ]; then
   echo_yellow "BUNDLE: Removing local Sage gem"
