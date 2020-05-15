@@ -383,6 +383,8 @@ $sage-tooltip-shadow: sage-shadow(xl) !default;
 $sage-tooltip-padding: sage-spacing(2xs) sage-spacing(sm) !default;
 $sage-tooltip-zindex: sage-z_index(modal) !default;
 $sage-tooltip-maxwidth: rem(200px) !default;
+$sage-tooltip-maxwidth-small: 0 !default;
+$sage-tooltip-maxwidth-large: rem(320px) !default;
 
 
 // ==================================================

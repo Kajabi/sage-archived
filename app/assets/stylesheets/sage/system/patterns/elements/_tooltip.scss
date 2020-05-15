@@ -87,3 +87,13 @@
   }
 }
 
+.sage-tooltip--small {
+  padding-left: sage-spacing(xs);
+  padding-right: sage-spacing(xs);
+
+  @extend %t-sage-body-med;
+}
+
+.sage-tooltip--large {
+  max-width: $sage-tooltip-maxwidth-large;
+}
