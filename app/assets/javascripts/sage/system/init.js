@@ -38,6 +38,11 @@ Sage.init = function(elementNamesToInit) {
     Sage.inputgroup.init();
   }
 
+  // Initialize Meter
+  if ( shouldInit('meter', '.sage-meter') ) {
+    Sage.meter.init();
+  }
+
   // Initialize Banner
   if ( shouldInit('banner', '.sage-banner--active') && !document.querySelector('.sage-docs') ) {
     Sage.banner.init();
