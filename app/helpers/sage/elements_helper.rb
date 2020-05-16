@@ -16,9 +16,9 @@ module Sage
         {
           title: "meter",
           description: "A horizontal display indicating the measurement of a known (finite) quantity",
-          scss_design:  "doing",
-          scss_dev:     "doing",
-          scss_doc:     "doing",
+          scss_design:  "done",
+          scss_dev:     "done",
+          scss_doc:     "done",
           rails_design: "doing",
           rails_dev:    "doing",
           rails_doc:    "doing",
