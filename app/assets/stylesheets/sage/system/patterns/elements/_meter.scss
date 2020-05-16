@@ -4,6 +4,94 @@
 
 ================================================== */
 
+$-sage-meter-height: rem(18px);
+$-sage-meter-color-bg: sage-color(primary, 100);
+
+
+@mixin meter-bar-value {
+  &::-webkit-meter-optimum-value,
+  &::-webkit-meter-suboptimum-value,
+  &::-webkit-meter-even-less-good-value,
+  &::-moz-meter-bar {
+    @content;
+  }
+}
+
 .sage-meter {
-  // Styles here
+  position: relative;
+}
+
+.sage-meter__label {
+  @extend %t-sage-body-xsmall;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  z-index: sage-z_index(raised);
+  line-height: 1;
+}
+
+.sage-meter__bar {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: $-sage-meter-height;
+  background: $-sage-meter-color-bg;
+  border-radius: sage-border(radius);
+  border: 0;
+
+  &::-webkit-meter-bar {
+    height: 100%;
+    width: 100%;
+    background: none;
+  }
+
+  &[value="1"],
+  &[value="2"] {
+    @include meter-bar-value {
+      background: sage-color(red);
+    }
+  }
+
+  &[value="3"] {
+    @include meter-bar-value {
+      background: sage-color(orange);
+    }
+  }
+
+  &[value="4"] {
+    @include meter-bar-value {
+      background: sage-color(sage);
+    }
+  }
+}
+
+.sage-meter__bar--low {
+
+}
+
+.sage-meter__bar--med {
+
+}
+
+.sage-meter__bar--high {
+
+}
+
+.sage-meter__bar--optimum {
+
+}
+
+// assuming that support for meter is equivalent to custom props (aka IE21)
+@supports ((--variable: 0)) {
+  .sage-meter__fallback {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sage-input__hint {
+    transition: none;
+  }
 }
