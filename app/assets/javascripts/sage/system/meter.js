@@ -20,7 +20,8 @@ Sage.meter = (function() {
   // appends classes to meter for styling of current state
   function updateMeter(ele) {
     var meter = document.querySelector(ele),
-        values = getMeterValues(ele);
+        values = getMeterValues(ele),
+        optimumThreshold = 0.5;
 
     // reset any meter classes
     meter.className = "sage-meter__bar";
@@ -30,7 +31,9 @@ Sage.meter = (function() {
       meter.classList.add('sage-meter__bar--max');
     } else if ((values.optimum !== 0) && values.current >= values.optimum) {
       meter.classList.add('sage-meter__bar--optimum');
-    } else if ((values.current <= values.max) && (values.current > values.min))  {
+    } else if ((values.optimum !== 0) && ((values.current / values.optimum) > optimumThreshold)) {
+      meter.classList.add('sage-meter__bar--med');
+    } else if (values.current <= values.max)  {
       meter.classList.add('sage-meter__bar--low');
     }
   }
