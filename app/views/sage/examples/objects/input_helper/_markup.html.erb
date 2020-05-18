@@ -1,4 +1,4 @@
-<div id="<%= helper_id %>" class="sage-input-helper" role="tooltip">
+<div id="<%= helper_id %>" class="sage-input-helper" role="tooltip"<% if helper_target != "" %> data-js-helper-target="<%= helper_target %>"<% end %>>
   <%- if description -%>
   <p class="sage-hint__description"><%= description %></p>
   <%- end -%>
