@@ -32,7 +32,7 @@ $sage-hint-color-list-success: sage-color(grey, 500);
   transition: $sage-transition;
   transition-property: opacity, transform;
   pointer-events: none;
-  // opacity: 0;
+  opacity: 0;
 
   &::before {
     content: "";
@@ -45,6 +45,10 @@ $sage-hint-color-list-success: sage-color(grey, 500);
     border-right: $sage-hint-pointer-size solid transparent;
     border-bottom: $sage-hint-pointer-size solid $sage-hint-color-bg;
   }
+}
+
+.sage-input-helper--visible {
+  opacity: 1;
 }
 
 .sage-hint__description {
