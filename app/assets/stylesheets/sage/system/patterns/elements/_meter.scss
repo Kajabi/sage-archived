@@ -1,0 +1,84 @@
+/* ==================================================
+  ** meter
+  type: element
+
+================================================== */
+
+$-sage-meter-height: rem(18px);
+$-sage-meter-color-bg: sage-color(primary, 100);
+$-sage-meter-bar-low: sage-color(red);
+$-sage-meter-bar-med: sage-color(orange);
+$-sage-meter-bar-optimum: sage-color(sage, 200);
+$-sage-meter-bar-max: sage-color(sage);
+
+
+@mixin meter-bar-value {
+  &::-webkit-meter-optimum-value {
+    @content;
+  }
+  &::-moz-meter-bar {
+    @content;
+  }
+}
+
+
+.sage-meter {
+  position: relative;
+}
+
+.sage-meter__label {
+  @extend %t-sage-body-xsmall;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  z-index: sage-z_index(raised);
+  line-height: 1;
+}
+
+.sage-meter__bar {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: $-sage-meter-height;
+  background: $-sage-meter-color-bg;
+  border-radius: sage-border(radius);
+  border: 0;
+
+  &::-webkit-meter-bar {
+    height: 100%;
+    width: 100%;
+    background: none;
+  }
+
+  @include meter-bar-value() {
+    background: none;
+    transition: $sage-transition;
+    transition-property: width;
+  }
+}
+
+.sage-meter__bar--low {
+  @include meter-bar-value() {
+    background-color: $-sage-meter-bar-low;
+  }
+}
+
+.sage-meter__bar--med {
+  @include meter-bar-value() {
+    background-color: $-sage-meter-bar-med;
+  }
+}
+
+.sage-meter__bar--optimum {
+  @include meter-bar-value() {
+    background-color: $-sage-meter-bar-optimum;
+  }
+}
+
+.sage-meter__bar--max {
+  @include meter-bar-value() {
+    background-color: $-sage-meter-bar-max;
+  }
+}

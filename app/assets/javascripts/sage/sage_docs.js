@@ -3,6 +3,7 @@
 //= require sage/docs/live-option-menu
 //= require sage/docs/banner
 //= require sage/docs/example
+//= require sage/docs/meter
 
 
 // SAGE DOCUMENTATION USE ONLY
@@ -13,6 +14,10 @@ if (document.querySelector('.sage-docs') !== null) {
 
   if (document.querySelector('.sage-live-option-menu-anchor') !== null) {
     Sage.docs.liveOptionMenu.init();
+  }
+
+  if (document.getElementById('pw-meter-example') !== null) {
+    Sage.docs.meter.init();
   }
 
   if (document.querySelector('.sage-banner--active') !== null && document.querySelector('.example__preview--page') !== null) {
