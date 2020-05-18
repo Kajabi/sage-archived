@@ -1,6 +1,6 @@
-<div class="sage-input-group sage-input-group--<%= group_button_type -%>" role="group" aria-labelledby="input-group-<%= group_button_type %>">
+<div class="sage-input-group sage-input-group--<%= group_button_type -%>" role="group" aria-labelledby="<%= group_id %>">
   <%= render "sage/examples/elements/form_input/markup",
-    id: "input-group-#{ group_button_type }",
+    id: "#{ group_id }",
     input_type: "#{ group_button_type}",
     label_text: "#{ group_button_label }",
     placeholder: "#{ group_button_label }",
