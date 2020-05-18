@@ -58,5 +58,5 @@ if [ "$1" = "true" ] || [ "$1" = "false" ]; then
 
 else
   echo_custom "Run inside the of root the Kajabi-Products repo:"
-  echo "> sage-local-link <BOOLEAN>"
+  echo "$ <PATH TO SAGE REPO>/bin/sage-local-link <BOOLEAN>"
 fi

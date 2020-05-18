@@ -12,9 +12,6 @@ module Sage
       root: Sage::Engine.root.join("tmp")
     )
 
-    ## WORKS -- in sage mounted as: /sage/sage/packs/...
-    # config.middleware.use Rack::Static, :urls => ['/sage'], :root => Sage::Engine.root.join("tmp")
-
     # REMOVE FOR NOW MAY NEED TO ONLY INIT ON ENV = DEV
     initializer "webpacker.proxy" do |app|
       insert_middleware = begin
