@@ -22,7 +22,8 @@ function echo_divider() {
 }
 
 function bundle_and_yarn() {
-  bundle install --quiet && yarn install --silent --force
+  bundle install --quiet
+  yarn install --silent --force
 }
 
 function help() {
