@@ -1,23 +1,23 @@
 /* ==================================================
-  ** sage-input-hint
+  ** sage-input-helper
   type: object
 
 ================================================== */
 
-$sage-hint-min-height: 5em;
-$sage-hint-max-width: rem(320px);
-$sage-hint-padding: sage-spacing(sm);
-$sage-hint-pointer-size: rem(12px);
-$sage-hint-color-bg: sage-color(charcoal, 400);
-$sage-hint-color-text: sage-color(white);
-$sage-hint-color-list-default: sage-color(grey, 200);
-$sage-hint-color-list-success: sage-color(grey, 500);
-$sage-hint-decoration-list-success: line-through;
+$-sage-helper-min-height: 5em;
+$-sage-helper-max-width: rem(320px);
+$-sage-helper-padding: sage-spacing(sm);
+$-sage-helper-pointer-size: rem(12px);
+$-sage-helper-color-bg: sage-color(charcoal, 400);
+$-sage-helper-color-text: sage-color(white);
+$-sage-helper-color-list-default: sage-color(grey, 200);
+$-sage-helper-color-list-success: sage-color(grey, 500);
+$-sage-helper-decoration-list-success: line-through;
 
 
-@mixin helper-display() {
+@mixin input-helper-visible() {
   z-index: sage-z_index(raised);
-  top: calc(100% + #{$sage-hint-pointer-size});
+  top: calc(100% + #{$-sage-helper-pointer-size});
   opacity: 1;
 }
 
@@ -29,11 +29,11 @@ $sage-hint-decoration-list-success: line-through;
   transform: translateX(-50%);
   left: 50%;
   width: 100%;
-  max-width: $sage-hint-max-width;
-  min-height: $sage-hint-min-height;
-  padding: $sage-hint-padding;
-  color: $sage-hint-color-text;
-  background-color: $sage-hint-color-bg;
+  max-width: $-sage-helper-max-width;
+  min-height: $-sage-helper-min-height;
+  padding: $-sage-helper-padding;
+  color: $-sage-helper-color-text;
+  background-color: $-sage-helper-color-bg;
   border-radius: sage-border(radius);
   box-shadow: sage-shadow(md);
   transition: $sage-transition;
@@ -45,27 +45,27 @@ $sage-hint-decoration-list-success: line-through;
     content: "";
     display: block;
     position: absolute;
-    top: -#{$sage-hint-pointer-size};
+    top: -#{$-sage-helper-pointer-size};
     left: 50%;
     transform: translateX(-50%);
-    border-left: $sage-hint-pointer-size solid transparent;
-    border-right: $sage-hint-pointer-size solid transparent;
-    border-bottom: $sage-hint-pointer-size solid $sage-hint-color-bg;
+    border-left: $-sage-helper-pointer-size solid transparent;
+    border-right: $-sage-helper-pointer-size solid transparent;
+    border-bottom: $-sage-helper-pointer-size solid $-sage-helper-color-bg;
   }
 
   .sage-input:focus-within ~ & {
-    @include helper-display();
+    @include input-helper-visible();
   }
 
   // Separated from above rule due to Edge
   .sage-input:active ~ & {
-    @include helper-display();
+    @include input-helper-visible();
   }
 }
 
 // fallback using JS on IE, since :focus-within is not supported
 .sage-input-helper--visible {
-  @include helper-display();
+  @include input-helper-visible();
 }
 
 .sage-hint__description {
@@ -74,7 +74,7 @@ $sage-hint-decoration-list-success: line-through;
 
 .sage-hint__list {
   padding-left: sage-spacing(sm);
-  color: $sage-hint-color-list-default;
+  color: $-sage-helper-color-list-default;
 }
 
 .sage-hint__list-item {
@@ -84,7 +84,7 @@ $sage-hint-decoration-list-success: line-through;
 }
 
 .sage-hint__list-item--success {
-  color: $sage-hint-color-list-success;
-  text-decoration: $sage-hint-decoration-list-success;
+  color: $-sage-helper-color-list-success;
+  text-decoration: $-sage-helper-decoration-list-success;
 }
 
