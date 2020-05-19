@@ -5,7 +5,9 @@
 ================================================== */
 
 $-sage-meter-height: rem(18px);
-$-sage-meter-color-bg: sage-color(primary, 100);
+$-sage-meter-color-bg: sage-color(white);
+$-sage-meter-color-label: sage-color(charcoal, 100);
+$-sage-meter-label-shadow: 1px 1px 0 rgba(255, 255, 255, 0.67);
 $-sage-meter-bar-low: sage-color(red);
 $-sage-meter-bar-med: sage-color(orange);
 $-sage-meter-bar-optimum: sage-color(sage, 200);
@@ -35,6 +37,8 @@ $-sage-meter-bar-max: sage-color(sage);
   transform: translate3d(-50%, -50%, 0);
   z-index: sage-z_index(raised);
   line-height: 1;
+  color: $-sage-meter-color-label;
+  text-shadow: $-sage-meter-label-shadow;
 }
 
 .sage-meter__bar {

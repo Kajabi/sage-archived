@@ -73,6 +73,7 @@ $-sage-helper-decoration-list-success: line-through;
 }
 
 .sage-hint__list {
+  margin-bottom: sage-spacing(sm);
   padding-left: sage-spacing(sm);
   color: $-sage-helper-color-list-default;
 }
