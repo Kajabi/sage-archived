@@ -4,6 +4,7 @@
 //= require sage/docs/banner
 //= require sage/docs/example
 //= require sage/docs/meter
+//= require sage/docs/inputhelper
 
 
 // SAGE DOCUMENTATION USE ONLY
@@ -26,6 +27,10 @@ if (document.querySelector('.sage-docs') !== null) {
 
   if (document.querySelector('.example__code') !== null && document.querySelector('.example__expand-btn') !== null) {
     Sage.docs.example.init();
+  }
+
+  if (document.querySelector('.sage-input-helper') !== null && document.querySelector('[data-js-example="input-helper"]') !== null) {
+    Sage.docs.inputhelper.init();
   }
 
 }
