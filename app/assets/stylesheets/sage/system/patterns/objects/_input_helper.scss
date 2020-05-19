@@ -55,9 +55,14 @@ $sage-hint-color-list-success: sage-color(grey, 500);
   .sage-input:focus-within ~ & {
     @include helper-display();
   }
+
+  // Separated from above rule due to Edge
+  .sage-input:active ~ & {
+    @include helper-display();
+  }
 }
 
-// fallback using JS if :focus-within is not supported
+// fallback using JS on IE, since :focus-within is not supported
 .sage-input-helper--visible {
   @include helper-display();
 }
