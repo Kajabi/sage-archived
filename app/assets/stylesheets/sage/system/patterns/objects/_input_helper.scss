@@ -18,8 +18,7 @@ $sage-hint-color-list-success: sage-color(grey, 500);
   @extend %t-sage-body-small;
 
   position: absolute;
-  z-index: 1;
-  top: calc(100% + #{$sage-hint-pointer-size});
+  z-index: sage-z_index(negative);
   left: 0;
   width: 100%;
   max-width: $sage-hint-max-width;
@@ -30,7 +29,7 @@ $sage-hint-color-list-success: sage-color(grey, 500);
   border-radius: sage-border(radius);
   box-shadow: sage-shadow(md);
   transition: $sage-transition;
-  transition-property: opacity, transform;
+  transition-property: opacity;
   pointer-events: none;
   opacity: 0;
 
@@ -48,6 +47,9 @@ $sage-hint-color-list-success: sage-color(grey, 500);
 }
 
 .sage-input-helper--visible {
+  z-index: sage-z_index(raised);
+  top: calc(100% + #{$sage-hint-pointer-size});
+  transform: none;
   opacity: 1;
 }
 
