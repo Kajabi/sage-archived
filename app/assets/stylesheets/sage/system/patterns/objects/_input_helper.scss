@@ -12,12 +12,12 @@ $sage-hint-color-bg: sage-color(charcoal, 400);
 $sage-hint-color-text: sage-color(white);
 $sage-hint-color-list-default: sage-color(grey, 200);
 $sage-hint-color-list-success: sage-color(grey, 500);
+$sage-hint-decoration-list-success: line-through;
 
 
 @mixin helper-display() {
   z-index: sage-z_index(raised);
   top: calc(100% + #{$sage-hint-pointer-size});
-  transform: none;
   opacity: 1;
 }
 
@@ -26,7 +26,8 @@ $sage-hint-color-list-success: sage-color(grey, 500);
 
   position: absolute;
   z-index: sage-z_index(negative);
-  left: 0;
+  transform: translateX(-50%);
+  left: 50%;
   width: 100%;
   max-width: $sage-hint-max-width;
   min-height: $sage-hint-min-height;
@@ -83,7 +84,7 @@ $sage-hint-color-list-success: sage-color(grey, 500);
 
   &.passed {
     color: $sage-hint-color-list-success;
-    text-decoration: line-through;
+    text-decoration: $sage-hint-decoration-list-success;
   }
 }
 
