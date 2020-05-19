@@ -15,6 +15,33 @@
     has_error: false,
     message_text: ""
   %>
+  <% if has_hint %>
+  <%= render "sage/examples/objects/input_helper/markup",
+    helper_id: "",
+    helper_target: "input-group-pw-example",
+    description: "Your password must meet the following criteria:",
+    hints: [
+      {
+        id: "pw-hint-characters",
+        type_detect: "characters",
+        type_detect_min: 8,
+        text: "At least eight characters"
+      },
+      {
+        id: "pw-hint-numbers",
+        type_detect: "numbers",
+        type_detect_min: 1,
+        text: "Has one or more numbers"
+      },
+      {
+        id: "pw-hint-symbols",
+        type_detect: "symbols",
+        type_detect_min: 1,
+        text: "Includes at least one symbol ($@!#%)"
+      }
+    ]
+  %>
+  <% end %>
   <% if has_button %>
   <button
     class="sage-input-group__button <% if group_button_style != "" %>sage-btn <%= group_button_style %> <%- else -%>sage-input-group__toggle<% end %><% if group_button_icon %> <%= group_button_icon %><% end %>"

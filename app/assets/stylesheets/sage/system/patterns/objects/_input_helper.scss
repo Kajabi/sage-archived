@@ -17,7 +17,7 @@ $sage-hint-color-list-success: sage-color(grey, 500);
 .sage-input-helper {
   @extend %t-sage-body-small;
 
-  position: relative;
+  position: absolute;
   z-index: 1;
   top: calc(100% + #{$sage-hint-pointer-size});
   left: 0;
