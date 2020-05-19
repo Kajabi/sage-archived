@@ -84,8 +84,7 @@ Sage.inputhelper = (function() {
     });
 
     console.info('helperReq', helperReq);
-
-    if (Sage.util.isIE) {
+    if (Sage.util.isIE()) {
       focusBlurIE(field);
     }
 
