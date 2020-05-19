@@ -81,10 +81,10 @@ $sage-hint-decoration-list-success: line-through;
   position: relative;
   transition: $sage-transition;
   transition-property: color;
+}
 
-  &.passed {
-    color: $sage-hint-color-list-success;
-    text-decoration: $sage-hint-decoration-list-success;
-  }
+.sage-hint__list-item--success {
+  color: $sage-hint-color-list-success;
+  text-decoration: $sage-hint-decoration-list-success;
 }
 
