@@ -1,3 +1,4 @@
+//= require lib/zxcvbn
 //= require sage/system/define
 //= require sage/system/util
 
