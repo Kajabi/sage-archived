@@ -106,8 +106,7 @@ Sage.inputhelper = (function() {
         helperReqItems = helperList.map(function(ele) {
           return {
             id: ele.id,
-            type: ele.getAttribute("data-js-hint-type") || null,
-            minValue: ele.getAttribute("data-js-hint-min") || 0
+            type: ele.getAttribute("data-js-hint-type") || null
           }
         });
 
