@@ -5,6 +5,7 @@ Sage.inputhelper = (function() {
   // ==================================================
   var spcChar = /(?=.*[~`!@#$%^&*|(){}/=+-])/g;
   var numChar = /(?=[0-9])/g;
+  var minLengthPW = 8;
 
   var visibleHintClass = "sage-input-helper--visible";
   var passingClass = "sage-hint__list-item--success";
@@ -26,21 +27,18 @@ Sage.inputhelper = (function() {
   }
 
   // check for special characters
-  function pwSpecial(str, num) {
-    if (num == 0) return true;
+  function pwSpecial(str) {
     return spcChar.test(str);
   }
 
   // check for numbers
-  function pwNumber(str, num) {
-    if (num == 0) return true;
+  function pwNumber(str) {
     return numChar.test(str);
   }
 
   // check for password length
-  function pwLength(str, num) {
-    if (num === 0) return true;
-    return str.length >= num;
+  function pwLength(str) {
+    return str.length >= minLengthPW;
   }
 
   function checkRequirements(ele, reqs) {
@@ -51,11 +49,11 @@ Sage.inputhelper = (function() {
 
     reqs.forEach(function(item) {
       if (item.type === "characters") {
-        metChar = updateCriteria(pwLength(val, item.minValue), item.id);
+        metChar = updateCriteria(pwLength(val), item.id);
       } else if (item.type === "symbols") {
-        metSym = updateCriteria(pwSpecial(val, item.minValue), item.id);
+        metSym = updateCriteria(pwSpecial(val), item.id);
       } else if (item.type === "numbers") {
-        metNum = updateCriteria(pwNumber(val, item.minValue), item.id);
+        metNum = updateCriteria(pwNumber(val), item.id);
       }
     });
 
