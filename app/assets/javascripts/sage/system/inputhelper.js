@@ -12,10 +12,13 @@ Sage.inputhelper = (function() {
   // ==================================================
 
   // update strength level of password
-  function updateStrength(inputValue) {
-    var meter = document.getElementById("pw-hint-strength");
-    meter.value = zxcvbn(inputValue).score;
-    // console.info(meter.value);
+  function updatePWStrength(inputValue, meter) {
+    if (typeof zxcvbn !== "undefined") {
+      meter.value = zxcvbn(inputValue).score;
+      console.info(meter.value);
+    } else {
+      meter.closest(".sage-meter").style.opacity = "0";
+    }
   }
 
   // check for special characters
@@ -34,14 +37,15 @@ Sage.inputhelper = (function() {
   }
 
   // toggles item criteria
-  function testCriteria(bool, eleID) {
-    var passed = document.getElementById(eleID);
+  function testCriteria(obj) {
+    console.info(obj);
+    // var passed = document.querySelector(ele.getAttribute(attribute));
 
-    if (bool === true ) {
-      passed.classList.add("passed");
-    } else {
-      passed.classList.remove("passed");
-    }
+    // if (bool === true ) {
+    //   passed.classList.add("passed");
+    // } else {
+    //   passed.classList.remove("passed");
+    // }
   }
 
 
@@ -55,50 +59,69 @@ Sage.inputhelper = (function() {
   }
 
 
-  function inputPWEvents() {
-    var helperTargets = Sage.util.nodelistToArray(document.querySelectorAll("[data-js-helper-target]"));
+  // trigger classes for active state in IE
+  function focusBlurIE(field) {
+    field.addEventListener("focus", function(e) {
+      toggleHint(helper, "sage-input-helper--visible");
+    });
+    field.addEventListener("blur", function(e) {
+      toggleHint(helper, "sage-input-helper--visible");
+    });
+  }
 
-    helperTargets.forEach(function(helper) {
-      var fieldID = helper.getAttribute("data-js-helper-target")
-      var field = document.getElementById(fieldID);
 
-      field.addEventListener("focus", function(e) {
-        toggleHint(helper, "sage-input-helper--visible");
-      });
-      field.addEventListener("blur", function(e) {
-        toggleHint(helper, "sage-input-helper--visible");
-      });
+  function helperEvents(helper) {
+    var fieldID = helper.getAttribute("data-js-helper-target");
+    var field = document.getElementById(fieldID);
+    var meter = helper.querySelector(".sage-meter__bar");
 
-      field.addEventListener("input", function(e) {
-        var inputTarget = e.target,
-            pwText = inputTarget.value;
+    var helperList = Sage.util.nodelistToArray(helper.querySelectorAll(".sage-hint__list-item"));
+    var helperReq = helperList.map(function(ele) {
+      return {
+        type: ele.getAttribute("data-js-hint-type") || null,
+        minValue: ele.getAttribute("data-js-hint-min") || 0
+      }
+    });
 
-        inputTarget.classList.add("sage-input--error");
+    console.info('helperReq', helperReq);
 
-        testCriteria(pwLength(pwText), "pw-hint-characters");
-        testCriteria(pwSpecial(pwText), "pw-hint-symbols");
-        testCriteria(pwNumber(pwText), "pw-hint-numbers");
+    if (Sage.util.isIE) {
+      focusBlurIE(field);
+    }
 
-        if (pwLength(pwText) && pwSpecial(pwText) && pwNumber(pwText)) {
-          inputTarget.classList.remove("sage-input--error");
-        }
+    field.addEventListener("input", function(e) {
+      var targetField = e.target;
 
-        updateStrength(field.value);
-      });
+      // add error state
+      targetField.classList.add("sage-input--error");
+
+      // targetObj.type === "characters" ? testCriteria(pwLength(targetObj)) : null;
+      // targetObj.type === "symbols" ? testCriteria(pwSpecial(targetObj)) : null;
+      // targetObj.type === "numbers" ? testCriteria(pwNumber(targetObj)) : null;
+
+      // if (pwLength(targetObj.text) && pwSpecial(targetObj.text) && pwNumber(targetObj.text)) {
+      //   targetObj.classList.remove("sage-input--error");
+      // }
+
+      updatePWStrength(targetField.value, meter);
     });
   }
 
 
   function init() {
     if (document.querySelector("[data-js-helper-target]").length !== null) {
-      inputPWEvents();
+      var helperTargets = Sage.util.nodelistToArray(document.querySelectorAll("[data-js-helper-target]"));
+
+      helperTargets.forEach(function(helper) {
+        helperEvents(helper);
+      });
     }
   }
 
 
   return {
     init: init,
-    updateStrength: updateStrength
+    updatePWStrength: updatePWStrength
   };
 
 })();
