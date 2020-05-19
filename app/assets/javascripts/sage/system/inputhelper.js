@@ -16,10 +16,10 @@ Sage.inputhelper = (function() {
   // ==================================================
 
   // update strength level of password
-  function updatePWStrength(inputValue, meter) {
+  function updateStrengthMeter(inputValue, meter, meterClass) {
     if (typeof zxcvbn !== "undefined") {
       meter.value = zxcvbn(inputValue).score;
-      // console.info(meter.value);
+      Sage.meter.updateMeter(meterClass);
     } else {
       meter.closest(".sage-meter").style.opacity = "0";
     }
@@ -127,7 +127,7 @@ Sage.inputhelper = (function() {
       fieldParent.classList.add(inputErrorClass);
 
       checkRequirements(targetField, helperReqItems);
-      updatePWStrength(targetField.value, meter);
+      updateStrengthMeter(targetField.value, meter, ".sage-meter__bar");
     });
   }
 
@@ -145,7 +145,7 @@ Sage.inputhelper = (function() {
 
   return {
     init: init,
-    updatePWStrength: updatePWStrength
+    updateStrengthMeter: updateStrengthMeter
   };
 
 })();
