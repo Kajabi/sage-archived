@@ -4,11 +4,12 @@
 
 ================================================== */
 
-$-pw-field-button-size: 1.75rem;
-$-pw-field-button-offset: 0.75rem;
+$-pw-field-button-size: rem(28px);
+$-pw-field-button-offset: rem(12px);
 $-pw-field-button-color-text: sage-color(charcoal, 200);
 $-pw-field-button-color-text-hover: sage-color(black);
 $-pw-field-button-outline: 1px dotted sage-color(grey, 300);
+$-pw-field-button-line-offset: rem(4px);
 $-pw-font-size-sm: sage-font-size(sm);
 
 
@@ -46,7 +47,7 @@ $-pw-font-size-sm: sage-font-size(sm);
     left: 50%;
     transform: translate3d(-50%, -50%, 0) rotate(-45deg);
     height: rem(1px);
-    width: calc(100% + 4px);
+    width: calc(100% + #{$-pw-field-button-line-offset});
     background-color: currentColor;
     transition: $sage-transition;
     transition-property: opacity, transform;
