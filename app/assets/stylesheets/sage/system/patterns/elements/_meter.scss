@@ -6,7 +6,7 @@
 
 $-sage-meter-height: rem(18px);
 $-sage-meter-color-bg: sage-color(white);
-$-sage-meter-color-label: sage-color(charcoal, 100);
+$-sage-meter-color-label: rgba(sage-color(black), 0.7);
 $-sage-meter-label-shadow: 1px 1px 0 rgba(255, 255, 255, 0.67);
 $-sage-meter-bar-low: sage-color(red);
 $-sage-meter-bar-med: sage-color(orange);
