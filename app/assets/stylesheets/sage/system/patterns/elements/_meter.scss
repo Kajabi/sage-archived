@@ -10,7 +10,7 @@ $-sage-meter-color-label: rgba(sage-color(black), 0.7);
 $-sage-meter-label-shadow: 1px 1px 0 rgba(255, 255, 255, 0.67);
 $-sage-meter-bar-low: rgba(sage-color(red), 0.9);
 $-sage-meter-bar-med: rgba(sage-color(orange), 0.9);
-$-sage-meter-bar-optimum: rgba(sage-color(sage, 200), 0.9);
+$-sage-meter-bar-success: rgba(sage-color(sage, 200), 0.9);
 $-sage-meter-bar-max: rgba(sage-color(sage), 0.9);
 
 
@@ -77,7 +77,7 @@ $-sage-meter-bar-max: rgba(sage-color(sage), 0.9);
 
 .sage-meter__bar--optimum {
   @include meter-bar-value() {
-    background-color: $-sage-meter-bar-optimum;
+    background-color: $-sage-meter-bar-success;
   }
 }
 
