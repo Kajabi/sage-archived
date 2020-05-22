@@ -3,13 +3,14 @@ Sage.inputhelper = (function() {
   // ==================================================
   // Variables
   // ==================================================
-  var spcChar = /(?=.*[~`!@#$%^&*|(){}/=:;.,<>+-])/g;
-  var numChar = /(?=[0-9])/g;
+  var spcValues = /(?=.*[~`!@#$%^&*|(){}/=:;.,<>+-])/g;
+  var numValues = /(?=[0-9])/g;
   var minLengthPW = 8;
 
   var visibleHintClass = "sage-input-helper--visible";
   var passingClass = "sage-hint__list-item--success";
   var inputErrorClass = "sage-input--error";
+  var sageMeterBar = ".sage-meter__bar";
 
 
   // ==================================================
@@ -17,23 +18,26 @@ Sage.inputhelper = (function() {
   // ==================================================
 
   // update strength level of password
-  function updateStrengthMeter(inputValue, meter, meterClass) {
+  function updateStrengthMeter(inputValue, meter, reqsMet) {
+    var trueScore, revisedScore;
+
     if (typeof zxcvbn !== "undefined") {
-      meter.value = zxcvbn(inputValue).score;
-      Sage.meter.updateMeter(meterClass);
+      trueScore = zxcvbn(inputValue).score;
+      // artificially reduce score if requirements are not met
+      revisedScore = (reqsMet === true ? trueScore : trueScore - 1);
+      // update meter value
+      meter.value = revisedScore;
+      // append corresponding classes
+      Sage.meter.updateMeter(sageMeterBar);
     } else {
-      meter.closest(".sage-meter").style.opacity = "0";
+      // hides meter if zxcvbn library is not loaded
+      meter.closest(".sage-meter").style.display = "none";
     }
   }
 
-  // check for special characters
-  function pwSpecial(str) {
-    return spcChar.test(str);
-  }
-
-  // check for numbers
-  function pwNumber(str) {
-    return numChar.test(str);
+  // test value against regex string
+  function regexTest(str, testMatch) {
+    return testMatch.test(str);
   }
 
   // check for password length
@@ -41,25 +45,30 @@ Sage.inputhelper = (function() {
     return str.length >= minLengthPW;
   }
 
-  function checkRequirements(ele, reqs) {
+  function checkRequirements(ele, reqs, meter) {
     var val = ele.value;
-    var metChar = false;
-    var metSym = false;
-    var metNum = false;
+    var metChar = false,
+        metSym = false,
+        metNum = false,
+        metAllReqs = false;
 
     reqs.forEach(function(item) {
       if (item.type === "characters") {
         metChar = updateCriteria(pwLength(val), item.id);
       } else if (item.type === "symbols") {
-        metSym = updateCriteria(pwSpecial(val), item.id);
+        metSym = updateCriteria(regexTest(val, spcValues), item.id);
       } else if (item.type === "numbers") {
-        metNum = updateCriteria(pwNumber(val), item.id);
+        metNum = updateCriteria(regexTest(val, numValues), item.id);
       }
     });
 
+    // all requirements are met
     if (metChar && metSym && metNum) {
+      metAllReqs = true;
       ele.parentElement.classList.remove(inputErrorClass);
     }
+
+    updateStrengthMeter(val, meter, metAllReqs);
   }
 
   // toggles item criteria
@@ -68,11 +77,10 @@ Sage.inputhelper = (function() {
 
     if (bool === true ) {
       criteria.classList.add(passingClass);
-      return true;
     } else {
       criteria.classList.remove(passingClass);
-      return false;
     }
+    return bool;
   }
 
 
@@ -100,7 +108,8 @@ Sage.inputhelper = (function() {
   // bind events related to each input helper for passwords
   function bindPWEvents(helper) {
     var fieldID = helper.getAttribute("data-js-helper-target"),
-        field = document.getElementById(fieldID);
+        field = document.getElementById(fieldID),
+        meter = helper.querySelector(".sage-meter__bar");
 
     var helperList = Sage.util.nodelistToArray(helper.querySelectorAll(".sage-hint__list-item")),
         helperReqItems = helperList.map(function(ele) {
@@ -109,8 +118,6 @@ Sage.inputhelper = (function() {
             type: ele.getAttribute("data-js-hint-type") || null
           }
         });
-
-    var meter = helper.querySelector(".sage-meter__bar");
 
     if (Sage.util.isIE()) {
       focusBlurIE(field);
@@ -122,9 +129,7 @@ Sage.inputhelper = (function() {
 
       // add error state
       fieldParent.classList.add(inputErrorClass);
-
-      checkRequirements(targetField, helperReqItems);
-      updateStrengthMeter(targetField.value, meter, ".sage-meter__bar");
+      checkRequirements(targetField, helperReqItems, meter);
     });
   }
 
