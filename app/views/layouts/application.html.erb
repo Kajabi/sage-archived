@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- TODO(jss): I'm not sure which of these should be shared with kajabi-products and which are specific to docs -->
+    <%= render "sage/application/meta" %>
+    <%= render "sage/application/styles" %>
+  </head>
+  <body class="sage-page sage-docs">
+    <%= render "sage/application/content_skip_link",
+      link_id: "main-content"
+    -%>
+    <header class="sage-header">
+      <%= render "sage/application/assistant",
+        menu_button: true
+      -%>
+    </header>
+    <div class="sage-stage">
+      <%= render "sage/application/sidebar" %>
+      <main class="sage-content" id="main-content">
+        <div class="sage-container--lg">
+          <div class="sage-row">
+            <div class="sage-col--lg-9 sage-type">
+              <%= yield :heading %>
+            </div>
+          </div>
+          <div class="sage-row">
+            <div class="sage-col--lg-9">
+              <%= yield %>
+            </div>
+            <div class="sage-col--lg-3 sage-col--md-hide"><%= yield :quick_links %></div>
+          </div>
+        </div>
+      </main>
+      <div class="sage-overlay" aria-hidden="true"></div>
+    </div>
+    <%= render "scripts" %>
+  </body>
+</html>
