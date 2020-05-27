@@ -33,10 +33,10 @@ $-sage-selectfield-color-error: $sage-inputfield-color-error;
 .sage-select__label {
   @extend %t-sage-body;
   position: absolute;
+  color: $-sage-selectfield-color-default;
   white-space: nowrap;
   line-height: initial;
   pointer-events: none;
-  color: $-sage-selectfield-color-default;
 
   @include position((($-sage-selectfield-height / 2) - $sage-body-font-size), unset, unset, $-sage-selectfield-padding-x);
 
