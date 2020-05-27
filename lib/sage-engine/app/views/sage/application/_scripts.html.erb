@@ -1,0 +1,15 @@
+<%= javascript_include_tag "//cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js", cache: true %>
+<%= javascript_include_tag "sage/sage_system", cache: true %>
+
+<%= javascript_pack_tag "sage/system" %>
+
+<script type="text/javascript">
+  window.addEventListener("DOMContentLoaded", function(){
+    Sage.init([
+      'tooltip',
+      'sidebar',
+      'overlay',
+      'alert'
+    ]);
+  });
+</script>
