@@ -18,9 +18,9 @@
 }
 
 .sage-panel__body {
+  display: flex;
   position: relative;
   overflow: auto;
-  display: flex;
   flex-direction: column;
 
   > :last-child {
