@@ -38,6 +38,11 @@ Sage.init = function(elementNamesToInit) {
     Sage.inputgroup.init();
   }
 
+  // Initialize Input groups
+  if ( shouldInit('inputhelper', '.sage-input-helper') ) {
+    Sage.inputhelper.init();
+  }
+
   // Initialize Meter
   if ( shouldInit('meter', '.sage-meter') ) {
     Sage.meter.init();

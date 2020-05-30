@@ -5,11 +5,13 @@
 ================================================== */
 
 $-sage-meter-height: rem(18px);
-$-sage-meter-color-bg: sage-color(primary, 100);
-$-sage-meter-bar-low: sage-color(red);
-$-sage-meter-bar-med: sage-color(orange);
-$-sage-meter-bar-optimum: sage-color(sage, 200);
-$-sage-meter-bar-max: sage-color(sage);
+$-sage-meter-color-bg: sage-color(white);
+$-sage-meter-color-label: rgba(sage-color(black), 0.7);
+$-sage-meter-label-shadow: 1px 1px 0 rgba(255, 255, 255, 0.67);
+$-sage-meter-bar-low: rgba(sage-color(red), 0.9);
+$-sage-meter-bar-med: rgba(sage-color(orange), 0.9);
+$-sage-meter-bar-success: rgba(sage-color(sage, 200), 0.9);
+$-sage-meter-bar-max: rgba(sage-color(sage), 0.9);
 
 
 @mixin meter-bar-value {
@@ -35,6 +37,8 @@ $-sage-meter-bar-max: sage-color(sage);
   transform: translate3d(-50%, -50%, 0);
   z-index: sage-z_index(raised);
   line-height: 1;
+  color: $-sage-meter-color-label;
+  text-shadow: $-sage-meter-label-shadow;
 }
 
 .sage-meter__bar {
@@ -73,7 +77,7 @@ $-sage-meter-bar-max: sage-color(sage);
 
 .sage-meter__bar--optimum {
   @include meter-bar-value() {
-    background-color: $-sage-meter-bar-optimum;
+    background-color: $-sage-meter-bar-success;
   }
 }
 

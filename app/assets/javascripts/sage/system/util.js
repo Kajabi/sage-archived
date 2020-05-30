@@ -15,10 +15,15 @@ Sage.util = (function(Sage) {
     return (!str || 0 === str.length);
   }
 
+  function isIE() {
+    return document.documentMode ? true : false;
+  }
+
   return {
     getBtnTarget: getBtnTarget,
     nodelistToArray: nodelistToArray,
-    isEmptyString: isEmptyString
+    isEmptyString: isEmptyString,
+    isIE: isIE
   };
 
 })(Sage);
