@@ -1,0 +1,88 @@
+/* ==================================================
+  ** meter
+  type: element
+
+================================================== */
+
+$-sage-meter-height: rem(18px);
+$-sage-meter-color-bg: sage-color(white);
+$-sage-meter-color-label: rgba(sage-color(black), 0.7);
+$-sage-meter-label-shadow: 1px 1px 0 rgba(255, 255, 255, 0.67);
+$-sage-meter-bar-low: rgba(sage-color(red), 0.9);
+$-sage-meter-bar-med: rgba(sage-color(orange), 0.9);
+$-sage-meter-bar-success: rgba(sage-color(sage, 200), 0.9);
+$-sage-meter-bar-max: rgba(sage-color(sage), 0.9);
+
+
+@mixin meter-bar-value {
+  &::-webkit-meter-optimum-value {
+    @content;
+  }
+  &::-moz-meter-bar {
+    @content;
+  }
+}
+
+
+.sage-meter {
+  position: relative;
+}
+
+.sage-meter__label {
+  @extend %t-sage-body-xsmall;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  z-index: sage-z_index(raised);
+  line-height: 1;
+  color: $-sage-meter-color-label;
+  text-shadow: $-sage-meter-label-shadow;
+}
+
+.sage-meter__bar {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: $-sage-meter-height;
+  background: $-sage-meter-color-bg;
+  border-radius: sage-border(radius);
+  border: 0;
+
+  &::-webkit-meter-bar {
+    height: 100%;
+    width: 100%;
+    background: none;
+  }
+
+  @include meter-bar-value() {
+    background: none;
+    transition: $sage-transition;
+    transition-property: width;
+  }
+}
+
+.sage-meter__bar--low {
+  @include meter-bar-value() {
+    background-color: $-sage-meter-bar-low;
+  }
+}
+
+.sage-meter__bar--med {
+  @include meter-bar-value() {
+    background-color: $-sage-meter-bar-med;
+  }
+}
+
+.sage-meter__bar--optimum {
+  @include meter-bar-value() {
+    background-color: $-sage-meter-bar-success;
+  }
+}
+
+.sage-meter__bar--max {
+  @include meter-bar-value() {
+    background-color: $-sage-meter-bar-max;
+  }
+}

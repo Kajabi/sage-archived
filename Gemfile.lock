@@ -2,11 +2,7 @@ PATH
   remote: lib/sage-engine
   specs:
     sage (0.15.0.pre.alpha)
-      autoprefixer-rails
-      inline_svg
       rails (~> 4.2.11.1)
-      sass-rails
-      webpacker (= 4.2.2)
 
 GEM
   remote: https://rubygems.org/

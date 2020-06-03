@@ -10,8 +10,3 @@ module.exports = {
     })
   ]
 }
-
-
-// require('stylelint')({
-//   configFile: '.stylelintrc.json'
-// }),
