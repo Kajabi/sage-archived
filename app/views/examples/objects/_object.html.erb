@@ -1,0 +1,36 @@
+<% props_content = render partial: "examples/objects/#{@title}/props" %>
+<% do_content = render partial: "examples/objects/#{@title}/rules_do" %>
+<% dont_content = render partial: "examples/objects/#{@title}/rules_dont" %>
+
+<%= render "examples/shared/heading" %>
+
+<%= render "examples/shared/quick_links",
+  props_content: props_content,
+  do_content: do_content,
+  dont_content: dont_content %>
+
+<div class="sage-panel">
+  <h2 id="<%= @title %>-example-preview" class="t-sage-heading-2 example__title">Preview</h2>
+  <div class="example__preview example__preview--page">
+    <%= render "examples/objects/#{@title}/preview" %>
+  </div>
+</div>
+
+<div class="sage-panel">
+  <h2 id="<%= @title %>-example-code" class="t-sage-heading-2 example__title">Code</h2>
+  <div class="example__code">
+    <div class="sage-code-snippet">
+      <pre class="prettyprint"><code><%= CGI.unescapeHTML(CGI.escapeHTML render "examples/objects/#{@title}/preview") %></code></pre>
+    </div>
+  </div>
+</div>
+
+<%= render "examples/shared/props",
+  props_content: props_content,
+  do_content: do_content,
+  dont_content: dont_content %>
+
+<%= render "examples/shared/rules",
+  props_content: props_content,
+  do_content: do_content,
+  dont_content: dont_content %>

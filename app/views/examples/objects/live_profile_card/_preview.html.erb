@@ -1,0 +1,74 @@
+<ul class="sage-live-profile-cards">
+  <!--  Moderator -->
+  <%= render "examples/objects/live_profile_card/markup",
+    isModerator: true,
+    isPublisher: false,
+    name: "User name",
+    initials: "JC",
+    color: "",
+    hasRing: false,
+    url: "sage/avatar/jay.png",
+    iconsActive: true
+  %>
+
+  <!-- Publisher -->
+  <%= render "examples/objects/live_profile_card/markup",
+    isModerator: false,
+    isPublisher: true,
+    name: "User name",
+    email: "user@example.com",
+    initials: "JC",
+    color: "sage",
+    hasRing: false,
+    url: "sage/avatar/cj.png",
+    iconsActive: false
+  %>
+</ul>
+
+<ul class="sage-live-profile-cards">
+  <!-- Subscriber -->
+  <%= render "examples/objects/live_profile_card/markup",
+    isModerator: false,
+    isPublisher: false,
+    name: "User name",
+    email: "user@example.com",
+    initials: "CM",
+    color: "purple",
+    hasRing: false,
+    url: "",
+    iconsActive: false
+  %>
+  <%= render "examples/objects/live_profile_card/markup",
+    isModerator: false,
+    isPublisher: false,
+    name: "User name",
+    email: "user@example.com",
+    initials: "CM",
+    color: "sage",
+    hasRing: false,
+    url: "",
+    iconsActive: false
+  %>
+  <%= render "examples/objects/live_profile_card/markup",
+    isModerator: false,
+    isPublisher: false,
+    name: "User name",
+    email: "user@example.com",
+    initials: "CM",
+    color: "orange",
+    hasRing: false,
+    url: "",
+    iconsActive: false
+  %>
+  <%= render "examples/objects/live_profile_card/markup",
+    isModerator: false,
+    isPublisher: false,
+    name: "User name",
+    email: "user@example.com",
+    initials: "CM",
+    color: "red",
+    hasRing: false,
+    url: "",
+    iconsActive: false
+  %>
+</ul>

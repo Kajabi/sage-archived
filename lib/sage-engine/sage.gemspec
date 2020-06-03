@@ -18,10 +18,6 @@ Gem::Specification.new do |s|
   s.test_files = Dir["test/**/*"]
 
   s.add_dependency "rails", "~> 4.2.11.1"
-  s.add_dependency "sass-rails" # AJM – REMOVE ON ASSETPIPELINE RIP
-  s.add_dependency "autoprefixer-rails" # AJM – REMOVE ON ASSETPIPELINE RIP
-  s.add_dependency "inline_svg" # AJM – REMOVE ON ASSETPIPELINE RIP
-  s.add_dependency "webpacker", "4.2.2"
 
   s.add_development_dependency "sqlite3", "~> 1.3.0"
   s.add_development_dependency "pry"

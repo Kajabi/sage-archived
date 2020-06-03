@@ -1,0 +1,49 @@
+<li class="sage-live-profile-card">
+  <%= render "examples/objects/live_avatar/markup",
+    initials: initials,
+    color: color,
+    hasRing: isModerator || isPublisher,
+    url: url,
+    scale: false,
+    custom_class: "sage-live-profile-card__avatar"
+  %>
+  <div class="sage-live-profile-card__info">
+    <p class="sage-live-profile-card__user-name"><%= name %></p>
+    <% if !isModerator %>
+    <p class="sage-live-profile-card__user-email"><%= email %></p>
+    <% end %>
+  </div>
+  <div class="sage-live-profile-card__controls">
+    <% if isModerator || isPublisher %>
+      <%= render "examples/objects/live_user_control/markup",
+        icon: 'microphone',
+        label: 'Toggle Microphone',
+        active: iconsActive
+      %>
+      <%= render "examples/objects/live_user_control/markup",
+        icon: 'video-on',
+        label: 'Toggle Camera',
+        active: iconsActive
+      %>
+    <% end %>
+    <div class="sage-live-profile-card__options sage-live-option-menu-anchor" aria-has-popup="true" aria-expanded="false">
+      <%= render "examples/objects/live_user_control/markup",
+        icon: '3-dot-menu',
+        label: 'More options',
+        active: false
+      %>
+      <%= render "examples/objects/live_option_menu/markup",
+        options: [
+          {
+            label: "Turn off sharing permissions",
+            isDanger: false
+          },
+          {
+            label: "Remove participant",
+            isDanger: true
+          }
+        ]
+      %>
+    </div>
+  </div>
+</li>
