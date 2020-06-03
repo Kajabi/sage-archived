@@ -1,0 +1,52 @@
+<div class="sage-live-stream-demo-wrapper">
+  <%= render "examples/objects/live_stream_control/markup",
+    modifiers: '',
+    icon: 'microphone',
+    iconLabel: 'Toggle Microphone',
+    isPill: false,
+    label: ''
+  %>
+
+  <!-- Inactive variation -->
+  <%= render "examples/objects/live_stream_control/markup",
+    modifiers: 'sage-live-stream-control--inactive',
+    icon: 'microphone-off',
+    iconLabel: 'Toggle Microphone',
+    isPill: false,
+    label: ''
+  %>
+
+  <!-- Flat variation -->
+  <%= render "examples/objects/live_stream_control/markup",
+    modifiers: 'sage-live-stream-control--flat',
+    icon: 'microphone',
+    iconLabel: 'Toggle Microphone',
+    isPill: false,
+    label: ''
+  %>
+
+  <!-- Start/stop variation -->
+  <%= render "examples/objects/live_stream_control/markup",
+    modifiers: 'sage-live-stream-control--start',
+    icon: 'play',
+    iconLabel: 'Start Recording',
+    isPill: false,
+    label: ''
+  %>
+  <%= render "examples/objects/live_stream_control/markup",
+    modifiers: 'sage-live-stream-control--stop',
+    icon: 'stop',
+    iconLabel: 'Stop Recording',
+    isPill: false,
+    label: ''
+  %>
+
+  <!-- Pill variation -->
+  <%= render "examples/objects/live_stream_control/markup",
+    modifiers: 'sage-live-stream-control--pill',
+    icon: 'users',
+    iconLabel: 'Toggle Microphone',
+    isPill: true,
+    label: '108'
+  %>
+</div>
