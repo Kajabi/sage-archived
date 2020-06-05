@@ -9,11 +9,10 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "stylelint": "stylelint \"**/*.scss\"",
-    "rails:dummy": "cd test/dummy && rails s",
     "webpack": "./bin/webpack",
     "webpack:server": "./bin/webpack-dev-server",
-    "start": "npm-run-all --parallel webpack:server rails:dummy"
+    "rails:server": "rails s",
+    "start": "npm-run-all --parallel webpack:server rails:server"
   },
   "repository": {
     "type": "git",
