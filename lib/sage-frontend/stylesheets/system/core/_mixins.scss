@@ -78,7 +78,7 @@
 
   arguments: $content
 ================================================== */
-@mixin placeholder { /* stylelint-disable */
+@mixin placeholder {
   &::-webkit-input-placeholder {
     @content;
   }
