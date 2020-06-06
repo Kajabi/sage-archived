@@ -1,15 +1,21 @@
 <%# Set defaults %>
-<% alert_type = color != "" ? " sage-alert--#{color}" : "" %>
-<% alert_icon = sage_icon_name != "" ? sage_icon_name : "sage-icon-info-circle" %>
-<% dismissable ||= false %>
+<%- alert_type = color != "" ? " sage-alert--#{color}" : "" -%>
+<%- alert_icon = sage_icon_name != "" ? sage_icon_name : "sage-icon-info-circle" -%>
+<%- alert_link ||= false -%>
+<%- dismissable ||= false -%>
 
-<div class="sage-alert<%= alert_type -%>">
+<div class="sage-alert<%= alert_type -%>" role="alert">
   <i class="sage-alert__icon <%= alert_icon -%>" aria-hidden="true"></i>
-  <div class="sage-alert-copy">
+  <div class="sage-alert__content">
     <h3 class="sage-alert__title"><%= sage_alert_title %></h3>
-    <p class="sage-alert__desc"><%= sage_alert_desc %></p>
-    <% if dismissible %>
-    <button type="button" class="sage-alert__close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    <% end %>
+    <div class="sage-alert__text">
+      <p class="sage-alert__desc"><%= sage_alert_desc %></p>
+      <%- if alert_link -%>
+      <a href="#" class="sage-alert__link">text</a>
+      <%- end -%>
+    </div>
   </div>
+  <%- if dismissible -%>
+  <button type="button" class="sage-alert__close"><i class="sage-icon-remove" aria-hidden="true"></i><span class="visually-hidden">Dismiss alert</span></button>
+  <%- end -%>
 </div>
