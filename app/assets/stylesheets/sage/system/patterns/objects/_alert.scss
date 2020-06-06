@@ -4,6 +4,12 @@
 
 ================================================== */
 
+$-alert-padding: sage-spacing() sage-spacing(sm);
+$-alert-border-style: sage-spacing(2xs) solid;
+$-alert-radius: sage-border(radius);
+$-alert-close-button-size: rem(42px);
+$-alert-transition-height: rem(-3px);
+
 $-alert-colors: (
   info: primary,
   success: sage,
@@ -15,11 +21,19 @@ $-alert-colors: (
   display: flex;
   position: relative;
   margin-bottom: sage-spacing();
-  padding: sage-spacing();
+  padding: $-alert-padding;
   background: sage-color(gray, 200);
-  border-top: 4px solid;
-  border-bottom-left-radius: sage-border(radius);
+  border-top: $-alert-border-style currentColor;
+  border-bottom-left-radius: $-alert-radius;
+  border-bottom-right-radius: $-alert-radius;
   box-shadow: sage-shadow();
+  transition: transform 0.3s ease-out, opacity 0.2s ease-in;
+}
+
+.sage-alert--hidden {
+  transform-origin: top center;
+  transform: translateY(#{$-alert-transition-height});
+  opacity: 0;
 }
 
 @each $name, $color in $-alert-colors {
@@ -29,13 +43,14 @@ $-alert-colors: (
   }
 }
 
-.sage-alert-copy {
-  padding-right: rem(26px);
+.sage-alert__content {
+  flex-grow: 1;
 }
 
 .sage-alert__title {
   color: sage-color(charcoal, 500);
   @extend %t-sage-body-semi;
+
   @each $name, $color in $-alert-colors {
     .sage-alert--#{$name} & {
       color: sage-color($color, 500);
@@ -43,9 +58,16 @@ $-alert-colors: (
   }
 }
 
+.sage-alert__text {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
 .sage-alert__desc {
   color: sage-color(charcoal, 400);
   @extend %t-sage-body-small;
+
   @each $name, $color in $-alert-colors {
     .sage-alert--#{$name} & {
       color: sage-color($color, 400);
@@ -54,9 +76,10 @@ $-alert-colors: (
 }
 
 .sage-alert__icon {
+  flex: 0 0 2rem;
   transform: translateY(rem(2px));
-  margin: 0 rem(16px) 0 0;
   color: sage-color(charcoal, 200);
+
   @each $name, $color in $-alert-colors {
     .sage-alert--#{$name} & {
       color: sage-color($color, 300);
@@ -65,24 +88,27 @@ $-alert-colors: (
 }
 
 .sage-alert__close {
-  overflow: hidden;
-  position: absolute;
-  top: sage-spacing();
-  right: sage-spacing();
-  height: rem(27.65px);
-  width: rem(27.65px);
+  @include button-style-reset();
+  flex: 0 0 $-alert-close-button-size;
+  height: $-alert-close-button-size;
+  width: $-alert-close-button-size;
   padding: 0;
-  font-size: sage-font-size(2xl);
-  line-height: 1;
-  background-color: transparent;
-  border: 0;
-  appearance: none;
+
+  &:hover,
+  &:focus,
+  &:active {
+    opacity: 0.7;
+  }
+
   @each $name, $color in $-alert-colors {
     .sage-alert--#{$name} & {
       color: sage-color($color, 400);
     }
   }
-  &:hover {
-    opacity: 0.7;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sage-alert {
+    transition-duration: 0.001s;
   }
 }
