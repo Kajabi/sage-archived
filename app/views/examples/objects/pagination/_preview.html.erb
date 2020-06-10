@@ -1,32 +1,98 @@
-<nav class="sage-pagination" aria-label="Pagination">
-  <span class="sage-pagination__count">
-    <strong>32</strong> Records
-  </span>
-  <a class="sage-pagination__link" rel="prev" href="#"><i class="sage-pagination__icon sage-icon-caret-left"></i> Prev</a>
-  <ul class="sage-pagination__pages">
-    <li>
-      <a href="#" class="sage-pagination__page" aria-label="Go to Page 1">1</a>
-    </li>
-    <li>
-      <a href="#" class="sage-pagination__page" aria-label="Go to Page 2">2</a>
-    </li>
-    <li>
-      <a href="#" class="sage-pagination__page" aria-label="Go to Page 3">3</a>
-    </li>
-    <li>
-      <span class="sage-pagination__page sage-pagination__page--gap">...</span>
-    </li>
-    <li>
-      <a href="#" class="sage-pagination__page" aria-label="Go to Page 18">18</a>
-    </li>
-    <li>
-      <a href="#" class="sage-pagination__page" aria-label="Go to Page 19">19</a>
-    </li>
-    <li>
-      <span class="sage-pagination__page sage-pagination__page--active" aria-current="page">20</span>
-    </li>
-  </ul>
-  <a href="#" class="sage-pagination__link sage-pagination__link--disabled" aria-disabled="true">
-    Next <i class="sage-pagination__icon sage-icon-caret-right"></i>
-  </a>
-</nav>
+<%= render "examples/objects/pagination/markup",
+  total_count: "32",
+  pagination_items: [
+    {
+      # prev link
+      is_link: true,
+      is_gap: false,
+      is_prev: true,
+      is_next: false,
+      page_number: "",
+      link_url: "#",
+      is_disabled: false,
+      is_current: false
+    },
+    {
+      is_link: true,
+      is_gap: false,
+      is_prev: false,
+      is_next: false,
+      page_number: "1",
+      link_url: "#",
+      is_disabled: false,
+      is_current: false
+    },
+    {
+      is_link: true,
+      is_gap: false,
+      is_prev: false,
+      is_next: false,
+      page_number: "2",
+      link_url: "#",
+      is_disabled: false,
+      is_current: false
+    },
+    {
+      is_link: true,
+      is_gap: false,
+      is_prev: false,
+      is_next: false,
+      page_number: "3",
+      link_url: "#",
+      is_disabled: false,
+      is_current: false
+    },
+    {
+      # gap
+      is_link: false,
+      is_gap: true,
+      is_prev: false,
+      is_next: false,
+      page_number: "",
+      link_url: "#",
+      is_disabled: false,
+      is_current: false
+    },
+    {
+      is_link: true,
+      is_gap: false,
+      is_prev: false,
+      is_next: false,
+      page_number: "18",
+      link_url: "#",
+      is_disabled: false,
+      is_current: false
+    },
+    {
+      is_link: true,
+      is_gap: false,
+      is_prev: false,
+      is_next: false,
+      page_number: "19",
+      link_url: "#",
+      is_disabled: false,
+      is_current: false
+    },
+    {
+      is_link: true,
+      is_gap: false,
+      is_prev: false,
+      is_next: false,
+      page_number: "20",
+      link_url: "#",
+      is_disabled: false,
+      is_current: true
+    },
+    {
+      # next link
+      is_link: true,
+      is_gap: false,
+      is_prev: false,
+      is_next: true,
+      page_number: "",
+      link_url: "#",
+      is_disabled: true,
+      is_current: false
+    },
+  ]
+%>

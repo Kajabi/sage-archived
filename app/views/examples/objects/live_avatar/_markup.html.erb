@@ -3,6 +3,6 @@
     <text text-anchor="middle" x="19.5" y="24"><%= initials %></text>
   </svg>
   <% if url != "" %>
-  <img src="<%= url %>" class="sage-live-avatar__image" alt="" />
+  <%= image_pack_tag("#{url}", class: "sage-live-avatar__image", alt: "") %>
   <% end %>
 </div>

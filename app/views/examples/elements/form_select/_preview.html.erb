@@ -1,30 +1,75 @@
-<div class="sage-select">
-  <select name="pets" id="pets" class="sage-select__field" required>
-    <option value="" disabled selected>-- Please Select A Character --</option>
-    <option value="none">None</option>
-    <option value="mario">Mario</option>
-    <option value="Luigi">Luigi</option>
-    <option value="princess-peach">Princess Peach</option>
-    <option value="daisy">Daisy</option>
-    <option value="toad">Toad</option>
-  </select>
-  <label for="pets" class="sage-select__label">Character</label>
-  <i class="sage-select__arrow" aria-hidden="true"></i>
-  <div class="sage-select__message">This is a message</div>
-</div>
+<%= render "examples/elements/form_select/markup",
+  name: "Characters",
+  has_error: false,
+  select_options: [
+    {
+      text: "-- Please Select a Character --",
+      value: "",
+    },
+    {
+      text: "(None Specified)",
+      value: "",
+    },
+    {
+      text: "Mario",
+      value: "mario",
+    },
+    {
+      text: "Luigi",
+      value: "luigi",
+    },
+    {
+      text: "Princess Peach",
+      value: "princess-peach",
+    },
+    {
+      text: "Daisy",
+      value: "daisy",
+    },
+    {
+      text: "Toad",
+      value: "toad",
+    },
+  ],
+  message: "This is a message"
+%>
 
-<div class="sage-select sage-select--error">
-  <select name="pet" id="pet" class="sage-select__field" required>
-    <option value="" disabled selected>-- Please Select A Pet --</option>
-    <option value="none">None</option>
-    <option value="dog">Dog</option>
-    <option value="cat">Cat</option>
-    <option value="hamster">Hamster</option>
-    <option value="parrot">Parrot</option>
-    <option value="spider">Spider</option>
-    <option value="goldfish">Goldfish</option>
-  </select>
-  <label for="pet" class="sage-select__label">Pet</label>
-  <i class="sage-select__arrow" aria-hidden="true"></i>
-  <div class="sage-select__message">This is a message</div>
-</div>
+<%= render "examples/elements/form_select/markup",
+  name: "Pets",
+  has_error: true,
+  select_options: [
+    {
+      text: "-- Please Select a Pet --",
+      value: "",
+    },
+    {
+      text: "(None Specified)",
+      value: "",
+    },
+    {
+      text: "Dog",
+      value: "dog",
+    },
+    {
+      text: "Cat",
+      value: "cat",
+    },
+    {
+      text: "Hamster",
+      value: "hamster",
+    },
+    {
+      text: "Parrot",
+      value: "parrot",
+    },
+    {
+      text: "Spider",
+      value: "spider",
+    },
+    {
+      text: "Goldfish",
+      value: "goldfish",
+    },
+  ],
+  message: "This is a message"
+%>

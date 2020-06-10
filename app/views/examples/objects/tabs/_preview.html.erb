@@ -1,6 +1,20 @@
-<div class="sage-tabs">
-  <a href="#" class="sage-tabs__tab sage-tabs__tab--active">Active Page</a>
-  <a href="#" class="sage-tabs__tab">Sub Page 1</a>
-  <a href="#" class="sage-tabs__tab">Sub Page 2</a>
-  <a href="#" class="sage-tabs__tab">Sub Page 3</a>
-</div>
+<%= render "examples/objects/tabs/markup",
+  options: [
+    {
+      text: "Active",
+      is_active: true
+    },
+    {
+      text: "Sub Page 1",
+      is_active: false
+    },
+    {
+      text: "Sub Page 2",
+      is_active: false
+    },
+    {
+      text: "Sub Page 3",
+      is_active: false
+    },
+  ]
+%>

@@ -1,0 +1,5 @@
+<div class="sage-tabs">
+  <% options.each do |option| %>
+  <a href="#" class="sage-tabs__tab <%= option[:is_active] ? "sage-tabs__tab--active" : "" %>"><%= option[:text] %></a>
+  <% end %>
+</div>
