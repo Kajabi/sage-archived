@@ -8,7 +8,7 @@
   font-style: normal;
   font-weight: 100;
   font-display: swap;
-  src: local("Inter-Thin"), asset-url("#{$sage-body-font-path}/Inter-Thin.woff2?v=#{$sage-body-font-version}") format("woff2"), asset-url("#{$sage-body-font-path}/Inter-Thin.woff?v=#{$sage-body-font-version}") format("woff");
+  src: local("Inter-Thin"), url("#{$sage-body-font-path}/Inter-Thin.woff2?v=#{$sage-body-font-version}") format("woff2"), url("#{$sage-body-font-path}/Inter-Thin.woff?v=#{$sage-body-font-version}") format("woff");
 }
 
 @font-face {
@@ -16,7 +16,7 @@
   font-style: italic;
   font-weight: 100;
   font-display: swap;
-  src: local("Inter-ThinItalic"), asset-url("#{$sage-body-font-path}/Inter-ThinItalic.woff2?v=#{$sage-body-font-version}") format("woff2"), asset-url("#{$sage-body-font-path}/Inter-ThinItalic.woff?v=#{$sage-body-font-version}") format("woff");
+  src: local("Inter-ThinItalic"), url("#{$sage-body-font-path}/Inter-ThinItalic.woff2?v=#{$sage-body-font-version}") format("woff2"), url("#{$sage-body-font-path}/Inter-ThinItalic.woff?v=#{$sage-body-font-version}") format("woff");
 }
 
 @font-face {
@@ -24,7 +24,7 @@
   font-style: normal;
   font-weight: 200;
   font-display: swap;
-  src: local("Inter-ExtraLight"), asset-url("#{$sage-body-font-path}/Inter-ExtraLight.woff2?v=#{$sage-body-font-version}") format("woff2"), asset-url("#{$sage-body-font-path}/Inter-ExtraLight.woff?v=#{$sage-body-font-version}") format("woff");
+  src: local("Inter-ExtraLight"), url("#{$sage-body-font-path}/Inter-ExtraLight.woff2?v=#{$sage-body-font-version}") format("woff2"), url("#{$sage-body-font-path}/Inter-ExtraLight.woff?v=#{$sage-body-font-version}") format("woff");
 }
 
 @font-face {
@@ -32,7 +32,7 @@
   font-style: italic;
   font-weight: 200;
   font-display: swap;
-  src: local("Inter-ExtraLightItalic"), asset-url("#{$sage-body-font-path}/Inter-ExtraLightItalic.woff2?v=#{$sage-body-font-version}") format("woff2"), asset-url("#{$sage-body-font-path}/Inter-ExtraLightItalic.woff?v=#{$sage-body-font-version}") format("woff");
+  src: local("Inter-ExtraLightItalic"), url("#{$sage-body-font-path}/Inter-ExtraLightItalic.woff2?v=#{$sage-body-font-version}") format("woff2"), url("#{$sage-body-font-path}/Inter-ExtraLightItalic.woff?v=#{$sage-body-font-version}") format("woff");
 }
 
 @font-face {
@@ -40,7 +40,7 @@
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-  src: local("Inter-Light"), asset-url("#{$sage-body-font-path}/Inter-Light.woff2?v=#{$sage-body-font-version}") format("woff2"), asset-url("#{$sage-body-font-path}/Inter-Light.woff?v=#{$sage-body-font-version}") format("woff");
+  src: local("Inter-Light"), url("#{$sage-body-font-path}/Inter-Light.woff2?v=#{$sage-body-font-version}") format("woff2"), url("#{$sage-body-font-path}/Inter-Light.woff?v=#{$sage-body-font-version}") format("woff");
 }
 
 @font-face {
@@ -48,7 +48,7 @@
   font-style: italic;
   font-weight: 300;
   font-display: swap;
-  src: local("Inter-LightItalic"), asset-url("#{$sage-body-font-path}/Inter-LightItalic.woff2?v=#{$sage-body-font-version}") format("woff2"), asset-url("#{$sage-body-font-path}/Inter-LightItalic.woff?v=#{$sage-body-font-version}") format("woff");
+  src: local("Inter-LightItalic"), url("#{$sage-body-font-path}/Inter-LightItalic.woff2?v=#{$sage-body-font-version}") format("woff2"), url("#{$sage-body-font-path}/Inter-LightItalic.woff?v=#{$sage-body-font-version}") format("woff");
 }
 
 @font-face {
@@ -56,7 +56,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: local("Inter-Regular"), asset-url("#{$sage-body-font-path}/Inter-Regular.woff2?v=#{$sage-body-font-version}") format("woff2"), asset-url("#{$sage-body-font-path}/Inter-Regular.woff?v=#{$sage-body-font-version}") format("woff");
+  src: local("Inter-Regular"), url("#{$sage-body-font-path}/Inter-Regular.woff2?v=#{$sage-body-font-version}") format("woff2"), url("#{$sage-body-font-path}/Inter-Regular.woff?v=#{$sage-body-font-version}") format("woff");
 }
 
 @font-face {
@@ -64,7 +64,7 @@
   font-style: italic;
   font-weight: 400;
   font-display: swap;
-  src: local("Inter-Italic"), asset-url("#{$sage-body-font-path}/Inter-Italic.woff2?v=#{$sage-body-font-version}") format("woff2"), asset-url("#{$sage-body-font-path}/Inter-Italic.woff?v=#{$sage-body-font-version}") format("woff");
+  src: local("Inter-Italic"), url("#{$sage-body-font-path}/Inter-Italic.woff2?v=#{$sage-body-font-version}") format("woff2"), url("#{$sage-body-font-path}/Inter-Italic.woff?v=#{$sage-body-font-version}") format("woff");
 }
 
 @font-face {
@@ -72,7 +72,7 @@
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: local("Inter-Medium"), asset-url("#{$sage-body-font-path}/Inter-Medium.woff2?v=#{$sage-body-font-version}") format("woff2"), asset-url("#{$sage-body-font-path}/Inter-Medium.woff?v=#{$sage-body-font-version}") format("woff");
+  src: local("Inter-Medium"), url("#{$sage-body-font-path}/Inter-Medium.woff2?v=#{$sage-body-font-version}") format("woff2"), url("#{$sage-body-font-path}/Inter-Medium.woff?v=#{$sage-body-font-version}") format("woff");
 }
 
 @font-face {
@@ -80,7 +80,7 @@
   font-style: italic;
   font-weight: 500;
   font-display: swap;
-  src: local("Inter-MediumItalic"), asset-url("#{$sage-body-font-path}/Inter-MediumItalic.woff2?v=#{$sage-body-font-version}") format("woff2"), asset-url("#{$sage-body-font-path}/Inter-MediumItalic.woff?v=#{$sage-body-font-version}") format("woff");
+  src: local("Inter-MediumItalic"), url("#{$sage-body-font-path}/Inter-MediumItalic.woff2?v=#{$sage-body-font-version}") format("woff2"), url("#{$sage-body-font-path}/Inter-MediumItalic.woff?v=#{$sage-body-font-version}") format("woff");
 }
 
 @font-face {
@@ -88,7 +88,7 @@
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: local("Inter-SemiBold"), asset-url("#{$sage-body-font-path}/Inter-SemiBold.woff2?v=#{$sage-body-font-version}") format("woff2"), asset-url("#{$sage-body-font-path}/Inter-SemiBold.woff?v=#{$sage-body-font-version}") format("woff");
+  src: local("Inter-SemiBold"), url("#{$sage-body-font-path}/Inter-SemiBold.woff2?v=#{$sage-body-font-version}") format("woff2"), url("#{$sage-body-font-path}/Inter-SemiBold.woff?v=#{$sage-body-font-version}") format("woff");
 }
 
 @font-face {
@@ -96,7 +96,7 @@
   font-style: italic;
   font-weight: 600;
   font-display: swap;
-  src: local("Inter-SemiBoldItalic"), asset-url("#{$sage-body-font-path}/Inter-SemiBoldItalic.woff2?v=#{$sage-body-font-version}") format("woff2"), asset-url("#{$sage-body-font-path}/Inter-SemiBoldItalic.woff?v=#{$sage-body-font-version}") format("woff");
+  src: local("Inter-SemiBoldItalic"), url("#{$sage-body-font-path}/Inter-SemiBoldItalic.woff2?v=#{$sage-body-font-version}") format("woff2"), url("#{$sage-body-font-path}/Inter-SemiBoldItalic.woff?v=#{$sage-body-font-version}") format("woff");
 }
 
 @font-face {
@@ -104,7 +104,7 @@
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: local("Inter-Bold"), asset-url("#{$sage-body-font-path}/Inter-Bold.woff2?v=#{$sage-body-font-version}") format("woff2"), asset-url("#{$sage-body-font-path}/Inter-Bold.woff?v=#{$sage-body-font-version}") format("woff");
+  src: local("Inter-Bold"), url("#{$sage-body-font-path}/Inter-Bold.woff2?v=#{$sage-body-font-version}") format("woff2"), url("#{$sage-body-font-path}/Inter-Bold.woff?v=#{$sage-body-font-version}") format("woff");
 }
 
 @font-face {
@@ -112,7 +112,7 @@
   font-style: italic;
   font-weight: 700;
   font-display: swap;
-  src: local("Inter-BoldItalic"), asset-url("#{$sage-body-font-path}/Inter-BoldItalic.woff2?v=#{$sage-body-font-version}") format("woff2"), asset-url("#{$sage-body-font-path}/Inter-BoldItalic.woff?v=#{$sage-body-font-version}") format("woff");
+  src: local("Inter-BoldItalic"), url("#{$sage-body-font-path}/Inter-BoldItalic.woff2?v=#{$sage-body-font-version}") format("woff2"), url("#{$sage-body-font-path}/Inter-BoldItalic.woff?v=#{$sage-body-font-version}") format("woff");
 }
 
 @font-face {
@@ -120,7 +120,7 @@
   font-style: normal;
   font-weight: 800;
   font-display: swap;
-  src: local("Inter-ExtraBold"), asset-url("#{$sage-body-font-path}/Inter-ExtraBold.woff2?v=#{$sage-body-font-version}") format("woff2"), asset-url("#{$sage-body-font-path}/Inter-ExtraBold.woff?v=#{$sage-body-font-version}") format("woff");
+  src: local("Inter-ExtraBold"), url("#{$sage-body-font-path}/Inter-ExtraBold.woff2?v=#{$sage-body-font-version}") format("woff2"), url("#{$sage-body-font-path}/Inter-ExtraBold.woff?v=#{$sage-body-font-version}") format("woff");
 }
 
 @font-face {
@@ -128,7 +128,7 @@
   font-style: italic;
   font-weight: 800;
   font-display: swap;
-  src: local("Inter-ExtraBoldItalic"), asset-url("#{$sage-body-font-path}/Inter-ExtraBoldItalic.woff2?v=#{$sage-body-font-version}") format("woff2"), asset-url("#{$sage-body-font-path}/Inter-ExtraBoldItalic.woff?v=#{$sage-body-font-version}") format("woff");
+  src: local("Inter-ExtraBoldItalic"), url("#{$sage-body-font-path}/Inter-ExtraBoldItalic.woff2?v=#{$sage-body-font-version}") format("woff2"), url("#{$sage-body-font-path}/Inter-ExtraBoldItalic.woff?v=#{$sage-body-font-version}") format("woff");
 }
 
 @font-face {
@@ -136,7 +136,7 @@
   font-style: normal;
   font-weight: 900;
   font-display: swap;
-  src: local("Inter-Black"), asset-url("#{$sage-body-font-path}/Inter-Black.woff2?v=#{$sage-body-font-version}") format("woff2"), asset-url("#{$sage-body-font-path}/Inter-Black.woff?v=#{$sage-body-font-version}") format("woff");
+  src: local("Inter-Black"), url("#{$sage-body-font-path}/Inter-Black.woff2?v=#{$sage-body-font-version}") format("woff2"), url("#{$sage-body-font-path}/Inter-Black.woff?v=#{$sage-body-font-version}") format("woff");
 }
 
 @font-face {
@@ -144,7 +144,7 @@
   font-style: italic;
   font-weight: 900;
   font-display: swap;
-  src: local("Inter-BlackItalic"), asset-url("#{$sage-body-font-path}/Inter-BlackItalic.woff2?v=#{$sage-body-font-version}") format("woff2"), asset-url("#{$sage-body-font-path}/Inter-BlackItalic.woff?v=#{$sage-body-font-version}") format("woff");
+  src: local("Inter-BlackItalic"), url("#{$sage-body-font-path}/Inter-BlackItalic.woff2?v=#{$sage-body-font-version}") format("woff2"), url("#{$sage-body-font-path}/Inter-BlackItalic.woff?v=#{$sage-body-font-version}") format("woff");
 }
 
 /* ==================================================
@@ -163,7 +163,7 @@ Usage:
   font-style: normal;
   font-named-instance: "Regular";
   font-display: swap;
-  src: asset-url("#{$sage-body-font-path}/Inter-roman.var.woff2?v=#{$sage-body-font-version}") format("woff2");
+  src: url("#{$sage-body-font-path}/Inter-roman.var.woff2?v=#{$sage-body-font-version}") format("woff2");
 }
 
 @font-face {
@@ -172,7 +172,7 @@ Usage:
   font-style: italic;
   font-named-instance: "Italic";
   font-display: swap;
-  src: asset-url("#{$sage-body-font-path}/Inter-italic.var.woff2?v=#{$sage-body-font-version}") format("woff2");
+  src: url("#{$sage-body-font-path}/Inter-italic.var.woff2?v=#{$sage-body-font-version}") format("woff2");
 }
 
 /* Legacy naming compatibility */
@@ -182,7 +182,7 @@ Usage:
   font-style: normal;
   font-named-instance: "Regular";
   font-display: swap;
-  src: asset-url("#{$sage-body-font-path}/Inter-roman.var.woff2?v=#{$sage-body-font-version}") format("woff2");
+  src: url("#{$sage-body-font-path}/Inter-roman.var.woff2?v=#{$sage-body-font-version}") format("woff2");
 }
 
 @font-face {
@@ -191,7 +191,7 @@ Usage:
   font-style: italic;
   font-named-instance: "Italic";
   font-display: swap;
-  src: asset-url("#{$sage-body-font-path}/Inter-italic.var.woff2?v=#{$sage-body-font-version}") format("woff2");
+  src: url("#{$sage-body-font-path}/Inter-italic.var.woff2?v=#{$sage-body-font-version}") format("woff2");
 }
 
 
@@ -214,5 +214,5 @@ explicitly, e.g.
   font-weight: 100 900;
   font-style: oblique 0deg 10deg;
   font-display: swap;
-  src: asset-url("#{$sage-body-font-path}/Inter.var.woff2?v=#{$sage-body-font-version}") format("woff2");
+  src: url("#{$sage-body-font-path}/Inter.var.woff2?v=#{$sage-body-font-version}") format("woff2");
 }
