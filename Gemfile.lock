@@ -42,8 +42,6 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     arel (6.0.4)
-    autoprefixer-rails (9.7.6)
-      execjs
     binding_of_caller (0.8.0)
       debug_inspector (>= 0.0.1)
     builder (3.2.4)
@@ -59,9 +57,6 @@ GEM
       activesupport (>= 4.2.0)
     i18n (0.9.5)
       concurrent-ruby (~> 1.0)
-    inline_svg (1.7.1)
-      activesupport (>= 3.0)
-      nokogiri (>= 1.6)
     loofah (2.5.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -150,9 +145,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  autoprefixer-rails
   byebug
-  inline_svg
   pry
   rails (= 4.2.11.1)
   sage!

@@ -4,8 +4,6 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.2.11.1'
 
-gem 'autoprefixer-rails'
-gem 'inline_svg'
 gem 'sass-rails', '~> 5.0'
 gem 'sqlite3', '~> 1.3.6'
 gem 'uglifier', '>= 1.3.0'
