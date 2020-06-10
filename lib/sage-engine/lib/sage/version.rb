@@ -1,3 +1,3 @@
 module Sage
-  VERSION = "0.15.0-alpha"
+  VERSION = "0.17.0"
 end

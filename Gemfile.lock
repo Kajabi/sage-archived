@@ -1,7 +1,7 @@
 PATH
   remote: lib/sage-engine
   specs:
-    sage (0.15.0.pre.alpha)
+    sage (0.17.0)
       rails (~> 4.2.11.1)
 
 GEM
