@@ -1,13 +1,3 @@
-body::before {
-  content: "WEBPACKER IS LOADED";
-  color: pink;
-  display: fixed;
-  background: blue;
-  padding: 40px;
-  top: 0;
-  right: 0;
-}
-
 // Reset
 @import "vendor/reboot";
 
@@ -55,6 +45,7 @@ body::before {
 @import "utilities/hidden";
 
 // Elements
+@import "patterns/elements/meter";
 @import "patterns/elements/live_stream_wrapper";
 @import "patterns/elements/description";
 @import "patterns/elements/label";
@@ -72,6 +63,8 @@ body::before {
 @import "patterns/elements/overlay";
 
 // Objects
+@import "patterns/objects/input_helper";
+@import "patterns/objects/input_group";
 @import "patterns/objects/billboard";
 @import "patterns/objects/pagination";
 @import "patterns/objects/banner";

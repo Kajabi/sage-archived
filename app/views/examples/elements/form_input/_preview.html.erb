@@ -18,7 +18,7 @@
     message_text: "This is a message"
   %>
 
-  <h3 class="t-sage-heading-6">Text (with error modifier)</h3>
+  <h3 class="t-sage-heading-6">Text (with error)</h3>
   <%= render "examples/elements/form_input/markup",
     id: "form__fname2",
     input_type: "text",
@@ -35,8 +35,28 @@
     has_error: true,
     message_text: "This is a message"
   %>
+
+  <h3 class="t-sage-heading-6">Text (prefilled)</h3>
   <%= render "examples/elements/form_input/markup",
-    id: "form__lname",
+    id: "form__country",
+    input_type: "text",
+    label_text: "Country",
+    placeholder: "Country",
+    value: "USA",
+    required: true,
+    disabled: false,
+    input_mode: "",
+    pattern: "",
+    max: "",
+    minlength: "",
+    maxlength: "",
+    has_error: false,
+    message_text: ""
+  %>
+
+  <h3 class="t-sage-heading-6">Text (disabled)</h3>
+  <%= render "examples/elements/form_input/markup",
+    id: "form__apt",
     input_type: "text",
     label_text: "PO Box",
     placeholder: "PO Box",

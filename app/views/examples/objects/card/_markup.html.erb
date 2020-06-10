@@ -1,6 +1,6 @@
 <div class="sage-card<%= is_compact ? " sage-card--compact" : "" %><%= is_spaced ? " sage-card--spaced" : "" %>">
   <% if has_img %>
-  <%= image_tag("#{img_path}", class: "sage-card__img", alt: "#{img_alt}") %>
+  <%= image_pack_tag("#{img_path}", class: "sage-card__img", alt: "#{img_alt}") %>
   <% end %>
   <div class="sage-card__body">
     <h2 class="sage-card__title t-sage-heading-5"><%= title %></h2>

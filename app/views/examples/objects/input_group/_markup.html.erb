@@ -1,5 +1,5 @@
 <div class="sage-input-group sage-input-group--<%= group_button_type -%>" role="group" aria-labelledby="<%= group_id %>">
-  <%= render "sage/examples/elements/form_input/markup",
+  <%= render "examples/elements/form_input/markup",
     id: "#{ group_id }",
     input_type: "#{ group_button_type}",
     label_text: "#{ group_button_label }",
@@ -16,7 +16,7 @@
     message_text: ""
   %>
   <%- if has_hint -%>
-  <%= render "sage/examples/objects/input_helper/markup",
+  <%= render "examples/objects/input_helper/markup",
     helper_id: "",
     helper_target: "input-group-pw-example",
     description: "Your password must meet the following criteria:",

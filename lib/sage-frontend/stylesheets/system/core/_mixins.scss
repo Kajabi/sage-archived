@@ -78,6 +78,7 @@
 
   arguments: $content
 ================================================== */
+ /* stylelint-disable */
 @mixin placeholder {
   &::-webkit-input-placeholder {
     @content;
@@ -91,7 +92,8 @@
   &:-ms-input-placeholder {
     @content;
   }
-} /* stylelint-enable */
+}
+/* stylelint-enable */
 
 
 /* ==================================================
