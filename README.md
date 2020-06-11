@@ -1,4 +1,4 @@
-# Sage
+# Sage Design System
 
 The Sage Design System (SDS) is our single source of truth, providing everything you need to build great products for our customers. It is the culmination of designers and developers working together to give teams the ability to ship high-quality products faster.
 
@@ -29,7 +29,8 @@ $ yarn start
 
 Additional scripts live within `./package.json` and can be run in the console using `yarn <COMMAND NAME>`.
 
-Happy development!
+The documentation site can be accessed at [`http://localhost:4000`](http://localhost:4000/). Happy development!
+
 
 ## Local Development: Kajabi-Products
 
@@ -42,7 +43,7 @@ To link your _local_ Sage repo's assets within Kajabi-Products we have a shell s
 # For example if the Kajabi-Products and Sage repos locally are sibling directories:
 # $ ../bin/sage-local-link.sh true
 
-$ <RELATIVE PATH TO SAGE REPO/bin/sage-local-link.sh <BOOLEAN>
+$ <RELATIVE PATH TO SAGE REPO>/bin/sage-local-link.sh <BOOLEAN>
 ```
 The script requires a boolean argument designating whether to setup or tear down the link to your local Sage repo. This is an automation of `yarn link`, you can do this process manually as well. [See the yarn docs for more details.](https://classic.yarnpkg.com/en/docs/cli/link/)
 
@@ -57,6 +58,26 @@ $ heroku local
 $ bin/webpack-dev-server
 ```
 
+It's reccomended to run the Sage documentation site in tandom with Kajabi-Products. The documentation site is hosted through port `4000` to avoid conflicts with Kajabi-Products' use of the `30XX` range.
+
+## Deploying Sage
+### Cut A New Version Of Sage
+The Sage version is set via the `./package.json` version.
+
+It is reccomended to use the [`yarn version`](https://classic.yarnpkg.com/en/docs/cli/version/) command for this because it also handles tagging the git commit.
+
+### Update Kajabi-Products To The Latest Sage Version
+Our main app is updated by pulling setting a version-tagged commit from the Kajabi/Sage master branch as the source for the Sage frontend dependancy.
+
+This can be done using:
+```bash
+# Example: yarn upgrade sage@0.17.0
+$ yarn upgrade sage@<VERSION NUMBER>
+```
+
+Keep in mind that this version bump should be made in a standalone Kajabi-Products PR with **all specs passing**.
+
+The PR should _only_ include a diff of `package.json` & `yarn.lock`.
 
 ## Installation
 ### Frontend Package
