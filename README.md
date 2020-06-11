@@ -7,7 +7,7 @@ This repo contains the Sage documentation site and the SDS as a webpack-compatib
 ![image](https://user-images.githubusercontent.com/565743/83690086-b0acce00-a5b5-11ea-90f5-9b8e8b0bd337.png)
 
 
-## Sage Development
+## Local Development: Sage
 
 ### Getting Started
 
@@ -24,14 +24,14 @@ $ bundle
 
 Run the rails & webpack development servers in tandom.
 ```bash
-$ yarn serve
+$ yarn start
 ```
 
 Additional scripts live within `./package.json` and can be run in the console using `yarn <COMMAND NAME>`.
 
 Happy development!
 
-## Kajabi Products Development
+## Local Development: Kajabi-Products
 
 ### Getting Started
 
@@ -48,11 +48,14 @@ The script requires a boolean argument designating whether to setup or tear down
 
 ### Run Locally
 
-Within Kajabi-Products, run the project as you normally would and in tandom also run Kajabi-Products' webpack-dev-server.
+Within Kajabi-Products, run the project as you normally would and in tandom also run Kajabi-Products' webpack-dev-server. In order for Kajabi-Products to watch changes within your local Sage repo webpack-dev-server needs to be running.
 ```bash
+# Run Kajabi-Products
+$ heroku local
+
+# Run Kajabi-Products' webpack-dev-server
 $ bin/webpack-dev-server
 ```
-In order for Kajabi-Products to watch changes within your local Sage repo webpack development server needs to be running.
 
 
 ## Installation
@@ -73,19 +76,8 @@ development:
 
 ```
 
-### Rails Engine
-
----
-
-**NOTE:** The Rails engine is not being currently used within Kajabi-Products at this moment. The design syste ruby classes (`SageComponent`) live within the main app until they're more mature.
-
----
-
-To install this gem for use in an application add this line to your application's Gemfile:
-
-```ruby
-gem 'sage', git: 'https://github.com/Kajabi/sage.git'
-```
+## Rails Engine Implementation
+**NOTE:** While the Sage Rails engine exists within this repo it is currently not consumed by Kajabi-Products. The design system ruby classes (`SageComponent`) that exist in Kajabi-Products are intended to live within the Sage Rails engine once they mature. Currently the Sage Rails engine is an empty app.
 
 
 ## License
