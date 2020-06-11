@@ -71,8 +71,8 @@ Our main app is updated by pulling setting a version-tagged commit from the Kaja
 
 This can be done using:
 ```bash
-# Example: yarn upgrade sage@0.17.0
-$ yarn upgrade sage@<VERSION NUMBER>
+# Example: yarn upgrade sage@git://github.com/Kajabi/sage.git#0.17.0
+$ yarn upgrade sage@git://github.com/Kajabi/sage.git#<GIT VERSION TAG>
 ```
 
 Keep in mind that this version bump should be made in a standalone Kajabi-Products PR with **all specs passing**.
