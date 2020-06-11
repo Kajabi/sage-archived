@@ -1258,6 +1258,11 @@ arrify@^1.0.1:
   resolved "https://registry.yarnpkg.com/arrify/-/arrify-1.0.1.tgz#898508da2226f380df904728456849c1501a4b0d"
   integrity sha1-iYUI2iIm84DfkEcoRWhJwVAaSw0=
 
+arrify@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/arrify/-/arrify-2.0.1.tgz#c9655e9331e0abcd588d2a7cad7e9956f66701fa"
+  integrity sha512-3duEwti880xqi4eAMN8AyR4a0ByT90zoYdLlevfrvU43vb0YZwZVfxOgxWrLXXXpyugL0hNZc9G6BiB5B3nUug==
+
 asn1.js@^4.0.0:
   version "4.10.1"
   resolved "https://registry.yarnpkg.com/asn1.js/-/asn1.js-4.10.1.tgz#b9c2bf5805f1e64aadeed6df3a2bfafb5a73f5a0"
@@ -7654,6 +7659,15 @@ stylelint-scss@^3.4.0:
     postcss-resolve-nested-selector "^0.1.1"
     postcss-selector-parser "^6.0.2"
     postcss-value-parser "^4.0.3"
+
+stylelint-webpack-plugin@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/stylelint-webpack-plugin/-/stylelint-webpack-plugin-2.0.0.tgz#be949dade1589549c8fcd50ea40bbae3e5b24a20"
+  integrity sha512-tN7AnjntcmDnCSxhFgBYctelmth+CQMTSfPeIXpN/9vbkm4747FFaUKOzgWJa4UyAPl98wh8SAhVtqV5Qdxsug==
+  dependencies:
+    arrify "^2.0.1"
+    micromatch "^4.0.2"
+    schema-utils "^2.6.6"
 
 stylelint@^13.3.3:
   version "13.3.3"
