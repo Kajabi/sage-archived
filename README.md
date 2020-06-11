@@ -45,7 +45,7 @@ $ <RELATIVE PATH TO SAGE REPO>/bin/sage-local-link.sh <BOOLEAN>
 
 
 # For example if the Kajabi-Products and Sage repos are sibling directories:
-# $ ../bin/sage-local-link.sh true
+# $ ../sage/bin/sage-local-link.sh true
 ```
 
 The script requires a boolean argument designating whether to setup or tear down the link to your local Sage repo. This is an automation of `yarn link`, you can do this process manually as well. [See the yarn docs for more details.](https://classic.yarnpkg.com/en/docs/cli/link/)
