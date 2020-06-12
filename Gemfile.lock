@@ -57,6 +57,8 @@ GEM
       activesupport (>= 4.2.0)
     i18n (0.9.5)
       concurrent-ruby (~> 1.0)
+    lockup (1.5.1)
+      rails (>= 3, < 6.1)
     loofah (2.5.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -146,6 +148,7 @@ PLATFORMS
 
 DEPENDENCIES
   byebug
+  lockup (~> 1.5)
   pg (~> 0.21)
   pry
   rails (= 4.2.11.1)

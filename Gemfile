@@ -24,3 +24,5 @@ group :development do
   # background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
+
+gem "lockup", "~> 1.5"

@@ -1,4 +1,7 @@
 Rails.application.configure do
+  ENV['LOCKUP_CODEWORD'] = "SageUX"
+  ENV['LOCKUP_HINT'] = "Password can be found in the sage_public GitHub repo README."
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
