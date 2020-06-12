@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  layout "sage/breakout", :only => [ :breakout ]
+  layout "breakout", :only => [ :breakout ]
 
   def index
   end
@@ -36,7 +36,7 @@ class PagesController < ApplicationController
   def object
     @title = params[:title]
     @description = params[:description]
-  end 
+  end
 
   def utilities
   end
