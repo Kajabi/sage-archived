@@ -1,11 +1,16 @@
 # Sage Design System
 
+[Visit Sage Design System →](https://sage-design-system.kajabi.com/)
+
+Password: `SageUX`
+
+---------
+
 The Sage Design System (SDS) is our single source of truth, providing everything you need to build great products for our customers. It is the culmination of designers and developers working together to give teams the ability to ship high-quality products faster.
 
 This repo contains the Sage documentation site and the SDS as a webpack-compatible frontend package and rails engine located within `./lib/..`.
 
 ![image](https://user-images.githubusercontent.com/565743/83690086-b0acce00-a5b5-11ea-90f5-9b8e8b0bd337.png)
-
 
 ## Local Development: Sage
 
