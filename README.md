@@ -6,7 +6,7 @@ The Sage Design System (SDS) is our single source of truth, providing everything
 
 Password: `SageUX`
 
----------
+## Structure
 
 This repo contains the Sage documentation site and the SDS as a webpack-compatible frontend package and rails engine located within `./lib/..`.
 
