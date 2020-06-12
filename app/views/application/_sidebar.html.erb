@@ -1,6 +1,5 @@
 <div class="sage-sidebar" data-js-sidebar="sage-sidebar-menu" id="sage-sidebar-menu">
   <div class="sage-sidebar__body">
-    <%= $SAGE_VERSION_LINK %>
     <nav class="sage-nav" aria-label="Main">
       <ul class="sage-nav__list">
         <li><%= link_to "Introduction", pages_index_url, class: "#{current? "sage-nav__link--active", pages_index_url} sage-nav__link" %></li>
@@ -21,8 +20,8 @@
         <li><%= link_to "Guidelines", "https://github.com/Kajabi/sage/wiki", class: "sage-nav__link", target: "_blank", rel: "noopener noreferrer" %></li>
         <li><%= link_to "Github", "https://github.com/Kajabi/sage", class: "sage-nav__link", target: "_blank", rel: "noopener noreferrer" %></li>
         <li><%= link_to "Changelog", "https://github.com/Kajabi/sage/releases", class: "sage-nav__link", target: "_blank", rel: "noopener noreferrer" %></li>
-        <li><%= link_to "v#{$SAGE_VERSION}", "https://github.com/Kajabi/sage/releases/tag/v#{$SAGE_VERSION}", class: "sage-nav__link", target: "_blank", rel: "noopener noreferrer" %></li>
       </ul>
     </nav>
+    <%= link_to "Version #{$SAGE_VERSION}", "https://github.com/Kajabi/sage/releases/tag/v#{$SAGE_VERSION}", class: "sage-btn sage-btn--small sage-btn--secondary", target: "_blank", rel: "noopener noreferrer" %>
   </div>
 </div>
