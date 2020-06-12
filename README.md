@@ -11,7 +11,7 @@ This repo contains the Sage documentation site and the SDS as a webpack-compatib
 
 ### Getting Started
 
-Install the dependancies.
+Install the dependencies.
 
 ```bash
 $ yarn install
@@ -22,7 +22,7 @@ $ bundle
 
 ### Run Locally
 
-Run the rails & webpack development servers in tandom.
+Run the rails & webpack development servers in tandem.
 ```bash
 $ yarn start
 ```
@@ -39,7 +39,7 @@ The documentation site can be accessed at [`http://localhost:4000`](http://local
 To link your _local_ Sage repo's assets within Kajabi-Products we have a shell script that automates this process.
 
 ```bash
-# IMPORTANT! Run the Sage script within the root of your local Kajabi-Products repo not the Sage repo.
+# IMPORTANT! Run the Sage script within the root of your local Kajabi-Products repo, not the Sage repo.
 
 $ <RELATIVE PATH TO SAGE REPO>/bin/sage-local-link.sh <BOOLEAN>
 
@@ -52,7 +52,7 @@ The script requires a boolean argument designating whether to setup or tear down
 
 ### Run Locally
 
-Within Kajabi-Products, run the project as you normally would and in tandom also run Kajabi-Products' webpack-dev-server. In order for Kajabi-Products to watch changes within your local Sage repo webpack-dev-server needs to be running.
+Within Kajabi-Products, run the project as you normally would and in tandem also run Kajabi-Products' webpack-dev-server. In order for Kajabi-Products to watch changes within your local Sage repo webpack-dev-server needs to be running.
 ```bash
 # Run Kajabi-Products
 $ heroku local
@@ -61,16 +61,16 @@ $ heroku local
 $ bin/webpack-dev-server
 ```
 
-It's reccomended to run the Sage documentation site in tandom with Kajabi-Products. The documentation site is hosted through port `4000` to avoid conflicts with Kajabi-Products' use of the `30XX` range.
+It's recommended to run the Sage documentation site in tandem with Kajabi-Products. The documentation site is hosted through port `4000` to avoid conflicts with Kajabi-Products' use of the `30XX` range.
 
 ## Deploying Sage
 ### Cut A New Version Of Sage
 The Sage version is set via the `./package.json` version.
 
-It is reccomended to use the [`yarn version`](https://classic.yarnpkg.com/en/docs/cli/version/) command for this because it also handles tagging the git commit.
+It is recommended to use the [`yarn version`](https://classic.yarnpkg.com/en/docs/cli/version/) command for this because it also handles tagging the git commit.
 
 ### Update Kajabi-Products To The Latest Sage Version
-Our main app is updated by pulling setting a version-tagged commit from the Kajabi/Sage master branch as the source for the Sage frontend dependancy.
+Our main app is updated by pulling setting a version-tagged commit from the Kajabi/Sage master branch as the source for the Sage frontend dependency.
 
 This can be done using:
 ```bash
@@ -101,7 +101,7 @@ development:
 ```
 
 ## Rails Engine Implementation
-**NOTE:** While the Sage Rails engine exists within this repo it is currently not consumed by Kajabi-Products. The design system ruby classes (`SageComponent`) that exist in Kajabi-Products are intended to live within the Sage Rails engine once they mature. Currently the Sage Rails engine is an empty app.
+**NOTE:** While the Sage Rails engine exists within this repo it is currently not consumed by Kajabi-Products. The design system ruby classes (`SageComponent`) that exist in Kajabi-Products are intended to live within the Sage Rails engine once they mature. Currently, the Sage Rails engine is an empty app.
 
 
 ## License
