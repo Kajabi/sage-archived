@@ -4,8 +4,8 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.2.11.1'
 
+gem 'pg', '~> 0.21'
 gem 'sass-rails', '~> 5.0'
-gem 'sqlite3', '~> 1.3.6'
 gem 'uglifier', '>= 1.3.0'
 gem 'webpacker', '~> 4.x'
 
