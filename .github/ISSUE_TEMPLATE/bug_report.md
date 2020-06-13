@@ -11,16 +11,27 @@ assignees: ''
 <!-- A clear and concise description of what the bug is -->
 
 ### Environment
-**Desktop (please complete the following information):**
- - OS: [e.g. iOS]
- - Browser [e.g. chrome, safari]
- - Version [e.g. 22]
+<!-- ** Please visit https://www.whatsmybrowser.org to obtain the information below ** -->
 
-**Smartphone (please complete the following information):**
- - Device: [e.g. iPhone6]
- - OS: [e.g. iOS8.1]
- - Browser [e.g. stock browser, safari]
- - Version [e.g. 22]
+<details>
+<summary>Desktop</summary>
+
+OS: [e.g. Windows, MacOS]
+Screen resolution (if known): [e.g. 1400 x 900]
+Browser: [e.g. chrome, safari]
+Browser Version: [e.g. 22]
+
+</details>
+
+<details>
+<summary>Mobile</summary>
+
+Device: [e.g. iPhone 11]
+Device OS: [e.g. iOS 13.1]
+Browser [e.g. Safari, Chrome]
+Browser Version (if known) [e.g. 22]
+
+</details>
 
 ## Steps to reproduce
 Describe the steps to reproduce the behavior: 
