@@ -70,9 +70,23 @@ It's recommended to run the Sage documentation site in tandem with Kajabi-Produc
 
 ## Deploying Sage
 ### Cut A New Version Of Sage
-The Sage version is set via the `./package.json` version.
+#### Git Remote Installation
+Before bumping the Sage version please ensure you have deploy rights to our [Heroku Sage-Design-System app](https://dashboard.heroku.com/apps/sage-design-system/) and you have Heroku app defined as a git remote location named `heroku`. For more information on how to set a Heroku app as a git remote see the [Heroku help docs](https://devcenter.heroku.com/articles/git#for-an-existing-heroku-app).
 
-It is recommended to use the [`yarn version`](https://classic.yarnpkg.com/en/docs/cli/version/) command for this because it also handles tagging the git commit.
+#### Create A Draft Release in Github
+Create a draft release tagged with the future version-tagged git commit (example: `v0.17.1`) that will be landing in `master` if one does not already exist. Describe the changes incoming since the last version, this is our official changelog.
+
+Save this release "As Draft" in Github. It will be automatically released when the version-tagged commit is merged into `master`.
+
+#### Version Bump & Deploy Docs With `yarn version`
+Use [`yarn version`](https://classic.yarnpkg.com/en/docs/cli/version/) to automatically bump your frontend package version with a version-tagged git commit. This command also will automatically deploy this version bump to the [sage-design-system.kajabi.com](https://sage-design-system.kajabi.com/) public documentation.
+
+```bash
+$ yarn version --minor
+# Use the --minor or --patch flags to update the minor or patch version number respectively
+```
+
+**Note:** The Sage version is defined by the `./package.json` version and the version-tagged git commit. Please ensure these values match after a version bump.
 
 ### Update Kajabi-Products To The Latest Sage Version
 Our main app is updated by pulling setting a version-tagged commit from the Kajabi/Sage master branch as the source for the Sage frontend dependency.
