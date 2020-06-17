@@ -84,6 +84,12 @@ Use [`yarn version`](https://classic.yarnpkg.com/en/docs/cli/version/) to automa
 ```bash
 $ yarn version --minor
 # Use the --minor or --patch flags to update the minor or patch version number respectively
+
+$ git push origin <TAG NAME>
+# Ensure the tag is passed over to Github
+# Example: `git push origin v0.17.1`
+# If you have `git config push.followTags true` set this will be handled automatically on `git push`
+
 ```
 
 **Note:** The Sage version is defined by the `./package.json` version and the version-tagged git commit. Please ensure these values match after a version bump.
