@@ -4,6 +4,4 @@ frontend_package_contents = JSON.parse(
                               )
                             )
 
-frontend_version = "#{frontend_package_contents["version"]}"
-
-$SAGE_VERSION = frontend_version
+$SAGE_VERSION = frontend_package_contents["version"]
