@@ -20,8 +20,7 @@ Install the dependencies.
 
 ```bash
 $ yarn install
-```
-```bash
+
 $ bundle
 ```
 
@@ -62,6 +61,7 @@ Within Kajabi-Products, run the project as you normally would and in tandem also
 # Run Kajabi-Products
 $ heroku local
 
+```bash
 # Run Kajabi-Products' webpack-dev-server
 $ bin/webpack-dev-server
 ```
