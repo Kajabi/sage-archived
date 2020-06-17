@@ -9,6 +9,11 @@
   <div class="sage-assistant__body">
   </div>
   <div class="sage-assistant__actions">
-
+    <%= link_to "v#{$SAGE_VERSION}",
+      "https://github.com/Kajabi/sage/releases/tag/v#{$SAGE_VERSION}",
+      class: "sage-btn sage-btn--small sage-btn--secondary",
+      target: "_blank",
+      rel: "noopener noreferrer"
+    %>
   </div>
 </div>
