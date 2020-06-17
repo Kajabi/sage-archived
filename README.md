@@ -89,7 +89,7 @@ $ yarn version --minor
 **Note:** The Sage version is defined by the `./package.json` version and the version-tagged git commit. Please ensure these values match after a version bump.
 
 ### Update Kajabi-Products To The Latest Sage Version
-Our main app is uses a version-tagged commit from the Kajabi/Sage master branch as the source for the Sage frontend dependency.
+Our main app uses a version-tagged commit from the Kajabi/Sage master branch as the source for the Sage frontend dependency.
 
 This can be done using:
 ```bash
