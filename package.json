@@ -13,7 +13,9 @@
     "webpack:server": "./bin/webpack-dev-server",
     "rails:server": "rails server -p 4000",
     "start": "npm-run-all --parallel webpack:server rails:server",
-    "postversion": "git push heroku $(git rev-parse --abbrev-ref HEAD):master"
+    "deploy": "git push heroku $(git rev-parse --abbrev-ref HEAD):master",
+    "preversion": "git ls-remote --exit-code --heads heroku master",
+    "postversion": "deploy"
   },
   "repository": {
     "type": "git",
