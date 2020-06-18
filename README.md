@@ -4,7 +4,8 @@ The Sage Design System (SDS) is our single source of truth, providing everything
 
 [Visit Sage Design System →](https://sage-design-system.kajabi.com/)
 
-Password: `SageUX`
+#### Password Protection
+The SDS documentation site uses [Lockup](https://github.com/gblakeman/lockup) for password protection. Currently this is disabled but can be easily enabled by setting the ENV variable `LOCKUP_CODEWORD` in Heroku.
 
 ## Structure
 
