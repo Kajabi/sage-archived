@@ -79,8 +79,11 @@ It's recommended to run the Sage documentation site in tandem with Kajabi-Produc
 
 ## Deploying Sage
 ### Cut A New Version Of Sage
-#### Git Remote Installation
-Before bumping the Sage version please ensure you have deploy rights to our [Heroku Sage-Design-System app](https://dashboard.heroku.com/apps/sage-design-system/) and you have the Heroku app defined as a git remote location named `heroku`. For more information on how to set a Heroku app as a git remote see the [Heroku help docs](https://devcenter.heroku.com/articles/git#for-an-existing-heroku-app).
+#### If This Is Your First Deploy
+Ensure you have…
+1. Deploy rights to the [sage-design-system Heroku app](https://dashboard.heroku.com/apps/sage-design-system/access)
+2. The [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli#download-and-install) installed
+3. Added the Heroku app as a git remote location (`heroku git:remote -a sage-design-system`)
 
 #### Create A Draft Release In Github
 Create a draft release tagged with the future version-tagged git commit (example: `v0.17.1`) that will be landing in `master` if one does not already exist. Describe the changes incoming since the last version, this is our official changelog.
