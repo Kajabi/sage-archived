@@ -13,6 +13,7 @@
 .sage-nav__link {
   display: flex;
   align-items: center;
+  margin-bottom: rem(2px);
   padding: sage-spacing(2xs) sage-spacing(xs);
   color: sage-color(charcoal, 400);
   border-radius: sage-border(radius);
