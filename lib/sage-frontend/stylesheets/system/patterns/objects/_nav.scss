@@ -21,17 +21,22 @@
     @extend %t-sage-body-med;
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     background: sage-color(grey, 300);
+  }
+
+  &:active {
+    background: sage-color(grey, 400);
   }
 }
 
 .sage-nav__link--sub {
-  margin-left: sage-spacing(xs);
+  padding-left: sage-spacing(sm);
 
   @extend %t-sage-body-small-med;
 }
 
 .sage-nav__link--active {
-  background: sage-color(grey, 300);
+  background: sage-color(sage, 200);
 }

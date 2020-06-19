@@ -13,7 +13,7 @@
   left: 0;
   transform: translateX(-100%);
   height: calc(100% - #{$sage-assistant-height});
-  width: sage-sidebar();
+  width: sage-sidebar(xl);
   background: sage-color(grey, 200);
   border-right: sage-border();
   box-shadow: sage-shadow();
