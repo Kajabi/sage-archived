@@ -50,8 +50,21 @@
   @include overflow-scroll();
   flex: 1;
   padding: sage-spacing();
+
+}
+
+.sage-sidebar__footer::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: sage-spacing(sm) / -1;
+  left: 0;
+  right: 0;
+  height: sage-spacing(sm);
+  background: linear-gradient(to top, sage-color(grey, 200) 0%, rgba(255, 255, 255, 0) 60%);
 }
 
 .sage-sidebar__footer {
+  position: relative;
   padding: sage-spacing();
 }
