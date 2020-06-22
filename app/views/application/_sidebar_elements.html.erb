@@ -1,7 +1,17 @@
 <%= content_for :sidebar_elements do %>
   <% sorted_sage_elements.each do |element| %>
     <li>
-      <%= link_to pages_element_url(title: element[:title], description: element[:description]), class: "sage-nav__link #{current? "sage-nav__link--active", pages_element_url(title: element[:title], description: element[:description])} sage-nav__link--sub" do %><%= element[:title].titleize %><% end %>
+      <%= link_to pages_element_url(title: element[:title], description: element[:description]),
+        class: "
+          sage-nav__link sage-nav__link--sub
+          #{current? "sage-nav__link--active", pages_element_url(title: element[:title], description: element[:description])} \
+          #{element[:deprecated] && "sage-nav__link--deprecated"}
+        " do %>
+      <%= element[:title].titleize %>
+      <% if element[:deprecated] %>
+        <span class="sage-label sage-label--subtle">Deprecated</span>
+      <% end %>
+    <% end %>
     </li>
   <% end %>
 <% end %>

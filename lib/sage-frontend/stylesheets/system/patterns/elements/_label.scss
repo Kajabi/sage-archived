@@ -14,21 +14,22 @@ $-sage-label-subtle-danger-border: sage-color(red, 300);
 $-sage-label-subtle-danger-color: sage-color(red, 400);
 
 .sage-label {
+  @extend %t-sage-body-xsmall-med;
+
   padding: $sage-label-padding;
-  font-size: $sage-label-font-size;
-  font-weight: $sage-label-font-weight;
   text-align: center;
   white-space: nowrap;
   border-radius: $sage-label-border-radius;
   border-width: rem(1px);
   border-style: solid;
+  line-height: normal;
 }
 
 .sage-label--draft {
   color: $sage-label-draft-text-color;
   background-color: $sage-label-draft-color;
   border-color: $sage-label-draft-color;
-  &.sage-label-subtle {
+  &.sage-label--subtle {
     background-color: sage-color(white);
     border-color: $-sage-label-subtle-draft-border;
   }
@@ -37,7 +38,7 @@ $-sage-label-subtle-danger-color: sage-color(red, 400);
   color: $sage-label-success-text-color;
   background-color: $sage-label-success-color;
   border-color: $sage-label-success-color;
-  &.sage-label-subtle {
+  &.sage-label--subtle {
     background-color: sage-color(white);
     border-color: $-sage-label-subtle-draft-border;
   }
@@ -46,7 +47,7 @@ $-sage-label-subtle-danger-color: sage-color(red, 400);
   color: $sage-label-warning-text-color;
   background-color: $sage-label-warning-color;
   border-color: $sage-label-warning-color;
-  &.sage-label-subtle {
+  &.sage-label--subtle {
     color: $-sage-label-subtle-warning-color;
     background-color: sage-color(white);
     border-color: $-sage-label-subtle-warning-border;
@@ -56,7 +57,7 @@ $-sage-label-subtle-danger-color: sage-color(red, 400);
   color: $sage-label-danger-text-color;
   background-color: $sage-label-danger-color;
   border-color: $sage-label-danger-color;
-  &.sage-label-subtle {
+  &.sage-label--subtle {
     color: $-sage-label-subtle-danger-color;
     background-color: sage-color(white);
     border-color: $-sage-label-subtle-danger-border;
