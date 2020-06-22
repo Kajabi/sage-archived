@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'pages/status'
   get 'pages/breakout'
   get 'pages/index'
+  get 'pages/voice'
   get 'pages/token'
   get 'pages/color'
   get 'pages/typography'

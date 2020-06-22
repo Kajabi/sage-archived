@@ -4,6 +4,9 @@ class PagesController < ApplicationController
   def index
   end
 
+  def voice
+  end
+
   def token
   end
 
