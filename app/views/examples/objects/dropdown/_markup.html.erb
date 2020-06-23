@@ -3,9 +3,9 @@
     <% options.each do |option| %>
       <li role="none" class="sage-dropdown__item">
         <button role="menuitem" class="
-          sage-dropdown__command
+          sage-dropdown__option
           <% option[:modifiers].each do |m| %>
-            <%= "sage-dropdown__command--#{m}" %>
+            <%= "sage-dropdown__option--#{m}" %>
           <% end %>
         ">
           <%= option[:label] %>

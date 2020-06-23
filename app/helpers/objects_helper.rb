@@ -117,6 +117,19 @@ module ObjectsHelper
         react_doc:    "done"
       },
       {
+        title: "dropdown",
+        description: "Sage dropdown",
+        scss_design:  "done",
+        scss_dev:     "done",
+        scss_doc:     "done",
+        rails_design: "done",
+        rails_dev:    "done",
+        rails_doc:    "done",
+        react_design: "todo",
+        react_dev:    "todo",
+        react_doc:    "todo"
+      },
+      {
         title: "form_section",
         description: "A form section generally consists of a text section to provide users with instruction, guidance, or related information along with a secondary panel that may contain form inputs and/or related general content.",
         scss_design:  "done",

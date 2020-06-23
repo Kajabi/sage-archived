@@ -1,5 +1,5 @@
 /* ==================================================
-  ** live_option_menu
+  ** dropdown
   type: object
 
 
@@ -66,7 +66,7 @@ $-dropdown-width: rem(224px);
   @extend %t-sage-body-small;
 }
 
-.sage-dropdown__command {
+.sage-dropdown__option {
   @include button-style-reset();
 
   display: flex;
@@ -106,7 +106,7 @@ $-dropdown-width: rem(224px);
   }
 }
 
-.sage-dropdown__command--danger {
+.sage-dropdown__option--danger {
   color: sage-color(red);
 
   &:hover {
@@ -116,7 +116,7 @@ $-dropdown-width: rem(224px);
 }
 
 @each $icon-name, $icon-code in $sage-icons {
-  .sage-dropdown__command--icon-#{$icon-name}::after {
+  .sage-dropdown__option--icon-#{$icon-name}::after {
     @include icon-base($icon-name);
     margin: 0 0 0 auto;
   }
