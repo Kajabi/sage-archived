@@ -1,0 +1,14 @@
+<ul class="sage-dropdown" role="dropdown" aria-label="Participant options">
+  <% options.each do |option| %>
+    <li role="none" class="sage-dropdown__item">
+      <button role="menuitem" class="
+        sage-dropdown__command
+        <% option[:modifiers].each do |m| %>
+          <%= "sage-dropdown__command--#{m}" %>
+        <% end %>
+      ">
+        <%= option[:label] %>
+      </button>
+    </li>
+  <% end %>
+</ul>

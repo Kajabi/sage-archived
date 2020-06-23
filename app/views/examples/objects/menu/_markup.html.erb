@@ -1,9 +1,0 @@
-<ul class="sage-menu" role="menu" aria-label="Participant options">
-  <% options.each do |option| %>
-    <li role="none" class="sage-menu__item">
-      <button role="menuitem" class="sage-menu__command <%= option[:isDanger] ? "sage-menu__command--danger" : "" %>">
-        <%= option[:label] %>
-      </button>
-    </li>
-  <% end %>
-</ul>
