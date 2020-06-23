@@ -1,6 +1,6 @@
 {
   "name": "sage",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "The Sage Design System (SDS) is our single source of truth, providing everything you need to build great products for our customers. It is the culmination of designers and developers working together to give teams the ability to ship high-quality products faster.",
   "main": "sage/pages/index",
   "directories": {
@@ -13,7 +13,7 @@
     "webpack:server": "./bin/webpack-dev-server",
     "rails:server": "rails server -p 4000",
     "start": "npm-run-all --parallel webpack:server rails:server",
-    "deploy": "git push heroku $(git rev-parse --abbrev-ref HEAD):master",
+    "deploy": "git push heroku $(git rev-parse --abbrev-ref HEAD):master -f",
     "preversion": "git ls-remote --exit-code --heads heroku master",
     "postversion": "deploy"
   },
