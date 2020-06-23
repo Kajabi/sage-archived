@@ -8,7 +8,7 @@
 $-live-option-menu-button-height: rem(40px);
 $-live-option-menu-width: rem(224px);
 
-.sage-menu {
+.sage-dropdown {
   position: relative;
 
   &:focus {
@@ -24,30 +24,9 @@ $-live-option-menu-width: rem(224px);
 
     @include position-full(0);
   }
-
-  // Specific to preview
-  .sage-docs .example__preview > & {
-    $-live-option-menu-anchro-demo-size: rem(48px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: $-live-option-menu-anchro-demo-size;
-    height: $-live-option-menu-anchro-demo-size;
-    margin-left: auto;
-    border: 1px solid sage-color(charcoal);
-    border-radius: sage-border(radius-round);
-
-    &::after {
-      content: "Click";
-      display: block;
-      text-transform: uppercase;
-
-      @extend %t-sage-body-xsmall-bold;
-    }
-  }
 }
 
-.sage-menu {
+.sage-dropdown {
   position: absolute;
   top: calc(100% + #{sage-spacing(xs)});
   z-index: sage-z-index(default, -1);
@@ -66,23 +45,23 @@ $-live-option-menu-width: rem(224px);
     z-index: sage-z-index(modal);
   }
 
-  &:not(.sage-menu--anchor-right) {
+  &:not(.sage-dropdown--anchor-right) {
     left: 0;
   }
 
-  &.sage-menu--anchor-right {
+  &.sage-dropdown--anchor-right {
     right: 0;
   }
 }
 
-.sage-menu__item {
+.sage-dropdown__item {
   width: 100%;
   list-style: none;
 
   @extend %t-sage-body-small;
 }
 
-.sage-menu__command {
+.sage-dropdown__command {
   @include button-style-reset();
 
   position: relative;
@@ -99,7 +78,7 @@ $-live-option-menu-width: rem(224px);
     right: $-live-option-menu-focus-offset-inline;
     bottom: 0;
     left: $-live-option-menu-focus-offset-inline;
-    border-bottom: 2px solid transparent;
+    border-bottom: 1px solid transparent;
     transition: 0.1s ease-in-out;
     transition-property: border-bottom-color, left, right;
   }
@@ -121,11 +100,26 @@ $-live-option-menu-width: rem(224px);
   }
 }
 
-.sage-menu__command--danger {
+.sage-dropdown__command--danger {
   color: sage-color(red);
 
   &:hover {
     color: sage-color(red, 400);
     background-color: sage-color(red, 100);
+  }
+}
+
+@each $icon-name, $icon-code in $sage-icons {
+  .sage-dropdown__command--icon-#{$icon-name} {
+    display: inline-flex;
+    align-items: center;
+    flex-direction: row-reverse;
+
+    &::before {
+      @include icon-base($icon-name);
+      // color: sage-color(grey, 500);
+      // align-self: center;
+      margin: 0 sage-spacing(xs) 0 auto;
+    }
   }
 }
