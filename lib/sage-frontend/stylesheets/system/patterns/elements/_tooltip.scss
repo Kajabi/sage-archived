@@ -26,7 +26,7 @@
   }
 }
 
-.sage-tooltip-top {
+.sage-tooltip--top {
   &::after {
     left: 50%;
     top: 100%;
@@ -36,7 +36,7 @@
   }
 }
 
-.sage-tooltip-bottom {
+.sage-tooltip--bottom {
   &::after {
     left: 50%;
     bottom: 100%;
@@ -47,7 +47,7 @@
   }
 }
 
-.sage-tooltip-left {
+.sage-tooltip--left {
   &::after {
     left: 100%;
     bottom: 50%;
@@ -58,7 +58,7 @@
   }
 }
 
-.sage-tooltip-right {
+.sage-tooltip--right {
   &::after {
     left: 0;
     bottom: 50%;
@@ -73,16 +73,16 @@
   color: $sage-tooltip-light-font-color;
   background: $sage-tooltip-light-bg-color;
 
-  &.sage-tooltip-top::after {
+  &.sage-tooltip--top::after {
     border-top-color: sage-color(white);
   }
-  &.sage-tooltip-bottom::after {
+  &.sage-tooltip--bottom::after {
     border-bottom-color: sage-color(white);
   }
-  &.sage-tooltip-left::after {
+  &.sage-tooltip--left::after {
     border-left-color: sage-color(white);
   }
-  &.sage-tooltip-right::after {
+  &.sage-tooltip--right::after {
     border-right-color: sage-color(white);
   }
 }
