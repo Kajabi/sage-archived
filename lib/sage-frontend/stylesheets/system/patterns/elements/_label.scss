@@ -19,10 +19,10 @@ $-sage-label-subtle-danger-color: sage-color(red, 400);
   padding: $sage-label-padding;
   text-align: center;
   white-space: nowrap;
+  line-height: normal;
   border-radius: $sage-label-border-radius;
   border-width: rem(1px);
   border-style: solid;
-  line-height: normal;
 }
 
 .sage-label--draft {
