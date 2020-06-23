@@ -1,12 +1,7 @@
 <%= content_for :sidebar_objects do %>
   <% sorted_sage_objects.each do |object| %>
     <li>
-      <%= link_to pages_object_url(title: object[:title], description: object[:description]), class: "sage-nav__link #{current? "sage-nav__link--active", pages_object_url(title: object[:title], description: object[:description])} sage-nav__link--sub" do %>
-        <%= object[:title].titleize %>
-        <% if object[:deprecated] %>
-          <span class="sage-label sage-label--subtle">Deprecated</span>
-        <% end %>
-      <% end %>
+      <%= link_to pages_object_url(title: object[:title], description: object[:description]), class: "sage-nav__link #{current? "sage-nav__link--active", pages_object_url(title: object[:title], description: object[:description])} sage-nav__link--sub" do %><%= object[:title].titleize %><% end %>
     </li>
   <% end %>
 <% end %>
