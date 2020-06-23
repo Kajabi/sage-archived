@@ -8,7 +8,7 @@
     <h2 class="quick-links__title t-sage-heading-5">Contents</h2>
     <h3 class="quick-links__subhead t-sage-body">Elements</h3>
     <ul class="quick-links__body t-sage-body-small">
-      <% sorted_sage_elements.each do |element| %>
+      <% sorted_sage_all_elements.each do |element| %>
         <li class="quick-links__item">
           <a href="#<%= element[:title] %>" class="quick-links__link"><%= element[:title].titleize %></a>
         </li>
@@ -16,7 +16,7 @@
     </ul>
     <h3 class="quick-links__subhead t-sage-body">Objects</h3>
     <ul class="quick-links__body t-sage-body-small">
-      <% sorted_sage_objects.each do |object| %>
+      <% sorted_sage_all_objects.each do |object| %>
         <li class="quick-links__item">
           <a href="#<%= object[:title] %>" class="quick-links__link"><%= object[:title].titleize %></a>
         </li>
@@ -38,7 +38,7 @@
             <th>Documentation</th>
           </tr>
         </thead>
-        <% sorted_sage_elements.each do |element| %>
+        <% sorted_sage_all_elements.each do |element| %>
           <%= render "status_item", item: element %>
         <% end %>
       </table>
@@ -59,7 +59,7 @@
             <th>Documentation</th>
           </tr>
         </thead>
-        <% sorted_sage_objects.each do |object| %>
+        <% sorted_sage_all_objects.each do |object| %>
           <%= render "status_item", item: object %>
         <% end %>
       </table>

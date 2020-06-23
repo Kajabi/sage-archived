@@ -165,23 +165,23 @@
 
 /* ==================================================
 ** Live Avatar Ring
-  Usage: `@include sage-live-avatar-ring();`
+  Usage: `@include sage-avatar-ring();`
 
-  Adds an activated ring around a save-live-avatar object in the provided color
+  Adds an activated ring around a save-avatar object in the provided color
   arguments: $color | [valid system color]
 ================================================== */
 
-@mixin sage-feature-live-avatar-ring($color: primary) {
-  $-live-avatar-ring-offset: -($sage-live-avatar-ring-width + 2px);
-  $-live-avatar-right-color: sage-color($color);
+@mixin sage-feature-avatar-ring($color: primary) {
+  $-avatar-ring-offset: -($sage-avatar-ring-width + 2px);
+  $-avatar-right-color: sage-color($color);
 
   @if ($color == charcoal) {
-    $-live-avatar-right-color: sage-color($color, 500);
+    $-avatar-right-color: sage-color($color, 500);
   }
 
   &::before {
-    border-color: $-live-avatar-right-color;
+    border-color: $-avatar-right-color;
 
-    @include position-full($-live-avatar-ring-offset);
+    @include position-full($-avatar-ring-offset);
   }
 }

@@ -39,19 +39,6 @@ module ElementsHelper
         react_doc:    "todo"
       },
       {
-        title: "live_stream_wrapper",
-        description: "A simple wrapper element for the Live stream application",
-        scss_design:  "done",
-        scss_dev:     "done",
-        scss_doc:     "done",
-        rails_design: "todo",
-        rails_dev:    "todo",
-        rails_doc:    "todo",
-        react_design: "todo",
-        react_dev:    "todo",
-        react_doc:    "todo"
-      },
-      {
         title: "description",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
         scss_design:  "done",
@@ -213,6 +200,40 @@ module ElementsHelper
   # Sorts available elements based on alphabet
   def sorted_sage_elements
     sage_elements.sort_by { |h| h[:title] }
+  end
+
+  # Archive of deprecated elements
+  def sage_deprecated_elements
+    [
+      {
+        title: "live_stream_wrapper",
+        description: "A simple wrapper element for the Live stream application",
+        scss_design:  "stop",
+        scss_dev:     "stop",
+        scss_doc:     "stop",
+        rails_design: "no",
+        rails_dev:    "no",
+        rails_doc:    "no",
+        react_design: "stop",
+        react_dev:    "stop",
+        react_doc:    "stop"
+      },
+    ]
+  end
+
+  # Sorts deprecated elements based on alphabet
+  def sorted_sage_deprecated_elements
+    sage_deprecated_elements.sort_by { |h| h[:title] }
+  end
+
+  # Full list of active and deprecated elements
+  def sage_all_elements
+    sage_elements | sage_deprecated_elements
+  end
+
+  # Sorts full list of active and deprecated elements based on alphabet
+  def sorted_sage_all_elements
+    sage_all_elements.sort_by { |h| h[:title] }
   end
 
 end
