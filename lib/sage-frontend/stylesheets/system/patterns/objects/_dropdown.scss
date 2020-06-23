@@ -5,45 +5,48 @@
 
 ================================================== */
 
-$-live-option-menu-button-height: rem(40px);
-$-live-option-menu-width: rem(224px);
+$-dropdown-height: rem(40px);
+$-dropdown-width: rem(224px);
 
 .sage-dropdown {
-  position: relative;
-
-  &:focus {
-    outline: none;
-  }
-
-  // Fill the window to create active space to click off of to turn off menu
-  &[aria-expanded="true"]::before {
+  &::before {
     content: "";
+    visibility: hidden;
+    z-index: (sage-z-index(modal) - 1);
     position: fixed;
-    z-index: sage-z-index(modal);
-    background-color: transparent;
+    background-color: sage-color(primary, 300);
+    opacity: 0.04;
+    cursor: default;
 
-    @include position-full(0);
+    @include position-full;
   }
 }
 
-.sage-dropdown {
+[aria-expanded="true"] > .sage-dropdown {
+  &::before {
+    visibility: visible;
+  }
+
+  .sage-dropdown__container {
+    transform: rotate3d(0, 0, 0, 0);
+  }
+}
+
+.sage-dropdown__container {
   position: absolute;
+  overflow: hidden;
+  z-index: sage-z-index(modal);
   top: calc(100% + #{sage-spacing(xs)});
-  z-index: sage-z-index(default, -1);
   transform: rotate3d(1, 0, 0, -90deg);
   transform-origin: top center;
   min-width: min-content;
-  width: $-live-option-menu-width;
+  width: $-dropdown-width;
   padding: 0;
+  border-radius: sage-border(radius);
   background-color: sage-color(white);
   box-shadow: sage-shadow(md);
   transition: $sage-transition;
   transition-property: transform, z-index;
-
-  [aria-expanded="true"] & {
-    transform: rotate3d(0, 0, 0, 0);
-    z-index: sage-z-index(modal);
-  }
 
   &:not(.sage-dropdown--anchor-right) {
     left: 0;
@@ -55,6 +58,8 @@ $-live-option-menu-width: rem(224px);
 }
 
 .sage-dropdown__item {
+  position: relative;
+  z-index: sage-z-index(modal);
   width: 100%;
   list-style: none;
 
@@ -64,20 +69,21 @@ $-live-option-menu-width: rem(224px);
 .sage-dropdown__command {
   @include button-style-reset();
 
+  display: flex;
   position: relative;
+  align-items: center;
   width: 100%;
-  height: $-live-option-menu-button-height;
+  height: $-dropdown-height;
   padding: 0 sage-spacing(sm);
-  text-align: left;
 
-  &::after {
-    $-live-option-menu-focus-offset-inline: 50%;
+  &::before {
+    $-focus-offset: 50%;
     content: "";
     display: block;
     position: absolute;
-    right: $-live-option-menu-focus-offset-inline;
+    right: $-focus-offset;
     bottom: 0;
-    left: $-live-option-menu-focus-offset-inline;
+    left: $-focus-offset;
     border-bottom: 1px solid transparent;
     transition: 0.1s ease-in-out;
     transition-property: border-bottom-color, left, right;
@@ -91,10 +97,10 @@ $-live-option-menu-width: rem(224px);
   &:focus {
     outline: none;
 
-    &::after {
-      $-live-option-menu-focus-offset: sage-spacing(sm);
-      right: $-live-option-menu-focus-offset;
-      left: $-live-option-menu-focus-offset;
+    &::before {
+      $-focus-offset: sage-spacing(sm);
+      right: $-focus-offset;
+      left: $-focus-offset;
       border-bottom-color: currentColor;
     }
   }
@@ -110,16 +116,8 @@ $-live-option-menu-width: rem(224px);
 }
 
 @each $icon-name, $icon-code in $sage-icons {
-  .sage-dropdown__command--icon-#{$icon-name} {
-    display: inline-flex;
-    align-items: center;
-    flex-direction: row-reverse;
-
-    &::before {
-      @include icon-base($icon-name);
-      // color: sage-color(grey, 500);
-      // align-self: center;
-      margin: 0 sage-spacing(xs) 0 auto;
-    }
+  .sage-dropdown__command--icon-#{$icon-name}::after {
+    @include icon-base($icon-name);
+    margin: 0 0 0 auto;
   }
 }
