@@ -58,6 +58,13 @@ $sage-grid-breakpoint-xl: sage-breakpoint(xl-min) !default;
 
 
 // ==================================================
+// AVATARS
+// ==================================================
+
+$sage-avatar-ring-width: 1px !default;
+
+
+// ==================================================
 // FORM ELEMENTS
 // ==================================================
 
@@ -348,19 +355,6 @@ $sage-tabs-active-border-height: rem(4px) !default;
 $sage-tabs-active-border-width: 100% !default;
 $sage-tabs-active-border-color: sage-color(primary) !default;
 $sage-tabs-active-border-radius: sage-border(radius) !default;
-
-
-// ==================================================
-// LiVE CONFIGURATIONS
-// ==================================================
-
-// Avatars
-$sage-live-avatar-ring-width: 1px !default;
-
-// Overall stream styles
-$sage-live-stream-header-footer-height: rem(72px);
-$sage-live-stream-wrap-gradient-start: rgba(sage-color(black), 1) 0%;
-$sage-live-stream-wrap-gradient-end: rgba(sage-color(black), 0) 100%;
 
 
 // ==================================================
