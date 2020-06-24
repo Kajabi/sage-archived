@@ -1,0 +1,51 @@
+/* ==================================================
+  ** _modal.scss
+  type: object
+
+================================================== */
+
+$-dropdown-height: rem(40px);
+
+.sage-modal {
+  z-index: (sage-z-index(modal) - 1);
+  position: fixed;
+  visibility: hidden;
+  background-color: rgba(sage-color(primary, 300), 0.1);
+  background-image: linear-gradient(rgba(sage-color(primary, 300), 0.1) 0%, rgba(sage-color(grey, 300), 0.2) 100%);
+  cursor: default;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  @include position-full;
+
+  @supports (backdrop-filter: blur(2px)) {
+    backdrop-filter: blur(2px);
+  }
+}
+
+.sage-modal--active {
+  visibility: visible;
+}
+
+.sage-modal__container {
+  margin-top: 30vh;
+  z-index: sage-z-index(modal);
+  transform: translateY(5px);
+  opacity: 0;
+  transform-origin: top center;
+  min-width: min-content;
+  width: sage-container(xs);
+  padding: sage-spacing(lg);
+  border-radius: sage-border(radius-large);
+  background-color: sage-color(white);
+  box-shadow: sage-shadow(md);
+  transition: $sage-transition;
+  transition-property: transform, opacity;
+  will-change: transform, opacity;
+
+  .sage-modal--active & {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
