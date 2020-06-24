@@ -4,18 +4,22 @@
 
 ================================================== */
 
-$-dropdown-height: rem(40px);
+$-modal-padding-x: sage-spacing(lg);
+$-modal-padding-y: sage-spacing(md);
 
 .sage-modal {
-  z-index: (sage-z-index(modal) - 1);
-  position: fixed;
-  visibility: hidden;
-  background-color: rgba(sage-color(primary, 300), 0.1);
-  background-image: linear-gradient(rgba(sage-color(primary, 300), 0.1) 0%, rgba(sage-color(grey, 300), 0.2) 100%);
-  cursor: default;
   display: flex;
+  visibility: hidden;
   align-items: flex-start;
   justify-content: center;
+  position: fixed;
+  z-index: (sage-z-index(modal) - 1);
+  background-color: rgba(sage-color(charcoal, 500), 0.4);
+  background-image: linear-gradient(
+    rgba(sage-color(charcoal, 200), 0.3) 0%,
+    rgba(sage-color(charcoal, 500), 0.3) 100%
+  );
+  cursor: default;
 
   @include position-full;
 
@@ -29,23 +33,39 @@ $-dropdown-height: rem(40px);
 }
 
 .sage-modal__container {
-  margin-top: 30vh;
   z-index: sage-z-index(modal);
-  transform: translateY(5px);
-  opacity: 0;
-  transform-origin: top center;
+  transform: translateY(2px);
   min-width: min-content;
   width: sage-container(xs);
-  padding: sage-spacing(lg);
+  margin: 20vh 0 0;
   border-radius: sage-border(radius-large);
   background-color: sage-color(white);
-  box-shadow: sage-shadow(md);
+  box-shadow: sage-shadow(lg);
   transition: $sage-transition;
   transition-property: transform, opacity;
   will-change: transform, opacity;
+  opacity: 0;
 
   .sage-modal--active & {
-    opacity: 1;
     transform: translateY(0px);
+    opacity: 1;
   }
+}
+
+.sage-modal__header {
+  padding: $-modal-padding-y $-modal-padding-x;
+  border-bottom: sage-border();
+}
+
+.sage-modal__content {
+  padding: $-modal-padding-y $-modal-padding-x;
+  // border-bottom: sage-border();
+
+  :last-child {
+    margin-bottom: 0;
+  }
+}
+
+.sage-modal__footer {
+  padding: $-modal-padding-y $-modal-padding-x;
 }
