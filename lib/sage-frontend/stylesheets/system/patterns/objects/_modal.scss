@@ -59,7 +59,6 @@ $-modal-padding-y: sage-spacing(md);
 
 .sage-modal__content {
   padding: $-modal-padding-y $-modal-padding-x;
-  // border-bottom: sage-border();
 
   :last-child {
     margin-bottom: 0;
