@@ -55,7 +55,11 @@ h6 {
   margin-bottom: 10px; /* NOTE: margin-bottom must be '10px' to avoid conflicts with Bootstrap reset inside Ladera */
 }
 
-p,
+p {
+  margin-top: 0;
+  margin-bottom: 10px; /* NOTE: margin-bottom must be '10px' to avoid conflicts with Bootstrap reset inside Ladera */
+}
+
 li {
   margin-top: 0;
   margin-bottom: 0;
