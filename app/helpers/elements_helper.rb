@@ -144,7 +144,7 @@ module ElementsHelper
       },
       {
         title: "radio",
-        description: "Base radio button styling",
+        description: "Radio elements provide users a way to select only one option from a list of two or more options.",
         scss_design:  "done",
         scss_dev:     "done",
         scss_doc:     "done",
