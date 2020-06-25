@@ -118,7 +118,7 @@ module ElementsHelper
       },
       {
         title: "checkbox",
-        description: "Base checkbox styling",
+        description: "Checkboxes provide users with selectable options like toggling a single setting or selecting multiple options from a list.",
         scss_design:  "done",
         scss_dev:     "done",
         scss_doc:     "todo",
