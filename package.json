@@ -15,7 +15,7 @@
     "start": "npm-run-all --parallel webpack:server rails:server",
     "deploy": "git push heroku $(git rev-parse --abbrev-ref HEAD):master -f",
     "preversion": "git ls-remote --exit-code --heads heroku master",
-    "postversion": "deploy"
+    "postversion": "git push origin $npm_package_version && yarn run deploy && echo \"Successfully released and deployed version $npm_package_version!\""
   },
   "repository": {
     "type": "git",
