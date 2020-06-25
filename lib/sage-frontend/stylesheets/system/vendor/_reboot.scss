@@ -248,7 +248,7 @@ button,
 [type="button"],
 [type="reset"],
 [type="submit"] {
-  -webkit-appearance: button;
+  /* stylelint-disable-line block-no-empty */
 }
 
 button:not(:disabled),
@@ -324,7 +324,7 @@ progress {
 
 ::-webkit-file-upload-button {
   font: inherit;
-  -webkit-appearance: button;
+  /* stylelint-disable-line block-no-empty */
 }
 
 output {
