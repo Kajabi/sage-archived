@@ -157,7 +157,7 @@ module ObjectsHelper
       },
       {
         title: "panel",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        description: "Panels are used as multi-purpose containers for a variety of content.",
         scss_design:  "todo",
         scss_dev:     "todo",
         scss_doc:     "todo",
