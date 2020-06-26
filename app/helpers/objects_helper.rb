@@ -131,7 +131,7 @@ module ObjectsHelper
       },
       {
         title: "tabs",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        description: "Tabs organize related content across screens, data sets, and can be used for navigation to related destinations.",
         scss_design:  "todo",
         scss_dev:     "todo",
         scss_doc:     "todo",
