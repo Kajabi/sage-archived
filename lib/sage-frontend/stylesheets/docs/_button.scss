@@ -11,4 +11,8 @@
     margin-left: 0;
     margin-right: sage-spacing(xs);
   }
+
+  .example__preview:not(.example__preview--page) .sage-input-group & {
+    margin-right: 0;
+  }
 }
