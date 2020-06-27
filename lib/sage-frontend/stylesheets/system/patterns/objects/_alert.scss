@@ -34,8 +34,10 @@ $-alert-colors: (
 }
 
 .sage-alert__title {
-  color: sage-color(charcoal, 500);
   @extend %t-sage-body-semi;
+  color: sage-color(charcoal, 500);
+  line-height: sage-line-height(md);
+
   @each $name, $color in $-alert-colors {
     .sage-alert--#{$name} & {
       color: sage-color($color, 500);
