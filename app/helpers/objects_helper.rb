@@ -79,7 +79,7 @@ module ObjectsHelper
       },
       {
         title: "page_heading",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        description: "Page headings are used at the top of pages and contain the title of the page along with an optional navigation link to the previous page.",
         scss_design:  "done",
         scss_dev:     "done",
         scss_doc:     "doing",
