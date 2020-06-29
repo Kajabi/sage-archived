@@ -2,14 +2,14 @@
   <ul class="sage-dropdown__container">
     <% options.each do |option| %>
       <li role="none" class="sage-dropdown__item">
-        <button role="menuitem" class="
+        <a tabindex="0" role="menuitem" class="
           sage-dropdown__option
           <% option[:modifiers].each do |m| %>
             <%= "sage-dropdown__option--#{m}" %>
           <% end %>
         ">
           <%= option[:label] %>
-        </button>
+        </a>
       </li>
     <% end %>
   </ul>
