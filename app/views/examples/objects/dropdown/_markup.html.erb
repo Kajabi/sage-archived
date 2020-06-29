@@ -1,8 +1,8 @@
-<div class="sage-dropdown" role="dropdown" aria-label="Participant options">
-  <ul class="sage-dropdown__container">
+<div class="sage-dropdown__container">
+  <ul class="sage-dropdown__menu" role="menu" id="participant_options_menu"  aria-label="Participant options">
     <% options.each do |option| %>
-      <li role="none" class="sage-dropdown__item">
-        <a tabindex="0" role="menuitem" class="
+      <li class="sage-dropdown__item" role="none">
+        <a role="menuitem" class="
           sage-dropdown__option
           <% option[:modifiers].each do |m| %>
             <%= "sage-dropdown__option--#{m}" %>
