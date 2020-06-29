@@ -12,12 +12,12 @@
 $sage-z-indexes: (
   negative: -1,
   default: 0,
-  raised: 10,
-  alert: 20,
-  underlay: 40,
-  nav: 50,
-  overlay: 60,
-  modal: 70,
-  priority: 80,
-  nuclear: 100
+  raised: 1000,
+  alert: 2000,
+  underlay: 3000,
+  nav: 4000,
+  overlay: 5000,
+  modal: 6000,
+  priority: 8000,
+  nuclear: 9000
 );
