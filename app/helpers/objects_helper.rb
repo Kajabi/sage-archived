@@ -66,7 +66,7 @@ module ObjectsHelper
       },
       {
         title: "banner",
-        description: "A banner that displays at the top of the page, used for systemwide notifications and events",
+        description: "A banner that displays at the top of the page, used for systemwide notifications and events.",
         scss_design:  "done",
         scss_dev:     "done",
         scss_doc:     "done",
@@ -170,7 +170,7 @@ module ObjectsHelper
       },
       {
         title: "assistant",
-        description: "Page header with optional side menu toggle button",
+        description: "Page header with optional side menu toggle button.",
         scss_design:  "done",
         scss_dev:     "done",
         scss_doc:     "done",
@@ -196,7 +196,7 @@ module ObjectsHelper
       },
       {
         title: "sidebar",
-        description: "The sidebar object is a fixed, vertical panel that typically displays navigation and/or page hierarchy",
+        description: "The sidebar object is a fixed, vertical panel that typically displays navigation and/or page hierarchy.",
         scss_design:  "done",
         scss_dev:     "done",
         scss_doc:     "done",
