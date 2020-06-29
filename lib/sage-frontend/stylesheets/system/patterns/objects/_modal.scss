@@ -13,7 +13,7 @@ $-modal-padding-y: sage-spacing(md);
   align-items: flex-start;
   justify-content: center;
   position: fixed;
-  z-index: (sage-z-index(modal) - 1);
+  z-index: sage-z-index(modal, -1);
   background-color: rgba(sage-color(charcoal, 500), 0.4);
   background-image: linear-gradient(
     rgba(sage-color(charcoal, 200), 0.3) 0%,
