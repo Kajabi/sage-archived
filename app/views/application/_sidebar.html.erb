@@ -3,7 +3,6 @@
     <nav class="sage-nav" aria-label="Main">
       <ul class="sage-nav__list">
         <li><%= link_to "Introduction", pages_index_url, class: "#{current? "sage-nav__link--active", pages_index_url} sage-nav__link" %></li>
-        <li><%= link_to "Voice & Tone", pages_voice_url, class: "#{current? "sage-nav__link--active", pages_voice_url} sage-nav__link" %></li>
         <li><%= link_to "Styles", pages_token_url, class: "sage-nav__link" %>
           <% if current_page?(pages_token_url) %>
           <ul class="sage-nav__list sage-nav__list--sub">
@@ -30,6 +29,7 @@
   <div class="sage-sidebar__footer">
     <nav class="sage-nav" aria-label="Secondary">
       <ul class="sage-nav__list">
+        <li><%= link_to "Voice & Tone", "https://github.com/Kajabi/sage/wiki/Voice-&-Tone", class: "sage-nav__link", target: "_blank", rel: "noopener noreferrer" %></li>
         <li><%= link_to "Guidelines", "https://github.com/Kajabi/sage/wiki", class: "sage-nav__link", target: "_blank", rel: "noopener noreferrer" %></li>
         <li><%= link_to "Github", "https://github.com/Kajabi/sage", class: "sage-nav__link", target: "_blank", rel: "noopener noreferrer" %></li>
         <li><%= link_to "Changelog", "https://github.com/Kajabi/sage/releases", class: "sage-nav__link", target: "_blank", rel: "noopener noreferrer" %></li>
