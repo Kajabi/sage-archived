@@ -66,7 +66,7 @@ module ObjectsHelper
       },
       {
         title: "banner",
-        description: "A banner that displays at the top of the page, used for systemwide notifications and events",
+        description: "A banner that displays at the top of the page, used for systemwide notifications and events.",
         scss_design:  "done",
         scss_dev:     "done",
         scss_doc:     "done",
@@ -118,7 +118,7 @@ module ObjectsHelper
       },
       {
         title: "form_section",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        description: "A form section generally consists of a text section to provide users with instruction, guidance, or related information along with a secondary panel that may contain form inputs and/or related general content.",
         scss_design:  "done",
         scss_dev:     "done",
         scss_doc:     "done",
@@ -170,7 +170,7 @@ module ObjectsHelper
       },
       {
         title: "assistant",
-        description: "Page header with optional side menu toggle button",
+        description: "Page header with optional side menu toggle button.",
         scss_design:  "done",
         scss_dev:     "done",
         scss_doc:     "done",
@@ -196,7 +196,7 @@ module ObjectsHelper
       },
       {
         title: "sidebar",
-        description: "The sidebar object is a fixed, vertical panel that typically displays navigation and/or page hierarchy",
+        description: "The sidebar object is a fixed, vertical panel that typically displays navigation and/or page hierarchy.",
         scss_design:  "done",
         scss_dev:     "done",
         scss_doc:     "done",
