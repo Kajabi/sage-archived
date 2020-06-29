@@ -118,7 +118,7 @@ module ObjectsHelper
       },
       {
         title: "form_section",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        description: "A form section generally consists of a text section to provide users with instruction, guidance, or related information along with a secondary panel that may contain form inputs and/or related general content.",
         scss_design:  "done",
         scss_dev:     "done",
         scss_doc:     "done",
