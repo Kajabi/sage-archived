@@ -88,6 +88,7 @@ $-dropdown-item-focus-line-spacing-x: sage-spacing(sm);
   width: 100%;
   height: $-dropdown-height;
   padding: sage-spacing(md) sage-spacing(sm);
+  user-select: none;
 
   &::before {
     $-focus-offset: 50%;
