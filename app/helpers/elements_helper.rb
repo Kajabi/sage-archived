@@ -40,7 +40,7 @@ module ElementsHelper
       },
       {
         title: "description",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        description: "A description is composed of title and data content and is structured as a definition list.",
         scss_design:  "done",
         scss_dev:     "done",
         scss_doc:     "todo",
