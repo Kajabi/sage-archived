@@ -1,40 +1,36 @@
-<div class="sage-dropdown">
-  <button class="sage-btn sage-dropdown__button" type="button" aria-controls="participant_options_menu" data-js-dropdown>Add An Element</button>
-
-  <%= render "examples/objects/dropdown/markup",
-    options: [
-      {
-        label: "Edit",
-        modifiers: ["icon-pen"]
-      },
-      {
-        label: "New",
-        modifiers: ["icon-add"]
-      },
-      {
-        label: "Option 1",
-        modifiers: []
-      },
-      {
-        label: "Option 2",
-        modifiers: []
-      },
-      {
-        label: "Option 3",
-        modifiers: []
-      },
-      {
-        label: "Visit Element",
-        modifiers: ["icon-arrow-right"]
-      },
-      {
-        label: "Share Element",
-        modifiers: ["icon-url"]
-      },
-      {
-        label: "Take A Dangerous Action",
-        modifiers: ["danger", "icon-remove-circle"]
-      }
-    ]
-  %>
-</div>
+<%= render "examples/objects/dropdown/markup",
+  options: [
+    {
+      label: "Edit",
+      modifiers: ["icon-pen"]
+    },
+    {
+      label: "New",
+      modifiers: ["icon-add"]
+    },
+    {
+      label: "Option 1",
+      modifiers: []
+    },
+    {
+      label: "Option 2",
+      modifiers: []
+    },
+    {
+      label: "Option 3",
+      modifiers: []
+    },
+    {
+      label: "Visit Element",
+      modifiers: ["icon-arrow-right"]
+    },
+    {
+      label: "Share Element",
+      modifiers: ["icon-url"]
+    },
+    {
+      label: "Take A Dangerous Action",
+      modifiers: ["danger", "icon-remove-circle"]
+    }
+  ]
+%>

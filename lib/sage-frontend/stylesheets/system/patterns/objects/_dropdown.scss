@@ -6,16 +6,27 @@
 ================================================== */
 
 $-dropdown-height: rem(40px);
-$-dropdown-width: rem(224px);
+$-dropdown-width: rem(300px);
 $-dropdown-item-focus-line-spacing-x: sage-spacing(sm);
 
 .sage-dropdown {
   position: relative;
-}
 
-.sage-dropdown__button {
-  position: relative;
-  z-index: sage-z_index(nav);
+  // --- Expanded State
+  &[aria-expanded="true"] > .sage-dropdown__container {
+    visibility: visible;
+
+    &::before {
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    .sage-dropdown__menu {
+      visibility: visible;
+      transform: rotate3d(0, 0, 0, 0);
+    }
+  }
+  // --- Expanded State END
 }
 
 .sage-dropdown__container {
@@ -24,7 +35,6 @@ $-dropdown-item-focus-line-spacing-x: sage-spacing(sm);
   &::before {
     content: "";
     visibility: hidden;
-    // z-index: (sage-z-index(nav) - 1);
     position: fixed;
     background-color: sage-color(primary, 300);
     pointer-events: none;
@@ -33,20 +43,6 @@ $-dropdown-item-focus-line-spacing-x: sage-spacing(sm);
 
     @include position-full;
   }
-}
-
-[aria-expanded="true"] ~ .sage-dropdown__container {
-  visibility: visible;
-
-  &::before {
-    visibility: visible;
-    pointer-events: auto;
-  }
-}
-
-[aria-expanded="true"] ~ .sage-dropdown__container .sage-dropdown__menu {
-  visibility: visible;
-  transform: rotate3d(0, 0, 0, 0);
 }
 
 .sage-dropdown__menu {
@@ -82,7 +78,7 @@ $-dropdown-item-focus-line-spacing-x: sage-spacing(sm);
   width: 100%;
   list-style: none;
 
-  @extend %t-sage-body-small;
+  @extend %t-sage-body;
 }
 
 .sage-dropdown__option {
@@ -93,7 +89,7 @@ $-dropdown-item-focus-line-spacing-x: sage-spacing(sm);
   align-items: center;
   width: 100%;
   height: $-dropdown-height;
-  padding: 0 sage-spacing(sm);
+  padding: sage-spacing(md) sage-spacing(sm);
 
   &::before {
     $-focus-offset: 50%;
@@ -103,7 +99,7 @@ $-dropdown-item-focus-line-spacing-x: sage-spacing(sm);
     right: $-focus-offset;
     bottom: 0;
     left: $-focus-offset;
-    border-bottom: 1px solid transparent;
+    border-bottom: 2px solid transparent;
     transition: 0.1s ease-in-out;
     transition-property: border-bottom-color, left, right;
   }
@@ -119,7 +115,7 @@ $-dropdown-item-focus-line-spacing-x: sage-spacing(sm);
     &::before {
       right: $-dropdown-item-focus-line-spacing-x;
       left: $-dropdown-item-focus-line-spacing-x;
-      border-bottom-color: sage-color(primary);
+      border-bottom-color: currentColor;
     }
   }
 
@@ -129,7 +125,8 @@ $-dropdown-item-focus-line-spacing-x: sage-spacing(sm);
     &::before {
       right: $-dropdown-item-focus-line-spacing-x;
       left: $-dropdown-item-focus-line-spacing-x;
-      border-bottom-color: currentColor;
+
+      border-bottom-color: sage-color(primary);
     }
   }
 }

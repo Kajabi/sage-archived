@@ -1,16 +1,21 @@
-<div class="sage-dropdown__container">
-  <ul class="sage-dropdown__menu" role="menu" id="participant_options_menu"  aria-label="Participant options">
-    <% options.each do |option| %>
-      <li class="sage-dropdown__item" role="none">
-        <a role="menuitem" tabindex="0" class="
-          sage-dropdown__option
-          <% option[:modifiers].each do |m| %>
-            <%= "sage-dropdown__option--#{m}" %>
-          <% end %>
-        ">
-          <%= option[:label] %>
-        </a>
-      </li>
-    <% end %>
-  </ul>
+<div class="sage-dropdown" data-js-dropdown>
+
+  <button class="sage-btn" type="button" aria-controls="participant_options_menu">Add An Element</button>
+
+  <nav class="sage-dropdown__container">
+    <ul class="sage-dropdown__menu" role="menu" id="participant_options_menu"  aria-label="Participant options">
+      <% options.each do |option| %>
+        <li class="sage-dropdown__item" role="none">
+          <a role="menuitem" tabindex="0" class="
+            sage-dropdown__option
+            <% option[:modifiers].each do |m| %>
+              <%= "sage-dropdown__option--#{m}" %>
+            <% end %>
+          ">
+            <%= option[:label] %>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </nav>
 </div>
