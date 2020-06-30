@@ -6,30 +6,33 @@
 ================================================== */
 
 .sage-sortable {
-  padding: sage-spacing(xs) 0 0;
+  position: relative;
+  padding: sage-spacing(xs) 0;
 }
 
 .sage-sortable__item {
+  position: relative;
   display: flex;
-  background: sage-color(white);
   flex-direction: row;
+  z-index: sage-z-index(modal);
+  width: 100%;
+  list-style: none;
   border: sage-border();
   border-radius: sage-border(radius-large);
-  padding: sage-spacing(xs) sage-spacing(xs) sage-spacing(xs) sage-spacing(sm);
+  padding: sage-spacing(xs);
   align-items: center;
   cursor: grab;
-  margin: 0 0 sage-spacing(xs);
+  margin: sage-spacing(xs) 0;
   transition: $sage-transition;
   transition-property: border-color, box-shadow;
 
   &:before {
-    @include icon-base(enlarge);
+    @include icon-base(enlarge-vertical);
 
-    padding: 0 sage-spacing(sm) 0 0;
+    padding: 0 sage-spacing(xs) 0 0;
     color: sage-color(grey, 500);
   }
 
-  &:focus,
   &:hover {
     box-shadow: sage-shadow(sm);
 
@@ -38,36 +41,27 @@
     }
   }
 
-  &.sage-sortable__item--active,
+  &:focus,
   &:active {
     cursor: grabbing;
-    border-color: sage-color(primary);
-    box-shadow: sage-shadow(md);
-  }
-
-  &.sage-sortable__item--ghost {
-    opacity: 0.5;
-    border-color: sage-color(grey, 500);
+    border-color: sage-color(grey, 400);
+    box-shadow: sage-shadow(lg);
   }
 }
 
 .sage-sortable__item-content {
-  z-index: sage-z-index();
+  position: relative;
+  z-index: sage-z-index(modal);
   width: 100%;
   list-style: none;
-  overflow: hidden;
 
   & > * {
     user-select: none;
     margin-bottom: 0;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
   }
 }
 
 .sage-sortable__item-actions {
   margin: 0 0 0 auto;
-  display: flex;
   padding: 0 sage-spacing(xs) 0 sage-spacing(sm);
 }

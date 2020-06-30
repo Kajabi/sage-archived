@@ -268,15 +268,23 @@
 
 @mixin button-icon-generator($direction) {
   @each $icon-name, $icon-code in $sage-icons {
+    %sage-btn--icon-base {
+      display: inline-flex;
+      align-items: baseline;
+
+      &::before {
+        align-self: center;
+      }
+    }
+
     // --- Right Icon Buttons
     @if $direction == right {
       .sage-btn--icon-right-#{$icon-name} {
+        @extend %sage-btn--icon-base;
         flex-direction: row-reverse;
 
         &::before {
           @include icon-base($icon-name);
-
-          align-self: center;
           margin: 0 0 0 sage-spacing(xs);
         }
       }
@@ -285,37 +293,31 @@
     // --- Left Icon Buttons
     @else if $direction == left {
       .sage-btn--icon-left-#{$icon-name} {
+        @extend %sage-btn--icon-base;
         flex-direction: row;
 
         &::before {
           @include icon-base($icon-name);
-
-          align-self: center;
           margin: 0 sage-spacing(xs) 0 0;
         }
       }
     }
 
     // --- Standalone Icon Buttons
-    @else if $direction == only {
-      .sage-btn--icon-only-#{$icon-name} {
-        font-size: 0;
+    @else if $direction == none {
+      .sage-btn--icon-#{$icon-name} {
+        @extend %sage-btn--icon-base;
         padding-left: rem(10);
         padding-right: rem(10);
-        width: rem(36);
 
         &::before {
           @include icon-base($icon-name);
-
-          transform: scale(1.1);
-          font-size: initial;
-          align-self: center;
         }
       }
     }
   }
 }
 
-@include button-icon-generator(only);
+@include button-icon-generator(none);
 @include button-icon-generator(left);
 @include button-icon-generator(right);
