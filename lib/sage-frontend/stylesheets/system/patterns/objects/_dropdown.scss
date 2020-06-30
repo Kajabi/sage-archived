@@ -11,22 +11,6 @@ $-dropdown-item-focus-line-spacing-x: sage-spacing(sm);
 
 .sage-dropdown {
   position: relative;
-
-  // --- Expanded State
-  &[aria-expanded="true"] > .sage-dropdown__container {
-    visibility: visible;
-
-    &::before {
-      visibility: visible;
-      pointer-events: auto;
-    }
-
-    .sage-dropdown__menu {
-      visibility: visible;
-      transform: rotate3d(0, 0, 0, 0);
-    }
-  }
-  // --- Expanded State END
 }
 
 .sage-dropdown__container {
@@ -42,6 +26,15 @@ $-dropdown-item-focus-line-spacing-x: sage-spacing(sm);
     cursor: default;
 
     @include position-full;
+  }
+
+  [aria-expanded="true"] > & {
+    visibility: visible;
+
+    &::before {
+      visibility: visible;
+      pointer-events: auto;
+    }
   }
 }
 
@@ -69,6 +62,11 @@ $-dropdown-item-focus-line-spacing-x: sage-spacing(sm);
 
   &.sage-dropdown--anchor-right {
     right: 0;
+  }
+
+  [aria-expanded="true"] > .sage-dropdown__container & {
+    visibility: visible;
+    transform: rotate3d(0, 0, 0, 0);
   }
 }
 
