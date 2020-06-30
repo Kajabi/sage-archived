@@ -233,6 +233,19 @@ module ObjectsHelper
         react_dev:    "todo",
         react_doc:    "todo"
       },
+      {
+        title: "sortable",
+        description: "Sage sortable list",
+        scss_design:  "done",
+        scss_dev:     "done",
+        scss_doc:     "done",
+        rails_design: "doing",
+        rails_dev:    "doing",
+        rails_doc:    "doing",
+        react_design: "todo",
+        react_dev:    "todo",
+        react_doc:    "todo"
+      },
     ]
   end
 
