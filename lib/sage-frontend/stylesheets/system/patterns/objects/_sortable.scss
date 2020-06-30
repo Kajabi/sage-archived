@@ -1,0 +1,67 @@
+/* ==================================================
+  ** sortable
+  type: object
+
+
+================================================== */
+
+.sage-sortable {
+  position: relative;
+  padding: sage-spacing(xs) 0;
+}
+
+.sage-sortable__item {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  z-index: sage-z-index(modal);
+  width: 100%;
+  list-style: none;
+  border: sage-border();
+  border-radius: sage-border(radius-large);
+  padding: sage-spacing(xs);
+  align-items: center;
+  cursor: grab;
+  margin: sage-spacing(xs) 0;
+  transition: $sage-transition;
+  transition-property: border-color, box-shadow;
+
+  &:before {
+    @include icon-base(enlarge-vertical);
+
+    padding: 0 sage-spacing(xs) 0 0;
+    color: sage-color(grey, 500);
+  }
+
+  &:hover {
+    box-shadow: sage-shadow(sm);
+
+    &:before {
+      color: sage-color(primary);
+    }
+  }
+
+  &:focus,
+  &:active {
+    cursor: grabbing;
+    border-color: sage-color(grey, 400);
+    box-shadow: sage-shadow(lg);
+  }
+}
+
+.sage-sortable__item-content {
+  position: relative;
+  z-index: sage-z-index(modal);
+  width: 100%;
+  list-style: none;
+
+  & > * {
+    user-select: none;
+    margin-bottom: 0;
+  }
+}
+
+.sage-sortable__item-actions {
+  margin: 0 0 0 auto;
+  padding: 0 sage-spacing(xs) 0 sage-spacing(sm);
+}
