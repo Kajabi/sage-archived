@@ -156,19 +156,6 @@ module ElementsHelper
         react_doc:    "no"
       },
       {
-        title: "link_button",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        scss_design:  "todo",
-        scss_dev:     "todo",
-        scss_doc:     "todo",
-        rails_design: "todo",
-        rails_dev:    "todo",
-        rails_doc:    "todo",
-        react_design: "todo",
-        react_dev:    "todo",
-        react_doc:    "todo"
-      },
-      {
         title: "button",
         description: "Standard button styling with multiple display options. Can be applied on both button and link elements.",
         scss_design:  "done",
@@ -208,6 +195,19 @@ module ElementsHelper
       {
         title: "live_stream_wrapper",
         description: "A simple wrapper element for the Live stream application",
+        scss_design:  "stop",
+        scss_dev:     "stop",
+        scss_doc:     "stop",
+        rails_design: "no",
+        rails_dev:    "no",
+        rails_doc:    "no",
+        react_design: "stop",
+        react_dev:    "stop",
+        react_doc:    "stop"
+      },
+      {
+        title: "link_button",
+        description: "",
         scss_design:  "stop",
         scss_dev:     "stop",
         scss_doc:     "stop",
