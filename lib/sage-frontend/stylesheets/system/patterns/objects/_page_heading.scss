@@ -6,18 +6,17 @@
 
 .sage-page-heading {
   margin-bottom: sage-spacing();
+  display: flex;
+  flex-flow: column;
 }
 
 .sage-page-heading__title {
   @extend %t-sage-heading-1;
+
+  order: 2;
 }
 
 .sage-page-heading__back {
-  @extend %t-sage-body;
-  color: sage-color(charcoal, 100);
-}
-
-.sage-page-heading__icon {
-  display: inline-block;
-  transform: translateY(rem(2px));
+  order: 1;
+  margin-bottom: sage-spacing(sm);
 }
