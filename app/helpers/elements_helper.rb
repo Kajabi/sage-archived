@@ -13,6 +13,19 @@ module ElementsHelper
     [
       # Sage Generated Elements
       {
+        title: "breadcrumbs",
+        description: "Breadcrumbs provide a sense of where we are in the site structure with hyperlinks to previous areas in that structure. Our element also provides a specific \"Back link\" variation",
+        scss_design:  "doing",
+        scss_dev:     "doing",
+        scss_doc:     "doing",
+        rails_design: "doing",
+        rails_dev:    "doing",
+        rails_doc:    "doing",
+        react_design: "todo",
+        react_dev:    "todo",
+        react_doc:    "todo"
+      },
+      {
         title: "meter",
         description: "A horizontal display indicating the measurement of a known (finite) quantity",
         scss_design:  "done",

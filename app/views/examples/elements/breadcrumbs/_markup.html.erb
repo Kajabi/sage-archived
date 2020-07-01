@@ -1,0 +1,15 @@
+<p class="sage-breadcrumbs<%= klass != "" ? " #{klass}" : "" %>">
+  <% if items %>
+    <% items.each_with_index do |item, i| %>
+      <% if i > 0 %>
+        <span class="sage-breadcrumbs__separator">/</span>
+      <% end %>
+      <a href="<%= item[:url] %>" class="sage-breadcrumbs__link">
+        <% if i == 0 && has_back_icon %>
+          <i class="sage-breadcrumbs__icon sage-icon-caret-left" aria-hidden="true"></i>
+        <% end %>
+        <%= item[:text] %>
+      </a>
+    <% end %>
+  <% end %>
+</p>
