@@ -43,7 +43,7 @@ module ElementsHelper
         description: "A description is composed of title and data content and is structured as a definition list.",
         scss_design:  "done",
         scss_dev:     "done",
-        scss_doc:     "todo",
+        scss_doc:     "done",
         rails_design: "done",
         rails_dev:    "done",
         rails_doc:    "todo",
