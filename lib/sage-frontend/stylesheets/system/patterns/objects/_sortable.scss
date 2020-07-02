@@ -6,7 +6,7 @@
 ================================================== */
 
 .sage-sortable {
-  padding: sage-spacing(xs) 0;
+  /* stylelint-disable-line block-no-empty */
 }
 
 .sage-sortable__item {
@@ -48,10 +48,14 @@
   z-index: sage-z-index(modal);
   width: 100%;
   list-style: none;
+  overflow: hidden;
 
   & > * {
     user-select: none;
     margin-bottom: 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
   }
 }
 
