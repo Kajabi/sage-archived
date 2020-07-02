@@ -30,6 +30,7 @@
   &::after {
     left: 50%;
     top: 100%;
+    transform: translate3d(-50%, 0, 0);
     border-left: $sage-tooltip-arrow-inactive;
     border-right: $sage-tooltip-arrow-inactive;
     border-top: $sage-tooltip-arrow-active;
