@@ -5,9 +5,9 @@
 ================================================== */
 
 .sage-page-heading {
-  margin-bottom: sage-spacing();
   display: flex;
   flex-flow: column;
+  margin-bottom: sage-spacing();
 }
 
 .sage-page-heading__title {
