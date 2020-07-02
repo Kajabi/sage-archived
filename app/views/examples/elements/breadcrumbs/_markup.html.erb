@@ -3,7 +3,7 @@
     <ul class="sage-breadcrumbs__list">
       <% items.each_with_index do |item, i| %>
         <li class="sage-breadcrumbs__item">
-          <a href="<%= item[:url] %>" class="sage-breadcrumbs__link<%= i == items.length() ? " sage-breadcrumbs__link--active": "" %>">
+          <a href="<%= item[:url] %>" class="sage-breadcrumbs__link<%= i == (items.length() - 1) ? " sage-breadcrumbs__link--current": "" %>">
             <% if i == 0 && has_back_icon %>
               <i class="sage-breadcrumbs__icon sage-icon-caret-left" aria-hidden="true"></i>
             <% end %>
@@ -14,7 +14,7 @@
     </ul>
   <% else %>
   <p class="sage-breadcrumbs__item">
-    <a href="<%= items[0][:url] %>" class="sage-breadcrumbs__link" aria-current="page">
+    <a href="<%= items[0][:url] %>" class="sage-breadcrumbs__link sage-breadcrumbs__link--current" aria-current="page">
       <% if has_back_icon %>
         <i class="sage-breadcrumbs__icon sage-icon-caret-left" aria-hidden="true"></i>
       <% end %>

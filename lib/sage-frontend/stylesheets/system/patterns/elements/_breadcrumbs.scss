@@ -34,8 +34,12 @@
   &:hover,
   &:focus,
   &:active {
-    color: sage-color(charcoal, 200);
+    color: sage-color(charcoal, 400);
   }
+}
+
+.sage-breadcrumbs__link--current {
+  color: sage-color(charcoal, 200);
 }
 
 .sage-breadcrumbs__list {
