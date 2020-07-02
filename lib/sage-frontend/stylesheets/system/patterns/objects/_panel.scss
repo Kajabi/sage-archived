@@ -7,17 +7,27 @@
 %sage-panel,
 .sage-panel {
   margin-bottom: sage-spacing();
-  padding: $sage-panel-padding;
   background: $sage-panel-bg-color;
   border-radius: $sage-panel-border-radius;
   box-shadow: $sage-panel-box-shadow;
 }
 
 .sage-panel__header {
-  margin-bottom: $sage-panel-padding;
+  padding: sage-spacing(sm) $sage-panel-padding;
+  display: flex;
+  align-items: center;
+  border-bottom: sage-border();
+}
+
+.sage-panel__header-title {
+  @extend %t-sage-heading-4;
+
+  padding: 0;
+  margin: 0 auto 0 0;
 }
 
 .sage-panel__body {
+  padding: $sage-panel-padding;
   display: flex;
   position: relative;
   overflow: auto;
@@ -29,5 +39,6 @@
 }
 
 .sage-panel__footer {
-  margin-top: $sage-panel-padding;
+  border-top: sage-border();
+  padding: sage-spacing(sm) $sage-panel-padding;
 }
