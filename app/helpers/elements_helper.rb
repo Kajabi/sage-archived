@@ -36,7 +36,8 @@ module ElementsHelper
         rails_doc:    "doing",
         react_design: "todo",
         react_dev:    "todo",
-        react_doc:    "todo"
+        react_doc:    "todo",
+        a11y:         "todo"
       },
       {
         title: "form_select",
@@ -49,7 +50,8 @@ module ElementsHelper
         rails_doc:    "todo",
         react_design: "todo",
         react_dev:    "todo",
-        react_doc:    "todo"
+        react_doc:    "todo",
+        a11y:         "todo"
       },
       {
         title: "description",
@@ -62,7 +64,8 @@ module ElementsHelper
         rails_doc:    "todo",
         react_design: "done",
         react_dev:    "todo",
-        react_doc:    "todo"
+        react_doc:    "todo",
+        a11y:         "todo"
       },
       {
         title: "label",
@@ -75,7 +78,8 @@ module ElementsHelper
         rails_doc:    "todo",
         react_design: "todo",
         react_dev:    "todo",
-        react_doc:    "todo"
+        react_doc:    "todo",
+        a11y:         "todo"
       },
       {
         title: "tooltip",
@@ -88,7 +92,8 @@ module ElementsHelper
         rails_doc:    "todo",
         react_design: "todo",
         react_dev:    "todo",
-        react_doc:    "todo"
+        react_doc:    "todo",
+        a11y:         "todo"
       },
       {
         title: "form_input",
@@ -101,7 +106,8 @@ module ElementsHelper
         rails_doc:    "no",
         react_design: "no",
         react_dev:    "no",
-        react_doc:    "no"
+        react_doc:    "no",
+        a11y:         "todo"
       },
       {
         title: "form_textarea",
@@ -114,7 +120,8 @@ module ElementsHelper
         rails_doc:    "no",
         react_design: "no",
         react_dev:    "no",
-        react_doc:    "no"
+        react_doc:    "no",
+        a11y:         "todo"
       },
       {
         title: "loader",
@@ -127,7 +134,8 @@ module ElementsHelper
         rails_doc:    "no",
         react_design: "no",
         react_dev:    "no",
-        react_doc:    "no"
+        react_doc:    "no",
+        a11y:         "todo"
       },
       {
         title: "checkbox",
@@ -140,7 +148,8 @@ module ElementsHelper
         rails_doc:    "no",
         react_design: "no",
         react_dev:    "no",
-        react_doc:    "no"
+        react_doc:    "no",
+        a11y:         "todo"
       },
       {
         title: "switch",
@@ -153,7 +162,8 @@ module ElementsHelper
         rails_doc:    "no",
         react_design: "no",
         react_dev:    "no",
-        react_doc:    "no"
+        react_doc:    "no",
+        a11y:         "todo"
       },
       {
         title: "radio",
@@ -166,7 +176,8 @@ module ElementsHelper
         rails_doc:    "no",
         react_design: "no",
         react_dev:    "no",
-        react_doc:    "no"
+        react_doc:    "no",
+        a11y:         "todo"
       },
       {
         title: "button",
@@ -179,7 +190,8 @@ module ElementsHelper
         rails_doc:    "done",
         react_design: "no",
         react_dev:    "no",
-        react_doc:    "no"
+        react_doc:    "no",
+        a11y:         "todo"
       },
       {
         title: "table",
@@ -192,7 +204,8 @@ module ElementsHelper
         rails_doc:    "todo",
         react_design: "todo",
         react_dev:    "todo",
-        react_doc:    "todo"
+        react_doc:    "todo",
+        a11y:         "todo"
       }
     ]
   end
@@ -216,7 +229,8 @@ module ElementsHelper
         rails_doc:    "no",
         react_design: "stop",
         react_dev:    "stop",
-        react_doc:    "stop"
+        react_doc:    "stop",
+        a11y:         "todo"
       },
       {
         title: "link_button",
@@ -229,7 +243,8 @@ module ElementsHelper
         rails_doc:    "no",
         react_design: "stop",
         react_dev:    "stop",
-        react_doc:    "stop"
+        react_doc:    "stop",
+        a11y:         "todo"
       },
     ]
   end

@@ -23,7 +23,8 @@ module ObjectsHelper
         rails_doc:    "todo",
         react_design: "todo",
         react_dev:    "todo",
-        react_doc:    "todo"
+        react_doc:    "todo",
+        a11y:       "todo"
       },
       {
         title: "input_group",
@@ -36,7 +37,8 @@ module ObjectsHelper
         rails_doc:    "doing",
         react_design: "todo",
         react_dev:    "todo",
-        react_doc:    "todo"
+        react_doc:    "todo",
+        a11y:       "todo"
       },
       {
         title: "billboard",
@@ -49,7 +51,8 @@ module ObjectsHelper
         rails_doc:    "doing",
         react_design: "todo",
         react_dev:    "todo",
-        react_doc:    "todo"
+        react_doc:    "todo",
+        a11y:       "todo"
       },
       {
         title: "pagination",
@@ -62,7 +65,8 @@ module ObjectsHelper
         rails_doc:    "todo",
         react_design: "todo",
         react_dev:    "todo",
-        react_doc:    "todo"
+        react_doc:    "todo",
+        a11y:       "todo"
       },
       {
         title: "banner",
@@ -75,7 +79,8 @@ module ObjectsHelper
         rails_doc:    "done",
         react_design: "todo",
         react_dev:    "todo",
-        react_doc:    "todo"
+        react_doc:    "todo",
+        a11y:       "todo"
       },
       {
         title: "page_heading",
@@ -88,7 +93,8 @@ module ObjectsHelper
         rails_doc:    "doing",
         react_design: "todo",
         react_dev:    "todo",
-        react_doc:    "todo"
+        react_doc:    "todo",
+        a11y:       "todo"
       },
       {
         title: "card",
@@ -101,7 +107,8 @@ module ObjectsHelper
         rails_doc:    "todo",
         react_design: "todo",
         react_dev:    "todo",
-        react_doc:    "todo"
+        react_doc:    "todo",
+        a11y:       "todo"
       },
       {
         title: "avatar",
@@ -114,7 +121,8 @@ module ObjectsHelper
         rails_doc:    "no",
         react_design: "done",
         react_dev:    "done",
-        react_doc:    "done"
+        react_doc:    "done",
+        a11y:       "todo"
       },
       {
         title: "dropdown",
@@ -127,11 +135,12 @@ module ObjectsHelper
         rails_doc:    "done",
         react_design: "todo",
         react_dev:    "todo",
-        react_doc:    "todo"
+        react_doc:    "todo",
+        a11y:       "todo"
       },
       {
         title: "form_section",
-        description: "A form section generally consists of a text section to provide users with instruction, guidance, or related information along with a secondary panel that may contain form inputs and/or related general content.",
+        description: "A form section genera11y consists of a text section to provide users with instruction, guidance, or related information along with a secondary panel that may contain form inputs and/or related general content.",
         scss_design:  "done",
         scss_dev:     "done",
         scss_doc:     "done",
@@ -140,7 +149,8 @@ module ObjectsHelper
         rails_doc:    "done",
         react_design: "todo",
         react_dev:    "todo",
-        react_doc:    "todo"
+        react_doc:    "todo",
+        a11y:       "todo"
       },
       {
         title: "tabs",
@@ -153,7 +163,8 @@ module ObjectsHelper
         rails_doc:    "todo",
         react_design: "todo",
         react_dev:    "todo",
-        react_doc:    "todo"
+        react_doc:    "todo",
+        a11y:       "todo"
       },
       {
         title: "alert",
@@ -166,7 +177,8 @@ module ObjectsHelper
         rails_doc:    "done",
         react_design: "todo",
         react_dev:    "todo",
-        react_doc:    "todo"
+        react_doc:    "todo",
+        a11y:       "todo"
       },
       {
         title: "panel",
@@ -179,7 +191,8 @@ module ObjectsHelper
         rails_doc:    "todo",
         react_design: "todo",
         react_dev:    "todo",
-        react_doc:    "todo"
+        react_doc:    "todo",
+        a11y:       "todo"
       },
       {
         title: "assistant",
@@ -192,7 +205,8 @@ module ObjectsHelper
         rails_doc:    "doing",
         react_design: "todo",
         react_dev:    "todo",
-        react_doc:    "todo"
+        react_doc:    "todo",
+        a11y:       "todo"
       },
       {
         title: "nav",
@@ -205,11 +219,12 @@ module ObjectsHelper
         rails_doc:    "doing",
         react_design: "todo",
         react_dev:    "todo",
-        react_doc:    "todo"
+        react_doc:    "todo",
+        a11y:       "todo"
       },
       {
         title: "sidebar",
-        description: "The sidebar object is a fixed, vertical panel that typically displays navigation and/or page hierarchy.",
+        description: "The sidebar object is a fixed, vertical panel that typica11y displays navigation and/or page hierarchy.",
         scss_design:  "done",
         scss_dev:     "done",
         scss_doc:     "done",
@@ -218,7 +233,8 @@ module ObjectsHelper
         rails_doc:    "doing",
         react_design: "todo",
         react_dev:    "todo",
-        react_doc:    "todo"
+        react_doc:    "todo",
+        a11y:       "todo"
       },
       {
         title: "modal",
@@ -231,7 +247,8 @@ module ObjectsHelper
         rails_doc:    "doing",
         react_design: "todo",
         react_dev:    "todo",
-        react_doc:    "todo"
+        react_doc:    "todo",
+        a11y:       "todo"
       },
       {
         title: "sortable",
@@ -268,7 +285,8 @@ module ObjectsHelper
         rails_doc:    "no",
         react_design: "stop",
         react_dev:    "stop",
-        react_doc:    "stop"
+        react_doc:    "stop",
+        a11y:         "stop"
       },
       {
         title: "live_stream_footer",
@@ -281,7 +299,8 @@ module ObjectsHelper
         rails_doc:    "no",
         react_design: "stop",
         react_dev:    "stop",
-        react_doc:    "stop"
+        react_doc:    "stop",
+        a11y:         "stop"
       },
       {
         title: "live_stream_header",
@@ -294,7 +313,8 @@ module ObjectsHelper
         rails_doc:    "no",
         react_design: "stop",
         react_dev:    "stop",
-        react_doc:    "stop"
+        react_doc:    "stop",
+        a11y:         "stop"
       },
       {
         title: "live_stream_control",
@@ -307,7 +327,8 @@ module ObjectsHelper
         rails_doc:    "no",
         react_design: "stop",
         react_dev:    "stop",
-        react_doc:    "stop"
+        react_doc:    "stop",
+        a11y:         "stop"
       },
       {
         title: "live_profile_card",
@@ -320,7 +341,8 @@ module ObjectsHelper
         rails_doc:    "no",
         react_design: "stop",
         react_dev:    "stop",
-        react_doc:    "stop"
+        react_doc:    "stop",
+        a11y:         "stop"
       },
       {
         title: "live_user_control",
@@ -333,7 +355,8 @@ module ObjectsHelper
         rails_doc:    "no",
         react_design: "stop",
         react_dev:    "stop",
-        react_doc:    "stop"
+        react_doc:    "stop",
+        a11y:         "stop"
       },
       {
         title: "live_active_mic",
@@ -346,7 +369,8 @@ module ObjectsHelper
         rails_doc:    "no",
         react_design: "stop",
         react_dev:    "stop",
-        react_doc:    "stop"
+        react_doc:    "stop",
+        a11y:         "stop"
       },
       {
         title: "live_option_menu",
@@ -359,7 +383,8 @@ module ObjectsHelper
         rails_doc:    "no",
         react_design: "stop",
         react_dev:    "stop",
-        react_doc:    "stop"
+        react_doc:    "stop",
+        a11y:         "stop"
       },
     ]
   end
