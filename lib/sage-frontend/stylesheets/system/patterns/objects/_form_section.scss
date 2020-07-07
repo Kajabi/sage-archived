@@ -32,7 +32,7 @@
   // Form Section Panels commonly wrap a <form> tag generated within rails.
   // In the event that a form tag is not present, ensure the children behave identically.
   &,
-  & > form {
+  > form {
     display: flex;
     flex-direction: column;
 
