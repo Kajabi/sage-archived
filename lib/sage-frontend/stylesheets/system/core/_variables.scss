@@ -85,7 +85,7 @@ $sage-btn-shadow-base: sage-shadow(sm) !default;
 $sage-btn-shadow-hover: sage-shadow(md) !default;
 
 // Focus outline
-$sage-btn-focus-outline-spacing: sage-spacing(2xs) !default;
+$sage-btn-focus-outline-spacing: ( sage-spacing(2xs) / 2) !default;
 $sage-btn-focus-outline-width: 1 !default;
 $sage-btn-focus-outline-color: currentColor !default;
 
@@ -96,10 +96,10 @@ $sage-btn-primary-bg-hover-color: lighten($sage-btn-primary-bg-color, 9%) !defau
 $sage-btn-primary-text-color: sage-color(white) !default;
 
 // Secondary button
-$sage-btn-secondary-text-color: sage-color(charcoal, 400) !default;
+$sage-btn-secondary-text-color: sage-color(primary) !default;
 
 // Tertiary button
-$sage-btn-tertiary-text-color: sage-color(primary) !default;
+$sage-btn-tertiary-text-color: sage-color(charcoal, 300) !default;
 
 // Danger button
 $sage-btn-danger-bg-color: sage-color(red) !default;
