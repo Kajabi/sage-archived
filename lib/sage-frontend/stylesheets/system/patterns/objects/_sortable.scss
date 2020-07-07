@@ -6,7 +6,7 @@
 ================================================== */
 
 .sage-sortable {
-  /* stylelint-disable-line block-no-empty */
+  padding: sage-spacing(xs) 0 0;
 }
 
 .sage-sortable__item {
@@ -14,17 +14,17 @@
   flex-direction: row;
   border: sage-border();
   border-radius: sage-border(radius-large);
-  padding: sage-spacing(xs);
+  padding: sage-spacing(xs) sage-spacing(xs) sage-spacing(xs) sage-spacing(sm);
   align-items: center;
   cursor: grab;
-  margin: sage-spacing(xs) 0;
+  margin: 0 0 sage-spacing(xs);
   transition: $sage-transition;
   transition-property: border-color, box-shadow;
 
   &:before {
-    @include icon-base(enlarge-vertical);
+    @include icon-base(enlarge);
 
-    padding: 0 sage-spacing(xs) 0 0;
+    padding: 0 sage-spacing(sm) 0 0;
     color: sage-color(grey, 500);
   }
 
@@ -45,7 +45,7 @@
 }
 
 .sage-sortable__item-content {
-  z-index: sage-z-index(modal);
+  z-index: sage-z-index();
   width: 100%;
   list-style: none;
   overflow: hidden;
