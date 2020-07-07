@@ -13,14 +13,14 @@
 }
 
 .sage-panel__header {
-  padding: sage-spacing(sm) $sage-panel-padding;
+  padding: sage-spacing(xs) $sage-panel-padding;
   display: flex;
   align-items: center;
   border-bottom: sage-border();
 }
 
 .sage-panel__header-title {
-  @extend %t-sage-heading-4;
+  @extend %t-sage-heading-5;
 
   padding: 0;
   margin: 0 auto 0 0;
@@ -40,5 +40,5 @@
 
 .sage-panel__footer {
   border-top: sage-border();
-  padding: sage-spacing(sm) $sage-panel-padding;
+  padding: sage-spacing(xs);
 }
