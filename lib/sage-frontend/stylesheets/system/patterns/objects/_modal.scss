@@ -47,7 +47,7 @@ $-modal-padding-y: sage-spacing(md);
   opacity: 0;
 
   .sage-modal--active & {
-    transform: translateY(0px);
+    transform: none;
     opacity: 1;
   }
 }
