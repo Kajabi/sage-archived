@@ -14,7 +14,7 @@
   color: $sage-tabs-default-color;
   transition: color $sage-tabs-default-transition;
 
-  @extend %t-sage-body-small-semi;
+  @extend %t-sage-body-med;
 
   &:last-of-type {
     margin-right: 0;
