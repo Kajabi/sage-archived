@@ -54,6 +54,10 @@
 }
 
 @for $sage-i from 1 through $sage-grid-columns {
+  %sage-col-#{$sage-i},
+  %sage-col--sm-#{$sage-i},
+  %sage-col--md-#{$sage-i},
+  %sage-col--lg-#{$sage-i},
   .sage-col-#{$sage-i},
   .sage-col--sm-#{$sage-i},
   .sage-col--md-#{$sage-i},
@@ -62,6 +66,7 @@
     flex: 0 0 100%;
   }
 
+  %sage-col-#{$sage-i},
   .sage-col-#{$sage-i} {
     flex: 0 1 auto;
     width: percentage($sage-i / $sage-grid-columns);
@@ -70,6 +75,7 @@
 
 @media (min-width: $sage-grid-breakpoint-sm) {
   @for $sage-i from 1 through $sage-grid-columns {
+    %sage-col--sm-#{$sage-i},
     .sage-col--sm-#{$sage-i} {
       flex: 0 1 auto;
       width: percentage($sage-i / $sage-grid-columns);
@@ -86,6 +92,7 @@
 
 @media (min-width: $sage-grid-breakpoint-md) {
   @for $sage-i from 1 through $sage-grid-columns {
+    %sage-col--md-#{$sage-i},
     .sage-col--md-#{$sage-i} {
       flex: 0 1 auto;
       width: percentage($sage-i / $sage-grid-columns);
@@ -106,6 +113,7 @@
 
 @media (min-width: $sage-grid-breakpoint-lg) {
   @for $sage-i from 1 through $sage-grid-columns {
+    %sage-col--lg-#{$sage-i},
     .sage-col--lg-#{$sage-i} {
       flex: 0 1 auto;
       width: percentage($sage-i / $sage-grid-columns);

@@ -11,7 +11,7 @@
 
 // TODO: refactor extends following final design of form section
 .sage-form-section__info {
-  @extend .sage-col--md-4;
+  @extend %sage-col--md-4;
 }
 
 .sage-form-section__title {
@@ -23,7 +23,7 @@
 }
 
 .sage-form-section__content {
-  @extend .sage-col--md-8;
+  @extend %sage-col--md-8;
 }
 
 .sage-form-section__panel {
