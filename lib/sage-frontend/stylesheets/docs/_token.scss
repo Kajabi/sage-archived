@@ -21,7 +21,7 @@
 
   &::after {
     max-width: calc(100% / 3);
-    font-family: monospace;
+    font-family: $sage-body-font-monospace;
   }
 
   &-border::after {
