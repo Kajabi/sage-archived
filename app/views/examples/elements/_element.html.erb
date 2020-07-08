@@ -9,14 +9,14 @@
   do_content: do_content,
   dont_content: dont_content %>
 
-<div class="sage-panel">
+<div class="docs-container">
   <h2 id="<%= @title %>-example-preview" class="t-sage-heading-2 example__title">Preview</h2>
   <div class="example__preview">
     <%= render "examples/elements/#{@title}/preview" %>
   </div>
 </div>
 
-<div class="sage-panel">
+<div class="docs-container">
   <h2 id="<%= @title %>-example-code" class="t-sage-heading-2 example__title">Code</h2>
   <div class="example__code">
     <button class="example__expand-btn" aria-expanded="false" aria-controls="example-code-<%= @title %>">Expand this code snippet</button>
