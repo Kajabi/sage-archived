@@ -41,7 +41,7 @@ $-dropdown-item-focus-line-spacing-x: sage-spacing(sm);
 .sage-dropdown__menu {
   visibility: hidden;
   position: absolute;
-  top: calc(100% - #{( sage-spacing(xs) / 2)});
+  top: calc(100% - #{sage-spacing(3xs)});
   overflow: hidden;
   z-index: sage-z-index(nav, -1);
   transform: rotate3d(1, 0, 0, -90deg);
