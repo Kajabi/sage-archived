@@ -29,6 +29,7 @@
     color: sage-color(grey, 500);
   }
 
+  &:focus,
   &:hover {
     box-shadow: sage-shadow(sm);
 
@@ -38,15 +39,15 @@
   }
 
   &.sage-sortable__item--active,
-  &:focus,
   &:active {
     cursor: grabbing;
-    border-color: sage-color(grey, 500);
+    border-color: sage-color(primary);
     box-shadow: sage-shadow(md);
   }
 
   &.sage-sortable__item--ghost {
-    border-color: sage-color(primary);
+    opacity: 0.5;
+    border-color: sage-color(grey, 500);
   }
 }
 
