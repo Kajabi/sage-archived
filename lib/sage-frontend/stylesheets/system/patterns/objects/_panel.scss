@@ -13,25 +13,22 @@
 }
 
 .sage-panel__header {
-  padding: sage-spacing(xs) $sage-panel-padding;
+  padding: sage-spacing(xs) sage-spacing(xs) 0 $sage-panel-padding;
   display: flex;
   align-items: center;
   border-bottom: sage-border();
+  min-height: rem(60px);
 }
 
-.sage-panel__header-title {
-  @extend %t-sage-heading-5;
-
-  padding: 0;
-  margin: 0 auto 0 0;
+.sage-panel__header-right {
+  margin: 0 0 0 auto;
+  display: inline-flex;
+  align-self: baseline;
 }
 
 .sage-panel__body {
   padding: $sage-panel-padding;
-  display: flex;
   position: relative;
-  overflow: auto;
-  flex-direction: column;
 
   > :last-child {
     margin-bottom: 0;
