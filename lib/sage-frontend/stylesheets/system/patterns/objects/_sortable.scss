@@ -11,6 +11,7 @@
 
 .sage-sortable__item {
   display: flex;
+  background: sage-color(white);
   flex-direction: row;
   border: sage-border();
   border-radius: sage-border(radius-large);
@@ -36,11 +37,16 @@
     }
   }
 
+  &.sage-sortable__item--active,
   &:focus,
   &:active {
     cursor: grabbing;
-    border-color: sage-color(grey, 400);
-    box-shadow: sage-shadow(lg);
+    border-color: sage-color(grey, 500);
+    box-shadow: sage-shadow(md);
+  }
+
+  &.sage-sortable__item--ghost {
+    border-color: sage-color(primary);
   }
 }
 
