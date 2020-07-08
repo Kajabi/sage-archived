@@ -1,0 +1,13 @@
+/* ==================================================
+  ** _token.scss
+
+  For Sage documentation use
+================================================== */
+
+.docs-container {
+  margin-bottom: sage-spacing();
+  background: $sage-panel-bg-color;
+  border-radius: $sage-panel-border-radius;
+  box-shadow: $sage-panel-box-shadow;
+  padding: $sage-panel-padding;
+}
