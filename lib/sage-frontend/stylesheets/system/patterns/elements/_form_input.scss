@@ -21,6 +21,7 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  z-index: sage-z-index(default, 1);
 }
   
 .sage-input__affix--prefix {
@@ -54,6 +55,7 @@
 
   .sage-input--prefixed & {
     transform: translateY(calc(#{$sage-body-font-size} * -1)) translateX(30px);
+    z-index: sage-z-index(default, 2);
   }
 }
 
