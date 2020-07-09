@@ -17,7 +17,7 @@ module ElementsHelper
         description: "Breadcrumbs provide a sense of where we are in the site structure with hyperlinks to previous areas in that structure. Our element also provides a specific \"Back link\" variation",
         scss: "done",
         docs: "done",
-        rails: "done",
+        rails: "todo",
         react: "todo",
         a11y: "todo"
       },
@@ -27,7 +27,7 @@ module ElementsHelper
         scss: "done",
         docs: "done",
         rails: "done",
-        react: "no",
+        react: "todo",
         a11y: "todo"
       },
       {
