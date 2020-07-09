@@ -4,17 +4,17 @@
 
 ================================================== */
 
-$-sage-meter-bar-height: rem(4px);
-$-sage-meter-color-bg: sage-color(grey, 200);
-$-sage-meter-bar-low: rgba(sage-color(red), 0.9);
-$-sage-meter-bar-med: rgba(sage-color(orange), 0.9);
-$-sage-meter-bar-success: rgba(sage-color(sage, 200), 0.9);
-$-sage-meter-bar-max: rgba(sage-color(sage), 0.9);
+$-meter-bar-height: rem(4px);
+$-meter-color-bg: sage-color(grey, 200);
+$-meter-bar-low: rgba(sage-color(red), 0.9);
+$-meter-bar-med: rgba(sage-color(orange), 0.9);
+$-meter-bar-success: rgba(sage-color(sage, 200), 0.9);
+$-meter-bar-max: rgba(sage-color(sage), 0.9);
 
 @mixin meter-bar-reset {
-  height: $-sage-meter-bar-height;
+  height: $-meter-bar-height;
   width: 100%;
-  background: $-sage-meter-color-bg;
+  background: $-meter-color-bg;
   border: 0;
 }
 
@@ -41,8 +41,8 @@ $-sage-meter-bar-max: rgba(sage-color(sage), 0.9);
 .sage-meter__bar {
   overflow: hidden;
   width: 100%;
-  height: $-sage-meter-bar-height;
-  background: $-sage-meter-color-bg;
+  height: $-meter-bar-height;
+  background: $-meter-color-bg;
   border-radius: sage-border(radius);
   border: 0;
 
@@ -62,24 +62,24 @@ $-sage-meter-bar-max: rgba(sage-color(sage), 0.9);
 
 .sage-meter__bar--low {
   @include meter-bar-value() {
-    background-color: $-sage-meter-bar-low;
+    background-color: $-meter-bar-low;
   }
 }
 
 .sage-meter__bar--med {
   @include meter-bar-value() {
-    background-color: $-sage-meter-bar-med;
+    background-color: $-meter-bar-med;
   }
 }
 
 .sage-meter__bar--optimum {
   @include meter-bar-value() {
-    background-color: $-sage-meter-bar-success;
+    background-color: $-meter-bar-success;
   }
 }
 
 .sage-meter__bar--max {
   @include meter-bar-value() {
-    background-color: $-sage-meter-bar-max;
+    background-color: $-meter-bar-max;
   }
 }
