@@ -15,7 +15,9 @@
     minlength: "",
     maxlength: "",
     has_error: false,
-    message_text: "This is a message"
+    message_text: "This is a message",
+    prefix: "",
+    suffix: ""
   %>
 
   <h3 class="t-sage-heading-6">Text (with error)</h3>
@@ -33,7 +35,9 @@
     minlength: "",
     maxlength: "",
     has_error: true,
-    message_text: "This is a message"
+    message_text: "This is a message",
+    prefix: "",
+    suffix: ""
   %>
 
   <h3 class="t-sage-heading-6">Text (prefilled)</h3>
@@ -51,7 +55,9 @@
     minlength: "",
     maxlength: "",
     has_error: false,
-    message_text: ""
+    message_text: "",
+    prefix: "",
+    suffix: ""
   %>
 
   <h3 class="t-sage-heading-6">Text (disabled)</h3>
@@ -69,7 +75,9 @@
     minlength: "",
     maxlength: "",
     has_error: false,
-    message_text: "This is a message"
+    message_text: "This is a message",
+    prefix: "",
+    suffix: ""
   %>
 
   <h3 class="t-sage-heading-6">Email</h3>
@@ -87,7 +95,9 @@
     minlength: "",
     maxlength: "",
     has_error: false,
-    message_text: "This is a message"
+    message_text: "This is a message",
+    prefix: "",
+    suffix: ""
   %>
 
   <h3 class="t-sage-heading-6">Password</h3>
@@ -105,7 +115,9 @@
     minlength: "8",
     maxlength: "128",
     has_error: false,
-    message_text: ""
+    message_text: "",
+    prefix: "",
+    suffix: ""
   %>
 
   <h3 class="t-sage-heading-6">Numbers</h3>
@@ -123,7 +135,49 @@
     minlength: "",
     maxlength: "2",
     has_error: false,
-    message_text: ""
+    message_text: "",
+    prefix: "",
+    suffix: ""
+  %>
+  
+  <h3 class="t-sage-heading-6">Prefixed</h3>
+  <%= render "examples/elements/form_input/markup",
+    id: "form__pre",
+    input_type: "text",
+    label_text: "Custom domain",
+    placeholder: "Custom domain",
+    value: "",
+    required: true,
+    disabled: false,
+    input_mode: "text",
+    pattern: "[a-z]+\.[a-zA-Z0-9\/\-]+",
+    max: "",
+    minlength: "",
+    maxlength: "",
+    has_error: false,
+    message_text: "",
+    prefix: "https://",
+    suffix: ""
+  %>
+
+  <h3 class="t-sage-heading-6">Suffixed</h3>
+  <%= render "examples/elements/form_input/markup",
+    id: "form__suf",
+    input_type: "number",
+    label_text: "Price per month",
+    placeholder: "Price per month",
+    value: "",
+    required: true,
+    disabled: false,
+    input_mode: "numeric",
+    pattern: "[0-9]{6}",
+    max: "100000",
+    minlength: "",
+    maxlength: "6",
+    has_error: false,
+    message_text: "",
+    prefix: "",
+    suffix: ".00"
   %>
 
 </fieldset>

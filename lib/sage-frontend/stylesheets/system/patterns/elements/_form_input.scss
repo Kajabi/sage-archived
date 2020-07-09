@@ -4,6 +4,7 @@
 
 ================================================== */
 
+
 .sage-input {
   position: relative;
 
@@ -14,6 +15,20 @@
   .sage-input-group & {
     height: auto;
   }
+}
+
+.sage-input__affix {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+  
+.sage-input__affix--prefix {
+  left: 8px;
+}
+
+.sage-input__affix--suffix {
+  right: 8px;
 }
 
 .sage-input__label {
@@ -35,6 +50,10 @@
 
   @media screen and (min-width: sage-breakpoint(sm-min)) {
     white-space: normal;
+  }
+
+  .sage-input--prefixed & {
+    transform: translateY(calc(#{$sage-body-font-size} * -1)) translateX(30px);
   }
 }
 
