@@ -22,6 +22,10 @@
   top: 50%;
   transform: translateY(-50%);
   z-index: sage-z-index(default, 1);
+
+  &:hover {
+    cursor: default;
+  }
 }
   
 .sage-input__affix--prefix {
