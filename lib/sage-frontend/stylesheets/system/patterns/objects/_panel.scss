@@ -35,6 +35,15 @@
   }
 }
 
+.sage-panel__body--center {
+  display: flex;
+  justify-items: center;
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
 .sage-panel__footer {
   padding: sage-spacing(xs);
   border-top: sage-border();
