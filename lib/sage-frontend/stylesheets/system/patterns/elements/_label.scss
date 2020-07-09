@@ -5,60 +5,82 @@
 
 ================================================== */
 
-$-sage-label-subtle-background: sage-color(white);
-$-sage-label-subtle-draft-border: sage-color(grey, 400);
-$-sage-label-subtle-success-border: sage-color(sage, 300);
-$-sage-label-subtle-warning-border: sage-color(yellow, 300);
-$-sage-label-subtle-warning-color: sage-color(yellow, 400);
-$-sage-label-subtle-danger-border: sage-color(red, 300);
-$-sage-label-subtle-danger-color: sage-color(red, 400);
+$-label-draft-text-color: sage-color(charcoal, 200) !default;
+$-label-draft-color: sage-color(grey, 200) !default;
+$-label-success-text-color: sage-color(sage, 400) !default;
+$-label-success-color: sage-color(sage, 100) !default;
+$-label-warning-color: sage-color(yellow, 200) !default;
+$-label-danger-color: sage-color(red, 200) !default;
+$-label-padding: 0 sage-spacing(xs) !default;
+$-label-border-radius: sage-border(radius) !default;
+
+$-label-colors: (
+  draft: (
+    background: $-label-draft-color,
+    border: $-label-draft-color,
+    text: $-label-draft-text-color,
+    subtle: (
+      background: sage-color(white),
+      border: sage-color(grey, 400),
+      text: $-label-draft-text-color,
+    )
+  ),
+  success: (
+    background: $-label-success-color,
+    border: $-label-success-color,
+    text: $-label-success-text-color,
+    subtle: (
+      background: sage-color(white),
+      border: sage-color(sage, 300),
+      text: $-label-success-text-color,
+    )
+  ),
+  warning: (
+    background: $-label-warning-color,
+    border: $-label-warning-color,
+    text: sage-color(yellow, 500),
+    subtle: (
+      background: sage-color(white),
+      border: sage-color(yellow, 300),
+      text: sage-color(yellow, 400),
+    )
+  ),
+  danger: (
+    background: $-label-danger-color,
+    border: $-label-danger-color,
+    text: sage-color(red, 500),
+    subtle: (
+      background: sage-color(white),
+      border: sage-color(red, 300),
+      text: sage-color(red, 400)
+    )
+  )
+);
 
 .sage-label {
-  @extend %t-sage-body-xsmall-med;
+  @extend %t-sage-body-small-med;
 
-  padding: $sage-label-padding;
+  display: inline-block;
+  padding: $-label-padding;
   text-align: center;
   white-space: nowrap;
-  border-radius: $sage-label-border-radius;
+  border-radius: $-label-border-radius;
   border-width: rem(1px);
   border-style: solid;
 }
 
-.sage-label--draft {
-  color: $sage-label-draft-text-color;
-  background-color: $sage-label-draft-color;
-  border-color: $sage-label-draft-color;
-  &.sage-label--subtle {
-    background-color: sage-color(white);
-    border-color: $-sage-label-subtle-draft-border;
-  }
-}
-.sage-label--success {
-  color: $sage-label-success-text-color;
-  background-color: $sage-label-success-color;
-  border-color: $sage-label-success-color;
-  &.sage-label--subtle {
-    background-color: sage-color(white);
-    border-color: $-sage-label-subtle-draft-border;
-  }
-}
-.sage-label--warning {
-  color: $sage-label-warning-text-color;
-  background-color: $sage-label-warning-color;
-  border-color: $sage-label-warning-color;
-  &.sage-label--subtle {
-    color: $-sage-label-subtle-warning-color;
-    background-color: sage-color(white);
-    border-color: $-sage-label-subtle-warning-border;
-  }
-}
-.sage-label--danger {
-  color: $sage-label-danger-text-color;
-  background-color: $sage-label-danger-color;
-  border-color: $sage-label-danger-color;
-  &.sage-label--subtle {
-    color: $-sage-label-subtle-danger-color;
-    background-color: sage-color(white);
-    border-color: $-sage-label-subtle-danger-border;
+@each $-color-name, $-color-settings in $-label-colors {
+  .sage-label--#{$-color-name} {
+    $-subtle-settings: map-get($-color-settings, subtle);
+
+    color: map-get($-color-settings, text);
+    background-color: map-get($-color-settings, background);
+    border-color: map-get($-color-settings, border);
+
+    &.sage-label--subtle {
+      color: map-get($-subtle-settings, text);
+      background-color: map-get($-subtle-settings, background);
+      border-color: map-get($-subtle-settings, border);
+    }
   }
 }
