@@ -23,10 +23,6 @@ $-status-table-heading-padding: sage-spacing(xs) sage-spacing(sm);
       border-bottom: 0;
     }
 
-    tr:nth-child(3n) {
-      border-bottom: $-status-table-border;
-    }
-
     tr:last-child {
       border-bottom: 0;
     }
@@ -42,40 +38,17 @@ $-status-table-heading-padding: sage-spacing(xs) sage-spacing(sm);
       text-align: left;
       text-align: inline-start;
     }
-
-    &:nth-child(2) {
-      text-align: left;
-      text-align: inline-start;
-    }
-
-    &:last-child {
-      padding-right: 0;
-    }
   }
 
   td {
     padding: $-status-table-cell-padding;
     vertical-align: middle;
+    text-align: center;
+    border-bottom: sage-border();
 
     &:first-child {
-      padding-left: 0;
-      vertical-align: top;
       font-weight: sage-font-weight(semibold);
-    }
-
-    &:nth-child(2) {
-      border-bottom: sage-border();
-    }
-
-    &:nth-child(3),
-    &:nth-child(4),
-    &:nth-child(5) {
-      text-align: center;
-      border-bottom: sage-border();
-    }
-
-    &:last-child {
-      padding-right: 0;
+      text-align: left;
     }
   }
 }
