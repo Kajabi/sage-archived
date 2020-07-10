@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get 'pages/element'
   get 'pages/objects'
   get 'pages/object'
+  get 'pages/sandbox'
   get 'pages/utilities'
 
 end
