@@ -12,9 +12,10 @@
 @mixin button-style-base {
   @include button-style-reset();
   @extend %t-sage-body-med;
+  
+  display: inline-flex;
   align-self: flex-start;
   align-items: baseline;
-  display: inline-flex;
   position: relative;
   padding: rem(12px) sage-spacing(sm);
   margin-left: sage-spacing(2xs);
@@ -105,6 +106,10 @@
   width: 100%;
 }
 
+.sage-btn--tiny {
+  padding: 0;
+}
+
 .sage-btn--primary {
   color: $sage-btn-primary-text-color;
   background-color: $sage-btn-primary-bg-color;
@@ -183,7 +188,7 @@
   box-shadow: none;
 
   &::after {
-    border-color: sage-color(primary);
+    border-color: sage-color(charcoal, 200);
   }
 
   &:hover:not(:focus):not(:active):not(:disabled):not(.disabled) {
@@ -266,6 +271,7 @@
   float: right;
 }
 
+/* stylelint-disable max-nesting-depth */
 @mixin button-icon-generator($direction) {
   @each $icon-name, $icon-code in $sage-icons {
     // --- Right Icon Buttons
@@ -278,6 +284,10 @@
 
           align-self: center;
           margin: 0 0 0 sage-spacing(xs);
+        }
+
+        &.sage-btn--tiny::before {
+          padding-right: 6px;
         }
       }
     }
@@ -293,29 +303,38 @@
           align-self: center;
           margin: 0 sage-spacing(xs) 0 0;
         }
+
+        &.sage-btn--tiny::before {
+          padding-left: 6px;
+        }
       }
     }
 
     // --- Standalone Icon Buttons
     @else if $direction == only {
       .sage-btn--icon-only-#{$icon-name} {
-        font-size: 0;
+        width: rem(36);
         padding-left: rem(10);
         padding-right: rem(10);
-        width: rem(36);
 
         &::before {
           @include icon-base($icon-name);
 
           transform: scale(1.1);
-          font-size: initial;
           align-self: center;
+        }
+
+        &.sage-btn--tiny {
+          width: auto;
+          padding: 4px;
         }
       }
     }
   }
 }
+/* stylelint-enable max-nesting-depth */
 
 @include button-icon-generator(only);
 @include button-icon-generator(left);
 @include button-icon-generator(right);
+
