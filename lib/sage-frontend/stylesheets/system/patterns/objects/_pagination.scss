@@ -21,18 +21,19 @@ $-pagination-bg-color-dark: sage-color(grey, 300);
 }
 
 .sage-pagination__pages {
-  border: $-pagination-border;
-  border-radius: $-pagination-radius;
   display: flex;
   flex-flow: row wrap;
   padding-left: 0;
   list-style-type: none;
+  border: $-pagination-border;
+  border-radius: $-pagination-radius;
 }
 
 .sage-pagination__item {
-  border-right: $-pagination-border;
   display: flex;
   align-items: center;
+  border-right: $-pagination-border;
+
   &:last-of-type {
     border: 0;
   }

@@ -38,6 +38,9 @@ class PagesController < ApplicationController
     @description = params[:description]
   end
 
+  def sandbox
+  end
+
   def utilities
   end
 

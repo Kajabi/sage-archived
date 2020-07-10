@@ -13,22 +13,22 @@
 }
 
 .sage-panel__header {
-  padding: sage-spacing(xs) sage-spacing(xs) 0 $sage-panel-padding;
   display: flex;
   align-items: center;
-  border-bottom: sage-border();
   min-height: rem(60px);
+  padding: sage-spacing(xs) sage-spacing(xs) 0 $sage-panel-padding;
+  border-bottom: sage-border();
 }
 
 .sage-panel__header-right {
-  margin: 0 0 0 auto;
   display: inline-flex;
   align-self: baseline;
+  margin: 0 0 0 auto;
 }
 
 .sage-panel__body {
-  padding: $sage-panel-padding;
   position: relative;
+  padding: $sage-panel-padding;
 
   > :last-child {
     margin-bottom: 0;
@@ -36,6 +36,6 @@
 }
 
 .sage-panel__footer {
-  border-top: sage-border();
   padding: sage-spacing(xs);
+  border-top: sage-border();
 }

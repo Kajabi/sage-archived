@@ -10,8 +10,8 @@ $-dropdown-width: rem(280px);
 $-dropdown-item-focus-line-spacing-x: sage-spacing(sm);
 
 .sage-dropdown {
-  position: relative;
   display: inline-flex;
+  position: relative;
 }
 
 .sage-dropdown__container {
