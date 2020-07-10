@@ -1,11 +1,28 @@
 <% if is_link_btn %>
-<a href=<%= link_url != "" ? link_url : "#" %> class="sage-btn<% if style_small %> sage-btn--small<% end %><% if style_primary %> sage-btn--primary <% elsif style_secondary %> sage-btn--secondary <% elsif style_tertiary %> sage-btn--tertiary <% elsif style_danger %> sage-btn--danger <% end %><%= "sage-btn--align-end " if style_align_end %><%= sage_icon_name %><% if is_disabled %> disabled<% end %>"<% if is_disabled %> aria-disabled="true"<%end%>>
-  <%= text -%>
-
-</a>
+  <a
+    href=<%= link_url != "" ? link_url : "#" %>
+    class="sage-btn sage-btn--<%= color %><%= " sage-btn--#{size}" if size != "" %><%= " sage-btn--align-end " if align_end %><%= " disabled" if is_disabled %><%= " #{icon_class}" if icon_class != "" %>"
+    <% if is_disabled %> aria-disabled="true"<%end%>
+  >
+    <% if icon_only %>
+      <span class="visually-hidden">
+        <%= text -%>
+      </span>
+    <% else %>
+      <%= text -%>
+    <% end %>
+  </a>
 <% else %>
-<button class="sage-btn<% if style_small %> sage-btn--small<% end %><% if style_primary %> sage-btn--primary <% elsif style_secondary %> sage-btn--secondary <% elsif style_tertiary %> sage-btn--tertiary <% elsif style_danger %> sage-btn--danger <% end %><%= "sage-btn--align-end " if style_align_end %><%= sage_icon_name %>"<% if is_disabled %> disabled<%end%>>
-  <%= text -%>
-
-</button>
+  <button
+    class="sage-btn sage-btn--<%= color %><%= " sage-btn--#{size}" if size != "" %><%= " sage-btn--align-end " if align_end %><%= " disabled" if is_disabled %><%= " #{icon_class}" if icon_class != "" %>"
+    <% if is_disabled %> disabled<%end%>
+  >
+  <% if icon_only %>
+    <span class="visually-hidden">
+      <%= text -%>
+    </span>
+  <% else %>
+    <%= text -%>
+  <% end %>
+  </button>
 <% end %>

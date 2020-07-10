@@ -12,9 +12,10 @@
 @mixin button-style-base {
   @include button-style-reset();
   @extend %t-sage-body-med;
+  
+  display: inline-flex;
   align-self: flex-start;
   align-items: baseline;
-  display: inline-flex;
   position: relative;
   padding: rem(12px) sage-spacing(sm);
   margin-left: sage-spacing(2xs);
@@ -270,6 +271,7 @@
   float: right;
 }
 
+/* stylelint-disable max-nesting-depth */
 @mixin button-icon-generator($direction) {
   @each $icon-name, $icon-code in $sage-icons {
     // --- Right Icon Buttons
@@ -284,10 +286,8 @@
           margin: 0 0 0 sage-spacing(xs);
         }
 
-        &.sage-btn--tiny {
-          &::before {
-            padding-right: 6px;
-          }
+        &.sage-btn--tiny::before {
+          padding-right: 6px;
         }
       }
     }
@@ -304,10 +304,8 @@
           margin: 0 sage-spacing(xs) 0 0;
         }
 
-        &.sage-btn--tiny {
-          &::before {
-            padding-left: 6px;
-          }
+        &.sage-btn--tiny::before {
+          padding-left: 6px;
         }
       }
     }
@@ -315,32 +313,28 @@
     // --- Standalone Icon Buttons
     @else if $direction == only {
       .sage-btn--icon-only-#{$icon-name} {
-        font-size: 0;
+        width: rem(36);
         padding-left: rem(10);
         padding-right: rem(10);
-        width: rem(36);
 
         &::before {
           @include icon-base($icon-name);
 
           transform: scale(1.1);
-          font-size: initial;
           align-self: center;
         }
 
         &.sage-btn--tiny {
-          padding: 4px;
           width: auto;
-
-          &::before {
-            // padding: 4px;
-          }
+          padding: 4px;
         }
       }
     }
   }
 }
+/* stylelint-enable max-nesting-depth */
 
 @include button-icon-generator(only);
 @include button-icon-generator(left);
 @include button-icon-generator(right);
+
