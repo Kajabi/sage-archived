@@ -105,6 +105,10 @@
   width: 100%;
 }
 
+.sage-btn--tiny {
+  padding: 0;
+}
+
 .sage-btn--primary {
   color: $sage-btn-primary-text-color;
   background-color: $sage-btn-primary-bg-color;
@@ -183,7 +187,7 @@
   box-shadow: none;
 
   &::after {
-    border-color: sage-color(primary);
+    border-color: sage-color(charcoal, 200);
   }
 
   &:hover:not(:focus):not(:active):not(:disabled):not(.disabled) {
@@ -279,6 +283,12 @@
           align-self: center;
           margin: 0 0 0 sage-spacing(xs);
         }
+
+        &.sage-btn--tiny {
+          &::before {
+            padding-right: 6px;
+          }
+        }
       }
     }
 
@@ -292,6 +302,12 @@
 
           align-self: center;
           margin: 0 sage-spacing(xs) 0 0;
+        }
+
+        &.sage-btn--tiny {
+          &::before {
+            padding-left: 6px;
+          }
         }
       }
     }
@@ -310,6 +326,15 @@
           transform: scale(1.1);
           font-size: initial;
           align-self: center;
+        }
+
+        &.sage-btn--tiny {
+          padding: 4px;
+          width: auto;
+
+          &::before {
+            // padding: 4px;
+          }
         }
       }
     }

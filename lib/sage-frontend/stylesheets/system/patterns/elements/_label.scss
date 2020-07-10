@@ -82,5 +82,13 @@ $-label-colors: (
       background-color: map-get($-subtle-settings, background);
       border-color: map-get($-subtle-settings, border);
     }
+
+    .sage-btn & {
+      &:focus,
+      &:active {
+        background-color: inherit;
+        border-color: transparent;
+      }
+    }
   }
 }
