@@ -45,7 +45,7 @@ $-helper-decoration-list-success: line-through;
     content: "";
     display: block;
     position: absolute;
-    top: calc(-#{$-helper-pointer-size} - #{rem(1px)});
+    top: -$-helper-pointer-size - rem(1px);
     left: 50%;
     transform: translateX(-50%);
     border-left: $-helper-pointer-size solid transparent;
