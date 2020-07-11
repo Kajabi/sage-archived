@@ -4,20 +4,20 @@
 
 ================================================== */
 
-$-sage-helper-min-height: 5em;
-$-sage-helper-max-width: rem(320px);
-$-sage-helper-padding: sage-spacing(sm);
-$-sage-helper-pointer-size: rem(12px);
-$-sage-helper-color-bg: sage-color(charcoal, 400);
-$-sage-helper-color-text: sage-color(white);
-$-sage-helper-color-list-default: sage-color(grey, 200);
-$-sage-helper-color-list-success: sage-color(grey, 500);
-$-sage-helper-decoration-list-success: line-through;
+$-helper-min-height: 5em;
+$-helper-max-width: rem(320px);
+$-helper-padding: sage-spacing(sm);
+$-helper-pointer-size: rem(12px);
+$-helper-color-bg: sage-color(white);
+$-helper-color-text: sage-color(white);
+$-helper-color-list-default: sage-color(grey, 200);
+$-helper-color-list-success: sage-color(grey, 500);
+$-helper-decoration-list-success: line-through;
 
 
 @mixin input-helper-visible() {
   z-index: sage-z_index(raised);
-  top: calc(100% + #{$-sage-helper-pointer-size});
+  top: calc(100% + #{$-helper-pointer-size});
   opacity: 1;
 }
 
@@ -29,11 +29,10 @@ $-sage-helper-decoration-list-success: line-through;
   transform: translateX(-50%);
   left: 50%;
   width: 100%;
-  max-width: $-sage-helper-max-width;
-  min-height: $-sage-helper-min-height;
-  padding: $-sage-helper-padding;
-  color: $-sage-helper-color-text;
-  background-color: $-sage-helper-color-bg;
+  max-width: $-helper-max-width;
+  min-height: $-helper-min-height;
+  padding: $-helper-padding;
+  background-color: $-helper-color-bg;
   border-radius: sage-border(radius);
   box-shadow: sage-shadow(md);
   transition: $sage-transition;
@@ -41,16 +40,22 @@ $-sage-helper-decoration-list-success: line-through;
   pointer-events: none;
   opacity: 0;
 
-  &::before {
+  &::before,
+  &::after {
     content: "";
     display: block;
     position: absolute;
-    top: -#{$-sage-helper-pointer-size};
+    top: -$-helper-pointer-size - rem(1px);
     left: 50%;
     transform: translateX(-50%);
-    border-left: $-sage-helper-pointer-size solid transparent;
-    border-right: $-sage-helper-pointer-size solid transparent;
-    border-bottom: $-sage-helper-pointer-size solid $-sage-helper-color-bg;
+    border-left: $-helper-pointer-size solid transparent;
+    border-right: $-helper-pointer-size solid transparent;
+    border-bottom: $-helper-pointer-size solid rgba(sage-color(black), 0.08);
+  }
+
+  &::after {
+    top: -#{$-helper-pointer-size};
+    border-bottom-color: $-helper-color-bg;
   }
 
   .sage-input:focus-within ~ & {
@@ -75,7 +80,6 @@ $-sage-helper-decoration-list-success: line-through;
 .sage-hint__list {
   margin-bottom: sage-spacing(sm);
   padding-left: sage-spacing(sm);
-  color: $-sage-helper-color-list-default;
 }
 
 .sage-hint__list-item {
@@ -85,7 +89,7 @@ $-sage-helper-decoration-list-success: line-through;
 }
 
 .sage-hint__list-item--success {
-  color: $-sage-helper-color-list-success;
-  text-decoration: $-sage-helper-decoration-list-success;
+  color: $-helper-color-list-success;
+  text-decoration: $-helper-decoration-list-success;
 }
 
