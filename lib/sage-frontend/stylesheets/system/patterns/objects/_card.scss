@@ -19,9 +19,28 @@
   .sage-card--spaced.sage-card--compact & {
     padding: 0 $sage-card-spacing;
   }
-  :last-child {
+  &:last-child {
     margin: 0;
   }
+}
+
+.sage-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: rem(24px);
+
+  > *:not(:last-child) {
+    margin-right: rem(16px);
+  }
+}
+
+.sage-card__footer--align-left {
+  justify-content: flex-start;
+}
+
+.sage-card__footer--align-right {
+  justify-content: flex-start;
 }
 
 .sage-card__title {
