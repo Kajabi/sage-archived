@@ -86,11 +86,6 @@ Ensure you have…
 2. The [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli#download-and-install) installed
 3. Added the Heroku app as a git remote location (`heroku git:remote -a sage-design-system`)
 
-#### Create A Draft Release In Github
-Create a draft release tagged with the future version-tagged git commit (example: `v0.17.1`) that will be landing in `master` if one does not already exist. Describe the changes incoming since the last version, this is our official changelog.
-
-Save this release "As A Draft" in Github. It will be automatically released when the version-tagged commit is merged into `master`.
-
 #### Version Bump & Deploy Docs With `yarn version`
 Use [`yarn version`](https://classic.yarnpkg.com/en/docs/cli/version/) to automatically bump your frontend package version with a version-tagged git commit. This command also automatically deploys the new version bump to our [sage-design-system.kajabi.com](https://sage-design-system.kajabi.com/) public documentation.
 
@@ -102,6 +97,10 @@ $ yarn version --minor
 
 **Note:** The Sage version is defined by the `./package.json` version and the version-tagged git commit. Please ensure these values match after a version bump.
 
+#### Create A Release In Github
+Create a Github release by selecting the git tag that was automatically pushed when `yarn version` was run. This can be done from the dropdown on the [Github repo's tags page](https://github.com/Kajabi/sage/tags). Describe the changes incoming since the last version, this is our official changelog.
+
+
 ### Update Kajabi-Products To The Latest Sage Version
 Our main app uses a version-tagged commit from the Kajabi/Sage master branch as the source for the Sage frontend dependency.
 
@@ -110,10 +109,6 @@ This can be done using:
 # Example: yarn upgrade sage@git://github.com/Kajabi/sage.git#0.17.0
 $ yarn upgrade sage@git://github.com/Kajabi/sage.git#<GIT VERSION TAG>
 ```
-
-Keep in mind that this version bump should be made in a standalone Kajabi-Products PR with **all specs passing**.
-
-The PR should _only_ include a diff of `package.json` & `yarn.lock`.
 
 ## Installation
 ### Frontend Package
