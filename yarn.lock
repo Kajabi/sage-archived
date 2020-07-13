@@ -1263,6 +1263,11 @@ arrify@^2.0.1:
   resolved "https://registry.yarnpkg.com/arrify/-/arrify-2.0.1.tgz#c9655e9331e0abcd588d2a7cad7e9956f66701fa"
   integrity sha512-3duEwti880xqi4eAMN8AyR4a0ByT90zoYdLlevfrvU43vb0YZwZVfxOgxWrLXXXpyugL0hNZc9G6BiB5B3nUug==
 
+arrive@^2.4.1:
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/arrive/-/arrive-2.4.1.tgz#564c87f20bc09b80de781124d9431695004b8020"
+  integrity sha1-VkyH8gvAm4DeeBEk2UMWlQBLgCA=
+
 asn1.js@^4.0.0:
   version "4.10.1"
   resolved "https://registry.yarnpkg.com/asn1.js/-/asn1.js-4.10.1.tgz#b9c2bf5805f1e64aadeed6df3a2bfafb5a73f5a0"
