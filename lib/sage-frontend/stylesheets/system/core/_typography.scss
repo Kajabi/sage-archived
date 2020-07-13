@@ -198,6 +198,7 @@ body {
     @extend %t-sage-heading-6;
   }
 
+  li:not([class]),
   p:not([class]) {
     @extend %t-sage-body;
   }

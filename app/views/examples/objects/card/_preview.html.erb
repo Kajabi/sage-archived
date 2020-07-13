@@ -135,4 +135,26 @@
       img_alt: ""
     %>
   </div>
+  <div class="sage-col--md-8">
+    <div class="sage-card sage-card--spaced">
+      <%= image_pack_tag("docs/card/card-placeholder-sm.png", class: "sage-card__img", alt: "") %>
+      <h2 class="sage-card__title t-sage-heading-5">Card w/ Rich Text and Footer</h2>
+      <div class="sage-card__body sage-type">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras libero ipsum, congue a efficitur sed, <a href="#">luctus at purus</a>. Vivamus scelerisque pharetra elementum.</p>
+        <ul>
+          <li>Diam in auctor sit quam laoreet imperdiet aliquam. Habitant nunc lacus semper lacus, nec a, sit enim.</li>
+          <li>Diam in auctor sit quam laoreet imperdiet aliquam. Habitant nunc lacus semper lacus, nec a, sit enim.</li>
+        </ul>
+      </div>
+      <div class="sage-card__footer">
+        <a href="#" class="sage-btn sage-btn--tertiary">Previous</a>
+        <%= render "examples/elements/indicator/markup",
+          label: "Page",
+          num_items: 5,
+          current_item: 2
+        %>
+        <a href="#" class="sage-btn sage-btn--primary">Next</a>
+      </div>
+    </div>
+  </div>
 </div>
