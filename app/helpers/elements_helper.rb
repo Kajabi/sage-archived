@@ -76,6 +76,15 @@ module ElementsHelper
         a11y: "todo"
       },
       {
+        title: "indicator",
+        description: "A simple dot-styled position indicator bar. This is currently not intended to be used as navigation but only a visual indicator.",
+        scss: "doing",
+        docs: "doing",
+        rails: "todo",
+        react: "todo",
+        a11y: "doing"
+      },
+      {
         title: "label",
         description: "Labels show concise metadata or indicate status in a compact format.",
         scss: "done",
