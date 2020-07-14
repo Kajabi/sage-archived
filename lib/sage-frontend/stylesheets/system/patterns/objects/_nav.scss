@@ -16,6 +16,7 @@ $-sage-nav-color-background: sage-color(primary, 400);
 .sage-nav__link {
   display: flex;
   align-items: center;
+  height: rem(32px);
   margin-bottom: rem(2px);
   padding: sage-spacing(2xs) sage-spacing(xs);
   color: $-sage-nav-color-text;
