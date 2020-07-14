@@ -3,6 +3,9 @@
   type: object
 
 ================================================== */
+$-sage-nav-color-text: sage-color(charcoal, 400);
+$-sage-nav-color-focus: sage-color(primary);
+$-sage-nav-color-background: sage-color(primary, 400);
 
 .sage-nav__list {
   margin: 0;
@@ -15,8 +18,10 @@
   align-items: center;
   margin-bottom: rem(2px);
   padding: sage-spacing(2xs) sage-spacing(xs);
-  color: sage-color(charcoal, 400);
+  color: $-sage-nav-color-text;
   border-radius: sage-border(radius);
+  transition: $sage-transition;
+  transition-property: background, box-shadow;
 
   &:not(.sage-nav__link--sub) {
     @extend %t-sage-body-med;
@@ -24,11 +29,16 @@
 
   &:hover,
   &:focus {
-    background: sage-color(grey, 300);
+    background: rgba($-sage-nav-color-background, 0.03);
+  }
+
+  &:focus {
+    box-shadow: inset 0 0 0 1px $-sage-nav-color-focus;
+    outline: none;
   }
 
   &:active {
-    background: sage-color(grey, 400);
+    background: rgba($-sage-nav-color-background, 0.12);
   }
 }
 
@@ -39,5 +49,5 @@
 }
 
 .sage-nav__link--active {
-  background: sage-color(sage, 200);
+  background: rgba($-sage-nav-color-background, 0.06);
 }
