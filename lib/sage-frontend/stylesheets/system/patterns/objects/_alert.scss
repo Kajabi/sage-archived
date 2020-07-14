@@ -36,7 +36,6 @@ $-alert-colors: (
 .sage-alert__title {
   @extend %t-sage-body-semi;
   color: sage-color(charcoal, 500);
-  line-height: sage-line-height(md);
 
   @each $name, $color in $-alert-colors {
     .sage-alert--#{$name} & {
@@ -75,7 +74,6 @@ $-alert-colors: (
   width: rem(27.65px);
   padding: 0;
   font-size: sage-font-size(2xl);
-  line-height: 1;
   background-color: transparent;
   border: 0;
   appearance: none;

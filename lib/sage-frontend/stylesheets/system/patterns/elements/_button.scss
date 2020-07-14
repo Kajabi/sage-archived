@@ -17,7 +17,7 @@
   align-self: flex-start;
   align-items: baseline;
   position: relative;
-  padding: rem(12px) sage-spacing(sm);
+  padding: rem(6px) sage-spacing(sm);
   margin-left: sage-spacing(2xs);
   letter-spacing: $sage-btn-letter-spacing;
   color: sage-color(charcoal, 500);
@@ -96,8 +96,8 @@
 }
 
 .sage-btn--small {
-  padding-top: calc(#{sage-spacing(xs)} + #{rem(1px)}); // adds 1px to offset odd line-height #
-  padding-bottom: sage-spacing(xs);
+  padding-top: sage-spacing(3xs);
+  padding-bottom: sage-spacing(3xs);
   font-size: sage-font-size(sm);
 }
 

@@ -32,7 +32,7 @@ $sage-body-font-monospace: "SFMono-Regular", "Menlo", "Monaco", "Consolas", "Lib
 // Text
 $sage-body-font-size: 1rem !default; // 16px
 $sage-body-font-weight: sage-font-weight() !default;
-$sage-body-font-line-height: sage-line-height(lg) !default;
+$sage-body-font-line-height: sage-line-height(md) !default;
 $sage-body-font-color: sage-color(charcoal, 400) !default;
 $sage-body-letter-spacing: sage-letter-spacing(xs) !default;
 $sage-body-margin-bottom: sage-spacing() !default;
@@ -45,7 +45,7 @@ $sage-heading-margin-bottom: sage-spacing() !default;
 // ==================================================
 // GRID
 // ==================================================
-
+$sage-grid-baseline: $default-baseline !default;
 $sage-grid-columns: 12 !default;
 $sage-grid-gap: sage-spacing(sm) !default;
 
