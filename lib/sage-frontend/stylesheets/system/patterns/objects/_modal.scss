@@ -33,10 +33,24 @@ $-modal-padding-y: sage-spacing(md);
 }
 
 .sage-modal__container {
+  // Uses both Animate and Transition properties
+  // - Animate if element has been injected on the page
+  // - Transition if element exists on the page and has `.sage-modal--active` switched on
+
+  @mixin _animation-off {
+    transform: rotate3d(0, 0, 0, -20deg) translateY(6px);
+    opacity: 0;
+  }
+
+  @mixin _animation-on {
+    transform: rotate3d(0, 0, 0, 0) translateY(0);
+    opacity: 1;
+  }
+
+  @include _animation-off;
   z-index: sage-z-index(modal);
-  transform: translateY(2px);
   min-width: min-content;
-  width: sage-container(xs);
+  width: sage-container(modal);
   margin: 20vh 0 0;
   border-radius: sage-border(radius-large);
   background-color: sage-color(white);
@@ -44,17 +58,20 @@ $-modal-padding-y: sage-spacing(md);
   transition: $sage-transition;
   transition-property: transform, opacity;
   will-change: transform, opacity;
-  opacity: 0;
 
   .sage-modal--active & {
-    transform: none;
-    opacity: 1;
+    @keyframes animate-container {
+      0% { @include _animation-off; }
+      100% { @include _animation-on; }
+    }
+
+    @include _animation-on;
+    animation: animate-container 0.1s ease-in;
   }
 }
 
 .sage-modal__header {
-  padding: $-modal-padding-y $-modal-padding-x;
-  border-bottom: sage-border();
+  padding: $-modal-padding-y $-modal-padding-x 0 $-modal-padding-x;
 }
 
 .sage-modal__content {
