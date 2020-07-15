@@ -96,8 +96,8 @@
 }
 
 .sage-btn--small {
-  padding-top: sage-spacing(3xs);
-  padding-bottom: sage-spacing(3xs);
+  padding-top: 0;
+  padding-bottom: 0;
   font-size: sage-font-size(sm);
 }
 
@@ -287,7 +287,7 @@
         }
 
         &.sage-btn--tiny::before {
-          padding-right: 6px;
+          padding-right: rem(4px);
         }
       }
     }
@@ -305,7 +305,7 @@
         }
 
         &.sage-btn--tiny::before {
-          padding-left: 6px;
+          padding-left: rem(4px);
         }
       }
     }
@@ -313,9 +313,11 @@
     // --- Standalone Icon Buttons
     @else if $direction == only {
       .sage-btn--icon-only-#{$icon-name} {
-        width: rem(36);
-        padding-left: rem(10);
-        padding-right: rem(10);
+        justify-content: center;
+        width: rem(36px);
+        padding-right: rem(6px);
+        padding-left: rem(6px);
+        text-align: center;
 
         &::before {
           @include icon-base($icon-name);
@@ -326,7 +328,7 @@
 
         &.sage-btn--tiny {
           width: auto;
-          padding: 4px;
+          padding: rem(4px);
         }
       }
     }
