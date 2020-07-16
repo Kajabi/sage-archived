@@ -4,7 +4,7 @@
 
 ================================================== */
 
-$-modal-padding-x: sage-spacing(lg);
+$-modal-padding-x: sage-spacing(md);
 $-modal-padding-y: sage-spacing(md);
 
 .sage-modal {
@@ -71,11 +71,15 @@ $-modal-padding-y: sage-spacing(md);
 }
 
 .sage-modal__header {
-  padding: $-modal-padding-y $-modal-padding-x 0 $-modal-padding-x;
+  margin: sage-spacing(lg) $-modal-padding-x $-modal-padding-y;
+
+  :last-child {
+    margin-bottom: 0;
+  }
 }
 
 .sage-modal__content {
-  padding: $-modal-padding-y $-modal-padding-x;
+  margin: $-modal-padding-y $-modal-padding-x;
 
   :last-child {
     margin-bottom: 0;
@@ -83,5 +87,5 @@ $-modal-padding-y: sage-spacing(md);
 }
 
 .sage-modal__footer {
-  padding: $-modal-padding-y $-modal-padding-x;
+  margin: $-modal-padding-y $-modal-padding-x;
 }
