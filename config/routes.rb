@@ -14,9 +14,9 @@ Rails.application.routes.draw do
   get 'pages/container'
   get 'pages/icon'
   get 'pages/elements'
-  get 'pages/element'
+  get 'pages/element/:title', to: 'pages#element', as: 'pages_element'
   get 'pages/objects'
-  get 'pages/object'
+  get 'pages/object/:title', to: 'pages#object', as: 'pages_object'
   get 'pages/sandbox'
   get 'pages/utilities'
 

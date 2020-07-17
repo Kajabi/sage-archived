@@ -9,14 +9,14 @@
             <%= yield :sidebar_styles %>
           </ul>
           <% end %></li>
-        <li><%= link_to "Elements", pages_elements_url, class: "sage-nav__link #{current? "sage-nav__link--active", pages_elements_url}" %>
-          <% if current_page?(pages_elements_url) %>
+        <li><%= link_to "Elements", pages_elements_url, class: "sage-nav__link #{"sage-nav__link--active" if current_page_elements?}" %>
+          <% if current_page_elements? %>
           <ul class="sage-nav__list sage-nav__list--sub">
             <%= yield :sidebar_elements %>
           </ul>
           <% end %></li>
-        <li><%= link_to "Objects", pages_objects_url, class: "sage-nav__link #{current? "sage-nav__link--active", pages_objects_url}" %>
-          <% if current_page?(pages_objects_url) %>
+        <li><%= link_to "Objects", pages_objects_url, class: "sage-nav__link #{"sage-nav__link--active" if current_page_objects?}" %>
+          <% if current_page_objects? %>
           <ul class="sage-nav__list">
             <%= yield :sidebar_objects %>
           </ul>

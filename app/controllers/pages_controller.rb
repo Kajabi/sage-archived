@@ -24,7 +24,6 @@ class PagesController < ApplicationController
 
   def element
     @title = params[:title]
-    @description = params[:description]
   end
 
   def elements
@@ -35,7 +34,6 @@ class PagesController < ApplicationController
 
   def object
     @title = params[:title]
-    @description = params[:description]
   end
 
   def sandbox
@@ -51,6 +49,5 @@ class PagesController < ApplicationController
   def breakout
     @type = params[:type]
     @title = params[:title]
-    @description = params[:description]
   end
 end
