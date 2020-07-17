@@ -155,8 +155,16 @@
 @mixin icon-base($icon: null) {
   display: inline-flex;
   text-transform: none;
-  font: normal normal normal 1em/1 "Sage";
+  font-weight: normal;
+  font-style: normal;
+  font-size: inherit;
+  line-height: inherit;
+  font-family: "Sage";
   speak: none;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 
   @if ($icon) {
     content: sage-icon($icon);
