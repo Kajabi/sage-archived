@@ -73,7 +73,7 @@ $-modal-padding-y: sage-spacing(md);
 .sage-modal__header {
   margin: sage-spacing(lg) $-modal-padding-x $-modal-padding-y;
 
-  :last-child {
+  > :last-child {
     margin-bottom: 0;
   }
 }
@@ -81,7 +81,7 @@ $-modal-padding-y: sage-spacing(md);
 .sage-modal__content {
   margin: $-modal-padding-y $-modal-padding-x;
 
-  :last-child {
+  > :last-child {
     margin-bottom: 0;
   }
 }
