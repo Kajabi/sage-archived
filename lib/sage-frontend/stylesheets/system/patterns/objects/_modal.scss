@@ -61,8 +61,12 @@ $-modal-padding-y: sage-spacing(md);
 
   .sage-modal--active & {
     @keyframes animate-container {
-      0% { @include _animation-off; }
-      100% { @include _animation-on; }
+      0% {
+        @include _animation-off;
+      }
+      100% {
+        @include _animation-on;
+      }
     }
 
     @include _animation-on;

@@ -1,5 +1,17 @@
 <div class="sage-tabs">
   <% options.each do |option| %>
-  <a href="#" class="sage-tabs__tab <%= option[:is_active] ? "sage-tabs__tab--active" : "" %>"><%= option[:text] %></a>
+    <a href="#" class="sage-tabs__tab <%= option[:is_active] ? "sage-tabs__tab--active" : "" %>"><%= option[:text] %></a>
+  <% end %>
+</div>
+
+<div class="sage-tabs">
+  <% options.each do |option| %>
+    <button type="button" href="#" class="sage-tabs__tab <%= option[:is_active] ? "sage-tabs__tab--active" : "" %>"><%= option[:text] %></button>
+  <% end %>
+</div>
+
+<div class="sage-tabs sage-tabs--style-radio">
+  <% options.each do |option| %>
+    <button type="button" href="#" class="sage-tabs__tab <%= option[:is_active] ? "sage-tabs__tab--active" : "" %>"><%= option[:text] %></button>
   <% end %>
 </div>
