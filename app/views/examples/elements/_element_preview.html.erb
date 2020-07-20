@@ -3,7 +3,7 @@
     <h2 id="element-<%= title %>" class="sage-media-body t-sage-heading-2 example__title">
       <%= link_to title.titleize, pages_element_path(title), class: "example__link"%>
     </h2>
-    <%= link_to pages_breakout_url(type: "element", title: title, description: description), target: "_blank", class: "example__link example__link--breakout" do %>
+    <%= link_to pages_breakout_path(type: :element, title: title), target: "_blank", class: "example__link example__link--breakout" do %>
       <i class="sage-icon-launch" aria-hidden="true"></i><span class="visually-hidden">Opens <%= title.titleize %> in a new window</span>
     <% end %>
   </div>

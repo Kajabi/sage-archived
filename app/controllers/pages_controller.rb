@@ -1,26 +1,6 @@
 class PagesController < ApplicationController
-  layout "breakout", :only => [ :breakout ]
-
   def index
   end
-
-  # def token
-  # end
-
-  # def color
-  # end
-
-  # def typography
-  # end
-
-  # def Grid
-  # end
-
-  # def container
-  # end
-
-  # def icon
-  # end
 
   def style
     render params[:title]
@@ -53,5 +33,7 @@ class PagesController < ApplicationController
   def breakout
     @type = params[:type]
     @title = params[:title]
+
+    render(layout: 'breakout')
   end
 end

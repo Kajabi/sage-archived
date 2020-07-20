@@ -2,27 +2,28 @@
   <div class="sage-sidebar__body">
     <nav class="sage-nav" aria-label="Main">
       <ul class="sage-nav__list">
-        <li><%= link_to "Introduction", pages_index_url, class: "sage-nav__link #{"sage-nav__link--active" if current_page?(pages_index_url)}" %></li>
+        <li><%= link_to "Introduction", pages_index_path, class: "sage-nav__link #{"sage-nav__link--active" if current_page?(pages_index_path)}" %></li>
         <li><%= link_to "Styles", pages_style_path(title: :token), class: "sage-nav__link #{"sage-nav__link--active" if current_page_styles?}" %>
           <% if current_page_styles? %>
             <ul class="sage-nav__list sage-nav__list--sub">
               <%= yield :sidebar_styles %>
             </ul>
           <% end %></li>
-        <li><%= link_to "Elements", pages_elements_url, class: "sage-nav__link #{"sage-nav__link--active" if current_page_elements?}" %>
+        <li><%= link_to "Elements", pages_elements_path, class: "sage-nav__link #{"sage-nav__link--active" if current_page_elements?}" %>
           <% if current_page_elements? %>
             <ul class="sage-nav__list sage-nav__list--sub">
               <%= yield :sidebar_elements %>
             </ul>
           <% end %></li>
-        <li><%= link_to "Objects", pages_objects_url, class: "sage-nav__link #{"sage-nav__link--active" if current_page_objects?}" %>
+        <li><%= link_to "Objects", pages_objects_path, class: "sage-nav__link #{"sage-nav__link--active" if current_page_objects?}" %>
           <% if current_page_objects? %>
             <ul class="sage-nav__list">
               <%= yield :sidebar_objects %>
             </ul>
           <% end %></li>
-        <li><%= link_to "Utilities", pages_utilities_url, class: "sage-nav__link #{"sage-nav__link--active" if current_page?(pages_utilities_url)}" %></li>
-        <li><%= link_to "Code Status", pages_status_url, class: "sage-nav__link #{"sage-nav__link--active" if current_page?(pages_status_url)}" %></li>
+        <li><%= link_to "Utilities", pages_utilities_path, class: "sage-nav__link #{"sage-nav__link--active" if current_page?(pages_utilities_path)}" %></li>
+        <li><%= link_to "Code Status", pages_status_path, class: "sage-nav__link #{"sage-nav__link--active" if current_page?(pages_status_path)}" %></li>
+        <li><%= link_to "Sandbox", pages_sandbox_path, class: "sage-nav__link #{"sage-nav__link--active" if current_page?(pages_sandbox_path)}" %></li>
       </ul>
     </nav>
   </div>
