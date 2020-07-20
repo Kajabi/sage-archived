@@ -126,7 +126,7 @@ First ensure all new code is completed through a PR and merged into `master`. Th
 5. Return to [Github Releases](https://github.com/Kajabi/sage/releases) and the draft release you consulted earlier. Update its number and title to match the version tag you just bumped and map it to the tag that pushed with your version commit from the step above.
 6. Publish the Release. 
 7. Update the `ux-dev` channel in Kajabi Slack.
-8. Create a new Draft release with the next logical version number matching the existing tag and title naming conventions from the other Releases. This ensure others can add their updates to the release notes as they merge changes moving forward.
+8. Create a new Draft release with the next logical version number matching the existing tag and title naming conventions from the other Releases. This will ensure others can add their updates to the release notes as they merge changes moving forward.
 
 ### Update Kajabi-Products To The Latest Sage Version
 Our main app uses a version-tagged commit from the Kajabi/Sage master branch as the source for the Sage frontend dependency.
