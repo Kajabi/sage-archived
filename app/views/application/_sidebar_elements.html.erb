@@ -1,7 +1,14 @@
 <%= content_for :sidebar_elements do %>
   <% sorted_sage_elements.each do |element| %>
     <li>
-      <%= link_to pages_element_url(title: element[:title], description: element[:description]), class: "sage-nav__link #{current? "sage-nav__link--active", pages_element_url(title: element[:title], description: element[:description])} sage-nav__link--sub" do %><%= element[:title].titleize %><% end %>
+      <%= link_to element[:title].titleize,
+        pages_element_path(element[:title]),
+        class: "
+          sage-nav__link
+          #{"sage-nav__link--active" if current_page?(action: :element, title: element[:title])}
+          sage-nav__link--sub
+        "
+      %>
     </li>
   <% end %>
 <% end %>
