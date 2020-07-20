@@ -1,8 +1,9 @@
+<% info_content = sage_objects.select { |element| element[:title] == @title }[0] %>
 <% props_content = render partial: "examples/objects/#{@title}/props" %>
 <% do_content = render partial: "examples/objects/#{@title}/rules_do" %>
 <% dont_content = render partial: "examples/objects/#{@title}/rules_dont" %>
 
-<%= render "examples/shared/heading" %>
+<%= render "examples/shared/heading", info_content: info_content %>
 
 <%= render "examples/shared/quick_links",
   props_content: props_content,
@@ -11,7 +12,7 @@
 
 <div class="docs-container">
   <h2 id="<%= @title %>-example-preview" class="t-sage-heading-2 example__title">Preview</h2>
-  <div class="example__preview example__preview--page">
+  <div class="example__preview">
     <%= render "examples/objects/#{@title}/preview" %>
   </div>
 </div>
