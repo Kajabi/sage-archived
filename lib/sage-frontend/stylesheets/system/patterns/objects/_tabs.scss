@@ -45,7 +45,6 @@
   }
 }
 
-
 .sage-tabs.sage-tabs--style-radio .sage-tabs__tab {
   @include button-style-reset();
   display: flex;
@@ -88,6 +87,10 @@
     }
   }
 
+  &:focus {
+    outline-color: sage-color(primary);
+  }
+
   &:last-of-type {
     margin-right: 0;
   }
@@ -101,4 +104,14 @@
     box-shadow: sage-shadow(sm);
     border: 5px solid $sage-radio-color-checked;
   }
+}
+
+.sage-tabs-pane {
+  display: none;
+  visibility: hidden;
+}
+
+.sage-tabs-pane--active {
+  display: block;
+  visibility: visible;
 }
