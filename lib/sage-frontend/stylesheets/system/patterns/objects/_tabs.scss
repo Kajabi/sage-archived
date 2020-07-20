@@ -11,6 +11,7 @@
 
 .sage-tabs__tab {
   margin-right: sage-spacing();
+  padding-bottom: sage-spacing(2xs);
   color: $sage-tabs-default-color;
   transition: color $sage-tabs-default-transition;
 
@@ -36,7 +37,6 @@
 
 .sage-tabs__tab--active {
   position: relative;
-  padding-bottom: sage-spacing(xs);
   color: $sage-tabs-active-color;
 
   &::after {
