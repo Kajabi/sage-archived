@@ -65,8 +65,10 @@ $-label-colors: (
   text-align: center;
   white-space: nowrap;
   border-radius: $-label-border-radius;
-  border-width: rem(1px);
-  border-style: solid;
+  // Use outline since border is inside not outside
+  outline-width: rem(1px);
+  outline-style: solid;
+  outline-offset: -1px;
 }
 
 @each $-color-name, $-color-settings in $-label-colors {
@@ -75,19 +77,19 @@ $-label-colors: (
 
     color: map-get($-color-settings, text);
     background-color: map-get($-color-settings, background);
-    border-color: map-get($-color-settings, border);
+    outline-color: map-get($-color-settings, border);
 
     &.sage-label--subtle {
       color: map-get($-subtle-settings, text);
       background-color: map-get($-subtle-settings, background);
-      border-color: map-get($-subtle-settings, border);
+      outline-color: map-get($-subtle-settings, border);
     }
 
     .sage-btn & {
       &:focus,
       &:active {
         background-color: inherit;
-        border-color: transparent;
+        outline-color: transparent;
       }
     }
   }
