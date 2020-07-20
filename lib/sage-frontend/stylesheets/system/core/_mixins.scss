@@ -152,13 +152,22 @@
   arguments: $icon | null|[string]
 ================================================== */
 
+<<<<<<< HEAD
 @mixin icon-base($icon: null, $icon-size: md) {
   $size: map-get($sage-icon-sizes, $icon-size);
 
+=======
+@mixin icon-base($icon: null, $icon-font-size: md) {
+>>>>>>> Tidy icon sizing
   display: inline-flex;
   width: $size;
   height: $size;
   text-transform: none;
+<<<<<<< HEAD
+=======
+  font-weight: normal;
+  font-style: normal;
+>>>>>>> Tidy icon sizing
   font-family: "Sage";
   font-size: $size;
   font-style: normal;
