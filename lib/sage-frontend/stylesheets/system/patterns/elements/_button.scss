@@ -280,7 +280,7 @@
         flex-direction: row-reverse;
 
         &::before {
-          @include icon-base($icon-name);
+          @include icon-base($icon-name, md);
 
           align-self: center;
           margin: 0 0 0 sage-spacing(xs);

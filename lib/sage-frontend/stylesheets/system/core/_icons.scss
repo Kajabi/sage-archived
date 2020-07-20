@@ -13,14 +13,14 @@ $sage-icon-li-margin-right: 0.4em !default;
 
 @font-face {
   font-family: "Sage";
-  src: url("#{$sage-icon-font-path}/Sage.eot");
-  src: url("#{$sage-icon-font-path}/Sage.eot") format("embedded-opentype"),
-    url("#{$sage-icon-font-path}/Sage.woff2") format("woff2"),
-    url("#{$sage-icon-font-path}/Sage.woff") format("woff"),
+  src: url("#{$sage-icon-font-path}/Sage.woff");
+  src: url("#{$sage-icon-font-path}/Sage.woff") format("woff"),
     url("#{$sage-icon-font-path}/Sage.ttf") format("truetype"),
-    url("#{$sage-icon-font-path}/Sage.svg") format("svg");
+    url("#{$sage-icon-font-path}/Sage.svg") format("svg"),
+    url("#{$sage-icon-font-path}/Sage.eot") format("embedded-opentype");
   font-weight: normal;
   font-style: normal;
+  font-display: block;
 }
 
 
@@ -71,9 +71,17 @@ $sage-icon-li-margin-right: 0.4em !default;
 
 // Build icons as `sage-icon-icon-name` based on the map in `tokens/_icon`
 @each $icon-name, $icon-code in $sage-icons {
-  .sage-icon-#{$icon-name}::before {
-    @include icon-base($icon-name);
-    @extend %sage-icon-extensions;
+  @each $size-name, $size in $sage-icon-sizes {
+    $suffix: "-#{$size-name}";
+
+    @if $size-name == md {
+      $suffix: "";
+    }
+
+    .sage-icon-#{$icon-name}#{$suffix}::before {
+      @include icon-base($icon-name, $size-name);
+      @extend %sage-icon-extensions;
+    }
   }
 }
 
