@@ -79,10 +79,6 @@ $sage-icon-li-margin-right: 0.4em !default;
     }
 
     .sage-icon-#{$icon-name}#{$suffix}::before {
-      width: $size;
-      height: $size;
-      font-size: $size;
-      line-height: $size;
       @include icon-base($icon-name, $size-name);
       @extend %sage-icon-extensions;
     }

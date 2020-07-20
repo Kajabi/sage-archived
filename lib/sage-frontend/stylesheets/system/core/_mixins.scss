@@ -152,12 +152,18 @@
   arguments: $icon | null|[string]
 ================================================== */
 
-@mixin icon-base($icon: null, $icon-font-size: md) {
+@mixin icon-base($icon: null, $icon-size: md) {
+  $size: map-get($sage-icon-sizes, $icon-size);
+
   display: inline-flex;
+  width: $size;
+  height: $size;
   text-transform: none;
-  font-weight: normal;
-  font-style: normal;
   font-family: "Sage";
+  font-size: $size;
+  font-style: normal;
+  font-weight: normal;
+  line-height: $size;
   speak: none;
 
   /* Better Font Rendering =========== */
