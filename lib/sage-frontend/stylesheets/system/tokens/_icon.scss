@@ -12,6 +12,17 @@
   @return map-get($sage-icons, $icon-name);
 }
 
+$sage-icon-sizes: (
+  xs: rem(8px),
+  sm: rem(12px),
+  md: rem(16px),
+  lg: rem(20px),
+  xl: rem(24px),
+  2xl: rem(28px),
+  3xl: rem(32px),
+  4xl: rem(36px),
+);
+
 $sage-icons: (
   1-circle: unicode(e900),
   2-circle: unicode(e901),

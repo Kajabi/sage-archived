@@ -152,13 +152,11 @@
   arguments: $icon | null|[string]
 ================================================== */
 
-@mixin icon-base($icon: null) {
+@mixin icon-base($icon: null, $icon-font-size: md) {
   display: inline-flex;
   text-transform: none;
   font-weight: normal;
   font-style: normal;
-  font-size: inherit;
-  line-height: inherit;
   font-family: "Sage";
   speak: none;
 

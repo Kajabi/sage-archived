@@ -71,9 +71,21 @@ $sage-icon-li-margin-right: 0.4em !default;
 
 // Build icons as `sage-icon-icon-name` based on the map in `tokens/_icon`
 @each $icon-name, $icon-code in $sage-icons {
-  .sage-icon-#{$icon-name}::before {
-    @include icon-base($icon-name);
-    @extend %sage-icon-extensions;
+  @each $size-name, $size in $sage-icon-sizes {
+    $suffix: "-#{$size-name}";
+
+    @if $size-name == md {
+      $suffix: "";
+    }
+
+    .sage-icon-#{$icon-name}#{$suffix}::before {
+      width: $size;
+      height: $size;
+      font-size: $size;
+      line-height: $size;
+      @include icon-base($icon-name, $size-name);
+      @extend %sage-icon-extensions;
+    }
   }
 }
 
