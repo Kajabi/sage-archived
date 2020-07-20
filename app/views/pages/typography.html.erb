@@ -5,8 +5,8 @@
 <% end %>
 <%= content_for :quick_links do %>
   <div class="quick-links">
-    <h2 class="quick-links__title t-sage-heading-6">Contents</h2>
-    <ul class="quick-links__body t-sage-body-small">
+    <h2 class="quick-links__title">Contents</h2>
+    <ul class="quick-links__body">
       <li class="quick-links__item">
         <a href="#guidance" class="quick-links__link">Guidance</a>
       </li>
@@ -30,7 +30,7 @@
   </p>
   <p>
     Setting styles individual styles manually should be avoided, but where needed, should be sure to use the appropriate
-    <%= link_to "design tokens", pages_token_url %>.
+    <%= link_to "design tokens", pages_style_path(:token) %>.
     In the end, we prefer adding new entries to the type spec over including one-off styling.
   </p>
   <h2 id="spec-table">Type Spec Reference</h2>

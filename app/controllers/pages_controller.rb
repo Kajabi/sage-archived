@@ -4,22 +4,26 @@ class PagesController < ApplicationController
   def index
   end
 
-  def token
-  end
+  # def token
+  # end
 
-  def color
-  end
+  # def color
+  # end
 
-  def typography
-  end
+  # def typography
+  # end
 
-  def Grid
-  end
+  # def Grid
+  # end
 
-  def container
-  end
+  # def container
+  # end
 
-  def icon
+  # def icon
+  # end
+
+  def style
+    render params[:title]
   end
 
   def element

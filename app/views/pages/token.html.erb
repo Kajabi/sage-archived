@@ -5,8 +5,8 @@
 <% end %>
 <%= content_for :quick_links do %>
   <div class="quick-links">
-    <h2 class="quick-links__title t-sage-heading-6">Contents</h2>
-    <ul class="quick-links__body t-sage-body-small">
+    <h2 class="quick-links__title">Contents</h2>
+    <ul class="quick-links__body">
       <% sage_tokens.each do |token| %>
         <li class="quick-links__item">
           <a href="#<%= token[:category] %>" class="quick-links__link"><%= token[:category].titleize %></a>

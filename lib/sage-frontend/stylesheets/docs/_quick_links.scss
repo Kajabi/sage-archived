@@ -7,12 +7,13 @@
 .quick-links {
   position: sticky;
   top: 0;
-  padding: sage-spacing() 0;
+  padding: sage-spacing();
 }
 
 .quick-links__body {
-  margin-bottom: 0;
-  padding-left: sage-spacing();
+  margin: 0;
+  padding: 0;
+  @extend %t-sage-body-small;
 }
 
 .quick-links__item {
@@ -32,24 +33,11 @@
   margin-left: sage-spacing(sm);
 }
 
-.quick-links__subhead {
-  margin-top: sage-spacing(sm);
-  margin-bottom: sage-spacing(2xs);
-  margin-left: sage-spacing();
-  color: sage-color(charcoal, 400);
+.quick-links__title {
+  @extend %t-sage-heading-6;
 }
 
-.quick-links__title {
-  display: flex;
-  flex-flow: row wrap;
-  align-items: center;
-  margin-bottom: sage-spacing(xs);
-  color: sage-color(charcoal, 200);
-
-  &::before {
-    @include icon-base(file);
-
-    margin-right: sage-spacing(xs);
-    color: sage-color(charcoal, 200);
-  }
+.quick-links__subhead {
+  margin: sage-spacing(sm) 0 sage-spacing(2xs);
+  @extend %t-sage-body-small-med;
 }
