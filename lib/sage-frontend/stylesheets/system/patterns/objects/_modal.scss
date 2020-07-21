@@ -35,7 +35,7 @@ $-modal-padding-y: sage-spacing(md);
 .sage-modal__container {
   // Uses both Animate and Transition properties
   // - Animate if element has been injected on the page
-  // - Transition if element exists on the page and has `.sage-modal--active` switched on
+  // - Transition if element exists on the page and has `.sage-modal--active` added
 
   @mixin _animation-off {
     transform: rotate3d(0, 0, 0, -20deg) translateY(6px);
@@ -52,9 +52,9 @@ $-modal-padding-y: sage-spacing(md);
   min-width: min-content;
   width: sage-container(modal);
   margin: 20vh 0 0;
-  border-radius: sage-border(radius-large);
+  border-radius: sage-border(radius);
   background-color: sage-color(white);
-  box-shadow: sage-shadow(lg);
+  box-shadow: sage-shadow(2xl);
   transition: $sage-transition;
   transition-property: transform, opacity;
   will-change: transform, opacity;

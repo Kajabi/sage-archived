@@ -55,9 +55,9 @@ $-dropdown-item-focus-line-spacing-x: sage-spacing(sm);
   transition: $sage-transition;
   transition-property: transform, z-index;
 
-  // In the event that this dropdown is at the bottom of the page,
-  // add some margin below so that isn't touching the bottom of the page when it expands
-  margin-bottom: sage-spacing();
+  // In the event that this dropdown is at the bottom of the page, add some margin below
+  // to prevent from touching the bottom of the viewport/page when it expands
+  margin-bottom: sage-spacing(); /* stylelint-disable-line order/properties-order */
 
   [aria-expanded="true"] > .sage-dropdown__container & {
     visibility: visible;

@@ -5,8 +5,8 @@
 ================================================== */
 
 .sage-loading {
-  padding: sage-spacing(md);
   position: relative;
+  padding: sage-spacing(md);
 
   &::before {
     content: "";
