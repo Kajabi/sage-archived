@@ -1,17 +1,23 @@
-<div class="sage-tabs">
+<div class="sage-tabs" data-js-tabs>
   <% options.each do |option| %>
-    <a href="#" class="sage-tabs__tab <%= option[:is_active] ? "sage-tabs__tab--active" : "" %>"><%= option[:text] %></a>
+    <a href="#" data-js-tabs-target="<%= option[:id] %>" class="sage-tabs__tab"><%= option[:text] %></a>
   <% end %>
 </div>
 
-<div class="sage-tabs">
+<div class="sage-tabs" data-js-tabs>
   <% options.each do |option| %>
-    <button type="button" href="#" class="sage-tabs__tab <%= option[:is_active] ? "sage-tabs__tab--active" : "" %>"><%= option[:text] %></button>
+    <button type="button" data-js-tabs-target="<%= option[:id] %>" class="sage-tabs__tab"><%= option[:text] %></button>
   <% end %>
 </div>
 
-<div class="sage-tabs sage-tabs--style-radio">
+<div class="sage-tabs sage-tabs--style-radio" data-js-tabs>
   <% options.each do |option| %>
-    <button type="button" href="#" class="sage-tabs__tab <%= option[:is_active] ? "sage-tabs__tab--active" : "" %>"><%= option[:text] %></button>
+    <button type="button" data-js-tabs-target="<%= option[:id] %>" class="sage-tabs__tab"><%= option[:text] %></button>
   <% end %>
 </div>
+
+<% options.each do |option| %>
+  <div class="sage-tabs-pane" data-js-tabs-pane="<%= option[:id] %>">
+    Content for: <%= option[:text] %>
+  </div>
+<% end %>
