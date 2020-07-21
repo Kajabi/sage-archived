@@ -155,6 +155,7 @@
   $size: map-get($sage-icon-sizes, $icon-size);
 
   display: inline-flex;
+  box-sizing: content-box;
   width: $size;
   height: $size;
   text-transform: none;

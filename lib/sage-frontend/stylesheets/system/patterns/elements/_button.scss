@@ -314,9 +314,7 @@
     @else if $direction == only {
       .sage-btn--icon-only-#{$icon-name} {
         justify-content: center;
-        width: rem(36px);
-        padding-right: rem(6px);
-        padding-left: rem(6px);
+        padding: rem(12px);
         text-align: center;
 
         &::before {
@@ -324,6 +322,10 @@
 
           transform: scale(1.1);
           align-self: center;
+        }
+
+        &.sage-btn--small {
+          padding: rem(6px);
         }
 
         &.sage-btn--tiny {
