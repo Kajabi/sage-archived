@@ -37,17 +37,17 @@ $-modal-padding-y: sage-spacing(md);
   // - Animate if element has been injected on the page
   // - Transition if element exists on the page and has `.sage-modal--active` added
 
-  @mixin _animation-off {
+  @mixin animation-off {
     transform: rotate3d(0, 0, 0, -20deg) translateY(6px);
     opacity: 0;
   }
 
-  @mixin _animation-on {
+  @mixin animation-on {
     transform: rotate3d(0, 0, 0, 0) translateY(0);
     opacity: 1;
   }
 
-  @include _animation-off;
+  @include animation-off;
   z-index: sage-z-index(modal);
   min-width: min-content;
   width: sage-container(modal);
@@ -59,19 +59,21 @@ $-modal-padding-y: sage-spacing(md);
   transition-property: transform, opacity;
   will-change: transform, opacity;
 
+  /* stylelint-disable max-nesting-depth */
   .sage-modal--active & {
     @keyframes animate-container {
       0% {
-        @include _animation-off;
+        @include animation-off;
       }
       100% {
-        @include _animation-on;
+        @include animation-on;
       }
     }
 
-    @include _animation-on;
+    @include animation-on;
     animation: animate-container 0.1s ease-in;
   }
+  /* stylelint-enable max-nesting-depth */
 }
 
 .sage-modal__header {
