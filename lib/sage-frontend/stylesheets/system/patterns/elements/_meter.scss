@@ -36,7 +36,6 @@ $-meter-bar-divider-color: sage-color(white);
 .sage-meter__label,
 .sage-meter__description {
   @extend %t-sage-body-xsmall;
-  line-height: 1;
 }
 
 .sage-meter__description {

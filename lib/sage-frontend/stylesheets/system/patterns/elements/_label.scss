@@ -13,6 +13,7 @@ $-label-warning-color: sage-color(yellow, 200) !default;
 $-label-danger-color: sage-color(red, 200) !default;
 $-label-padding: 0 sage-spacing(xs) !default;
 $-label-border-radius: sage-border(radius) !default;
+$-label-inset-border: 0 0 0 1px inset;
 
 $-label-colors: (
   draft: (
@@ -65,8 +66,6 @@ $-label-colors: (
   text-align: center;
   white-space: nowrap;
   border-radius: $-label-border-radius;
-  border-width: rem(1px);
-  border-style: solid;
 }
 
 @each $-color-name, $-color-settings in $-label-colors {
@@ -75,19 +74,19 @@ $-label-colors: (
 
     color: map-get($-color-settings, text);
     background-color: map-get($-color-settings, background);
-    border-color: map-get($-color-settings, border);
+    box-shadow: $-label-inset-border map-get($-color-settings, border);
 
     &.sage-label--subtle {
       color: map-get($-subtle-settings, text);
       background-color: map-get($-subtle-settings, background);
-      border-color: map-get($-subtle-settings, border);
+      box-shadow: $-label-inset-border map-get($-subtle-settings, border);
     }
 
     .sage-btn & {
       &:focus,
       &:active {
         background-color: inherit;
-        border-color: transparent;
+        box-shadow: $-label-inset-border transparent;
       }
     }
   }

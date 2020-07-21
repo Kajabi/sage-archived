@@ -61,7 +61,6 @@ $-sage-table-sort-indicator-direction: rem(7px);
     padding: $sage-table-cell-padding-sm;
     padding: var(--table-cell-padding);
     color: inherit;
-    line-height: sage-line-height(md);
 
     &:first-child {
       padding-left: sage-spacing(sm) / 2;

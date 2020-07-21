@@ -3,8 +3,9 @@
 
 ================================================== */
 
+
 /* ==================================================
-  ** Integer (pixel) to rem function
+** Integer (pixel) to rem function
   Usage: `rem(12)`
 
   Converts an integer to a rem value based on 16 as the base size.
@@ -17,7 +18,7 @@
 
 
 /* ==================================================
-  ** Strip units from value
+** Strip units from value
   Usage: `strip-unit(12px)`
 
   Converts an integer to a rem value based on 16 as the base size.
@@ -30,6 +31,25 @@
   @if type-of($number) == "number" and not unitless($number) {
     @return $number / ($number * 0 + 1);
   }
-
+  
   @return $number;
+}
+
+/* ==================================================
+** Generates a value based on the baseline grid
+  Usage: `baseline(5)`
+
+  Given a baseline grid and a number of units, this function
+  returns the product, resulting in the equivalent of that
+  number of baselines' dimension.
+    arguments:
+    {Number} $num - Unitless number of baseline units
+    {Number} $baseline - The baseline grid value
+    @return {Number} - Product of the arguments
+================================================== */
+
+$default-baseline: rem(4px) !default;
+
+@function baseline($num: 2, $baseline: $default-baseline) {
+  @return $num * $baseline;
 }

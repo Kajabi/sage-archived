@@ -18,7 +18,6 @@ $-banner-colors: (
   height: $sage-banner-height;
   width: 100%;
   padding: sage-spacing(xs) sage-spacing(sm);
-  line-height: sage-line-height(md);
   color: $sage-banner-text-color;
   background: sage-color(primary);
 }
@@ -45,7 +44,6 @@ $-banner-colors: (
   margin-bottom: 0;
   margin-right: sage-spacing(xs);
   color: inherit;
-  line-height: inherit;
 }
 
 .sage-banner__icon {
