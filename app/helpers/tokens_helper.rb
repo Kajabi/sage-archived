@@ -51,11 +51,14 @@ module TokensHelper
         ]
       },
       {
-        category: "font-height",
+        category: "line-height",
         tokens: [
+          { name: "2xs" },
+          { name: "xs" },
           { name: "sm" },
           { name: "md" },
           { name: "lg" },
+          { name: "xl" },
         ]
       },
       {

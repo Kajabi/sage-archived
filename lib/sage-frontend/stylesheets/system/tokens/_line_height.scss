@@ -4,7 +4,10 @@
 }
 
 $sage-line-heights: (
-  sm: 1.25,
-  md: 1.5,
-  lg: 1.75
+  2xs: baseline(4),
+  xs: baseline(5),
+  sm: baseline(6),
+  md: baseline(7),
+  lg: baseline(8),
+  xl: baseline(9),
 );

@@ -48,11 +48,11 @@
       content: "#{$token}";
     }
   }
-  &-font-height::after {
+  &-line-height::after {
     content: "#{sage-line-height()}";
   }
   @each $name, $token in $sage-line-heights {
-    &-font-height-#{$name}::after {
+    &-line-height-#{$name}::after {
       content: "#{$token}";
     }
   }

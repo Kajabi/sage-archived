@@ -45,7 +45,6 @@
   padding-right: $sage-inputfield-padding-label;
   color: inherit;
   font-weight: sage-font-weight(semibold);
-  line-height: initial;
   white-space: nowrap;
   background-color: $sage-inputfield-bg-label;
   pointer-events: none;
@@ -136,7 +135,7 @@
 }
 
 .sage-input__message {
-  @extend %t-sage-body-small;
+  @extend %t-sage-body-xsmall;
 
   .sage-input--error & {
     color: $sage-inputfield-color-error;

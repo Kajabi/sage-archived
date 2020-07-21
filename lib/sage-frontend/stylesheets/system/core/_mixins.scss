@@ -38,7 +38,6 @@
   padding: 0;
   appearance: none;
   font-family: inherit;
-  line-height: 1;
   color: inherit;
   box-shadow: none;
   background-color: transparent;
@@ -152,11 +151,24 @@
   arguments: $icon | null|[string]
 ================================================== */
 
-@mixin icon-base($icon: null) {
+@mixin icon-base($icon: null, $icon-size: md) {
+  $size: map-get($sage-icon-sizes, $icon-size);
+
   display: inline-flex;
+  box-sizing: content-box;
+  width: $size;
+  height: $size;
   text-transform: none;
-  font: normal normal normal 1em/1 "Sage";
-  speak: none;
+  font-family: "Sage";
+  font-size: $size;
+  font-style: normal;
+  font-weight: normal;
+  line-height: $size;
+  speak: never;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 
   @if ($icon) {
     content: sage-icon($icon);

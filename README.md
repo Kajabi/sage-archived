@@ -44,6 +44,14 @@ Additional scripts live within `./package.json` and can be run in the console us
 
 The documentation site can be accessed at [`http://localhost:4000`](http://localhost:4000/). Happy development!
 
+### Contributing
+
+To contribute to Sage development you must be an authorized contributor, typically as an employee of Kajabi. Otherwise:
+
+1. Create a branch off of `master` on which to add your changes. Push the branch and open a PR.
+2. Once approval has been given  merge the PR into `master` using the Squash and Merge option and be sure that your merge commit message succinctly but accurately describes the changes you made.
+3. Find the active draft release in [Github Releases](https://github.com/Kajabi/sage/releases) and edit the release notes to include information relative to your PR. Be sure to note any cases where your work will necessitate updates wherever this system is implemented (see notes below under Version Bump process regarding patch versus minor versions).
+
 
 ## Local Development: Kajabi-Products
 
@@ -79,27 +87,46 @@ $ bin/webpack-dev-server
 It's recommended to run the Sage documentation site in tandem with Kajabi-Products. The documentation site is hosted through port `4000` to avoid conflicts with Kajabi-Products' use of the `30XX` range.
 
 ## Deploying Sage
+
 ### Cut A New Version Of Sage
+
 #### If This Is Your First Deploy
+
 Ensure you have…
+
 1. Deploy rights to the [sage-design-system Heroku app](https://dashboard.heroku.com/apps/sage-design-system/access)
 2. The [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli#download-and-install) installed
 3. Added the Heroku app as a git remote location (`heroku git:remote -a sage-design-system`)
 
 #### Version Bump & Deploy Docs With `yarn version`
-Use [`yarn version`](https://classic.yarnpkg.com/en/docs/cli/version/) to automatically bump your frontend package version with a version-tagged git commit. This command also automatically deploys the new version bump to our [sage-design-system.kajabi.com](https://sage-design-system.kajabi.com/) public documentation.
 
-```bash
-$ yarn version --minor
-# Use the --minor or --patch flags to update the minor or patch version number respectively
-# This will automatically, push the git-tagged commit to github and deploy to Heroku
-```
+First ensure all new code is completed through a PR and merged into `master`. Then:
 
-**Note:** The Sage version is defined by the `./package.json` version and the version-tagged git commit. Please ensure these values match after a version bump.
+1. Check with the UX Dev group via the `ux-dev` channel in Kajabi Slack to see if there are any concerns regarding a version bump. Assuming no concerns are voiced, continue.
+2. Find the current draft release in [Github Releases](https://github.com/Kajabi/sage/releases) and review its contents in order to determine what this next version bump should be. Generally:
 
-#### Create A Release In Github
-Create a Github release by selecting the git tag that was automatically pushed when `yarn version` was run. This can be done from the dropdown on the [Github repo's tags page](https://github.com/Kajabi/sage/tags). Describe the changes incoming since the last version, this is our official changelog.
+    - A Patch (_._.n; non-blocking changes) should be used when only small styling is adjusted or new elements/objects are added that are yet to be implemented in `kajabi-products` or other repos that use this design system.
+    - A Minor bump (_.n.0; blocking changes) should be used when more significant styling is completed, markup is changed on any object or element, or substantive changes are made to the system's documentation. _When in doubt, bump a new `minor` version.
 
+    Keep the version draft open as you will return to it shortly. 
+
+3. From the `master` branch (after first ensuring your local branch is up to date with `origin`) use [`yarn version`](https://classic.yarnpkg.com/en/docs/cli/version/) to bump the package version with a version-tagged git commit as follows:
+
+    ```bash
+    $ yarn version --minor
+    # Use the --minor or --patch flags to update the minor or patch version number respectively
+    # This will automatically, push the git-tagged commit to github and deploy to Heroku
+    ```
+
+    **Note:** The Sage version is defined by the `./package.json` version and the version-tagged git commit. Please ensure these values match after a version bump.
+
+    This command also automatically deploys the new version bump to our [sage-design-system.kajabi.com](https://sage-design-system.kajabi.com/) public documentation.
+
+4. Once the deployment is complete make sure the version commit is also pushed to the `origin`. 
+5. Return to [Github Releases](https://github.com/Kajabi/sage/releases) and the draft release you consulted earlier. Update its number and title to match the version tag you just bumped and map it to the tag that pushed with your version commit from the step above.
+6. Publish the Release. 
+7. Update the `ux-dev` channel in Kajabi Slack.
+8. Create a new Draft release with the next logical version number matching the existing tag and title naming conventions from the other Releases. This will ensure others can add their updates to the release notes as they merge changes moving forward.
 
 ### Update Kajabi-Products To The Latest Sage Version
 Our main app uses a version-tagged commit from the Kajabi/Sage master branch as the source for the Sage frontend dependency.
