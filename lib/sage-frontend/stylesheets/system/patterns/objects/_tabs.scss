@@ -4,15 +4,15 @@
 
 ================================================== */
 
-.sage-tabs {
+.sage-tabs:not(.sage-tabs--style-radio) {
   display: flex;
-  margin-bottom: sage-spacing();
+  margin-bottom: $sage-inputfield-spacing;
 }
 
 .sage-tabs:not(.sage-tabs--style-radio) .sage-tabs__tab {
   @include button-style-reset();
   margin-right: sage-spacing();
-  padding: 0 0 sage-spacing(xs);
+  padding: sage-spacing(sm) 0;
   color: $sage-tabs-default-color;
   transition: color $sage-tabs-default-transition;
 
