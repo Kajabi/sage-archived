@@ -287,7 +287,7 @@
         }
 
         &.sage-btn--tiny::before {
-          padding-right: rem(4px);
+          padding-right: sage-spacing(2xs);
         }
       }
     }
@@ -305,7 +305,7 @@
         }
 
         &.sage-btn--tiny::before {
-          padding-left: rem(4px);
+          padding-left: sage-spacing(2xs);
         }
       }
     }
@@ -328,7 +328,7 @@
 
         &.sage-btn--tiny {
           width: auto;
-          padding: rem(4px);
+          padding: sage-spacing(2xs);
         }
       }
     }

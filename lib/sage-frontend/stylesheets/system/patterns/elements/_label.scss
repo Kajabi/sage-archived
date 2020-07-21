@@ -13,6 +13,7 @@ $-label-warning-color: sage-color(yellow, 200) !default;
 $-label-danger-color: sage-color(red, 200) !default;
 $-label-padding: 0 sage-spacing(xs) !default;
 $-label-border-radius: sage-border(radius) !default;
+$-label-inset-border: 0 0 0 1px inset;
 
 $-label-colors: (
   draft: (
@@ -65,10 +66,6 @@ $-label-colors: (
   text-align: center;
   white-space: nowrap;
   border-radius: $-label-border-radius;
-  // Use outline since border is inside not outside
-  outline-width: rem(1px);
-  outline-style: solid;
-  outline-offset: -1px;
 }
 
 @each $-color-name, $-color-settings in $-label-colors {
@@ -77,19 +74,19 @@ $-label-colors: (
 
     color: map-get($-color-settings, text);
     background-color: map-get($-color-settings, background);
-    outline-color: map-get($-color-settings, border);
+    box-shadow: $-label-inset-border map-get($-color-settings, border);
 
     &.sage-label--subtle {
       color: map-get($-subtle-settings, text);
       background-color: map-get($-subtle-settings, background);
-      outline-color: map-get($-subtle-settings, border);
+      box-shadow: $-label-inset-border map-get($-subtle-settings, border);
     }
 
     .sage-btn & {
       &:focus,
       &:active {
         background-color: inherit;
-        outline-color: transparent;
+        box-shadow: $-label-inset-border transparent;
       }
     }
   }
