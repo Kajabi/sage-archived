@@ -9,100 +9,102 @@
   margin-bottom: $sage-inputfield-spacing;
 }
 
-.sage-tabs:not(.sage-tabs--style-radio) .sage-tabs__tab {
+.sage-tabs__tab {
   @include button-style-reset();
-  margin-right: sage-spacing();
-  padding: sage-spacing(sm) 0;
-  color: $sage-tabs-default-color;
-  transition: color $sage-tabs-default-transition;
-
-  @extend %t-sage-body-med;
-
-  &:last-of-type {
-    margin-right: 0;
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    height: $sage-tabs-active-border-height;
-    background: $sage-tabs-active-border-color;
-    border-radius: $sage-tabs-active-border-radius;
-    transition: opacity $sage-tabs-default-transition, transform $sage-tabs-default-transition;
-    opacity: 0;
-  }
-}
-
-.sage-tabs:not(.sage-tabs--style-radio) .sage-tabs__tab--active {
   position: relative;
-  color: $sage-tabs-active-color;
-
-  &::after {
-    opacity: 1;
-  }
-}
-
-.sage-tabs.sage-tabs--style-radio .sage-tabs__tab {
-  @include button-style-reset();
-  display: flex;
-  flex-grow: 1;
-  flex-basis: 0;
-  align-items: center;
-  height: rem(60);
-  color: $sage-tabs-default-color;
-  padding: 0 sage-spacing(sm);
-  border: sage-border();
-  border-radius: sage-border(radius);
-  margin: 0 sage-spacing(sm) 0 0;
-  transition: color $sage-radio-transition, background-color $sage-radio-transition, box-shadow $sage-radio-transition;
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;
+  color: $sage-tabs-default-color;
+  margin: 0 sage-spacing(sm) 0 0;
+  transition: color $sage-radio-transition, background-color $sage-radio-transition, box-shadow $sage-radio-transition;
+  display: flex;
+  align-items: center;
 
   @extend %t-sage-body-med;
 
-  &:before {
-    content: "";
-    height: $sage-radio-selected-indicator-size;
-    width: $sage-radio-selected-indicator-size;
-    background-color: $sage-radio-selected-indicator-color;
-    transition: border $sage-radio-transition;
-    display: inline-block;
-    border-radius: sage-border(radius-round);
-    border: sage-border();
-    margin: 0 sage-spacing(xs) 0 0;
-    box-sizing: border-box;
-  }
+  :not(.sage-tabs--style-radio) > & {
+    height: rem(40);
+    outline: none;
 
-  &:hover {
-    background-color: sage-color(grey, 200);
-    color: sage-color(charcoal, 300);
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: $sage-tabs-active-border-height;
+      background: $sage-tabs-active-border-color;
+      border-radius: $sage-tabs-active-border-radius;
+      transition: opacity $sage-tabs-default-transition, transform $sage-tabs-default-transition;
+      opacity: 0;
+    }
 
-    &:before {
-      box-shadow: sage-shadow(sm);
-      border-color: $sage-radio-color-hover;
+    &:hover {
+      color: $sage-tabs-active-color;
+    }
+
+    &:focus {
+      &::after {
+        opacity: 1;
+      }
+    }
+
+    &:active,
+    &.sage-tabs__tab--active {
+      color: $sage-tabs-active-color;
+
+      &::after {
+        opacity: 1;
+      }
     }
   }
 
-  &:focus {
-    outline-color: sage-color(primary);
+  .sage-tabs--style-radio > & {
+    padding: 0 sage-spacing(sm);
+    height: rem(60);
+    flex-grow: 1;
+    flex-basis: 0;
+    color: $sage-tabs-default-color;
+    border: sage-border();
+    border-radius: sage-border(radius);
+
+    &:before {
+      content: "";
+      height: $sage-radio-selected-indicator-size;
+      min-width: $sage-radio-selected-indicator-size;
+      width: $sage-radio-selected-indicator-size;
+      background-color: $sage-radio-selected-indicator-color;
+      transition: border $sage-radio-transition;
+      display: inline-block;
+      border-radius: sage-border(radius-round);
+      border: sage-border();
+      margin: 0 sage-spacing(xs) 0 0;
+      box-sizing: border-box;
+    }
+
+    &:hover {
+      background-color: sage-color(grey, 100);
+      color: $sage-tabs-active-color;
+    }
+
+    &:focus {
+      outline-color: sage-color(primary);
+    }
+
+    &:active,
+    &.sage-tabs__tab--active {
+      color: $sage-tabs-active-color;
+
+      &:before {
+        box-shadow: sage-shadow(sm);
+        border-width: 5px;
+        border-color: $sage-radio-color-checked;
+      }
+    }
   }
 
   &:last-of-type {
     margin-right: 0;
-  }
-
-}
-
-.sage-tabs.sage-tabs--style-radio .sage-tabs__tab.sage-tabs__tab--active {
-  color: sage-color(charcoal, 500);
-
-  &:before {
-    box-shadow: sage-shadow(sm);
-    border: 5px solid $sage-radio-color-checked;
   }
 }
 
