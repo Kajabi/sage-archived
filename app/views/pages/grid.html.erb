@@ -48,7 +48,7 @@
 
   <hr>
 
-  <h3 class="t-heading-5" id="grid-setting-widths">Setting widths</h3>
+  <h3 class="t-sage-heading-5" id="grid-setting-widths">Setting widths</h3>
   <p>Our default grid consists of <strong>12 columns per row</strong>.</p>
   <div class="sage-row" aria-hidden="true">
     <div class="sage-col-1 sage-col--md-hide"><div class="grid-item grid-item--small">1</div></div>
@@ -75,7 +75,7 @@
     <div class="sage-col-3"><div class="grid-item">25%</div></div>
   </div>
 
-  <h3 class="t-heading-5" id="grid-columns">Column combinations</h3>
+  <h3 class="t-sage-heading-5" id="grid-columns">Column combinations</h3>
   <p>In the example below, each <code>.sage-col</code> example is named with the number of columns it represents. Generally, a single column (<code>.sage-col-1</code>) is too small for content, so <code>.sage-col-2</code> is the smallest width recommended for use.</p>
   <% 1.upto(9) do |num| %>
     <div class="sage-row">
@@ -84,7 +84,7 @@
     </div>
   <% end %>
 
-  <h3 class="t-heading-5" id="grid-spacing">Column spacing</h3>
+  <h3 class="t-sage-heading-5" id="grid-spacing">Column spacing</h3>
   <p>Spacing between columns has been predefined at the Sage system level in the <code>_variables.scss</code> file. By default, this is set to <code>sage-spacing(sm)</code> (<a href="/sage/pages/token#spacing" rel="nofollow">1rem</a>).</p>
 
 </div>
@@ -93,14 +93,14 @@
   <h2 id="grid-responsive">Responsive grid layouts</h2>
   <p>Viewing the <a href="#grid-columns">column combinations example above</a>, you may have noticed that the columns display as full-width blocks when viewed at smaller screen sizes. To account for the increased or decreased space available, we can target specific screen sizes (called <em>breakpoints</em>) by modifying the classnames used in each column. This is referred to as <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design" rel="nofollow">responsive design</a>, giving us greater flexibility in our layouts.</p>
 
-  <h3 class="t-heading-5" id="grid-responsive-mobile-first">Mobile first</h3>
+  <h3 class="t-sage-heading-5" id="grid-responsive-mobile-first">Mobile first</h3>
   <p>There are two primary methods to responsive design: <em>desktop-first</em> and <em>mobile-first</em>. While the full details of these approaches is beyond the scope of this documentation, you should be aware that <strong>Sage follows the mobile-first approach wherever possible</strong>. This means that base CSS is geared towards small screens/mobile devices, with additional styles added at increasing <code>min-width</code> (minimum width) breakpoints. This can help positively influence both real and perceived performance on mobile devices.</p>
 
-  <h4 class="t-heading-6">Preventing responsive layouts</h4>
+  <h4 class="t-sage-heading-6">Preventing responsive layouts</h4>
   <p>At screen sizes below <code>sm</code> (&lt; 545px), all responsive columns will display as full-width, regardless of the breakpoint keyword in use. <strong>This behavior cannot be overridden</strong>.</p>
   <p>If your layout does not follow this pattern and must keep its column structure, you will need to use the classname <em>without</em> responsive keywords, as illustrated in the <a href="#grid-setting-widths">"setting widths" section</a>.</p>
 
-  <h3 class="t-heading-5" id="grid-responsive-naming">Naming conventions</h3>
+  <h3 class="t-sage-heading-5" id="grid-responsive-naming">Naming conventions</h3>
   <p>Classnames for responsive columns follow this pattern: <code>.sage-col--&lt;breakpoint&gt;-&lt;# of columns&gt;</code></p>
   <p>Here, <code>&lt;breakpoint&gt;</code> is the screen size at which the layout will change, and <code>&lt;# of columns&gt;</code> sets the width of the column, <a href="#grid-setting-widths">noted in the sections above</a>.</p>
   <p>The predefined breakpoints keywords are <code>sm</code>, <code>md</code>, and <code>lg</code>:</p>
@@ -136,12 +136,9 @@
     </div>
   </div>
 
-  <br>
+  <h3 class="t-sage-heading-5">Example layouts</h3>
 
-  <h3 class="t-heading-5">Example layouts</h3>
-  <br>
-
-  <h4 class="t-heading-6">Small breakpoint</h4>
+  <h4 class="t-sage-heading-6">Small breakpoint</h4>
   <div class="sage-row">
     <div class="sage-col--sm-6"><div class="grid-item">Col</div></div>
     <div class="sage-col--sm-6"><div class="grid-item">Col</div></div>
@@ -151,7 +148,7 @@
   &lt;div class=&quot;sage-col--sm-6&quot;&gt;Col&lt;/div&gt;
 &lt;/div&gt;</code></pre>
 
-  <h4 class="t-heading-6">Medium breakpoint</h4>
+  <h4 class="t-sage-heading-6">Medium breakpoint</h4>
   <div class="sage-row">
     <div class="sage-col--md-4"><div class="grid-item">Col</div></div>
     <div class="sage-col--md-4"><div class="grid-item">Col</div></div>
@@ -163,7 +160,7 @@
   &lt;div class=&quot;sage-col--md-4&quot;&gt;Col&lt;/div&gt;
 &lt;/div&gt;</code></pre>
 
-  <h4 class="t-heading-6">Large breakpoint</h4>
+  <h4 class="t-sage-heading-6">Large breakpoint</h4>
   <div class="sage-row">
     <div class="sage-col--lg-4"><div class="grid-item">Col</div></div>
     <div class="sage-col--lg-8"><div class="grid-item">Col</div></div>
@@ -174,7 +171,7 @@
 &lt;/div&gt;</code></pre>
 
 
-  <h3 class="t-heading-5" id="grid-responsive-show-hide">Hiding and showing content</h3>
+  <h3 class="t-sage-heading-5" id="grid-responsive-show-hide">Hiding and showing content</h3>
   <p>In cases where content will be hidden or shown at specific screen sizes, classes using breakpoint keywords are available. These classes use sizing from <code>sage-breakpoint()</code> to affect where content is displayed.</p>
   <p>Classnames for showing and hiding columns are composed in the following pattern: <code>.sage-col--&lt;breakpoint&gt;-&lt;show or hide&gt;</code>.</p>
   <p>As with the naming conventions for responsive columns, <code>&lt;breakpoint&gt;</code> corresponds to the breakpoint keyword, and <code>&lt;show or hide&gt;</code> indicates whether the content should be displayed with this breakpoint.</p>
@@ -273,7 +270,7 @@
 
 <div class="docs-container sage-type">
   <h2 id="grid-alignment">Alignment</h2>
-  <h3 class="t-heading-5" id="grid-alignment-vertical">Vertical alignment</h3>
+  <h3 class="t-sage-heading-5" id="grid-alignment-vertical">Vertical alignment</h3>
   <p>The default vertical alignment for each <code>.sage-row</code> aligns its columns to the top of the <code>.sage-row</code> container. This can be changed by adding one of the following <code>sage-row--valign</code> classes:</p>
 
   <div class="sage-table-wrapper">
@@ -303,9 +300,7 @@
     </div>
   </div>
 
-  <br>
-
-  <h3 class="t-heading-5" id="grid-alignment-horizontal">Horizontal alignment</h3>
+  <h3 class="t-sage-heading-5" id="grid-alignment-horizontal">Horizontal alignment</h3>
   <p>The horizontal alignment default for each <code>.sage-row</code> aligns columns to the start (left) of the <code>.sage-row</code> container. This alignment will only be visible if the number of columns of the <strong>total</strong> columns is fewer than the  To alter this, add a modifying <code>sage-row--align</code> class:</p>
 
   <div class="sage-table-wrapper">
