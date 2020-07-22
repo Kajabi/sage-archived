@@ -24,10 +24,12 @@
   @extend %t-sage-body-med;
 
   :not(.sage-tabs--style-radio) > & {
+    $item-underline: "::after";
+
     padding: 0 0 sage-spacing(xs);
     outline: none;
 
-    &::after {
+    &#{$item-underline} {
       content: "";
       position: absolute;
       right: 0;
@@ -45,7 +47,7 @@
     }
 
     &:focus {
-      &::after {
+      &#{$item-underline} {
         opacity: 1;
       }
     }
@@ -54,13 +56,15 @@
     &.sage-tabs__tab--active {
       color: $sage-tabs-active-color;
 
-      &::after {
+      &#{$item-underline} {
         opacity: 1;
       }
     }
   }
 
   .sage-tabs--style-radio > & {
+    $item-radio: "::before";
+
     flex-grow: 1;
     flex-basis: 0;
     padding: sage-spacing(sm);
@@ -68,7 +72,7 @@
     border: sage-border();
     border-radius: sage-border(radius);
 
-    &::before {
+    &#{$item-radio} {
       content: "";
       display: inline-block;
       box-sizing: border-box;
@@ -95,7 +99,7 @@
     &.sage-tabs__tab--active {
       color: $sage-tabs-active-color;
 
-      &::before {
+      &#{$item-radio} {
         box-shadow: sage-shadow(sm);
         border-width: 5px;
         border-color: $sage-radio-color-checked;

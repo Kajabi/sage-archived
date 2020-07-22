@@ -56,7 +56,7 @@ $-dropdown-item-focus-line-spacing-x: sage-spacing(sm);
   transition-property: transform, z-index;
 
   // In the event that this dropdown is at the bottom of the page, add some margin below
-  // to prevent from touching the bottom of the viewport/page when it expands
+  // to prevent it from touching the bottom of the viewport/page when it expands
   margin-bottom: sage-spacing(); /* stylelint-disable-line order/properties-order */
 
   [aria-expanded="true"] > .sage-dropdown__container & {
@@ -114,25 +114,23 @@ $option-icon: "::before";
     background-color: sage-color(grey, 200);
   }
 
+  &:active,
   &:focus {
     outline: none;
 
     &#{$option-underline} {
       right: $-dropdown-item-focus-line-spacing-x;
       left: $-dropdown-item-focus-line-spacing-x;
-      border-bottom-color: currentColor;
+
     }
   }
 
-  &:active {
-    outline: none;
+  &:active#{$option-underline} {
+    border-bottom-color: sage-color(primary);
+  }
 
-    &#{$option-underline} {
-      right: $-dropdown-item-focus-line-spacing-x;
-      left: $-dropdown-item-focus-line-spacing-x;
-
-      border-bottom-color: sage-color(primary);
-    }
+  &:focus#{$option-underline} {
+    border-bottom-color: currentColor;
   }
 }
 
