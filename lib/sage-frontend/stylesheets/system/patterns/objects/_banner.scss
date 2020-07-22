@@ -12,12 +12,11 @@ $-banner-colors: (
 );
 
 .sage-banner {
-  @extend %t-sage-body-small-semi;
+  @extend %t-sage-body-xsmall-semi;
   display: flex;
   align-items: center;
-  height: $sage-banner-height;
   width: 100%;
-  padding: sage-spacing(xs) sage-spacing(sm);
+  padding: sage-spacing(sm);
   color: $sage-banner-text-color;
   background: sage-color(primary);
 }
