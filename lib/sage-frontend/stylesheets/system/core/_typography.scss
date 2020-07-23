@@ -240,7 +240,8 @@ body {
   }
 
   // Hyperlinks get some default coloring applied
-  a:not([class]) {
+  a:not([class]),
+  a[class*="sage-link"] {
     color: sage-color(primary);
   }
 

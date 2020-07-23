@@ -94,6 +94,15 @@ module ElementsHelper
         a11y: "todo"
       },
       {
+        title: "link",
+        description: "While links have default styling in the app, some links deserve a little more ❤️",
+        scss: "done",
+        docs: "todo",
+        rails: "todo",
+        react: "todo",
+        a11y: "todo"
+      },
+      {
         title: "loader",
         description: "Stylized loading animations for use with elements or objects",
         scss: "done",
