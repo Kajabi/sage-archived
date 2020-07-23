@@ -26,10 +26,15 @@ $-alert-colors: (
   .sage-alert--#{$name} {
     border-color: sage-color($color);
     background: sage-color($color, 100);
+
+    a:not([class]) {
+      color: sage-color($color, 500);
+      text-decoration: underline;
+    }
   }
 }
 
-.sage-alert-copy {
+.sage-alert__copy {
   padding-right: rem(26px);
 }
 

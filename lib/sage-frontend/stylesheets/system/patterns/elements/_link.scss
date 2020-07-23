@@ -1,0 +1,38 @@
+.sage-link--launch,
+a[target="_blank"]:not(.sage-link--no-launch) {
+  &::after {
+    margin-left: sage-spacing(xs);
+    @include icon-base(launch, sm);
+  }
+}
+
+.sage-link--help,
+.sage-link--help-icon-only {
+  position: relative;
+
+  &::before {
+    @include icon-base(question-circle, xl);
+
+    transform: translateY(rem(1px));
+    color: sage-color(grey, 500);
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    outline: 0;
+
+    &::before {
+      color: sage-color(charcoal);
+    }
+  }
+}
+
+.sage-link--help {
+  display: inline-flex;
+  align-items: center;
+
+  &::before {
+    margin-right: sage-spacing(xs);
+  }
+}

@@ -35,11 +35,11 @@ $sage-body-font-weight: sage-font-weight() !default;
 $sage-body-font-line-height: sage-line-height(md) !default;
 $sage-body-font-color: sage-color(charcoal, 400) !default;
 $sage-body-letter-spacing: sage-letter-spacing(xs) !default;
-$sage-body-margin-bottom: sage-spacing() !default;
+$sage-body-margin-bottom: sage-spacing(sm) !default;
 
 // Headings
 $sage-heading-font-color: sage-color(charcoal, 500) !default;
-$sage-heading-margin-bottom: sage-spacing() !default;
+$sage-heading-margin-bottom: sage-spacing(sm) !default;
 
 
 // ==================================================
