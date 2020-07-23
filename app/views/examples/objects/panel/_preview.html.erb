@@ -1,3 +1,4 @@
+<h3>Default Panel</h3>
 <%= render "examples/objects/panel/markup",
   header: "Header Content",
   body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
@@ -5,9 +6,39 @@
   is_accordion: false
 %>
 
+<h3>Accordion Panel</h3>
+<h4>Single/independent panel</h4>
 <%= render "examples/objects/panel/markup",
   header: "Header Content",
   body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   footer: false,
   is_accordion: true
 %>
+
+<h4>Panel group</h4>
+<ul class="sage-panel-group" data-js-accordion="group-toggle-solo">
+  <li class="sage-panel sage-panel--accordion">
+    <div class="sage-panel__header" data-js-accordion="header">
+      <h4 class="sage-panel__title">Tab 1</h4>
+    </div>
+    <div class="sage-panel__body sage-type" data-js-accordion="body">
+      <p>Lorem ipsum dolor sit</p>
+    </div>
+  </li>
+  <li class="sage-panel sage-panel--accordion">
+    <div class="sage-panel__header" data-js-accordion="header">
+      <h4 class="sage-panel__title">Tab 2</h4>
+    </div>
+    <div class="sage-panel__body sage-type" data-js-accordion="body">
+      <p>Lorem ipsum dolor sit</p>
+    </div>
+  </li>
+  <li class="sage-panel sage-panel--accordion">
+    <div class="sage-panel__header" data-js-accordion="header">
+      <h4 class="sage-panel__title">Tab 3</h4>
+    </div>
+    <div class="sage-panel__body sage-type" data-js-accordion="body">
+      <p>Lorem ipsum dolor sit</p>
+    </div>
+  </li>
+</ul>

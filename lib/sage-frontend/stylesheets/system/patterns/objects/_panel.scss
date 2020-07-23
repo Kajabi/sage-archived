@@ -4,12 +4,18 @@
 
 ================================================== */
 
+$-panel-transition: 0.2s linear;
+
 %sage-panel,
 .sage-panel {
   margin-bottom: sage-spacing();
   background: $sage-panel-bg-color;
   border-radius: $sage-panel-border-radius;
   box-shadow: $sage-panel-box-shadow;
+
+  .sage-panel-group &:not(:last-child) {
+    margin-bottom: sage-spacing(xs);
+  }
 }
 
 .sage-panel__header {
@@ -30,6 +36,7 @@
       transform-origin: center;
       margin: 0 0 0 auto;
       color: sage-color(charcoal, 100);
+      transition: $-panel-transition transform;
     }
 
     &:focus {
@@ -62,6 +69,7 @@
     overflow: hidden;
     padding-top: 0;
     padding-bottom: 0;
+    transition: $-panel-transition height;
 
     &::after,
     &::before {
@@ -100,4 +108,11 @@
 
     color: sage-color(charcoal, 400);
   }
+}
+
+.sage-panel-group {
+  margin-top: sage-spacing();
+  margin-bottom: sage-spacing();
+  padding-left: 0;
+  list-style: none;
 }
