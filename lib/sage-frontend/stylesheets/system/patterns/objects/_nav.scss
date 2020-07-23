@@ -57,10 +57,10 @@ $-sage-nav-color-background: sage-color(primary, 400);
   display: inline-block;
   
   &:first-child {
-    margin-right: rem(8px);
+    margin-right: sage-spacing(xs);
   }
   
   &:not(:first-child) {
-    margin-left: rem(8px);
+    margin-left: sage-spacing(xs);
   }
 }

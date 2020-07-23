@@ -13,7 +13,7 @@ a[target="_blank"]:not(.sage-link--no-launch) {
   &::before {
     @include icon-base(question-circle, xl);
 
-    transform: translateY(1px);
+    transform: translateY(rem(1px));
     color: sage-color(grey, 500);
   }
 
