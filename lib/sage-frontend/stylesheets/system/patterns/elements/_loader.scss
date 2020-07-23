@@ -6,6 +6,7 @@
 
 .sage-loading {
   position: relative;
+  padding: sage-spacing(md);
 
   &::before {
     content: "";

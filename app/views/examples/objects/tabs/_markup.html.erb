@@ -1,5 +1,21 @@
-<div class="sage-tabs">
+<div>
+  <% if style == "radio" %>
+    <div class="sage-tabs sage-tabs--style-radio" data-js-tabs="<%= id %>">
+      <% options.each do |option| %>
+        <button type="button" data-js-tabs-target="<%= "#{id}-#{option[:id]}" %>" class="sage-tabs__tab"><%= option[:text] %></button>
+      <% end %>
+    </div>
+  <% else %>
+    <div class="sage-tabs" data-js-tabs="<%= id %>">
+      <% options.each do |option| %>
+        <button type="button" data-js-tabs-target="<%= "#{id}-#{option[:id]}" %>" class="sage-tabs__tab"><%= option[:text] %></button>
+      <% end %>
+    </div>
+  <% end %>
+
   <% options.each do |option| %>
-  <a href="#" class="sage-tabs__tab <%= option[:is_active] ? "sage-tabs__tab--active" : "" %>"><%= option[:text] %></a>
+    <div class="sage-tabs-pane" data-js-tabs-pane="<%= "#{id}-#{option[:id]}" %>">
+      Content for: <%= option[:text] %>
+    </div>
   <% end %>
 </div>

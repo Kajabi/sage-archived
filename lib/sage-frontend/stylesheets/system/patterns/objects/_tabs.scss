@@ -6,40 +6,119 @@
 
 .sage-tabs {
   display: flex;
-  margin-bottom: sage-spacing();
+  margin-bottom: $sage-inputfield-spacing;
 }
 
+/* stylelint-disable max-nesting-depth */
 .sage-tabs__tab {
-  margin-right: sage-spacing();
-  padding-bottom: sage-spacing(2xs);
+  @include button-style-reset();
+  display: flex;
+  position: relative;
+  align-items: center;
+  overflow: hidden;
+  margin: 0 sage-spacing(sm) 0 0;
+  white-space: nowrap;
   color: $sage-tabs-default-color;
-  transition: color $sage-tabs-default-transition;
+  transition: color $sage-radio-transition, background-color $sage-radio-transition, box-shadow $sage-radio-transition;
 
   @extend %t-sage-body-med;
+
+  :not(.sage-tabs--style-radio) > & {
+    $item-underline: "::after";
+
+    padding: 0 0 sage-spacing(xs);
+    outline: none;
+
+    &#{$item-underline} {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: $sage-tabs-active-border-height;
+      background: $sage-tabs-active-border-color;
+      border-radius: $sage-tabs-active-border-radius;
+      transition: opacity $sage-tabs-default-transition, transform $sage-tabs-default-transition;
+      opacity: 0;
+    }
+
+    &:hover {
+      color: $sage-tabs-active-color;
+    }
+
+    &:focus {
+      &#{$item-underline} {
+        opacity: 1;
+      }
+    }
+
+    &:active,
+    &.sage-tabs__tab--active {
+      color: $sage-tabs-active-color;
+
+      &#{$item-underline} {
+        opacity: 1;
+      }
+    }
+  }
+
+  .sage-tabs--style-radio > & {
+    $item-radio: "::before";
+
+    flex-grow: 1;
+    flex-basis: 0;
+    padding: sage-spacing(sm);
+    color: $sage-tabs-default-color;
+    border: sage-border();
+    border-radius: sage-border(radius);
+
+    &#{$item-radio} {
+      content: "";
+      display: inline-block;
+      box-sizing: border-box;
+      height: $sage-radio-selected-indicator-size;
+      min-width: $sage-radio-selected-indicator-size;
+      width: $sage-radio-selected-indicator-size;
+      margin: 0 sage-spacing(xs) 0 0;
+      background-color: $sage-radio-selected-indicator-color;
+      border-radius: sage-border(radius-round);
+      border: sage-border();
+      transition: border $sage-radio-transition;
+    }
+
+    &:hover {
+      color: $sage-tabs-active-color;
+      background-color: sage-color(grey, 100);
+    }
+
+    &:focus {
+      outline-color: sage-color(primary);
+    }
+
+    &:active,
+    &.sage-tabs__tab--active {
+      color: $sage-tabs-active-color;
+
+      &#{$item-radio} {
+        box-shadow: sage-shadow(sm);
+        border-width: 5px;
+        border-color: $sage-radio-color-checked;
+      }
+    }
+  }
 
   &:last-of-type {
     margin-right: 0;
   }
+}
+/* stylelint-enable max-nesting-depth */
 
-  &::after {
-    content: "";
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    height: $sage-tabs-active-border-height;
-    background: $sage-tabs-active-border-color;
-    border-radius: $sage-tabs-active-border-radius;
-    transition: opacity $sage-tabs-default-transition, transform $sage-tabs-default-transition;
-    opacity: 0;
-  }
+.sage-tabs-pane {
+  display: none;
+  visibility: hidden;
 }
 
-.sage-tabs__tab--active {
-  position: relative;
-  color: $sage-tabs-active-color;
-
-  &::after {
-    opacity: 1;
-  }
+.sage-tabs-pane--active {
+  display: block;
+  visibility: visible;
 }

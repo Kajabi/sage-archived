@@ -1,5 +1,10 @@
-<div class="sage-panel">
-  <div class="sage-panel__header"><%= header %></div>
+<section class="sage-panel">
+  <header class="sage-panel__header">
+    <%= header %>
+    <aside class="sage-panel__header-aside">
+      Header aside
+    </aside>
+  </header>
   <div class="sage-panel__body"><%= body.html_safe %></div>
-  <div class="sage-panel__footer"><%= footer %></div>
-</div>
+  <footer class="sage-panel__footer"><%= footer %></footer>
+</section>

@@ -4,7 +4,7 @@
 
 ================================================== */
 
-$-modal-padding-x: sage-spacing(lg);
+$-modal-padding-x: sage-spacing(md);
 $-modal-padding-y: sage-spacing(md);
 
 .sage-modal {
@@ -33,38 +33,67 @@ $-modal-padding-y: sage-spacing(md);
 }
 
 .sage-modal__container {
+  // Uses both Animate and Transition properties
+  // - Animate if element has been injected on the page
+  // - Transition if element exists on the page and has `.sage-modal--active` added
+
+  @mixin animation-off {
+    transform: rotate3d(0, 0, 0, -20deg) translateY(6px);
+    opacity: 0;
+  }
+
+  @mixin animation-on {
+    transform: rotate3d(0, 0, 0, 0) translateY(0);
+    opacity: 1;
+  }
+
+  @include animation-off;
   z-index: sage-z-index(modal);
-  transform: translateY(2px);
   min-width: min-content;
-  width: sage-container(xs);
+  width: sage-container(modal);
   margin: 20vh 0 0;
-  border-radius: sage-border(radius-large);
+  border-radius: sage-border(radius);
   background-color: sage-color(white);
-  box-shadow: sage-shadow(lg);
+  box-shadow: sage-shadow(2xl);
   transition: $sage-transition;
   transition-property: transform, opacity;
   will-change: transform, opacity;
-  opacity: 0;
 
+  /* stylelint-disable max-nesting-depth */
   .sage-modal--active & {
-    transform: none;
-    opacity: 1;
+    @keyframes animate-container {
+      0% {
+        @include animation-off;
+      }
+      100% {
+        @include animation-on;
+      }
+    }
+
+    @include animation-on;
+    animation: animate-container 0.1s ease-in;
   }
+  /* stylelint-enable max-nesting-depth */
 }
 
 .sage-modal__header {
-  padding: $-modal-padding-y $-modal-padding-x;
-  border-bottom: sage-border();
+  margin: sage-spacing(lg) $-modal-padding-x $-modal-padding-y;
+
+  > :last-child {
+    margin-bottom: 0;
+  }
 }
 
 .sage-modal__content {
-  padding: $-modal-padding-y $-modal-padding-x;
+  margin: $-modal-padding-y $-modal-padding-x;
 
-  :last-child {
+  > :last-child {
     margin-bottom: 0;
   }
 }
 
 .sage-modal__footer {
-  padding: $-modal-padding-y $-modal-padding-x;
+  display: flex;
+  justify-content: flex-end;
+  margin: $-modal-padding-y $-modal-padding-x;
 }
