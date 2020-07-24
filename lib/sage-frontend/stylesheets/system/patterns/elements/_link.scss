@@ -1,5 +1,5 @@
 .sage-link--launch,
-a[target="_blank"]:not(.sage-link--no-launch) {
+.sage-type a[target="_blank"]:not(.sage-link--no-launch) {
   &::after {
     margin-left: sage-spacing(xs);
     @include icon-base(launch, sm);
