@@ -102,8 +102,9 @@ $sage-btn-secondary-text-color: sage-color(primary) !default;
 $sage-btn-tertiary-text-color: sage-color(charcoal, 300) !default;
 
 // Danger button
-$sage-btn-danger-bg-color: sage-color(red) !default;
-$sage-btn-danger-text-color: sage-color(white) !default;
+$sage-btn-danger-text-color: sage-color(red) !default;
+$sage-btn-danger-bg-active-color: sage-color(red, 200) !default;
+$sage-btn-danger-bg-hover-color: sage-color(red, 100) !default;
 
 // Menu button
 $sage-menubtn-toggle-size: rem(24px) !default;

@@ -12,7 +12,7 @@
 @mixin button-style-base {
   @include button-style-reset();
   @extend %t-sage-body-med;
-  
+
   display: inline-flex;
   align-self: flex-start;
   align-items: baseline;
@@ -219,31 +219,27 @@
 
 .sage-btn--danger {
   color: $sage-btn-danger-text-color;
-  background: $sage-btn-danger-bg-color;
-  box-shadow: $sage-btn-shadow-base;
+  border: 0;
+  box-shadow: none;
 
   &::after {
-    z-index: sage-z-index();
-    border-color: $sage-btn-danger-bg-color;
-  }
-
-  &:hover,
-  &:focus,
-  &:active {
-    color: $sage-btn-danger-text-color;
+    border-color: $sage-btn-danger-text-color;
   }
 
   &:hover:not(:focus):not(:active):not(:disabled):not(.disabled) {
-    background-color: saturate(lighten($sage-btn-danger-bg-color, 6%), 5%);
-    box-shadow: $sage-btn-shadow-hover;
+    color: $sage-btn-danger-text-color;
+    background-color: $sage-btn-danger-bg-hover-color;
   }
 
   &:focus {
-    box-shadow: $sage-btn-shadow-base;
+    color: $sage-btn-danger-text-color;
+    background: sage-color(white);
+    box-shadow: none;
   }
 
   &:active {
-    background-color: darken($sage-btn-danger-bg-color, 4%);
+    color: $sage-btn-danger-text-color;
+    background-color: $sage-btn-danger-bg-active-color;
     box-shadow: none;
   }
 
@@ -251,8 +247,8 @@
   &.disabled {
     @include button-style-disabled;
 
-    color: sage-color(red, 200);
-    background-color: sage-color(red, 100);
+    color: sage-color(primary, 200);
+    background-color: transparent;
   }
 }
 
@@ -341,4 +337,3 @@
 @include button-icon-generator(only);
 @include button-icon-generator(left);
 @include button-icon-generator(right);
-
