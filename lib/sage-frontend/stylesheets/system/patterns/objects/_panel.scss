@@ -39,6 +39,7 @@ $-panel-transition: 0.2s linear;
       transition: $-panel-transition transform;
     }
 
+    &:active,
     &:focus {
       border-color: sage-color(primary);
     }
