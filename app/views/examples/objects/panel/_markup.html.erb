@@ -1,10 +1,20 @@
-<section class="sage-panel">
-  <header class="sage-panel__header">
-    <%= header %>
-    <aside class="sage-panel__header-aside">
-      Header aside
-    </aside>
-  </header>
-  <div class="sage-panel__body"><%= body.html_safe %></div>
-  <footer class="sage-panel__footer"><%= footer %></footer>
-</section>
+<div class="sage-panel <%= "sage-panel--accordion" if is_accordion %>">
+  <% if is_accordion %>
+    <div class="sage-panel__header" data-js-accordion="header">
+      <h4 class="sage-panel__title"><%= header %></h4>
+    </div>
+    <div class="sage-panel__body" data-js-accordion="body"><%= body.html_safe %></div>
+  <% else %>
+    <div class="sage-panel__header">
+      <%= header %>
+      <aside class="sage-panel__header-aside">
+        Header aside
+      </aside>
+    </div>
+    <div class="sage-panel__body"><%= body.html_safe %></div>
+  <% end %>
+
+  <% if footer != false %>
+    <div class="sage-panel__footer"><%= footer %></div>
+  <% end %>
+</div>
