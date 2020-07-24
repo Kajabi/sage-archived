@@ -116,6 +116,7 @@
 .sage-tabs-pane {
   display: none;
   visibility: hidden;
+  margin-bottom: sage-spacing();
 }
 
 .sage-tabs-pane--active {
