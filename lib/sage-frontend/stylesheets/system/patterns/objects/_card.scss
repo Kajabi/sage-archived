@@ -13,8 +13,8 @@
 }
 
 .sage-card__body {
-  padding: $sage-card-spacing;
   flex: 1;
+  padding: $sage-card-spacing;
 
   .sage-card--spaced & {
     padding: 0;
