@@ -1,4 +1,4 @@
-<div class="sage-card<%= is_compact ? " sage-card--compact" : "" %><%= is_spaced ? " sage-card--spaced" : "" %>">
+<div class="sage-card<%= is_compact ? " sage-card--compact" : "" %><%= is_spaced ? " sage-card--spaced" : "" %><%= is_type_center ? " sage-card--type-center" : "" %>">
   <% if has_img %>
   <%= image_pack_tag("#{img_path}", class: "sage-card__img", alt: "#{img_alt}") %>
   <% end %>

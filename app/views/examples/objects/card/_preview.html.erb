@@ -1,6 +1,7 @@
 <div class="sage-row">
   <div class="sage-col--md-6">
     <%= render "examples/objects/card/markup",
+      is_type_center: false,
       is_compact: false,
       is_spaced: false,
       title: "Card w/ Image",
@@ -15,6 +16,7 @@
   </div>
   <div class="sage-col--md-6">
     <%= render "examples/objects/card/markup",
+      is_type_center: false,
       is_compact: false,
       is_spaced: false,
       title: "Card w/ Image",
@@ -29,6 +31,7 @@
   </div>
   <div class="sage-col--md-12">
     <%= render "examples/objects/card/markup",
+      is_type_center: false,
       is_compact: true,
       is_spaced: false,
       title: "Compact Card w/ Image",
@@ -41,6 +44,7 @@
       img_alt: "Alternative text for image"
     %>
     <%= render "examples/objects/card/markup",
+      is_type_center: false,
       is_compact: true,
       is_spaced: false,
       title: "Compact Card w/ Image",
@@ -55,6 +59,7 @@
   </div>
   <div class="sage-col--md-6">
     <%= render "examples/objects/card/markup",
+      is_type_center: false,
       is_compact: false,
       is_spaced: true,
       title: "Spaced Card w/ Image",
@@ -69,6 +74,7 @@
   </div>
   <div class="sage-col--md-6">
     <%= render "examples/objects/card/markup",
+      is_type_center: false,
       is_compact: false,
       is_spaced: true,
       title: "Spaced Card w/ Image",
@@ -83,6 +89,7 @@
   </div>
   <div class="sage-col--md-12">
     <%= render "examples/objects/card/markup",
+      is_type_center: false,
       is_compact: true,
       is_spaced: true,
       title: "Spaced & Compact w/ Image",
@@ -95,6 +102,7 @@
       img_alt: "Alternative text for image"
     %>
     <%= render "examples/objects/card/markup",
+      is_type_center: false,
       is_compact: true,
       is_spaced: true,
       title: "Spaced & Compact w/ Image",
@@ -109,6 +117,7 @@
   </div>
   <div class="sage-col--md-6">
     <%= render "examples/objects/card/markup",
+      is_type_center: false,
       is_compact: false,
       is_spaced: false,
       title: "Card w/ No Image",
@@ -123,6 +132,7 @@
   </div>
   <div class="sage-col--md-6">
     <%= render "examples/objects/card/markup",
+      is_type_center: false,
       is_compact: false,
       is_spaced: false,
       title: "Card w/ No Image",
@@ -135,7 +145,7 @@
       img_alt: ""
     %>
   </div>
-  <div class="sage-col--md-8">
+  <div class="sage-col--md-6">
     <div class="sage-card sage-card--spaced">
       <%= image_pack_tag("docs/card/card-placeholder-sm.png", class: "sage-card__img", alt: "") %>
       <h2 class="sage-card__title t-sage-heading-5">Card w/ Rich Text and Footer</h2>
@@ -156,5 +166,20 @@
         <a href="#" class="sage-btn sage-btn--primary">Next</a>
       </div>
     </div>
+  </div>
+  <div class="sage-col--md-6">
+    <%= render "examples/objects/card/markup",
+      is_type_center: true,
+      is_compact: false,
+      is_spaced: false,
+      title: "Centered Card Text",
+      text: "Diam in auctor sit quam laoreet imperdiet aliquam. Habitant nunc lacus semper lacus, nec a, sit enim.",
+      action_text: "Action Button",
+      action_style_primary: false,
+      action_style_tertiary: true,
+      has_img: false,
+      img_path: "",
+      img_alt: ""
+    %>
   </div>
 </div>
