@@ -318,6 +318,7 @@ $sage-overlay-transition-backdrop-filter: backdrop-filter 0.7s ease-in-out !defa
 
 $sage-panel-bg-color: sage-color(white) !default;
 $sage-panel-padding: sage-spacing(sm) !default;
+$sage-panel-padding-lg: sage-spacing() !default;
 $sage-panel-border-radius: sage-border(radius) !default;
 $sage-panel-box-shadow: sage-shadow(sm) !default;
 

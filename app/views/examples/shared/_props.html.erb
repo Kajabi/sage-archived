@@ -1,6 +1,9 @@
 <% if props_content.present? %>
-  <div id="<%= @title %>-example-props" class="docs-container sage-type">
-    <h2 class="t-sage-heading-2 example__title">Properties</h2>
+<div class="sage-panel">
+  <div class="sage-panel__header">
+    <h2 id="<%= @title %>-example-props" class="t-sage-heading-4">Properties</h2>
+  </div>
+  <div class="sage-panel__body">
     <div class="sage-table-wrapper">
       <div class="sage-table-wrapper__overflow">
         <table class="sage-table sage-table--properties">
@@ -17,4 +20,5 @@
       </div>
     </div>
   </div>
+</div>
 <% end %>
