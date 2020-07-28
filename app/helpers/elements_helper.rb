@@ -155,6 +155,15 @@ module ElementsHelper
         rails: "todo",
         react: "todo",
         a11y: "todo"
+      },
+      {
+        title: "status_icon",
+        description: "Display the status of an item",
+        scss: "done",
+        docs: "done",
+        rails: "todo",
+        react: "todo",
+        a11y: "todo"
       }
     ]
   end

@@ -1,0 +1,41 @@
+/* ==================================================
+  ** _button.scss
+  type: element
+
+
+================================================== */
+
+// ==================================================
+// MIXINS
+// ==================================================
+.sage-status-icon {
+  @extend %t-sage-body-med;
+
+  display: inline-flex;
+  align-self: flex-start;
+  align-items: baseline;
+  position: relative;
+  padding: $sage-iconbtn-padding;
+  cursor: help;
+
+  color: $sage-btn-tertiary-text-color;
+  border-radius: sage-border(radius);
+  transition: color $sage-transition, background-color $sage-transition;
+
+  &:hover:not(:focus):not(:active) {
+    background-color: sage-color(grey, 200);
+  }
+
+  &:focus,
+  &:active {
+    background-color: sage-color(grey, 200);
+  }
+}
+
+@each $icon-name, $icon-code in $sage-icons {
+  .sage-status-icon--#{$icon-name} {
+    &::before {
+      @include icon-base($icon-name);
+    }
+  }
+}
