@@ -30,13 +30,13 @@
     outline: none;
 
     &#{$item-underline} {
-      $-off: 50%;
+      $spacing-off: 50%;
 
       content: "";
       position: absolute;
-      right: $-off;
+      right: $spacing-off;
       bottom: 0;
-      left: $-off;
+      left: $spacing-off;
       height: $sage-tabs-active-border-height;
       background: $sage-tabs-active-border-color;
       border-radius: $sage-tabs-active-border-radius;

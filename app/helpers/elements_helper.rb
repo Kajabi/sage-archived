@@ -161,7 +161,7 @@ module ElementsHelper
         description: "Display the status of an item",
         scss: "done",
         docs: "done",
-        rails: "todo",
+        rails: "done",
         react: "todo",
         a11y: "todo"
       }
