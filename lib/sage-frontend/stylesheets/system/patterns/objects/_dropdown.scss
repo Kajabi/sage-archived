@@ -121,16 +121,15 @@ $option-icon: "::before";
     &#{$option-underline} {
       right: $-dropdown-item-focus-line-spacing-x;
       left: $-dropdown-item-focus-line-spacing-x;
-
     }
-  }
-
-  &:active#{$option-underline} {
-    border-bottom-color: sage-color(primary);
   }
 
   &:focus#{$option-underline} {
     border-bottom-color: currentColor;
+  }
+
+  &:active#{$option-underline} {
+    border-bottom-color: sage-color(primary);
   }
 }
 

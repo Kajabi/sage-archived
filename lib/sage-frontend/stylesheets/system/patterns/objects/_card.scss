@@ -19,11 +19,18 @@
   .sage-card--spaced & {
     padding: 0;
   }
+
+  .sage-card--center & {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: sage-container(modal);
+  }
+
   .sage-card--spaced.sage-card--compact & {
     padding: 0 $sage-card-spacing;
   }
   &:last-child {
-    margin: 0;
+    margin-bottom: 0;
   }
 }
 
@@ -75,7 +82,7 @@
   }
 }
 
-.sage-card--type-center {
+.sage-card--center {
   text-align: center;
 }
 
