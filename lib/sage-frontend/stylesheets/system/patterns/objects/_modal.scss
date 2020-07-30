@@ -97,3 +97,7 @@ $-modal-padding-y: sage-spacing(md);
   justify-content: flex-end;
   margin: $-modal-padding-y $-modal-padding-x;
 }
+
+.sage-modal__footer-aside {
+  margin-right: auto;
+}

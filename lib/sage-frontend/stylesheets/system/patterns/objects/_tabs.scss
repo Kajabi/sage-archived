@@ -19,7 +19,7 @@
   margin: 0 sage-spacing(sm) 0 0;
   white-space: nowrap;
   color: $sage-tabs-default-color;
-  transition: color $sage-radio-transition, background-color $sage-radio-transition, box-shadow $sage-radio-transition;
+  transition: color $sage-transition, background-color $sage-transition, box-shadow $sage-transition;
 
   @extend %t-sage-body-med;
 
@@ -30,16 +30,17 @@
     outline: none;
 
     &#{$item-underline} {
+      $spacing-off: 50%;
+
       content: "";
       position: absolute;
-      right: 0;
+      right: $spacing-off;
       bottom: 0;
-      left: 0;
+      left: $spacing-off;
       height: $sage-tabs-active-border-height;
       background: $sage-tabs-active-border-color;
       border-radius: $sage-tabs-active-border-radius;
-      transition: opacity $sage-tabs-default-transition, transform $sage-tabs-default-transition;
-      opacity: 0;
+      transition: right $sage-transition, left $sage-transition;
     }
 
     &:hover {
@@ -48,7 +49,8 @@
 
     &:focus {
       &#{$item-underline} {
-        opacity: 1;
+        left: 0;
+        right: 0;
       }
     }
 
@@ -57,7 +59,8 @@
       color: $sage-tabs-active-color;
 
       &#{$item-underline} {
-        opacity: 1;
+        left: 0;
+        right: 0;
       }
     }
   }
@@ -83,12 +86,16 @@
       background-color: $sage-radio-selected-indicator-color;
       border-radius: sage-border(radius-round);
       border: sage-border();
-      transition: border $sage-radio-transition;
+      transition: border $sage-transition, box-shadow $sage-transition;
     }
 
     &:hover {
       color: $sage-tabs-active-color;
       background-color: sage-color(grey, 100);
+
+      &#{$item-radio} {
+        box-shadow: sage-shadow(sm);
+      }
     }
 
     &:focus {

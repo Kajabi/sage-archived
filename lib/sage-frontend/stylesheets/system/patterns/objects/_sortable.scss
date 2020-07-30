@@ -23,7 +23,7 @@
   cursor: grab;
 
   &::before {
-    @include icon-base(enlarge);
+    @include icon-base(handle);
 
     padding: 0 sage-spacing(sm) 0 0;
     color: sage-color(grey, 500);

@@ -115,6 +115,8 @@ $sage-menubtn-focus-outline-size: sage-spacing(xs) !default;
 $sage-menubtn-focus-outline-width: 1 !default;
 $sage-menubtn-focus-outline-color: currentColor !default;
 
+$sage-iconbtn-padding: rem(12px) !default;
+
 
 // ==================================================
 // INPUT FIELDS
@@ -348,13 +350,12 @@ $sage-assistant-search-placeholder-transition: color 0.15s ease-in-out, opacity 
 // ==================================================
 
 $sage-tabs-default-color: sage-color(charcoal, 100) !default;
-$sage-tabs-default-transition: 0.2s ease-in-out !default;
 
 // Active tab
 $sage-tabs-active-color: sage-color(charcoal, 500) !default;
 
 // Active tab indicator
-$sage-tabs-active-border-height: rem(4px) !default;
+$sage-tabs-active-border-height: rem(3px) !default;
 $sage-tabs-active-border-width: 100% !default;
 $sage-tabs-active-border-color: sage-color(primary) !default;
 $sage-tabs-active-border-radius: sage-border(radius) !default;

@@ -310,7 +310,7 @@
     @else if $direction == only {
       .sage-btn--icon-only-#{$icon-name} {
         justify-content: center;
-        padding: rem(12px);
+        padding: $sage-iconbtn-padding;
         text-align: center;
 
         &::before {
