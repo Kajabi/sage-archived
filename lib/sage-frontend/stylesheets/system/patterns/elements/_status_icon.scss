@@ -20,11 +20,13 @@
   transition: color $sage-transition, background-color $sage-transition;
 
   &:hover:not(:focus):not(:active) {
+    color: sage-color(charcoal, 100);
     background-color: sage-color(grey, 200);
   }
 
   &:focus,
   &:active {
+    color: sage-color(charcoal, 100);
     background-color: sage-color(grey, 200);
   }
 }
