@@ -37,7 +37,7 @@
 
 .sage-textarea__field {
   @mixin floating-label-textarea-active {
-    transform: translateY(-$sage-textarea-padding);
+    transform: translateY($sage-textarea-label-padding - $sage-textarea-padding);
     transition: opacity 0.1s ease-in, transform 0.15s ease-in-out, color 0.15s ease-out;
     opacity: 1;
   }
@@ -57,9 +57,15 @@
     color: inherit;
   }
 
+  &:hover:not(:active):not(:focus),
+  &:active:not(:disabled) {
+    border-color: sage-color(grey, 400);
+  }
+
   &:focus:not(:disabled),
   &:active:not(:disabled) {
-    border-color: currentColor;
+    border-color: $sage-textarea-color-success;
+    box-shadow: $sage-textarea-box-shadow-size $sage-textarea-color-success;
     outline: none;
 
     @include placeholder {
@@ -68,6 +74,7 @@
 
     ~ .sage-textarea__label {
       @include floating-label-textarea-active();
+      color: $sage-textarea-color-success;
     }
   }
 
@@ -79,13 +86,8 @@
     }
   }
 
-  &:valid:not(:placeholder-shown) {
-    border-color: $sage-textarea-color-success;
-    box-shadow: $sage-textarea-box-shadow-size $sage-textarea-color-success;
-
-    ~ .sage-textarea__label {
-      color: $sage-textarea-color-success;
-    }
+  &:valid:not(:placeholder-shown):not(:focus):not(:active) {
+    border-color: currentColor;
   }
 
   // TODO: add support for Simpleform classes

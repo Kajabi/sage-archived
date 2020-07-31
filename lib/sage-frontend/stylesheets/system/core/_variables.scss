@@ -133,14 +133,14 @@ $sage-inputfield-box-shadow-size: 0 0 0 rem(1px) !default;
 
 // Sizing
 $sage-inputfield-height: rem(40px) !default;
-$sage-inputfield-padding: rem(12px) !default;
-$sage-inputfield-padding-x: rem(16px) !default;
+$sage-inputfield-padding: sage-spacing(sm) !default;
+$sage-inputfield-label-offset: rem(12px) !default;
 $sage-inputfield-padding-offset: $sage-inputfield-padding - $sage-inputfield-border-width;
 $sage-inputfield-padding-filled: rem(4px) !default;
-$sage-inputfield-padding-label: rem(3px) !default;
+$sage-inputfield-padding-label: rem(4px) !default;
 
 // Spacing
-$sage-inputfield-spacing: sage-spacing(lg) !default;
+$sage-inputfield-spacing: sage-spacing() !default;
 
 // Colors
 $sage-inputfield-color-default: sage-color(charcoal) !default;
@@ -157,6 +157,7 @@ $sage-inputfield-bg-disabled: sage-color(grey, 100) !default;
 
 // Border
 $sage-textarea-border-color: $sage-inputfield-border-color !default;
+$sage-textarea-border-color-hover: sage-color(grey, 500) !default;
 $sage-textarea-border-radius: $sage-inputfield-border-radius !default;
 $sage-textarea-border-width: $sage-inputfield-border-width !default;
 $sage-textarea-box-shadow-size: $sage-inputfield-box-shadow-size !default;
@@ -381,7 +382,7 @@ $sage-tooltip-shadow: sage-shadow(xl) !default;
 $sage-tooltip-padding: sage-spacing(2xs) sage-spacing(sm) !default;
 $sage-tooltip-small-padding: sage-spacing(2xs) sage-spacing(xs) !default;
 $sage-tooltip-large-padding: sage-spacing(xs) sage-spacing(xs) !default;
-$sage-tooltip-zindex: sage-z_index(modal) !default;
+$sage-tooltip-zindex: sage-z_index(overlay) !default;
 $sage-tooltip-maxwidth: rem(200px) !default;
 $sage-tooltip-large-maxwidth: rem(320px) !default;
 

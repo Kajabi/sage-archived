@@ -27,13 +27,13 @@
     cursor: default;
   }
 }
-  
+
 .sage-input__affix--prefix {
-  left: 8px;
+  left: sage-spacing(xs);
 }
 
 .sage-input__affix--suffix {
-  right: 8px;
+  right: sage-spacing(xs);
 }
 
 .sage-input__label {
@@ -50,7 +50,7 @@
   pointer-events: none;
   opacity: 0;
 
-  @include position(($sage-inputfield-height / 2), unset, unset, $sage-inputfield-padding-x);
+  @include position(($sage-inputfield-height / 2), unset, unset, $sage-inputfield-label-offset);
 
   @media screen and (min-width: sage-breakpoint(sm-min)) {
     white-space: normal;
@@ -84,10 +84,15 @@
     color: inherit;
   }
 
+  &:hover:not(:disabled) {
+    border-color: currentColor;
+  }
+
   &:focus:not(:disabled),
   &:active:not(:disabled) {
-    border-color: currentColor;
     outline: none;
+    border-color: $sage-inputfield-color-success;
+    box-shadow: $sage-inputfield-box-shadow-size $sage-inputfield-color-success;
 
     @include placeholder {
       opacity: 0;
@@ -95,23 +100,20 @@
 
     ~ .sage-input__label {
       @include floating-label-active();
-    }
-  }
-
-  /* Separated so IE/Edge does not ignore focus styles. Note that Edge will not support these states */
-  &:valid:not(:placeholder-shown),
-  &:required:not(:placeholder-shown) {
-    ~ .sage-input__label {
-      @include floating-label-active();
+      color: $sage-inputfield-color-success;
     }
   }
 
   &:valid:not(:placeholder-shown) {
-    border-color: $sage-inputfield-color-success;
-    box-shadow: $sage-inputfield-box-shadow-size $sage-inputfield-color-success;
+    outline: none;
+    background: transparent; // Prevent some browsers from coloring the background on 'valid'
+
+    @include placeholder {
+      opacity: 0;
+    }
 
     ~ .sage-input__label {
-      color: $sage-inputfield-color-success;
+      @include floating-label-active();
     }
   }
 
