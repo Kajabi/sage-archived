@@ -106,6 +106,7 @@
 
   &:valid:not(:placeholder-shown) {
     outline: none;
+    background: transparent; // Prevent some browsers from coloring the background on 'valid'
 
     @include placeholder {
       opacity: 0;
