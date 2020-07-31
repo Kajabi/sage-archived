@@ -1,13 +1,20 @@
-<div class="docs-container">
-  <div class="sage-media">
-    <h2 id="element-<%= title %>" class="sage-media-body t-sage-heading-2 example__title">
-      <%= link_to title.titleize, pages_element_path(title), class: "example__link"%>
+<% permalink = "element-#{title}" %>
+
+<div class="sage-panel sage-panel--lg">
+  <div class="sage-panel__header">
+    <h2 id="<%= permalink %>" class="t-sage-heading-3">
+      <%= link_to title.titleize, "##{permalink}", class: "example__link" %>
     </h2>
-    <%= link_to pages_breakout_path(type: :element, title: title), target: "_blank", class: "example__link example__link--breakout" do %>
-      <i class="sage-icon-launch" aria-hidden="true"></i><span class="visually-hidden">Opens <%= title.titleize %> in a new window</span>
-    <% end %>
+    <div class="sage-panel__header-aside">
+      <%= link_to pages_element_path(title), class: "sage-btn sage-btn--tertiary sage-btn--icon-right-preview-on", data: { "js-tooltip": "Inspect element details" } do %>
+        Details
+      <% end %>
+      <%= link_to pages_breakout_path(type: :element, title: title), target: "_blank", class: "sage-btn sage-btn--tertiary sage-btn--icon-only-launch", data: { "js-tooltip": "Open breakout page" } do %>
+        <span class="visually-hidden">Opens <%= title.titleize %> in a new window</span>
+      <% end %>
+    </div>
   </div>
-  <div class="example__preview sage-type">
+  <div class="sage-panel__body sage-type">
     <%= render "examples/elements/#{title}/preview" %>
   </div>
 </div>

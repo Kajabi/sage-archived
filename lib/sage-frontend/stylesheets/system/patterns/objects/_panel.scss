@@ -50,6 +50,11 @@ $-panel-transition: 0.2s linear;
       transform: translateX(rem(3px)) rotateZ(90deg);
     }
   }
+
+  .sage-panel--lg > & {
+    padding-left: $sage-panel-padding-lg;
+    padding-right: $sage-panel-padding-lg;
+  }
 }
 
 .sage-panel__header-aside {
@@ -87,6 +92,10 @@ $-panel-transition: 0.2s linear;
   [aria-expanded="true"] + & {
     height: auto;
   }
+
+  .sage-panel--lg > & {
+    padding: $sage-panel-padding-lg;
+  }
 }
 
 .sage-panel__body--center {
@@ -101,6 +110,10 @@ $-panel-transition: 0.2s linear;
 .sage-panel__footer {
   padding: $sage-panel-padding;
   border-top: sage-border();
+
+  .sage-panel--lg > & {
+    padding: $sage-panel-padding-lg;
+  }
 }
 
 .sage-panel__title {

@@ -1,38 +1,27 @@
-<% info_content = sage_objects.select { |element| element[:title] == @title }[0] %>
+<% info_content = sage_objects.select { |object| object[:title] == @title }[0] %>
 <% props_content = render partial: "examples/objects/#{@title}/props" %>
 <% do_content = render partial: "examples/objects/#{@title}/rules_do" %>
 <% dont_content = render partial: "examples/objects/#{@title}/rules_dont" %>
 
-<%= render "examples/shared/heading", info_content: info_content %>
+<%= render "examples/shared/heading",
+  info_content: info_content %>
 
 <%= render "examples/shared/quick_links",
   props_content: props_content,
   do_content: do_content,
   dont_content: dont_content %>
 
-<div class="docs-container">
-  <h2 id="<%= @title %>-example-preview" class="t-sage-heading-2 example__title">Preview</h2>
-  <div class="example__preview sage-type">
-    <%= render "examples/objects/#{@title}/preview" %>
-  </div>
-</div>
+<%= render "examples/shared/preview",
+  type: "object",
+  title: @title %>
 
-<div class="docs-container">
-  <h2 id="<%= @title %>-example-code" class="t-sage-heading-2 example__title">Code</h2>
-  <div class="example__code">
-    <button class="example__expand-btn" aria-expanded="false" aria-controls="example-code-<%= @title %>">Expand this code snippet</button>
-    <div id="example-code-<%= @title %>" class="sage-code-snippet" tabindex="-1">
-      <pre class="prettyprint"><code><%= CGI.unescapeHTML(CGI.escapeHTML render "examples/objects/#{@title}/preview") %></code></pre>
-    </div>
-  </div>
-</div>
+<%= render "examples/shared/code",
+  type: "object",
+  title: @title %>
 
 <%= render "examples/shared/props",
-  props_content: props_content,
-  do_content: do_content,
-  dont_content: dont_content %>
+  props_content: props_content %>
 
 <%= render "examples/shared/rules",
-  props_content: props_content,
   do_content: do_content,
   dont_content: dont_content %>
