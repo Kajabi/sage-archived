@@ -157,6 +157,7 @@ $sage-inputfield-bg-disabled: sage-color(grey, 100) !default;
 
 // Border
 $sage-textarea-border-color: $sage-inputfield-border-color !default;
+$sage-textarea-border-color-hover: sage-color(grey, 500) !default;
 $sage-textarea-border-radius: $sage-inputfield-border-radius !default;
 $sage-textarea-border-width: $sage-inputfield-border-width !default;
 $sage-textarea-box-shadow-size: $sage-inputfield-box-shadow-size !default;
