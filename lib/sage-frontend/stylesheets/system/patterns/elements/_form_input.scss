@@ -29,11 +29,11 @@
 }
 
 .sage-input__affix--prefix {
-  left: 8px;
+  left: sage-spacing(xs);
 }
 
 .sage-input__affix--suffix {
-  right: 8px;
+  right: sage-spacing(xs);
 }
 
 .sage-input__label {
