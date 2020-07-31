@@ -35,6 +35,7 @@
 
 .quick-links__title {
   @extend %t-sage-heading-6;
+  margin: sage-spacing(2xs) 0 sage-spacing(xs);
 }
 
 .quick-links__subhead {
