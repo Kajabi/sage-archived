@@ -50,7 +50,7 @@
   pointer-events: none;
   opacity: 0;
 
-  @include position(($sage-inputfield-height / 2), unset, unset, $sage-inputfield-padding-x);
+  @include position(($sage-inputfield-height / 2), unset, unset, $sage-inputfield-label-offset);
 
   @media screen and (min-width: sage-breakpoint(sm-min)) {
     white-space: normal;

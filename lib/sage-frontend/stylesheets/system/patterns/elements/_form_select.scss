@@ -6,7 +6,7 @@
 
 $-sage-selectfield-height: $sage-inputfield-height;
 $-sage-selectfield-bg-label: $sage-inputfield-bg-label;
-$-sage-selectfield-padding-x: $sage-inputfield-padding-x;
+$-sage-selectfield-padding-x: $sage-inputfield-padding;
 $-sage-selectfield-filled-top-padding: rem(6);
 $-sage-selectfield-padding-label: $sage-inputfield-padding-label;
 $-sage-selectfield-bottom-spacing: $sage-inputfield-spacing;
@@ -14,7 +14,8 @@ $-sage-selectfield-bottom-spacing: $sage-inputfield-spacing;
 $-sage-selectfield-border-radius: $sage-inputfield-border-radius;
 $-sage-selectfield-border-width: $sage-inputfield-border-width;
 $-sage-selectfield-border-color: $sage-inputfield-border-color;
-$-sage-selectfield-border-color-hover: sage-color(grey, 400);
+$-sage-selectfield-border-color-hover: sage-color(charcoal);
+$-sage-selectfield-border-color-selected: sage-color(grey, 400);
 $-sage-selectfield-border-box-shadow-size: $sage-inputfield-box-shadow-size;
 
 $-sage-selectfield-color-default: $sage-inputfield-color-default;
@@ -37,17 +38,21 @@ $-sage-selectfield-color-error: $sage-inputfield-color-error;
   color: $-sage-selectfield-color-default;
   white-space: nowrap;
   pointer-events: none;
+  padding: 0 $-sage-selectfield-padding-label;
 
-  @include position(($-sage-selectfield-height / 2), unset, unset, $-sage-selectfield-padding-x);
+  @include position(($-sage-selectfield-height / 2), unset, unset, ($-sage-selectfield-padding-x - $-sage-selectfield-padding-label));
 
   .sage-select--value-selected & {
     @extend %t-sage-body-xsmall-semi;
 
     transform: translateY(calc(#{-$-sage-selectfield-height} + 50%));
-    padding: 0 $-sage-selectfield-padding-label;
-    color: $-sage-selectfield-color-success;
     background-color: $-sage-selectfield-bg-label;
     transition: transform 0.15s ease-in-out, color 0.15s ease-out;
+  }
+
+  .sage-select--value-selected:not(.sage-select--error) :focus + &,
+  .sage-select--value-selected:not(.sage-select--error) :active + & {
+    color: $-sage-selectfield-color-success;
   }
 
   .sage-select--error & {
@@ -76,6 +81,7 @@ $-sage-selectfield-color-error: $sage-inputfield-color-error;
   background: transparent;
   outline: none;
   cursor: pointer;
+  transition: border $sage-transition;
 
   // Firefox allows setting the color of <options> within a <select>.
   // This prevents color from being inherited from <select>.
@@ -85,8 +91,7 @@ $-sage-selectfield-color-error: $sage-inputfield-color-error;
 
   .sage-select--value-selected & {
     color: $-sage-selectfield-color-default;
-    border-color: $-sage-selectfield-color-success;
-    box-shadow: $-sage-selectfield-border-box-shadow-size $-sage-selectfield-color-success;
+    border-color: $-sage-selectfield-border-color-selected;
   }
 
   .sage-select--error & {
@@ -94,17 +99,30 @@ $-sage-selectfield-color-error: $sage-inputfield-color-error;
     box-shadow: $-sage-selectfield-border-box-shadow-size $-sage-selectfield-color-error;
   }
 
-  &:focus,
-  &:active,
   &:hover {
-    border-color: $-sage-selectfield-border-color-hover;
+    border-color: $-sage-selectfield-border-color-selected;
 
     ~ .sage-select__arrow::before {
       color: $-sage-selectfield-color-success;
     }
 
-    .sage-select--error & ~ .sage-select__arrow::before {
-      color: $-sage-selectfield-color-error;
+    .sage-select--error & {
+      border-color: $-sage-selectfield-color-error;
+    }
+  }
+
+  &:focus,
+  &:active {
+    border-color: $-sage-selectfield-color-success;
+    box-shadow: $-sage-selectfield-border-box-shadow-size $-sage-selectfield-color-success;
+
+    ~ .sage-select__arrow::before {
+      color: $-sage-selectfield-color-success;
+    }
+
+    .sage-select--error & {
+      border-color: $-sage-selectfield-color-error;
+      box-shadow: $-sage-selectfield-border-box-shadow-size $-sage-selectfield-color-error;
     }
   }
 }
