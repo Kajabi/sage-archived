@@ -140,7 +140,7 @@ $sage-inputfield-padding-filled: rem(4px) !default;
 $sage-inputfield-padding-label: rem(4px) !default;
 
 // Spacing
-$sage-inputfield-spacing: sage-spacing(lg) !default;
+$sage-inputfield-spacing: sage-spacing() !default;
 
 // Colors
 $sage-inputfield-color-default: sage-color(charcoal) !default;
