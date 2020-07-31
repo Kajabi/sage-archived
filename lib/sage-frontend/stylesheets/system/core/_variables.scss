@@ -194,7 +194,7 @@ $sage-checkbox-color-checked: sage-color(primary) !default;
 $sage-checkbox-color-disabled: sage-color(grey, 200) !default;
 $sage-checkbox-color-disabled-checked: sage-color(primary, 200) !default;
 
-$sage-checkbox-size: rem(24px) !default;
+$sage-checkbox-size: rem(20px) !default;
 $sage-checkbox-border-radius: sage-border(radius) !default;
 $sage-checkbox-transition: 0.15s ease-in-out !default;
 
@@ -394,6 +394,7 @@ $sage-tooltip-large-maxwidth: rem(320px) !default;
 $sage-card-shadow: sage-shadow(sm);
 $sage-card-radius: sage-border(radius);
 $sage-card-spacing: sage-spacing(md);
+$sage-card-spacing-2xl: sage-spacing(2xl);
 $sage-card-text-color: sage-color(charcoal, 200);
 
 

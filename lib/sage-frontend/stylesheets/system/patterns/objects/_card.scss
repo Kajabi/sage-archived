@@ -6,7 +6,7 @@
 ================================================== */
 
 .sage-card {
-  margin: 0 0 rem(32px) 0;
+  margin: 0 0 sage-spacing(lg) 0;
   border-radius: $sage-card-radius;
   box-shadow: $sage-card-shadow;
   background-color: sage-color(white);
@@ -15,6 +15,11 @@
 .sage-card__body {
   flex: 1;
   padding: $sage-card-spacing;
+
+  .sage-card--null & {
+    padding-top: $sage-card-spacing-2xl;
+    padding-bottom: $sage-card-spacing-2xl;
+  }
 
   .sage-card--spaced & {
     padding: 0;
@@ -29,6 +34,7 @@
   .sage-card--spaced.sage-card--compact & {
     padding: 0 $sage-card-spacing;
   }
+
   &:last-child {
     margin-bottom: 0;
   }

@@ -77,11 +77,13 @@ $-modal-padding-y: sage-spacing(md);
 }
 
 .sage-modal__header {
+  display: flex;
+  align-items: baseline;
   margin: $-modal-padding-y $-modal-padding-x;
+}
 
-  > :last-child {
-    margin-bottom: 0;
-  }
+.sage-modal__header-aside {
+  margin-left: auto;
 }
 
 .sage-modal__content {
