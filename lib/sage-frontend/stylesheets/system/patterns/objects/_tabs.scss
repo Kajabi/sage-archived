@@ -6,7 +6,11 @@
 
 .sage-tabs {
   display: flex;
-  margin-bottom: $sage-inputfield-spacing;
+  margin-bottom: sage-spacing(lg);
+
+  &.sage-tabs--radio {
+    margin-bottom: $sage-inputfield-spacing;
+  }
 }
 
 /* stylelint-disable max-nesting-depth */

@@ -8,7 +8,7 @@ $-panel-transition: 0.2s linear;
 
 %sage-panel,
 .sage-panel {
-  margin-bottom: sage-spacing();
+  margin-bottom: sage-spacing(lg);
   background: $sage-panel-bg-color;
   border-radius: $sage-panel-border-radius;
   box-shadow: $sage-panel-box-shadow;

@@ -35,10 +35,10 @@ $-sage-selectfield-color-error: $sage-inputfield-color-error;
   @extend %t-sage-body;
   position: absolute;
   transform: translateY(-50%);
+  padding: 0 $-sage-selectfield-padding-label;
   color: $-sage-selectfield-color-default;
   white-space: nowrap;
   pointer-events: none;
-  padding: 0 $-sage-selectfield-padding-label;
 
   @include position(($-sage-selectfield-height / 2), unset, unset, ($-sage-selectfield-padding-x - $-sage-selectfield-padding-label));
 
@@ -80,8 +80,8 @@ $-sage-selectfield-color-error: $sage-inputfield-color-error;
   border-radius: $-sage-selectfield-border-radius;
   background: transparent;
   outline: none;
-  cursor: pointer;
   transition: border $sage-transition;
+  cursor: pointer;
 
   // Firefox allows setting the color of <options> within a <select>.
   // This prevents color from being inherited from <select>.

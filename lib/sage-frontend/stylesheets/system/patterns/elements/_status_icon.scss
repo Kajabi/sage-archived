@@ -13,11 +13,11 @@
   align-items: baseline;
   position: relative;
   padding: $sage-iconbtn-padding;
-  cursor: help;
-
   color: $sage-btn-tertiary-text-color;
   border-radius: sage-border(radius);
   transition: color $sage-transition, background-color $sage-transition;
+  cursor: help;
+
 
   &:hover:not(:focus):not(:active) {
     color: sage-color(charcoal, 100);

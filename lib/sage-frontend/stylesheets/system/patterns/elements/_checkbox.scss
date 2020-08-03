@@ -14,7 +14,7 @@
 
 .sage-checkbox__label {
   display: inline-block;
-  margin-left: sage-spacing(sm);
+  margin-left: rem(12px);
   vertical-align: top;
   cursor: pointer;
 
@@ -96,6 +96,8 @@
 
   &:focus:not(:disabled),
   &:active:not(:disabled) {
+    outline: none;
+
     &::before {
       transform: translate3d(-50%, -50%, 0) scale(1);
       opacity: 1;
