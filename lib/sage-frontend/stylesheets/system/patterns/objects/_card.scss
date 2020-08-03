@@ -26,9 +26,9 @@
   }
 
   .sage-card--center & {
+    max-width: sage-container(modal);
     margin-left: auto;
     margin-right: auto;
-    max-width: sage-container(modal);
   }
 
   .sage-card--spaced.sage-card--compact & {

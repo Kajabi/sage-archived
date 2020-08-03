@@ -6,12 +6,12 @@
 
 .sage-icon-block {
   display: flex;
-  background: sage-color(white);
   flex-direction: column;
   flex-wrap: wrap;
   margin-bottom: sage-spacing();
   padding: sage-spacing(lg) sage-spacing(sm);
   text-align: center;
+  background: sage-color(white);
   border: sage-border();
 }
 
