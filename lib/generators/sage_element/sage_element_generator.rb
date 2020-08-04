@@ -21,7 +21,7 @@ class SageElementGenerator < Rails::Generators::NamedBase
     template "markup.html.erb", markup_file
     # Include Markup File
     gsub_file markup_include_file, /(#{Regexp.escape(markup_include_line)})/mi do |match|
-      "#{match}\n        {\n          title: \"#{file_name}\",\n          description: \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\", \n          scss:  \"todo\",\n          rails:     \"todo\",\n          react:     \"todo\",\n          a11y: \"todo\",\n        },"
+      "#{match}\n        {\n          title: \"#{file_name}\",\n          description: \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\", \n          scss: \"todo\",\n          rails: \"todo\",\n          react: \"todo\",\n          a11y: \"todo\",\n        },"
     end
 
     # Props Variables
