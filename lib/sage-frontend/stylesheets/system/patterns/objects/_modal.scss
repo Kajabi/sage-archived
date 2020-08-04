@@ -12,7 +12,7 @@ $-modal-padding-y: sage-spacing(md);
   visibility: hidden;
   align-items: flex-start;
   justify-content: center;
-  position: fixed;
+  position: fixed !important;
   z-index: sage-z-index(modal, -1);
   background-color: rgba(sage-color(charcoal, 500), 0.4);
   background-image: linear-gradient(
