@@ -1,9 +1,9 @@
 /* ==================================================
   ** <%= file_name %>
-  type: object
+  type: element
 
 ================================================== */
 
-.sage-<%= file_name %> {
+.sage-<%= file_name.dasherize %> {
   // Styles here
 }
