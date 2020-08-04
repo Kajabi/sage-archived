@@ -13,6 +13,6 @@ jobs:
           command: yarn stylelint "lib/sage-frontend/**/*.{css,scss}" --max-warnings 0
           name: Lint styles inside 'lib/sage-frontend/..'
 workflows:
-  test_my_app:
+  sage_system_specs:
     jobs:
       - lint
