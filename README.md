@@ -40,7 +40,7 @@ Run the rails & webpack development servers in tandem.
 $ yarn start
 ```
 
-Additional scripts live within `./package.json` and can be run in the console using `yarn <COMMAND NAME>`.
+Additional scripts live within `./package.json` and can be run in the console using `yarn run <COMMAND NAME>`.
 
 The documentation site can be accessed at [`http://localhost:4000`](http://localhost:4000/). Happy development!
 
