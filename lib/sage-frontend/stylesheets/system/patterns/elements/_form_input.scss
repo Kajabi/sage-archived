@@ -19,8 +19,7 @@
 
 .sage-input__affix {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  top: sage-spacing(xs);
   z-index: sage-z-index(default, 1);
 
   &:hover {
