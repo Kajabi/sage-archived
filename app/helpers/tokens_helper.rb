@@ -17,6 +17,7 @@ module TokensHelper
       {
         category: "container",
         tokens: [
+          { name: "modal" },
           { name: "sm" },
           { name: "md" },
           { name: "fluid" },

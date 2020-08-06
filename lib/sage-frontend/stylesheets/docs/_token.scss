@@ -15,12 +15,12 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  padding: sage-spacing(xs) sage-spacing();
+  padding: sage-spacing(xs) sage-spacing(sm);
   font-size: sage-font-size(sm);
   border-bottom: sage-border();
 
   &::after {
-    max-width: calc(100% / 3);
+    max-width: max-content;
     font-family: $sage-body-font-monospace;
   }
 
