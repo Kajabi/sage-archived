@@ -1,0 +1,44 @@
+<%= render "examples/objects/choices/markup",
+  style: "radio",
+  id: "example-choices1",
+  options: [
+    {
+      text: "Active",
+      id: "test0"
+    },
+    {
+      text: "Sub Page 1",
+      id: "test1"
+    },
+    {
+      text: "Sub Page 2",
+      id: "test2"
+    },
+    {
+      text: "Sub Page 3",
+      id: "test3"
+    },
+  ]
+%>
+<%= render "examples/objects/choices/markup",
+  style: "radio",
+  layout: "stacked",
+  id: "example-choices2",
+  options: [
+    {
+      text: "Upload file",
+      subtext: "Upload a CSV or Excel file and map the columns to import.",
+      id: "test0"
+    },
+    {
+      text: "Copy/paste from file",
+      subtext: "Copy/paste the rows from a CSV file and insert below.",
+      id: "test1"
+    },
+    {
+      text: "Add a single contact",
+      subtext: "Manually add a single contact and add a tag or grant an offer.",
+      id: "test2"
+    },
+  ]
+%>
