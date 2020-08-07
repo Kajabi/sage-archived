@@ -10,6 +10,6 @@
   </div>
 
   <% options.each do |option| %>
-    <div class="sage-tabs__pane" id="<%= "#{id}-#{option[:id]}" %>" data-js-tabs-pane="<%= "#{id}-#{option[:id]}" %>"><%= option[:content] || "" %></div>
+    <div class="sage-tabs__pane" id="<%= "#{id}-#{option[:id]}" %>" data-js-tabs-pane="<%= "#{id}-#{option[:id]}" %>" role="tabpanel"><%= option[:content] || "" %></div>
   <% end %>
 </div>
