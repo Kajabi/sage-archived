@@ -7,14 +7,14 @@
 .sage-tabs {
   display: flex;
   margin-bottom: sage-spacing(sm);
+}
 
-  &--layout-default {
-    flex-direction: row;
-  }
+.sage-tabs--layout-default {
+  flex-direction: row;
+}
 
-  &--layout-stacked {
-    flex-direction: column;
-  }
+.sage-tabs--layout-stacked {
+  flex-direction: column;
 }
 
 .sage-tabs__pane {
