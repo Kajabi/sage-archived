@@ -8,11 +8,11 @@
   display: flex;
   margin-bottom: sage-spacing(sm);
 
-  &--layout-horizontal {
+  &--layout-default {
     flex-direction: row;
   }
 
-  &--layout-vertical {
+  &--layout-stacked {
     flex-direction: column;
   }
 }

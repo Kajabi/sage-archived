@@ -61,7 +61,7 @@ $item-radio: "::before";
     }
   }
 
-  :not(.sage-tabs--layout-vertical) > & {
+  .sage-tabs--layout-default > & {
     margin: 0 sage-spacing(sm) 0 0;
 
     &:last-of-type {
@@ -69,7 +69,7 @@ $item-radio: "::before";
     }
   }
 
-  .sage-tabs--layout-vertical > & {
+  .sage-tabs--layout-stacked > & {
     margin-bottom: sage-spacing(sm);
 
     &:last-of-type {
@@ -92,8 +92,10 @@ $item-radio: "::before";
 
 .sage-choice__text {
   font-style: normal;
+  color: sage-color(charcoal, 400);
+}
 
-  .sage-tabs--layout-vertical .sage-choice__content > & {
-    color: $sage-tabs-active-color;
-  }
+.sage-choice__subtext {
+  @extend %t-sage-body-small;
+  color: sage-color(charcoal, 100);
 }
