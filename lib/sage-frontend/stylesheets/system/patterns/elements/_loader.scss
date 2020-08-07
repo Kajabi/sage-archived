@@ -6,7 +6,7 @@
 
 .sage-loader {
   &:not(.visually-hidden) {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     padding: sage-spacing(md);
@@ -54,8 +54,6 @@
 }
 
 .sage-loader--fill {
-  display: flex;
-
   &:not(.visually-hidden) {
     width: 100%;
     height: 100%;
