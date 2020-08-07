@@ -27,6 +27,10 @@
       color: sage-color(charcoal);
     }
   }
+
+  .sage-page-heading__title & {
+    margin-left: sage-spacing(xs);
+  }
 }
 
 .sage-link--help {

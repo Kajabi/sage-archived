@@ -295,13 +295,13 @@ $sage-table-overflow-indicator-gradient: linear-gradient(90deg, $sage-table-over
 // LOADERS AND SPINNERS
 // ==================================================
 
-$sage-loading-bar-bg-color: sage-color(grey) !default;
-$sage-loading-bar-height: rem(10px) !default;
-$sage-loading-bar-width: rem(300px) !default;
-$sage-loading-bar-speed: 2s !default;
+$sage-loader-bar-bg-color: sage-color(grey) !default;
+$sage-loader-bar-height: rem(10px) !default;
+$sage-loader-bar-width: rem(300px) !default;
+$sage-loader-bar-speed: 2s !default;
 
-$sage-loading-spinner-size: rem(48px) !default;
-$sage-loading-spinner-speed: 0.9s !default;
+$sage-loader-spinner-size: rem(48px) !default;
+$sage-loader-spinner-speed: 0.9s !default;
 
 
 // ==================================================
