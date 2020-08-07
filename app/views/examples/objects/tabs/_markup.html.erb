@@ -1,13 +1,15 @@
 <div>
-  <div class="sage-tabs" data-js-tabs="<%= id %>">
+  <div class="sage-tabs <%= defined?(layout) ? "sage-tabs--layout-#{layout}" : "sage-tabs--layout-horizontal" %>" data-js-tabs="<%= id %>">
     <% options.each do |option| %>
-      <button type="button" data-js-tabs-target="<%= "#{id}-#{option[:id]}" %>" class="sage-tabs__tab"><%= option[:text] %></button>
+      <% if defined?(style) && style === "choice" %>
+      <%= render "examples/elements/choice/markup", target: "#{id}-#{option[:id]}", text: option[:text], subtext: option[:subtext] %>
+      <% else %>
+      <%= render "examples/elements/tab/markup", target: "#{id}-#{option[:id]}", text: option[:text] %>
+      <% end %>
     <% end %>
   </div>
 
   <% options.each do |option| %>
-    <div class="sage-tabs-pane" data-js-tabs-pane="<%= "#{id}-#{option[:id]}" %>">
-      Content for: <%= option[:text] %>
-    </div>
+    <div class="sage-tab__pane" data-js-pane="<%= "#{id}-#{option[:id]}" %>"><%= option[:content] || "" %></div>
   <% end %>
 </div>

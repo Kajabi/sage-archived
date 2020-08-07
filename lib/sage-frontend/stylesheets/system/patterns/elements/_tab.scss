@@ -1,0 +1,66 @@
+/* ==================================================
+  ** _tab.scss
+  type: element
+
+
+================================================== */
+
+$item-underline: "::after";
+
+/* stylelint-disable max-nesting-depth */
+.sage-tab {
+  @include button-style-reset();
+  display: flex;
+  position: relative;
+  align-items: center;
+  overflow: hidden;
+  margin: 0 sage-spacing(sm) 0 0;
+  padding: 0 0 sage-spacing(xs);
+  white-space: nowrap;
+  color: $sage-tabs-default-color;
+  transition: color $sage-transition, background-color $sage-transition, box-shadow $sage-transition;
+
+  @extend %t-sage-body-med;
+
+  &#{$item-underline} {
+    $spacing-off: 50%;
+
+    content: "";
+    position: absolute;
+    right: $spacing-off;
+    bottom: 0;
+    left: $spacing-off;
+    height: $sage-tabs-active-border-height;
+    background: $sage-tabs-active-border-color;
+    border-radius: $sage-tabs-active-border-radius;
+    transition: right $sage-transition, left $sage-transition;
+  }
+
+  &:hover {
+    color: $sage-tabs-active-color;
+  }
+
+  &:focus {
+    outline: 0;
+
+    &#{$item-underline} {
+      left: 0;
+      right: 0;
+    }
+  }
+
+  &:active,
+  &.sage-tab--active {
+    color: $sage-tabs-active-color;
+
+    &#{$item-underline} {
+      left: 0;
+      right: 0;
+    }
+  }
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+}
+/* stylelint-enable max-nesting-depth */

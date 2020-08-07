@@ -1,0 +1,99 @@
+/* ==================================================
+  ** _choice.scss
+  type: element
+
+
+================================================== */
+
+$item-radio: "::before";
+
+/* stylelint-disable max-nesting-depth */
+.sage-choice {
+  @include button-style-reset();
+  display: flex;
+  position: relative;
+  align-items: center;
+  flex-grow: 1;
+  flex-basis: 0;
+  padding: sage-spacing(sm);
+  white-space: nowrap;
+  color: $sage-tabs-default-color;
+  border: sage-border();
+  border-radius: sage-border(radius);
+  transition: color $sage-transition, background-color $sage-transition, box-shadow $sage-transition;
+
+  @extend %t-sage-body-med;
+
+  &#{$item-radio} {
+    content: "";
+    display: inline-block;
+    box-sizing: border-box;
+    height: $sage-radio-selected-indicator-size;
+    min-width: $sage-radio-selected-indicator-size;
+    width: $sage-radio-selected-indicator-size;
+    margin: 0 sage-spacing(xs) 0 0;
+    background-color: $sage-radio-selected-indicator-color;
+    border-radius: sage-border(radius-round);
+    border: sage-border();
+    transition: border $sage-transition, box-shadow $sage-transition;
+  }
+
+  &:hover {
+    color: $sage-tabs-active-color;
+    background-color: sage-color(grey, 100);
+
+    &#{$item-radio} {
+      box-shadow: sage-shadow(sm);
+    }
+  }
+
+  &:focus {
+    outline-color: sage-color(primary);
+  }
+
+  &:active,
+  &.sage-tab--active {
+    color: $sage-tabs-active-color;
+    &#{$item-radio} {
+      box-shadow: sage-shadow(sm);
+      border-width: 5px;
+      border-color: $sage-radio-color-checked;
+    }
+  }
+
+  :not(.sage-tabs--layout-vertical) > & {
+    margin: 0 sage-spacing(sm) 0 0;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+
+  .sage-tabs--layout-vertical > & {
+    margin-bottom: sage-spacing(sm);
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    &#{$item-radio} {
+      margin-right: sage-spacing(sm);
+    }
+  }
+}
+/* stylelint-enable max-nesting-depth */
+
+.sage-choice__content {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  pointer-events: none;
+}
+
+.sage-choice__text {
+  font-style: normal;
+
+  .sage-tabs--layout-vertical .sage-choice__content > & {
+    color: $sage-tabs-active-color;
+  }
+}

@@ -67,15 +67,6 @@ module ObjectsHelper
         a11y: "todo"
       },
       {
-        title: "choices",
-        description: "A set of radio button options presented horizontall or vertically.",
-        scss: "done",
-        docs: "done",
-        rails: "todo",
-        react: "todo",
-        a11y: "todo"
-      },
-      {
         title: "dropdown",
         description: "Sage dropdown",
         scss: "done",
