@@ -22,5 +22,5 @@ module.exports = {
     // Return the altered config
     return config;
   },
-  stories: [''../**/*.story.jsx'],
+  stories: ['../**/*.story.jsx'],
 };
