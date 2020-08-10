@@ -17,7 +17,7 @@
     "preversion": "git ls-remote --exit-code --heads heroku master && git fetch origin master --tags && git checkout master",
     "postversion": "git push origin master --tags && yarn run deploy && echo \"Successfully released and deployed version $npm_package_version!\"",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook -o ./public/storybook"
   },
   "repository": {
     "type": "git",
