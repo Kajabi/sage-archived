@@ -5,16 +5,57 @@
 ================================================== */
 
 $-panel-transition: 0.2s linear;
+$-panel-colors: (
+  default: (
+    border-color: sage-color(grey, 300),
+    text-color: sage-color(charcoal, 400),
+  ),
+  danger: (
+    border-color: sage-color(red, 300),
+    text-color: sage-color(red, 300),
+  ),
+  muted: (
+    border-color: sage-color(grey, 400),
+    text-color: sage-color(grey, 400),
+  ),
+);
+
+$-panel-spacing-sm: sage-spacing(xs);
 
 %sage-panel,
 .sage-panel {
   margin-bottom: sage-spacing(lg);
   background: $sage-panel-bg-color;
   border-radius: $sage-panel-border-radius;
-  box-shadow: $sage-panel-box-shadow;
+
+  &:not(.sage-panel--flat) {
+    box-shadow: $sage-panel-box-shadow;
+  }
 
   .sage-panel-group &:not(:last-child) {
     margin-bottom: sage-spacing(xs);
+  }
+
+  .sage-panel-group__items &:not(:last-child) {
+    margin-right: sage-spacing(sm);
+  }
+
+  .sage-panel-group-container .sage-panel-group__items & {
+    min-width: 180px;
+  }
+}
+
+.sage-panel--flat {
+  @each $-color-name, $-values in $-panel-colors {
+    @if $-color-name == default {
+      border: 1px solid map-get($-values, border-color);
+    }
+
+    @else {
+      &.sage-panel--#{$-color-name} {
+        border: 1px solid map-get($-values, border-color);
+      }
+    }
   }
 }
 
@@ -54,6 +95,23 @@ $-panel-transition: 0.2s linear;
   .sage-panel--lg > & {
     padding-left: $sage-panel-padding-lg;
     padding-right: $sage-panel-padding-lg;
+  }
+
+  .sage-panel--sm > & {
+    padding-left: $-panel-spacing-sm;
+    padding-right: $-panel-spacing-sm;
+  }
+
+  @each $-color-name, $-values in $-panel-colors {
+    @if $-color-name == default {
+      color: map-get($-values, text-color);
+    }
+
+    @else {
+      .sage-panel--#{$-color-name} & {
+        color: map-get($-values, text-color);
+      }
+    }
   }
 }
 
@@ -96,6 +154,11 @@ $-panel-transition: 0.2s linear;
   .sage-panel--lg > & {
     padding: $sage-panel-padding-lg;
   }
+
+  .sage-panel--sm > & {
+    padding-left: $-panel-spacing-sm;
+    padding-right: $-panel-spacing-sm;
+  }
 }
 
 .sage-panel__body--center {
@@ -114,6 +177,23 @@ $-panel-transition: 0.2s linear;
   .sage-panel--lg > & {
     padding: $sage-panel-padding-lg;
   }
+
+  .sage-panel--sm > & {
+    padding-left: $-panel-spacing-sm;
+    padding-right: $-panel-spacing-sm;
+  }
+
+  @each $-color-name, $-values in $-panel-colors {
+    @if $-color-name == default {
+      color: map-get($-values, text-color);
+    }
+
+    @else {
+      .sage-panel--#{$-color-name} & {
+        color: map-get($-values, text-color);
+      }
+    }
+  }
 }
 
 .sage-panel__title {
@@ -129,4 +209,26 @@ $-panel-transition: 0.2s linear;
   margin-bottom: sage-spacing();
   padding-left: 0;
   list-style: none;
+}
+
+.sage-panel-group__items {
+  display: flex;
+  
+  .sage-panel-group--inline-scroll &:not(:last-child) {
+    padding-right: sage-spacing(md);
+    border-right: 1px solid sage-color(grey, 300);
+  }
+
+  .sage-panel-group--inline-scroll &:not(:first-child) {
+    padding-left: sage-spacing(md);
+  }
+}
+
+.sage-panel-group--inline-scroll {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: auto;
+  overflow-x: auto;
+  width: 100%;
+  border: 1px solid sage-color(charcoal, 200);
 }

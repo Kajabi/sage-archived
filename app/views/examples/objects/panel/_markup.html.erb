@@ -1,5 +1,10 @@
-<div class="sage-panel <%= "sage-panel--accordion" if is_accordion %>">
-  <% if is_accordion %>
+<div class="sage-panel
+  <%= "sage-panel--accordion" if defined?(is_accordion) && is_accordion %>
+  <%= "sage-panel--#{style}" if defined?(style) %>
+  <%= "sage-panel--#{color}" if defined?(color) %>
+  <%= "sage-panel--#{size}" if defined?(size) %>
+">
+  <% if defined?(is_accordion) && is_accordion %>
     <div class="sage-panel__header" data-js-accordion="header">
       <h4 class="sage-panel__title"><%= header %></h4>
     </div>
@@ -14,7 +19,7 @@
     <div class="sage-panel__body"><%= body.html_safe %></div>
   <% end %>
 
-  <% if footer != false %>
+  <% if defined?(footer) %>
     <div class="sage-panel__footer"><%= footer %></div>
   <% end %>
 </div>

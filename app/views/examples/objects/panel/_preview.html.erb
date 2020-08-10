@@ -2,16 +2,111 @@
 <%= render "examples/objects/panel/markup",
   header: "Header Content",
   body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-  footer: "Footer Content",
-  is_accordion: false
+  footer: "Footer Content"
 %>
+
+<h4>Panel Sizes</h4>
+<div class="sage-panel-group">
+  <%= render "examples/objects/panel/markup",
+    header: "Large panel",
+    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    size: "lg"
+  %>
+  <%= render "examples/objects/panel/markup",
+    header: "Regular Panel",
+    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  %>
+  <%= render "examples/objects/panel/markup",
+    header: "Small Panel",
+    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    size: "sm"
+  %>
+</div>
+
+<h3>Flat Panel</h3>
+<%= render "examples/objects/panel/markup",
+  header: "Header Content",
+  body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  footer: "Footer Content",
+  style: "flat"
+%>
+
+<h4>Colors</h4>
+<div class="sage-panel-group">
+  <%= render "examples/objects/panel/markup",
+    header: "Default Color",
+    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    style: "flat",
+    size: "sm"
+  %>
+  <%= render "examples/objects/panel/markup",
+    header: "Muted Color",
+    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    style: "flat",
+    color: "muted",
+    size: "sm"
+  %>
+  <%= render "examples/objects/panel/markup",
+    header: "Danger COlor",
+    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    style: "flat",
+    color: "danger",
+    size: "sm"
+  %>
+</div>
+
+<h4>Inline/Scrolling Layout</h4>
+<div class="sage-panel-group sage-panel-group--inline-scroll">
+  <div class="sage-panel-group__items">
+    <%= render "examples/objects/panel/markup",
+      header: "Muted Color",
+      body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      style: "flat",
+      color: "muted",
+      size: "sm"
+    %>
+    <%= render "examples/objects/panel/markup",
+      header: "Danger COlor",
+      body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      style: "flat",
+      color: "danger",
+      size: "sm"
+    %>
+  </div>
+
+  <div class="sage-panel-group__items">
+    <%= render "examples/objects/panel/markup",
+      header: "Default Color",
+      body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      style: "flat",
+      size: "sm"
+    %>
+    <%= render "examples/objects/panel/markup",
+      header: "Default Color",
+      body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      style: "flat",
+      size: "sm"
+    %>
+    <%= render "examples/objects/panel/markup",
+      header: "Default Color",
+      body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      style: "flat",
+      size: "sm"
+    %>
+    <%= render "examples/objects/panel/markup",
+      header: "Default Color",
+      body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      style: "flat",
+      size: "sm"
+    %>
+  </div>
+</div>
 
 <h3>Accordion Panel</h3>
 <h4>Single/independent panel</h4>
 <%= render "examples/objects/panel/markup",
   header: "Header Content",
   body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-  footer: false,
   is_accordion: true
 %>
 
