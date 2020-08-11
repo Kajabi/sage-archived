@@ -14,6 +14,7 @@ $item-radio: "::before";
   align-items: center;
   flex-grow: 1;
   flex-basis: 0;
+  margin-bottom: sage-spacing(sm);
   padding: sage-spacing(sm);
   white-space: nowrap;
   color: $sage-tabs-default-color;
@@ -57,26 +58,6 @@ $item-radio: "::before";
       box-shadow: sage-shadow(sm);
       border-width: 5px;
       border-color: $sage-radio-color-checked;
-    }
-  }
-
-  .sage-tabs--layout-default > & {
-    margin: 0 sage-spacing(sm) 0 0;
-
-    &:last-of-type {
-      margin-right: 0;
-    }
-  }
-
-  .sage-tabs--layout-stacked > & {
-    margin-bottom: sage-spacing(sm);
-
-    &:last-of-type {
-      margin-bottom: 0;
-    }
-
-    &#{$item-radio} {
-      margin-right: sage-spacing(sm);
     }
   }
 }

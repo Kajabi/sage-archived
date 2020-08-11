@@ -6,15 +6,24 @@
 
 .sage-tabs {
   display: flex;
-  margin-bottom: sage-spacing(sm);
 }
 
 .sage-tabs--layout-default {
   flex-direction: row;
+
+  > * {
+    &:not(:last-of-type) {
+      margin-right: sage-spacing(sm);
+    }
+  }
 }
 
 .sage-tabs--layout-stacked {
   flex-direction: column;
+
+  > * {
+    margin-bottom: sage-spacing(sm);
+  }
 }
 
 .sage-tabs-pane {
@@ -27,4 +36,3 @@
   display: block;
   visibility: visible;
 }
-

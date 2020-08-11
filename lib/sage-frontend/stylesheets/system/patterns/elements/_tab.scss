@@ -13,7 +13,7 @@ $item-underline: "::after";
   position: relative;
   align-items: center;
   overflow: hidden;
-  margin: 0 sage-spacing(sm) 0 0;
+  margin: 0 sage-spacing(sm) sage-spacing(lg) 0;
   padding: 0 0 sage-spacing(xs);
   white-space: nowrap;
   color: $sage-tabs-default-color;
