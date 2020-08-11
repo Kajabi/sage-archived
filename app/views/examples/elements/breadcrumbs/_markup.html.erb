@@ -1,7 +1,7 @@
-<% is_progresbar = defined?(is_progressbar) && is_progressbar %>
+<% is_progressbar = defined?(is_progressbar) && is_progressbar %>
 <nav
   aria-label="Breadcrumbs"
-  class="sage-breadcrumbs<%= " sage-breadcrumbs--progress" if is_progresbar %><%= " #{klass}" if defined?(klass) %>"
+  class="sage-breadcrumbs<%= " sage-breadcrumbs--progressbar" if is_progressbar %><%= " #{klass}" if defined?(klass) %>"
 >
   <% if items.length() > 1 %>
     <ul class="sage-breadcrumbs__list">
@@ -11,7 +11,7 @@
             href="<%= item[:url] %>"
             class="
               sage-breadcrumbs__link
-              <%= " sage-breadcrumbs__link--current" if defined?(item[:is_current]) && item[:is_current] || !is_progresbar && i == (items.length() - 1) %>
+              <%= " sage-breadcrumbs__link--current" if defined?(item[:is_current]) && item[:is_current] || !is_progressbar && i == (items.length() - 1) %>
             "
           >
             <% if i == 0 && defined?(has_back_icon) && has_back_icon %>

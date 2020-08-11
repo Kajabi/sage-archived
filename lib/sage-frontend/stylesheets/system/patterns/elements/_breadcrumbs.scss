@@ -24,7 +24,7 @@
       color: sage-color(charcoal, 100);
     }
 
-    .sage-breadcrumbs--progress &::after {
+    .sage-breadcrumbs--progressbar &::after {
       margin: 0 sage-spacing(xs) sage-spacing(2xs);
       @include icon-base(right-small, xl);
     }
@@ -42,7 +42,7 @@
     color: sage-color(charcoal, 400);
   }
 
-  .sage-breadcrumbs--progress & {
+  .sage-breadcrumbs--progressbar & {
     position: relative;
     padding-bottom: sage-spacing(2xs);
 
@@ -57,7 +57,7 @@
 .sage-breadcrumbs__link--current {
   color: sage-color(charcoal, 200);
 
-  .sage-breadcrumbs--progress & {
+  .sage-breadcrumbs--progressbar & {
     color: sage-color(charcoal, 400);
   }
 }
