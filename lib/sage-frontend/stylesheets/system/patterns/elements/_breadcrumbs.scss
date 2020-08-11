@@ -20,8 +20,13 @@
   &:not(:last-child) {
     &::after {
       content: "/";
-      margin: 0 rem(16px);
+      margin: 0 sage-spacing(sm);
       color: sage-color(charcoal, 100);
+    }
+
+    .sage-breadcrumbs--progress &::after {
+      margin: 0 sage-spacing(xs) sage-spacing(2xs);
+      @include icon-base(right-small, xl);
     }
   }
 }
@@ -36,10 +41,25 @@
   &:active {
     color: sage-color(charcoal, 400);
   }
+
+  .sage-breadcrumbs--progress & {
+    position: relative;
+    padding-bottom: sage-spacing(2xs);
+
+    &:active {
+      color: sage-color(charcoal, 400);
+    }
+
+    @include sage-tab-underline(".sage-breadcrumbs__link--current");
+  }
 }
 
 .sage-breadcrumbs__link--current {
   color: sage-color(charcoal, 200);
+
+  .sage-breadcrumbs--progress & {
+    color: sage-color(charcoal, 400);
+  }
 }
 
 .sage-breadcrumbs__list {

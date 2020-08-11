@@ -15,6 +15,8 @@
     &:not(:last-of-type) {
       margin-right: sage-spacing(sm);
     }
+
+    @include sage-tab-underline(".sage-tabs__tab--active");
   }
 }
 
