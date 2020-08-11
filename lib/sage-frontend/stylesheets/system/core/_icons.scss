@@ -78,9 +78,15 @@ $sage-icon-li-margin-right: 0.4em !default;
       $suffix: "";
     }
 
-    .sage-icon-#{$icon-name}#{$suffix}::before {
-      @include icon-base($icon-name, $size-name);
-      @extend %sage-icon-extensions;
+    .sage-icon-#{$icon-name}#{$suffix} {
+      &::before {
+        @include icon-base($icon-name, $size-name);
+        // @extend %sage-icon-extensions;
+      }
+      &[class*="sage-spacer-top"]::after {
+        @include icon-base($icon-name, $size-name);
+        // @extend %sage-icon-extensions;
+      }
     }
   }
 }
