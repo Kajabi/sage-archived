@@ -25,9 +25,37 @@
   ]
 %>
 
-<h3 class="t-sage-heading-6">Choice tabs - default layout</h3>
+<h3 class="t-sage-heading-6">Progress styled tabs</h3>
 <%= render "examples/objects/tabs/markup",
   id: "example-tabs2",
+  is_progressbar: true,
+  options: [
+    {
+      text: "Active",
+      id: "test0",
+      content: "Active content"
+    },
+    {
+      text: "Sub Page 1",
+      id: "test1",
+      content: "Sub Page 1 content"
+    },
+    {
+      text: "Sub Page 2",
+      id: "test2",
+      content: "Sub Page 2 content"
+    },
+    {
+      text: "Sub Page 3",
+      id: "test3",
+      content: "Sub Page 3 content"
+    },
+  ]
+%>
+
+<h3 class="t-sage-heading-6">Choice tabs - default layout</h3>
+<%= render "examples/objects/tabs/markup",
+  id: "example-tabs3",
   style: "choice",
   options: [
     {
@@ -55,7 +83,7 @@
 
 <h3 class="t-sage-heading-6">Choice tabs - stacked layout</h3>
 <%= render "examples/objects/tabs/markup",
-  id: "example-tabs3",
+  id: "example-tabs4",
   stacked: true,
   style: "choice",
   options: [
