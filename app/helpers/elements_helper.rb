@@ -40,6 +40,15 @@ module ElementsHelper
         a11y: "todo"
       },
       {
+        title: "choice",
+        description: "A radio button tab for making a choice. To be used inside a tabs object.",
+        scss: "done",
+        docs: "done",
+        rails: "done",
+        react: "todo",
+        a11y: "todo"
+      },
+      {
         title: "description",
         description: "A description is composed of title and data content and is structured as a definition list.",
         scss: "done",
@@ -136,6 +145,15 @@ module ElementsHelper
         docs: "done",
         rails: "no",
         react: "no",
+        a11y: "todo"
+      },
+      {
+        title: "tab",
+        description: "A tab button to be used inside a tabs object",
+        scss: "done",
+        docs: "done",
+        rails: "doing",
+        react: "todo",
         a11y: "todo"
       },
       {
