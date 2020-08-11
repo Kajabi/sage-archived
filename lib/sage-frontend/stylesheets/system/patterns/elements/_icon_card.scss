@@ -1,0 +1,38 @@
+/* ==================================================
+  ** icon_card
+  type: element
+
+================================================== */
+
+.sage-icon-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  padding: sage-spacing(lg);
+  border-radius: sage-border(radius);
+
+  [class*="sage-icon-"] {
+    display: block;
+  }
+}
+
+@each $-color, $-values in $sage-color-combinations {
+  $-subtle-values: map-get($-values, subtle);
+  $-bold-values: map-get($-values, bold);
+
+  .sage-icon-card--#{$-color} {
+    color: map-get($-values, foreground-accent);
+    background-color: map-get($-values, background);
+  }
+
+  .sage-icon-card--#{$-color}-subtle {
+    color: map-get($-subtle-values, foreground-accent);
+    border: 1px solid map-get($-subtle-values, background);
+  }
+
+  .sage-icon-card--#{$-color}-bold {
+    color: map-get($-bold-values, foreground);
+    background-color: map-get($-bold-values, background);
+  }
+}
