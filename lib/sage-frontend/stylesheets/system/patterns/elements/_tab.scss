@@ -7,7 +7,6 @@
 
 $item-underline: "::after";
 
-/* stylelint-disable max-nesting-depth */
 .sage-tab {
   @include button-style-reset();
   display: flex;
@@ -63,4 +62,3 @@ $item-underline: "::after";
     margin-right: 0;
   }
 }
-/* stylelint-enable max-nesting-depth */

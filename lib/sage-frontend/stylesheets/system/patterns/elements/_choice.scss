@@ -7,7 +7,6 @@
 
 $item-radio: "::before";
 
-/* stylelint-disable max-nesting-depth */
 .sage-choice {
   @include button-style-reset();
   display: flex;
@@ -52,7 +51,7 @@ $item-radio: "::before";
   }
 
   &:active,
-  &.sage-tab--active {
+  &.sage-choice--active {
     color: $sage-tabs-active-color;
     &#{$item-radio} {
       box-shadow: sage-shadow(sm);
@@ -81,7 +80,6 @@ $item-radio: "::before";
     }
   }
 }
-/* stylelint-enable max-nesting-depth */
 
 .sage-choice__content {
   display: flex;

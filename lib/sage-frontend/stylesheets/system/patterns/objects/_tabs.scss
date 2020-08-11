@@ -17,13 +17,13 @@
   flex-direction: column;
 }
 
-.sage-tabs__pane {
+.sage-tabs-pane {
   display: none;
   visibility: hidden;
   margin-bottom: sage-spacing();
 }
 
-.sage-tabs__pane--active {
+.sage-tabs-pane--active {
   display: block;
   visibility: visible;
 }
