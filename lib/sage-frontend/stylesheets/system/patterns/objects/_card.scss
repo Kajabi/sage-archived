@@ -6,10 +6,32 @@
 ================================================== */
 
 .sage-card {
-  margin: 0 0 sage-spacing(lg) 0;
   border-radius: $sage-card-radius;
   box-shadow: $sage-card-shadow;
   background-color: sage-color(white);
+
+  &:not(:last-child) {
+    margin-bottom: sage-spacing();
+  }
+}
+
+.sage-card--flat {
+  box-shadow: none;
+  border: 1px solid sage-color(grey, 400);
+}
+
+.sage-card--dashed,
+.sage-card--dashed-interactive {
+  box-shadow: none;
+
+  @include sage-card-dashed-border;
+}
+
+.sage-card--dashed-interactive {
+  &:hover,
+  &.sage-card--hovered {
+    @include sage-card-dashed-border($color: sage-color(grey, 500), $thickness: 2);
+  }
 }
 
 .sage-card__body {

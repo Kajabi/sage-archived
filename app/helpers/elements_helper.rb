@@ -13,6 +13,14 @@ module ElementsHelper
     [
       # Sage Generated Elements
       {
+        title: "icon_card",
+        description: "A simple component that allows an icon to be rendered on a field with a unified color scheme applied.", 
+        scss: "done",
+        rails: "todo",
+        react: "doing",
+        a11y: "todo",
+      },
+      {
         title: "breadcrumbs",
         description: "Breadcrumbs provide a sense of where we are in the site structure with hyperlinks to previous areas in that structure. Our element also provides a specific \"Back link\" variation",
         scss: "done",

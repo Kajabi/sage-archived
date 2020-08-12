@@ -1,34 +1,30 @@
-<%= render "examples/elements/label/markup",
-type: "draft",
-is_subtle: false
+<%
+colors = [
+  "draft",
+  "info",
+  "success",
+  "warning",
+  "danger"
+]
 %>
-<%= render "examples/elements/label/markup",
-type: "success",
-is_subtle: false
-%>
-<%= render "examples/elements/label/markup",
-type: "warning",
-is_subtle: false
-%>
-<%= render "examples/elements/label/markup",
-type: "danger",
-is_subtle: false
-%>
+<% colors.each do | color | %>
+  <%= render "examples/elements/label/markup",
+  color: color
+  %>
+<% end %>
 <br/>
 <br/>
-<%= render "examples/elements/label/markup",
-type: "draft",
-is_subtle: true
-%>
-<%= render "examples/elements/label/markup",
-type: "success",
-is_subtle: true
-%>
-<%= render "examples/elements/label/markup",
-type: "warning",
-is_subtle: true
-%>
-<%= render "examples/elements/label/markup",
-type: "danger",
-is_subtle: true
-%>
+<% colors.each do | color | %>
+  <%= render "examples/elements/label/markup",
+  color: color,
+  type: "subtle"
+  %>
+<% end %>
+<br/>
+<br/>
+<% colors.each do | color | %>
+  <%= render "examples/elements/label/markup",
+  color: color,
+  type: "bold"
+  %>
+<% end %>
