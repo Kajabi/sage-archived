@@ -22,7 +22,8 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the
   # background. Read more: https://github.com/rails/spring
-  gem 'spring'
+  # Use Spring ~1.3.3, Product's Spring version, to prevent needing to frequently restart Spring
+  gem "spring", "~> 1.3.3"
 end
 
 gem "lockup", "~> 1.5"
