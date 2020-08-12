@@ -14,10 +14,10 @@ module ElementsHelper
       # Sage Generated Elements
       {
         title: "icon_card",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", 
-        scss: "todo",
+        description: "A simple component that allows an icon to be rendered on a field with a unified color scheme applied.", 
+        scss: "done",
         rails: "todo",
-        react: "todo",
+        react: "doing",
         a11y: "todo",
       },
       {
