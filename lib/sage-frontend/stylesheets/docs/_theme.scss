@@ -1,26 +1,13 @@
 /* ==================================================
   ** _theme.scss
-
   For Sage documentation use
 ================================================== */
-
-
-// Typography
-a {
-  color: sage-color(sage);
-}
 
 // Assistant
 .sage-assistant {
   background: sage-color(charcoal, 500);
-  &__branding {
-    height: 30px;
-  }
 }
 
-// Images
-.sage-panel__img {
-  display: block;
-  max-width: 100%;
-  margin-bottom: $sage-panel-padding;
+.sage-assistant__branding {
+  height: 30px;
 }
