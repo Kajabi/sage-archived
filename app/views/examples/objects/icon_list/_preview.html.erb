@@ -32,3 +32,104 @@
   ]
 %>
 
+<h5>Checkbox list</h5>
+
+<%= render "examples/objects/icon_list/markup",
+  items: [
+    {
+      bullet: %(
+        <input id="c1" type="checkbox" class="sage-checkbox sage-checkbox--standalone" />
+      ),
+      bullet_type: "checkbox",
+      body: %(
+        <label for="c1" class="t-sage-body-med">Grant an offer</label>
+        <p class="t-sage-body-small t-sage--color-charcoal-200">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Tempus aliquam suspendisse pretium diam posuere phasellus
+          sit sed. Consectetur at convallis dis senectus euismod cursus
+          orci, amet quis.
+        </p>
+      )
+    },
+    {
+      bullet: %(
+        <input id="c2" type="checkbox" class="sage-checkbox sage-checkbox--standalone" />
+      ),
+      bullet_type: "checkbox",
+      body: %(
+        <label for="c2" class="t-sage-body-med">Add tags</label>
+        <p class="t-sage-body-small t-sage--color-charcoal-200">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Tempus aliquam suspendisse pretium diam posuere phasellus
+          sit sed. Consectetur at convallis dis senectus euismod cursus
+          orci, amet quis.
+        </p>
+      )
+    },
+    {
+      bullet: %(
+        <input id="c3" type="checkbox" class="sage-checkbox sage-checkbox--standalone" />
+      ),
+      bullet_type: "checkbox",
+      body: %(
+        <label for="c3" class="t-sage-body-med">Subscribe to marketing emails</label>
+        <p class="t-sage-body-small t-sage--color-charcoal-200">
+          By checking this box you certify that you have gathered proper
+          permissions to send marketing emails to every email address in
+          this file.
+        </p>
+      )
+    }
+  ]
+%>
+
+<h5>Radio list</h5>
+
+<%= render "examples/objects/icon_list/markup",
+  items: [
+    {
+      bullet: %(
+        <input id="r1" type="radio" name="radio-group" class="sage-radio sage-radio--standalone" />
+      ),
+      bullet_type: "radio",
+      body: %(
+        <label for="c1" class="t-sage-body-med">Grant an offer</label>
+        <p class="t-sage-body-small t-sage--color-charcoal-200">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Tempus aliquam suspendisse pretium diam posuere phasellus
+          sit sed. Consectetur at convallis dis senectus euismod cursus
+          orci, amet quis.
+        </p>
+      )
+    },
+    {
+      bullet: %(
+        <input id="r2" type="radio" name="radio-group" class="sage-radio sage-radio--standalone" />
+      ),
+      bullet_type: "radio",
+      body: %(
+        <label for="c2" class="t-sage-body-med">Add tags</label>
+        <p class="t-sage-body-small t-sage--color-charcoal-200">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Tempus aliquam suspendisse pretium diam posuere phasellus
+          sit sed. Consectetur at convallis dis senectus euismod cursus
+          orci, amet quis.
+        </p>
+      )
+    },
+    {
+      bullet: %(
+        <input id="r3" type="radio" name="radio-group" class="sage-radio sage-radio--standalone" />
+      ),
+      bullet_type: "radio",
+      body: %(
+        <label for="c3" class="t-sage-body-med">Subscribe to marketing emails</label>
+        <p class="t-sage-body-small t-sage--color-charcoal-200">
+          By checking this box you certify that you have gathered proper
+          permissions to send marketing emails to every email address in
+          this file.
+        </p>
+      )
+    }
+  ]
+%>
