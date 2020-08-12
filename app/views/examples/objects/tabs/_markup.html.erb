@@ -1,5 +1,6 @@
+<% is_progressbar = defined?(is_progressbar) && is_progressbar %>
 <div>
-  <div class="sage-tabs <%= defined?(stacked) ? "sage-tabs--layout-stacked" : "sage-tabs--layout-default" %>" data-js-tabs="<%= id %>" role="tablist">
+  <div class="sage-tabs<%= defined?(stacked) ? " sage-tabs--layout-stacked" : " sage-tabs--layout-default" %><%= " sage-tabs--progressbar" if is_progressbar %>" data-js-tabs="<%= id %>" role="tablist">
     <% options.each do |option| %>
       <% if defined?(style) && style === "choice" %>
       <%= render "examples/elements/choice/markup", target: "#{id}-#{option[:id]}", text: option[:text], subtext: option[:subtext] %>
