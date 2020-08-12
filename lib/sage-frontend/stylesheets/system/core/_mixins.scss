@@ -199,7 +199,7 @@
 }
 
 /* ==================================================
-  ** Tabe underline mixin
+  ** Tab underline mixin
   Usage: `@include sage-tab-underline(".sage-tabs__tab--active");`
 
   Adds an tab-styled underline that animates in and out when active class is toggled
@@ -235,4 +235,23 @@
       right: 0;
     }
   }
+}
+
+/* ==================================================
+  ** Dashed border generator
+  Usage: `@include sage-card-dashed-border(1, sage-color(sage), 3, 7, 3, 4);`
+
+  Adds the appearance of a dashed border on an element using a url-encoded SVG shape as a background image.
+  arguments:
+      $thickness: [unitless number for thickness of the stroke]
+      $color: [hex color to be used for the stroke color]
+      $dash:[unitless number for the size of a dash]
+      $gap: [unitless number for the size of a gap between dashes]
+      $offset: [unitless number for the initial offset for the starting point of the dash]
+      $border-radius: [unitless number for the border radius of the shape]
+================================================== */
+
+@mixin sage-card-dashed-border($thickness: 1, $color: sage-color(grey, 400), $dash: 4.5, $gap: 4.5, $offset: 4.5, $border-radius: 4) {
+  $stripped-color-value: str-replace("#{$color}", "#", "%23");
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='#{$border-radius}' ry='#{$border-radius}' stroke='#{$stripped-color-value}' stroke-width='#{$thickness * 2}' stroke-dasharray='#{$dash}%2c#{$gap + $thickness * 4}' stroke-dashoffset='#{$offset}' stroke-linecap='square'/%3e%3c/svg%3e");
 }

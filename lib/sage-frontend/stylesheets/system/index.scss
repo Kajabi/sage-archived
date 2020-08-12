@@ -6,6 +6,7 @@
 
 // Variable Tokens
 @import "tokens/color_palette";
+@import "tokens/color_combos";
 @import "tokens/border";
 @import "tokens/breakpoints";
 @import "tokens/container";
@@ -43,6 +44,7 @@
 
 // Utilities
 @import "utilities/media";
+@import "utilities/spacer";
 @import "utilities/hidden";
 
 // Elements
@@ -67,8 +69,10 @@
 @import "patterns/elements/table";
 @import "patterns/elements/tooltip";
 @import "patterns/elements/status_icon";
+@import "patterns/elements/icon_card";
 
 // Objects
+@import "patterns/objects/icon_list";
 @import "patterns/objects/alert";
 @import "patterns/objects/assistant";
 @import "patterns/objects/avatar";

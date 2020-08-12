@@ -1,1 +1,3 @@
-<span class="sage-label<%= is_subtle ? " sage-label--subtle" : "" %> sage-label--<%= type %>"><%= type.capitalize %></span>
+<span class="sage-label sage-label--<%= color %><%= " sage-label--#{type}" if defined?(type) %>">
+  <%= color.capitalize %>
+</span>

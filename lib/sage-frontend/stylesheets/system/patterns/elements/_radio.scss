@@ -6,10 +6,16 @@
 ================================================== */
 
 .sage-radio {
-  display: flex;
-  flex-flow: row wrap;
-  align-items: center;
-  margin-bottom: $sage-form-element-spacing;
+  &:not(.sage-radio--standalone) {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    margin-bottom: $sage-form-element-spacing;
+  }
+}
+
+.sage-radio--standalone {
+  display: inline-block;
 }
 
 .sage-radio__label {
@@ -21,6 +27,8 @@
   @extend %t-sage-body;
 }
 
+
+.sage-radio--standalone,
 .sage-radio__input {
   display: inline-block;
   position: relative;

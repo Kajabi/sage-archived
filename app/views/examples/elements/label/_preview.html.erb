@@ -1,35 +1,32 @@
-<h5>Default</h5>
-<%= render "examples/elements/label/markup",
-type: "draft",
-is_subtle: false
-%>
-<%= render "examples/elements/label/markup",
-type: "success",
-is_subtle: false
-%>
-<%= render "examples/elements/label/markup",
-type: "warning",
-is_subtle: false
-%>
-<%= render "examples/elements/label/markup",
-type: "danger",
-is_subtle: false
+<%
+colors = [
+  "draft",
+  "info",
+  "success",
+  "warning",
+  "danger"
+]
 %>
 
+<h5>Default</h5>
+<% colors.each do | color | %>
+  <%= render "examples/elements/label/markup",
+  color: color
+  %>
+<% end %>
+
 <h5>Subtle</h5>
-<%= render "examples/elements/label/markup",
-type: "draft",
-is_subtle: true
-%>
-<%= render "examples/elements/label/markup",
-type: "success",
-is_subtle: true
-%>
-<%= render "examples/elements/label/markup",
-type: "warning",
-is_subtle: true
-%>
-<%= render "examples/elements/label/markup",
-type: "danger",
-is_subtle: true
-%>
+<% colors.each do | color | %>
+  <%= render "examples/elements/label/markup",
+  color: color,
+  type: "subtle"
+  %>
+<% end %>
+
+<h5>Bold</h5>
+<% colors.each do | color | %>
+  <%= render "examples/elements/label/markup",
+  color: color,
+  type: "bold"
+  %>
+<% end %>

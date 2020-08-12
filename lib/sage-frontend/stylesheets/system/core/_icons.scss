@@ -43,32 +43,6 @@ $sage-icon-li-margin-right: 0.4em !default;
 // Base class definition
 // ==================================================
 
-%sage-icon-extensions {
-  &.is-spinning {
-    animation: sage-icon-spin 2s infinite linear;
-  }
-
-  &.rotate-90 {
-    @include sage-icon-rotate(90deg, 1);
-  }
-
-  &.rotate-180 {
-    @include sage-icon-rotate(180deg, 2);
-  }
-
-  &.rotate-270 {
-    @include sage-icon-rotate(270deg, 3);
-  }
-
-  &.flip-y {
-    @include sage-icon-flip(-1, 1, 0);
-  }
-
-  &.flip-x {
-    @include sage-icon-flip(1, -1, 2);
-  }
-}
-
 // Build icons as `sage-icon-icon-name` based on the map in `tokens/_icon`
 @each $icon-name, $icon-code in $sage-icons {
   @each $size-name, $size in $sage-icon-sizes {
@@ -78,9 +52,10 @@ $sage-icon-li-margin-right: 0.4em !default;
       $suffix: "";
     }
 
-    .sage-icon-#{$icon-name}#{$suffix}::before {
-      @include icon-base($icon-name, $size-name);
-      @extend %sage-icon-extensions;
+    .sage-icon-#{$icon-name}#{$suffix} {
+      &::before {
+        @include icon-base($icon-name, $size-name);
+      }
     }
   }
 }

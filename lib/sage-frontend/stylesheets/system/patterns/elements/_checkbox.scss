@@ -6,10 +6,16 @@
 ================================================== */
 
 .sage-checkbox {
-  display: flex;
-  flex-flow: row wrap;
-  align-items: center;
-  margin-bottom: $sage-form-element-spacing;
+  &:not(.sage-checkbox--standalone) {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    margin-bottom: $sage-form-element-spacing;
+  }
+}
+
+.sage-checkbox--standalone {
+  display: inline-block;
 }
 
 .sage-checkbox__label {
@@ -31,6 +37,7 @@
   }
 }
 
+.sage-checkbox--standalone,
 .sage-checkbox__input {
   appearance: none;
   display: inline-block;
