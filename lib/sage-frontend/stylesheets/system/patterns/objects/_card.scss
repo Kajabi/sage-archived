@@ -11,10 +11,13 @@
 }
 
 .sage-card {
-  margin: 0 0 sage-spacing(lg) 0;
   border-radius: $sage-card-radius;
   box-shadow: $sage-card-shadow;
   background-color: sage-color(white);
+
+  &:not(:last-child) {
+    margin-bottom: sage-spacing();
+  }
 }
 
 .sage-card--flat {

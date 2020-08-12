@@ -3,7 +3,7 @@
 <% end %>
 <p>Use this scratchpad to test out elements and objects in context. Just be sure not to commit your changes. ❤️</p>
 
-<div class="sage-card sage-card--spaced">
+<div class="sage-card sage-card--spaced sage-spacer-top">
   <div class="sage-card__body">
     <div class="sage-card sage-card--dashed-interactive sage-card--compact sage-card--spaced sage-card--center">
       <div class="sage-card__body">
@@ -16,13 +16,12 @@
     </div>
 
     <div class="sage-card sage-card--flat sage-card--compact sage-card--spaced">
-      <div class="sage-card__img sage-icon-card sage-icon-card--info">
+      <div class="sage-card__img sage-icon-card sage-icon-card--draft">
         <i class="sage-icon-file-3xl" aria-hidden="true"></i>
       </div>
       <div class="sage-card__body">
         <p class="t-sage-body-small sage-spacer-bottom-2xs">
-          <i class="sage-icon-check-circle t-sage--color-sage" style="display: inline-block; transform: translateY(1px)" aria-hidden="true"></i>
-          <b>Live Event Signups.csv</b>
+          <i class="sage-icon-check-circle t-sage--color-sage sage-spacer-right-xs" style="display: inline-block; transform: translateY(1px)" aria-hidden="true"></i><b>Live Event Signups.csv</b>
         </p>
         <p class="t-sage-body-small t-sage--color-grey sage-spacer-bottom-2xs">File size: 2KB </p>
         <p class="t-sage-body-small">
@@ -31,9 +30,11 @@
       </div>
     </div>
   </div>
-  <%= render "examples/elements/button/markup",
-    color: "primary",
-    is_link_btn: false,
-    text: "Continue to Upload"
-  %>
+  <div class="sage-card__footer">
+    <%= render "examples/elements/button/markup",
+      color: "primary",
+      is_link_btn: false,
+      text: "Continue to Upload"
+    %>
+  </div>
 </div>

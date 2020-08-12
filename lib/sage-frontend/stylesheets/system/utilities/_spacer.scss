@@ -1,3 +1,9 @@
+$-box-sides: (
+  top,
+  right,
+  bottom,
+  left
+);
 
 @each $-name, $-value in $sage-spacings {
   $suffix: "-#{$-name}";
@@ -5,20 +11,10 @@
   @if $-name == md {
     $suffix: "";
   }
-
-  .sage-spacer-bottom#{$suffix} {
-    &::after {
-      content: "";
-      display: block;
-      height: $-value;
-    }
-  }
   
-  .sage-spacer-top#{$suffix} {
-    &::before {
-      content: "";
-      display: block;
-      height: $-value;
+  @each $-box-side in $-box-sides {
+    .sage-spacer-#{$-box-side}#{$suffix} {
+      margin-#{$-box-side}: $-value;
     }
   }
 }
