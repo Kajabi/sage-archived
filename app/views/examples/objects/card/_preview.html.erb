@@ -1,14 +1,11 @@
+<h5>Standard cards</h5>
 <div class="sage-row">
   <div class="sage-col--md-6">
     <%= render "examples/objects/card/markup",
-      is_center: false,
-      is_compact: false,
-      is_spaced: false,
       title: "Card w/ Image",
       text: "Diam in auctor sit quam laoreet imperdiet aliquam. Habitant nunc lacus semper lacus, nec a, sit enim.",
       action_text: "Action Button",
-      action_style_primary: true,
-      action_style_tertiary: false,
+      action_style: "primary",
       has_img: true,
       img_path: "docs/card/card-placeholder-lg.png",
       img_alt: "Alternative text for image"
@@ -16,57 +13,54 @@
   </div>
   <div class="sage-col--md-6">
     <%= render "examples/objects/card/markup",
-      is_center: false,
-      is_compact: false,
-      is_spaced: false,
       title: "Card w/ Image",
       text: "Diam in auctor sit quam laoreet imperdiet aliquam. Habitant nunc lacus semper lacus, nec a, sit enim.",
       action_text: "Action Button",
-      action_style_primary: false,
-      action_style_tertiary: true,
+      action_style: "tertiary",
+      icon_style: "right-caret-right",
       has_img: true,
       img_path: "docs/card/card-placeholder-lg.png",
       img_alt: "Alternative text for image"
     %>
   </div>
+</div>
+
+<h5>Compact cards</h5>
+<div class="sage-row">
   <div class="sage-col--md-12">
     <%= render "examples/objects/card/markup",
-      is_center: false,
       is_compact: true,
-      is_spaced: false,
       title: "Compact Card w/ Image",
       text: "Diam in auctor sit quam laoreet imperdiet aliquam. Habitant nunc lacus semper lacus, nec a, sit enim.",
       action_text: "Action Button",
-      action_style_primary: true,
-      action_style_tertiary: false,
+      action_style: "primary",
       has_img: true,
       img_path: "docs/card/card-placeholder-sm.png",
       img_alt: "Alternative text for image"
     %>
     <%= render "examples/objects/card/markup",
-      is_center: false,
       is_compact: true,
-      is_spaced: false,
       title: "Compact Card w/ Image",
       text: "Diam in auctor sit quam laoreet imperdiet aliquam. Habitant nunc lacus semper lacus, nec a, sit enim.",
       action_text: "Action Button",
-      action_style_primary: false,
-      action_style_tertiary: true,
+      action_style: "tertiary",
+      icon_style: "right-caret-right",
        has_img: true,
       img_path: "docs/card/card-placeholder-sm.png",
       img_alt: "Alternative text for image"
     %>
   </div>
+</div>
+
+<h5>Spaced cards</h5>
+<div class="sage-row">
   <div class="sage-col--md-6">
     <%= render "examples/objects/card/markup",
-      is_center: false,
-      is_compact: false,
       is_spaced: true,
       title: "Spaced Card w/ Image",
       text: "Diam in auctor sit quam laoreet imperdiet aliquam. Habitant nunc lacus semper lacus, nec a, sit enim.",
       action_text: "Action Button",
-      action_style_primary: true,
-      action_style_tertiary: false,
+      action_style: "primary",
       has_img: true,
       img_path: "docs/card/card-placeholder-lg.png",
       img_alt: "Alternative text for image"
@@ -74,78 +68,111 @@
   </div>
   <div class="sage-col--md-6">
     <%= render "examples/objects/card/markup",
-      is_center: false,
-      is_compact: false,
       is_spaced: true,
       title: "Spaced Card w/ Image",
       text: "Diam in auctor sit quam laoreet imperdiet aliquam. Habitant nunc lacus semper lacus, nec a, sit enim.",
       action_text: "Action Button",
-      action_style_primary: false,
-      action_style_tertiary: true,
+      action_style: "tertiary",
+      icon_style: "right-caret-right",
        has_img: true,
       img_path: "docs/card/card-placeholder-lg.png",
       img_alt: "Alternative text for image"
     %>
   </div>
+</div>
+
+<h5>Spaced Compact cards</h5>
+<div class="sage-row">
   <div class="sage-col--md-12">
     <%= render "examples/objects/card/markup",
-      is_center: false,
       is_compact: true,
       is_spaced: true,
       title: "Spaced & Compact w/ Image",
       text: "Diam in auctor sit quam laoreet imperdiet aliquam. Habitant nunc lacus semper lacus, nec a, sit enim.",
       action_text: "Action Button",
-      action_style_primary: true,
-      action_style_tertiary: false,
+      action_style: "primary",
       has_img: true,
       img_path: "docs/card/card-placeholder-sm.png",
       img_alt: "Alternative text for image"
     %>
     <%= render "examples/objects/card/markup",
-      is_center: false,
       is_compact: true,
       is_spaced: true,
       title: "Spaced & Compact w/ Image",
       text: "Diam in auctor sit quam laoreet imperdiet aliquam. Habitant nunc lacus semper lacus, nec a, sit enim.",
       action_text: "Action Button",
-      action_style_primary: false,
-      action_style_tertiary: true,
+      action_style: "tertiary",
+      icon_style: "right-caret-right",
       has_img: true,
       img_path: "docs/card/card-placeholder-sm.png",
       img_alt: "Alternative text for image"
     %>
   </div>
+</div>
+
+<h5>Cards with no Image</h5>
+<div class="sage-row">
   <div class="sage-col--md-6">
     <%= render "examples/objects/card/markup",
-      is_center: false,
-      is_compact: false,
-      is_spaced: false,
       title: "Card w/ No Image",
       text: "Diam in auctor sit quam laoreet imperdiet aliquam. Habitant nunc lacus semper lacus, nec a, sit enim.",
       action_text: "Action Button",
-      action_style_primary: true,
-      action_style_tertiary: false,
-      has_img: false,
-      img_path: "",
-      img_alt: ""
+      action_style: "primary"
     %>
   </div>
   <div class="sage-col--md-6">
     <%= render "examples/objects/card/markup",
-      is_center: false,
-      is_compact: false,
-      is_spaced: false,
       title: "Card w/ No Image",
       text: "Diam in auctor sit quam laoreet imperdiet aliquam. Habitant nunc lacus semper lacus, nec a, sit enim.",
       action_text: "Action Button",
-      action_style_primary: false,
-      action_style_tertiary: true,
-      has_img: false,
+      action_style: "tertiary",
+      icon_style: "right-caret-right"
+    %>
+  </div>
+</div>
+
+<h5>Cards with Styled Borders</h5>
+<div class="sage-row">
+  <div class="sage-col--md-6">
+    <%= render "examples/objects/card/markup",
+      title: "Flat default card",
+      text: "Diam in auctor sit quam laoreet imperdiet aliquam. Habitant nunc lacus semper lacus, nec a, sit enim.",
+      action_text: "Action Button",
+      action_style: "primary",
+      border_style: "flat"
+    %>
+  </div>
+  <div class="sage-col--md-6">
+    <%= render "examples/objects/card/markup",
+      title: "Dashed default card",
+      text: "Diam in auctor sit quam laoreet imperdiet aliquam. Habitant nunc lacus semper lacus, nec a, sit enim.",
+      action_text: "Action Button",
+      action_style: "tertiary",
+      icon_style: "right-caret-right",
+      border_style: "dashed"
+    %>
+  </div>
+</div>
+
+<h5>Centered card</h5>
+<div class="sage-row">
+  <div class="sage-col--md-8">
+    <%= render "examples/objects/card/markup",
+      is_centered: true,
+      title: "Centered Card Text",
+      text: "Diam in auctor sit quam laoreet imperdiet aliquam. Habitant nunc lacus semper lacus, nec a, sit enim.",
+      action_text: "Action Button",
+      action_style: "tertiary",
+      icon_style: "right-caret-right",
       img_path: "",
       img_alt: ""
     %>
   </div>
-  <div class="sage-col--md-6">
+</div>
+
+<h5>Card with Rich Content</h5>
+<div class="sage-row">
+  <div class="sage-col--md-8">
     <div class="sage-card sage-card--spaced">
       <%= image_pack_tag("docs/card/card-placeholder-sm.png", class: "sage-card__img", alt: "") %>
       <h2 class="sage-card__title t-sage-heading-5">Card w/ Rich Text and Footer</h2>
@@ -166,20 +193,5 @@
         <a href="#" class="sage-btn sage-btn--primary">Next</a>
       </div>
     </div>
-  </div>
-  <div class="sage-col--md-6">
-    <%= render "examples/objects/card/markup",
-      is_center: true,
-      is_compact: false,
-      is_spaced: false,
-      title: "Centered Card Text",
-      text: "Diam in auctor sit quam laoreet imperdiet aliquam. Habitant nunc lacus semper lacus, nec a, sit enim.",
-      action_text: "Action Button",
-      action_style_primary: false,
-      action_style_tertiary: true,
-      has_img: false,
-      img_path: "",
-      img_alt: ""
-    %>
   </div>
 </div>

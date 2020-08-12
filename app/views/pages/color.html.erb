@@ -104,5 +104,35 @@
         </div>
       </div>
     </div>
+
+    <h2>Color Combinations</h2>
+    <p>We prescribe a few sets of color combinations for an easy and consisteny pairing between a foreground and a background color</p>
+    <h3>Default</h3>
+    <%
+    colors = [
+      "draft",
+      "info",
+      "success",
+      "warning",
+      "danger"
+    ]
+    %>
+    <% colors.each do | color | %>
+      <%= render "examples/elements/label/markup", color: color %>
+    <% end %>
+    <h3>Subtle</h3>
+    <% colors.each do | color | %>
+      <%= render "examples/elements/label/markup",
+        color: color,
+        type: "subtle"
+      %>
+    <% end %>
+    <h3>Bold</h3>
+    <% colors.each do | color | %>
+      <%= render "examples/elements/label/markup",
+        color: color,
+        type: "bold"
+      %>
+    <% end %>
   </div>
 </div>
