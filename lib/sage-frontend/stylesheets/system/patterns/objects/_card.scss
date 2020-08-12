@@ -5,11 +5,6 @@
 
 ================================================== */
 
-@mixin sage-card-dashed-border($thickness: 1, $color: sage-color(grey, 400), $dash: 4.5, $gap: 4.5, $offset: 4.5, $border-radius: 4) {
-  $stripped-color-value: str-replace("#{$color}", "#");
-  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='#{$border-radius}' ry='#{$border-radius}' stroke='%23#{$stripped-color-value}' stroke-width='#{$thickness * 2}' stroke-dasharray='#{$dash}%2c#{$gap + $thickness * 4}' stroke-dashoffset='#{$offset}' stroke-linecap='square'/%3e%3c/svg%3e");
-}
-
 .sage-card {
   border-radius: $sage-card-radius;
   box-shadow: $sage-card-shadow;
