@@ -8,7 +8,6 @@
 $-label-padding: 0 sage-spacing(xs) !default;
 $-label-border-radius: sage-border(radius) !default;
 $-label-inset-border: 0 0 0 1px inset;
-$-label-colors: $sage-color-combinations;
 
 .sage-label {
   @extend %t-sage-body-small-med;
@@ -20,25 +19,21 @@ $-label-colors: $sage-color-combinations;
   border-radius: $-label-border-radius;
 }
 
-@each $-color-name, $-color-settings in $-label-colors {
+@each $-color-name, $-color-settings in $sage-color-combos {
   .sage-label--#{$-color-name} {
-    $-subtle-settings: map-get($-color-settings, subtle);
-    $-bold-settings: map-get($-color-settings, bold);
-
-    color: map-get($-color-settings, foreground);
-    background-color: map-get($-color-settings, background);
-    box-shadow: $-label-inset-border map-get($-color-settings, background);
+    color: sage-color-combo($-color-name, default, foreground);
+    background-color: sage-color-combo($-color-name, default, background);
 
     &.sage-label--subtle {
-      color: map-get($-subtle-settings, foreground);
+      color: sage-color-combo($-color-name, subtle, foreground);
       background-color: sage-color(white);
-      box-shadow: $-label-inset-border map-get($-subtle-settings, background);
+      // Box shadow instead of border so that size and inner spacing is not affected
+      box-shadow: $-label-inset-border sage-color-combo($-color-name, subtle, background);
     }
 
     &.sage-label--bold {
-      color: map-get($-bold-settings, foreground);
-      background-color: sage-color(white);
-      box-shadow: $-label-inset-border map-get($-bold-settings, background);
+      color: sage-color-combo($-color-name, bold, foreground);
+      background-color: sage-color-combo($-color-name, bold, background);
     }
 
     .sage-btn & {

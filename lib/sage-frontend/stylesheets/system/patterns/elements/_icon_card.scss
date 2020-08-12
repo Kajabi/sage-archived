@@ -17,22 +17,22 @@
   }
 }
 
-@each $-color, $-values in $sage-color-combinations {
+@each $-color, $-values in $sage-color-combos {
   $-subtle-values: map-get($-values, subtle);
   $-bold-values: map-get($-values, bold);
 
   .sage-icon-card--#{$-color} {
-    color: map-get($-values, foreground-accent);
-    background-color: map-get($-values, background);
+    color: sage-color-combo($-color, default, foreground-accent);
+    background-color: sage-color-combo($-color, default, background);
   }
 
   .sage-icon-card--#{$-color}-subtle {
-    color: map-get($-subtle-values, foreground-accent);
-    border: 1px solid map-get($-subtle-values, background);
+    color: sage-color-combo($-color, subtle, foreground-accent);
+    border: 1px solid sage-color-combo($-color, subtle, background);
   }
 
   .sage-icon-card--#{$-color}-bold {
-    color: map-get($-bold-values, foreground);
-    background-color: map-get($-bold-values, background);
+    color: sage-color-combo($-color, bold, foreground);
+    background-color: sage-color-combo($-color, bold, background);
   }
 }
