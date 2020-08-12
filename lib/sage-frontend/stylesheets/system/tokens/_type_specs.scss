@@ -2,19 +2,19 @@
 // TYPE SPECS
 // ==================================================
 
-$t-base-spec: (
+$-t-base-spec: (
   weight: sage-font-weight(),
   size: sage-font-size(),
   leading: sage-line-height(md),
   kerning: sage-letter-spacing(xs)
 );
 
-$t-body-small-spec: map-merge($t-base-spec, (
+$-t-body-small-spec: map-merge($-t-base-spec, (
   size: sage-font-size(sm),
   leading: sage-line-height(sm),
 ));
 
-$t-body-xsmall-spec: map-merge($t-base-spec, (
+$-t-body-xsmall-spec: map-merge($-t-base-spec, (
   size: sage-font-size(xs),
   leading: sage-line-height(xs),
 ));
@@ -23,7 +23,7 @@ $t-body-xsmall-spec: map-merge($t-base-spec, (
 // These are used to create base classes as well as to apply type specs in
 // context with `@extend %t-` etc.
 
-$type-specs: (
+$sage-type-specs: (
   // Headings
   "heading-1": (
     weight: sage-font-weight(bold),
@@ -63,38 +63,38 @@ $type-specs: (
   ),
 
   // Body
-  "body": $t-base-spec,
-  "body-med": map-merge($t-base-spec, (
+  "body": $-t-base-spec,
+  "body-med": map-merge($-t-base-spec, (
     weight: sage-font-weight(medium)
   )),
-  "body-semi": map-merge($t-base-spec, (
+  "body-semi": map-merge($-t-base-spec, (
     weight: sage-font-weight(semibold)
   )),
-  "body-bold": map-merge($t-base-spec, (
+  "body-bold": map-merge($-t-base-spec, (
     weight: sage-font-weight(bold)
   )),
 
   // Body Small
-  "body-small": $t-body-small-spec,
-  "body-small-med": map-merge($t-body-small-spec, (
+  "body-small": $-t-body-small-spec,
+  "body-small-med": map-merge($-t-body-small-spec, (
     weight: sage-font-weight(medium)
   )),
-  "body-small-semi": map-merge($t-body-small-spec, (
+  "body-small-semi": map-merge($-t-body-small-spec, (
     weight: sage-font-weight(semibold)
   )),
-  "body-small-bold": map-merge($t-body-small-spec, (
+  "body-small-bold": map-merge($-t-body-small-spec, (
     weight: sage-font-weight(bold)
   )),
 
   // Body XSmall
-  "body-xsmall": $t-body-xsmall-spec,
-  "body-xsmall-med": map-merge($t-body-xsmall-spec, (
+  "body-xsmall": $-t-body-xsmall-spec,
+  "body-xsmall-med": map-merge($-t-body-xsmall-spec, (
     weight: sage-font-weight(medium)
   )),
-  "body-xsmall-semi": map-merge($t-body-xsmall-spec, (
+  "body-xsmall-semi": map-merge($-t-body-xsmall-spec, (
     weight: sage-font-weight(semibold)
   )),
-  "body-xsmall-bold": map-merge($t-body-xsmall-spec, (
+  "body-xsmall-bold": map-merge($-t-body-xsmall-spec, (
     weight: sage-font-weight(bold)
   )),
 
@@ -102,11 +102,11 @@ $type-specs: (
 );
 
 // Set up base specs as extendables
-@each $spec-name, $spec in $type-specs {
+@each $spec-name, $spec-map in $sage-type-specs {
   %t-sage-#{$spec-name} {
-    font-weight: map-get($spec, weight);
-    font-size: map-get($spec, size);
-    letter-spacing: map-get($spec, kerning);
-    line-height: map-get($spec, leading);
+    font-weight: map-get($spec-map, weight);
+    font-size: map-get($spec-map, size);
+    letter-spacing: map-get($spec-map, kerning);
+    line-height: map-get($spec-map, leading);
   }
 }

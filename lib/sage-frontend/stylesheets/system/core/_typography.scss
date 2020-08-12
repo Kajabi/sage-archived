@@ -26,7 +26,7 @@ $-body-margin-bottom: sage-spacing(sm) !default;
 // ==================================================
 
 // Automate setting up classes that extend the specs
-@each $spec-name, $spec in $type-specs {
+@each $spec-name, $spec in $sage-type-specs {
   .t-sage-#{$spec-name} {
     @extend %t-sage-#{$spec-name};
   }
