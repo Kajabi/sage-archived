@@ -3,7 +3,7 @@
   type: object
 
 ================================================== */
-
+$-banner-height: rem(48px);
 $-banner-colors: (
   default: primary,
   success: sage,
@@ -12,11 +12,13 @@ $-banner-colors: (
 );
 
 .sage-banner {
-  @extend %t-sage-body-xsmall-semi;
+  @extend %t-sage-body-med;
   display: flex;
   align-items: center;
+  justify-content: center;
   width: 100%;
-  padding: sage-spacing(sm);
+  height: $-banner-height;
+  padding: 0 sage-spacing(xs);
   color: $sage-banner-text-color;
   background: sage-color(primary);
 }
@@ -39,7 +41,6 @@ $-banner-colors: (
 
 .sage-banner__text {
   display: inline-flex;
-  align-items: center;
   margin-bottom: 0;
   margin-right: sage-spacing(xs);
   color: inherit;
@@ -47,8 +48,6 @@ $-banner-colors: (
 
 .sage-banner__icon {
   display: inline-flex;
-  align-items: center;
-  justify-content: center;
   height: $sage-banner-icon-size;
   width: $sage-banner-icon-size;
 }
@@ -63,4 +62,3 @@ $-banner-colors: (
   margin-bottom: 0;
   text-decoration: none;
 }
-
