@@ -14,7 +14,7 @@
   @extend %t-sage-body-med;
 
   display: inline-flex;
-  align-self: flex-start;
+  align-self: inherit;
   align-items: baseline;
   position: relative;
   padding: rem(6px) sage-spacing(sm);
@@ -148,6 +148,7 @@
 }
 
 .sage-btn--secondary {
+  background-color: sage-color(white);
   color: $sage-btn-secondary-text-color;
   border: 0;
   box-shadow: none;
@@ -183,6 +184,7 @@
 }
 
 .sage-btn--tertiary {
+  background-color: sage-color(white);
   color: $sage-btn-tertiary-text-color;
   border: 0;
   box-shadow: none;
