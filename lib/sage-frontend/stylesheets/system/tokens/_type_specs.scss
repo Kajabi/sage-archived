@@ -19,7 +19,7 @@ $-t-body-xsmall-spec: map-merge($-t-base-spec, (
   leading: sage-line-height(xs),
 ));
 
-// The following map is used to generate both `%t-` classeses for each entry.
+// The following map is used to generate both `%t-` classes for each entry.
 // These are used to create base classes as well as to apply type specs in
 // context with `@extend %t-` etc.
 
@@ -101,12 +101,24 @@ $sage-type-specs: (
   // Additional custom specs
 );
 
+/* ==================================================
+  ** Type spec
+  Usage: `@include sage-type-spec("body-small");`
+
+  Implements a type spec where used.
+  arguments: $thickness: [string name of the desired type spec]
+================================================== */
+
+@mixin sage-type-spec($spec-name) {
+  font-weight: map-get($spec-map, weight);
+  font-size: map-get($spec-map, size);
+  letter-spacing: map-get($spec-map, kerning);
+  line-height: map-get($spec-map, leading);
+}
+
 // Set up base specs as extendables
 @each $spec-name, $spec-map in $sage-type-specs {
   %t-sage-#{$spec-name} {
-    font-weight: map-get($spec-map, weight);
-    font-size: map-get($spec-map, size);
-    letter-spacing: map-get($spec-map, kerning);
-    line-height: map-get($spec-map, leading);
+    @include sage-type-spec($spec-name);
   }
 }
