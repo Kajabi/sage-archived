@@ -110,6 +110,8 @@ $sage-type-specs: (
 ================================================== */
 
 @mixin sage-type-spec($spec-name) {
+  $spec-map: map-get($sage-type-specs, $spec-name);
+
   font-weight: map-get($spec-map, weight);
   font-size: map-get($spec-map, size);
   letter-spacing: map-get($spec-map, kerning);
