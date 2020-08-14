@@ -160,7 +160,7 @@ hr {
   border-top: sage-border();
 }
 
-// Generat text color modifiers
+// Generate text color modifiers
 @each $color-name, $color-slider in $sage-colors {
   // Default color values
   $color-value: sage-color($color-name);
