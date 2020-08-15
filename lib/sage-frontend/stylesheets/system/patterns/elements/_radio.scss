@@ -84,7 +84,7 @@
     box-shadow: sage-shadow(sm);
 
     &::after {
-      transform: translate3d(-50%, -50%, 0) scale(0.5);
+      transform: translate3d(-50%, -50%, 0) scale(1);
       opacity: 1;
     }
   }
@@ -104,7 +104,7 @@
     }
 
     &::after {
-      transform: translate3d(-50%, -50%, 0) scale(0.5);
+      transform: translate3d(-50%, -50%, 0) scale(1);
       opacity: 1;
     }
   }
