@@ -1,0 +1,40 @@
+/* ==================================================
+  ** list
+  type: element
+
+================================================== */
+
+.sage-tiles {
+  padding: 0;
+  list-style: none;
+}
+
+.sage-tiles--inline,
+.sage-tiles--inline-fit {
+  display: flex;
+
+  &:not(.sage-tiles--compact) {
+    margin-right: -1 * sage-spacing(sm);
+    margin-left: -1 * sage-spacing(sm);
+
+    > li {
+      margin-right: sage-spacing(sm);
+      margin-left: sage-spacing(sm);
+    }
+  }
+}
+
+.sage-tiles--inline {
+  flex-flow: row wrap;
+}
+
+@for $i from 2 through 5 {
+  .sage-tiles--inline-#{$i} {
+    display: grid;
+    grid-template-columns: repeat($i, 1fr);
+
+    &:not(.sage-tiles--compact) {
+      grid-column-gap: sage-spacing(md);
+    }
+  }
+}

@@ -1,0 +1,119 @@
+<%
+sample_items = %(
+  <li class="sage-icon-card sage-icon-card--draft"><i class="sage-icon-check-2xl"></i></li>
+  <li class="sage-icon-card sage-icon-card--info"><i class="sage-icon-check-2xl"></i></li>
+  <li class="sage-icon-card sage-icon-card--success"><i class="sage-icon-check-2xl"></i></li>
+  <li class="sage-icon-card sage-icon-card--warning"><i class="sage-icon-check-2xl"></i></li>
+  <li class="sage-icon-card sage-icon-card--danger"><i class="sage-icon-check-2xl"></i></li>
+)
+%>
+
+<h5>Unstyled List</h5>
+<%= render "examples/elements/tiles/markup", 
+  items: sample_items
+%>
+
+<h5>Inline (fit)</h5>
+<%= render "examples/elements/tiles/markup", 
+  items: sample_items,
+  layout: "inline-fit"
+%>
+
+<h5>Inline (flow)</h5>
+<%= render "examples/elements/tiles/markup", 
+  items: sample_items,
+  layout: "inline"
+%>
+
+<h5>Inline (2 up)</h5>
+<%= render "examples/elements/tiles/markup", 
+  items: sample_items,
+  layout: "inline-2"
+%>
+
+<h5>Inline (3 up)</h5>
+<%= render "examples/elements/tiles/markup", 
+  items: sample_items,
+  layout: "inline-3"
+%>
+
+<h5>Inline (4 up)</h5>
+<%= render "examples/elements/tiles/markup", 
+  items: sample_items,
+  layout: "inline-4"
+%>
+
+<h5>Inline (5 up)</h5>
+<%= render "examples/elements/tiles/markup", 
+  items: sample_items,
+  layout: "inline-5"
+%>
+
+<h5>Radio list</h5>
+<%= render "examples/elements/tiles/markup", 
+  layout: "inline-4",
+  items: %(
+    <li class="sage-radio">
+      <input class="sage-radio__input" id="check-0" name="group-1" type="radio" value="option-1">
+      <label class="sage-radio__label" for="check-0">It matters a whole lot.</label>
+    </li>
+    <li class="sage-radio">
+      <input class="sage-radio__input" id="check-1" name="group-1" type="radio" value="option-2">
+      <label class="sage-radio__label" for="check-1">It matters somewhat.</label>
+    </li>
+    <li class="sage-radio">
+      <input class="sage-radio__input" id="check-2" name="group-1" type="radio" value="option-3">
+      <label class="sage-radio__label" for="check-2">It does not matter one bit at all.</label>
+    </li>
+    <li class="sage-radio">
+      <input class="sage-radio__input" id="check-3" name="group-1" type="radio" value="option-4">
+      <label class="sage-radio__label" for="check-3">Undecided.</label>
+    </li>
+  )
+%>
+
+<h5>Checkbox list</h5>
+<%= render "examples/elements/tiles/markup", 
+  layout: "inline-4",
+  items: %(
+    <li class="sage-checkbox">
+      <input class="sage-checkbox__input" id="check-0" name="group-2" type="checkbox" value="option-1">
+      <label class="sage-checkbox__label" for="check-0">It matters a whole lot.</label>
+    </li>
+    <li class="sage-checkbox">
+      <input class="sage-checkbox__input" id="check-1" name="group-2" type="checkbox" value="option-2">
+      <label class="sage-checkbox__label" for="check-1">It matters somewhat.</label>
+    </li>
+    <li class="sage-checkbox">
+      <input class="sage-checkbox__input" id="check-2" name="group-2" type="checkbox" value="option-3">
+      <label class="sage-checkbox__label" for="check-2">It does not matter one bit at all.</label>
+    </li>
+    <li class="sage-checkbox">
+      <input class="sage-checkbox__input" id="check-3" name="group-2" type="checkbox" value="option-4">
+      <label class="sage-checkbox__label" for="check-3">Undecided.</label>
+    </li>
+  )
+%>
+
+<h5>Switch list</h5>
+<%= render "examples/elements/tiles/markup", 
+  layout: "inline-4",
+  items: %(
+    <li class="sage-switch">
+      <input class="sage-switch__input" id="check-0" name="group-3" type="radio" value="option-1">
+      <label class="sage-switch__label" for="check-0">It matters a whole lot.</label>
+    </li>
+    <li class="sage-switch">
+      <input class="sage-switch__input" id="check-1" name="group-3" type="radio" value="option-2">
+      <label class="sage-switch__label" for="check-1">It matters somewhat.</label>
+    </li>
+    <li class="sage-switch">
+      <input class="sage-switch__input" id="check-2" name="group-3" type="radio" value="option-3">
+      <label class="sage-switch__label" for="check-2">It does not matter one bit at all.</label>
+    </li>
+    <li class="sage-switch">
+      <input class="sage-switch__input" id="check-3" name="group-3" type="radio" value="option-4">
+      <label class="sage-switch__label" for="check-3">Undecided.</label>
+    </li>
+  )
+%>
