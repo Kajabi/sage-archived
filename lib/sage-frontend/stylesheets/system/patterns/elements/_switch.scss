@@ -8,7 +8,7 @@
 .sage-switch {
   display: flex;
   flex-flow: row wrap;
-  align-items: center;
+  align-items: flex-start;
   margin-bottom: $sage-form-element-spacing;
   color: $sage-switch-color-default-text;
 
@@ -27,9 +27,9 @@
 .sage-switch__input {
   display: inline-block;
   position: relative;
+  transform: translateY(2px);
   height: $sage-switch-height;
   width: $sage-switch-width;
-  margin: 0;
   vertical-align: top;
   appearance: none;
   color: $sage-switch-color-default;
@@ -42,6 +42,7 @@
 
   + .sage-switch__label {
     display: inline-block;
+    flex: 1;
     margin-left: $sage-switch-label-left-spacing;
     vertical-align: top;
     cursor: pointer;

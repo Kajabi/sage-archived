@@ -9,7 +9,7 @@
   &:not(.sage-radio--standalone) {
     display: flex;
     flex-flow: row wrap;
-    align-items: center;
+    align-items: flex-start;
     margin-bottom: $sage-form-element-spacing;
   }
 }
@@ -20,6 +20,7 @@
 
 .sage-radio__label {
   display: inline-block;
+  flex: 1;
   margin-left: sage-spacing(sm);
   vertical-align: top;
   cursor: pointer;
@@ -138,5 +139,9 @@
     &:not(:checked)::after {
       background: $sage-radio-color-disabled;
     }
+  }
+
+  &:not(.sage-radio--standalone) {
+    margin-top: 6px;
   }
 }
