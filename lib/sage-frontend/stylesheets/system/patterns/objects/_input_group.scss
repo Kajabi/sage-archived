@@ -18,6 +18,7 @@ $-pw-font-size-sm: sage-font-size(sm);
 }
 
 .sage-input-group__button {
+  display: block;
   position: absolute;
   transform: translateY(-50%);
   top: 50%;
