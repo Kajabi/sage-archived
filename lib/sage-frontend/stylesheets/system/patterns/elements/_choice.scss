@@ -6,6 +6,7 @@
 ================================================== */
 
 $item-radio: "::before";
+$item-radio-indicator: "::after";
 
 .sage-choice {
   @include button-style-reset();
@@ -28,9 +29,9 @@ $item-radio: "::before";
     content: "";
     display: inline-block;
     box-sizing: border-box;
-    height: $sage-radio-selected-indicator-size;
-    min-width: $sage-radio-selected-indicator-size;
-    width: $sage-radio-selected-indicator-size;
+    height: $sage-radio-button-size;
+    min-width: $sage-radio-button-size;
+    width: $sage-radio-button-size;
     margin: 0 sage-spacing(xs) 0 0;
     background-color: $sage-radio-selected-indicator-color;
     border-radius: sage-border(radius-round);

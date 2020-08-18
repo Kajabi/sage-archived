@@ -13,6 +13,14 @@ module ElementsHelper
     [
       # Sage Generated Elements
       {
+        title: "lists",
+        description: "Sage lists provide a few styling alternatives for unstyled and inline formatting.", 
+        scss: "todo",
+        rails: "todo",
+        react: "todo",
+        a11y: "todo",
+      },
+      {
         title: "icon_card",
         description: "A simple component that allows an icon to be rendered on a field with a unified color scheme applied.", 
         scss: "done",
