@@ -15,6 +15,11 @@
   & + & {
     margin-top: -($sage-form-element-spacing / 2);
   }
+
+  .sage-list & {
+    margin-top: 0;
+    margin-bottom: $sage-form-element-spacing / 2;
+  }
 }
 
 .sage-switch__message {

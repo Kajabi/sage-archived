@@ -12,6 +12,10 @@
     align-items: flex-start;
     margin-bottom: $sage-form-element-spacing;
   }
+  
+  .sage-list & {
+    margin-bottom: $sage-form-element-spacing / 2;
+  }
 }
 
 .sage-checkbox--standalone {
