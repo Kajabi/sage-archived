@@ -7,21 +7,23 @@ colors = [
   "danger"
 ]
 %>
+
+<h5>Default</h5>
 <% colors.each do | color | %>
   <%= render "examples/elements/label/markup",
   color: color
   %>
 <% end %>
-<br/>
-<br/>
+
+<h5>Subtle</h5>
 <% colors.each do | color | %>
   <%= render "examples/elements/label/markup",
   color: color,
   type: "subtle"
   %>
 <% end %>
-<br/>
-<br/>
+
+<h5>Bold</h5>
 <% colors.each do | color | %>
   <%= render "examples/elements/label/markup",
   color: color,

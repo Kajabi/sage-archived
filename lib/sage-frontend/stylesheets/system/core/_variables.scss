@@ -22,20 +22,11 @@ $sage-transition: 0.1s ease-in-out !default;
 // TYPOGRAPHY
 // ==================================================
 
-// Font definitions
-$sage-body-font-name: "Inter" !default;
-$sage-body-font-stack: $sage-body-font-name, -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "Noto Sans", sans-serif !default;
-$sage-body-font-path: "../../fonts/inter" !default;  // pathname of font directory
-$sage-body-font-version: 3.12 !default;
-$sage-body-font-monospace: "SFMono-Regular", "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", monospace !default;
 
 // Text
-$sage-body-font-size: 1rem !default; // 16px
-$sage-body-font-weight: sage-font-weight() !default;
-$sage-body-font-line-height: sage-line-height(md) !default;
+$sage-body-font-size: rem(16px) !default;
 $sage-body-font-color: sage-color(charcoal, 400) !default;
 $sage-body-letter-spacing: sage-letter-spacing(xs) !default;
-$sage-body-margin-bottom: sage-spacing(sm) !default;
 
 // Headings
 $sage-heading-font-color: sage-color(charcoal, 500) !default;
@@ -222,10 +213,10 @@ $sage-radio-color-hover: sage-color(grey, 500) !default;
 $sage-radio-color-disabled: sage-color(grey, 100) !default;
 $sage-radio-color-disabled-checked: sage-color(grey, 300) !default;
 
-$sage-radio-button-size: rem(24px) !default;
+$sage-radio-button-size: rem(16px) !default;
 $sage-radio-border-radius: sage-border(radius-round) !default;
 $sage-radio-transition: 0.15s ease-in-out !default;
-$sage-radio-selected-indicator-size: rem(16px) !default;
+$sage-radio-selected-indicator-size: rem(7px) !default;
 $sage-radio-selected-indicator-color: sage-color(white) !default;
 
 // Focus state
