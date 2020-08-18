@@ -6,17 +6,19 @@
 
 $-banner-colors: (
   default: primary,
+  secondary: grey,
   success: sage,
   warning: yellow,
-  danger: red
+  danger: red,
 );
 
 .sage-banner {
-  @extend %t-sage-body-xsmall-semi;
+  @extend %t-sage-body-med;
   display: flex;
-  align-items: center;
+  align-items: baseline;
+  justify-content: center;
   width: 100%;
-  padding: sage-spacing(sm);
+  padding: sage-spacing(sm) sage-spacing(md);
   color: $sage-banner-text-color;
   background: sage-color(primary);
 }
@@ -25,7 +27,7 @@ $-banner-colors: (
   .sage-banner--#{$name} {
     background: sage-color($color, 300);
 
-    @if ($name == "success") or ($name == "warning") {
+    @if ($name == "success") or ($name == "warning") or ($name == "secondary") {
       color: $sage-banner-text-color-dark;
     }
   }
@@ -39,16 +41,14 @@ $-banner-colors: (
 
 .sage-banner__text {
   display: inline-flex;
-  align-items: center;
   margin-bottom: 0;
-  margin-right: sage-spacing(xs);
+  margin: 0 sage-spacing(xs);
   color: inherit;
 }
 
 .sage-banner__icon {
   display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  align-self: center;
   height: $sage-banner-icon-size;
   width: $sage-banner-icon-size;
 }
@@ -63,4 +63,3 @@ $-banner-colors: (
   margin-bottom: 0;
   text-decoration: none;
 }
-
