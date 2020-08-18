@@ -12,14 +12,14 @@ module ElementsHelper
   def sage_elements
     [
       # Sage Generated Elements
-        {
-          title: "tiles",
-          description: "A simple unstyled group of elements set up to easily stack or tile up. Tiling can occur in a freeform fashion or in a set grid.", 
-          scss: "todo",
-          rails: "todo",
-          react: "todo",
-          a11y: "todo",
-        },
+      {
+        title: "lists",
+        description: "Sage lists provide a few styling alternatives for unstyled and inline formatting.", 
+        scss: "todo",
+        rails: "todo",
+        react: "todo",
+        a11y: "todo",
+      },
       {
         title: "icon_card",
         description: "A simple component that allows an icon to be rendered on a field with a unified color scheme applied.", 
