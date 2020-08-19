@@ -1,29 +1,14 @@
-@mixin sage-container-default {
+.sage-container {
   margin: 0 auto;
   padding: 0 sage-spacing(md);
+
+  &:not([class*="sage-container--"]) {
+    max-width: sage-container(fluid);
+  }
 }
 
-.sage-container {
-  @include sage-container-default();
-  max-width: sage-container(md);
-}
-
-.sage-container--xs {
-  @include sage-container-default();
-  max-width: sage-container(xs);
-}
-
-.sage-container--sm {
-  @include sage-container-default();
-  max-width: sage-container(sm);
-}
-
-.sage-container--lg {
-  @include sage-container-default();
-  max-width: sage-container(lg);
-}
-
-.sage-container--fluid {
-  @include sage-container-default();
-  max-width: sage-container(fluid);
+@each $-name, $-size in $sage-containers {
+  .sage-container--#{$-name} {
+    max-width: sage-container($-name);
+  }
 }
