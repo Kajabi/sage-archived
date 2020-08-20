@@ -33,3 +33,17 @@
   flex: 1;
 }
 
+.sage-icon-list-item__label {
+  @extend %t-sage-body-med;
+}
+
+.sage-icon-list-item__label-subtext {
+  @extend %t-sage-body-small;
+  color: sage-color(charcoal, 200);
+}
+
+.sage-icon-list-item__title {
+  @extend %t-sage-heading-6;
+  margin-bottom: sage-spacing(xs);
+}
+
