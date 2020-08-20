@@ -21,6 +21,7 @@ class PagesController < ApplicationController
   end
 
   def sandbox
+    render(layout: 'sandbox')
   end
 
   def utilities
