@@ -31,6 +31,10 @@
 
 .sage-icon-list-item__body {
   flex: 1;
+
+  > p:not(:last-child) {
+    margin-bottom: sage-spacing(xs);
+  }
 }
 
 .sage-icon-list-item__label {
