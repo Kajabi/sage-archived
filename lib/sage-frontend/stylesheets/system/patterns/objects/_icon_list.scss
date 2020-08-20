@@ -18,7 +18,9 @@
 }
 
 .sage-icon-list-item__bullet {
+  min-width: rem(20px);
   margin-right: sage-spacing(sm);
+  text-align: center;
 }
 
 .sage-icon-list-item__bullet--checkbox {
