@@ -21,9 +21,12 @@
   margin-right: sage-spacing(sm);
 }
 
-.sage-icon-list-item__bullet--checkbox,
-.sage-icon-list-item__bullet--radio {
+.sage-icon-list-item__bullet--checkbox {
   padding-top: sage-spacing(2xs);
+}
+
+.sage-icon-list-item__bullet--radio {
+  padding-top: rem(6px);
 }
 
 .sage-icon-list-item__body {
