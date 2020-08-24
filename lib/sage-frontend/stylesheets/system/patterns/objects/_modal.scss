@@ -8,8 +8,8 @@ $-modal-padding-x: sage-spacing(md);
 $-modal-padding-y: sage-spacing(md);
 
 .sage-modal {
-  display: flex;
   visibility: hidden;
+  display: none;
   align-items: flex-start;
   justify-content: center;
   position: fixed;
@@ -26,27 +26,16 @@ $-modal-padding-y: sage-spacing(md);
   @supports (backdrop-filter: blur(2px)) {
     backdrop-filter: blur(2px);
   }
-}
 
-.sage-modal--active {
-  visibility: visible;
+  &.sage-modal--active {
+    visibility: visible;
+    display: flex;
+  }
 }
 
 .sage-modal__container {
-  // Uses both Animate and Transition properties
-  // - `Animate` if element has been injected on the page
-  // - `Transition` if element exists on the page and has `.sage-modal--active` added
-  // -> Note: Using `transition` was causing UI glitches in Safari, `transition` has been removed for now
-
-  @mixin animation-off {
-    opacity: 0;
-  }
-
-  @mixin animation-on {
-    opacity: 1;
-  }
-
-  @include animation-off;
+  visibility: hidden;
+  display: none;
   z-index: sage-z-index(modal);
   min-width: min-content;
   width: sage-container(modal);
@@ -55,21 +44,10 @@ $-modal-padding-y: sage-spacing(md);
   background-color: sage-color(white);
   box-shadow: sage-shadow(2xl);
 
-  /* stylelint-disable max-nesting-depth */
   .sage-modal--active & {
-    @keyframes animate-container {
-      0% {
-        @include animation-off;
-      }
-      100% {
-        @include animation-on;
-      }
-    }
-
-    @include animation-on;
-    animation: animate-container 0.1s ease-in;
+    visibility: visible;
+    display: block;
   }
-  /* stylelint-enable max-nesting-depth */
 }
 
 .sage-modal__header {
