@@ -196,3 +196,7 @@ hr {
 .t-sage--align-justify {
   text-align: justify;
 }
+
+.t-sage--truncate {
+  @include sage-truncate;
+}
