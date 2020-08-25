@@ -1,4 +1,7 @@
-<div class="sage-panel<%= " sage-panel--accordion" if defined?(is_accordion) && is_accordion %><%= " sage-panel--#{style}" if defined?(style) %><%= " sage-panel--#{color}" if defined?(color) %><%= " sage-panel--#{size}" if defined?(size) %>">
+<div
+  class="sage-panel<%= " sage-panel--accordion" if defined?(is_accordion) && is_accordion %><%= " sage-panel--#{style}" if defined?(style) %><%= " sage-panel--#{color}" if defined?(color) %><%= " sage-panel--#{size}" if defined?(size) %>"
+  style="width: <%= defined?(width) ? width : "auto" %>"
+>
   <div
     class="sage-panel__header"
     <%= "data-js-accordion=\"header\"" if defined?(is_accordion) && is_accordion %>

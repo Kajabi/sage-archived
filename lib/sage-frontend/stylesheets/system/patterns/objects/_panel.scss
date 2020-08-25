@@ -34,9 +34,6 @@ $-panel-spacing-sm: sage-spacing(xs);
   }
 
   .sage-panel-scroll-container & {
-    min-width: 160px;
-    max-width: 200px;
-
     &:not(:last-child) {
       margin-right: sage-spacing(sm);
       margin-bottom: 0;
@@ -136,7 +133,7 @@ $-panel-spacing-sm: sage-spacing(xs);
 
     @else {
       .sage-panel--#{$-color-name} &,
-      .sage-panel-gropu--#{$-color-name} & {
+      .sage-panel-group--#{$-color-name} & {
         color: map-get($-values, text-color);
       }
     }
