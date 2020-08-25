@@ -22,7 +22,6 @@ $-panel-transition: 0.2s linear;
 $-panel-spacing-sm: sage-spacing(xs);
 
 .sage-panel {
-  margin-bottom: sage-spacing(lg);
   background: $sage-panel-bg-color;
   border-radius: $sage-panel-border-radius;
 
@@ -34,17 +33,14 @@ $-panel-spacing-sm: sage-spacing(xs);
     margin-bottom: sage-spacing(xs);
   }
 
-  .sage-panel-group--inline &,
-  .sage-panel-group__items & {
-    margin-bottom: 0;
-  }
-
-  .sage-panel-group__items &:not(:last-child) {
-    margin-right: sage-spacing(sm);
-  }
-
   .sage-panel-scroll-container & {
-    min-width: 180px;
+    min-width: 160px;
+    max-width: 200px;
+
+    &:not(:last-child) {
+      margin-right: sage-spacing(sm);
+      margin-bottom: 0;
+    }
   }
 }
 
@@ -57,7 +53,8 @@ $-panel-spacing-sm: sage-spacing(xs);
     }
 
     @else {
-      &.sage-panel--#{$-color-name} {
+      &.sage-panel--#{$-color-name},
+      .sage-panel-group--#{$-color-name} & {
         border: 1px solid map-get($-values, border-color);
       }
     }
@@ -67,6 +64,10 @@ $-panel-spacing-sm: sage-spacing(xs);
 .sage-panel__body {
   position: relative;
   padding: $sage-panel-padding;
+
+  > *:not(:last-child) {
+    margin-bottom: sage-spacing(xs);
+  }
 
   > :last-child {
     margin-bottom: 0;
@@ -134,7 +135,8 @@ $-panel-spacing-sm: sage-spacing(xs);
     }
 
     @else {
-      .sage-panel--#{$-color-name} & {
+      .sage-panel--#{$-color-name} &,
+      .sage-panel-gropu--#{$-color-name} & {
         color: map-get($-values, text-color);
       }
     }
@@ -191,7 +193,8 @@ $-panel-spacing-sm: sage-spacing(xs);
     }
 
     @else {
-      .sage-panel--#{$-color-name} & {
+      .sage-panel--#{$-color-name} &,
+      .sage-panel-group--#{$-color-name} & {
         color: map-get($-values, text-color);
       }
     }
@@ -235,15 +238,13 @@ $-panel-spacing-sm: sage-spacing(xs);
   }
 }
 
-.sage-panel-group--inline {
-  display: flex;
-}
-
 .sage-panel-group__items {
-  display: flex;
+  .sage-panel-scroll-container & {
+    display: flex;
+  }
 }
 
-.sage-panel-group__label {
+.sage-panel-group__title {
   margin-bottom: sage-spacing(xs);
 }
 

@@ -29,6 +29,7 @@ $-body-margin-bottom: sage-spacing(sm) !default;
 @each $spec-name, $spec in $sage-type-specs {
   .t-sage-#{$spec-name} {
     @extend %t-sage-#{$spec-name};
+    color: inherit;
   }
 }
 
