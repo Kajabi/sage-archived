@@ -2,7 +2,7 @@
   <div class="sage-sidebar__body">
     <nav class="sage-nav" aria-label="Main">
       <ul class="sage-nav__list">
-        <li><%= link_to "Introduction", pages_index_path, class: "sage-nav__link #{"sage-nav__link--active" if current_page?(pages_index_path)}" %></li>
+        <li><%= link_to "Foundations", pages_index_path, class: "sage-nav__link #{"sage-nav__link--active" if current_page?(pages_index_path)}" %></li>
         <li><%= link_to "Styles", pages_style_path(title: :token), class: "sage-nav__link #{"sage-nav__link--active" if current_page_styles?}" %>
           <% if current_page_styles? %>
             <ul class="sage-nav__list sage-nav__list--sub">
@@ -21,7 +21,11 @@
               <%= yield :sidebar_objects %>
             </ul>
           <% end %></li>
+<<<<<<< HEAD
         <li><%= link_to "Code Status", pages_status_path, class: "sage-nav__link #{"sage-nav__link--active" if current_page?(pages_status_path)}" %></li>
+=======
+        <li><%= link_to "Utilities", pages_utilities_path, class: "sage-nav__link #{"sage-nav__link--active" if current_page?(pages_utilities_path)}" %></li>
+>>>>>>> sidebar order
         <li><%= link_to "Sandbox", pages_sandbox_path, class: "sage-nav__link #{"sage-nav__link--active" if current_page?(pages_sandbox_path)}" %></li>
       </ul>
     </nav>
@@ -31,8 +35,7 @@
       <ul class="sage-nav__list">
         <li><%= link_to "Voice & Tone", "https://github.com/Kajabi/sage/wiki/Voice-&-Tone", class: "sage-nav__link", target: "_blank", rel: "noopener noreferrer" %></li>
         <li><%= link_to "Guidelines", "https://github.com/Kajabi/sage/wiki", class: "sage-nav__link", target: "_blank", rel: "noopener noreferrer" %></li>
-        <li><%= link_to "Github", "https://github.com/Kajabi/sage", class: "sage-nav__link", target: "_blank", rel: "noopener noreferrer" %></li>
-        <li><%= link_to "Changelog", "https://github.com/Kajabi/sage/releases", class: "sage-nav__link", target: "_blank", rel: "noopener noreferrer" %></li>
+        <li><%= link_to "Code Status", pages_status_path, class: "sage-nav__link #{"sage-nav__link--active" if current_page?(pages_status_path)}" %></li>
       </ul>
     </nav>
   </div>
