@@ -147,13 +147,11 @@
       border-right-color: sage-color(red);
       border-bottom-color: sage-color(red);
     }
-    &.sage-checkbox__input {
-      &:hover:not(:checked):not(:disabled){
-        border-color: sage-color(red);
-      }
-      &::before {
-        border-color: sage-color(red);
-      }
+    &:hover:not(:checked):not(:disabled) {
+      border-color: sage-color(red);
+    }
+    &::before {
+      border-color: sage-color(red);
     }
   }
 
