@@ -92,8 +92,7 @@ $option-icon: "::before";
   position: relative;
   align-items: center;
   width: 100%;
-  height: $-dropdown-height;
-  padding: sage-spacing(md) sage-spacing(sm);
+  padding: rem(9px) sage-spacing(sm);
   user-select: none;
 
   &#{$option-underline} {
