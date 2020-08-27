@@ -13,24 +13,6 @@ module ElementsHelper
     [
       # Sage Generated Elements
       {
-        title: "lists",
-        description: "Sage lists provide a few styling alternatives for unstyled and inline formatting.",
-        scss: "todo",
-        docs: "done",
-        rails: "todo",
-        react: "todo",
-        a11y: "todo",
-      },
-      {
-        title: "icon_card",
-        description: "A simple component that allows an icon to be rendered on a field with a unified color scheme applied.",
-        scss: "done",
-        docs: "done",
-        rails: "todo",
-        react: "doing",
-        a11y: "todo",
-      },
-      {
         title: "breadcrumbs",
         description: "Breadcrumbs provide a sense of where we are in the site structure with hyperlinks to previous areas in that structure. Our element also provides a specific \"Back link\" variation",
         scss: "done",
@@ -103,6 +85,15 @@ module ElementsHelper
         a11y: "todo"
       },
       {
+        title: "icon_card",
+        description: "A simple component that allows an icon to be rendered on a field with a unified color scheme applied.",
+        scss: "done",
+        docs: "done",
+        rails: "todo",
+        react: "doing",
+        a11y: "todo",
+      },
+      {
         title: "indicator",
         description: "A simple dot-styled position indicator bar. This is currently not intended to be used as navigation but only a visual indicator.",
         scss: "doing",
@@ -130,6 +121,15 @@ module ElementsHelper
         a11y: "todo"
       },
       {
+        title: "lists",
+        description: "Sage lists provide a few styling alternatives for unstyled and inline formatting.",
+        scss: "todo",
+        docs: "done",
+        rails: "todo",
+        react: "todo",
+        a11y: "todo",
+      },
+      {
         title: "loader",
         description: "Stylized loading animations for use with elements or objects",
         scss: "done",
@@ -155,6 +155,15 @@ module ElementsHelper
         rails: "no",
         react: "no",
         a11y: "todo"
+      },
+      {
+        title: "search",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", 
+        scss: "doing",
+        docs: "doing",
+        rails: "todo",
+        react: "todo",
+        a11y: "doing"
       },
       {
         title: "switch",
