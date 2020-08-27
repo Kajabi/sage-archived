@@ -114,15 +114,6 @@
     }
   }
 
-  &:invalid {
-    background: sage-color(red, 100);
-    border-color: sage-color(red);
-
-    + .sage-radio__label {
-      color: sage-color(red);
-    }
-  }
-
   &:disabled {
     background: $sage-radio-color-disabled;
     border-color: $sage-radio-color-disabled-checked;
@@ -147,5 +138,24 @@
 
   &:not(.sage-radio--standalone) {
     margin-top: 6px;
+  }
+}
+
+.sage-radio--error {
+  .sage-radio__label {
+    color: sage-color(red);
+  }
+  .sage-radio__input {
+    border-color: sage-color(red);
+    &:checked {
+      color: sage-color(red);
+      background-color: sage-color(red);
+    }
+    &::after {
+      background-color: sage-color(white);
+    }
+  }
+  :hover:not(:checked):not(:disabled) {
+    border-color: sage-color(red);
   }
 }

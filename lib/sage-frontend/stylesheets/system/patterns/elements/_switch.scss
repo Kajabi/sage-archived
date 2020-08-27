@@ -88,10 +88,15 @@
   .sage-switch--error &,
   &:invalid {
     background-color: sage-color(red);
-
     ~ .sage-switch__label,
     ~ .sage-switch__message {
       color: sage-color(red);
+    }
+    &:checked {
+      background-color: sage-color(red);
+    }
+    &::before {
+      border-color: sage-color(red);
     }
   }
 
