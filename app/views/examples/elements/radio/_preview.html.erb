@@ -6,7 +6,8 @@ value: "1",
 label_text: "Option 1",
 checked: true,
 disabled: false,
-required: false
+required: false,
+has_error: false
 %>
 <%= render "examples/elements/radio/markup",
 id: "r2",
@@ -15,7 +16,8 @@ value: "2",
 label_text: "Option 2",
 checked: false,
 disabled: false,
-required: false
+required: false,
+has_error: false
 %>
 <!-- Disabled -->
 <%= render "examples/elements/radio/markup",
@@ -25,7 +27,8 @@ value: "3",
 label_text: "Disabled",
 checked: false,
 disabled: true,
-required: false
+required: false,
+has_error: false
 %>
 <!-- Checked & Disabled -->
 <%= render "examples/elements/radio/markup",
@@ -35,7 +38,8 @@ value: "4",
 label_text: "Checked & Disabled",
 checked: true,
 disabled: true,
-required: false
+required: false,
+has_error: false
 %>
 <!-- Errror -->
 <%= render "examples/elements/radio/markup",
@@ -45,5 +49,6 @@ value: "5",
 label_text: "Error",
 checked: false,
 disabled: false,
-required: true
+required: true,
+has_error: true
 %>
