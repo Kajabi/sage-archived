@@ -148,10 +148,10 @@
   .sage-radio__input {
     border-color: sage-color(red);
     &:checked {
-      background-color: sage-color(red);
       color: sage-color(red);
+      background-color: sage-color(red);
     }
-    &:after {
+    &::after {
       background-color: sage-color(white);
     }
   }
