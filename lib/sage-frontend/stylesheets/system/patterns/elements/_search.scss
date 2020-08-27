@@ -4,11 +4,15 @@
 
 ================================================== */
 
+
+$-search-icon: "::before";
+$-search-focus-line: "::after";
+
 .sage-search {
   position: relative;
   border-bottom: 1px solid sage-color(grey, 300);
 
-  &::before {
+  &#{$-search-icon} {
     @include icon-base(search-small, xl);
     position: absolute;
     top: rem(11px);
@@ -19,7 +23,7 @@
     transition-property: color;
   }
 
-  &::after {
+  &#{$-search-focus-line} {
     content: "";
     display: block;
     position: absolute;
@@ -34,11 +38,11 @@
   }
 
   &:focus-within {
-    &::before {
+    &#{$-search-icon} {
       color: sage-color(primary);
     }
 
-    &::after {
+    &#{$-search-focus-line} {
       left: 0;
       right: 0;
       opacity: 1;
