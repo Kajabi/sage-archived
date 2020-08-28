@@ -38,7 +38,7 @@ $sage-heading-margin-bottom: sage-spacing(sm) !default;
 // ==================================================
 $sage-grid-baseline: $default-baseline !default;
 $sage-grid-columns: 12 !default;
-$sage-grid-gap: sage-spacing(sm) !default;
+$sage-grid-gap: sage-spacing(lg) !default;
 
 $sage-grid-breakpoint-sm: sage-breakpoint(sm-min) !default;
 $sage-grid-breakpoint-sm-max: sage-breakpoint(sm-max) !default;
@@ -321,7 +321,7 @@ $sage-panel-box-shadow: sage-shadow(sm) !default;
 // SIDEBAR
 // ==================================================
 
-$sage-sidebar-breakpoint: sage-breakpoint(md-min) !default;
+$sage-sidebar-breakpoint: rem(1088px) !default;
 
 
 // ==================================================

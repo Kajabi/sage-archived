@@ -14,15 +14,45 @@
       -%>
     </header>
     <div class="sage-stage">
+      <div class="sage-sidebar" data-js-sidebar="example-sidebar-menu" id="example-sidebar-menu">
+        <div class="sage-sidebar__body">
+          <nav class="sage-nav" aria-label="Main">
+            <ul class="sage-nav__list">
+              <li>
+                <a href="#" class="sage-nav__link">Nav Link 1</a>
+              </li>
+              <li>
+                <a href="#" class="sage-nav__link">Nav Link 2</a>
+                <ul class="sage-nav__list sage-nav__list--sub">
+                  <li><a href="#" class="sage-nav__link sage-nav__link--sub">Nav Sub Link 1</a></li>
+                  <li><a href="#" class="sage-nav__link sage-nav__link--sub">Nav Sub Link 2</a></li>
+                  <li><a href="#" class="sage-nav__link sage-nav__link--sub sage-nav__link--active">Nav Sub Link 3</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#" class="sage-nav__link">Nav Link 3</a>
+              </li>
+              <li>
+                <a href="#" class="sage-nav__link">Nav Link 4</a>
+              </li>
+              <li>
+                <a href="#" class="sage-nav__link">Nav Link 5</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
       <main class="sage-content" id="main-content">
-        <div class="sage-container sage-container--md">
-          <div class="sage-row">
-            <div class="sage-col--lg-12 sage-type">
-              <%= yield :heading %>
-              <hr/>
+        <!--
+          <div class="sage-container sage-container--md">
+            <div class="sage-row">
+              <div class="sage-col--lg-12 sage-type">
+                <%= yield :heading %>
+                <hr/>
+              </div>
             </div>
           </div>
-        </div>
+        -->
         <%= yield %>
       </main>
       <div class="sage-overlay" aria-hidden="true"></div>
