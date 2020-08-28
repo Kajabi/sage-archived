@@ -183,6 +183,15 @@ module ObjectsHelper
         react: "todo",
         a11y: "todo"
       },
+      {
+        title: "upload_card",
+        description: "The Upload Card provides a visually pleasing lockup for a file upload field along with other helpful controls.", 
+        scss: "doing",
+        docs: "doing",
+        rails: "doing",
+        react: "doing",
+        a11y: "doing"
+      },
     ]
   end
 
