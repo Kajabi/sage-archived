@@ -37,36 +37,37 @@ $-upload-card-background-hover: sage-color(grey, 100);
   background-color: $-upload-card-background;
   border-radius: $-upload-card-border-radius;
 
-  @include sage-card-dashed-border(
-    $color: $-upload-card-border-color-default,
-    $border-radius: $-upload-card-border-radius,
-  );
-
-  :not(.sage-upload-card--selected) & {
+  .sage-upload-card:not(.sage-upload-card--selected) & {
     flex-flow: column;
+
+    @include sage-card-dashed-border(
+      $color: $-upload-card-border-color-default,
+      $border-radius: $-upload-card-border-radius,
+    );
+
+    &:hover {
+      background-color: $-upload-card-background-hover;
+  
+      @include sage-card-dashed-border(
+        $color: $-upload-card-border-color-hover,
+        $border-radius: $-upload-card-border-radius,
+      );
+    }
+  
+    &:focus-within {
+      @include sage-card-dashed-border(
+        $color: $-upload-card-border-color-focus,
+        $border-radius: $-upload-card-border-radius,
+      );
+    }
   }
 
   .sage-upload-card--selected & {
     flex-flow: row;
+    border: 1px solid $-upload-card-border-color-default;
   }
 
-  &:hover {
-    background-color: $-upload-card-background-hover;
-
-    @include sage-card-dashed-border(
-      $color: $-upload-card-border-color-hover,
-      $border-radius: $-upload-card-border-radius,
-    );
-  }
-
-  &:focus-within {
-    @include sage-card-dashed-border(
-      $color: $-upload-card-border-color-focus,
-      $border-radius: $-upload-card-border-radius,
-    );
-  }
-
-  .sage-upload-card--error & {
+  .sage-upload-card.sage-upload-card--error & {
     @include sage-card-dashed-border(
       $color: $-upload-card-border-color-error,
       $border-radius: $-upload-card-border-radius,
@@ -91,7 +92,7 @@ $-upload-card-background-hover: sage-color(grey, 100);
 .sage-upload-card__icon {
   color: sage-color(grey, 500);
 
-  :not(.sage-uploaded-card--selected) & {
+  .sage-upload-card:not(.sage-uploaded-card--selected) & {
     margin-bottom: sage-spacing(2xs);
   }
 }
