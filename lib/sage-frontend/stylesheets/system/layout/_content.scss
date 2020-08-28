@@ -7,7 +7,11 @@
 .sage-content {
   flex: 1;
   overflow: auto;
-  padding: sage-spacing() 0;
+
+  // Ladera Integration Note:
+  // X-padding of 32px (`sage-spacing(lg)`) matches Ladera's `.content` wrapper padding value of `$spacing-outer`
+  padding: sage-spacing() sage-spacing(lg);
+
   background: sage-color(grey, 200);
   scroll-behavior: smooth;
 }
