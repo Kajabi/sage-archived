@@ -81,8 +81,10 @@ $-option-menu-size: rem(40px);
     outline: 0;
   }
 
-  .sage-dropdown--with-options > & {
+  .sage-dropdown__item--with-options > & {
     max-width: calc(100% - #{$-option-menu-size});
+    padding-right: sage-spacing(md);
+    margin-right: -1 * sage-spacing(2xs);
   }
 }
 
