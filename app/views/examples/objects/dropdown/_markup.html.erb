@@ -10,7 +10,6 @@ has_search = defined?(has_search) && has_search == true
   >
     Add An Element
   </button>
-
   <nav class="sage-dropdown__panel">
     <ul class="sage-dropdown__menu" role="menu" id="participant_options_menu"  aria-label="Participant options">
       <% if has_search %>
@@ -21,9 +20,9 @@ has_search = defined?(has_search) && has_search == true
       <% options.each do |option| %>
         <li class="sage-dropdown__item" role="none">
           <a role="menuitem" tabindex="0" class="
-            sage-dropdown__option
+            sage-dropdown__item-control
             <% option[:modifiers].each do |m| %>
-              <%= "sage-dropdown__option--#{m}" %>
+              <%= "sage-dropdown__item-control--#{m}" %>
             <% end %>
           ">
             <%= option[:label] %>
