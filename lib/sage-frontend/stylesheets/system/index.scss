@@ -1,31 +1,8 @@
 // Reset
 @import "vendor/reboot";
 
-// Functions
-@import "core/functions";
-
-// Variable Tokens
-@import "tokens/color_palette";
-@import "tokens/color_combos";
-@import "tokens/border";
-@import "tokens/breakpoints";
-@import "tokens/container";
-@import "tokens/font_size";
-@import "tokens/font_weight";
-@import "tokens/icon";
-@import "tokens/letter_spacing";
-@import "tokens/line_height";
-@import "tokens/shadow";
-@import "tokens/sidebar";
-@import "tokens/spacing";
-@import "tokens/type_specs";
-@import "tokens/z_index";
-
-// Mixins
-@import "core/mixins";
-
-// Global Variables
-@import "core/variables";
+// Variables, functions, mixins, and tokens
+@import "consumables";
 
 // Base Styles
 @import "core/fonts";
@@ -90,6 +67,6 @@
 @import "patterns/objects/pagination";
 @import "patterns/objects/panel";
 @import "patterns/objects/sidebar";
-@import "patterns/objects/tabs";
-@import "patterns/objects/modal";
 @import "patterns/objects/sortable";
+@import "patterns/objects/tabs";
+@import "patterns/objects/upload_card";

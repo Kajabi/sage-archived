@@ -66,6 +66,8 @@ $-modal-padding-y: sage-spacing(md);
   > :last-child {
     margin-bottom: 0;
   }
+
+  @include clearfix;
 }
 
 .sage-modal__footer {

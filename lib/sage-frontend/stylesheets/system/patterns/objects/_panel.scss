@@ -70,6 +70,8 @@ $-panel-spacing-sm: sage-spacing(xs);
     margin-bottom: 0;
   }
 
+  @include clearfix;
+
   [aria-expanded] + & {
     overflow: hidden;
     padding-top: 0;
@@ -138,6 +140,8 @@ $-panel-spacing-sm: sage-spacing(xs);
       }
     }
   }
+
+  @include clearfix;
 }
 
 .sage-panel__header {
@@ -145,6 +149,8 @@ $-panel-spacing-sm: sage-spacing(xs);
   align-items: center;
   padding: $sage-panel-padding;
   border-bottom: sage-border();
+
+  @include clearfix;
 
   .sage-panel--accordion & {
     padding-top: sage-spacing(xs);
