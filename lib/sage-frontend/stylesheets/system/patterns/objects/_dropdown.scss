@@ -5,95 +5,29 @@
 
 ================================================== */
 
-$-dropdown-height: rem(40px);
 $-dropdown-width: rem(280px);
 $-dropdown-item-focus-line-spacing-x: sage-spacing(sm);
 
 $-option-underline: "::after";
 $-option-icon: "::before";
 
+$-option-menu-size: rem(40px);
+
 .sage-dropdown {
   display: inline-flex;
   position: relative;
 }
 
-.sage-dropdown__container {
-  visibility: hidden;
-
-  &::before {
-    content: "";
-    visibility: hidden;
-    position: fixed;
-    background-color: transparent;
-    pointer-events: none;
-    cursor: default;
-
-    @include position-full;
-  }
-
-  [aria-expanded="true"] > & {
-    visibility: visible;
-
-    &::before {
-      visibility: visible;
-      pointer-events: auto;
-    }
-  }
-}
-
 .sage-dropdown__item {
+  display: flex;
+  align-items: center;
   position: relative;
   z-index: sage-z-index(nav);
   width: 100%;
   list-style: none;
+  // user-select: none;
 
   @extend %t-sage-body;
-}
-
-.sage-dropdown__menu {
-  visibility: hidden;
-  position: absolute;
-  top: calc(100% + #{sage-spacing(xs)});
-  overflow: hidden;
-  z-index: sage-z-index(nav, -1);
-  transform: rotate3d(1, 0, 0, -90deg);
-  transform-origin: top center;
-  min-width: min-content;
-  width: $-dropdown-width;
-  padding: sage-spacing(xs) 0;
-  border-radius: sage-border(radius);
-  background-color: sage-color(white);
-  box-shadow: sage-shadow(md);
-  transition: $sage-transition;
-  transition-property: transform, z-index;
-
-  // In the event that this dropdown is at the bottom of the page, add some margin below
-  // to prevent it from touching the bottom of the viewport/page when it expands
-  margin-bottom: sage-spacing(); /* stylelint-disable-line order/properties-order */
-
-  [aria-expanded="true"] > .sage-dropdown__container & {
-    visibility: visible;
-    transform: rotate3d(0, 0, 0, 0);
-  }
-
-  :not(.sage-dropdown--anchor-right) > .sage-dropdown__container & {
-    left: 0;
-  }
-
-  .sage-dropdown--anchor-right > .sage-dropdown__container & {
-    right: 0;
-  }
-}
-
-.sage-dropdown__option {
-  @include button-style-reset();
-
-  display: flex;
-  position: relative;
-  align-items: center;
-  width: 100%;
-  padding: rem(9px) sage-spacing(sm);
-  user-select: none;
 
   &#{$-option-underline} {
     $-focus-offset: 50%;
@@ -114,7 +48,7 @@ $-option-icon: "::before";
   }
 
   &:active,
-  &:focus {
+  &:focus-within {
     outline: none;
 
     &#{$-option-underline} {
@@ -123,7 +57,7 @@ $-option-icon: "::before";
     }
   }
 
-  &:focus#{$-option-underline} {
+  &:focus-within#{$-option-underline} {
     border-bottom-color: currentColor;
   }
 
@@ -132,7 +66,59 @@ $-option-icon: "::before";
   }
 }
 
-.sage-dropdown__option--danger {
+.sage-dropdown__menu {
+  visibility: hidden;
+  overflow: hidden;
+  z-index: sage-z-index(nav, -1);
+  transform: rotate3d(1, 0, 0, -90deg);
+  transform-origin: top center;
+  width: $-dropdown-width;
+  transition: $sage-transition;
+  transition-property: transform, z-index;
+
+  // In the event that this dropdown is at the bottom of the page, add some margin below
+  // to prevent it from touching the bottom of the viewport/page when it expands
+  margin-bottom: sage-spacing(); /* stylelint-disable-line order/properties-order */
+
+  [aria-expanded="true"] > .sage-dropdown__panel & {
+    visibility: visible;
+    transform: rotate3d(0, 0, 0, 0);
+  }
+
+  :not(.sage-dropdown--anchor-right) > .sage-dropdown__panel & {
+    left: 0;
+  }
+
+  .sage-dropdown--anchor-right > .sage-dropdown__panel & {
+    right: 0;
+  }
+}
+
+.sage-dropdown__item-label {
+  margin-left: sage-spacing(xs);
+}
+
+.sage-dropdown__item-control {
+  @include button-style-reset();
+
+  display: flex;
+  position: relative;
+  align-items: center;
+  width: 100%;
+  padding: rem(9px) sage-spacing(sm);
+  text-align: left;
+  user-select: none;
+
+  &:focus {
+    outline: 0;
+  }
+
+  .sage-dropdown--with-options > & {
+    max-width: calc(100% - #{$-option-menu-size});
+  }
+}
+
+.sage-dropdown__item-control--danger {
   color: sage-color(red);
 
   &:hover {
@@ -142,9 +128,44 @@ $-option-icon: "::before";
 }
 
 @each $icon-name, $icon-code in $sage-icons {
-  .sage-dropdown__option--icon-#{$icon-name}#{$-option-icon} {
+  .sage-dropdown__item-control--icon-#{$icon-name}#{$-option-icon} {
     @include icon-base($icon-name);
     margin: 0 sage-spacing(xs) 0 0;
+  }
+}
+
+.sage-dropdown__panel {
+  visibility: hidden;
+  position: absolute;
+  top: calc(100% + #{sage-spacing(xs)});
+  min-width: min-content;
+  padding: sage-spacing(xs) 0;
+  border-radius: sage-border(radius);
+  background-color: sage-color(white);
+  box-shadow: sage-shadow(md);
+
+  .sage-dropdown--right & {
+    right: 0;
+  }
+
+  &::before {
+    content: "";
+    visibility: hidden;
+    position: fixed;
+    background-color: transparent;
+    pointer-events: none;
+    cursor: default;
+
+    @include position-full;
+  }
+
+  [aria-expanded="true"] > & {
+    visibility: visible;
+
+    &::before {
+      visibility: visible;
+      pointer-events: auto;
+    }
   }
 }
 
