@@ -2,14 +2,9 @@
 has_search = defined?(has_search) && has_search == true
 %>
 <div class="sage-dropdown" data-js-dropdown>
-
-  <button
-    aria-controls="participant_options_menu"
-    class="sage-dropdown__trigger sage-dropdown__trigger--dropdown sage-btn sage-btn--tertiary sage-btn--icon-right-caret-down"
-    type="button"
-  >
-    Add An Element
-  </button>
+  <div class="sage-dropdown__trigger<%= " sage-dropdown__trigger--#{trigger_modifier}" if defined?(trigger_modifier) %>">
+    <%= trigger.html_safe %>
+  </div>
   <nav class="sage-dropdown__panel">
     <ul class="sage-dropdown__menu" role="menu" id="participant_options_menu"  aria-label="Participant options">
       <% if has_search %>

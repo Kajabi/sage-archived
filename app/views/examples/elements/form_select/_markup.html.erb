@@ -1,6 +1,6 @@
 <% selectID = name.downcase.dasherize %>
 
-<div class="sage-select <%= "sage-select--error" if has_error %>">
+<div class="sage-select <%= "sage-select--error" if has_error %>" data-js-select="true">
   <select class="sage-select__field" name="<%= selectID %>" id="<%= selectID %>">
     <% select_options.each do |option| %>
       <option value="<%= option[:value] %>"><%= option[:text] %></option>
