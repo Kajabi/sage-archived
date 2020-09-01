@@ -13,7 +13,16 @@ has_search = defined?(has_search) && has_search == true
         </li>
       <% end %>
       <% options.each do |option| %>
-        <li class="sage-dropdown__item" role="none">
+        <li class="
+            sage-dropdown__item
+            <% if option[:item_modifiers] %>
+              <% option[:item_modifiers].each do |m| %>
+                <%= "sage-dropdown__item--#{m}" %>
+              <% end %>
+            <% end %>
+          "
+          role="none"
+        >
           <a role="menuitem" tabindex="0" class="
             sage-dropdown__item-control
             <% option[:modifiers].each do |m| %>

@@ -71,6 +71,14 @@ $-trigger-label-bg-label: $sage-inputfield-bg-label;
   }
 }
 
+.sage-dropdown__item--border-before {
+  border-top: 1px solid sage-color(grey, 300);
+}
+
+.sage-dropdown__item--border-after {
+  border-bottom: 1px solid sage-color(grey, 300);
+}
+
 .sage-dropdown__item-control {
   @include button-style-reset();
 

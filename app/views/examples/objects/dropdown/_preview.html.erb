@@ -10,6 +10,7 @@ sample_menu = [
   },
   {
     label: "Visit Element",
+    item_modifiers: ["border-before"],
     modifiers: ["icon-arrow-right"]
   },
   {
@@ -45,7 +46,6 @@ sample_select = [
 <h5>Menu Button</h5>
 <%= render "examples/objects/dropdown/markup",
   options: sample_menu,
-  has_search: true,
   trigger: %(
     <div class="sage-dropdown__trigger">
       <button
