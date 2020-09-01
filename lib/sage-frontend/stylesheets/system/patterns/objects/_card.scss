@@ -78,6 +78,8 @@
   &:last-child {
     margin-bottom: 0;
   }
+
+  @include clearfix;
 }
 
 .sage-card__footer {
