@@ -249,6 +249,18 @@ $-panel-spacing-sm: sage-spacing(xs);
 
 .sage-panel-group__title {
   margin-bottom: sage-spacing(xs);
+
+  @each $-color-name, $-values in $-panel-colors {
+    @if $-color-name == default {
+      color: map-get($-values, text-color);
+    }
+
+    @else {
+      .sage-panel-group--#{$-color-name} & {
+        color: map-get($-values, text-color);
+      }
+    }
+  }
 }
 
 
