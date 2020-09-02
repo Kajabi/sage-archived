@@ -40,6 +40,15 @@ module ElementsHelper
         a11y: "todo"
       },
       {
+        title: "choice",
+        description: "A radio button tab for making a choice. To be used inside a tabs object.",
+        scss: "done",
+        docs: "done",
+        rails: "done",
+        react: "todo",
+        a11y: "todo"
+      },
+      {
         title: "description",
         description: "A description is composed of title and data content and is structured as a definition list.",
         scss: "done",
@@ -76,6 +85,15 @@ module ElementsHelper
         a11y: "todo"
       },
       {
+        title: "icon_card",
+        description: "A simple component that allows an icon to be rendered on a field with a unified color scheme applied.",
+        scss: "done",
+        docs: "done",
+        rails: "todo",
+        react: "doing",
+        a11y: "todo",
+      },
+      {
         title: "indicator",
         description: "A simple dot-styled position indicator bar. This is currently not intended to be used as navigation but only a visual indicator.",
         scss: "doing",
@@ -101,6 +119,15 @@ module ElementsHelper
         rails: "todo",
         react: "todo",
         a11y: "todo"
+      },
+      {
+        title: "lists",
+        description: "Sage lists provide a few styling alternatives for unstyled and inline formatting.",
+        scss: "todo",
+        docs: "done",
+        rails: "todo",
+        react: "todo",
+        a11y: "todo",
       },
       {
         title: "loader",
@@ -130,12 +157,30 @@ module ElementsHelper
         a11y: "todo"
       },
       {
+        title: "search",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", 
+        scss: "doing",
+        docs: "doing",
+        rails: "todo",
+        react: "todo",
+        a11y: "doing"
+      },
+      {
         title: "switch",
         description: "Checkbox or radio element styled to appear as a toggle",
         scss: "done",
         docs: "done",
         rails: "no",
         react: "no",
+        a11y: "todo"
+      },
+      {
+        title: "tab",
+        description: "A tab button to be used inside a tabs object",
+        scss: "done",
+        docs: "done",
+        rails: "doing",
+        react: "todo",
         a11y: "todo"
       },
       {

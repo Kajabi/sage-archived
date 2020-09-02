@@ -6,14 +6,25 @@
 ================================================== */
 
 .sage-radio {
-  display: flex;
-  flex-flow: row wrap;
-  align-items: center;
-  margin-bottom: $sage-form-element-spacing;
+  &:not(.sage-radio--standalone) {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    margin-bottom: $sage-form-element-spacing;
+  }
+
+  .sage-list & {
+    margin-bottom: $sage-form-element-spacing / 2;
+  }
+}
+
+.sage-radio--standalone {
+  display: inline-block;
 }
 
 .sage-radio__label {
   display: inline-block;
+  flex: 1;
   margin-left: sage-spacing(sm);
   vertical-align: top;
   cursor: pointer;
@@ -21,6 +32,8 @@
   @extend %t-sage-body;
 }
 
+
+.sage-radio--standalone,
 .sage-radio__input {
   display: inline-block;
   position: relative;
@@ -76,7 +89,7 @@
     box-shadow: sage-shadow(sm);
 
     &::after {
-      transform: translate3d(-50%, -50%, 0) scale(0.5);
+      transform: translate3d(-50%, -50%, 0) scale(1);
       opacity: 1;
     }
   }
@@ -96,17 +109,8 @@
     }
 
     &::after {
-      transform: translate3d(-50%, -50%, 0) scale(0.5);
+      transform: translate3d(-50%, -50%, 0) scale(1);
       opacity: 1;
-    }
-  }
-
-  &:invalid {
-    background: sage-color(red, 100);
-    border-color: sage-color(red);
-
-    + .sage-radio__label {
-      color: sage-color(red);
     }
   }
 
@@ -130,5 +134,28 @@
     &:not(:checked)::after {
       background: $sage-radio-color-disabled;
     }
+  }
+
+  &:not(.sage-radio--standalone) {
+    margin-top: 6px;
+  }
+}
+
+.sage-radio--error {
+  .sage-radio__label {
+    color: sage-color(red);
+  }
+  .sage-radio__input {
+    border-color: sage-color(red);
+    &:checked {
+      color: sage-color(red);
+      background-color: sage-color(red);
+    }
+    &::after {
+      background-color: sage-color(white);
+    }
+  }
+  :hover:not(:checked):not(:disabled) {
+    border-color: sage-color(red);
   }
 }

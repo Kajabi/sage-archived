@@ -13,6 +13,15 @@ module ObjectsHelper
     [
       # Sage Generated Objects
       {
+        title: "icon_list",
+        description: "Icon lists allow for a richer formatting for bulleted lists of things including checkbox lists, feature lists, and more!",
+        scss: "todo",
+        docs: "todo",
+        rails: "todo",
+        react: "todo",
+        a11y: "todo",
+      },
+      {
         title: "alert",
         description: "Alerts are used to indicate user-driven notifications.",
         scss: "done",
@@ -173,6 +182,15 @@ module ObjectsHelper
         rails: "todo",
         react: "todo",
         a11y: "todo"
+      },
+      {
+        title: "upload_card",
+        description: "The Upload Card provides a visually pleasing lockup for a file upload field along with other helpful controls.", 
+        scss: "doing",
+        docs: "doing",
+        rails: "doing",
+        react: "doing",
+        a11y: "doing"
       },
     ]
   end

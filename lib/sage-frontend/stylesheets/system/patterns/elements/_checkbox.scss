@@ -6,14 +6,25 @@
 ================================================== */
 
 .sage-checkbox {
-  display: flex;
-  flex-flow: row wrap;
-  align-items: center;
-  margin-bottom: $sage-form-element-spacing;
+  &:not(.sage-checkbox--standalone) {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    margin-bottom: $sage-form-element-spacing;
+  }
+
+  .sage-list & {
+    margin-bottom: $sage-form-element-spacing / 2;
+  }
+}
+
+.sage-checkbox--standalone {
+  display: inline-block;
 }
 
 .sage-checkbox__label {
   display: inline-block;
+  flex: 1;
   margin-left: rem(12px);
   vertical-align: top;
   cursor: pointer;
@@ -31,6 +42,7 @@
   }
 }
 
+.sage-checkbox--standalone,
 .sage-checkbox__input {
   appearance: none;
   display: inline-block;
@@ -135,5 +147,15 @@
       border-right-color: sage-color(red);
       border-bottom-color: sage-color(red);
     }
+    &:hover:not(:checked):not(:disabled) {
+      border-color: sage-color(red);
+    }
+    &::before {
+      border-color: sage-color(red);
+    }
+  }
+
+  &:not(.sage-checkbox--standalone) {
+    margin-top: 4px;
   }
 }

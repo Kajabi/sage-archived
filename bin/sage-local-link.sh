@@ -1,8 +1,17 @@
-# For usage help run: sage-local-link --help
+# Sage Local Link Script
+#   A wrapper around `yarn link` utility.
+#   Replaces the Sage package location defined in Kajabi-Products' package.json
+#   with a local Sage package using a symlink.
+#
+#   USAGE:
+#   $ <PATH TO SAGE REPO>/bin/sage-local-link.sh <BOOLEAN>
+#   $ <PATH TO SAGE REPO>/bin/sage-local-link.sh status
+#   $ <PATH TO SAGE REPO>/bin/sage-local-link.sh --help
+
 sage_repo_path=$( cd "$(dirname "${BASH_SOURCE[0]}")" ; cd .. ; pwd -P )
 
 function echo_custom() {
-  printf "\n\n\033[0;34m${1} \033[0m${2}\n\033[0;34m----------------------------------------------------------------------------------------------\033[0m\n"
+  printf "\n\n\033[0;34m${1} \033[0m${2}\n\033[0;34m------------------------------------------------\033[0m\n"
 }
 
 function yarn_install() {
@@ -38,7 +47,10 @@ if [ "$1" = "true" ] || [ "$1" = "false" ]; then
 
   show_status_of_package
 
+elif [ "$1" = "status" ]; then
+    show_status_of_package
 else
   echo_custom "Run inside the of root the Kajabi-Products repo:"
   echo "$ <PATH TO SAGE REPO>/bin/sage-local-link <BOOLEAN>"
+  echo "$ <PATH TO SAGE REPO>/bin/sage-local-link status"
 fi

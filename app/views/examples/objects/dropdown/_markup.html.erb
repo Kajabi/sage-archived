@@ -1,9 +1,23 @@
+<%
+has_search = defined?(has_search) && has_search == true
+%>
 <div class="sage-dropdown" data-js-dropdown>
 
-  <button class="sage-btn" type="button" aria-controls="participant_options_menu">Add An Element</button>
+  <button
+    aria-controls="participant_options_menu"
+    class="sage-dropdown__trigger sage-dropdown__trigger--dropdown sage-btn sage-btn--tertiary sage-btn--icon-right-caret-down"
+    type="button"
+  >
+    Add An Element
+  </button>
 
   <nav class="sage-dropdown__container">
     <ul class="sage-dropdown__menu" role="menu" id="participant_options_menu"  aria-label="Participant options">
+      <% if has_search %>
+        <li class="sage-dropdown__item--search sage-search" role="none">
+          <input class="sage-search__input" type="text" placeholder="Search..." />
+        </li>
+      <% end %>
       <% options.each do |option| %>
         <li class="sage-dropdown__item" role="none">
           <a role="menuitem" tabindex="0" class="

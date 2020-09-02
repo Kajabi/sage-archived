@@ -1,10 +1,23 @@
-<div class="sage-card<%= is_compact ? " sage-card--compact" : "" %><%= is_spaced ? " sage-card--spaced" : "" %><%= is_center ? " sage-card--center" : "" %>">
+<%
+is_compact = defined?(is_compact) && is_compact
+is_spaced = defined?(is_spaced) && is_spaced
+is_centered = defined?(is_centered) && is_centered
+has_img = defined?(has_img) && has_img
+%>
+<div class="sage-card<%= " sage-card--#{border_style}" if defined?(border_style) %><%= " sage-card--compact" if is_compact %><%= " sage-card--spaced" if is_spaced %><%= " sage-card--center" if is_centered %>">
   <% if has_img %>
-  <%= image_pack_tag("#{img_path}", class: "sage-card__img", alt: "#{img_alt}") %>
+    <div class="sage-card__img">
+      <%= image_pack_tag("#{img_path}", alt: "#{img_alt}") %>
+    </div>
   <% end %>
   <div class="sage-card__body">
     <h2 class="sage-card__title t-sage-heading-5"><%= title %></h2>
     <p class="sage-card__text"><%= text %></p>
-    <a href="#" class="sage-btn <% if action_style_primary %>sage-btn--primary<% elsif action_style_tertiary %>sage-btn--tertiary sage-btn--icon-right-caret-right<% end %>"><%= action_text %></a>
+    <a
+      href="#" 
+      class="sage-btn<%= " sage-btn--#{action_style}" if defined?(action_style) %><%= " sage-btn--icon-#{icon_style}" if defined?(icon_style) %>"
+    >
+      <%= action_text %>
+    </a>
   </div>
 </div>

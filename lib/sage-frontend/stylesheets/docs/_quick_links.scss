@@ -4,10 +4,14 @@
   For Sage documentation use
 ================================================== */
 
+$-quick-links-color-text: sage-color(charcoal, 400);
+$-quick-links-color-focus: sage-color(primary);
+$-quick-links-color-background: sage-color(primary, 400);
+
 .quick-links {
   position: sticky;
   top: 0;
-  padding: sage-spacing();
+  padding: 0 sage-spacing();
 }
 
 .quick-links__body {
@@ -25,8 +29,27 @@
 }
 
 .quick-links__link {
-  display: block;
-  color: sage-color(charcoal, 100);
+  display: flex;
+  align-items: center;
+  margin-bottom: rem(2px);
+  padding: sage-spacing(2xs) sage-spacing(xs);
+  color: $-quick-links-color-text;
+  border-radius: sage-border(radius);
+  transition: $sage-transition;
+  transition-property: background, box-shadow;
+
+  &:hover {
+    background: rgba($-quick-links-color-background, 0.03);
+  }
+
+  &:focus {
+    box-shadow: inset 0 0 0 1px $-quick-links-color-focus;
+    outline: none;
+  }
+
+  &:active {
+    background: rgba($-quick-links-color-background, 0.12);
+  }
 }
 
 .quick-links__link--secondary {

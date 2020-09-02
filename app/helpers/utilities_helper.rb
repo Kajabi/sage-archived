@@ -4,7 +4,6 @@ module UtilitiesHelper
   def sage_utilities
     [
       # Sage Generated Utilities
-      { title: "media" },
     ]
   end
 

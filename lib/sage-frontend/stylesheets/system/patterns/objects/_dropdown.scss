@@ -9,6 +9,9 @@ $-dropdown-height: rem(40px);
 $-dropdown-width: rem(280px);
 $-dropdown-item-focus-line-spacing-x: sage-spacing(sm);
 
+$-option-underline: "::after";
+$-option-icon: "::before";
+
 .sage-dropdown {
   display: inline-flex;
   position: relative;
@@ -38,17 +41,26 @@ $-dropdown-item-focus-line-spacing-x: sage-spacing(sm);
   }
 }
 
+.sage-dropdown__item {
+  position: relative;
+  z-index: sage-z-index(nav);
+  width: 100%;
+  list-style: none;
+
+  @extend %t-sage-body;
+}
+
 .sage-dropdown__menu {
   visibility: hidden;
   position: absolute;
-  top: calc(100% - #{sage-spacing(3xs)});
+  top: calc(100% + #{sage-spacing(xs)});
   overflow: hidden;
   z-index: sage-z-index(nav, -1);
   transform: rotate3d(1, 0, 0, -90deg);
   transform-origin: top center;
   min-width: min-content;
   width: $-dropdown-width;
-  padding: 0;
+  padding: sage-spacing(xs) 0;
   border-radius: sage-border(radius);
   background-color: sage-color(white);
   box-shadow: sage-shadow(md);
@@ -73,18 +85,6 @@ $-dropdown-item-focus-line-spacing-x: sage-spacing(sm);
   }
 }
 
-.sage-dropdown__item {
-  position: relative;
-  z-index: sage-z-index(nav);
-  width: 100%;
-  list-style: none;
-
-  @extend %t-sage-body;
-}
-
-$option-underline: "::after";
-$option-icon: "::before";
-
 .sage-dropdown__option {
   @include button-style-reset();
 
@@ -92,11 +92,10 @@ $option-icon: "::before";
   position: relative;
   align-items: center;
   width: 100%;
-  height: $-dropdown-height;
-  padding: sage-spacing(md) sage-spacing(sm);
+  padding: rem(9px) sage-spacing(sm);
   user-select: none;
 
-  &#{$option-underline} {
+  &#{$-option-underline} {
     $-focus-offset: 50%;
     content: "";
     display: block;
@@ -118,17 +117,17 @@ $option-icon: "::before";
   &:focus {
     outline: none;
 
-    &#{$option-underline} {
+    &#{$-option-underline} {
       right: $-dropdown-item-focus-line-spacing-x;
       left: $-dropdown-item-focus-line-spacing-x;
     }
   }
 
-  &:focus#{$option-underline} {
+  &:focus#{$-option-underline} {
     border-bottom-color: currentColor;
   }
 
-  &:active#{$option-underline} {
+  &:active#{$-option-underline} {
     border-bottom-color: sage-color(primary);
   }
 }
@@ -143,8 +142,21 @@ $option-icon: "::before";
 }
 
 @each $icon-name, $icon-code in $sage-icons {
-  .sage-dropdown__option--icon-#{$icon-name}#{$option-icon} {
+  .sage-dropdown__option--icon-#{$icon-name}#{$-option-icon} {
     @include icon-base($icon-name);
     margin: 0 sage-spacing(xs) 0 0;
   }
+}
+
+.sage-dropdown__trigger {
+  width: 100%;
+}
+
+.sage-dropdown__trigger--dropdown,
+.sage-dropdown__trigger--field {
+  justify-content: space-between;
+}
+
+.sage-dropdown__trigger--dropdown {
+  min-width: 280px;
 }

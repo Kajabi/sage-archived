@@ -5,58 +5,9 @@
 
 ================================================== */
 
-$-label-draft-text-color: sage-color(charcoal, 200) !default;
-$-label-draft-color: sage-color(grey, 200) !default;
-$-label-success-text-color: sage-color(sage, 400) !default;
-$-label-success-color: sage-color(sage, 100) !default;
-$-label-warning-color: sage-color(yellow, 200) !default;
-$-label-danger-color: sage-color(red, 200) !default;
 $-label-padding: 0 sage-spacing(xs) !default;
 $-label-border-radius: sage-border(radius) !default;
 $-label-inset-border: 0 0 0 1px inset;
-
-$-label-colors: (
-  draft: (
-    background: $-label-draft-color,
-    border: $-label-draft-color,
-    text: $-label-draft-text-color,
-    subtle: (
-      background: sage-color(white),
-      border: sage-color(grey, 400),
-      text: $-label-draft-text-color,
-    )
-  ),
-  success: (
-    background: $-label-success-color,
-    border: $-label-success-color,
-    text: $-label-success-text-color,
-    subtle: (
-      background: sage-color(white),
-      border: sage-color(sage, 300),
-      text: $-label-success-text-color,
-    )
-  ),
-  warning: (
-    background: $-label-warning-color,
-    border: $-label-warning-color,
-    text: sage-color(yellow, 500),
-    subtle: (
-      background: sage-color(white),
-      border: sage-color(yellow, 300),
-      text: sage-color(yellow, 400),
-    )
-  ),
-  danger: (
-    background: $-label-danger-color,
-    border: $-label-danger-color,
-    text: sage-color(red, 500),
-    subtle: (
-      background: sage-color(white),
-      border: sage-color(red, 300),
-      text: sage-color(red, 400)
-    )
-  )
-);
 
 .sage-label {
   @extend %t-sage-body-small-med;
@@ -68,18 +19,26 @@ $-label-colors: (
   border-radius: $-label-border-radius;
 }
 
-@each $-color-name, $-color-settings in $-label-colors {
-  .sage-label--#{$-color-name} {
-    $-subtle-settings: map-get($-color-settings, subtle);
+.sage-label--truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
-    color: map-get($-color-settings, text);
-    background-color: map-get($-color-settings, background);
-    box-shadow: $-label-inset-border map-get($-color-settings, border);
+@each $-color-name, $-color-settings in $sage-color-combos {
+  .sage-label--#{$-color-name} {
+    color: sage-color-combo($-color-name, default, foreground);
+    background-color: sage-color-combo($-color-name, default, background);
 
     &.sage-label--subtle {
-      color: map-get($-subtle-settings, text);
-      background-color: map-get($-subtle-settings, background);
-      box-shadow: $-label-inset-border map-get($-subtle-settings, border);
+      color: sage-color-combo($-color-name, subtle, foreground);
+      background-color: sage-color(white);
+      // Box shadow instead of border so that size and inner spacing is not affected
+      box-shadow: $-label-inset-border sage-color-combo($-color-name, subtle, background);
+    }
+
+    &.sage-label--bold {
+      color: sage-color-combo($-color-name, bold, foreground);
+      background-color: sage-color-combo($-color-name, bold, background);
     }
 
     .sage-btn & {

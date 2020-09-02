@@ -1,20 +1,25 @@
-<div class="sage-panel <%= "sage-panel--accordion" if is_accordion %>">
-  <% if is_accordion %>
-    <div class="sage-panel__header" data-js-accordion="header">
-      <h4 class="sage-panel__title"><%= header %></h4>
-    </div>
-    <div class="sage-panel__body" data-js-accordion="body"><%= body.html_safe %></div>
-  <% else %>
-    <div class="sage-panel__header">
-      <%= header %>
+<div
+  class="sage-panel<%= " sage-panel--accordion" if defined?(is_accordion) && is_accordion %><%= " sage-panel--#{style}" if defined?(style) %><%= " sage-panel--#{color}" if defined?(color) %><%= " sage-panel--#{size}" if defined?(size) %>"
+  style="width: <%= defined?(width) ? width : "auto" %>"
+>
+  <div
+    class="sage-panel__header"
+    <%= "data-js-accordion=\"header\"" if defined?(is_accordion) && is_accordion %>
+  >
+    <%= header.html_safe if defined?(header) %>
+    <% if defined?(header_aside) %>
       <aside class="sage-panel__header-aside">
-        Header aside
+        <%= header_aside.html_safe %>
       </aside>
-    </div>
-    <div class="sage-panel__body"><%= body.html_safe %></div>
-  <% end %>
-
-  <% if footer != false %>
+    <% end %>
+  </div>
+  <div
+    class="sage-panel__body"
+    <%= "data-js-accordion=\"body\"" if defined?(is_accordion) && is_accordion %>
+  >
+    <%= body.html_safe %>
+  </div>
+  <% if defined?(footer) %>
     <div class="sage-panel__footer"><%= footer %></div>
   <% end %>
 </div>
