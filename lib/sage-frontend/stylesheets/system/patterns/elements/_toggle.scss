@@ -12,6 +12,7 @@ $-toggle-color-primary: sage-color(primary);
 $-toggle-color-white: sage-color(white);
 $-toggle-focus-outline-size: sage-spacing(2xs);
 $-toggle-focus-outline-width: 1;
+$-toggle-element-spacing: sage-spacing(sm);
 
 $-toggle-checkbox-border-radius: sage-border(radius);
 $-toggle-checkbox-input-size: rem(20px);
@@ -41,7 +42,7 @@ $-toggle-switch-width: rem(44px);
 .sage-toggle {
   display: flex;
   flex-flow: row wrap;
-  margin-bottom: $sage-form-element-spacing;
+  margin-bottom: $-toggle-element-spacing;
 }
 .sage-toggle__input {
   appearance: none;
