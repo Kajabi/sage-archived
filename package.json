@@ -14,7 +14,7 @@
     "webpack:build": "./bin/webpack",
     "webpack:server": "./bin/webpack-dev-server",
     "storybook:server": "start-storybook -p 4001",
-    "storybook:precompile": "build-storybook -o ./public/storybook",
+    "storybook:precompile": "build-storybook --output-dir ./public/storybook --static-dir storybook",
     "deploy": "git push heroku $(git rev-parse --abbrev-ref HEAD):master --force",
     "preversion": "git ls-remote --exit-code --heads heroku master && git fetch origin master --tags && git checkout master",
     "postversion": "git push origin master --tags && yarn run deploy && echo \"Successfully released and deployed version $npm_package_version!\""
