@@ -36,7 +36,8 @@ $-banner-colors: (
 .sage-banner--active {
   position: fixed;
   left: 0;
-  top: -$sage-banner-height;
+  top: 0;
+  z-index: sage-z-index(priority);
 }
 
 .sage-banner__text {
