@@ -1,9 +1,13 @@
 {
-  "name": "Sage Design System",
+  "name": "sage",
   "description": "",
   "website": "",
   "repository": "https://github.com/kajabi/sage",
   "scripts": {
-    "postdeploy": "yarn run storybook:build && yarn run webpack:build"
-  }
+    "postdeploy": "yarn run storybook:build"
+  },
+  "buildpacks": [
+    { "url": "heroku/nodejs" },
+    { "url": "heroku/ruby" }
+  ]
 }
