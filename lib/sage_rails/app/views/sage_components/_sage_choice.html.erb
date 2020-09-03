@@ -1,8 +1,10 @@
+<% css_active_class = "sage-choice--active" %>
+
 <button
   type="button"
-  class="sage-choice"
+  class="sage-choice <%= css_active_class if component.active %>"
   data-js-tabs-target="<%= component.target %>"
-  data-sage-active-class="sage-choice--active"
+  data-sage-active-class="<%= css_active_class %>"
   role="tab"
   aria-controls="<%= component.target %>"
 >

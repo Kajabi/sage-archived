@@ -1,5 +1,11 @@
 <section
-  class="sage-panel<%= " sage-panel--#{component.style}" if defined?(component.style) %><%= " sage-panel--#{component.color}" if defined?(component.color) %><%= " sage-panel--#{component.size}" if defined?(component.size) %>"
+  class="
+    sage-panel
+    <%= "sage-panel--#{component.style}" if component.style %>
+    <%= "sage-panel--#{component.color}" if component.color %>
+    <%= "sage-panel--#{component.size}" if component.size %>
+    <%= component.generated_css_classes %>
+  "
   <%= "id=#{component.id}" if component.id %>
 >
   <% if component.title || content_for?(:sage_header_actions) %>

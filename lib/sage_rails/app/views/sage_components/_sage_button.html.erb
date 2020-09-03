@@ -1,6 +1,8 @@
-<% html_tag = component.attributes&.has_key?(:href) ? "a" : "button" %>
+<% is_button = !component.attributes&.has_key?(:href) %>
+<% html_tag = is_button ? "button" : "a" %>
 
 <<%= html_tag %>
+  <%= "type=button" if is_button %>
   <% component.attributes.each do |key, value| %>
     <%= "#{key}='#{value}'".html_safe %>
   <% end if component.attributes&.is_a?(Hash) %>
