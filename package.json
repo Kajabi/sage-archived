@@ -8,13 +8,13 @@
     "test": "test"
   },
   "scripts": {
-    "start": "npm-run-all --parallel webpack:server rails:server storybook:server",
+    "start": "npm-run-all --parallel webpack:server rails:server",
     "test": "echo \"Error: no test specified\" && exit 1",
     "rails:server": "rails server -p 4000",
-    "webpack:build": "./bin/webpack",
     "webpack:server": "./bin/webpack-dev-server",
+    "webpack:build": "./bin/webpack",
     "storybook:server": "start-storybook -p 4001",
-    "storybook:precompile": "build-storybook --output-dir ./public/storybook --static-dir packs --no-dll",
+    "storybook:precompile": "build-storybook --output-dir ./public/storybook -no-dll",
     "deploy": "git push heroku $(git rev-parse --abbrev-ref HEAD):master --force",
     "preversion": "git ls-remote --exit-code --heads heroku master && git fetch origin master --tags && git checkout master",
     "postversion": "git push origin master --tags && yarn run deploy && echo \"Successfully released and deployed version $npm_package_version!\""
