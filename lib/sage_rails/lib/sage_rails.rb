@@ -1,4 +1,4 @@
-require 'sage_rails/railtie' if defined?(Rails)
+require "sage_rails/engine"
 
 module SageRails
 end
