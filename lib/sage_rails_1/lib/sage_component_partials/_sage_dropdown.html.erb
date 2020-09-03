@@ -1,0 +1,30 @@
+<div
+  class="
+    sage-dropdown
+    <%= "sage-dropdown--anchor-right" if component.align == "right" %>
+  "
+  data-js-dropdown="<%= component.id %>"
+>
+  <%= component.content %>
+  <nav class="sage-dropdown__container">
+    <ul class="sage-dropdown__menu" role="menu" aria-label="Participant options">
+      <% component.items.each do |item| %>
+        <li class="sage-dropdown__item" role="none">
+          <a
+            <% item[:attributes].each do |key, value| %>
+              <%= "#{key}=#{value}"%>
+            <% end if item[:attributes]&.is_a?(Hash) %>
+            role="menuitem"
+            tabindex="0"
+            class="
+              sage-dropdown__option
+              <%= "sage-dropdown__option--icon-#{item[:icon]}" if item[:icon] %>
+            "
+          >
+            <%= item[:name] %>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </nav>
+</div>

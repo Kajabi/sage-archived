@@ -1,0 +1,11 @@
+<dialog class="sage-modal" data-js-modal="<%= component.id %>">
+  <section class="sage-modal__container" data-js-modal-container>
+    <% if component.content.present? %>
+      <%= component.content %>
+    <% else %>
+      <%= sage_component SageModalContent, {} do %>
+        <%= sage_component SageLoader, { style: "spinner" } %>
+      <% end %>
+    <% end %>
+  </section>
+</dialog>

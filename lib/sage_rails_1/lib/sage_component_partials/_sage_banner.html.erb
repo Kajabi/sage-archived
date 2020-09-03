@@ -1,0 +1,8 @@
+<div class="sage-banner <%= component.type ? "sage-banner--#{component.type}" : "" %>">
+  <% if component.title.present? %>
+    <p class="sage-banner__title"><%= component.title %></p>
+  <% end %>
+  <% if component.copy.present? %>
+    <p class="sage-banner__copy"><%= component.copy.html_safe %></p>
+  <% end %>
+</div>

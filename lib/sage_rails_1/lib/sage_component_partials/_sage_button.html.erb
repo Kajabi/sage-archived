@@ -1,0 +1,24 @@
+<% html_tag = component.attributes&.has_key?(:href) ? "a" : "button" %>
+
+<<%= html_tag %>
+  <% component.attributes.each do |key, value| %>
+    <%= "#{key}='#{value}'".html_safe %>
+  <% end if component.attributes&.is_a?(Hash) %>
+  <%= "aria-disabled='true' disabled" if component.disabled %>
+  class="
+    sage-btn
+    <%= "sage-btn--full-width" if component.full_width %>
+    <%= "sage-btn--#{component.size}" if component.size %>
+    <%= "sage-btn--#{component.style}" if component.style %>
+    <%= "sage-btn--align-end" if (component.align == "end") %>
+    <%= "sage-btn--icon-#{component.icon[:style]}-#{component.icon[:name]}" if component.icon %>
+  "
+>
+  <% if component.icon&.dig(:style) == "only" %>
+    <span class="visually-hidden">
+      <%= component.value %>
+    </span>
+  <% else %>
+    <%= component.value %>
+  <% end %>
+</<%= html_tag %>>

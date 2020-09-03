@@ -1,0 +1,12 @@
+<button
+  type="button"
+  class="sage-tab"
+  data-js-tabs-target="<%= component.target %>"
+  data-sage-active-class="sage-tab--active"
+  role="tab"
+  aria-controls="<%= component.target %>"
+>
+  <% if component.text.present? %>
+    <%= component.text.html_safe %>
+  <% end %>
+</button>
