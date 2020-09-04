@@ -9,9 +9,15 @@
   <div class="sage-assistant__body">
   </div>
   <div class="sage-assistant__actions">
-    <%= link_to $SAGE_VERSION.html_safe,
+    <%= link_to "💎 Gem: v#{$SAGE_VERSION_GEM}",
       $SAGE_VERSION_URL,
-      class: "sage-btn sage-btn--small sage-btn--tertiary",
+      class: "sage-label sage-label--draft",
+      target: "_blank",
+      rel: "noopener noreferrer"
+    %>
+    <%= link_to "📦 Package: v#{$SAGE_VERSION_GEM}",
+      $SAGE_VERSION_URL,
+      class: "sage-label sage-label--draft",
       target: "_blank",
       rel: "noopener noreferrer"
     %>
