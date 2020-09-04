@@ -1,4 +1,4 @@
-# Sage Local Link Script
+# Sage Local Link Script [ sage-frontend package only }
 #   A wrapper around `yarn link` utility.
 #   Replaces the Sage package location defined in Kajabi-Products' package.json
 #   with a local Sage package using a symlink.

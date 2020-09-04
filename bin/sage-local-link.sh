@@ -1,8 +1,14 @@
 # Sage Local Link Script
+#
+#   Frontend (sage-frontend):
 #   A wrapper around `yarn link` utility.
 #   Replaces the Sage package location defined in Kajabi-Products' package.json
 #   with a local Sage package using a symlink.
 #
+#   Backend (sage_rails):
+#   Sets a custom local `bundle config` location for sage_rails gem
+#
+#   -----------------------------------------------------
 #   USAGE:
 #   $ <PATH TO SAGE REPO>/bin/sage-local-link.sh <BOOLEAN>
 #   $ <PATH TO SAGE REPO>/bin/sage-local-link.sh status
@@ -36,7 +42,7 @@ if [ "$1" = "true" ] || [ "$1" = "false" ]; then
   if [ "$1" = "false" ]; then
     echo_custom "GEM:" "Removing local Sage gem"
     bundle config --delete disable_local_branch_check
-    bundle config --delete local.Sage
+    bundle config --delete local.sage_rails
 
     echo_custom "FRONTEND PACKAGE:" "Removing local Sage frontend package"
     yarn unlink sage
@@ -49,7 +55,7 @@ if [ "$1" = "true" ] || [ "$1" = "false" ]; then
   elif [ "$1" = "true" ]; then
     echo_custom "GEM:" "Use local Sage gem located at: $sage_repo_path"
     bundle config --local disable_local_branch_check true
-    bundle config --local local.Sage $sage_repo_path
+    bundle config --local local.sage_rails $sage_repo_path
 
     echo_custom "FRONTEND PACKAGE:" "Use the local Sage frontend package located at: $sage_repo_path"
     (cd $sage_repo_path; yarn link)
