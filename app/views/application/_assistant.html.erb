@@ -9,13 +9,13 @@
   <div class="sage-assistant__body">
   </div>
   <div class="sage-assistant__actions">
-    <%= link_to "Changelog", "https://github.com/Kajabi/sage/releases", 
-      class: "sage-btn sage-btn--small sage-btn--secondary", 
-      target: "_blank", 
-      rel: "noopener noreferrer" 
+    <%= link_to "Changelog", "https://github.com/Kajabi/sage/releases",
+      class: "sage-btn sage-btn--small sage-btn--secondary",
+      target: "_blank",
+      rel: "noopener noreferrer"
     %>
-    <%= link_to "v#{$SAGE_VERSION}",
-      "https://github.com/Kajabi/sage/releases/tag/v#{$SAGE_VERSION}",
+    <%= link_to "#{$SAGE_VERSION}",
+      "https://github.com/Kajabi/sage/releases/tag/#{$SAGE_GIT_TAG}",
       class: "sage-btn sage-btn--small sage-btn--primary",
       target: "_blank",
       rel: "noopener noreferrer"
