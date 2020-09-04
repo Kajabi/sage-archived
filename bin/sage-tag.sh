@@ -1,4 +1,4 @@
-# Sage Release Script
+# Sage Tag Script
 #
 #   - Updates SageRails gem version
 #   - Updates Sage frontend package version

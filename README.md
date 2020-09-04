@@ -108,23 +108,26 @@ First ensure all new code is completed through a PR and merged into `master`. Th
     - A Patch (_._.n; non-blocking changes) should be used when only small styling is adjusted or new elements/objects are added that are yet to be implemented in `kajabi-products` or other repos that use this design system.
     - A Minor bump (_.n.0; blocking changes) should be used when more significant styling is completed, markup is changed on any object or element, or substantive changes are made to the system's documentation. _When in doubt, bump a new `minor` version.
 
-    Keep the version draft open as you will return to it shortly. 
+    Keep the version draft open as you will return to it shortly.
 
-3. From the `master` branch (after first ensuring your local branch is up to date with `origin`) use [`yarn version`](https://classic.yarnpkg.com/en/docs/cli/version/) to bump the package version with a version-tagged git commit as follows:
+3. From the `master` branch (after first ensuring your local branch is up to date with `origin`) use `bin/sage-release` script to bump the package & gem version with a version-tagged git commit as follows:
 
     ```bash
-    $ yarn version --minor
-    # Use the --minor or --patch flags to update the minor or patch version number respectively
+    $ bin/sage-tag 1.19.1
     # This will automatically, push the git-tagged commit to github and deploy to Heroku
     ```
 
-    **Note:** The Sage version is defined by the `./package.json` version and the version-tagged git commit. Please ensure these values match after a version bump.
+    **Note:** The Sage version is defined in 3 locations:
+      1. `./package.json` frontend package version
+      2. `SageRails::VERSION` gem version
+      3. tagged git commit containing the version bump update
+    Please ensure these values match after a version bump.
 
     This command also automatically deploys the new version bump to our [sage-design-system.kajabi.com](https://sage-design-system.kajabi.com/) public documentation.
 
-4. Once the deployment is complete make sure the version commit is also pushed to the `origin`. 
+4. Once the deployment is complete make sure the version commit is also pushed to the `origin`.
 5. Return to [Github Releases](https://github.com/Kajabi/sage/releases) and the draft release you consulted earlier. Update its number and title to match the version tag you just bumped and map it to the tag that pushed with your version commit from the step above.
-6. Publish the Release. 
+6. Publish the Release.
 7. Update the `ux-dev` channel in Kajabi Slack.
 8. Create a new Draft release with the next logical version number matching the existing tag and title naming conventions from the other Releases. This will ensure others can add their updates to the release notes as they merge changes moving forward.
 
