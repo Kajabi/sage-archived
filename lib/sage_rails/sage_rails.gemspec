@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.description = "temp"
   s.license     = "MIT"
 
-  s.files = Dir["{app,config,lib,spec}/**/*"]
+  s.files = Dir["{app,config,lib}/**/*"]
 
   s.add_dependency "rails", "~> 4.2.11.1"
 
