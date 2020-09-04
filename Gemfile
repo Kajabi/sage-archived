@@ -27,3 +27,6 @@ group :development do
 end
 
 gem "lockup", "~> 1.5"
+
+gem "dev", "~> 2.1"
+gem "bump", "~> 0.9.0"
