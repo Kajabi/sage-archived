@@ -69,7 +69,9 @@ $ <RELATIVE PATH TO SAGE REPO>/bin/sage-local-link.sh <BOOLEAN>
 # $ ../sage/bin/sage-local-link.sh true
 ```
 
-The script requires a boolean argument designating whether to setup or tear down the link to your local Sage repo. This is an automation of `yarn link`, you can do this process manually as well. [See the yarn docs for more details.](https://classic.yarnpkg.com/en/docs/cli/link/)
+The script requires a boolean argument designating whether to setup or tear down the link to your local Sage repo.
+- Frontend is an automation of `yarn link`, you can do this process manually as well. [See the yarn docs for more details.](https://classic.yarnpkg.com/en/docs/cli/link/)
+- Rails Gem is an automation of `bundle config local.sage_rails`
 
 ### Run Locally
 
@@ -98,7 +100,7 @@ Ensure you have…
 2. The [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli#download-and-install) installed
 3. Added the Heroku app as a git remote location (`heroku git:remote -a sage-design-system`)
 
-#### Version Bump & Deploy Docs With `yarn version`
+#### Version Bump & Deploy Docs
 
 First ensure all new code is completed through a PR and merged into `master`. Then:
 
@@ -114,13 +116,13 @@ First ensure all new code is completed through a PR and merged into `master`. Th
 
     ```bash
     $ bin/sage-tag 1.19.1
-    # This will automatically, push the git-tagged commit to github and deploy to Heroku
+    # This will automatically push the git-tagged commit to github and deploy to Heroku
     ```
 
     **Note:** The Sage version is defined in 3 locations:
-      1. `./package.json` frontend package version
-      2. `SageRails::VERSION` gem version
-      3. tagged git commit containing the version bump update
+      - `./package.json` frontend package version
+      - `SageRails::VERSION` gem version
+      - tagged git commit containing the version bump update
     Please ensure these values match after a version bump.
 
     This command also automatically deploys the new version bump to our [sage-design-system.kajabi.com](https://sage-design-system.kajabi.com/) public documentation.
