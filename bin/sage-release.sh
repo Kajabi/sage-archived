@@ -1,11 +1,14 @@
-# Sage Local Link Script
+# Sage Release Script
 #
-#   Updates SageRails gem version, Sage frontend package version,
-#   creates a version-tagged git commit, pushes to master, and deploys to Docs production
+#   - Updates SageRails gem version
+#   - Updates Sage frontend package version
+#   - Creates a version-tagged git commit
+#   - Pushes to master
+#   - Deploys to Docs production
 #
 #   -----------------------------------------------------
 #   USAGE:
-#   $ <PATH TO SAGE REPO>/bin/sage-local-link.sh < patch | minor | major >
+#   $ bin/sage-local-link.sh <VERSION NUMBER, example: 1.3.2 >
 
 function echo_custom() {
   printf "\n\n\033[0;34m${1} \033[0m${2}\n\033[0;34m------------------------------------------------\033[0m\n"
@@ -20,20 +23,20 @@ function echo_custom_error() {
 # ----------------------------------------------------------------------
 echo_custom "PREFLIGHT", "Check arguments, branch status, & deploy access"
 
-# Check script argument
-if [ "$1" = "patch" ] || [ "$1" = "minor" ] || [ "$1" = "major" ]; then
-  echo_custom_error "Error", "Requires argument 'patch' / 'minor' / 'major'"
+# Check script argument is valid version number
+if [[ $1 =~ ^(\d+)(.\d+)*$ ]]; then
+  echo_custom_error "Error", "Invalid version number"
   exit 1
 fi
 
 # Is the branch clean?
-if [ -z ! "$(git status --porcelain)" ]; then
+if ! [ -z $(git status --porcelain) ]; then
   echo_custom_error "Error", "Branch must be clean"
   exit 1
 fi
 
 # Does a git remote location of `heroku master` exist?
-if [ -z ! "$(git ls-remote --exit-code --heads heroku master)" ]; then
+if ! [ -z $(git ls-remote --exit-code --heads heroku master) ]; then
   echo_custom_error "Error", "Heroku remote git location does not exist. Ensure the Heroku CLI is installed and the remote location has been added 'heroku git:remote -a sage-design-system'"
   exit 1
 fi
@@ -57,7 +60,8 @@ echo_custom "UPDATE", "Bumping the SageRails gem, Sage frontend package, & creat
 bump $1 --no-commit
 
 # `yarn version` handles updating package.json and making a version-tagged git commit internally
-yarn version --$1
+# ---> NOTE: This command creates the the git tag and commit
+yarn version --new-version $1 --no-commit-hooks
 
 
 # DEPLOY
@@ -71,4 +75,4 @@ git push origin master --tags
 yarn run deploy
 
 # Success!
-echo_custom "Successfully released and deployed version $npm_package_version!"
+echo_custom "Successfully released and deployed version $1!"
