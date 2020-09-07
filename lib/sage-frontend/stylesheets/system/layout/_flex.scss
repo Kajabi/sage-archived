@@ -1,0 +1,29 @@
+.sage-flex {
+  display: flex;
+
+  > *:not(:last-child) {
+    margin-right: 24px;
+  }
+}
+
+.sage-flex--align-center {
+  justify-content: center;
+}
+
+.sage-flex--align-right {
+  justify-content: flex-end;
+}
+
+.sage-flex--align-spread {
+  justify-content: space-between;
+}
+
+.sage-flex--space-compact {
+  > *:not(:last-child) {
+    margin-right: 8px;
+  }
+}
+
+.sage-flex__filler {
+  flex: 1;
+}
