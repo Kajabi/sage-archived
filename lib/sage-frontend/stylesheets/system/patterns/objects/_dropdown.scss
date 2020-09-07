@@ -127,14 +127,17 @@ $-trigger-label-bg-label: $sage-inputfield-bg-label;
 }
 
 .sage-dropdown__item-label {
+  @include sage-truncate();
+
   .sage-dropdown__item-checkbox + & {
     margin-left: sage-spacing(xs);
   }
 }
 
 .sage-dropdown__menu {
-  overflow: hidden;
+  overflow: auto;
   width: $-dropdown-width;
+  max-height: 400px;
   padding: sage-spacing(xs) 0;
 
   :not(.sage-dropdown--anchor-right) > .sage-dropdown__panel & {
@@ -199,6 +202,10 @@ $-trigger-label-bg-label: $sage-inputfield-bg-label;
   }
 }
 
+.sage-dropdown__panel--custom {
+  padding: sage-spacing();
+}
+
 .sage-dropdown__trigger {
   width: 100%;
 }
@@ -206,10 +213,12 @@ $-trigger-label-bg-label: $sage-inputfield-bg-label;
 
 .sage-dropdown__trigger-selected-value {
   justify-content: space-between;
-  min-width: 280px;
   width: 100%;
 
+  @include sage-truncate();
+
   // Adds form field styling
+  .sage-dropdown__trigger--select &,
   .sage-dropdown__trigger--select-labeled & {
     border: $sage-inputfield-border-width solid $sage-inputfield-border-color;
   }

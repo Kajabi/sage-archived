@@ -15,7 +15,9 @@ is_disabled = defined?(is_disabled) && is_disabled
         <%= text -%>
       </span>
     <% else %>
-      <%= text -%>
+      <span class="sage-btn__truncate-text">
+        <%= text -%>
+      </span>
     <% end %>
   </a>
 <% else %>
@@ -28,7 +30,9 @@ is_disabled = defined?(is_disabled) && is_disabled
       <%= text -%>
     </span>
   <% else %>
-    <%= text -%>
+    <span class="sage-btn__truncate-text">
+      <%= text -%>
+    </span>
   <% end %>
   </button>
 <% end %>
