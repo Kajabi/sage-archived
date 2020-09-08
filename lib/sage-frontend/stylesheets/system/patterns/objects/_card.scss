@@ -66,7 +66,7 @@
   }
 
   .sage-card--center & {
-    max-width: sage-container(modal);
+    max-width: sage-container(md);
     margin-left: auto;
     margin-right: auto;
   }
@@ -154,7 +154,7 @@
   }
 }
 
-@media (max-width: sage-breakpoint()) {
+@media (max-width: sage-breakpoint-old()) {
   .sage-card__img {
     width: 100%;
     min-width: 100%;

@@ -31,7 +31,7 @@
     outline: none;
   }
 
-  @media (max-width: sage-breakpoint()) {
+  @media (max-width: sage-breakpoint-old()) {
     display: block;
     position: relative;
     height: $sage-menubtn-toggle-size;

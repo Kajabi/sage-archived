@@ -11,7 +11,7 @@
   background: sage-color(grey, 200);
   border-radius: sage-border(radius);
 
-  [class*="sage-col--align-"] & {
+  [class*="sage-grid-old-col--align-"] & {
     text-align: inherit;
   }
 }

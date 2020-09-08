@@ -4,30 +4,29 @@
     <%= render "application/meta" %>
     <%= render "application/styles" %>
   </head>
-  <body class="sage-page sage-docs">
+  <body class="sage-app sage-docs">
     <%= render "application/content_skip_link",
       link_id: "main-content"
     -%>
-    <header class="sage-header">
+    <header class="sage-app__header sage-header">
       <%= render "application/assistant",
         menu_button: true
       -%>
     </header>
-    <div class="sage-stage">
       <%= render "application/sidebar" %>
-      <main class="sage-content" id="main-content">
-        <div class="sage-container sage-container--lg">
-          <div class="sage-row">
-            <div class="sage-col--lg-9 sage-type">
+      <main class="sage-app__stage" id="main-content">
+        <div class="sage-container sage-container--xl">
+          <div class="sage-grid-old-row">
+            <div class="sage-grid-old-col--lg-9 sage-type">
               <%= yield :heading %>
               <hr/>
             </div>
           </div>
-          <div class="sage-row">
-            <div class="sage-col--lg-9">
+          <div class="sage-grid-old-row">
+            <div class="sage-grid-old-col--lg-9">
               <%= yield %>
             </div>
-            <div class="sage-col--lg-3 sage-col--md-hide"><%= yield :quick_links %></div>
+            <div class="sage-grid-old-col--lg-3 sage-grid-old-col--md-hide"><%= yield :quick_links %></div>
           </div>
         </div>
       </main>

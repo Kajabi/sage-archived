@@ -21,7 +21,7 @@
     backdrop-filter: $sage-overlay-backdrop-filter;
   }
 
-  @media (max-width: sage-breakpoint()) {
+  @media (max-width: sage-breakpoint-old()) {
     &.sage-overlay--open {
       visibility: visible;
       z-index: $sage-overlay-z-index;

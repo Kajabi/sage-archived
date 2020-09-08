@@ -5,14 +5,14 @@
 ================================================== */
 
 .sage-form-section {
-  @include sage-row();
+  @include sage-grid-old-row();
   margin-bottom: sage-spacing();
 }
 
 // TODO: refactor extends following final design of form section
 .sage-form-section__info {
   /* stylelint-disable-next-line scss/at-extend-no-missing-placeholder */
-  @extend .sage-col--md-4;
+  @extend .sage-grid-old-col--md-4;
 }
 
 .sage-form-section__title {
@@ -25,7 +25,7 @@
 
 .sage-form-section__content {
   /* stylelint-disable-next-line scss/at-extend-no-missing-placeholder */
-  @extend .sage-col--md-8;
+  @extend .sage-grid-old-col--md-8;
 }
 
 .sage-form-section__panel {

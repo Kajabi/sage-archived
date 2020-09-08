@@ -71,7 +71,7 @@ $-sage-table-sort-indicator-direction: rem(7px);
     }
   }
 
-  @media screen and (min-width: sage-breakpoint(md-min)) {
+  @media screen and (min-width: sage-breakpoint-old(md-min)) {
     --table-cell-padding: #{$sage-table-cell-padding-lg};
     --table-heading-padding: #{$sage-table-heading-padding-lg};
   }
@@ -158,8 +158,8 @@ $-sage-table-sort-indicator-direction: rem(7px);
 
 // Selectable rows with checkbox or radio inputs
 .sage-table--selectable {
-  .sage-row--selectable,
-  .sage-row--selectable:nth-child(odd) {
+  .sage-grid-old-row--selectable,
+  .sage-grid-old-row--selectable:nth-child(odd) {
     transition: $sage-transition;
     transition-property: background;
 

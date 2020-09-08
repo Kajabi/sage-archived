@@ -36,17 +36,17 @@ $sage-heading-margin-bottom: sage-spacing(sm) !default;
 // ==================================================
 // GRID
 // ==================================================
-$sage-grid-baseline: $default-baseline !default;
-$sage-grid-columns: 12 !default;
-$sage-grid-gap: sage-spacing(lg) !default;
+$sage-grid-old-baseline: $default-baseline !default;
+$sage-grid-old-columns: 12 !default;
+$sage-grid-old-gap: sage-spacing(lg) !default;
 
-$sage-grid-breakpoint-sm: sage-breakpoint(sm-min) !default;
-$sage-grid-breakpoint-sm-max: sage-breakpoint(sm-max) !default;
-$sage-grid-breakpoint-md: sage-breakpoint(md-min) !default;
-$sage-grid-breakpoint-md-max: sage-breakpoint(md-max) !default;
-$sage-grid-breakpoint-lg: sage-breakpoint(lg-min) !default;
-$sage-grid-breakpoint-lg-max: sage-breakpoint(lg-max) !default;
-$sage-grid-breakpoint-xl: sage-breakpoint(xl-min) !default;
+$sage-grid-old-breakpoint-sm: sage-breakpoint-old(sm-min) !default;
+$sage-grid-old-breakpoint-sm-max: sage-breakpoint-old(sm-max) !default;
+$sage-grid-old-breakpoint-md: sage-breakpoint-old(md-min) !default;
+$sage-grid-old-breakpoint-md-max: sage-breakpoint-old(md-max) !default;
+$sage-grid-old-breakpoint-lg: sage-breakpoint-old(lg-min) !default;
+$sage-grid-old-breakpoint-lg-max: sage-breakpoint-old(lg-max) !default;
+$sage-grid-old-breakpoint-xl: sage-breakpoint-old(xl-min) !default;
 
 
 // ==================================================

@@ -1,13 +1,25 @@
-@function sage-container($key: md) {
+@function sage-container($key: xl, $is-old: false) {
   $value: map-get($sage-containers, $key);
+
+  @if ($is-old) {
+    $value: map-get($sage-containers-old, $key);
+  }
   @return $value;
 }
 
-$sage-containers: (
+$sage-containers-old: (
   modal: 500px,
   xs: 760px,
   sm: 900px,
   md: 1200px,
   lg: 1440px,
   fluid: 100%,
+);
+
+$sage-containers: (
+  xs: rem(240px),
+  sm: rem(352px),
+  md: rem(544px),
+  lg: rem(736px),
+  xl: rem(1440px),
 );

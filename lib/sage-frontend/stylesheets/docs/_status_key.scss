@@ -55,11 +55,11 @@
     color: sage-color(charcoal, 200);
   }
 
-  @media screen and (min-width: sage-breakpoint(lg-min)) {
+  @media screen and (min-width: sage-breakpoint-old(lg-min)) {
     flex-grow: 0;
   }
 
-  @media screen and (min-width: sage-breakpoint(xl-min)) {
+  @media screen and (min-width: sage-breakpoint-old(xl-min)) {
     margin-right: sage-spacing(lg);
   }
 }

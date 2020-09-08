@@ -38,7 +38,7 @@ $-modal-padding-y: sage-spacing(md);
   display: none;
   z-index: sage-z-index(modal);
   min-width: min-content;
-  width: sage-container(modal);
+  width: sage-container(md);
   margin: 20vh 0 0;
   border-radius: sage-border(radius);
   background-color: sage-color(white);

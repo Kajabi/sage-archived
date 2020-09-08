@@ -1,0 +1,9 @@
+.sage-grid-demo {
+  .sage-container {
+    margin: -2px;
+    color: sage-color(orange, 400);
+    background-color: sage-color(orange, 100);
+    border: 2px dashed sage-color(orange, 300);
+    border-radius: 4px;
+  }
+}

@@ -1,130 +1,138 @@
-/* ==================================================
-  ** sage grid
-  type: style
 
-================================================== */
+$-breakpoints: $sage-breakpoints;
+$-panel-padding: sage-spacing(md);
+$-sidebar-width: rem(240px);
+$-containers: $sage-containers;
 
-// ============================================
-// Rows
-// ============================================
-
-@mixin sage-row {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin-left: calc(#{$sage-grid-gap} / -2);
-  margin-right: calc(#{$sage-grid-gap} / -2);
-}
-
-.sage-row {
-  @include sage-row();
-}
-
-// horizontal alignment
-.sage-row--align-center {
-  justify-content: center;
-}
-.sage-row--align-end {
-  justify-content: flex-end;
-}
-.sage-row--align-space-between {
-  justify-content: space-between;
-}
-.sage-row--align-space-around {
-  justify-content: space-around;
-}
-
-// vertical alignment
-.sage-row--valign-center {
-  align-items: center;
-}
-.sage-row--valign-bottom {
-  align-items: flex-end;
-}
-
-
-// ============================================
-// Columns
-// ============================================
-
-@mixin sage-col {
-  flex: 1 1 auto;
-  max-width: 100%;
-  padding: 0 calc(#{$sage-grid-gap} / 2);
-}
-
-@for $sage-i from 1 through $sage-grid-columns {
-  .sage-col-#{$sage-i},
-  .sage-col--sm-#{$sage-i},
-  .sage-col--md-#{$sage-i},
-  .sage-col--lg-#{$sage-i} {
-    @include sage-col();
-    flex: 0 0 100%;
+:root {
+  @media (max-width: 815px) {
+    --panel-gutter: #{sage-spacing(md)};
   }
 
-  .sage-col-#{$sage-i} {
-    flex: 0 1 auto;
-    width: percentage($sage-i / $sage-grid-columns);
+  @media (min-width: 816px) {
+    --panel-gutter: #{sage-spacing(lg)};
   }
 }
 
-@media (min-width: $sage-grid-breakpoint-sm) {
-  @for $sage-i from 1 through $sage-grid-columns {
-    .sage-col--sm-#{$sage-i} {
-      flex: 0 1 auto;
-      width: percentage($sage-i / $sage-grid-columns);
-    }
+.sage-app {
+  display: grid;
+  height: 100%;
+  
+  @media (max-width: 815px) {
+    grid-template-columns: auto;
+    grid-template-areas:
+      "header"
+      "stage";
+  }
+
+  @media (min-width: 816px) {
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+      "header  header"
+      "sidebar stage";
   }
 }
 
-@media (max-width: $sage-grid-breakpoint-sm-max) {
-  .sage-col--sm-hide,
-  .sage-col--md-show {
+.sage-app__header {
+  grid-area: header;
+}
+
+.sage-app__sidebar {
+  grid-area: sidebar;
+  overflow: auto;
+  height: 100%;
+  
+  @media (max-width: 815px) {
     display: none;
   }
-}
-
-@media (min-width: $sage-grid-breakpoint-md) {
-  @for $sage-i from 1 through $sage-grid-columns {
-    .sage-col--md-#{$sage-i} {
-      flex: 0 1 auto;
-      width: percentage($sage-i / $sage-grid-columns);
-    }
-  }
-
-  .sage-col--sm-show {
-    display: none;
+  
+  @media (min-width: 816px) {
+    display: block;
   }
 }
 
-@media (max-width: $sage-grid-breakpoint-md-max) {
-  .sage-col--md-hide,
-  .sage-col--lg-show {
-    display: none;
+.sage-app__stage {
+  display: grid;
+  grid-area: stage;
+  grid-template-columns: auto;
+  grid-gap: 32px;
+  justify-items: center;
+  overflow: auto;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  // Ladera Integration Note:
+  // X-padding of 32px (`sage-spacing(lg)`) matches Ladera's `.content` wrapper padding value of `$spacing-outer`
+  padding: sage-spacing() var(--panel-gutter);
+  background: sage-color(grey, 200);
+  scroll-behavior: smooth;
+}
+
+.sage-app__stage--overlay {
+  z-index: 1000;
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+.sage-container {
+  display: grid;
+  grid-gap: var(--panel-gutter);
+  width: 100%;
+  padding: 0;
+
+  > * {
+    grid-column: 1 / -1;
+  }
+
+  @media (max-width: 1087px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  
+  @media (min-width: 1088px) {
+    grid-template-columns: repeat(6, 1fr);
   }
 }
 
-@media (min-width: $sage-grid-breakpoint-lg) {
-  @for $sage-i from 1 through $sage-grid-columns {
-    .sage-col--lg-#{$sage-i} {
-      flex: 0 1 auto;
-      width: percentage($sage-i / $sage-grid-columns);
-    }
-  }
-
-  .sage-col--md-show {
-    display: none;
+@each $-size, $-val in $-containers {
+  .sage-container--#{$-size} {
+    max-width: $-val;
   }
 }
 
-@media (max-width: $sage-grid-breakpoint-lg-max) {
-  .sage-col--lg-hide {
-    display: none;
+.sage-container__col-overlay {
+  height: 100%;
+  list-style: none;
+  background-color: sage-color(red);
+}
+
+.sage-panel {
+  box-sizing: border-box;
+  padding: $-panel-padding;
+  color: sage-color(sage, 400);
+  border-radius: 4px;
+  background-color: sage-color(sage, 200);
+}
+  
+@media (max-width: 1087px) {
+  .sage-panel--bifold,
+  .sage-panel--trifold,
+  .sage-panel--side,
+  .sage-panel--main {
+    grid-column: 1 / -1;
   }
 }
 
-@media (min-width: $sage-grid-breakpoint-xl) {
-  .sage-col--lg-show {
-    display: none;
+@media (min-width: 1088px) {
+  .sage-panel--bifold {
+    grid-column: span 3;
+  }
+
+  .sage-panel--trifold,
+  .sage-panel--side {
+    grid-column: span 2;
+  }
+
+  .sage-panel--main {
+    grid-column: span 4;
   }
 }

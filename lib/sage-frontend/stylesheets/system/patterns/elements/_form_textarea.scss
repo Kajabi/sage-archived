@@ -26,7 +26,7 @@
   pointer-events: none;
   opacity: 0;
 
-  @media screen and (min-width: sage-breakpoint(sm-min)) {
+  @media screen and (min-width: sage-breakpoint-old(sm-min)) {
     white-space: normal;
   }
 }

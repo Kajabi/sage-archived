@@ -33,9 +33,9 @@
     }
   }
   &-breakpoint::after {
-    content: "#{sage-breakpoint()}";
+    content: "#{sage-breakpoint-old()}";
   }
-  @each $name, $token in $sage-breakpoints {
+  @each $name, $token in $sage-breakpoints-old {
     &-breakpoint-#{$name}::after {
       content: "#{$token}";
     }

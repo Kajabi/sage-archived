@@ -276,3 +276,33 @@
     @content;
   }
 }
+
+@mixin media($position, $breakpoint, $breakpoint-range) {
+  $breakpoint-base: map-get($sage-breakpoints, $breakpoint);
+
+  @if ($position == "before") {
+    $breakpoint-size: map-get($sage-breakpoints, max);
+
+    @media (max-width: $breakpoint-size) {
+      @content;
+    }
+  }
+
+  @if ($position == "after") {
+    $breakpoint-size: map-get($sage-breakpoints, min);
+
+    @media (min-width: $breakpoint-size) {
+      @content;
+    }
+  }
+
+  @if ($position == "between") {
+    $breakpoint-size: map-get($sage-breakpoints, min);
+    $breakpoint-range-base: map-get($sage-breakpoints, $breakpoint-range);
+    $breakpoint-range-size: map-get($breakpoint-range-base, max);
+
+    @media (min-width: $breakpoint-size) and (max-width: $breakpoint-range-size) {
+      @content;
+    }
+  }
+}

@@ -1,9 +1,13 @@
-@function sage-breakpoint($key: sm-max) {
-  $value: map-get($sage-breakpoints, $key);
+//
+// Old Breakbpoints
+//
+
+@function sage-breakpoint-old($key: sm-max) {
+  $value: map-get($sage-breakpoints-old, $key);
   @return $value;
 }
 
-$sage-breakpoints: (
+$sage-breakpoints-old: (
   xs-max: 544px,
   sm-min: 545px,
   sm-max: 767px,
@@ -13,4 +17,32 @@ $sage-breakpoints: (
   lg-max: 1199px,
   xl-min: 1200px,
   xxl-min: 1440px,
+);
+
+//
+// New Breakpionts
+//
+
+@function sage-breakpoint($key: md, $position: max) {
+  $breakpoint-map: map-get($sage-breakpoints, $key);
+  @return map-get($breakpoint-map, $position);
+}
+
+$sage-breakpoints: (
+  sm: (
+    max: 815px,
+    min: 816px,
+  ),
+  md: (
+    max: 1087px,
+    min: 1088px,
+  ),
+  lg: (
+    max: 1423px,
+    min: 1424px
+  ),
+  xl: (
+    max: 1743px,
+    min: 1744px,
+  ),
 );
