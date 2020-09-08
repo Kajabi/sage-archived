@@ -1,7 +1,9 @@
 <%
 has_search = defined?(has_search) && has_search == true
+customized = defined?(customized) && customized == true
+disabled = defined?(disabled) && disabled == true
 %>
-<div class="sage-dropdown" data-js-dropdown>
+<div class="sage-dropdown<%= " sage-dropdown--customized" if customized %><%= " sage-dropdown--disabled" if disabled %>" data-js-dropdown>
   <div class="sage-dropdown__trigger<%= " sage-dropdown__trigger--#{trigger_modifier}" if defined?(trigger_modifier) %>">
     <%= trigger.html_safe %>
   </div>
