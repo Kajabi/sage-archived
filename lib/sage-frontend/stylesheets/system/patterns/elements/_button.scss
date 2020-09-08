@@ -80,6 +80,10 @@
       transform: translate3d(-50%, -50%, 0) scale(1);
       opacity: 1;
     }
+
+    .sage-dropdown__item > &::after {
+      opacity: 0;
+    }
   }
 
   &:active {
@@ -93,6 +97,13 @@
 
     color: sage-color(grey);
     background-color: sage-color(grey, 100);
+  }
+
+  .sage-dropdown__item > & {
+    width: 100%;
+    padding-top: rem(9px);
+    padding-bottom: rem(9px);
+    border-radius: 0;
   }
 }
 

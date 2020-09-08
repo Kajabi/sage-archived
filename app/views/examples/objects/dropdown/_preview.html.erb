@@ -76,18 +76,17 @@ sample_select = [
 <h5>Form Field</h5>
 <%= render "examples/objects/dropdown/markup",
   options: sample_select,
+  has_add: true,
   has_search: true,
   trigger: %(
     <button
       aria-controls="participant_options_menu"
       class="sage-dropdown__trigger-selected-value sage-btn sage-btn--tertiary sage-btn--icon-right-caret-down"
       type="button"
-      disabled
     >
       <span class="sage-btn__truncate-text">&nbsp;</span>
     </button>
     <label class="sage-dropdown__trigger-label">Add an Element</label>
   ),
-  trigger_modifier: "select-labeled",
-  disabled: true
+  trigger_modifier: "select-labeled"
 %>
