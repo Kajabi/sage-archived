@@ -221,12 +221,15 @@ $-trigger-dropdown-offset: rem(16px) + sage-spacing(xs);
 .sage-dropdown__trigger {
   width: 100%;
 
-  .sage-dropdown:not(.sage-dropdown--customized) > & {
-    min-width: $-dropdown-width;
-  }
-
   &.sage-dropdown__trigger--options {
     min-width: auto;
+  }
+}
+
+.sage-dropdown__trigger--select,
+.sage-dropdown__trigger--select-labeled {
+  :not(.sage-dropdown--customized) > & {
+    min-width: $-dropdown-width;
   }
 }
 
