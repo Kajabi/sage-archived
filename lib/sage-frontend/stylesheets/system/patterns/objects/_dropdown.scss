@@ -117,7 +117,7 @@ $-trigger-dropdown-offset: rem(16px) + sage-spacing(xs);
   color: sage-color(primary);
 
   &:hover {
-    color: sage-color(primary, 400);
+    color: sage-color(primary, 300);
     background-color: sage-color(primary, 100);
   }
 }

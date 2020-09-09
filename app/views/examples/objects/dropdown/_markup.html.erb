@@ -36,20 +36,6 @@ disabled = defined?(disabled) && disabled == true
           </a>
         </li>
       <% end %>
-      <% if has_add %>
-        <li class="sage-dropdown__item sage-dropdown__item--add" role="none">
-          <%= render "examples/elements/button/markup",
-            align_end: false,
-            color: "secondary",
-            icon_class: "add",
-            icon_only: false,
-            is_disabled: false,
-            is_link_btn: false,
-            size: "",
-            text: "Add another option..."
-          %>
-        </li>
-      <% end %>
     </ul>
   </nav>
 </div>
