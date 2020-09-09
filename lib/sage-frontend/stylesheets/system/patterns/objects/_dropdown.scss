@@ -176,7 +176,7 @@ $-trigger-dropdown-offset: rem(16px) + sage-spacing(xs);
   z-index: sage-z-index(nav, -1);
   top: calc(100% + #{sage-spacing(xs)});
   // Temporariliy removing animation as it causes
-  // a positioning issue with nested fiex positioned elements
+  // a positioning issue with nested fixed positioned elements
   // transform: rotate3d(1, 0, 0, -90deg);
   transform-origin: top center;
   min-width: min-content;
