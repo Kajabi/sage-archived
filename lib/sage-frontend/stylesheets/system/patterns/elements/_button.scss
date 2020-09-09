@@ -193,6 +193,10 @@
     color: sage-color(primary, 200);
     background-color: transparent;
   }
+
+  .sage-dropdown__item & {
+    background-color: transparent;
+  }
 }
 
 .sage-btn--tertiary {
@@ -229,6 +233,10 @@
     color: sage-color(grey, 300);
     background-color: transparent;
   }
+
+  .sage-dropdown__item & {
+    background-color: transparent;
+  }
 }
 
 .sage-btn--danger {
@@ -262,6 +270,10 @@
     @include button-style-disabled;
 
     color: sage-color(primary, 200);
+    background-color: transparent;
+  }
+
+  .sage-dropdown__item & {
     background-color: transparent;
   }
 }
