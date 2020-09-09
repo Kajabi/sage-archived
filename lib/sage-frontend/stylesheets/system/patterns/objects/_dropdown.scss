@@ -113,6 +113,15 @@ $-trigger-dropdown-offset: rem(16px) + sage-spacing(xs);
   }
 }
 
+.sage-dropdown__item-control--primary {
+  color: sage-color(primary);
+
+  &:hover {
+    color: sage-color(primary, 400);
+    background-color: sage-color(primary, 100);
+  }
+}
+
 .sage-dropdown__item-control--danger {
   color: sage-color(red);
 
