@@ -140,6 +140,9 @@ This can be done using:
 ```bash
 # Example: yarn upgrade sage@git://github.com/Kajabi/sage.git#0.17.0
 $ yarn upgrade sage@git://github.com/Kajabi/sage.git#<GIT VERSION TAG>
+
+# Example: bundle upgrade sage 0.17.0
+$ bundle upgrade sage <GIT VERSION TAG>
 ```
 
 ## Installation
@@ -159,10 +162,6 @@ development:
       ignored: '[/node_modules([\\]+|\/)+(?!sage)/]'
 
 ```
-
-## Rails Engine Implementation
-**NOTE:** While the Sage Rails engine exists within this repo it is currently not consumed by Kajabi-Products. The design system ruby classes (`SageComponent`) that exist in Kajabi-Products are intended to live within the Sage Rails engine once they mature. Currently, the Sage Rails engine is an empty app.
-
 
 ## License
 
