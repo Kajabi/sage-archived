@@ -14,7 +14,7 @@ module ElementsHelper
       # Sage Generated Elements
         {
           title: "toggle",
-          description: "Toggle controls allow the user to select options and are composed of checkbox and radio elements.",
+          description: "Toggle elements allow the user to select options and are composed of checkbox and radio elements.",
           scss: "todo",
           rails: "todo",
           react: "todo",
