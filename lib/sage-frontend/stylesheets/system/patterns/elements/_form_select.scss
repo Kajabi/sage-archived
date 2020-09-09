@@ -26,7 +26,7 @@ $-sage-selectfield-color-error: $sage-inputfield-color-error;
 .sage-select {
   position: relative;
 
-  &:not(:last-child) {
+  &:not(:last-child):not(.sage-dropdown__trigger-selected-value) {
     margin-bottom: $-sage-selectfield-bottom-spacing;
   }
 }
@@ -42,7 +42,8 @@ $-sage-selectfield-color-error: $sage-inputfield-color-error;
 
   @include position(($-sage-selectfield-height / 2), unset, unset, ($-sage-selectfield-padding-x - $-sage-selectfield-padding-label));
 
-  .sage-select--value-selected & {
+  .sage-select--value-selected &,
+  .sage-dropdown--value-selected & {
     @extend %t-sage-body-xsmall-semi;
 
     transform: translateY(calc(#{-$-sage-selectfield-height} + 50%));
