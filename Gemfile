@@ -4,7 +4,6 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.2.11.1'
 
-gem 'pg', '~> 0.21'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'webpacker', '~> 4.x'
@@ -14,6 +13,7 @@ gem 'sage_rails', path: 'lib/sage_rails'
 group :development, :test do
   gem 'byebug'
   gem 'pry'
+  gem "rspec-rails"
 end
 
 group :development do
@@ -31,4 +31,3 @@ group :development do
 end
 
 gem "lockup", "~> 1.5"
-gem "rspec", "~> 3.9"
