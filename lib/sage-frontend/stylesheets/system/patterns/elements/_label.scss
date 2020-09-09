@@ -10,9 +10,10 @@ $-label-border-radius: sage-border(radius) !default;
 $-label-inset-border: 0 0 0 1px inset;
 
 .sage-label {
-  @extend %t-sage-body-small-med;
+  @extend %t-sage-body-small-semi;
 
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   padding: $-label-padding;
   text-align: center;
   white-space: nowrap;
@@ -47,6 +48,22 @@ $-label-inset-border: 0 0 0 1px inset;
         background-color: inherit;
         box-shadow: $-label-inset-border transparent;
       }
+    }
+  }
+}
+
+@each $-icon-name, $-icon-code in $sage-icons {
+  .sage-label--icon-left-#{$-icon-name} {
+    &::before {
+      margin-right: sage-spacing(2xs);
+      @include icon-base($-icon-name);
+    }
+  }
+
+  .sage-label--icon-right-#{$-icon-name} {
+    &::after {
+      margin-left: sage-spacing(2xs);
+      @include icon-base($-icon-name);
     }
   }
 }
