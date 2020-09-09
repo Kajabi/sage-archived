@@ -24,8 +24,11 @@ group :development do
   # background. Read more: https://github.com/rails/spring
   # Use Spring 1.3.3, Product's Spring version, to prevent needing to frequently restart Spring
   gem "spring", "1.3.3"
+
+  # CLI Version Bumping Utility
+  #  Prov
+  gem "bump", "~> 0.9.0"
 end
 
 gem "lockup", "~> 1.5"
-
-gem "bump", "~> 0.9.0"
+gem "rspec", "~> 3.9"
