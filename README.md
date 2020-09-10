@@ -142,8 +142,7 @@ This can be done using:
 # Example: yarn upgrade sage@git://github.com/Kajabi/sage.git#0.17.0
 $ yarn upgrade sage@git://github.com/Kajabi/sage.git#<GIT VERSION TAG>
 
-# Example: bundle upgrade sage 0.17.0
-$ bundle upgrade sage <GIT VERSION TAG>
+$ bundle upgrade sage_rails --conservative
 ```
 
 ## Installation

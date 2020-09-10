@@ -26,7 +26,7 @@ group :development do
   gem "spring", "1.3.3"
 
   # CLI Version Bumping Utility
-  #  Prov
+  #  Used by bin/sage-tag.sh to automate sage_rails version bump workflow
   gem "bump", "~> 0.9.0"
 end
 
