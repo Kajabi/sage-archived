@@ -128,15 +128,25 @@
   then <code>aria-hidden="true"</code> can be used instead.
 </p>
 <% end %>
-<div class="docs-container">
-  <div class="sage-row">
-    <% icons.each do |icon| %>
-      <div class="sage-col--md-4 sage-col--sm-6">
-        <div class="sage-icon-block">
-          <i class="sage-icon-<%= icon %>-2xl" aria-hidden="true"></i>
-          <p class="sage-icon-block__label">sage-icon-<%= icon %></p>
-        </div>
-      </div>
-    <% end %>
+<%= content_for :quick_links do %>
+  <div class="quick-links">
+    <h2 class="quick-links__title">Contents</h2>
+    <ul class="quick-links__body">
+      <% icons.each do |icon| %>
+        <li class="quick-links__item">
+          <a href="#<%= icon %>" class="quick-links__link"><%= icon %></a>
+        </li>
+      <% end %>
+    </ul>
   </div>
+<% end %>
+<div class="sage-row">
+  <% icons.each do |icon| %>
+    <div class="sage-col--md-4 sage-col--sm-6" id="<%= icon %>">
+      <div class="sage-icon-block">
+        <i class="sage-icon-<%= icon %>-2xl" aria-hidden="true"></i>
+        <p class="sage-icon-block__label">sage-icon-<%= icon %></p>
+      </div>
+    </div>
+  <% end %>
 </div>
