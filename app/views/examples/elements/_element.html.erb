@@ -15,13 +15,13 @@
   type: "element",
   title: @title %>
 
-<%= render "examples/shared/code",
-  type: "element",
-  title: @title %>
-
 <%= render "examples/shared/props",
   props_content: props_content %>
 
-<%= render "examples/shared/rules",
+  <%= render "examples/shared/rules",
   do_content: do_content,
   dont_content: dont_content %>
+
+  <%= render "examples/shared/code",
+  type: "element",
+  title: @title %>
