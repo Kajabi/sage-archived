@@ -13,6 +13,13 @@ $-example-code-preview-button-color-hover: sage-color(sage, 200);
 $-example-code-preview-button-blur: blur(2px);
 $-example-code-preview-button-bg: rgba(sage-color(primary, 500), 0.75);
 
+.example {
+  margin: sage-spacing() 0 sage-spacing() 0;
+  padding: sage-spacing();
+  border: sage-border();
+  border-radius: sage-border(radius);
+}
+
 .example__title {
   color: sage-color(charcoal, 500);
   text-transform: capitalize;
