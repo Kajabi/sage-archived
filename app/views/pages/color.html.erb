@@ -38,101 +38,87 @@
         <a href="#red" class="quick-links__link">Red</a>
       </li>
       <li class="quick-links__item">
-        <a href="#white" class="quick-links__link">White</a>
+        <a href="#blackwhite" class="quick-links__link">Black & White</a>
       </li>
     </ul>
   </div>
 <% end %>
-<div class="sage-panel">
-  <div class="sage-panel__header sage-type">
-    <h2 id="how">How we use color</h2>
-  </div>
-  <div class="sage-panel__body sage-type">
-    <p>You will notice <strong>pure black is not used at all as a text color</strong>. Instead, we rely on 400 for our darkest text color value. Our default text color is sage-color(charcoal, 400). To achieve more depth use 300 to 400 shades for text on top of lighter background colors using 100 to 200 for their fill. You can also use 100 to 200 as the text color on darker backgrounds using from 300 to 400 for their fill. Pure white is used as a text color when the lightest shade (100) of a color will not pass color contrast tests. At the moment, this only occurs on the 300 shades of purple, primary, and red.</p>
-    <h2 id="primary">Primary</h2>
-    <p>These are the splashes of color that appear the most in Kajabi’s UI, and are the ones that determine the overall "look" of the app. Use these for things like primary actions, links, navigation items, icons, accent borders, or text we want to emphasize.</p>
-    <%= render "color_values", color: "primary"%>
-    <h2 id="neutral">Neutrals</h2>
-    <p>These are the colors we will use the most and will make up the majority of Kajabi’s UI. Use them for most of our text, backgrounds, and borders, as well as for things like alternative buttons and links.</p>
-    <div class="sage-row">
-      <div class="sage-col--md-6">
-        <h3 id="grey">Grey</h3>
-        <%= render "color_values", color: "grey"%>
-      </div>
-      <div class="sage-col--md-6">
-        <h3 id="charcoal">Charcoal</h3>
-        <%= render "color_values", color: "charcoal"%>
+<div class="sage-type">
+  <h3 id="how">How we use color</h3>
+  <p>You will notice <strong>pure black is not used at all as a text color</strong>. Instead, we rely on 400 for our darkest text color value. Our default text color is sage-color(charcoal, 400). To achieve more depth use 300 to 400 shades for text on top of lighter background colors using 100 to 200 for their fill. You can also use 100 to 200 as the text color on darker backgrounds using from 300 to 400 for their fill. Pure white is used as a text color when the lightest shade (100) of a color will not pass color contrast tests. At the moment, this only occurs on the 300 shades of purple, primary, and red.</p>
+  <h3 id="primary">Primary</h3>
+  <p>These are the splashes of color that appear the most in Kajabi’s UI, and are the ones that determine the overall "look" of the app. Use these for things like primary actions, links, navigation items, icons, accent borders, or text we want to emphasize.</p>
+  <%= render "color_values", color: "primary"%><br><br>
+  <h3 id="neutral">Neutrals</h3>
+  <p>These are the colors we will use the most and will make up the majority of Kajabi’s UI. Use them for most of our text, backgrounds, and borders, as well as for things like alternative buttons and links.</p>
+  <div class="sage-row">
+    <div class="sage-col--md-6 sage-type">
+      <h4 id="grey">Grey</h4>
+      <%= render "color_values", color: "grey"%>
+    </div>
+    <div class="sage-col--md-6 sage-type">
+      <h4 id="charcoal">Charcoal</h4>
+      <%= render "color_values", color: "charcoal"%>
+    </div>
+  </div><br>
+  <h3>Supporting</h3>
+  <p>These colors should be used fairly conservatively throughout Kajabi’s UI to avoid overpowering our primary colors. We’ll use them when we need an element to stand out.</p>
+  <div class="sage-row">
+    <div class="sage-col--md-6 sage-type">
+      <h4 id="purple">Purple</h4>
+      <%= render "color_values", color: "purple"%>
+    </div>
+    <div class="sage-col--md-6 sage-type">
+      <h4 id="sage">Sage</h4>
+      <%= render "color_values", color: "sage"%>
+    </div>
+    <div class="sage-col--md-6 sage-type">
+      <h4 id="yellow">Yellow</h4>
+      <%= render "color_values", color: "yellow"%>
+    </div>
+    <div class="sage-col--md-6 sage-type">
+      <h4 id="orange">Orange</h4>
+      <%= render "color_values", color: "orange"%>
+    </div>
+    <div class="sage-col--md-6 sage-type">
+      <h4 id="red">Red</h4>
+      <%= render "color_values", color: "red"%>
+    </div>
+    <div class="sage-col--md-6 sage-type">
+      <h4 id="blackwhite">Black & White</h4>
+      <div class="colors">
+        <div class="colors__block color-black-300">sage-color(black)</div>
+        <div class="colors__block color-white-300">sage-color(white)</div>
       </div>
     </div>
-    <h2>Supporting</h2>
-    <p>These colors should be used fairly conservatively throughout Kajabi’s UI to avoid overpowering our primary colors. We’ll use them when we need an element to stand out.</p>
-    <div class="sage-row">
-      <div class="sage-col--md-6">
-        <h3 id="purple">Purple</h3>
-        <%= render "color_values", color: "purple"%>
-      </div>
-      <div class="sage-col--md-6">
-        <h3 id="sage">Sage</h3>
-        <%= render "color_values", color: "sage"%>
-      </div>
-      <div class="sage-col--md-6">
-        <h3 id="yellow">Yellow</h3>
-        <%= render "color_values", color: "yellow"%>
-      </div>
-      <div class="sage-col--md-6">
-        <h3 id="orange">Orange</h3>
-        <%= render "color_values", color: "orange"%>
-      </div>
-      <div class="sage-col--md-6">
-        <h3 id="red">Red</h3>
-        <%= render "color_values", color: "red"%>
-      </div>
-      <div class="sage-col--md-6">
-        <h3 id="white">White</h3>
-        <div class="colors">
-          <div class="colors__block color-white-300">sage-color(white)</div>
-        </div>
-        <div class="sage-type">
-          <p>All values passed for white will return the same value.</p>
-        </div>
-        <h3 id="black">Black</h3>
-        <div class="colors">
-          <div class="colors__block color-black-300">sage-color(black)</div>
-        </div>
-        <div class="sage-type">
-          <p>All values passed for black will return the same value.</p>
-        </div>
-      </div>
-    </div>
-
-    <h2>Color Combinations</h2>
-    <p>We prescribe a few sets of color combinations for an easy and consisteny pairing between a foreground and a background color</p>
-    <h3>Default</h3>
-    <%
-    colors = [
-      "draft",
-      "info",
-      "success",
-      "warning",
-      "danger"
-    ]
+  </div><br>
+  <h3>Color Combinations</h3>
+  <p>We prescribe a few sets of color combinations for an easy and consisteny pairing between a foreground and a background color</p>
+  <h4>Default</h4>
+  <%
+  colors = [
+    "draft",
+    "info",
+    "success",
+    "warning",
+    "danger"
+  ]
+  %>
+  <% colors.each do | color | %>
+    <%= render "examples/elements/label/markup", color: color %>
+  <% end %>
+  <h4>Subtle</h4>
+  <% colors.each do | color | %>
+    <%= render "examples/elements/label/markup",
+      color: color,
+      type: "subtle"
     %>
-    <% colors.each do | color | %>
-      <%= render "examples/elements/label/markup", color: color %>
-    <% end %>
-    <h3>Subtle</h3>
-    <% colors.each do | color | %>
-      <%= render "examples/elements/label/markup",
-        color: color,
-        type: "subtle"
-      %>
-    <% end %>
-    <h3>Bold</h3>
-    <% colors.each do | color | %>
-      <%= render "examples/elements/label/markup",
-        color: color,
-        type: "bold"
-      %>
-    <% end %>
-  </div>
+  <% end %>
+  <h4>Bold</h4>
+  <% colors.each do | color | %>
+    <%= render "examples/elements/label/markup",
+      color: color,
+      type: "bold"
+    %>
+  <% end %>
 </div>
