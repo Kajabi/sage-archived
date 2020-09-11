@@ -16,23 +16,16 @@
   </div>
 <% end %>
 <% sage_tokens.each do |token| %>
-  <div class="sage-panel">
-    <div class="sage-panel__header">
-      <h2 id="<%= token[:category] %>"><%= token[:category].titleize %></h2>
+  <div class="sage-type">
+    <h3 id="<%= token[:category] %>"><%= token[:category].titleize %></h3>
+    <div class="tokens">
+      <div class="token token-<%= token[:category] %>"><strong>sage-<%= token[:category] %>( )</strong></div>
     </div>
-    <div class="sage-panel__body">
-      <div class="sage-type">
-        <h3 class="t-sage-heading-6">Default</h3>
-        <div class="tokens">
-          <div class="token token-<%= token[:category] %>"><strong>sage-<%= token[:category] %>( )</strong></div>
-        </div>
-        <h3 class="t-sage-heading-6">Options</h3>
-        <div class="tokens">
-          <% token[:tokens] .each do |test| %>
-            <div class="token token-<%= token[:category] %>-<%= test[:name] %>"><strong>sage-<%= token[:category] %>(<%= test[:name] %>)</strong></div>
-          <% end %>
-        </div>
-      </div>
+    <h6>Options</h6>
+    <div class="tokens">
+      <% token[:tokens] .each do |test| %>
+        <div class="token token-<%= token[:category] %>-<%= test[:name] %>"><strong>sage-<%= token[:category] %>(<%= test[:name] %>)</strong></div>
+      <% end %>
     </div>
-  </div>
+  </div><br><br>
 <% end %>

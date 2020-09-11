@@ -17,15 +17,12 @@ $-quick-links-color-background: sage-color(primary, 400);
 .quick-links__body {
   margin: 0;
   padding: 0;
-  @extend %t-sage-body-small;
+  @extend %t-sage-body-xsmall;
 }
 
 .quick-links__item {
   list-style: none;
 
-  &:not(:last-child) {
-    margin-bottom: sage-spacing(2xs);
-  }
 }
 
 .quick-links__link {
@@ -58,7 +55,7 @@ $-quick-links-color-background: sage-color(primary, 400);
 
 .quick-links__title {
   @extend %t-sage-heading-6;
-  margin: sage-spacing(2xs) 0 sage-spacing(xs);
+  margin: sage-spacing(2xs) sage-spacing(xs) sage-spacing(sm);
 }
 
 .quick-links__subhead {
