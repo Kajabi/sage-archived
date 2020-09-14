@@ -276,3 +276,19 @@
     @content;
   }
 }
+
+/* ==================================================
+  ** Grid Row
+  Usage: `@include sage-grid-row;`
+
+  Standard grid setup for a single row layout.
+================================================== */
+@mixin sage-grid-row() {
+  display: grid;
+  grid-gap: sage-spacing();
+  grid-auto-columns: auto;
+  grid-auto-flow: column;
+  align-items: center;
+  justify-content: space-between;
+}
+

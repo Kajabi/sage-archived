@@ -84,6 +84,14 @@ module ObjectsHelper
         a11y: "todo"
       },
       {
+        title: "expandable_card",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", 
+        scss: "todo",
+        rails: "todo",
+        react: "todo",
+        a11y: "todo",
+      },
+      {
         title: "form_section",
         description: "A form section genera11y consists of a text section to provide users with instruction, guidance, or related information along with a secondary panel that may contain form inputs and/or related general content.",
         scss: "done",
