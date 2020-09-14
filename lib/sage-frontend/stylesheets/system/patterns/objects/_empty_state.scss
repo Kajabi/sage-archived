@@ -13,9 +13,9 @@
   border-radius: sage-border(radius);
   box-shadow: sage-shadow(sm);
   background-color: sage-color(white);
+  justify-items: center;
 
   @include sage-grid-panel();
-  justify-items: center;
 }
 
 .sage-empty-state__title {

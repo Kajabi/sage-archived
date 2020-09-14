@@ -10,7 +10,7 @@
   border-radius: $sage-panel-border-radius;
   box-shadow: $sage-panel-box-shadow;
 
-  @include sage-grid-panel;
+  @include sage-grid-panel();
 }
 
 .sage-panel__footer,
@@ -26,31 +26,14 @@
   list-style: none;
 }
 
-.sage-panel__tiles--condensed {
-  grid-gap: sage-spacing(xs);
-}
-
-.sage-panel__tiles--2-up {
-  grid-template-columns: repeat(2, calc((100% - #{sage-spacing() * 1}) / 2));
-  
-  &.sage-panel__tiles--condensed {
-    grid-template-columns: repeat(2, calc((100% - #{sage-spacing(xs) * 1}) / 2));
+@for $i from 2 through 4 {
+  .sage-panel__tiles--#{$i}-up {
+    grid-template-columns: repeat(#{$i}, calc((100% - #{sage-spacing() * ($i - 1)}) / #{$i}));
   }
-}
-
-.sage-panel__tiles--3-up {
-  grid-template-columns: repeat(3, calc((100% - #{sage-spacing() * 2}) / 3));
-  
-  &.sage-panel__tiles--condensed {
-    grid-template-columns: repeat(3, calc((100% - #{sage-spacing(xs) * 2}) / 3));
-  }
-}
-
-.sage-panel__tiles--4-up {
-  grid-template-columns: repeat(4, calc((100% - #{sage-spacing() * 3}) / 4));
-  
-  &.sage-panel__tiles--condensed {
-    grid-template-columns: repeat(4, calc((100% - #{sage-spacing(xs) * 3}) / 4));
+    
+  .sage-panel__tiles--#{$i}-up-condensed {
+    grid-gap: sage-spacing(xs);
+    grid-template-columns: repeat(#{$i}, calc((100% - #{sage-spacing(xs) * ($i - 1)}) / #{$i}));
   }
 }
 
