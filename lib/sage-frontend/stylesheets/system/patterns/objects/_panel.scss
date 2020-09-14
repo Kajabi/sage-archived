@@ -18,6 +18,42 @@
   @include sage-grid-panel-row();
 }
 
+.sage-panel__tiles {
+  display: grid;
+  grid-gap: sage-spacing();
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sage-panel__tiles--condensed {
+  grid-gap: sage-spacing(xs);
+}
+
+.sage-panel__tiles--2-up {
+  grid-template-columns: repeat(2, calc((100% - #{sage-spacing() * 1}) / 2));
+  
+  &.sage-panel__tiles--condensed {
+    grid-template-columns: repeat(2, calc((100% - #{sage-spacing(xs) * 1}) / 2));
+  }
+}
+
+.sage-panel__tiles--3-up {
+  grid-template-columns: repeat(3, calc((100% - #{sage-spacing() * 2}) / 3));
+  
+  &.sage-panel__tiles--condensed {
+    grid-template-columns: repeat(3, calc((100% - #{sage-spacing(xs) * 2}) / 3));
+  }
+}
+
+.sage-panel__tiles--4-up {
+  grid-template-columns: repeat(4, calc((100% - #{sage-spacing() * 3}) / 4));
+  
+  &.sage-panel__tiles--condensed {
+    grid-template-columns: repeat(4, calc((100% - #{sage-spacing(xs) * 3}) / 4));
+  }
+}
+
 .sage-panel__title {
   @extend %t-sage-heading-5;
 }
