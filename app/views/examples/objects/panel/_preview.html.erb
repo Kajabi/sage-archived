@@ -1,157 +1,17 @@
-<h3>Default Panel</h3>
 <%= render "examples/objects/panel/markup",
-  header: "Header Content",
+  header: %(
+    <h2 class="sage-panel__title">Header Content</h2>
+    <a href="#" class="sage-link--help-icon-only"><span class="visually-hidden">Help me!</span></a>
+  ),
   header_aside: "<i class='sage-icon-enlarge' aria-label='Sortable'></i>",
-  body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-  footer: "Footer Content"
+  body: %(
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  ),
+  footer: %(
+    <button class="sage-btn sage-btn--secondary">Other</button>
+    <div class="sage-btn-group">
+      <button class="sage-btn sage-btn--tertiary">Cancel</button>
+      <button class="sage-btn sage-btn--primary">Save</button>
+    </div>
+  )
 %>
-
-<h4>Panel Sizes</h4>
-<div class="sage-panel-group">
-  <%= render "examples/objects/panel/markup",
-    header: "Large panel",
-    header_aside: "<i class='sage-icon-enlarge' aria-label='Sortable'></i>",
-    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    size: "lg"
-  %>
-  <%= render "examples/objects/panel/markup",
-    header: "Regular Panel",
-    header_aside: "<i class='sage-icon-enlarge' aria-label='Sortable'></i>",
-    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-  %>
-  <%= render "examples/objects/panel/markup",
-    header: "Small Panel",
-    header_aside: "<i class='sage-icon-enlarge' aria-label='Sortable'></i>",
-    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    size: "sm"
-  %>
-</div>
-
-<h3>Flat Panel</h3>
-<%= render "examples/objects/panel/markup",
-  header: "Header Content",
-  header_aside: "<i class='sage-icon-enlarge' aria-label='Sortable'></i>",
-  body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-  footer: "Footer Content",
-  style: "flat"
-%>
-
-<h4>Colors</h4>
-<div class="sage-panel-group">
-  <%= render "examples/objects/panel/markup",
-    header: "Default Color",
-    header_aside: "<i class='sage-icon-enlarge' aria-label='Sortable'></i>",
-    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    style: "flat",
-    size: "sm"
-  %>
-  <%= render "examples/objects/panel/markup",
-    header: "Muted Color",
-    header_aside: "<i class='sage-icon-enlarge' aria-label='Sortable'></i>",
-    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    style: "flat",
-    color: "muted",
-    size: "sm"
-  %>
-  <%= render "examples/objects/panel/markup",
-    header: "Danger Color",
-    header_aside: "<i class='sage-icon-enlarge' aria-label='Sortable'></i>",
-    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    style: "flat",
-    color: "danger",
-    size: "sm"
-  %>
-</div>
-
-<h4>Inline/Scrolling Layout</h4>
-<div class="sage-panel-scroll-container">
-  <div class="sage-panel-group sage-panel-group--muted sage-panel-group--labeled">
-    <p class="sage-panel-group__title t-sage-body-semi">Group 1</p>
-    <div class="sage-panel-group__items">
-      <%= render "examples/objects/panel/markup",
-        header: "Muted Color",
-        body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        style: "flat",
-        size: "sm",
-        width: "200px"
-      %>
-      <%= render "examples/objects/panel/markup",
-        header: "Danger Color",
-        body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        style: "flat",
-        size: "sm",
-        width: "200px"
-      %>
-    </div>
-  </div>
-  <div class="sage-panel-group sage-panel-group--labeled">
-    <p class="sage-panel-group__title t-sage-body-semi">Group 2</p>
-    <div class="sage-panel-group__items">
-      <%= render "examples/objects/panel/markup",
-        header: "Default Color",
-        body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        style: "flat",
-        size: "sm",
-        width: "200px"
-      %>
-      <%= render "examples/objects/panel/markup",
-        header: "Default Color",
-        body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        style: "flat",
-        size: "sm",
-        width: "200px"
-      %>
-      <%= render "examples/objects/panel/markup",
-        header: "Default Color",
-        body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        style: "flat",
-        size: "sm",
-        width: "200px"
-      %>
-      <%= render "examples/objects/panel/markup",
-        header: "Default Color",
-        body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        style: "flat",
-        size: "sm",
-        width: "200px"
-      %>
-    </div>
-  </div>
-</div>
-<p><strong>NOTE:</strong> A simpler inline panel set can be created using <code>sage-list--inline</code></p>
-
-<h3>Accordion Panel</h3>
-<h4>Single/independent panel</h4>
-<%= render "examples/objects/panel/markup",
-  header: "Header Content",
-  body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-  is_accordion: true
-%>
-
-<h4>Panel group</h4>
-<ul class="sage-panel-group" data-js-accordion="group-toggle-solo">
-  <li class="sage-panel sage-panel--accordion">
-    <div class="sage-panel__header" data-js-accordion="header">
-      <h4 class="sage-panel__title">Tab 1</h4>
-    </div>
-    <div class="sage-panel__body sage-type" data-js-accordion="body">
-      <p>Lorem ipsum dolor sit</p>
-    </div>
-  </li>
-  <li class="sage-panel sage-panel--accordion">
-    <div class="sage-panel__header" data-js-accordion="header">
-      <h4 class="sage-panel__title">Tab 2</h4>
-    </div>
-    <div class="sage-panel__body sage-type" data-js-accordion="body">
-      <p>Lorem ipsum dolor sit</p>
-    </div>
-  </li>
-  <li class="sage-panel sage-panel--accordion">
-    <div class="sage-panel__header" data-js-accordion="header">
-      <h4 class="sage-panel__title">Tab 3</h4>
-    </div>
-    <div class="sage-panel__body sage-type" data-js-accordion="body">
-      <p>Lorem ipsum dolor sit</p>
-    </div>
-  </li>
-</ul>

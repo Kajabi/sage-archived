@@ -292,3 +292,14 @@
   justify-content: space-between;
 }
 
+/* ==================================================
+  ** Panel Body Grid
+  Usage: `@include sage-grid-panel-body;`
+
+  Standard grid setup for the body of a panel; sets up rows with `md` spacing between each.
+================================================== */
+@mixin sage-grid-panel-body() {
+  display: grid;
+  grid-gap: sage-spacing();
+  grid-template-columns: 100%;
+}
