@@ -143,9 +143,7 @@ $-trigger-dropdown-offset: rem(16px) + sage-spacing(xs);
   }
 }
 
-.sage-dropdown__item-control--muted,
-.sage-dropdown__item-control--disabled,
-.sage-dropdown__item-control:disabled {
+.sage-dropdown__item-control--muted {
   color: sage-color(charcoal, 100);
 
   &:hover {
