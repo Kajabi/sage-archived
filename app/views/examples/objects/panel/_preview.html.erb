@@ -1,3 +1,4 @@
+<h5>Basic Panel</h5>
 <%= render "examples/objects/panel/markup",
   header: %(
     <h2 class="sage-panel__title">Header Content</h2>
@@ -5,7 +6,9 @@
   ),
   header_aside: "<i class='sage-icon-enlarge' aria-label='Sortable'></i>",
   body: %(
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <div class="sage-panel__body">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
   ),
   footer: %(
     <button class="sage-btn sage-btn--secondary">Other</button>
@@ -13,5 +16,23 @@
       <button class="sage-btn sage-btn--tertiary">Cancel</button>
       <button class="sage-btn sage-btn--primary">Save</button>
     </div>
+  )
+%>
+
+<h5>Panel with Tiles</h5>
+<%= render "examples/objects/panel/markup",
+  header: %(
+    <h2 class="sage-panel__title">Header Content</h2>
+    <a href="#" class="sage-link--help-icon-only"><span class="visually-hidden">Help me!</span></a>
+  ),
+  header_aside: "<i class='sage-icon-enlarge' aria-label='Sortable'></i>",
+  body: %(
+    <ul class="sage-panel__tiles sage-panel__tiles--2-up">
+      <li>Goobers</li>
+      <li>Goobers</li>
+      <li>Goobers</li>
+      <li>Goobers</li>
+      <li>Goobers</li>
+    </ul>
   )
 %>
