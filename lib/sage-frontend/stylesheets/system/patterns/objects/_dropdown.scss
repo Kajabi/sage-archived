@@ -157,7 +157,8 @@ $-trigger-dropdown-offset: rem(16px) + sage-spacing(xs);
 
 .sage-dropdown__menu {
   overflow: auto;
-  width: $-dropdown-width;
+  min-width: $-dropdown-width;
+  width: 100%;
   max-height: $-panel-max-height;
   padding: sage-spacing(xs) 0;
 
@@ -179,7 +180,8 @@ $-trigger-dropdown-offset: rem(16px) + sage-spacing(xs);
   // a positioning issue with nested fixed positioned elements
   // transform: rotate3d(1, 0, 0, -90deg);
   transform-origin: top center;
-  min-width: min-content;
+  min-width: $-dropdown-width;
+  width: 100%;
   border-radius: sage-border(radius);
   background-color: sage-color(white);
   box-shadow: sage-shadow(md);
