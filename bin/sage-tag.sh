@@ -29,13 +29,13 @@ if [ "$1" != "patch" ] && [ "$1" != "minor" ] && [ "$1" != "major" ]; then
 fi
 
 # Is the branch clean?
-if [[ -n $(git status --porcelain) ]]; then
-  echo_custom_error "Error:" "Branch must be clean"
-  exit 1
-fi
+# if [[ -n $(git status --porcelain) ]]; then
+#   echo_custom_error "Error:" "Branch must be clean"
+#   exit 1
+# fi
 
 # Does a git remote location of `heroku master` exist?
-if [[ -n $(git ls-remote --exit-code --heads heroku master) ]]; then
+if ! [[ -n $(git ls-remote --exit-code --heads heroku master) ]]; then
   echo_custom_error "Error:" "Heroku remote git location does not exist. Ensure the Heroku CLI is installed and the remote location has been added 'heroku git:remote -a sage-design-system'"
   exit 1
 fi
