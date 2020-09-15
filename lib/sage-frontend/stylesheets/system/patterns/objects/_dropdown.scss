@@ -122,6 +122,7 @@ $-trigger-dropdown-offset: rem(16px) + sage-spacing(xs);
   &:disabled {
     color: sage-color(grey, 400);
     pointer-events: none;
+    cursor: not-allowed;
   }
 }
 
