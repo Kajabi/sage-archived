@@ -19,6 +19,28 @@
   )
 %>
 
+<h5>Panel with Graphic</h5>
+<%= render "examples/objects/panel/markup",
+  body: %(
+    <div class="sage-panel__copy">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Morbi rhoncus mauris ut turpis gravida bibendum.
+        Donec feugiat accumsan velit et semper.
+        Ut elementum id leo ac fringilla.
+      </p>
+      <p>
+        Aenean cursus justo vel tempor euismod.
+        Pellentesque ultrices convallis nisl nec sollicitudin.
+        Ut placerat justo tempus libero ornare dictum.
+      </p>
+    </div>
+    <div class="sage-panel__figure sage-panel__figure--bleed-bottom">
+      <img src="//source.unsplash.com/random/600x400" />
+    </div>
+  )
+%>
+
 <h5>Panel with Tiles</h5>
 <%= render "examples/objects/panel/markup",
   header: %(

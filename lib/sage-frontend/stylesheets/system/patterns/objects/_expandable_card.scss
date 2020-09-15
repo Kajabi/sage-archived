@@ -73,7 +73,7 @@ $-expandable-card-padding: sage-spacing(sm);
 }
 
 .sage-expandable-card__header {
-  @include sage-grid-row;
+  @include sage-grid-panel-row;
 
   padding: sage-spacing(xs) $-expandable-card-padding;
   color: sage-color(charcoal, 400);

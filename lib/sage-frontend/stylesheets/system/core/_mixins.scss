@@ -278,21 +278,6 @@
 }
 
 /* ==================================================
-  ** Grid Row
-  Usage: `@include sage-grid-row;`
-
-  Standard grid setup for a single row layout.
-================================================== */
-@mixin sage-grid-row() {
-  display: grid;
-  grid-gap: sage-spacing();
-  grid-auto-columns: auto;
-  grid-auto-flow: column;
-  align-items: center;
-  justify-content: space-between;
-}
-
-/* ==================================================
   ** Panel Grid
   Usage: `@include sage-grid-panel-body;`
 
@@ -310,8 +295,23 @@
 
   Grid setup for the body of a panel; sets up rows with `xs` spacing between each.
 ================================================== */
-@mixin sage-grid-panel-body() {
+@mixin sage-grid-panel-stack() {
   display: grid;
   grid-gap: sage-spacing(xs);
   grid-template-columns: 100%;
+}
+
+/* ==================================================
+  ** Grid Row
+  Usage: `@include sage-grid-row;`
+
+  Standard grid setup for a single row layout.
+================================================== */
+@mixin sage-grid-panel-row() {
+  display: grid;
+  grid-gap: sage-spacing();
+  grid-auto-columns: auto;
+  grid-auto-flow: column;
+  align-items: center;
+  justify-content: space-between;
 }

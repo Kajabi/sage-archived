@@ -2,7 +2,7 @@
   <% if defined?(header) %>
     <div class="sage-panel__header"><%= header.html_safe %></div>
   <% end %>
-  <div class="sage-panel__body"><%= body.html_safe %></div>
+  <%= body.html_safe %>
   <% if defined?(footer) %>
     <div class="sage-panel__footer"><%= footer.html_safe %></div>
   <% end %>
