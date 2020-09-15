@@ -1,6 +1,91 @@
+<h3 class="t-sage-heading-6">Standalone Page Heading</h3>
+
+<%= render "examples/objects/page_heading/markup",
+  page_title: "Page Title",
+  back_icon: "",
+  back_text: "",
+  back_url: "",
+  action_links: [],
+  help_text: "",
+  secondary_text: ""
+%>
+
+<h3 class="t-sage-heading-6">Page Heading w/ Back Link</h3>
+
 <%= render "examples/objects/page_heading/markup",
   page_title: "Page Title",
   back_icon: "sage-icon-caret-left",
   back_text: "Back to Something",
-  back_url: "#"
+  back_url: "#",
+  action_links: [],
+  help_text: "",
+  secondary_text: ""
+%>
+
+<h3 class="t-sage-heading-6">Page Heading w/ Action Links</h3>
+
+<%= render "examples/objects/page_heading/markup",
+  page_title: "Page Title",
+  back_icon: "",
+  back_text: "",
+  back_url: "",
+  action_links: [
+    {
+      text: "Preview",
+      icon: "preview-on",
+      url: "#",
+    },
+    {
+      text: "Report",
+      icon: "chart",
+      url: "#",
+    },
+    {
+      text: "Settings",
+      icon: "gear",
+      url: "#",
+    },
+  ],
+  help_text: "",
+  secondary_text: ""
+%>
+
+<h3 class="t-sage-heading-6">Standalone Page Heading w/ Action Links + Secondary</h3>
+
+<%= render "examples/objects/page_heading/markup",
+  page_title: "Page Title",
+  back_icon: "",
+  back_text: "",
+  back_url: "",
+  action_links: [
+    {
+      text: "Preview",
+      icon: "preview-on",
+      url: "#",
+    },
+    {
+      text: "Report",
+      icon: "chart",
+      url: "#",
+    },
+    {
+      text: "Settings",
+      icon: "gear",
+      url: "#",
+    },
+  ],
+  help_text: "",
+  secondary_text: "3 emails in Sequence"
+%>
+
+<h3 class="t-sage-heading-6">Standalone Page Heading w/ Paragraph</h3>
+
+<%= render "examples/objects/page_heading/markup",
+  page_title: "Page Title",
+  back_icon: "",
+  back_text: "",
+  back_url: "",
+  action_links: [],
+  help_text: "This is a paragraph of help text to provide additional info when needed.",
+  secondary_text: ""
 %>
