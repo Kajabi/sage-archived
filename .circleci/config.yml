@@ -1,8 +1,9 @@
 version: 2.1
 orbs:
   node: circleci/node@3.0.1
+  ruby: circleci/ruby@1.1.1
 jobs:
-  lint:
+  fronted-lint:
     executor:
       name: node/default
     steps:
@@ -12,7 +13,17 @@ jobs:
       - run:
           command: yarn stylelint "lib/sage-frontend/**/*.{css,scss}" --max-warnings 0
           name: Lint styles inside 'lib/sage-frontend/..'
+  build: # our first job, named "build"
+    docker:
+      - image: cimg/ruby:2.7-node # use a tailored CircleCI docker image.
+    steps:
+      - checkout # pull down our git code.
+      - ruby/install-deps # use the ruby orb to install dependencies
+    - run:
+      command: rspec
+      name: Run Rails rspec tests
 workflows:
   sage_system_specs:
     jobs:
-      - lint
+      - frontend-lint
+      - rails-test
