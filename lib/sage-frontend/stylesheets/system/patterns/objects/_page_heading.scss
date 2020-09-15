@@ -12,11 +12,48 @@
 
 .sage-page-heading__title {
   @extend %t-sage-heading-1;
-
   order: 2;
 }
 
 .sage-page-heading__back {
   order: 1;
   margin-bottom: sage-spacing(sm);
+}
+
+.sage-page-heading__toolbar {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  order: 3;
+}
+.sage-page-heading__toolbar--actions {
+  flex: 1;
+  flex-basis: initial;
+  margin-top: sage-spacing(xs);
+}
+.sage-page-heading__toolbar--actions__link {
+  display: inline-flex;
+  align-items: center;
+  margin: 0 sage-spacing(sm) 0 0;
+  color: sage-color(charcoal, 100);
+}
+@each $-icon-name, $-icon-code in $sage-icons {
+  .sage-page-heading__toolbar--actions__link--icon-#{$-icon-name} {
+    &::before {
+      margin-right: sage-spacing(xs);
+      @include icon-base($-icon-name);
+    }
+  }
+}
+
+.sage-page-heading__toolbar--help {
+  margin-top: sage-spacing(xs);
+  color: sage-color(charcoal, 100);
+}
+.sage-page-heading__toolbar--secondary {
+  margin-top: sage-spacing(xs);
+  color: sage-color(charcoal, 100);
+  font-size: rem(14);
+  font-style: italic;
 }
