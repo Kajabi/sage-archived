@@ -50,16 +50,13 @@ git fetch origin master --tags
 # Switch to the master branch
 git checkout master
 
-# Ensure package deps are up to date
-bundle install
-yarn install
-
 # UPDATE
 # ----------------------------------------------------------------------
 echo_custom "UPDATE:" "Bumping the SageRails gem, Sage frontend package, & creating a version-tagged git commit"
 
 # Use the ruby Bump gem to bump SageRails package but DON'T COMMIT, this will be handled by `yarn version`
 bump $1 --no-commit
+bundle install
 git add .
 
 # `yarn version` handles updating package.json and making a version-tagged git commit internally
@@ -69,10 +66,6 @@ yarn version --$1 --no-commit-hooks
 # DEPLOY
 # ----------------------------------------------------------------------
 echo_custom "DEPLOY:" "Push latest tag to master and perform 'yarn run deploy'"
-
-# Ensure package deps are up to date
-bundle install
-yarn install
 
 # Pushes the latest version of master back to origin with the new tagged git-commit
 git push origin master --tags
