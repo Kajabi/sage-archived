@@ -50,6 +50,9 @@ git fetch origin master --tags
 # Switch to the master branch
 git checkout master
 
+# Ensure package deps are up to date
+bundle install
+yarn install
 # UPDATE
 # ----------------------------------------------------------------------
 echo_custom "UPDATE:" "Bumping the SageRails gem, Sage frontend package, & creating a version-tagged git commit"
