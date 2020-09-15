@@ -5,8 +5,15 @@
   "
   data-js-dropdown="<%= component.id %>"
 >
-  <%= component.content %>
-  <nav class="sage-dropdown__container">
+  <div
+    class="
+      sage-dropdown__trigger
+      <%= "sage-dropdown__trigger--#{component.trigger_type}" if component.trigger_type %>
+    "
+  >
+    <%= component.content %>
+  </div>
+  <nav class="sage-dropdown__panel">
     <ul class="sage-dropdown__menu" role="menu" aria-label="Participant options">
       <% component.items.each do |item| %>
         <li class="sage-dropdown__item" role="none">
@@ -17,8 +24,8 @@
             role="menuitem"
             tabindex="0"
             class="
-              sage-dropdown__option
-              <%= "sage-dropdown__option--icon-#{item[:icon]}" if item[:icon] %>
+              sage-dropdown__item-control
+              <%= "sage-dropdown__item-control--icon-#{item[:icon]}" if item[:icon] %>
             "
           >
             <%= item[:name] %>

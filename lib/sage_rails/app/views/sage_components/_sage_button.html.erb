@@ -14,13 +14,16 @@
     <%= "sage-btn--#{component.style}" if component.style %>
     <%= "sage-btn--align-end" if (component.align == "end") %>
     <%= "sage-btn--icon-#{component.icon[:style]}-#{component.icon[:name]}" if component.icon %>
+    <%= component.css_classes if component.css_classes %>
   "
 >
   <% if component.icon&.dig(:style) == "only" %>
     <span class="visually-hidden">
-      <%= component.value %>
+      <%= component.value.html_safe %>
     </span>
   <% else %>
-    <%= component.value %>
+    <span class="sage-btn__truncate-text">
+      <%= component.value.html_safe %>
+    </span>
   <% end %>
 </<%= html_tag %>>
