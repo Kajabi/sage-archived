@@ -19,12 +19,14 @@
   @include sage-grid-panel-row();
 }
 
-.sage-panel__content-stack {
-  @include sage-grid-panel-stack();
+.sage-panel__content-row--media {
+  grid-template-columns: 160px 1fr;
 }
 
-.sage-panel__copy {
-  max-width: sage-container(modal);
+.sage-panel__content-stack {
+  justify-items: flex-start;
+
+  @include sage-grid-panel-stack();
 }
 
 .sage-panel__tiles {

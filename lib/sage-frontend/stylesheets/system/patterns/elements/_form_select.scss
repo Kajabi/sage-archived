@@ -29,6 +29,11 @@ $-sage-selectfield-color-error: $sage-inputfield-color-error;
   &:not(:last-child):not(.sage-dropdown__trigger-selected-value) {
     margin-bottom: $-sage-selectfield-bottom-spacing;
   }
+
+  .sage-panel__content-stack > &,
+  .sage-panel__copy > & {
+    margin-bottom: 0;
+  }
 }
 
 .sage-select__label {
