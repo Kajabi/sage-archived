@@ -56,6 +56,7 @@ echo_custom "UPDATE:" "Bumping the SageRails gem, Sage frontend package, & creat
 
 # Use the ruby Bump gem to bump SageRails package but DON'T COMMIT, this will be handled by `yarn version`
 bump $1 --no-commit
+git add .
 
 # `yarn version` handles updating package.json and making a version-tagged git commit internally
 # ---> NOTE: This command creates the the git tag and commit
