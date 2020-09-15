@@ -8,11 +8,8 @@
   max-width: sage-container(modal);
   margin-left: auto;
   margin-right: auto;
-  padding: sage-spacing(2xl) sage-spacing(xl);
+  padding: sage-spacing(2xl) sage-spacing();
   text-align: center;
-  border-radius: sage-border(radius);
-  box-shadow: sage-shadow(sm);
-  background-color: sage-color(white);
   justify-items: center;
 
   @include sage-grid-panel();
