@@ -1,13 +1,23 @@
 <div class="sage-page-heading">
   <h1 class="sage-page-heading__title"><%= page_title %></h1>
-  <%= render "examples/elements/breadcrumbs/markup",
-    klass: "sage-page-heading__back",
-    has_back_icon: true,
-    items: [
-      {
-        text: back_text,
-        url: back_url
-      }
-    ]
-  %>
+  <% if back_text.present? %>
+    <%= render "examples/elements/breadcrumbs/markup", klass: "sage-page-heading__back", has_back_icon: true, items: [{text: back_text, url: back_url}]%>
+  <% end %>
+  <% if help_text.present? || action_links.any? || secondary_text.present? %>
+  <div class="sage-page-heading__toolbar">
+    <% if action_links.any? %>
+    <div class="sage-page-heading__toolbar--actions">
+      <%- action_links.each do |link| -%>
+        <a href="<%= link[:url] %>" class="sage-page-heading__toolbar--actions__link<%= " sage-page-heading__toolbar--actions__link--icon-#{link[:icon]}" if defined?(link[:icon]) %>"><%= link[:text] %></a>
+      <%- end -%>
+    </div>
+    <% end %>
+    <% if help_text.present? %>
+      <p class="sage-page-heading__toolbar--help"><%= help_text %></p>
+    <% end %>
+    <% if secondary_text.present? %>
+      <p class="sage-page-heading__toolbar--secondary"><%= secondary_text %></p>
+    <% end %>
+  </div>
+  <% end %>
 </div>
