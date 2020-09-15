@@ -27,12 +27,6 @@ $ yarn install
 $ bundle
 ```
 
-Also ensure to setup the database with:
-
-```bash
-$ rake db:setup
-```
-
 ### Run Locally
 
 Run the rails & webpack development servers in tandem.
