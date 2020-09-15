@@ -1,9 +1,8 @@
 version: 2.1
 orbs:
   node: circleci/node@3.0.1
-  ruby: circleci/ruby@1.1.1
 jobs:
-  fronted-lint:
+  lint:
     executor:
       name: node/default
     steps:
@@ -13,21 +12,7 @@ jobs:
       - run:
           command: yarn stylelint "lib/sage-frontend/**/*.{css,scss}" --max-warnings 0
           name: Lint styles inside 'lib/sage-frontend/..'
-  rails-test:
-    executor: default
-    steps:
-      - checkout
-      - configure_bundler
-      - run:
-          name: Install bundle
-          command: bundle install
-      - run:
-          name: RSpec
-          command: |
-            bundle exec rspec --profile 10 \
-                              --format progress
 workflows:
   sage_system_specs:
     jobs:
-      - frontend-lint
-      - rails-test
+      - lint
