@@ -282,6 +282,26 @@
   Usage: `@include sage-grid-panel-body;`
 
   Standard grid setup for the contents of a panel; sets up rows with `md` spacing between each.
+================================================== */
+@mixin sage-grid-panel() {
+  display: grid;
+  grid-gap: sage-spacing();
+  grid-template-columns: 100%;
+}
+
+/* ==================================================
+  ** Panel Body Grid
+  Usage: `@include sage-grid-panel-body;`
+
+  Grid setup for the body of a panel; sets up rows with `xs` spacing between each.
+================================================== */
+@mixin sage-grid-panel-stack() {
+  display: grid;
+  grid-gap: sage-spacing(xs);
+  grid-template-columns: 100%;
+}
+
+/* ==================================================
   ** Grid Row
   Usage: `@include sage-grid-row;`
 
