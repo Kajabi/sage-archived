@@ -69,7 +69,9 @@ $ <RELATIVE PATH TO SAGE REPO>/bin/sage-local-link.sh <BOOLEAN>
 # $ ../sage/bin/sage-local-link.sh true
 ```
 
-The script requires a boolean argument designating whether to setup or tear down the link to your local Sage repo. This is an automation of `yarn link`, you can do this process manually as well. [See the yarn docs for more details.](https://classic.yarnpkg.com/en/docs/cli/link/)
+The script requires a boolean argument designating whether to setup or tear down the link to your local Sage repo.
+- Frontend is an automation of `yarn link`, you can do this process manually as well. [See the yarn docs for more details.](https://classic.yarnpkg.com/en/docs/cli/link/)
+- Rails Gem is an automation of `bundle config local.sage_rails`
 
 ### Run Locally
 
@@ -98,7 +100,7 @@ Ensure you have…
 2. The [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli#download-and-install) installed
 3. Added the Heroku app as a git remote location (`heroku git:remote -a sage-design-system`)
 
-#### Version Bump & Deploy Docs With `yarn version`
+#### Version Bump & Deploy Docs
 
 First ensure all new code is completed through a PR and merged into `master`. Then:
 
@@ -108,23 +110,27 @@ First ensure all new code is completed through a PR and merged into `master`. Th
     - A Patch (_._.n; non-blocking changes) should be used when only small styling is adjusted or new elements/objects are added that are yet to be implemented in `kajabi-products` or other repos that use this design system.
     - A Minor bump (_.n.0; blocking changes) should be used when more significant styling is completed, markup is changed on any object or element, or substantive changes are made to the system's documentation. _When in doubt, bump a new `minor` version.
 
-    Keep the version draft open as you will return to it shortly. 
+    Keep the version draft open as you will return to it shortly.
 
-3. From the `master` branch (after first ensuring your local branch is up to date with `origin`) use [`yarn version`](https://classic.yarnpkg.com/en/docs/cli/version/) to bump the package version with a version-tagged git commit as follows:
+3. From the `master` branch (after first ensuring your local branch is up to date with `origin`) use `bin/sage-release` script to bump the package & gem version with a version-tagged git commit as follows:
 
     ```bash
-    $ yarn version --minor
-    # Use the --minor or --patch flags to update the minor or patch version number respectively
-    # This will automatically, push the git-tagged commit to github and deploy to Heroku
+    # Use the minor or patch arguments to update the minor or patch version number respectively
+    $ bin/sage-tag patch
+    # This will automatically push the git-tagged commit to github and deploy to Heroku
     ```
 
-    **Note:** The Sage version is defined by the `./package.json` version and the version-tagged git commit. Please ensure these values match after a version bump.
+    **Note:** The Sage version is defined in 3 locations:
+      - `./package.json` frontend package version
+      - `SageRails::VERSION` gem version
+      - tagged git commit containing the version bump update
+    Please ensure these values match after a version bump.
 
     This command also automatically deploys the new version bump to our [sage-design-system.kajabi.com](https://sage-design-system.kajabi.com/) public documentation.
 
-4. Once the deployment is complete make sure the version commit is also pushed to the `origin`. 
+4. Once the deployment is complete make sure the version commit is also pushed to the `origin`.
 5. Return to [Github Releases](https://github.com/Kajabi/sage/releases) and the draft release you consulted earlier. Update its number and title to match the version tag you just bumped and map it to the tag that pushed with your version commit from the step above.
-6. Publish the Release. 
+6. Publish the Release.
 7. Update the `ux-dev` channel in Kajabi Slack.
 8. Create a new Draft release with the next logical version number matching the existing tag and title naming conventions from the other Releases. This will ensure others can add their updates to the release notes as they merge changes moving forward.
 
@@ -135,6 +141,8 @@ This can be done using:
 ```bash
 # Example: yarn upgrade sage@git://github.com/Kajabi/sage.git#0.17.0
 $ yarn upgrade sage@git://github.com/Kajabi/sage.git#<GIT VERSION TAG>
+
+$ bundle upgrade sage_rails --conservative
 ```
 
 ## Installation
@@ -154,10 +162,6 @@ development:
       ignored: '[/node_modules([\\]+|\/)+(?!sage)/]'
 
 ```
-
-## Rails Engine Implementation
-**NOTE:** While the Sage Rails engine exists within this repo it is currently not consumed by Kajabi-Products. The design system ruby classes (`SageComponent`) that exist in Kajabi-Products are intended to live within the Sage Rails engine once they mature. Currently, the Sage Rails engine is an empty app.
-
 
 ## License
 
