@@ -6,7 +6,7 @@
   back_text: "",
   back_url: "",
   action_links: [],
-  help_text: "",
+  help_text: [],
   secondary_text: ""
 %>
 
@@ -18,7 +18,7 @@
   back_text: "Back to Something",
   back_url: "#",
   action_links: [],
-  help_text: "",
+  help_text: [],
   secondary_text: ""
 %>
 
@@ -46,7 +46,7 @@
       url: "#",
     },
   ],
-  help_text: "",
+  help_text: [],
   secondary_text: ""
 %>
 
@@ -74,11 +74,11 @@
       url: "#",
     },
   ],
-  help_text: "",
+  help_text: [],
   secondary_text: "3 emails in Sequence"
 %>
 
-<h3 class="t-sage-heading-6">Standalone Page Heading w/ Paragraph</h3>
+<h3 class="t-sage-heading-6">Standalone Page Heading w/ Help Text</h3>
 
 <%= render "examples/objects/page_heading/markup",
   page_title: "Page Title",
@@ -86,6 +86,11 @@
   back_text: "",
   back_url: "",
   action_links: [],
-  help_text: "This is a paragraph of help text to provide additional info when needed.",
+  help_text: [
+    {
+      text: "This is a paragraph of help text to provide addition info when needed.",
+      text_size: "",
+    }
+  ],
   secondary_text: ""
 %>

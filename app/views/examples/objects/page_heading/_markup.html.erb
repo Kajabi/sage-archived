@@ -12,8 +12,10 @@
       <%- end -%>
     </div>
     <% end %>
-    <% if help_text.present? %>
-      <p class="sage-page-heading__toolbar--help"><%= help_text %></p>
+    <% if help_text.any? %>
+      <%- help_text.each do |help| -%>
+        <p class="sage-page-heading__toolbar--help<% if help[:text_size].present? %> t-sage-body-<%= help[:text_size] %><% end %>"><%= help[:text] %></p>
+      <% end %>
     <% end %>
     <% if secondary_text.present? %>
       <p class="sage-page-heading__toolbar--secondary"><%= secondary_text %></p>
