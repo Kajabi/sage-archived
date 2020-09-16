@@ -26,16 +26,16 @@
   flex-wrap: wrap;
   align-items: center;
   order: 3;
+  margin-top: sage-spacing(xs);
 }
 .sage-page-heading__toolbar--actions {
   flex: 1;
   flex-basis: initial;
-  margin-top: sage-spacing(xs);
 }
 .sage-page-heading__toolbar--actions__link {
   display: inline-flex;
   align-items: center;
-  margin: 0 sage-spacing(sm) 0 0;
+  margin-right: sage-spacing(sm);
   color: sage-color(charcoal, 100);
 }
 @each $-icon-name, $-icon-code in $sage-icons {
@@ -48,11 +48,9 @@
 }
 
 .sage-page-heading__toolbar--primary {
-  margin-top: sage-spacing(xs);
   color: sage-color(charcoal, 100);
 }
 .sage-page-heading__toolbar--secondary {
-  margin-top: sage-spacing(xs);
   color: sage-color(charcoal, 100);
   font-size: rem(14);
   font-style: italic;
