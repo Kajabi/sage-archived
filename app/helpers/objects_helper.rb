@@ -12,14 +12,6 @@ module ObjectsHelper
   def sage_objects
     [
       # Sage Generated Objects
-        {
-          title: "empty_state",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", 
-          scss: "todo",
-          rails: "todo",
-          react: "todo",
-          a11y: "todo",
-        },
       {
         title: "alert",
         description: "Alerts are used to indicate user-driven notifications.",
@@ -70,14 +62,6 @@ module ObjectsHelper
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", 
         scss: "todo",
         docs: "done",
-        rails: "todo",
-        react: "todo",
-        a11y: "todo",
-      },
-      {
-        title: "data_card",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", 
-        scss: "todo",
         rails: "todo",
         react: "todo",
         a11y: "todo",
