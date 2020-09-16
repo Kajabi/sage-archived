@@ -5,9 +5,15 @@
 
 ================================================== */
 
+$-d-sage-card-shadow: sage-shadow(sm);
+$-d-sage-card-radius: sage-border(radius);
+$-d-sage-card-spacing: sage-spacing(md);
+$-d-sage-card-spacing-2xl: sage-spacing(2xl);
+$-d-sage-card-text-color: sage-color(charcoal, 200);
+
 .d-sage-card {
-  border-radius: $sage-card-radius;
-  box-shadow: $sage-card-shadow;
+  border-radius: $-d-sage-card-radius;
+  box-shadow: $-d-sage-card-shadow;
   background-color: sage-color(white);
 
   &:not(:last-child) {
@@ -25,13 +31,13 @@
 }
 
 .d-sage-card--spaced {
-  padding: $sage-card-spacing;
+  padding: $-d-sage-card-spacing;
 }
 
 .d-sage-card__body {
   flex: 1;
   grid-area: body;
-  padding: $sage-card-spacing;
+  padding: $-d-sage-card-spacing;
 
   .d-sage-card--spaced & {
     padding: 0;
@@ -44,7 +50,7 @@
   }
 
   .d-sage-card--spaced.d-sage-card--compact & {
-    padding: 0 $sage-card-spacing;
+    padding: 0 $-d-sage-card-spacing;
   }
 
   &:last-child {
@@ -59,18 +65,18 @@
   grid-area: foot;
   align-items: center;
   justify-content: space-between;
-  padding: 0 $sage-card-spacing $sage-card-spacing;
+  padding: 0 $-d-sage-card-spacing $-d-sage-card-spacing;
 
   > *:not(:last-child) {
     margin-right: rem(16px);
   }
 
   .d-sage-card--spaced & {
-    padding: $sage-card-spacing 0 0;
+    padding: $-d-sage-card-spacing 0 0;
   }
 
   .d-sage-card--spaced.d-sage-card--compact & {
-    padding: $sage-card-spacing 0 0 $sage-card-spacing;
+    padding: $-d-sage-card-spacing 0 0 $-d-sage-card-spacing;
   }
 }
 
@@ -90,7 +96,7 @@
 
 .d-sage-card__text {
   margin-bottom: rem(16px);
-  color: $sage-card-text-color;
+  color: $-d-sage-card-text-color;
   word-wrap: break-word;
 }
 
@@ -101,16 +107,16 @@
   grid-area: img;
   overflow: hidden;
   width: 100%;
-  border-radius: $sage-card-radius $sage-card-radius 0 0;
+  border-radius: $-d-sage-card-radius $-d-sage-card-radius 0 0;
 
   .d-sage-card--compact & {
     max-width: rem(216px);
-    border-radius: $sage-card-radius 0 0 $sage-card-radius;
+    border-radius: $-d-sage-card-radius 0 0 $-d-sage-card-radius;
   }
 
   .d-sage-card--spaced & {
-    margin: 0 0 $sage-card-spacing 0;
-    border-radius: $sage-card-radius;
+    margin: 0 0 $-d-sage-card-spacing 0;
+    border-radius: $-d-sage-card-radius;
   }
 
   .d-sage-card--spaced.d-sage-card--compact & {
@@ -132,11 +138,11 @@
     min-width: 100%;
 
     .d-sage-card--compact & {
-      border-radius: $sage-card-radius $sage-card-radius 0 0;
+      border-radius: $-d-sage-card-radius $-d-sage-card-radius 0 0;
     }
 
     .d-sage-card--spaced.d-sage-card--compact & {
-      border-radius: $sage-card-radius;
+      border-radius: $-d-sage-card-radius;
     }
   }
 
@@ -146,13 +152,13 @@
 
   .d-sage-card__body {
     .d-sage-card--spaced.d-sage-card--compact & {
-      padding: $sage-card-spacing 0;
+      padding: $-d-sage-card-spacing 0;
     }
   }
 
   .d-sage-card__footer {
     .d-sage-card--compact & {
-      padding: 0 $sage-card-spacing $sage-card-spacing;
+      padding: 0 $-d-sage-card-spacing $-d-sage-card-spacing;
     }
 
     .d-sage-card--spaced.d-sage-card--compact & {

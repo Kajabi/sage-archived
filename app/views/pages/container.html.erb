@@ -65,8 +65,8 @@ containers = [
   <% containers.each do | container | %>
     <h2 id="<%= container[:id] %>"><%= container[:full_name] %></h2>
     <div class="sage-container<%= " sage-container--#{container[:alias]}" if container[:alias] %>">
-      <div class="sage-card sage-card--center">
-        <div class="sage-card__body">
+      <div class="sage-panel">
+        <div class="sage-panel__body">
           <p><%= container[:size] %></p>
         </div>
       </div>
