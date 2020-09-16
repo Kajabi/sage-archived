@@ -24,7 +24,7 @@ $-trigger-dropdown-offset: rem(16px) + sage-spacing(xs);
 
 .sage-dropdown {
   position: relative;
-  
+
   &:not(.sage-dropdown--customized) {
     display: inline-flex;
   }
@@ -205,7 +205,7 @@ $-trigger-dropdown-offset: rem(16px) + sage-spacing(xs);
   // to prevent it from touching the bottom of the viewport/page when it expands
   margin-bottom: sage-spacing(); /* stylelint-disable-line order/properties-order */
 
-  .sage-dropdown--right & {
+  .sage-dropdown--anchor-right & {
     right: 0;
   }
 
@@ -278,7 +278,7 @@ $-trigger-dropdown-offset: rem(16px) + sage-spacing(xs);
   color: $-trigger-label-color-default;
   white-space: nowrap;
   pointer-events: none;
-  
+
   @include position(($-dropdown-height / 2), unset, unset, ($-trigger-padding-x - $-trigger-padding-label));
   @include sage-truncate();
 
