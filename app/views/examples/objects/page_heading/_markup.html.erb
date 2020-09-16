@@ -1,7 +1,14 @@
 <div class="sage-page-heading">
   <h1 class="sage-page-heading__title"><%= page_title %> <% if help_link.present? %><a href="<%= help_link[:url] %>" class="sage-link--no-launch sage-link--help-icon-only" target="_blank" referrer="no-referrer"><span class="visually-hidden"><%= help_link[:label] %></span></a><% end %></h1>
   <% if back_text.present? %>
-    <%= render "examples/elements/breadcrumbs/markup", klass: "sage-page-heading__back", has_back_icon: true, items: [{text: back_text, url: back_url}]%>
+    <%= render "examples/elements/breadcrumbs/markup",
+      klass: "sage-page-heading__back",
+      has_back_icon: true,
+      items: [{
+        text: back_text,
+        url: back_url
+      }]
+    %>
   <% end %>
   <% if primary_text.present? || action_links.any? || secondary_text.present? %>
   <div class="sage-page-heading__toolbar">
