@@ -1,9 +1,9 @@
 <div class="sage-page-heading">
-  <h1 class="sage-page-heading__title"><%= page_title %></h1>
+  <h1 class="sage-page-heading__title"><%= page_title %> <% if help_link.present? %><a href="<%= help_link[:url] %>" class="sage-link--no-launch sage-link--help-icon-only" target="_blank" referrer="no-referrer"><span class="visually-hidden"><%= help_link[:label] %></span></a><% end %></h1>
   <% if back_text.present? %>
     <%= render "examples/elements/breadcrumbs/markup", klass: "sage-page-heading__back", has_back_icon: true, items: [{text: back_text, url: back_url}]%>
   <% end %>
-  <% if help_text.present? || action_links.any? || secondary_text.present? %>
+  <% if primary_text.present? || action_links.any? || secondary_text.present? %>
   <div class="sage-page-heading__toolbar">
     <% if action_links.any? %>
     <div class="sage-page-heading__toolbar--actions">
@@ -12,10 +12,8 @@
       <%- end -%>
     </div>
     <% end %>
-    <% if help_text.any? %>
-      <%- help_text.each do |help| -%>
-        <p class="sage-page-heading__toolbar--help<% if help[:text_size].present? %> t-sage-body-<%= help[:text_size] %><% end %>"><%= help[:text] %></p>
-      <% end %>
+    <% if primary_text.any? %>
+      <p class="sage-page-heading__toolbar--primary<% if primary_text[:text_size].present? %> t-sage-body-<%= primary_text[:text_size] %><% end %>"><%= primary_text[:text] %></p>
     <% end %>
     <% if secondary_text.present? %>
       <p class="sage-page-heading__toolbar--secondary"><%= secondary_text %></p>
