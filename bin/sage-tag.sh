@@ -28,11 +28,11 @@ if [ "$1" != "patch" ] && [ "$1" != "minor" ] && [ "$1" != "major" ]; then
   exit 1
 fi
 
-# Is the branch clean?
-# if [[ -n $(git status --porcelain) ]]; then
-#   echo_custom_error "Error:" "Branch must be clean"
-#   exit 1
-# fi
+Is the branch clean?
+if [[ -n $(git status --porcelain) ]]; then
+  echo_custom_error "Error:" "Branch must be clean"
+  exit 1
+fi
 
 # Does a git remote location of `heroku master` exist?
 if ! [[ -n $(git ls-remote --exit-code --heads heroku master) ]]; then
