@@ -1,8 +1,0 @@
-<%= content_for :sidebar_styles do %>
-  <li><%= link_to "Tokens", pages_style_path(:token), class: "sage-nav__link #{"sage-nav__link--active" if current_page?(pages_style_path(:token))} sage-nav__link--sub" %></li>
-  <li><%= link_to "Colors", pages_style_path(:color), class: "sage-nav__link #{"sage-nav__link--active" if current_page?(pages_style_path(:color))} sage-nav__link--sub" %></li>
-  <li><%= link_to "Typography", pages_style_path(:typography), class: "sage-nav__link #{"sage-nav__link--active" if current_page?(pages_style_path(:typography))} sage-nav__link--sub" %></li>
-  <li><%= link_to "Icons", pages_style_path(:icon), class: "sage-nav__link #{"sage-nav__link--active" if current_page?(pages_style_path(:icon))} sage-nav__link--sub" %></li>
-  <li><%= link_to "Containers", pages_style_path(:container), class: "sage-nav__link #{"sage-nav__link--active" if current_page?(pages_style_path(:container))} sage-nav__link--sub" %></li>
-  <li><%= link_to "Grid", pages_style_path(:grid), class: "sage-nav__link #{"sage-nav__link--active" if current_page?(pages_style_path(:grid))} sage-nav__link--sub" %></li>
-<% end %>
