@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
 
   s.files = Dir["{app,config,lib}/**/*"]
 
-  s.add_dependency "rails", "~> 4.2.11.1"
+  s.add_runtime_dependency "rails"
 
   s.add_development_dependency "pry"
 end
