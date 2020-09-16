@@ -12,14 +12,6 @@ module ObjectsHelper
   def sage_objects
     [
       # Sage Generated Objects
-        {
-          title: "empty_state",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", 
-          scss: "todo",
-          rails: "todo",
-          react: "todo",
-          a11y: "todo",
-        },
       {
         title: "alert",
         description: "Alerts are used to indicate user-driven notifications.",
@@ -66,18 +58,10 @@ module ObjectsHelper
         a11y: "todo"
       },
       {
-        title: "card",
-        description: "A card presents content and can guide the user toward a related action.",
-        scss: "done",
-        docs: "done",
-        rails: "todo",
-        react: "todo",
-        a11y: "todo"
-      },
-      {
         title: "data_card",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", 
         scss: "todo",
+        docs: "done",
         rails: "todo",
         react: "todo",
         a11y: "todo",
@@ -92,9 +76,19 @@ module ObjectsHelper
         a11y: "todo"
       },
       {
+        title: "empty_state",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", 
+        scss: "todo",
+        docs: "done",
+        rails: "todo",
+        react: "todo",
+        a11y: "todo",
+      },
+      {
         title: "expandable_card",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", 
         scss: "todo",
+        docs: "done",
         rails: "todo",
         react: "todo",
         a11y: "todo",
@@ -210,11 +204,11 @@ module ObjectsHelper
       {
         title: "upload_card",
         description: "The Upload Card provides a visually pleasing lockup for a file upload field along with other helpful controls.", 
-        scss: "doing",
-        docs: "doing",
-        rails: "doing",
-        react: "doing",
-        a11y: "doing"
+        scss: "done",
+        docs: "done",
+        rails: "todo",
+        react: "done",
+        a11y: "todo"
       },
     ]
   end
@@ -227,6 +221,15 @@ module ObjectsHelper
   # Archive of deprecated objects
   def sage_deprecated_objects
     [
+      {
+        title: "card",
+        description: "A card presents content and can guide the user toward a related action.",
+        scss: "stop",
+        docs: "stop",
+        rails: "stop",
+        react: "stop",
+        a11y: "stop"
+      },
       {
         title: "live_active_mic",
         description: "The Live Active Mic icon is an animatable icon that shows a fill color rise and fall in the icon shape based on a given volume level.",

@@ -1,11 +1,11 @@
 /* ==================================================
-  ** card
+  ** card DEPRECATED
   type: object
 
 
 ================================================== */
 
-.sage-card {
+.d-sage-card {
   border-radius: $sage-card-radius;
   box-shadow: $sage-card-shadow;
   background-color: sage-color(white);
@@ -15,11 +15,7 @@
   }
 }
 
-.sage-card--center {
-  text-align: center;
-}
-
-.sage-card--compact {
+.d-sage-card--compact {
   display: grid;
   grid-template-rows: minmax(0, auto) 1fr minmax(0, auto);
   grid-template-areas:
@@ -28,50 +24,26 @@
     "img foot";
 }
 
-.sage-card--dashed,
-.sage-card--dashed-interactive {
-  box-shadow: none;
-
-  @include sage-card-dashed-border;
-}
-
-.sage-card--dashed-interactive {
-  &:hover,
-  &.sage-card--hovered {
-    @include sage-card-dashed-border($color: sage-color(grey, 500), $thickness: 2);
-  }
-}
-
-.sage-card--flat {
-  box-shadow: none;
-  border: 1px solid sage-color(grey, 400);
-}
-
-.sage-card--spaced {
+.d-sage-card--spaced {
   padding: $sage-card-spacing;
 }
 
-.sage-card__body {
+.d-sage-card__body {
   flex: 1;
   grid-area: body;
   padding: $sage-card-spacing;
 
-  .sage-card--null & {
-    padding-top: $sage-card-spacing-2xl;
-    padding-bottom: $sage-card-spacing-2xl;
-  }
-
-  .sage-card--spaced & {
+  .d-sage-card--spaced & {
     padding: 0;
   }
 
-  .sage-card--center & {
+  .d-sage-card--center & {
     max-width: sage-container(modal);
     margin-left: auto;
     margin-right: auto;
   }
 
-  .sage-card--spaced.sage-card--compact & {
+  .d-sage-card--spaced.d-sage-card--compact & {
     padding: 0 $sage-card-spacing;
   }
 
@@ -82,7 +54,7 @@
   @include clearfix;
 }
 
-.sage-card__footer {
+.d-sage-card__footer {
   display: flex;
   grid-area: foot;
   align-items: center;
@@ -93,36 +65,36 @@
     margin-right: rem(16px);
   }
 
-  .sage-card--spaced & {
+  .d-sage-card--spaced & {
     padding: $sage-card-spacing 0 0;
   }
 
-  .sage-card--spaced.sage-card--compact & {
+  .d-sage-card--spaced.d-sage-card--compact & {
     padding: $sage-card-spacing 0 0 $sage-card-spacing;
   }
 }
 
-.sage-card__footer--align-left {
+.d-sage-card__footer--align-left {
   justify-content: flex-start;
 }
 
-.sage-card__footer--align-right {
+.d-sage-card__footer--align-right {
   justify-content: flex-end;
 }
 
-.sage-card__title {
+.d-sage-card__title {
   grid-area: title;
   margin: 0 0 rem(16px) 0;
   word-wrap: break-word;
 }
 
-.sage-card__text {
+.d-sage-card__text {
   margin-bottom: rem(16px);
   color: $sage-card-text-color;
   word-wrap: break-word;
 }
 
-.sage-card__img {
+.d-sage-card__img {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -131,17 +103,17 @@
   width: 100%;
   border-radius: $sage-card-radius $sage-card-radius 0 0;
 
-  .sage-card--compact & {
+  .d-sage-card--compact & {
     max-width: rem(216px);
     border-radius: $sage-card-radius 0 0 $sage-card-radius;
   }
 
-  .sage-card--spaced & {
+  .d-sage-card--spaced & {
     margin: 0 0 $sage-card-spacing 0;
     border-radius: $sage-card-radius;
   }
 
-  .sage-card--spaced.sage-card--compact & {
+  .d-sage-card--spaced.d-sage-card--compact & {
     max-width: rem(160px);
     margin: 0;
   }
@@ -155,35 +127,35 @@
 }
 
 @media (max-width: sage-breakpoint()) {
-  .sage-card__img {
+  .d-sage-card__img {
     width: 100%;
     min-width: 100%;
 
-    .sage-card--compact & {
+    .d-sage-card--compact & {
       border-radius: $sage-card-radius $sage-card-radius 0 0;
     }
 
-    .sage-card--spaced.sage-card--compact & {
+    .d-sage-card--spaced.d-sage-card--compact & {
       border-radius: $sage-card-radius;
     }
   }
 
-  .sage-card--compact {
+  .d-sage-card--compact {
     display: block;
   }
 
-  .sage-card__body {
-    .sage-card--spaced.sage-card--compact & {
+  .d-sage-card__body {
+    .d-sage-card--spaced.d-sage-card--compact & {
       padding: $sage-card-spacing 0;
     }
   }
 
-  .sage-card__footer {
-    .sage-card--compact & {
+  .d-sage-card__footer {
+    .d-sage-card--compact & {
       padding: 0 $sage-card-spacing $sage-card-spacing;
     }
 
-    .sage-card--spaced.sage-card--compact & {
+    .d-sage-card--spaced.d-sage-card--compact & {
       padding: 0;
     }
   }
