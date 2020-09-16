@@ -28,7 +28,6 @@ if [ "$1" != "patch" ] && [ "$1" != "minor" ] && [ "$1" != "major" ]; then
   exit 1
 fi
 
-Is the branch clean?
 if [[ -n $(git status --porcelain) ]]; then
   echo_custom_error "Error:" "Branch must be clean"
   exit 1
