@@ -5,7 +5,8 @@
 
 ================================================== */
 
-$_content-height: 100px;
+$_image-height: 64px;
+$_image-width: 120px;
 $_image-height-mobile: 200px;
 
 .sage-catalog-card {
@@ -14,8 +15,8 @@ $_image-height-mobile: 200px;
   border-bottom: sage-border();
 
   display: grid;
-  grid-template-columns: minmax(100px, 1fr) 5fr min-content;
-  grid-template-rows: repeat(2, ($_content-height / 2));
+  grid-template-columns: minmax(100px, $_image-width) auto min-content;
+  grid-template-rows: repeat(2, ($_image-height / 2));
   grid-column-gap: sage-spacing(md);
   grid-row-gap: sage-spacing(xs);
   grid-template-areas:
