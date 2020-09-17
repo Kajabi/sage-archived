@@ -3,6 +3,34 @@
   <p>Use this scratchpad to test out elements and objects in context. Just be sure not to commit your changes. ❤️</p>
 <% end %>
 
-<%= sage_component SagePanel, {} do %>
-  <%= sage_component SageButton, { style: "primary", value: "This is a sage component rails test" } %>
+<%= sage_component SagePanel, { size: "sm" } do %>
+  <% 3.times.each do %>
+    <div class="sage-catalog-card">
+      <div class="sage-catalog-card__img">
+        <img alt="Alternative text for image" src="/packs/media/images/docs/card/card-placeholder-sm-793ef84766b339810b660be77cb81fdd.png">
+      </div>
+      <div class="sage-catalog-card__actions">
+        <%= sage_component SageDropdown, {
+          align: "right",
+          items: [{
+            name: "wewe",
+            icon: "pen"
+          }]
+        } do %>
+          <%= sage_component SageButton, {
+            style: "tertiary",
+            icon: { name: "dot-menu-horizontal", style: "only" },
+            value: "Drop",
+            align: "end"
+          } %>
+        <% end %>
+      </div>
+      <div class="sage-catalog-card__body">
+        <h2 class="t-sage-heading-5">Spaced &amp; Compact w/ Image</h2>
+      </div>
+      <div class="sage-catalog-card__meta">
+        Members
+      </div>
+    </div>
+  <% end %>
 <% end %>
