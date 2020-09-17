@@ -15,6 +15,11 @@
   .sage-input-group & {
     height: auto;
   }
+
+  .sage-panel__content-stack > &,
+  .sage-panel__copy > & {
+    margin-bottom: 0;
+  }
 }
 
 .sage-input__affix {

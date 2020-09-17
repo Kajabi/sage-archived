@@ -20,6 +20,11 @@
     margin-top: 0;
     margin-bottom: $sage-form-element-spacing / 2;
   }
+
+  .sage-panel__content-stack > &,
+  .sage-panel__copy > & {
+    margin-bottom: 0;
+  }
 }
 
 .sage-switch__message {

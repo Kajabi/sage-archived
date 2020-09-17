@@ -16,6 +16,11 @@
   .sage-list & {
     margin-bottom: $sage-form-element-spacing / 2;
   }
+
+  .sage-panel__content-stack > &,
+  .sage-panel__copy > & {
+    margin-bottom: 0;
+  }
 }
 
 .sage-checkbox--standalone {
