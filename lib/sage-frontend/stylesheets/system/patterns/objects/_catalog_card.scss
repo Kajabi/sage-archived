@@ -79,4 +79,5 @@ $_image-height-mobile: 200px;
   grid-area: actions;
   display: flex;
   align-items: center;
+  gap: sage-spacing(xs);
 }
