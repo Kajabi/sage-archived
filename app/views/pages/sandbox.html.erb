@@ -9,9 +9,9 @@
 
 
       <section class="sage-catalog-card">
-        <div class="sage-catalog-card__img">
+        <a class="sage-catalog-card__img" tabIndex="0" href="#">
           <img alt="Alternative text for image" src="/packs/media/images/docs/card/card-placeholder-sm-793ef84766b339810b660be77cb81fdd.png">
-        </div>
+        </a>
         <div class="sage-catalog-card__actions">
           <span class="sage-label sage-label--draft">Draft</span>
           <%= sage_component SageDropdown, {
@@ -30,7 +30,7 @@
           <% end %>
         </div>
         <div class="sage-catalog-card__body">
-          <a class="t-sage-heading-5" tabIndex="0" href="#">This is a SageCatalogCard</a>
+          <a class="t-sage-heading-5" tabIndex="-1" href="#">This is a SageCatalogCard</a>
         </div>
         <div class="sage-catalog-card__meta">
           Members
