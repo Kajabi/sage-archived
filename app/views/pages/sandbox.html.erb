@@ -12,13 +12,7 @@
         <div class="sage-catalog-card__img">
           <img alt="Alternative text for image" src="/packs/media/images/docs/card/card-placeholder-sm-793ef84766b339810b660be77cb81fdd.png">
         </div>
-        <a class="sage-catalog-card__body" tabIndex="0" href="#">
-          <h1 class="t-sage-heading-5">This is a SageCatalogCard</h1>
-        </a>
-        <div class="sage-catalog-card__meta">
-          Members
-        </div>
-        <aside class="sage-catalog-card__actions">
+        <div class="sage-catalog-card__actions">
           <span class="sage-label sage-label--draft">Draft</span>
           <%= sage_component SageDropdown, {
             align: "right",
@@ -34,7 +28,13 @@
               align: "end"
             } %>
           <% end %>
-        </aside>
+        </div>
+        <div class="sage-catalog-card__body">
+          <a class="t-sage-heading-5" tabIndex="0" href="#">This is a SageCatalogCard</a>
+        </div>
+        <div class="sage-catalog-card__meta">
+          Members
+        </div>
       </section>
 
 
