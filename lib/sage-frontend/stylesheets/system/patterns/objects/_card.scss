@@ -6,15 +6,15 @@
 ================================================== */
 
 .sage-card {
-  @include sage-card();
+  // @include sage-card();
 }
 
 .sage-card--row {
-  @include sage-grid-card-row();
+  // @include sage-grid-card-row();
 }
 
 .sage-card__footer {
-  @include sage-grid-card-row();
+  // @include sage-grid-card-row();
 }
 
 .sage-card__footer--align-right {
@@ -23,11 +23,11 @@
 
 .sage-card__header,
 .sage-card__row {
-  @include sage-grid-card-row();
+  // @include sage-grid-card-row();
 }
 
 .sage-card__stack {
-  @include sage-grid-content-stack();
+  // @include sage-grid-content-stack();
 }
 
 .sage-card__title {

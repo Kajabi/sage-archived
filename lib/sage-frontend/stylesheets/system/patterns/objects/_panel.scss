@@ -25,7 +25,7 @@
 }
 
 .sage-panel__content-stack {
-  @include sage-grid-content-stack();
+  // @include sage-grid-content-stack();
 }
 
 .sage-panel > hr,
@@ -91,7 +91,7 @@
 }
 
 .sage-panel__tile {
-  @include sage-grid-card;
+  @extend %t-sage-heading-5;
 }
 
 .sage-panel__tiles {
