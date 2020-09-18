@@ -54,7 +54,7 @@ $sage-icon-li-margin-right: 0.4em !default;
 
     .sage-icon-#{$icon-name}#{$suffix} {
       &::before {
-        @include icon-base($icon-name, $size-name);
+        @include sage-icon-base($icon-name, $size-name);
       }
     }
   }

@@ -46,7 +46,7 @@ $-upload-card-background-hover: sage-color(grey, 100);
   .sage-upload-card:not(.sage-upload-card--selected) & {
     flex-flow: column;
 
-    @include sage-card-dashed-border(
+    @include sage-dashed-border(
       $color: $-upload-card-border-color-default,
       $border-radius: $-upload-card-border-radius,
     );
@@ -54,7 +54,7 @@ $-upload-card-background-hover: sage-color(grey, 100);
     &:hover {
       background-color: $-upload-card-background-hover;
   
-      @include sage-card-dashed-border(
+      @include sage-dashed-border(
         $color: $-upload-card-border-color-hover,
         $border-radius: $-upload-card-border-radius,
       );
@@ -64,7 +64,7 @@ $-upload-card-background-hover: sage-color(grey, 100);
     &:focus-within {
       outline: 0;
 
-      @include sage-card-dashed-border(
+      @include sage-dashed-border(
         $color: $-upload-card-border-color-focus,
         $border-radius: $-upload-card-border-radius,
       );
@@ -77,7 +77,7 @@ $-upload-card-background-hover: sage-color(grey, 100);
   }
 
   .sage-upload-card.sage-upload-card--error & {
-    @include sage-card-dashed-border(
+    @include sage-dashed-border(
       $color: $-upload-card-border-color-error,
       $border-radius: $-upload-card-border-radius,
     );

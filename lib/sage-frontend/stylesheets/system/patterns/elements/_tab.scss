@@ -8,7 +8,7 @@ $item-underline: "::after";
 
 /* stylelint-disable max-nesting-depth */
 .sage-tab {
-  @include button-style-reset();
+  @include sage-button-style-reset();
   display: flex;
   position: relative;
   align-items: center;
@@ -52,7 +52,7 @@ $item-underline: "::after";
         right: rem(-32px);
         color: sage-color(charcoal, 100);
   
-        @include icon-base(right-small, xl);
+        @include sage-icon-base(right-small, xl);
       }
     }
 

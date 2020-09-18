@@ -30,7 +30,7 @@ $-pw-font-size-sm: sage-font-size(sm);
 }
 
 .sage-input-group__toggle {
-  @include button-style-reset;
+  @include sage-button-style-reset;
 
   right: $-pw-field-button-offset;
   min-width: 1em;

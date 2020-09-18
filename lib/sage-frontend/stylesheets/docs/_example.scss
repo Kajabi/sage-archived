@@ -77,7 +77,7 @@ $-example-code-preview-button-bg: rgba(sage-color(primary, 500), 0.75);
 }
 
 .example__expand-btn {
-  @include button-style-reset();
+  @include sage-button-style-reset();
   position: absolute;
   z-index: sage-z_index(raised);
   bottom: sage-spacing(xs);

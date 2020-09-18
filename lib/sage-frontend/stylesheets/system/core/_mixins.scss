@@ -3,6 +3,28 @@
 
 ================================================== */
 
+
+/* ==================================================
+  ** GENERIC MIXINS
+================================================== */
+
+/* ==================================================
+  ** Clearfix
+  Usage: `@include clearfix()`
+
+  Adds a clearfix psuedo-element for use in containers that may include floated elements
+================================================== */
+
+@mixin clearfix() {
+  &::after {
+    content: "";
+    display: block;
+    clear: both;
+
+    @content;
+  }
+}
+
 /* ==================================================
   ** Visually Hidden mixin
   Usage: `@include visually-hidden()`
@@ -23,27 +45,6 @@
   white-space: nowrap;
   border: 0;
 }
-
-
-/* ==================================================
-** Button reset mixin
-  Usage: `@include button-style-reset();
-
-  Resets base button style
-  arguments: n/a
-================================================== */
-
-@mixin button-style-reset {
-  padding: 0;
-  appearance: none;
-  font-family: inherit;
-  color: inherit;
-  box-shadow: none;
-  background-color: transparent;
-  border: 0;
-  cursor: pointer;
-}
-
 
 /* ==================================================
 ** Overflow scroll mixin
@@ -69,7 +70,6 @@
   }
 }
 
-
 /* ==================================================
 ** Placeholder mixin
    Usage: `@include placeholder(content)`
@@ -93,7 +93,6 @@
 }
 /* stylelint-enable */
 
-
 /* ==================================================
 ** Absolute Positioning shorthand
   Usage: `@include position-full(4px);`
@@ -108,7 +107,6 @@
   bottom: $offset;
   left: $offset;
 }
-
 
 /* ==================================================
 ** Positioning shorthand
@@ -125,21 +123,164 @@
   left: position-print-value("left", $left);
 }
 
-@function position-print-value($key, $value) {
-  @if not $value {
-    @error "position() mixin requires all 4 position values (top, right, bottom, left): #{$key} is missing or invalid.";
+/* ==================================================
+  ** Truncate to a single line
+  Usage: `@include truncate;`
+
+  Truncates text of the given element to a single line.
+================================================== */
+@mixin truncate() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+/* ==================================================
+  ** SAGE-SPECIFIC MIXINS
+================================================== */
+
+/* ==================================================
+** Avatar Ring
+  Usage: `@include sage-avatar-ring();`
+
+  Adds an activated ring around a save-avatar object in the provided color
+  arguments: $color | [valid system color]
+================================================== */
+
+@mixin sage-avatar-ring($color: primary) {
+  $-avatar-ring-offset: -($sage-avatar-ring-width + 2px);
+  $-avatar-right-color: sage-color($color);
+
+  @if ($color == charcoal) {
+    $-avatar-right-color: sage-color($color, 500);
   }
-  @else if $value != unset {
-    @return $value;
-  }
-  @else {
-    @return null;
+
+  &::before {
+    border-color: $-avatar-right-color;
+
+    @include position-full($-avatar-ring-offset);
   }
 }
 
 /* ==================================================
+** Button reset mixin
+  Usage: `@include sage-button-style-reset();
+
+  Resets base button style
+  arguments: n/a
+================================================== */
+
+@mixin sage-button-style-reset {
+  padding: 0;
+  appearance: none;
+  font-family: inherit;
+  color: inherit;
+  box-shadow: none;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+/* ==================================================
+  ** Card
+  Usage: `@include sage-card;`
+
+  Adds the basic default card setup
+================================================== */
+
+@mixin sage-card() {
+  @include sage-grid-card();
+
+  padding: $sage-card-padding;
+  border: $sage-card-border;
+  border-radius: $sage-card-border-radius;
+}
+
+/* ==================================================
+  ** Dashed border generator
+  Usage: `@include sage-dashed-border(1, sage-color(sage), 3, 7, 3, 4);`
+
+  Adds the appearance of a dashed border on an element using a url-encoded SVG shape as a background image.
+  arguments:
+      $thickness: [unitless number for thickness of the stroke]
+      $color: [hex color to be used for the stroke color]
+      $dash:[unitless number for the size of a dash]
+      $gap: [unitless number for the size of a gap between dashes]
+      $offset: [unitless number for the initial offset for the starting point of the dash]
+      $border-radius: [unitless number for the border radius of the shape]
+================================================== */
+
+@mixin sage-dashed-border($thickness: 1, $color: sage-color(grey, 400), $dash: 4.5, $gap: 4.5, $offset: 4.5, $border-radius: 4) {
+  $stripped-color-value: str-replace("#{$color}", "#", "%23");
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='#{$border-radius}' ry='#{$border-radius}' stroke='#{$stripped-color-value}' stroke-width='#{$thickness * 2}' stroke-dasharray='#{$dash}%2c#{$gap + $thickness * 4}' stroke-dashoffset='#{$offset}' stroke-linecap='square'/%3e%3c/svg%3e");
+}
+
+/* ==================================================
+  ** Grid: Card
+  Usage: `@include sage-grid-panel-body;`
+================================================== */
+@mixin sage-grid-card() {
+  display: grid;
+  grid-gap: sage-spacing(sm);
+  grid-template-rows: min-content;
+}
+
+/* ==================================================
+  ** Grid: Panel Stack
+  Usage: `@include sage-grid-content-stack;`
+================================================== */
+@mixin sage-grid-content-stack() {
+  display: grid;
+  grid-gap: sage-spacing(xs);
+  grid-template-columns: 100%;
+  grid-template-rows: min-content;
+}
+
+/* ==================================================
+  ** Grid: Panel
+  Usage: `@include sage-grid-panel;`
+================================================== */
+@mixin sage-grid-panel() {
+  display: grid;
+  grid-gap: sage-spacing();
+  grid-template-columns: 100%;
+  grid-template-rows: min-content;
+}
+
+/* ==================================================
+  ** Grid: Card Row
+  Usage: `@include sage-grid-row;`
+
+  Standard grid setup for a single row layout.
+================================================== */
+@mixin sage-grid-card-row() {
+  display: grid;
+  align-items: center;
+  grid-auto-columns: auto;
+  grid-auto-flow: column;
+  grid-gap: sage-spacing(sm);
+  justify-content: space-between;
+}
+
+/* ==================================================
+  ** Grid: Panel Row
+  Usage: `@include sage-grid-row;`
+
+  Standard grid setup for a single row layout.
+================================================== */
+@mixin sage-grid-panel-row() {
+  display: grid;
+  align-items: center;
+  grid-auto-columns: auto;
+  grid-auto-flow: column;
+  grid-gap: sage-spacing();
+  justify-content: space-between;
+}
+
+/* ==================================================
 ** Icon base
-  Usage: `@include icon-base();`
+  Usage: `@include sage-icon-base();`
 
   Sets up an element to implement the sage icon font and basic settings related
   to displaying the icon. Usually implemented on a pseudo-element.
@@ -150,7 +291,7 @@
   arguments: $icon | null|[string]
 ================================================== */
 
-@mixin icon-base($icon: null, $icon-size: md) {
+@mixin sage-icon-base($icon: null, $icon-size: md) {
   $size: map-get($sage-icon-sizes, $icon-size);
 
   display: inline-flex;
@@ -175,30 +316,22 @@
 }
 
 /* ==================================================
-** Live Avatar Ring
-  Usage: `@include sage-avatar-ring();`
+  ** Panel
+  Usage: `@include sage-panel;`
 
-  Adds an activated ring around a save-avatar object in the provided color
-  arguments: $color | [valid system color]
+  Adds the basic default panel setup
 ================================================== */
 
-@mixin sage-feature-avatar-ring($color: primary) {
-  $-avatar-ring-offset: -($sage-avatar-ring-width + 2px);
-  $-avatar-right-color: sage-color($color);
+@mixin sage-panel() {
+  @include sage-grid-panel();
 
-  @if ($color == charcoal) {
-    $-avatar-right-color: sage-color($color, 500);
-  }
-
-  &::before {
-    border-color: $-avatar-right-color;
-
-    @include position-full($-avatar-ring-offset);
-  }
+  padding: $sage-panel-padding;
+  border-radius: $sage-panel-border-radius;
+  box-shadow: $sage-panel-box-shadow;
 }
 
 /* ==================================================
-  ** Tab underline mixin
+  ** Tab underline
   Usage: `@include sage-tab-underline(".sage-tabs__tab--active");`
 
   Adds an tab-styled underline that animates in and out when active class is toggled
@@ -234,84 +367,4 @@
       right: 0;
     }
   }
-}
-
-/* ==================================================
-  ** Dashed border generator
-  Usage: `@include sage-card-dashed-border(1, sage-color(sage), 3, 7, 3, 4);`
-
-  Adds the appearance of a dashed border on an element using a url-encoded SVG shape as a background image.
-  arguments:
-      $thickness: [unitless number for thickness of the stroke]
-      $color: [hex color to be used for the stroke color]
-      $dash:[unitless number for the size of a dash]
-      $gap: [unitless number for the size of a gap between dashes]
-      $offset: [unitless number for the initial offset for the starting point of the dash]
-      $border-radius: [unitless number for the border radius of the shape]
-================================================== */
-
-@mixin sage-card-dashed-border($thickness: 1, $color: sage-color(grey, 400), $dash: 4.5, $gap: 4.5, $offset: 4.5, $border-radius: 4) {
-  $stripped-color-value: str-replace("#{$color}", "#", "%23");
-  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='#{$border-radius}' ry='#{$border-radius}' stroke='#{$stripped-color-value}' stroke-width='#{$thickness * 2}' stroke-dasharray='#{$dash}%2c#{$gap + $thickness * 4}' stroke-dashoffset='#{$offset}' stroke-linecap='square'/%3e%3c/svg%3e");
-}
-
-/* ==================================================
-  ** Truncate to a single line
-  Usage: `@include sage-truncate;`
-
-  Truncates text of the given element to a single line.
-================================================== */
-@mixin sage-truncate() {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-@mixin clearfix() {
-  &::after {
-    content: "";
-    display: block;
-    clear: both;
-
-    @content;
-  }
-}
-
-/* ==================================================
-  ** Panel Grid
-  Usage: `@include sage-grid-panel-body;`
-
-  Standard grid setup for the contents of a panel; sets up rows with `md` spacing between each.
-================================================== */
-@mixin sage-grid-panel() {
-  display: grid;
-  grid-gap: sage-spacing();
-  grid-template-columns: 100%;
-}
-
-/* ==================================================
-  ** Panel Body Grid
-  Usage: `@include sage-grid-panel-body;`
-
-  Grid setup for the body of a panel; sets up rows with `xs` spacing between each.
-================================================== */
-@mixin sage-grid-panel-stack() {
-  display: grid;
-  grid-gap: sage-spacing(xs);
-  grid-template-columns: 100%;
-}
-
-/* ==================================================
-  ** Grid Row
-  Usage: `@include sage-grid-row;`
-
-  Standard grid setup for a single row layout.
-================================================== */
-@mixin sage-grid-panel-row() {
-  display: grid;
-  grid-gap: sage-spacing();
-  grid-auto-columns: auto;
-  grid-auto-flow: column;
-  align-items: center;
-  justify-content: space-between;
 }

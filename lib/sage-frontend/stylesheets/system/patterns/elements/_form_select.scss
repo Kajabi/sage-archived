@@ -67,7 +67,7 @@ $-sage-selectfield-color-error: $sage-inputfield-color-error;
 }
 
 .sage-select__arrow::before {
-  @include icon-base(caret-down);
+  @include sage-icon-base(caret-down);
   @include position(0, sage-spacing(sm), unset, unset);
   position: absolute;
   align-items: center;
