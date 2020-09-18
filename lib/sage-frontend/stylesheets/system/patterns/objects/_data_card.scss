@@ -26,7 +26,6 @@ $-data-card-padding: sage-spacing(xs);
 
 .sage-data-card {
   background: $-data-card-background-color;
-  border: 1px solid map-get(map-get($-data-card-colors, default), border-color);
   border-radius: $-data-card-border-radius;
 
   .sage-data-card-group &:not(:last-child) {
@@ -41,16 +40,20 @@ $-data-card-padding: sage-spacing(xs);
       margin-bottom: 0;
     }
   }
-}
 
-@each $-color-name, $-values in $-data-card-colors {
-  @if $-color-name != default {
-    .sage-data-card--#{$-color-name},
-    .sage-data-card-group--#{$-color-name} & {
+  @each $-color-name, $-values in $-data-card-colors {
+    @if $-color-name == default {
       border: 1px solid map-get($-values, border-color);
+    }
+    @else {
+      &.sage-data-card--#{$-color-name},
+      .sage-data-card-group--#{$-color-name} & {
+        border: 1px solid map-get($-values, border-color);
+      }
     }
   }
 }
+
 
 .sage-data-card__body {
   position: relative;
@@ -163,6 +166,12 @@ $-data-card-padding: sage-spacing(xs);
 // Sage data-card scroll container styles
 
 .sage-data-card-scroll-container {
+  display: grid;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.sage-data-card-scroll {
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: auto;
