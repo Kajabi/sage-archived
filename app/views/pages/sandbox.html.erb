@@ -2,51 +2,7 @@
   <h1>Sandbox</h1>
   <p>Use this scratchpad to test out elements and objects in context. Just be sure not to commit your changes. ❤️</p>
 <% end %>
-<div class="sage-container sage-container--md">
-  <%= sage_component SagePanel, { size: "sm", content_flush: true } do %>
-    <% 3.times.each do %>
 
-
-
-      <section class="sage-catalog-card">
-        <div class="sage-catalog-card__body">
-          <a class="t-sage-heading-6" tabIndex="-1" href="#">This is a SageCatalogCard With a very long title very long title, amaze</a>
-        </div>
-        <div class="sage-catalog-card__meta">
-          <span class="sage-info sage-info--icon-comment">
-            5 Golden Eggs
-          </span>
-          <span class="sage-info sage-info--icon-users">
-            3 Geese A-Laying
-          </span>
-          <span class="sage-info sage-info--icon-coupon">
-            1 Partridge In A Pear Tree
-          </span>
-        </div>
-        <div class="sage-catalog-card__actions">
-          <span class="sage-label sage-label--draft">Draft</span>
-          <%= sage_component SageDropdown, {
-            align: "right",
-            items: [{
-              name: "wewe",
-              icon: "pen"
-            }]
-          } do %>
-            <%= sage_component SageButton, {
-              style: "tertiary",
-              icon: { name: "dot-menu-horizontal", style: "only" },
-              value: "Drop",
-              align: "end"
-            } %>
-          <% end %>
-        </div>
-        <a class="sage-catalog-card__img" tabIndex="0" href="#">
-          <img alt="Alternative text for image" src="/packs/media/images/docs/card/card-placeholder-sm-793ef84766b339810b660be77cb81fdd.png">
-        </a>
-      </section>
-
-
-
-    <% end %>
-  <% end %>
-</div>
+<%= sage_component SagePanel, {} do %>
+  <%= sage_component SageButton, { style: "primary", value: "This is a sage component rails test" } %>
+<% end %>
