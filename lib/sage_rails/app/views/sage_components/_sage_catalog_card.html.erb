@@ -1,0 +1,18 @@
+<section class="sage-catalog-card">
+  <div class="sage-catalog-card__body">
+    <%= component.content %>
+  </div>
+  <% if content_for? :sage_info %>
+    <div class="sage-catalog-card__info">
+      <%= content_for :sage_info %>
+    </div>
+  <% end %>
+  <% if content_for? :sage_actions  %>
+    <div class="sage-catalog-card__actions">
+      <%= content_for :sage_actions %>
+    </div>
+  <% end %>
+  <a class="sage-catalog-card__img" href="<%= component.href %>">
+    <img src="<%= component.image %>">
+  </a>
+</section>
