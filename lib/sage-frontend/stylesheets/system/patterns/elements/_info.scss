@@ -6,8 +6,9 @@
 ================================================== */
 
 .sage-info {
-  color: sage-color(charcoal, 200);
   @extend %t-sage-body-small;
+
+  color: sage-color(charcoal, 200);
   display: inline-flex;
   margin: 0 sage-spacing(sm) 0 0;
   align-items: center;
