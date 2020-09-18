@@ -1,11 +1,9 @@
 <% 3.times do %>
   <%= sage_component SageCatalogCard, {
+    title: "'Fun For All', The Children Call: Their Favorite Time Of Year",
     image: asset_pack_path("media/images/docs/card/card-placeholder-sm.png"),
     href: "#"
   } do %>
-    <a class="t-sage-heading-6" href="#">
-      Christmas Time Is Here, Happiness And Cheer, "Fun For All" The Children Call, Their Favorite Time Of Year
-    </a>
     <%= content_for :sage_info do %>
       <span class="sage-info sage-info--icon-comment">
         5 Golden Eggs
