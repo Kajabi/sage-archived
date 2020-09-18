@@ -7,7 +7,7 @@
 
 $_image-height: 64px;
 $_image-width: 120px;
-$_image-height-mobile: 200px;
+$_image-height-mobile: 120px;
 
 .sage-catalog-card {
   padding: sage-spacing(sm) sage-spacing(sm) sage-spacing(sm) sage-spacing(md);
@@ -24,13 +24,14 @@ $_image-height-mobile: 200px;
   "img meta actions";
 }
 
-@media (max-width: sage-breakpoint(sm-min)) {
+@media (max-width: sage-breakpoint()) {
   .sage-catalog-card {
-    grid-template-rows: $_image-height-mobile auto auto;
+    grid-template-columns: auto min-content;
+    grid-template-rows: $_image-height-mobile auto;
     grid-template-areas:
-      "img img img"
-      "body body actions"
-      "meta meta meta";
+      "img img"
+      "body actions"
+      "meta meta";
   }
 }
 
@@ -46,7 +47,7 @@ $_image-height-mobile: 200px;
 
 }
 
-@media (max-width: sage-breakpoint(sm-min)) {
+@media (max-width: sage-breakpoint()) {
   .sage-catalog-card__body {
     align-items: center;
   }
