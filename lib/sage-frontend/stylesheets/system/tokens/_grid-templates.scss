@@ -1,0 +1,104 @@
+// ============================================
+// Row Grid Templates
+// ============================================
+
+@function sage-grid-templates($grid-key) {
+  @return map-get($sage-grid-templates, $grid-key);
+}
+
+$sage-grid-templates: (
+  //
+  // Equal sized columns
+  //
+  // M --
+  m: repeat(2, 1fr),
+  // O ---
+  om: repeat(3, 1fr),
+  // MM ---
+  mm: repeat(4, 1fr),
+  // MO ---
+  mo: repeat(5, 1fr),
+  //
+  // Dots first
+  //
+  // A .-
+  a: auto 1fr,
+  // W .--
+  w: auto 1fr 1fr,
+  // J .---
+  j: auto 1fr 1fr 1fr,
+  // U ..-
+  u: auto auto 1fr,
+  // IM ..--
+  im: auto auto 1fr 1fr,
+  // IO ..---
+  io: auto auto 1fr 1fr 1fr,
+  // V ...-
+  v: auto auto auto 1fr,
+  // SM ...--
+  sm: auto auto auto 1fr 1fr,
+  // SO ...--
+  so: auto auto auto 1fr 1fr 1fr,
+  //
+  // Dots last
+  //
+  // N -.
+  n: 1fr auto,
+  // G --.
+  g: 1fr 1fr auto,
+  // OE ---.
+  oe: 1fr 1fr 1fr auto,
+  // D -..
+  d: 1fr auto auto,
+  // Z --..
+  z: 1fr 1fr auto auto,
+  // OI ---..
+  oi: 1fr 1fr 1fr auto auto,
+  // B -...
+  b: 1fr auto auto auto,
+  // MS --...
+  ms: 1fr 1fr auto auto auto,
+  // OS ---...
+  os: 1fr 1fr 1fr auto auto auto,
+  //
+  // Dots on both sides
+  //
+  // R .-.
+  r: auto 1fr auto,
+  // P .--.
+  p: auto 1fr 1fr auto,
+  // JE .---.
+  fe: auto 1fr 1fr 1fr auto,
+  // L .-..
+  l: auto 1fr auto auto,
+  // WI .--..
+  wi: auto 1fr 1fr auto auto,
+  // JI .---..
+  ji: auto 1fr 1fr 1fr auto auto,
+  // F ..-.
+  f: auto auto 1fr auto,
+  // IG ..--.
+  ig: auto auto 1fr 1fr auto,
+  // UG ..---.
+  ug: auto auto 1fr 1fr 1fr auto,
+  // UI ..-..
+  ui: auto auto 1fr auto auto,
+  // UN ..--..
+  un: auto auto 1fr 1fr auto auto,
+);
+
+/*
+
+Other
+T -
+E .
+I ..
+S ...
+H ....
+C -.-.
+K -.-
+Q --.-
+X -..-
+Y -.--
+
+*/

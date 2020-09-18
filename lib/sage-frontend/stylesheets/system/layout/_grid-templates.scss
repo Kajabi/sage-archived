@@ -1,0 +1,10 @@
+// ============================================
+// Row Grid Templates
+// ============================================
+
+// Generates classes for each sage grid template
+@each $-key, $-value in $sage-grid-templates {
+  .sage-grid-template-#{$-key} {
+    grid-template-columns: $-value;
+  }
+}
