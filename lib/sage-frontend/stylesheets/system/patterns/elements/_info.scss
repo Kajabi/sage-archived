@@ -1,0 +1,26 @@
+/* ==================================================
+  ** catalog-card
+  type: object
+
+
+================================================== */
+
+.sage-info {
+  color: sage-color(charcoal, 200);
+  @extend %t-sage-body-small;
+  display: inline-flex;
+  margin: 0 sage-spacing(sm) 0 0;
+  align-items: center;
+}
+
+@each $icon-name, $icon-code in $sage-icons {
+  .sage-info--icon-#{$icon-name} {
+
+    &::before {
+      @include icon-base($icon-name, md);
+
+      align-self: center;
+      margin: 0 sage-spacing(xs) 0 0;
+    }
+  }
+}

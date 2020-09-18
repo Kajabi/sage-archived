@@ -5,19 +5,18 @@
 
 ================================================== */
 
-$_image-height: 64px;
 $_image-width: 120px;
 $_image-height-mobile: 120px;
 
 .sage-catalog-card {
-  padding: sage-spacing(sm) sage-spacing(sm) sage-spacing(sm) sage-spacing(md);
+  padding: sage-spacing(sm) sage-spacing(md);
   background-color: sage-color(white);
   border-bottom: sage-border();
   margin: 0;
 
   display: grid;
   grid-template-columns: minmax(100px, $_image-width) auto min-content;
-  grid-template-rows: repeat(2, ($_image-height / 2));
+  grid-template-rows: auto;
   grid-column-gap: sage-spacing(md);
   grid-row-gap: sage-spacing(xs);
   grid-template-areas:
@@ -27,8 +26,9 @@ $_image-height-mobile: 120px;
 
 @media (max-width: sage-breakpoint()) {
   .sage-catalog-card {
-    grid-template-columns: auto min-content;
-    grid-template-rows: $_image-height-mobile auto;
+    padding: sage-spacing(sm);
+    grid-template-columns: 1fr min-content;
+    grid-template-rows: $_image-height-mobile auto auto;
     grid-template-areas:
       "img img"
       "body actions"
