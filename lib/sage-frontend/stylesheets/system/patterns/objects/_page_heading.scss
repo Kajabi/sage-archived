@@ -43,7 +43,7 @@
   .sage-page-heading__toolbar--actions__link--icon-#{$-icon-name} {
     &::before {
       margin-right: sage-spacing(xs);
-      @include icon-base($-icon-name);
+      @include sage-icon-base($-icon-name);
     }
   }
 }
