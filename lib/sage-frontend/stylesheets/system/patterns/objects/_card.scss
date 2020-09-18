@@ -1,8 +1,42 @@
 /* ==================================================
-  ** card DEPRECATED
+  ** OLD card DEPRECATED
   type: object
 
 
+================================================== */
+
+.sage-card {
+  @include sage-card();
+}
+
+.sage-card--row {
+  @include sage-grid-card-row();
+}
+
+.sage-card__footer {
+  @include sage-grid-card-row();
+}
+
+.sage-card__footer--align-right {
+  justify-content: end;
+}
+
+.sage-card__header,
+.sage-card__row {
+  @include sage-grid-card-row();
+}
+
+.sage-card__stack {
+  @include sage-grid-content-stack();
+}
+
+.sage-card__title {
+  @extend %t-sage-heading-6;
+}
+
+/* ==================================================
+  ** OLD card DEPRECATED
+  type: object
 ================================================== */
 
 $-d-sage-card-shadow: sage-shadow(sm);

@@ -74,9 +74,19 @@ module ObjectsHelper
       },
       {
         title: "card",
-        description: "A card presents content and can guide the user toward a related action.",
+        description: "A versatile smaller container for grouping content within panels",
         use_legacy_html_code_source: true,
-        scss: "done",
+        scss: "doing",
+        docs: "doing",
+        rails: "doing",
+        react: "sdoidionggop",
+        a11y: "doing"
+      },
+      {
+        title: "data_card",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", 
+        use_legacy_html_code_source: true,
+        scss: "todo",
         docs: "done",
         rails: "todo",
         react: "todo",
@@ -261,7 +271,7 @@ module ObjectsHelper
   def sage_deprecated_objects
     [
       {
-        title: "card",
+        title: "old_card",
         description: "A card presents content and can guide the user toward a related action.",
         use_legacy_html_code_source: true,
         scss: "stop",

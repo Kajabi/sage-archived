@@ -1,132 +1,117 @@
-<h5>Standard cards</h5>
-<div class="sage-row">
-  <div class="sage-col--md-6">
-    <%= render "examples/objects/card/markup",
-      title: "Card w/ Image",
-      text: "Diam in auctor sit quam laoreet imperdiet aliquam. Habitant nunc lacus semper lacus, nec a, sit enim.",
-      action_text: "Action Button",
-      action_style: "primary",
-      has_img: true,
-      img_path: "docs/card/card-placeholder-lg.png",
-      img_alt: "Alternative text for image"
-    %>
-  </div>
-  <div class="sage-col--md-6">
-    <%= render "examples/objects/card/markup",
-      title: "Card w/ Image",
-      text: "Diam in auctor sit quam laoreet imperdiet aliquam. Habitant nunc lacus semper lacus, nec a, sit enim.",
-      action_text: "Action Button",
-      action_style: "tertiary",
-      icon_style: "right-caret-right",
-      has_img: true,
-      img_path: "docs/card/card-placeholder-lg.png",
-      img_alt: "Alternative text for image"
-    %>
-  </div>
+<h5>Basic Card</h5>
+<%= render "examples/objects/card/markup",
+  title: "Card heading",
+  header_other: %(
+    <button class="sage-btn sage-btn--tiny sage-btn--tertiary sage-btn--icon-only-info-circle">
+      <span class="visually-hidden">Learn more</span>
+    </button>
+  ),
+  body: %(
+    <div class="sage-card__copy">
+      <p>
+        This is a copy block. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Nullam quis pretium massa. Maecenas posuere sapien in metus
+        fermentum posuere.
+      </p>
+    </div>
+  ),
+  footer: %(
+    <button class="sage-btn sage-btn--tertiary">
+      Cancel
+    </button>
+  ),
+  footer_aligns_right: true
+%>
+
+<div class="sage-type sage-spacer-top sage-spacer-bottom">
+  <p>Cards have three core areas:</p>
+  <ul>
+    <li>
+      <strong>Header</strong> -- 
+      <code>.sage-card__header</code> 
+      (optional) this area usually contains at least a title (<code>sage-card__title</code>)
+      and often an icon or menu flanking the right corner.
+    </li>
+    <li>
+      <strong>Body</strong> -- 
+      while there is not specific container for the body itself, 
+      there are a small set of containers that can be used between header and 
+      footer to create a variety of simple layouts:
+      <ul>
+        <li>
+          <strong><em>Copy</em></strong> -- 
+          <code>.sage-card__copy</code> should be used to contain a set of text 
+          with no preset spacing. If the block contains free-form text that should conform to 
+          type spacing rules, <code>.sage-type</code> can be added.
+        </li>
+        <li>
+          <strong><em>Stack</em></strong> -- 
+          <code>.sage-card__stack</code> should be used to contain a set of elements that
+          adheres to standard stack spacing.
+        </li>
+        <li>
+          <strong><em>Row</em></strong> -- 
+          <code>.sage-card__row</code> should be used to contain a set of elements that line
+          up side-by-side. You can add to this a custom grid template area configuration or
+          use one of the basic grid templates available in Sage.
+        </li>
+      </ul>
+      Note: These can also be nested inside each other for compound configurations.
+    </li>
+    <li>
+      <strong>Footer</strong> -- 
+      <code>.sage-card__copy</code> 
+      (optional) area is less common in cards than on panels but
+      when used it often contains one or more buttons that can be sent to the right edge of
+      the card with the <code>sage-card__footer--align-right</code> modifier.
+    </li>
+  </ul>
 </div>
 
-<h5>Compact cards</h5>
-<div class="sage-row">
-  <div class="sage-col--md-12">
-    <%= render "examples/objects/card/markup",
-      is_compact: true,
-      title: "Compact Card w/ Image",
-      text: "Diam in auctor sit quam laoreet imperdiet aliquam. Habitant nunc lacus semper lacus, nec a, sit enim.",
-      action_text: "Action Button",
-      action_style: "primary",
-      has_img: true,
-      img_path: "docs/card/card-placeholder-sm.png",
-      img_alt: "Alternative text for image"
-    %>
-    <%= render "examples/objects/card/markup",
-      is_compact: true,
-      title: "Compact Card w/ Image",
-      text: "Diam in auctor sit quam laoreet imperdiet aliquam. Habitant nunc lacus semper lacus, nec a, sit enim.",
-      action_text: "Action Button",
-      action_style: "tertiary",
-      icon_style: "right-caret-right",
-       has_img: true,
-      img_path: "docs/card/card-placeholder-sm.png",
-      img_alt: "Alternative text for image"
-    %>
-  </div>
+<h5>Card with stack and row blocks</h5>
+<%= render "examples/objects/card/markup",
+  body: %(
+    <div class="sage-card__stack">
+      <p class="t-sage-body-semi">
+        Stack items here.
+      </p>
+      <p class="t-sage-body-small t-sage--color-charcoal-200">
+        Another stack item here. Lorem ipusm dolor site amet consectitor.
+      </p>
+    </div>
+    <div class="sage-card__row sage-grid-template-r">
+      <i class="sage-icon-drop" aria-label="Product"></i>
+      <strong class="t-sage-body">
+        Row here -- $8.99/mo
+      </strong>
+      <button class="sage-btn sage-btn--small sage-btn--primary sage-btn--icon-left-cart">Buy now</strong>
+    </div>
+  )
+%>
+
+<div class="sage-type sage-spacer-top sage-spacer-bottom">
+  <h5>Card with a single body block</h5>
+  <p>
+    Cards with no header or footer and one outer body content type described above can be accomplished
+    with just <code>.sage-card--{copy|stack|row}</code> to simplify the containers needed. The example
+    below depicts such a case where the card contains a single row. Note, however, that the row may
+    contain other group types.
+  </p>
 </div>
 
-<h5>Spaced cards</h5>
-<div class="sage-row">
-  <div class="sage-col--md-6">
-    <%= render "examples/objects/card/markup",
-      is_spaced: true,
-      title: "Spaced Card w/ Image",
-      text: "Diam in auctor sit quam laoreet imperdiet aliquam. Habitant nunc lacus semper lacus, nec a, sit enim.",
-      action_text: "Action Button",
-      action_style: "primary",
-      has_img: true,
-      img_path: "docs/card/card-placeholder-lg.png",
-      img_alt: "Alternative text for image"
-    %>
-  </div>
-  <div class="sage-col--md-6">
-    <%= render "examples/objects/card/markup",
-      is_spaced: true,
-      title: "Spaced Card w/ Image",
-      text: "Diam in auctor sit quam laoreet imperdiet aliquam. Habitant nunc lacus semper lacus, nec a, sit enim.",
-      action_text: "Action Button",
-      action_style: "tertiary",
-      icon_style: "right-caret-right",
-       has_img: true,
-      img_path: "docs/card/card-placeholder-lg.png",
-      img_alt: "Alternative text for image"
-    %>
-  </div>
-</div>
-
-<h5>Spaced Compact cards</h5>
-<div class="sage-row">
-  <div class="sage-col--md-12">
-    <%= render "examples/objects/card/markup",
-      is_compact: true,
-      is_spaced: true,
-      title: "Spaced & Compact w/ Image",
-      text: "Diam in auctor sit quam laoreet imperdiet aliquam. Habitant nunc lacus semper lacus, nec a, sit enim.",
-      action_text: "Action Button",
-      action_style: "primary",
-      has_img: true,
-      img_path: "docs/card/card-placeholder-sm.png",
-      img_alt: "Alternative text for image"
-    %>
-    <%= render "examples/objects/card/markup",
-      is_compact: true,
-      is_spaced: true,
-      title: "Spaced & Compact w/ Image",
-      text: "Diam in auctor sit quam laoreet imperdiet aliquam. Habitant nunc lacus semper lacus, nec a, sit enim.",
-      action_text: "Action Button",
-      action_style: "tertiary",
-      icon_style: "right-caret-right",
-      has_img: true,
-      img_path: "docs/card/card-placeholder-sm.png",
-      img_alt: "Alternative text for image"
-    %>
-  </div>
-</div>
-
-<h5>Cards with no Image</h5>
-<div class="sage-row">
-  <div class="sage-col--md-6">
-    <%= render "examples/objects/card/markup",
-      title: "Card w/ No Image",
-      text: "Diam in auctor sit quam laoreet imperdiet aliquam. Habitant nunc lacus semper lacus, nec a, sit enim.",
-      action_text: "Action Button",
-      action_style: "primary"
-    %>
-  </div>
-  <div class="sage-col--md-6">
-    <%= render "examples/objects/card/markup",
-      title: "Card w/ No Image",
-      text: "Diam in auctor sit quam laoreet imperdiet aliquam. Habitant nunc lacus semper lacus, nec a, sit enim.",
-      action_text: "Action Button",
-      action_style: "tertiary",
-      icon_style: "right-caret-right"
-    %>
-  </div>
-</div>
+<%= render "examples/objects/card/markup",
+  single_block_type: "row",
+  single_block_template: "d",
+  body: %(
+    <div class="sage-card__copy">
+      <p class="t-sage-body-semi">
+        daydreamsurfshop.com
+      </p>
+      <p class="t-sage-body-small t-sage--color-charcoal-200">
+        Auto renews yearly on August 6th
+      </p>
+    </div>
+    <p class="t-sage-body-semi t-sage--color-sage">First year free!</p>
+    <p class="t-sage-heading-5 t-sage--color-grey-400 t-sage--strikethrough">$8.99</p>
+  )
+%>

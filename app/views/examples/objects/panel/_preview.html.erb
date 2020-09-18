@@ -1,10 +1,15 @@
+<p>
+  <strong class="t-sage--color-orange">
+    While this page depicts panels within panels this not a pattern that should be implemented elsewhere.
+  </strong>
+</p>
+
 <h5>Basic Panel</h5>
 <%= render "examples/objects/panel/markup",
-  header: %(
-    <h2 class="sage-panel__title">Header Content</h2>
-    <a href="#" class="sage-link--help-icon-only"><span class="visually-hidden">Help me!</span></a>
+  title: %(
+    Header Content
   ),
-  header_aside: "<i class='sage-icon-enlarge' aria-label='Sortable'></i>",
+  header_other: "<i class='sage-icon-enlarge' aria-label='Sortable'></i>",
   body: %(
     <div class="sage-panel__body">
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
@@ -16,5 +21,92 @@
       <button class="sage-btn sage-btn--tertiary">Cancel</button>
       <button class="sage-btn sage-btn--primary">Save</button>
     </div>
+  )
+%>
+
+<p>Panels are rich containers that allow for grouping and organizing content details. The following elements are avaiable within panels:</p>
+<ul>
+  <li>
+    <strong>Heading</strong>
+
+  </li>
+  <li>
+    <strong>Body</strong>
+
+    <ul>
+      <li>
+        <strong><em>Subheader</em></strong>
+
+      </li>
+      <li>
+        <strong><em>Copy</em></strong>
+
+      </li>
+      <li>
+        <strong><em>Figure</em></strong>
+
+      </li>
+      <li>
+        <strong><em>Divider</em></strong>
+
+      </li>
+      <li>
+        <strong><em>Stack</em></strong>
+
+      </li>
+      <li>
+        <strong><em>Row</em></strong>
+
+      </li>
+      <li>
+        <strong><em>Tiles</em></strong>
+
+      </li>
+    </ul>
+  </li>
+  <li>
+    <strong>Footer</strong>
+
+  </li>
+</ul>
+
+<h5>Panel with Graphic</h5>
+<%= render "examples/objects/panel/markup",
+  body: %(
+    <div class="sage-panel__copy">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Morbi rhoncus mauris ut turpis gravida bibendum.
+        Donec feugiat accumsan velit et semper.
+        Ut elementum id leo ac fringilla.
+      </p>
+      <p>
+        Aenean cursus justo vel tempor euismod.
+        Pellentesque ultrices convallis nisl nec sollicitudin.
+        Ut placerat justo tempus libero ornare dictum.
+      </p>
+    </div>
+    <div class="sage-panel__figure sage-panel__figure--bleed-bottom">
+      <img src="//source.unsplash.com/random/600x400" />
+    </div>
+  )
+%>
+
+<h5>Panel with Tiles</h5>
+<%= render "examples/objects/panel/markup",
+  title: %(
+    Header Content
+  ),
+  header_other: %(
+    <i class='sage-icon-enlarge' aria-label='Sortable'></i>
+  ),
+  body: %(
+    <ul class="sage-panel__tiles sage-panel__tiles--3-up">
+      <li>Goobers</li>
+      <li>Goobers</li>
+      <li>Goobers</li>
+      <li>Goobers</li>
+      <li>Goobers</li>
+    </ul>
   )
 %>
