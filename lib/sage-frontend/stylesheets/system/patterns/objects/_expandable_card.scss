@@ -88,7 +88,7 @@ $-expandable-card-padding: sage-spacing(sm);
 
   // Expand icon
   &::after {
-    @include icon-base(right-small, xl);
+    @include sage-icon-base(right-small, xl);
 
     transform: rotateZ(0deg);
     transform-origin: center;

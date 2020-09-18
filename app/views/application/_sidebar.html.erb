@@ -1,27 +1,64 @@
+<%
+foundations_pages = [
+  {
+    name: "Introduction",
+    path: pages_index_path,
+  },
+  {
+    name: "Tokens",
+    path: pages_foundations_path(:token),
+  },
+  {
+    name: "Colors",
+    path: pages_foundations_path(:color),
+  },
+  {
+    name: "Typography",
+    path: pages_foundations_path(:typography),
+  },
+  {
+    name: "Icons",
+    path: pages_foundations_path(:icon),
+  },
+  {
+    name: "Containers",
+    path: pages_foundations_path(:container),
+  },
+  {
+    name: "Panels and Cards",
+    path: pages_foundations_path(:panels_cards),
+  },
+  {
+    name: "Grid",
+    path: pages_foundations_path(:grid),
+  }
+]
+%>
 <div class="sage-sidebar" data-js-sidebar="sage-sidebar-menu" id="sage-sidebar-menu">
   <div class="sage-sidebar__body">
     <nav class="sage-nav" aria-label="Main">
       <ul class="sage-nav__list">
-        <li><%= link_to "Foundations", pages_index_path, class: "sage-nav__link #{"sage-nav__link--active" if current_page?(pages_index_path)}" %></li>
-        <li><%= link_to "Styles", pages_style_path(title: :token), class: "sage-nav__link #{"sage-nav__link--active" if current_page_styles?}" %>
-          <% if current_page_styles? %>
+        <li>
+          <%= link_to "Foundations", pages_index_path, class: "sage-nav__link #{"sage-nav__link--active" if current_page_foundations?}" %>
+          <% if current_page_foundations? %>
             <ul class="sage-nav__list sage-nav__list--sub">
-              <%= yield :sidebar_styles %>
+              <% foundations_pages.each do | page | %>
+                <li>
+                  <%= link_to page[:name], page[:path], class: "sage-nav__link sage-nav__link--sub #{"sage-nav__link--active" if current_page?(page[:path])}" %>
+                </li>
+              <% end %>
             </ul>
-          <% end %></li>
-        <li><%= link_to "Elements", pages_elements_path, class: "sage-nav__link #{"sage-nav__link--active" if current_page_elements?}" %>
-          <% if current_page_elements? %>
-            <ul class="sage-nav__list sage-nav__list--sub">
-              <%= yield :sidebar_elements %>
-            </ul>
-          <% end %></li>
-        <li><%= link_to "Objects", pages_objects_path, class: "sage-nav__link #{"sage-nav__link--active" if current_page_objects?}" %>
-          <% if current_page_objects? %>
-            <ul class="sage-nav__list">
-              <%= yield :sidebar_objects %>
-            </ul>
-          <% end %></li>
-        <li><%= link_to "Sandbox", pages_sandbox_path, class: "sage-nav__link #{"sage-nav__link--active" if current_page?(pages_sandbox_path)}" %></li>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to "Elements", pages_elements_path, class: "sage-nav__link #{"sage-nav__link--active" if current_page_elements?}" %>
+        </li>
+        <li>
+          <%= link_to "Objects", pages_objects_path, class: "sage-nav__link #{"sage-nav__link--active" if current_page_objects?}" %>
+        </li>
+        <li>
+          <%= link_to "Sandbox", pages_sandbox_path, class: "sage-nav__link #{"sage-nav__link--active" if current_page?(pages_sandbox_path)}" %>
+        </li>
       </ul>
     </nav>
   </div>

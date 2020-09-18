@@ -1,4 +1,3 @@
-<%= render "sidebar_elements" %>
 <%= content_for :heading do %>
   <h1>Elements</h1>
   <p>Elements are the basic building blocks of matter. Applied to web interfaces, atoms are our HTML tags, such as a form label, an input or a button.</p>
@@ -15,6 +14,8 @@
     </ul>
   </div>
 <% end %>
-<% sorted_sage_elements.each do |element| %>
-  <%= render "examples/elements/element_preview", title: element[:title], description: element[:description] %>
-<% end %>
+<div class="sage-panel-set">
+  <% sorted_sage_elements.each do |element| %>
+    <%= render "examples/elements/element_preview", title: element[:title], description: element[:description] %>
+  <% end %>
+</div>

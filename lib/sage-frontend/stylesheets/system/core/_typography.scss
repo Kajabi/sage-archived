@@ -198,6 +198,10 @@ hr {
   text-align: justify;
 }
 
+.t-sage--strikethrough {
+  text-decoration: line-through;
+}
+
 .t-sage--truncate {
-  @include sage-truncate;
+  @include truncate;
 }

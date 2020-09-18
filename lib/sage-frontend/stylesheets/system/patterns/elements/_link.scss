@@ -3,7 +3,7 @@
   &::after {
     margin-left: sage-spacing(2xs);
     margin-right: sage-spacing(2xs);
-    @include icon-base(launch, sm);
+    @include sage-icon-base(launch, sm);
   }
 }
 
@@ -12,7 +12,7 @@
   position: relative;
 
   &::before {
-    @include icon-base(question-circle, xl);
+    @include sage-icon-base(question-circle, xl);
 
     transform: translateY(rem(1px));
     color: sage-color(grey, 500);

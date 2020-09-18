@@ -13,7 +13,7 @@ $-search-focus-line: "::after";
   border-bottom: 1px solid sage-color(grey, 300);
 
   &#{$-search-icon} {
-    @include icon-base(search-small, xl);
+    @include sage-icon-base(search-small, xl);
     position: absolute;
     top: rem(11px);
     left: sage-spacing(sm);

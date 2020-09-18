@@ -21,3 +21,10 @@
 .sage-panel__title {
   @extend %t-sage-heading-5;
 }
+
+.sage-panel-set {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: min-content;
+  grid-gap: sage-spacing(lg);
+}

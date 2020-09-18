@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   def index
   end
 
-  def style
+  def foundations
     render params[:title]
   end
 

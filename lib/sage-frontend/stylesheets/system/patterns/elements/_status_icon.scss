@@ -34,7 +34,7 @@
 @each $icon-name, $icon-code in $sage-icons {
   .sage-status-icon--#{$icon-name} {
     &::before {
-      @include icon-base($icon-name);
+      @include sage-icon-base($icon-name);
     }
   }
 }

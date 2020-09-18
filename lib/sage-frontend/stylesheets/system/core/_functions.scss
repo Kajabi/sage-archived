@@ -70,3 +70,15 @@ $default-baseline: rem(4px) !default;
 
   @return $string;
 }
+
+@function position-print-value($key, $value) {
+  @if not $value {
+    @error "position() mixin requires all 4 position values (top, right, bottom, left): #{$key} is missing or invalid.";
+  }
+  @else if $value != unset {
+    @return $value;
+  }
+  @else {
+    @return null;
+  }
+}

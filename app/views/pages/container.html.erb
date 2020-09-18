@@ -44,7 +44,6 @@ containers = [
   }
 ]
 %>
-<%= render "sidebar_styles" %>
 <%= content_for :heading do %>
   <h1>Containers</h1>
   <p>Containers provide a restricted width box any sort of content can be placed within. Here we show Card object inside the containers, but containers have no intrinsic decorations.
@@ -66,9 +65,7 @@ containers = [
     <h2 id="<%= container[:id] %>"><%= container[:full_name] %></h2>
     <div class="sage-container<%= " sage-container--#{container[:alias]}" if container[:alias] %>">
       <div class="sage-panel">
-        <div class="sage-panel__body">
-          <p><%= container[:size] %></p>
-        </div>
+        <p><%= container[:size] %></p>
       </div>
     </div>
     <div class="docs-container">

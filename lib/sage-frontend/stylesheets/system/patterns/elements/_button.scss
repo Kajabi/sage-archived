@@ -10,7 +10,7 @@
 // ==================================================
 
 @mixin button-style-base {
-  @include button-style-reset();
+  @include sage-button-style-reset();
   @extend %t-sage-body-med;
 
   display: inline-flex;
@@ -302,7 +302,7 @@
         flex-direction: row-reverse;
 
         &::before {
-          @include icon-base($icon-name, md);
+          @include sage-icon-base($icon-name, md);
 
           align-self: center;
           margin: 0 0 0 sage-spacing(xs);
@@ -320,7 +320,7 @@
         flex-direction: row;
 
         &::before {
-          @include icon-base($icon-name);
+          @include sage-icon-base($icon-name);
 
           align-self: center;
           margin: 0 sage-spacing(xs) 0 0;
@@ -340,7 +340,7 @@
         text-align: center;
 
         &::before {
-          @include icon-base($icon-name);
+          @include sage-icon-base($icon-name);
           align-self: center;
         }
 
@@ -363,5 +363,5 @@
 @include button-icon-generator(right);
 
 .sage-btn__truncate-text {
-  @include sage-truncate;
+  @include truncate;
 }

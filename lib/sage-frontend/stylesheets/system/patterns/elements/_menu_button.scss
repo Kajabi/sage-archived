@@ -5,7 +5,7 @@
 ================================================== */
 
 .sage-menubutton {
-  @include button-style-reset();
+  @include sage-button-style-reset();
   display: none;
   position: relative;
   color: $sage-menubtn-toggle-line-color;

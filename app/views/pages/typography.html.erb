@@ -1,4 +1,3 @@
-<%= render "sidebar_styles" %>
 <%= content_for :heading do %>
   <h1>Typography</h1>
   <p>Sage provides a constrained, purposeful set of typographic styles. These styles map as much as possible to functional roles so you know when each can be used.</p>
@@ -28,7 +27,7 @@
   </p>
   <p>
     Setting individual styles manually should be avoided, but where needed, should be sure to use the appropriate
-    <%= link_to "design tokens", pages_style_path(:token) %>.
+    <%= link_to "design tokens", pages_foundations_path(:token) %>.
     In the end, we prefer adding new entries to the type spec over including one-off styling.
   </p>
   <h2 id="spec-table">Type Spec Reference</h2>
@@ -151,8 +150,8 @@
     <code>h3</code> element:
   </p>
 
-  <div class="sage-panel">
-    <div class="sage-panel__body">
+  <div class="docs-container">
+    <div class="sage-type">
       <h3 class="t-sage-heading-3">Lorem ipsum dolor sit</h3>
       <div class="sage-code-snippet">
         <pre class="prettyprint"><code>&lt;h3 class="t-sage-heading-3"&gt;Lorem ipsum dolor sit&lt;/h3&gt;</code></pre>
@@ -167,8 +166,8 @@
     of the spec's name.
   </p>
 
-  <div class="sage-panel">
-    <div class="sage-panel__body">
+  <div class="docs-container">
+    <div class="sage-type">
       <span class="t-sage-heading-3">Lorem ipsum dolor sit</span>
       <div class="sage-code-snippet">
         <pre class="prettyprint"><code>&lt;span class="t-sage-heading-3"&gt;Lorem ipsum dolor sit&lt;/span&gt;</code></pre>
@@ -184,8 +183,8 @@
     include our preferred colors and block spacing.
   </p>
 
-  <div class="sage-panel">
-    <div class="sage-panel__body">
+  <div class="docs-container">
+    <div class="sage-type">
       <div class="sage-type">
         <h3>User-generated content</h3>
         <p>See how content inside this <code>sage-type</code> container automatically recieves corresponding type specs?</p>
@@ -203,42 +202,40 @@
   <h2>Coloring Type</h2>
   <p>While applying colors to type on-the-fly should generally be avoided we do provide the following utility classes for such cases where its most practical:</p>
 
-  <div class="sage-panel">
-    <div class="sage-panel__body">
-      <table>
-        <tr>
-          <td><span class="t-sage-body-semi t-sage--color-primary">Primary</span></td>
-          <td><code class="">t-sage--color-primary</code></td>
-        </tr>
-        <tr>
-          <td><span class="t-sage-body-semi t-sage--color-charcoal">Charcoal</span></td>
-          <td><code class="">t-sage--color-charcoal</code></td>
-        </tr>
-        <tr>
-          <td><span class="t-sage-body-semi t-sage--color-grey">Grey</span></td>
-          <td><code class="">t-sage--color-grey</code></td>
-        </tr>
-        <tr>
-          <td><span class="t-sage-body-semi t-sage--color-red">Red</span></td>
-          <td><code class="">t-sage--color-red</code></td>
-        </tr>
-        <tr>
-          <td><span class="t-sage-body-semi t-sage--color-orange">Orange</span></td>
-          <td><code class="">t-sage--color-orange</code></td>
-        </tr>
-        <tr>
-          <td><span class="t-sage-body-semi t-sage--color-yellow">Yellow</span></td>
-          <td><code class="">t-sage--color-yellow</code></td>
-        </tr>
-        <tr>
-          <td><span class="t-sage-body-semi t-sage--color-sage">Sage</span></td>
-          <td><code class="">t-sage--color-sage</code></td>
-        </tr>
-        <tr>
-          <td><span class="t-sage-body-semi t-sage--color-purple">Purple</span></td>
-          <td><code class="">t-sage--color-purple</code></td>
-        </tr>
-      </table>
-    </div>
+  <div class="docs-container">
+    <table>
+      <tr>
+        <td><span class="t-sage-body-semi t-sage--color-primary">Primary</span></td>
+        <td><code class="">t-sage--color-primary</code></td>
+      </tr>
+      <tr>
+        <td><span class="t-sage-body-semi t-sage--color-charcoal">Charcoal</span></td>
+        <td><code class="">t-sage--color-charcoal</code></td>
+      </tr>
+      <tr>
+        <td><span class="t-sage-body-semi t-sage--color-grey">Grey</span></td>
+        <td><code class="">t-sage--color-grey</code></td>
+      </tr>
+      <tr>
+        <td><span class="t-sage-body-semi t-sage--color-red">Red</span></td>
+        <td><code class="">t-sage--color-red</code></td>
+      </tr>
+      <tr>
+        <td><span class="t-sage-body-semi t-sage--color-orange">Orange</span></td>
+        <td><code class="">t-sage--color-orange</code></td>
+      </tr>
+      <tr>
+        <td><span class="t-sage-body-semi t-sage--color-yellow">Yellow</span></td>
+        <td><code class="">t-sage--color-yellow</code></td>
+      </tr>
+      <tr>
+        <td><span class="t-sage-body-semi t-sage--color-sage">Sage</span></td>
+        <td><code class="">t-sage--color-sage</code></td>
+      </tr>
+      <tr>
+        <td><span class="t-sage-body-semi t-sage--color-purple">Purple</span></td>
+        <td><code class="">t-sage--color-purple</code></td>
+      </tr>
+    </table>
   </div>
 </div>

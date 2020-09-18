@@ -9,7 +9,7 @@ $item-radio: "::before";
 $item-radio-indicator: "::after";
 
 .sage-choice {
-  @include button-style-reset();
+  @include sage-button-style-reset();
   display: flex;
   position: relative;
   align-items: center;

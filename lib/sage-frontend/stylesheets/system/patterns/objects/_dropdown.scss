@@ -98,7 +98,7 @@ $-trigger-dropdown-offset: rem(16px) + sage-spacing(xs);
 }
 
 .sage-dropdown__item-control {
-  @include button-style-reset();
+  @include sage-button-style-reset();
 
   display: flex;
   position: relative;
@@ -155,13 +155,13 @@ $-trigger-dropdown-offset: rem(16px) + sage-spacing(xs);
 
 @each $icon-name, $icon-code in $sage-icons {
   .sage-dropdown__item-control--icon-#{$icon-name}#{$-option-icon} {
-    @include icon-base($icon-name);
+    @include sage-icon-base($icon-name);
     margin: 0 sage-spacing(xs) 0 0;
   }
 }
 
 .sage-dropdown__item-label {
-  @include sage-truncate();
+  @include truncate();
 
   .sage-dropdown__item-checkbox + & {
     margin-left: sage-spacing(xs);
@@ -280,7 +280,7 @@ $-trigger-dropdown-offset: rem(16px) + sage-spacing(xs);
   pointer-events: none;
 
   @include position(($-dropdown-height / 2), unset, unset, ($-trigger-padding-x - $-trigger-padding-label));
-  @include sage-truncate();
+  @include truncate();
 
   .sage-dropdown--value-selected & {
     @extend %t-sage-body-xsmall-semi;
