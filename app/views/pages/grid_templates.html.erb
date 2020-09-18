@@ -423,21 +423,22 @@ dashes = [
     </div>
   )
 ]
+
 dots = [
   %(
-    <i class="sage-icon-customize"></i>
+    <i class="sage-icon-check-circle"></i>
   ),
   %(
-    <i class="sage-icon-customize"></i>
+    <span class="sage-label sabe-label--draft">In progress</span>
   ),
   %(
-    <i class="sage-icon-customize"></i>
+    <i class="sage-icon-star"></i>
   ),
   %(
-    <i class="sage-icon-customize"></i>
+    <span class="sage-label sabe-label--success">Verified</span>
   ),
   %(
-    <i class="sage-icon-customize"></i>
+    <i class="sage-icon-dot-menu-horizontal"></i>
   )
 ]
 %>
@@ -480,28 +481,42 @@ dots = [
 
   <h2>Patterns</h2>
 
-  <% grid_patterns.each do | group | %>
-    <h3><%= group[:group_name] %></h3>
-    <table>
-      <tr>
-        <th>Grid</th>
-        <th>Pattern</th>
-        <th>Example</th>
-      </tr>
-      <% group[:members].each do | template | %>
-        <tr>
-          <td><%= template[:symbol] %></dh>
-          <td><%= template[:code] %></td>
-          <td>
-            <div class="sage-card sage-card--row sage-grid-template-<%= template[:symbol] %>">
-              <% template[:pattern].each do | c | %>
-                <%= dashes[0].html_safe if c == "dash" %>
-                <%= dots[0].html_safe if c == "dot" %>
-              <% end %>
-            </div>
-          </td>
-        </tr>
-      <% end %>
-    </table>
-  <% end %>
+  <div class="sage-panel-set">
+    <% grid_patterns.each do | group | %>
+      <div class="sage-panel">
+        <h3><%= group[:group_name] %></h3>
+        <table>
+          <tr>
+            <th>Grid</th>
+            <th>Pattern</th>
+            <th>Example</th>
+          </tr>
+          <% group[:members].each do | template | %>
+            <tr>
+              <td><%= template[:symbol] %></dh>
+              <td><%= template[:code] %></td>
+              <td>
+                <div class="sage-card sage-card--row sage-grid-template-<%= template[:symbol] %>">
+                  <%
+                    i_dashes = 0
+                    i_dots = 0
+                  %>
+                  <% template[:code].split("").each do | c | %>
+                    <% if c == "-" %>
+                      <%= dashes[i_dashes].html_safe %>
+                      <% i_dashes += 1 %>
+                    <% end %>
+                    <% if c == "." %>
+                      <%= dots[i_dots].html_safe %>
+                      <% i_dots += 1 %>
+                    <% end %>
+                  <% end %>
+                </div>
+              </td>
+            </tr>
+          <% end %>
+        </table>
+      </div>
+    <% end %>
+  </div>
 </div>
