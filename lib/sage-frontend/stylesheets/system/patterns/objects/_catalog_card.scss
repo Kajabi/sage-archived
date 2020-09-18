@@ -12,9 +12,7 @@ $-image-height-mobile: rem(120px);
 .sage-catalog-card {
   padding: sage-spacing(sm) sage-spacing(md);
   background-color: sage-color(white);
-  border-bottom: sage-border();
   margin: 0;
-
   display: grid;
   grid-template-columns: minmax(100px, $-image-width) auto min-content;
   grid-template-rows: auto auto;
@@ -23,6 +21,10 @@ $-image-height-mobile: rem(120px);
   grid-template-areas:
   "img body actions"
   "img meta actions";
+
+  &:not(:last-child) {
+    border-bottom: sage-border(light);
+  }
 
   @media (max-width: sage-breakpoint()) {
     padding: sage-spacing(sm);
