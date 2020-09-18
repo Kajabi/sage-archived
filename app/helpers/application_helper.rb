@@ -1,7 +1,7 @@
 module ApplicationHelper
 
   def current_page_foundations?
-    current_page?(pages_index_path) || (params[:title] && current_page?(pages_style_path(params[:title])))
+    current_page?(pages_index_path) || (params[:title] && current_page?(pages_foundations_path(params[:title])))
   end
 
   def current_page_elements?

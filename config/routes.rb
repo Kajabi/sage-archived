@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'pages/breakout/:type/:title', to: 'pages#breakout', as: 'pages_breakout'
 
   get 'pages/index'
-  get 'pages/style/:title', to: 'pages#style', as: 'pages_style'
+  get 'pages/foundations/:title', to: 'pages#foundations', as: 'pages_foundations'
   get 'pages/elements'
   get 'pages/element/:title', to: 'pages#element', as: 'pages_element'
   get 'pages/objects'
