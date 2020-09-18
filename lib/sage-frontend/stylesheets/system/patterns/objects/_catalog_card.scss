@@ -39,12 +39,9 @@ $-image-height-mobile: rem(120px);
 .sage-catalog-card__body {
   grid-area: body;
   display: flex;
-  align-items: flex-end;
+  justify-content: center;
   overflow: hidden;
-
-  @media (max-width: sage-breakpoint()) {
-    align-items: center;
-  }
+  flex-direction: column;
 
   > * {
     @include sage-truncate;
