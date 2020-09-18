@@ -62,10 +62,6 @@ $-panel-spacing-sm: sage-spacing(xs);
   position: relative;
   padding: $sage-panel-padding;
 
-  > *:not(:last-child) {
-    margin-bottom: sage-spacing(xs);
-  }
-
   > :last-child {
     margin-bottom: 0;
   }
