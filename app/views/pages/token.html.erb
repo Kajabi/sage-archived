@@ -14,12 +14,12 @@
     </ul>
   </div>
 <% end %>
-<% sage_tokens.each do |token| %>
-  <div class="sage-panel">
-    <div class="sage-panel__header">
-      <h2 id="<%= token[:category] %>"><%= token[:category].titleize %></h2>
-    </div>
-    <div class="sage-panel__body">
+<div class="sage-panel-set">
+  <% sage_tokens.each do |token| %>
+    <div class="sage-panel">
+      <div class="sage-panel__header">
+        <h2 class="sage-panel__title" id="<%= token[:category] %>"><%= token[:category].titleize %></h2>
+      </div>
       <div class="sage-type">
         <h3 class="t-sage-heading-6">Default</h3>
         <div class="tokens">
@@ -33,5 +33,5 @@
         </div>
       </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
