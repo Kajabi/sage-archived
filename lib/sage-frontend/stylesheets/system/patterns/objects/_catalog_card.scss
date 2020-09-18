@@ -5,8 +5,9 @@
 
 ================================================== */
 
-$_image-width: 120px;
-$_image-height-mobile: 120px;
+$-image-height-min: rem(64px);
+$-image-width: rem(120px);
+$-image-height-mobile: rem(120px);
 
 .sage-catalog-card {
   padding: sage-spacing(sm) sage-spacing(md);
@@ -15,20 +16,18 @@ $_image-height-mobile: 120px;
   margin: 0;
 
   display: grid;
-  grid-template-columns: minmax(100px, $_image-width) auto min-content;
-  grid-template-rows: auto;
+  grid-template-columns: minmax(100px, $-image-width) auto min-content;
+  grid-template-rows: auto auto;
   grid-column-gap: sage-spacing(md);
   grid-row-gap: sage-spacing(xs);
   grid-template-areas:
   "img body actions"
   "img meta actions";
-}
 
-@media (max-width: sage-breakpoint()) {
-  .sage-catalog-card {
+  @media (max-width: sage-breakpoint()) {
     padding: sage-spacing(sm);
     grid-template-columns: 1fr min-content;
-    grid-template-rows: $_image-height-mobile auto auto;
+    grid-template-rows: $-image-height-mobile auto auto;
     grid-template-areas:
       "img img"
       "body actions"
@@ -36,27 +35,26 @@ $_image-height-mobile: 120px;
   }
 }
 
+
 .sage-catalog-card__body {
   grid-area: body;
   display: flex;
   align-items: flex-end;
   overflow: hidden;
 
-  > * {
-    @include sage-truncate;
+  @media (max-width: sage-breakpoint()) {
+    align-items: center;
   }
 
-}
-
-@media (max-width: sage-breakpoint()) {
-  .sage-catalog-card__body {
-    align-items: center;
+  > * {
+    @include sage-truncate;
   }
 }
 
 .sage-catalog-card__img {
   grid-area: img;
   overflow: hidden;
+  min-height: $-image-height-min;
   background: sage-color(grey, 200);
   position: relative;
   border-radius: sage-border(radius);
@@ -71,16 +69,11 @@ $_image-height-mobile: 120px;
 
 .sage-catalog-card__meta {
   grid-area: meta;
-  overflow: hidden;
-
-  > * {
-    @include sage-truncate;
-  }
 }
 
 .sage-catalog-card__actions {
   grid-area: actions;
   display: flex;
   align-items: center;
-  gap: sage-spacing(xs);
+  gap: sage-spacing(sm);
 }
