@@ -46,7 +46,7 @@ $-image-height-mobile: rem(120px);
   overflow: hidden;
 
   > * {
-    @include sage-truncate;
+    @include truncate;
   }
 }
 

@@ -54,8 +54,7 @@ module ElementsHelper
       },
       {
         title: "description",
-        use_legacy_html_code_source: true,descript
-        ion: "A description is composed of title and data content and is structured as a definition list.",
+        description: "A description is composed of title and data content and is structured as a definition list.",
         use_legacy_html_code_source: true,
         use_legacy_html_code_source: true,scss: "done",
 

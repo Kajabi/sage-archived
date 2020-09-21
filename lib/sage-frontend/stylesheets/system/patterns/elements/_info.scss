@@ -18,7 +18,7 @@
   .sage-info--icon-#{$icon-name} {
 
     &::before {
-      @include icon-base($icon-name, md);
+      @include sage-icon-base($icon-name, md);
 
       align-self: center;
       margin: 0 sage-spacing(xs) 0 0;
