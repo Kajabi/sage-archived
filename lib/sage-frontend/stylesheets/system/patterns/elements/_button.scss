@@ -113,8 +113,9 @@
 }
 
 .sage-btn--tiny {
+  @extend %t-sage-body-small;
   padding: 0 sage-spacing(3xs);
-  font-size: sage-font-size(sm);
+
 }
 
 .sage-btn--full-width {

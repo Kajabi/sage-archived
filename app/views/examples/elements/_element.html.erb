@@ -17,11 +17,11 @@
 
 <% if info_content[:use_legacy_html_code_source] %>
   <%= render "examples/shared/legacy_code",
-    type: "object",
+    type: "element",
     title: @title %>
 <% else %>
   <%= render "examples/shared/code",
-    type: "object",
+    type: "element",
     title: @title %>
 <% end %>
 
