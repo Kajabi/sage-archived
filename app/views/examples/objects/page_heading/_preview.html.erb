@@ -1,115 +1,137 @@
+<% preview_button = sage_component(SageButton,{style: "tertiary",icon:{name: "add",style: "left"},value: "Preview",}) %>
+<% create_button = sage_component(SageButton,{style: "primary",icon:{name: "add",style: "left"},value: "Create",}) %>
+
 <h3 class="t-sage-heading-6">Standalone Page Heading</h3>
 
-<%= render "examples/objects/page_heading/markup",
-  page_title: "Page Title",
-  back_icon: "",
+<%= sage_component SagePageHeading, {
+  title: "Page Title",
+  title_copy: "",
   back_text: "",
-  back_url: "",
+  back_url: "#",
   help_link: {},
-  action_links: [],
-  primary_text: {},
-  secondary_text: ""
-%>
+  actions:[],
+  toolbar_items: [],
+  secondary_text: "",
+} %>
+
+<h3 class="t-sage-heading-6">Page Heading w/ Back Link</h3>
+
+<%= sage_component SagePageHeading, {
+  title: "Page Title",
+  title_copy: "",
+  back_text: "Back to Something",
+  back_url: "#",
+  help_link: {},
+  actions:[],
+  toolbar_items: [],
+  secondary_text: "",
+} %>
 
 <h3 class="t-sage-heading-6">Page Heading w/ Help Link</h3>
 
-<%= render "examples/objects/page_heading/markup",
-  page_title: "Page Title",
-  back_icon: "",
+<%= sage_component SagePageHeading, {
+  title: "Page Title",
+  title_copy: "",
   back_text: "",
   back_url: "",
   help_link: {
     url: "#",
     label: "Help"
   },
-  action_links: [],
-  primary_text: {},
-  secondary_text: ""
-%>
+  actions:[],
+  toolbar_items: [],
+  secondary_text: "",
+} %>
 
-<h3 class="t-sage-heading-6">Page Heading w/ Back Link</h3>
+<h3 class="t-sage-heading-6">Page Heading w/ Action Buttons</h3>
 
-<%= render "examples/objects/page_heading/markup",
-  page_title: "Page Title",
-  back_icon: "sage-icon-caret-left",
+<%= sage_component SagePageHeading, {
+  title: "Page Title",
+  title_copy: "",
+  back_text: "",
+  back_url: "",
+  help_link: {},
+  actions:[
+    preview_button,
+    create_button,
+  ],
+  toolbar_items: [],
+  secondary_text: "",
+} %>
+
+<h3 class="t-sage-heading-6">Page Heading w/ Toolbar + Secondary Text</h3>
+
+<%= sage_component SagePageHeading, {
+  title: "Page Title",
+  title_copy: "",
+  back_text: "",
+  back_url: "",
+  help_link: {},
+  actions:[],
+  toolbar_items: [
+    {
+      text: "Preview",
+      icon: "preview-on",
+      url: "#",
+    },
+    {
+      text: "Report",
+      icon: "chart",
+      url: "#",
+    },
+    {
+      text: "Settings",
+      icon: "gear",
+      url: "#",
+    },
+  ],
+  secondary_text: "3 Emails in Sequence",
+} %>
+
+<h3 class="t-sage-heading-6">Page Heading w/ Title Copy</h3>
+
+<%= sage_component SagePageHeading, {
+  title: "Page Title",
+  title_copy: "Corrupti rerum rem asperiores excepturi, repellat culpa expedita exercitationem maxime hic, aspernatur fuga aperiam quis aut magnam.",
+  back_text: "",
+  back_url: "",
+  help_link: {},
+  actions:[],
+  toolbar_items: [],
+  secondary_text: "",
+} %>
+
+<h3 class="t-sage-heading-6">Page Heading w/ All Items</h3>
+
+<%= sage_component SagePageHeading, {
+  title: "Page Title",
+  title_copy: "Corrupti rerum rem asperiores excepturi, repellat culpa expedita exercitationem maxime hic, aspernatur fuga aperiam quis aut magnam.",
   back_text: "Back to Something",
   back_url: "#",
-  help_link: {},
-  action_links: [],
-  primary_text: {},
-  secondary_text: ""
-%>
-
-<h3 class="t-sage-heading-6">Page Heading w/ Action Links</h3>
-
-<%= render "examples/objects/page_heading/markup",
-  page_title: "Page Title",
-  back_icon: "",
-  back_text: "",
-  back_url: "",
-  help_link: {},
-  action_links: [
-    {
-      text: "Preview",
-      icon: "preview-on",
-      url: "#",
-    },
-    {
-      text: "Report",
-      icon: "chart",
-      url: "#",
-    },
-    {
-      text: "Settings",
-      icon: "gear",
-      url: "#",
-    },
-  ],
-  primary_text: {},
-  secondary_text: ""
-%>
-
-<h3 class="t-sage-heading-6">Standalone Page Heading w/ Action Links + Secondary</h3>
-
-<%= render "examples/objects/page_heading/markup",
-  page_title: "Page Title",
-  back_icon: "",
-  back_text: "",
-  back_url: "",
-  help_link: {},
-  action_links: [
-    {
-      text: "Preview",
-      icon: "preview-on",
-      url: "#",
-    },
-    {
-      text: "Report",
-      icon: "chart",
-      url: "#",
-    },
-    {
-      text: "Settings",
-      icon: "gear",
-      url: "#",
-    },
-  ],
-  primary_text: {},
-  secondary_text: "3 emails in Sequence"
-%>
-
-<h3 class="t-sage-heading-6">Standalone Page Heading w/ Help Text</h3>
-
-<%= render "examples/objects/page_heading/markup",
-  page_title: "Page Title",
-  back_icon: "",
-  back_text: "",
-  back_url: "",
-  help_link: {},
-  action_links: {},
-  primary_text:  {
-    text: "This is a paragraph of help text to provide addition info when needed.",
-    text_size: "",
+  help_link: {
+    url: "#",
+    label: "Help"
   },
-  secondary_text: ""
-%>
+  actions:[
+    preview_button,
+    create_button,
+  ],
+  toolbar_items: [
+    {
+      text: "Preview",
+      icon: "preview-on",
+      url: "#",
+    },
+    {
+      text: "Report",
+      icon: "chart",
+      url: "#",
+    },
+    {
+      text: "Settings",
+      icon: "gear",
+      url: "#",
+    },
+  ],
+  secondary_text: "3 Emails in Sequence",
+} %>

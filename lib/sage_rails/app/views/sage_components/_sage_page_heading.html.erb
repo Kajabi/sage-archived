@@ -1,23 +1,40 @@
-<div class="sage-page-heading">
-  <% if component.title.present? %>
-    <h1 class="sage-page-heading__title">
-      <%= component.title %>
-      <% if component.help_link.present? %>
-        <a href="<%= component.help_link[:url] %>" class="sage-link--help-icon-only" target="_blank" referrer="no-referrer">
-          <span class="visually-hidden"><%= component.help_link[:label] %></a>
-        </a>
-      <% end %>
-    </h1>
+<section class="sage-page-heading sage-spacer-bottom-sm">
+  <% if component.back_text.present? %>
+  <div class="sage-page-heading__crumbs">
+    <%= render "examples/elements/breadcrumbs/markup",
+      klass: "sage-page-heading__back",
+      has_back_icon: true,
+      items: [{
+      text: component.back_text,
+      url: component.back_url
+    }]
+    %>
+  </div>
   <% end %>
-  <% if component.link_url.present? %>
-    <nav aria-label="Breadcrumbs" class="sage-page-heading__back sage-breadcrumbs">
-      <p class="sage-breadcrumbs__item">
-        <a class="sage-breadcrumbs__link sage-breadcrumbs__link--current" aria-current="page" href="<%= component.link_url %>">
-          <i class="sage-breadcrumbs__icon sage-icon-caret-left" aria-label="navigate to"></i>
-          <%= component.link_text %>
-        </a>
-      </p>
-    </nav>
+  <div class="sage-page-heading__title">
+    <h1 class="t-sage-heading-1"><%= component.title %> <% if component.help_link.present? %><a href="<%= component.help_link[:url] %>" class="sage-link--no-launch sage-link--help-icon-only" target="_blank" referrer="no-referrer"><span class="visually-hidden"><%= component.help_link[:label] %></span></a><% end %> </h1>
+    <% if component.title_copy.present? %>
+      <p class="sage-page-heading__title--help"><%= component.title_copy %></p>
+    <% end %>
+  </div>
+  <% if component.actions.present? %>
+  <div class="sage-page-heading__actions">
+    <%- component.actions.each do |action| -%>
+      <%= action %>
+    <%- end -%>
+  </div>
   <% end %>
-  <%= component.content %>
-</div>
+  <% if component.toolbar_items.any? %>
+    <div class="sage-page-heading__toolbar">
+    <%- component.toolbar_items.each do |item| -%>
+      <a href="<%= item[:url] %>" class="<%= "sage-page-heading__toolbar--icon-#{item[:icon]}" if defined?(item[:icon]) %>"><%= item[:text] %></a>
+    <%- end -%>
+    </div>
+  <% end %>
+  <% if component.secondary_text.present? %>
+    <div class="sage-page-heading__secondary">
+      <p><%= component.secondary_text %></p>
+    </div>
+  <% end %>
+</section>
+

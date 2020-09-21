@@ -5,42 +5,41 @@
 ================================================== */
 
 .sage-page-heading {
-  display: flex;
-  flex-flow: column;
-  margin-bottom: sage-spacing(lg);
+  display: grid;
+  grid-template-areas:
+    "crumbs crumbs"
+    "title actions"
+    "toolbar secondary";
+  grid-template-columns: 1fr max-content;
 }
 
 .sage-page-heading__title {
-  @extend %t-sage-heading-1;
-  order: 2;
+  grid-area: title;
 }
 
-.sage-page-heading__back {
-  order: 1;
+.sage-page-heading__title--help {
+  margin-top: sage-spacing(sm);
+  color: sage-color(charcoal, 400);
+}
+
+.sage-page-heading__crumbs {
+  grid-area: crumbs;
   margin-bottom: sage-spacing(sm);
-  color: sage-color(charcoal, 200);
 }
 
 .sage-page-heading__toolbar {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  order: 3;
+  grid-area: toolbar;
   margin-top: sage-spacing(sm);
+  > * {
+    margin-right: sage-spacing(sm);
+    color: sage-color(charcoal, 200);
+  }
 }
-.sage-page-heading__toolbar--actions {
-  flex: 1;
-  flex-basis: initial;
-}
-.sage-page-heading__toolbar--actions__link {
-  display: inline-flex;
-  align-items: center;
-  margin-right: sage-spacing(lg);
-  color: sage-color(charcoal, 200);
-}
+
 @each $-icon-name, $-icon-code in $sage-icons {
-  .sage-page-heading__toolbar--actions__link--icon-#{$-icon-name} {
+  .sage-page-heading__toolbar--icon-#{$-icon-name} {
+    white-space: nowrap;
     &::before {
       margin-right: sage-spacing(xs);
       @include sage-icon-base($-icon-name);
@@ -48,11 +47,38 @@
   }
 }
 
-.sage-page-heading__toolbar--primary {
-  color: sage-color(charcoal, 200);
+.sage-page-heading__actions {
+  display: flex;
+  grid-area: actions;
+  align-items: flex-start;
+  justify-content: flex-end;
 }
-.sage-page-heading__toolbar--secondary {
+
+.sage-page-heading__secondary {
+  display: flex;
+  grid-area: secondary;
+  justify-content: flex-end;
+  margin-top: sage-spacing(sm);
   color: sage-color(charcoal, 200);
   font-size: rem(14);
   font-style: italic;
+}
+
+@media (max-width: sage-breakpoint()) {
+  .sage-page-heading {
+    grid-template-columns: span 2;
+    grid-template-areas:
+      "crumbs crumbs"
+      "title title"
+      "actions actions"
+      "toolbar toolbar"
+      "secondary secondary";
+  }
+  .sage-page-heading__actions {
+    margin-top: sage-spacing(sm);
+  }
+  .sage-page-heading__actions,
+  .sage-page-heading__secondary {
+    justify-content: flex-start;
+  }
 }
