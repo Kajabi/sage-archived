@@ -10,17 +10,17 @@ $-image-width: rem(120px);
 $-image-height-mobile: rem(120px);
 
 .sage-catalog-card {
-  background-color: sage-color(white);
   display: grid;
   grid-column-gap: sage-spacing(md);
   grid-row-gap: sage-spacing(xs);
+  padding: sage-spacing(sm) 0;
+  background-color: sage-color(white);
 
   &:not(:last-child) {
     border-bottom: sage-border(light);
   }
 
   @media (min-width: sage-breakpoint()) {
-    padding: sage-spacing(sm) sage-spacing(md);
     grid-template-columns: $-image-width 1fr min-content;
     grid-template-rows: auto auto;
     grid-template-areas:
@@ -29,7 +29,6 @@ $-image-height-mobile: rem(120px);
   }
 
   @media (max-width: sage-breakpoint()) {
-    padding: sage-spacing(sm);
     grid-template-columns: 1fr min-content;
     grid-template-rows: $-image-height-mobile auto auto;
     grid-template-areas:
@@ -40,11 +39,11 @@ $-image-height-mobile: rem(120px);
 }
 
 .sage-catalog-card__body {
-  grid-area: body;
   display: flex;
+  grid-area: body;
   justify-content: center;
-  overflow: hidden;
   flex-direction: column;
+  overflow: hidden;
 
   > * {
     @include sage-truncate;
@@ -52,18 +51,18 @@ $-image-height-mobile: rem(120px);
 }
 
 .sage-catalog-card__img {
+  position: relative;
   grid-area: img;
   overflow: hidden;
   min-height: $-image-height-min;
   background: sage-color(grey, 200);
-  position: relative;
   border-radius: sage-border(radius);
 
   img {
     position: absolute;
-    width: 100%;
-    top: 50%;
     transform: translateY(-50%);
+    top: 50%;
+    width: 100%;
   }
 }
 
@@ -72,8 +71,8 @@ $-image-height-mobile: rem(120px);
 }
 
 .sage-catalog-card__actions {
-  grid-area: actions;
   display: flex;
+  grid-area: actions;
   align-items: center;
   gap: sage-spacing(xs);
 }

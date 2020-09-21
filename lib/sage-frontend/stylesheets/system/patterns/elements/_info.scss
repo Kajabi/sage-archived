@@ -8,10 +8,10 @@
 .sage-info {
   @extend %t-sage-body-small;
 
-  color: sage-color(charcoal, 200);
   display: inline-flex;
-  margin: 0 sage-spacing(sm) 0 0;
   align-items: center;
+  margin: 0 sage-spacing(sm) 0 0;
+  color: sage-color(charcoal, 200);
 }
 
 @each $icon-name, $icon-code in $sage-icons {
