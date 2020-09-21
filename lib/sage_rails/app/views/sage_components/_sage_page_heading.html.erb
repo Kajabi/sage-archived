@@ -12,7 +12,7 @@
   </div>
   <% end %>
   <div class="sage-page-heading__title">
-    <h1 class="t-sage-heading-1"><%= component.title %> <% if component.help_link.present? %><a href="<%= component.help_link[:url] %>" class="sage-link--no-launch sage-link--help-icon-only" target="_blank" referrer="no-referrer"><span class="visually-hidden"><%= component.help_link[:label] %></span></a><% end %> </h1>
+    <h1 class="t-sage-heading-1"><%= component.title %><% if component.help_link.present? %> <a href="<%= component.help_link[:url] %>" class="sage-link--no-launch sage-link--help-icon-only" target="_blank" referrer="no-referrer"><span class="visually-hidden"><%= component.help_link[:label] %></span></a><% end %></h1>
     <% if component.title_copy.present? %>
       <p class="sage-page-heading__title--help"><%= component.title_copy %></p>
     <% end %>
