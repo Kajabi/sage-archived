@@ -3,8 +3,19 @@
 // ============================================
 
 // Generates classes for each sage grid template
-@each $-key, $-value in $sage-grid-templates {
+@each $-key, $-map in $sage-grid-templates {
   .sage-grid-template-#{$-key} {
-    grid-template-columns: $-value;
+    @media (max-width: sage-breakpoint()) {
+      // Set dash elements to fill the space
+      @each $-n in map-get($-map, dash-units) {
+        > :nth-child(#{$-n}) {
+          width: 100%;
+        }
+      }
+    }
+
+    @media (min-width: sage-breakpoint(sm-min)) {
+      grid-template-columns: map-get($-map, pattern);
+    }
   }
 }

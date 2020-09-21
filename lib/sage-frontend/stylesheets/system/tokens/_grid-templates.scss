@@ -11,80 +11,179 @@ $sage-grid-templates: (
   // Equal sized columns
   //
   // M --
-  m: repeat(2, 1fr),
+  m: (
+    pattern: repeat(2, 1fr),
+    dash-units: ( 1, 2 ),
+  ),
   // O ---
-  om: repeat(3, 1fr),
+  om: (
+    pattern: repeat(3, 1fr),
+    dash-units: ( 1, 2, 3 ),
+  ),
   // MM ---
-  mm: repeat(4, 1fr),
+  mm: (
+    pattern: repeat(4, 1fr),
+    dash-units: ( 1, 2, 3, 4 ),
+  ),
   // MO ---
-  mo: repeat(5, 1fr),
+  mo: (
+    pattern: repeat(5, 1fr),
+    dash-units: ( 1, 2, 3, 4, 5 ),
+  ),
   //
   // Dots first
   //
   // A .-
-  a: auto 1fr,
+  a: (
+    pattern: auto 1fr,
+    dash-units: ( 2 ),
+  ),
   // W .--
-  w: auto 1fr 1fr,
+  w: (
+    pattern: auto 1fr 1fr,
+    dash-units: ( 2, 3 ),
+  ),
   // J .---
-  j: auto 1fr 1fr 1fr,
+  j: (
+    pattern: auto 1fr 1fr 1fr,
+    dash-units: ( 2, 3, 4 ),
+  ),
   // U ..-
-  u: auto auto 1fr,
+  u: (
+    pattern: auto auto 1fr,
+    dash-units: ( 3 ),
+  ),
   // IM ..--
-  im: auto auto 1fr 1fr,
+  im: (
+    pattern: auto auto 1fr 1fr,
+    dash-units: ( 3, 4 ),
+  ),
   // IO ..---
-  io: auto auto 1fr 1fr 1fr,
+  io: (
+    pattern: auto auto 1fr 1fr 1fr,
+    dash-units: ( 3, 4, 5 ),
+  ),
   // V ...-
-  v: auto auto auto 1fr,
+  v: (
+    pattern: auto auto auto 1fr,
+    dash-units: ( 4 ),
+  ),
   // SM ...--
-  sm: auto auto auto 1fr 1fr,
+  sm: (
+    pattern: auto auto auto 1fr 1fr,
+    dash-units: ( 4, 5 ),
+  ),
   // SO ...--
-  so: auto auto auto 1fr 1fr 1fr,
+  so: (
+    pattern: auto auto auto 1fr 1fr 1fr,
+    dash-units: ( 4, 5, 6 ),
+  ),
   //
   // Dots last
   //
   // N -.
-  n: 1fr auto,
+  n: (
+    pattern: 1fr auto,
+    dash-units: ( 1 ),
+  ),
   // G --.
-  g: 1fr 1fr auto,
+  g: (
+    pattern: 1fr 1fr auto,
+    dash-units: ( 1, 2 ),
+  ),
   // OE ---.
-  oe: 1fr 1fr 1fr auto,
+  oe: (
+    pattern: 1fr 1fr 1fr auto,
+    dash-units: ( 1, 2, 3 ),
+  ),
   // D -..
-  d: 1fr auto auto,
+  d: (
+    pattern: 1fr auto auto,
+    dash-units: ( 1 ),
+  ),
   // Z --..
-  z: 1fr 1fr auto auto,
+  z: (
+    pattern: 1fr 1fr auto auto,
+    dash-units: ( 1, 2 ),
+  ),
   // OI ---..
-  oi: 1fr 1fr 1fr auto auto,
+  oi: (
+    pattern: 1fr 1fr 1fr auto auto,
+    dash-units: ( 1, 2, 3 ),
+  ),
   // B -...
-  b: 1fr auto auto auto,
+  b: (
+    pattern: 1fr auto auto auto,
+    dash-units: ( 1 ),
+  ),
   // MS --...
-  ms: 1fr 1fr auto auto auto,
+  ms: (
+    pattern: 1fr 1fr auto auto auto,
+    dash-units: ( 1, 2 ),
+  ),
   // OS ---...
-  os: 1fr 1fr 1fr auto auto auto,
+  os: (
+    pattern: 1fr 1fr 1fr auto auto auto,
+    dash-units: ( 1, 2, 3 ),
+  ),
   //
   // Dots on both sides
   //
   // R .-.
-  r: auto 1fr auto,
+  r: (
+    pattern: auto 1fr auto,
+    dash-units: ( 2 ),
+  ),
   // P .--.
-  p: auto 1fr 1fr auto,
+  p: (
+    pattern: auto 1fr 1fr auto,
+    dash-units: ( 2, 3 ),
+  ),
   // JE .---.
-  fe: auto 1fr 1fr 1fr auto,
+  fe: (
+    pattern: auto 1fr 1fr 1fr auto,
+    dash-units: ( 2, 3, 4 ),
+  ),
   // L .-..
-  l: auto 1fr auto auto,
+  l: (
+    pattern: auto 1fr auto auto,
+    dash-units: ( 2 ),
+  ),
   // WI .--..
-  wi: auto 1fr 1fr auto auto,
+  wi: (
+    pattern: auto 1fr 1fr auto auto,
+    dash-units: ( 2, 3 ),
+  ),
   // JI .---..
-  ji: auto 1fr 1fr 1fr auto auto,
+  ji: (
+    pattern: auto 1fr 1fr 1fr auto auto,
+    dash-units: ( 2, 3, 4 ),
+  ),
   // F ..-.
-  f: auto auto 1fr auto,
+  f: (
+    pattern: auto auto 1fr auto,
+    dash-units: ( 3 ),
+  ),
   // IG ..--.
-  ig: auto auto 1fr 1fr auto,
+  ig: (
+    pattern: auto auto 1fr 1fr auto,
+    dash-units: ( 3, 4 ),
+  ),
   // UG ..---.
-  ug: auto auto 1fr 1fr 1fr auto,
+  ug: (
+    pattern: auto auto 1fr 1fr 1fr auto,
+    dash-units: ( 3, 4, 5 ),
+  ),
   // UI ..-..
-  ui: auto auto 1fr auto auto,
+  ui: (
+    pattern: auto auto 1fr auto auto,
+    dash-units: ( 3 ),
+  ),
   // UN ..--..
-  un: auto auto 1fr 1fr auto auto,
+  un: (
+    pattern: auto auto 1fr 1fr auto auto,
+    dash-units: ( 3, 4 ),
+  ),
 );
 
 /*
