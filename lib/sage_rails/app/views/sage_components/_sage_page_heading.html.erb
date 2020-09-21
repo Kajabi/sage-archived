@@ -1,4 +1,4 @@
-<section class="sage-page-heading sage-spacer-bottom-sm">
+<section class="sage-page-heading">
   <% if component.back_text.present? %>
   <div class="sage-page-heading__crumbs">
     <%= render "examples/elements/breadcrumbs/markup",
@@ -13,10 +13,10 @@
   <% end %>
   <div class="sage-page-heading__title">
     <h1 class="t-sage-heading-1"><%= component.title %><% if component.help_link.present? %> <a href="<%= component.help_link[:url] %>" class="sage-link--no-launch sage-link--help-icon-only" target="_blank" referrer="no-referrer"><span class="visually-hidden"><%= component.help_link[:label] %></span></a><% end %></h1>
-    <% if component.title_copy.present? %>
-      <p class="sage-page-heading__title--help"><%= component.title_copy %></p>
-    <% end %>
   </div>
+  <% if component.title_intro.present? %>
+    <p class="sage-page-heading__intro"><%= component.title_intro %></p>
+  <% end %>
   <% if component.actions.present? %>
   <div class="sage-page-heading__actions">
     <%- component.actions.each do |action| -%>
@@ -27,7 +27,7 @@
   <% if component.toolbar_items.any? %>
     <div class="sage-page-heading__toolbar">
     <%- component.toolbar_items.each do |item| -%>
-      <a href="<%= item[:url] %>" class="<%= "sage-page-heading__toolbar--icon-#{item[:icon]}" if defined?(item[:icon]) %>"><%= item[:text] %></a>
+      <a href="<%= item[:url] %>" class="<%= "sage-page-heading__toolbar-icon-#{item[:icon]}" if defined?(item[:icon]) %>"><%= item[:text] %></a>
     <%- end -%>
     </div>
   <% end %>

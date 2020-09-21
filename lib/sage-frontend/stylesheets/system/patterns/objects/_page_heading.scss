@@ -7,17 +7,30 @@
 .sage-page-heading {
   display: grid;
   grid-template-areas:
-    "crumbs crumbs"
+    "crumbs ."
     "title actions"
+    "intro ."
     "toolbar secondary";
-  grid-template-columns: 1fr max-content;
+  grid-template-columns: 1fr auto;
+  margin-bottom: sage-spacing(sm);
+  @media (max-width: sage-breakpoint()) {
+    grid-template-columns: max-content;
+    grid-template-areas:
+      "crumbs ."
+      "title ."
+      "intro ."
+      "actions ."
+      "toolbar ."
+      "secondary .";
+  }
 }
 
 .sage-page-heading__title {
   grid-area: title;
 }
 
-.sage-page-heading__title--help {
+.sage-page-heading__intro {
+  grid-area: intro;
   margin-top: sage-spacing(sm);
   color: sage-color(charcoal, 400);
 }
@@ -30,15 +43,12 @@
 .sage-page-heading__toolbar {
   display: flex;
   grid-area: toolbar;
+  gap: sage-spacing(lg);
   margin-top: sage-spacing(sm);
-  > * {
-    margin-right: sage-spacing(sm);
-    color: sage-color(charcoal, 200);
-  }
 }
 
 @each $-icon-name, $-icon-code in $sage-icons {
-  .sage-page-heading__toolbar--icon-#{$-icon-name} {
+  .sage-page-heading__toolbar-icon-#{$-icon-name} {
     white-space: nowrap;
     &::before {
       margin-right: sage-spacing(xs);
@@ -50,8 +60,13 @@
 .sage-page-heading__actions {
   display: flex;
   grid-area: actions;
+  grid-gap: sage-spacing(sm);
   align-items: flex-start;
   justify-content: flex-end;
+  @media (max-width: sage-breakpoint()) {
+    justify-content: flex-start;
+    margin-top: sage-spacing(sm);
+  }
 }
 
 .sage-page-heading__secondary {
@@ -62,23 +77,7 @@
   color: sage-color(charcoal, 200);
   font-size: rem(14);
   font-style: italic;
-}
-
-@media (max-width: sage-breakpoint()) {
-  .sage-page-heading {
-    grid-template-columns: span 2;
-    grid-template-areas:
-      "crumbs crumbs"
-      "title title"
-      "actions actions"
-      "toolbar toolbar"
-      "secondary secondary";
-  }
-  .sage-page-heading__actions {
-    margin-top: sage-spacing(sm);
-  }
-  .sage-page-heading__actions,
-  .sage-page-heading__secondary {
+  @media (max-width: sage-breakpoint()) {
     justify-content: flex-start;
   }
 }
