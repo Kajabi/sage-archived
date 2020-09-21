@@ -10,6 +10,11 @@
   &:not(:last-child) {
     margin-bottom: $sage-textarea-spacing;
   }
+
+  .sage-panel__content-stack > &,
+  .sage-panel__copy > & {
+    margin-bottom: 0;
+  }
 }
 
 .sage-textarea__label {

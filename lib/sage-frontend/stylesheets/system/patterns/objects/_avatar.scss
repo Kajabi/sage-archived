@@ -81,7 +81,7 @@ $-avatar-tile-size: rem(216px);
 }
 
 .sage-avatar--ring {
-  @include sage-feature-avatar-ring();
+  @include sage-avatar-ring();
 }
 
 .sage-avatar--tile {
@@ -98,7 +98,7 @@ $-avatar-tile-size: rem(216px);
     background-color: map-get($settings, bg);
 
     &.sage-avatar--ring {
-      @include sage-feature-avatar-ring($color);
+      @include sage-avatar-ring($color);
     }
   }
 }

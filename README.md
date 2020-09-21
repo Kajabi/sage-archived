@@ -131,12 +131,29 @@ First ensure all new code is completed through a PR and merged into `master`. Th
 ### Update Kajabi-Products To The Latest Sage Version
 Our main app uses a version-tagged commit from the Kajabi/Sage master branch as the source for the Sage frontend dependency.
 
-This can be done using:
-```bash
-# Example: yarn upgrade sage@git://github.com/Kajabi/sage.git#0.17.0
-$ yarn upgrade sage@git://github.com/Kajabi/sage.git#<GIT VERSION TAG>
+Both the Sage Frontend package and the sage_rails gem **should be updated**.
 
-$ bundle upgrade sage_rails --conservative
+#### Sage Frontend
+```bash
+# Example:
+# yarn upgrade sage@git://github.com/Kajabi/sage.git#0.17.0
+
+$ yarn upgrade sage@git://github.com/Kajabi/sage.git#<GIT VERSION TAG>
+```
+
+### sage_rails
+First update the Kajabi-Products gemfile:
+```diff
+# Example:
+# gem "sage_rails", "<SAGERAILS GEM VERSION>", tag: "<GIT VERSION TAG>", git: "https://github.com/kajabi/sage", glob: "lib/sage_rails/*.gemspec"
+
+-  gem "sage_rails", "1.11.2", tag: "v1.11.2", git: "https://github.com/kajabi/sage", glob: "lib/sage_rails/*.gemspec"
++  gem "sage_rails", "1.11.3", tag: "v1.11.3", git: "https://github.com/kajabi/sage", glob: "lib/sage_rails/*.gemspec"
+
+```
+Then run `bundle install`.
+```bash
+$ bundle install
 ```
 
 ## Installation

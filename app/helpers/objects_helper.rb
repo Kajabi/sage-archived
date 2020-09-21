@@ -80,7 +80,7 @@ module ObjectsHelper
         docs: "done",
         rails: "todo",
         react: "todo",
-        a11y: "todo"
+        a11y: "todo",
       },
       {
         title: "dropdown",
@@ -93,6 +93,24 @@ module ObjectsHelper
         a11y: "todo"
       },
       {
+        title: "empty_state",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        scss: "todo",
+        docs: "done",
+        rails: "todo",
+        react: "todo",
+        a11y: "todo",
+      },
+      {
+        title: "expandable_card",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        scss: "todo",
+        docs: "done",
+        rails: "todo",
+        react: "todo",
+        a11y: "todo",
+      },
+      {
         title: "form_section",
         description: "A form section genera11y consists of a text section to provide users with instruction, guidance, or related information along with a secondary panel that may contain form inputs and/or related general content.",
         use_legacy_html_code_source: true,
@@ -101,6 +119,15 @@ module ObjectsHelper
         rails: "done",
         react: "todo",
         a11y: "todo"
+      },
+      {
+        title: "icon_list",
+        description: "Icon lists allow for a richer formatting for bulleted lists of things including checkbox lists, feature lists, and more!",
+        scss: "todo",
+        docs: "todo",
+        rails: "todo",
+        react: "todo",
+        a11y: "todo",
       },
       {
         title: "input_group",
@@ -206,21 +233,11 @@ module ObjectsHelper
         title: "upload_card",
         description: "The Upload Card provides a visually pleasing lockup for a file upload field along with other helpful controls.",
         use_legacy_html_code_source: true,
-        scss: "doing",
-        docs: "doing",
-        rails: "doing",
-        react: "doing",
-        a11y: "doing"
-      },
-      {
-        title: "catalog_card",
-        description: "The Upload Card provides a visually pleasing lockup for a file upload field along with other helpful controls.",
-        use_legacy_html_code_source: false,
-        scss: "doing",
-        docs: "doing",
-        rails: "doing",
-        react: "doing",
-        a11y: "doing"
+        scss: "done",
+        docs: "done",
+        rails: "todo",
+        react: "done",
+        a11y: "todo"
       },
     ]
   end
@@ -233,6 +250,16 @@ module ObjectsHelper
   # Archive of deprecated objects
   def sage_deprecated_objects
     [
+      {
+        title: "card",
+        description: "A card presents content and can guide the user toward a related action.",
+        use_legacy_html_code_source: true,
+        scss: "stop",
+        docs: "stop",
+        rails: "stop",
+        react: "stop",
+        a11y: "stop"
+      },
       {
         title: "live_active_mic",
         description: "The Live Active Mic icon is an animatable icon that shows a fill color rise and fall in the icon shape based on a given volume level.",

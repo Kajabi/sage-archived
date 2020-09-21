@@ -56,14 +56,14 @@ $-label-inset-border: 0 0 0 1px inset;
   .sage-label--icon-left-#{$-icon-name} {
     &::before {
       margin-right: sage-spacing(2xs);
-      @include icon-base($-icon-name);
+      @include sage-icon-base($-icon-name);
     }
   }
 
   .sage-label--icon-right-#{$-icon-name} {
     &::after {
       margin-left: sage-spacing(2xs);
-      @include icon-base($-icon-name);
+      @include sage-icon-base($-icon-name);
     }
   }
 }

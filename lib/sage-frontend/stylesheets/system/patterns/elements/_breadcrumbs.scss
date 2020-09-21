@@ -26,7 +26,7 @@
 
     .sage-breadcrumbs--progressbar &::after {
       margin: 0 sage-spacing(xs) sage-spacing(2xs);
-      @include icon-base(right-small, xl);
+      @include sage-icon-base(right-small, xl);
     }
   }
 }

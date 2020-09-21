@@ -5,7 +5,9 @@
       <span class="visually-hidden">Toggle main menu</span>
     </button>
   <%- end -%>
-  <%= image_pack_tag("docs/sage.svg", class: "sage-assistant__branding")%>
+  <%= link_to pages_index_path do %>
+    <%= image_pack_tag("docs/sage.svg", class: "sage-assistant__branding")%>
+  <% end %>
   <div class="sage-assistant__body">
   </div>
   <div class="sage-assistant__actions">

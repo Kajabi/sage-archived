@@ -1,8 +1,8 @@
 <% permalink = "element-#{title}" %>
 
-<div class="sage-panel sage-panel--lg">
+<div class="sage-panel">
   <div class="sage-panel__header">
-    <h2 id="<%= permalink %>" class="t-sage-heading-3">
+    <h2 id="<%= permalink %>" class="sage-panel__title">
       <%= link_to title.titleize, "##{permalink}", class: "example__link" %>
     </h2>
     <div class="sage-panel__header-aside">
@@ -14,9 +14,7 @@
       <% end %>
     </div>
   </div>
-  <div class="sage-panel__body">
-    <div class="sage-type">
-      <%= render "examples/elements/#{title}/preview" %>
-    </div>
+  <div class="sage-type">
+    <%= render "examples/elements/#{title}/preview" %>
   </div>
 </div>
