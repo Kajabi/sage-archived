@@ -232,7 +232,7 @@ module ElementsHelper
         rails: "done",
         react: "todo",
         a11y: "todo"
-      }
+      },
     ]
   end
 
@@ -263,7 +263,7 @@ module ElementsHelper
         rails: "no",
         react: "stop",
         a11y: "no"
-      },
+      }
     ]
   end
 

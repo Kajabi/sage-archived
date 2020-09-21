@@ -4,6 +4,6 @@ class SageCatalogCard < SageComponent
   attr_accessor :title
 
   def sections
-    %w(actions info)
+    %w(aside)
   end
 end

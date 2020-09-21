@@ -239,6 +239,16 @@ module ObjectsHelper
         react: "done",
         a11y: "todo"
       },
+      {
+        title: "catalog_card",
+        description: "The Catalog Card displays Products, Offers, and other resources with a large amount of detail to display in list form.",
+        use_legacy_html_code_source: false,
+        scss: "done",
+        docs: "done",
+        rails: "done",
+        react: "todo",
+        a11y: "done"
+      },
     ]
   end
 

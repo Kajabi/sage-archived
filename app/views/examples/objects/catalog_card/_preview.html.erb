@@ -4,19 +4,43 @@
     image: asset_pack_path("media/images/docs/card/card-placeholder-sm.png"),
     href: "#"
   } do %>
-    <%= content_for :sage_info do %>
-      <span class="sage-info sage-info--icon-comment">
-        5 Golden Eggs
-      </span>
-      <span class="sage-info sage-info--icon-users">
-        3 Geese A-Laying
-      </span>
-      <span class="sage-info sage-info--icon-coupon">
-        1 Partridge In A Pear Tree
-      </span>
-    <% end %>
-    <%= content_for :sage_actions do %>
+    <%= sage_component SageButton, {
+      style: "tertiary",
+      size: "tiny",
+      icon: { name: "comment", style: "left" },
+      value: "5 Golden Eggs",
+    } %>
+    <%= sage_component SageButton, {
+      style: "tertiary",
+      size: "tiny",
+      icon: { name: "users", style: "left" },
+      value: "3 Geese A-Laying",
+    } %>
+    <%= sage_component SageButton, {
+      style: "tertiary",
+      size: "tiny",
+      icon: { name: "coupon", style: "left" },
+      value: "1 Partridge In A Pear Tree",
+    } %>
+    <%= content_for :sage_aside do %>
       <span class="sage-label sage-label--draft">Draft</span>
+      <%= sage_component SageDropdown, {
+        align: "right",
+        items: [{
+          name: "Edit Item",
+          icon: "pen",
+          attributes: {
+            "href": "#",
+          },
+        }]
+      } do %>
+        <%= sage_component SageButton, {
+          style: "tertiary",
+          icon: { name: "dot-menu-horizontal", style: "only" },
+          value: "Edit",
+          align: "end"
+        } %>
+      <% end %>
     <% end %>
   <% end %>
 <% end %>
