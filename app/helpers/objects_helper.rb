@@ -181,7 +181,7 @@ module ObjectsHelper
       },
       {
         title: "page_heading",
-        description: "Page headings are used at the top of pages and contain the title of the page along with an breadcrumbs, action buttons, and toolbar.",
+        description: "Page headings are used at the top of pages and contain the title of the page along with optional breadcrumbs, help link, action buttons, toolbar, and intro text.",
         use_legacy_html_code_source: true,
         scss: "done",
         docs: "done",
