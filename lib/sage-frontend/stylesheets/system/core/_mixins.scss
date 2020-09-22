@@ -183,6 +183,59 @@
 }
 
 /* ==================================================
+** Button Outline
+  Usage:
+    Set up the custom outline:
+    @include sage-focus-outline--define($color)
+
+    Overwrite the custom outline color:
+    @include sage-focus-outline--define($color)
+
+  Sets a Sage-style custom focus outline to an interactive element.
+
+  arguments:
+    $color: [hex color to be used for the stroke color]
+================================================== */
+
+@mixin sage-focus-outline($outline-color) {
+  position: relative;
+
+  &:focus {
+    outline: none;
+  }
+
+  &::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0) scale(0.94);
+    width: calc(100% + #{$sage-btn-focus-outline-width * 2px} + #{$sage-btn-focus-outline-spacing * 2});
+    height: calc(100% + #{$sage-btn-focus-outline-width * 2px} + #{$sage-btn-focus-outline-spacing * 2});
+    border: ($sage-btn-focus-outline-width * 1px) solid $outline-color;
+    border-radius: sage-border(radius-large);
+    transition: opacity 0.15s ease-out 0.05s, transform 0.2s ease-in-out;
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  &:focus:not(:disabled):not(.disabled),
+  &:active:not(:disabled):not(.disabled) {
+    &::after {
+      transform: translate3d(-50%, -50%, 0) scale(1);
+      opacity: 1;
+    }
+  }
+}
+
+@mixin sage-focus-outline--update-color($outline-color) {
+  &:after {
+    border-color: $outline-color;
+  }
+}
+
+/* ==================================================
   ** Card
   Usage: `@include sage-card;`
 
