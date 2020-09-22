@@ -26,16 +26,16 @@
       <%= sage_component SageDropdown, {
         align: "right",
         items: [{
-          name: sage_component(SageLabel, { color: "success", value: "Publish" }),
+          value: sage_component(SageLabel, { color: "success", value: "Publish" }),
           attributes: { "href": "#" },
         }, {
-          name: "#{sage_component(SageLabel, { color: "info", value: "Drip" })} &nbsp; Edit Drip Settings",
+          value: sage_component(SageLabel, { color: "info", value: "Drip" }),
           attributes: { "href": "#" },
         }, {
-          name: sage_component(SageLabel, { color: "draft", value: "Draft" }),
+          value: sage_component(SageLabel, { color: "draft", value: "Draft" }),
           attributes: { "href": "#" },
         }, {
-          name: "Delete Category",
+          value: "Delete Category",
           icon: "trash",
           style: "danger",
           attributes: { "href": "#" },
@@ -51,7 +51,7 @@
       <%= sage_component SageDropdown, {
         align: "right",
         items: [{
-          name: "Edit Item",
+          value: "Edit Item",
           icon: "pen",
           attributes: {
             "href": "#",
