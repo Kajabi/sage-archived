@@ -13,18 +13,18 @@
   @include sage-grid-panel();
 }
 
-.sage-panel__content-row,
+.sage-panel__row,
 .sage-panel__footer,
 .sage-panel__header,
 .sage-panel__subheader {
   @include sage-grid-panel-row();
 }
 
-.sage-panel__content-row--media {
+.sage-panel__row--media {
   grid-template-columns: 160px 1fr;
 }
 
-.sage-panel__content-stack {
+.sage-panel__stack {
   @include sage-grid-content-stack();
 }
 

@@ -1,13 +1,13 @@
 // ============================================
-// Row Grid Templates
+// Row Grid Templates - A
 // ============================================
 
 // Generates classes for each sage grid template
-@each $-key, $-map in $sage-grid-templates {
-  .sage-grid-template-#{$-key} {
+@each $-key, $-map in $sage-grid-templates-a {
+  .sage-grid-template-a-#{$-key} {
     @media (max-width: sage-breakpoint()) {
       // Set dash elements to fill the space
-      @each $-n in map-get($-map, dash-units) {
+      @each $-n in map-get($-map, dash-slots) {
         > :nth-child(#{$-n}) {
           width: 100%;
         }
