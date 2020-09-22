@@ -1,1 +1,1 @@
-export const Testing = 'testing'
+export { default } from './lib/sage-frontend/javascript/react-components'
