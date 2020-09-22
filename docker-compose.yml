@@ -11,6 +11,12 @@ x-app-common: &app-common
     - /app/tmp
 
 services:
+  router:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+    volumes:
+      - ./docker/nginx.conf:/etc/nginx/nginx.conf
   web:
     <<: *app-common
     build:
@@ -29,6 +35,8 @@ services:
     ports:
       - "4000:4000"
       - "4035:4035"
+    depends_on:
+      - router
 
 volumes:
   bundle:
