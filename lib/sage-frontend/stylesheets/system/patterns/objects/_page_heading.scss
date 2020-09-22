@@ -18,8 +18,8 @@
 }
 
 .sage-page-heading__title {
+  @extend %t-sage-heading-1;
   grid-area: title;
-  font-size: sage-font-size(4xl);
 }
 
 .sage-page-heading__intro {
@@ -65,12 +65,12 @@
 }
 
 .sage-page-heading__secondary {
+  @extend %t-sage-body-small;
   display: flex;
   grid-area: secondary;
   justify-content: flex-end;
   margin-top: sage-spacing(sm);
   color: sage-color(charcoal, 200);
-  font-size: rem(14);
   font-style: italic;
   @media (max-width: sage-breakpoint()) {
     justify-content: flex-start;
