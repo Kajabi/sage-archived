@@ -34,7 +34,6 @@ services:
         yarn start
     ports:
       - "4000:4000"
-      - "4035:4035"
     depends_on:
       - router
 

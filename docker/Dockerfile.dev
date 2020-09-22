@@ -9,6 +9,5 @@ RUN apt-get update -qq\
 RUN bundle config git.allow_insecure true
 
 EXPOSE 4000
-EXPOSE 4035
 
 WORKDIR /app
