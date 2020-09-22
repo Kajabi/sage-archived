@@ -25,6 +25,7 @@
             tabindex="0"
             class="
               sage-dropdown__item-control
+              <%= "sage-dropdown__item-control--#{item[:style]}" if item[:style] %>
               <%= "sage-dropdown__item-control--icon-#{item[:icon]}" if item[:icon] %>
             "
           >

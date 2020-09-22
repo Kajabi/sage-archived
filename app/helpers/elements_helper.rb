@@ -115,7 +115,7 @@ module ElementsHelper
       {
         title: "label",
         description: "Labels show concise metadata or indicate status in a compact format.",
-        use_legacy_html_code_source: true,
+        use_legacy_html_code_source: false,
         scss: "done",
         docs: "todo",
         rails: "todo",

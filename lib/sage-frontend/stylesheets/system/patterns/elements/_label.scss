@@ -14,6 +14,8 @@ $-label-inset-border: 0 0 0 1px inset;
 
   display: inline-flex;
   align-items: center;
+  appearance: none;
+  border: none;
   padding: $-label-padding;
   text-align: center;
   white-space: nowrap;
@@ -43,9 +45,8 @@ $-label-inset-border: 0 0 0 1px inset;
     }
 
     &.sage-label--interactive {
-      cursor: pointer;
-
       @include sage-focus-outline( sage-color-combo($-color-name, subtle, background) );
+      cursor: pointer;
 
       &:hover:not(:focus):not(:active):not(:disabled):not(.disabled) {
         background-color: darken(sage-color-combo($-color-name, default, background), 5%);
