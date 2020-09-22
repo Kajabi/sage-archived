@@ -15,11 +15,11 @@ $-label-inset-border: 0 0 0 1px inset;
   display: inline-flex;
   align-items: center;
   appearance: none;
-  border: none;
   padding: $-label-padding;
   text-align: center;
   white-space: nowrap;
   border-radius: $-label-border-radius;
+  border: unset;
 }
 
 .sage-label--truncate {
