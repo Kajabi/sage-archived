@@ -1,4 +1,4 @@
-class SageCatalogCard < SageComponent
+class SageCatalogItem < SageComponent
   attr_accessor :image
   attr_accessor :href
   attr_accessor :title
