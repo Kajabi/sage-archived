@@ -29,7 +29,7 @@
               <%= "sage-dropdown__item-control--icon-#{item[:icon]}" if item[:icon] %>
             "
           >
-            <%= item[:name] %>
+            <%= item[:name].html_safe %>
           </a>
         </li>
       <% end %>
