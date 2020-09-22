@@ -10,7 +10,7 @@ $-label-border-radius: sage-border(radius) !default;
 $-label-inset-border: 0 0 0 1px inset;
 
 .sage-label {
-  @extend %t-sage-body-xsmall-semi;
+  @extend %t-sage-body-small-semi;
 
   display: inline-flex;
   align-items: center;
