@@ -43,6 +43,7 @@
 
 .sage-btn {
   @include button-style-base;
+  @include sage-focus-outline($sage-btn-focus-outline-color);
 
   .sage-input-group & {
     border-top-left-radius: 0;
@@ -53,36 +54,14 @@
     margin-right: 0;
   }
 
-  &::after {
-    content: "";
-    display: inline-block;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate3d(-50%, -50%, 0) scale(0.94);
-    width: calc(100% + #{$sage-btn-focus-outline-width * 2px} + #{$sage-btn-focus-outline-spacing * 2});
-    height: calc(100% + #{$sage-btn-focus-outline-width * 2px} + #{$sage-btn-focus-outline-spacing * 2});
-    border: ($sage-btn-focus-outline-width * 1px) solid $sage-btn-focus-outline-color;
-    border-radius: sage-border(radius-large);
-    transition: opacity 0.15s ease-out 0.05s, transform 0.2s ease-in-out;
-    pointer-events: none;
-    opacity: 0;
-  }
-
   &:focus {
     box-shadow: $sage-btn-shadow-base;
-    outline: none;
   }
 
   &:focus:not(:disabled):not(.disabled),
   &:active:not(:disabled):not(.disabled) {
-    &::after {
-      transform: translate3d(-50%, -50%, 0) scale(1);
-      opacity: 1;
-    }
-
-    .sage-dropdown__item > &::after {
-      opacity: 0;
+    .sage-dropdown__item > & {
+      @include sage-focus-outline--update-color(transparent);
     }
   }
 
@@ -124,12 +103,9 @@
 }
 
 .sage-btn--primary {
+  @include sage-focus-outline--update-color($sage-btn-primary-bg-color);
   color: $sage-btn-primary-text-color;
   background-color: $sage-btn-primary-bg-color;
-
-  &::after {
-    border-color: $sage-btn-primary-bg-color;
-  }
 
   &:hover:not(:focus):not(:active):not(:disabled):not(.disabled),
   &:focus,
@@ -161,14 +137,11 @@
 }
 
 .sage-btn--secondary {
+  @include sage-focus-outline--update-color(sage-color(primary));
   color: $sage-btn-secondary-text-color;
   background-color: sage-color(white);
   border: 0;
   box-shadow: none;
-
-  &::after {
-    border-color: sage-color(primary);
-  }
 
   &:hover:not(:focus):not(:active):not(:disabled):not(.disabled) {
     color: $sage-btn-secondary-text-color;
@@ -201,14 +174,11 @@
 }
 
 .sage-btn--tertiary {
+  @include sage-focus-outline--update-color(sage-color(charcoal, 200));
   color: $sage-btn-tertiary-text-color;
   background-color: sage-color(white);
   border: 0;
   box-shadow: none;
-
-  &::after {
-    border-color: sage-color(charcoal, 200);
-  }
 
   &:hover:not(:focus):not(:active):not(:disabled):not(.disabled) {
     color: $sage-btn-tertiary-text-color;
@@ -241,13 +211,10 @@
 }
 
 .sage-btn--danger {
+  @include sage-focus-outline--update-color($sage-btn-danger-text-color);
   color: $sage-btn-danger-text-color;
   border: 0;
   box-shadow: none;
-
-  &::after {
-    border-color: $sage-btn-danger-text-color;
-  }
 
   &:hover:not(:focus):not(:active):not(:disabled):not(.disabled) {
     color: $sage-btn-danger-text-color;
