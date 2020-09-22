@@ -5,28 +5,21 @@
 ================================================== */
 
 .sage-page-heading {
-  display: grid;
-  grid-template-areas:
-    "crumbs ."
-    "title actions"
-    "intro ."
-    "toolbar secondary";
-  grid-template-columns: 1fr auto;
   margin-bottom: sage-spacing(sm);
-  @media (max-width: sage-breakpoint()) {
-    grid-template-columns: max-content;
+  @media (min-width: sage-breakpoint()) {
+    display: grid;
     grid-template-areas:
       "crumbs ."
-      "title ."
+      "title actions"
       "intro ."
-      "actions ."
-      "toolbar ."
-      "secondary .";
+      "toolbar secondary";
+    grid-template-columns: 1fr auto;
   }
 }
 
 .sage-page-heading__title {
   grid-area: title;
+  font-size: sage-font-size(4xl);
 }
 
 .sage-page-heading__intro {
@@ -43,6 +36,7 @@
 .sage-page-heading__toolbar {
   display: flex;
   grid-area: toolbar;
+  flex-wrap: wrap;
   gap: sage-spacing(lg);
   margin-top: sage-spacing(sm);
 }
@@ -64,6 +58,7 @@
   align-items: flex-start;
   justify-content: flex-end;
   @media (max-width: sage-breakpoint()) {
+    flex-wrap: wrap;
     justify-content: flex-start;
     margin-top: sage-spacing(sm);
   }
