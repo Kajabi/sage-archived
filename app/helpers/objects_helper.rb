@@ -158,7 +158,7 @@ module ObjectsHelper
       },
       {
         title: "page_heading",
-        description: "Page headings are used at the top of pages and contain the title of the page along with an optional navigation link to the previous page.",
+        description: "Page headings are used at the top of pages and contain the title of the page along with an breadcrumbs, action buttons, and toolbar.",
         scss: "done",
         docs: "done",
         rails: "doing",
