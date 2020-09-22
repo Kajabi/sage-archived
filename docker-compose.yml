@@ -1,0 +1,39 @@
+version: '3.4'
+
+x-app-common: &app-common
+  user: root
+  volumes:
+    - '.:/app:delegated'
+    - "bundle:/usr/local/bundle"
+    - "yarncache:/root/.yarn-cache"
+    - "node_modules:/app/node_modules"
+    - "compiled_assets:/app/public/assets"
+    - /app/tmp
+
+services:
+  web:
+    <<: *app-common
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.dev
+      target: base
+    image: app
+    command:
+      - /bin/bash
+      - -c
+      - |
+        gem install bundler
+        yarn install
+        bundle check || bundle install --jobs 8
+        yarn start
+    ports:
+      - "4000:4000"
+      - "4035:4035"
+
+volumes:
+  bundle:
+  yarncache:
+  node_modules:
+  compiled_assets:
+
+
