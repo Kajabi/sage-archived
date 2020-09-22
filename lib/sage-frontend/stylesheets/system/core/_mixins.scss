@@ -230,7 +230,7 @@
 }
 
 @mixin sage-focus-outline--update-color($outline-color) {
-  &:after {
+  &::after {
     border-color: $outline-color;
   }
 }
