@@ -5,7 +5,6 @@
 ================================================== */
 
 .sage-page-heading {
-  margin-bottom: sage-spacing(sm);
   @media (min-width: sage-breakpoint()) {
     display: grid;
     grid-template-areas:

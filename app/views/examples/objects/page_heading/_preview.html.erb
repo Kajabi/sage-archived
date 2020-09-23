@@ -2,14 +2,14 @@
 
 <%= sage_component SagePageHeading, {
   title: "Page Title",
-  spacer: {bottom: :lg},
+  spacer: {bottom: :sm},
 } %>
 
 <h3 class="t-sage-heading-6">Page Heading with Back Link</h3>
 
 <%= sage_component SagePageHeading, {
   title: "Page Title",
-  spacer: {bottom: :lg},
+  spacer: {bottom: :sm},
 } do %>
     <% content_for :sage_breadcrumbs do %>
       <%= render "examples/elements/breadcrumbs/markup",
@@ -27,7 +27,7 @@
 
 <%= sage_component SagePageHeading, {
   title: "Page Title",
-  spacer: {bottom: :lg},
+  spacer: {bottom: :sm},
   help_link: {
     url: "#",
     label: "Help"
@@ -38,7 +38,7 @@
 
 <%= sage_component SagePageHeading, {
   title: "Page Title",
-  spacer: {bottom: :lg},
+  spacer: {bottom: :sm},
 } do %>
     <% content_for :sage_page_heading_actions do %>
       <%= sage_component(SageButton,{style: "tertiary", icon:{name: "preview-on", style: "left"}, value: "Preview",}) %>
@@ -50,7 +50,7 @@
 
 <%= sage_component SagePageHeading, {
   title: "Page Title",
-  spacer: {bottom: :lg},
+  spacer: {bottom: :sm},
   secondary_text: "1 Email in Sequence",
 } do %>
     <% content_for :sage_page_heading_toolbar do %>
@@ -65,7 +65,7 @@
 
 <%= sage_component SagePageHeading, {
   title: "Page Title",
-  spacer: {bottom: :lg},
+  spacer: {bottom: :sm},
 } do %>
     <% content_for :sage_page_heading_intro do %>
       <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo dolorum esse modi ut ipsa corporis.</p>
@@ -77,7 +77,7 @@
 
 <%= sage_component SagePageHeading, {
   title: "Page Title",
-  spacer: {bottom: :lg},
+  spacer: {bottom: :sm},
   help_link: {
     url: "#",
     label: "Help"
