@@ -46,7 +46,7 @@ const Button = ({
   }
 
   return (
-    <TagName className={classNames}>
+    <button className={classNames} {...otherProps}>
       {iconOnly ? (
         <span className="visually-hidden">
           {children}
@@ -56,7 +56,7 @@ const Button = ({
             {children}
           </>
         )}
-    </TagName>
+    </button>
   );
 };
 
