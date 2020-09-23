@@ -46,16 +46,16 @@ const Button = ({
   }
 
   return (
-    <TagName className={classNames} {...otherProps}>
+    <TagName className={classNames} >
       {iconOnly ? (
         <span className="visually-hidden">
           {children}
         </span>
       ) : (
-        <>
-          {children}
-        </>
-      )}
+          <>
+            {children}
+          </>
+        )}
     </TagName>
   );
 };
