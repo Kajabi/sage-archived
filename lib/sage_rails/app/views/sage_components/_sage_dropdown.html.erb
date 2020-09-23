@@ -6,6 +6,7 @@
   data-js-dropdown="<%= component.id %>"
 >
   <div
+    aria-controls="options_menu"
     class="
       sage-dropdown__trigger
       <%= "sage-dropdown__trigger--#{component.trigger_type}" if component.trigger_type %>
@@ -14,7 +15,7 @@
     <%= component.content %>
   </div>
   <nav class="sage-dropdown__panel">
-    <ul class="sage-dropdown__menu" role="menu" aria-label="Participant options">
+    <ul class="sage-dropdown__menu" role="menu" aria-label="options_menu">
       <% if component.search %>
         <li class="sage-dropdown__item sage-dropdown__item--search sage-search" role="none">
           <input class="sage-search__input" type="text" placeholder="Search..." />

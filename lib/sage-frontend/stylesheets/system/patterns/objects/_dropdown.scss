@@ -99,7 +99,6 @@ $-trigger-dropdown-offset: rem(16px) + sage-spacing(xs);
 
 .sage-dropdown__item-control {
   @include sage-button-style-reset();
-  @extend %t-sage-body;
 
   display: flex;
   position: relative;
