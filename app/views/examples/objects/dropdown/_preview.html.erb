@@ -27,6 +27,36 @@
   } %>
 <% end %>
 
+<h5>SageLabel Button, with SageLabel Values, and aligned right</h5>
+<p>Note: The wrapping div with inline styles is for <i>preview-purposes only</i>. </p>
+<div style="display: flex; flex-direction: row-reverse;">
+  <%= sage_component SageDropdown, {
+    align: "right",
+    items: [{
+      value: sage_component(SageLabel, { color: "success", value: "Publish" }),
+      attributes: { "href": "#" },
+    }, {
+      value: sage_component(SageLabel, { color: "info", value: "Drip" }),
+      attributes: { "href": "#" },
+    }, {
+      value: sage_component(SageLabel, { color: "draft", value: "Draft" }),
+      attributes: { "href": "#" },
+    }, {
+      value: "Delete Category",
+      icon: "trash",
+      style: "danger",
+      attributes: { "href": "#" },
+    }]
+  } do %>
+    <%= sage_component SageLabel, {
+      color: "info",
+      interactive: true,
+      value: "Drip",
+      icon: { style: "right", name: "caret-down" }
+    } %>
+  <% end %>
+</div>
+
 <h5>Select</h5>
 <p>Note: This pattern is used with the SageReact implementation, please consult UXD before using this as SageRails.</p>
 <%= sage_component SageDropdown, {
