@@ -11,9 +11,10 @@
   do_content: do_content,
   dont_content: dont_content %>
 
-<%= render "examples/shared/preview",
-  type: "element",
-  title: @title %>
+<div class="sage-panel-set">
+  <%= render "examples/shared/preview",
+    type: "element",
+    title: @title %>
 
 <% if info_content[:use_legacy_html_code_source] %>
   <%= render "examples/shared/legacy_code",
@@ -25,9 +26,10 @@
     title: @title %>
 <% end %>
 
-<%= render "examples/shared/props",
-  props_content: props_content %>
+  <%= render "examples/shared/props",
+    props_content: props_content %>
 
-<%= render "examples/shared/rules",
-  do_content: do_content,
-  dont_content: dont_content %>
+  <%= render "examples/shared/rules",
+    do_content: do_content,
+    dont_content: dont_content %>
+</div>
