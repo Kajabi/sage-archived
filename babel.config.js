@@ -39,6 +39,7 @@ module.exports = function (api) {
         '@babel/preset-react',
         {
           development: isDevelopmentEnv || isTestEnv,
+          useBuiltIns: true
         }
       ]
     ].filter(Boolean),
