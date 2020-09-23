@@ -36,7 +36,7 @@
   display: flex;
   grid-area: toolbar;
   flex-wrap: wrap;
-  gap: sage-spacing(lg);
+  gap: sage-spacing(sm);
   margin-top: sage-spacing(sm);
 }
 
@@ -55,11 +55,14 @@
   grid-area: actions;
   grid-gap: sage-spacing(sm);
   align-items: flex-start;
-  justify-content: flex-end;
-  @media (max-width: sage-breakpoint()) {
+  @media (max-width: sage-breakpoint(sm-max)) {
     flex-wrap: wrap;
     justify-content: flex-start;
     margin-top: sage-spacing(sm);
+  }
+  @media (min-width: sage-breakpoint()) {
+    flex-wrap: nowrap;
+    justify-content: flex-end;
   }
 }
 
