@@ -46,7 +46,7 @@ const Button = ({
   }
 
   return (
-    <TagName className={classNames} >
+    <TagName className={classNames}>
       {iconOnly ? (
         <span className="visually-hidden">
           {children}
