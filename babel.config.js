@@ -17,7 +17,6 @@ module.exports = function (api) {
 
   return {
     presets: [
-      '@babel/preset-react',
       isTestEnv && [
         '@babel/preset-env',
         {
@@ -34,6 +33,12 @@ module.exports = function (api) {
           corejs: 3,
           modules: false,
           exclude: ['transform-typeof-symbol']
+        }
+      ],
+      [
+        '@babel/preset-react',
+        {
+          development: isDevelopmentEnv || isTestEnv,
         }
       ]
     ].filter(Boolean),
