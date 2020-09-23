@@ -84,6 +84,10 @@
     padding-bottom: rem(9px);
     border-radius: 0;
   }
+
+  .sage-page-heading__actions & {
+    margin: 0;
+  }
 }
 
 .sage-btn--small {
