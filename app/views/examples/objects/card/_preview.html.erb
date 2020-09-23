@@ -41,19 +41,19 @@
         <li>
           <strong><em>Copy</em></strong> -- 
           <code>.sage-card__copy</code> should be used to contain a set of text 
-          with no preset spacing. If the block contains free-form text that should conform to 
+          with no preset spacing desired. If the block contains free-form text that should conform to 
           type spacing rules, <code>.sage-type</code> can be added.
         </li>
         <li>
           <strong><em>Stack</em></strong> -- 
           <code>.sage-card__stack</code> should be used to contain a set of elements that
-          adheres to standard stack spacing.
+          adheres to standard stack spacing of 8px between each element.
         </li>
         <li>
           <strong><em>Row</em></strong> -- 
           <code>.sage-card__row</code> should be used to contain a set of elements that line
           up side-by-side. You can add to this a custom grid template area configuration or
-          use one of the basic grid templates available in Sage.
+          use one of the basic grid templates available in Sage (TODO: Link to come once patterns are settled).
         </li>
       </ul>
       Note: These can also be nested inside each other for compound configurations.
@@ -79,7 +79,7 @@
         Another stack item here. Lorem ipusm dolor site amet consectitor.
       </p>
     </div>
-    <div class="sage-card__row sage-grid-template-r">
+    <div class="sage-card__row sage-grid-template-b-ete">
       <i class="sage-icon-drop" aria-label="Product"></i>
       <strong class="t-sage-body">
         Row here -- $8.99/mo
@@ -101,7 +101,7 @@
 
 <%= render "examples/objects/card/markup",
   single_block_type: "row",
-  single_block_template: "d",
+  single_block_template: "ti",
   body: %(
     <div class="sage-card__copy">
       <p class="t-sage-body-semi">

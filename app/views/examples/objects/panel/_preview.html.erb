@@ -24,10 +24,10 @@
   )
 %>
 
-<p>Panels are rich containers that allow for grouping and organizing content details. The following elements are avaiable within panels:</p>
+<p class="sage-spacer-top">Panels are rich containers that allow for grouping and organizing content details. The following elements are avaiable within panels:</p>
 <ul>
   <li>
-    <strong>Heading</strong>
+    <strong>Header</strong>
 
   </li>
   <li>
@@ -36,31 +36,47 @@
     <ul>
       <li>
         <strong><em>Subheader</em></strong>
-
+        — The Subheader provides specific styles for a subheading within a panel.
+        It is very similar in configuration to the panel header but with smaller type.
       </li>
       <li>
         <strong><em>Copy</em></strong>
-
+        — Copy is the simplest block of content in which open text
+        or elements with no preset spacing is desired.
+        In the case of open text, the <code>sage-type</code> class
+        can also be added to enforce open text spacing rules.
       </li>
       <li>
         <strong><em>Figure</em></strong>
-
+        — A figure contains an image that occupies a substantive space in the panel,
+        typically filling edge to edge, and possibly even full bleed in the panel.
       </li>
       <li>
         <strong><em>Divider</em></strong>
-
+        — The Divider is a thin rule that helps to separate larger groups within the panel.
       </li>
       <li>
         <strong><em>Stack</em></strong>
-
+        — A stack is a single column of elements sitting atop each other
+        with the standard 8px gap between each item in the stack.
+      </li>
+      <li>
+        <strong><em>List</em></strong>
+        — A list is a similar to a stack but has no space between items,
+        and each item has a border that extends into the panel's outer gutters.
+        Lists can also have row-like layouts with elements setup inline.
       </li>
       <li>
         <strong><em>Row</em></strong>
-
+        — A row is a single or isolated inline arrangement or elements.
+        It can either be a custom component or employ one of the standard Grid Template Patterns.
+        </p>
       </li>
       <li>
         <strong><em>Tiles</em></strong>
-
+        — Tiles are groups of elements that typically also each contain additional content.
+        These items are laid out in a tiling layout, such as 2-up, 3-up, and 4-up patterns.
+        </p>
       </li>
     </ul>
   </li>
