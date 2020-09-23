@@ -1,21 +1,21 @@
-<section class="sage-catalog-card">
-  <h1 class="sage-catalog-card__title">
+<section class="sage-catalog-item">
+  <h1 class="sage-catalog-item__title">
     <a class="t-sage-heading-6" href="<%= component.href %>" tabindex="0">
       <%= component.title %>
     </a>
   </h1>
   <% if component.content.present? %>
-    <div class="sage-catalog-card__content">
+    <div class="sage-catalog-item__content">
       <%= component.content %>
     </div>
   <% end %>
   <% if content_for? :sage_aside %>
-    <aside class="sage-catalog-card__aside">
+    <aside class="sage-catalog-item__aside">
       <%= content_for :sage_aside %>
     </aside>
   <% end %>
   <%# Uses tabindex="-1" because there are two links to the same location in this component (component.title also links to the href) %>
-  <a class="sage-catalog-card__img" href="<%= component.href %>" tabindex="-1" title="Go to: <%= component.title %>">
+  <a class="sage-catalog-item__img" href="<%= component.href %>" tabindex="-1" title="Go to: <%= component.title %>">
     <img src="<%= component.image %>" alt="Cover image for: <%= component.title %>">
   </a>
 </section>

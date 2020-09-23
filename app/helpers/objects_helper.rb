@@ -85,7 +85,7 @@ module ObjectsHelper
       {
         title: "dropdown",
         description: "Sage dropdown",
-        use_legacy_html_code_source: true,
+        use_legacy_html_code_source: false,
         scss: "done",
         docs: "done",
         rails: "done",
@@ -240,8 +240,8 @@ module ObjectsHelper
         a11y: "todo"
       },
       {
-        title: "catalog_card",
-        description: "The Catalog Card displays Products, Offers, and other resources with a large amount of detail to display in list form.",
+        title: "catalog_item",
+        description: "The Catalog Item displays Products, Offers, and other resources with a large amount of detail to display in list form.",
         use_legacy_html_code_source: false,
         scss: "done",
         docs: "done",

@@ -10,57 +10,48 @@ colors = [
 
 <h5>Default</h5>
 <% colors.each do | color | %>
-  <%= render "examples/elements/label/markup",
-  color: color
-  %>
+  <%= sage_component SageLabel, {
+    color: color,
+    value: color.capitalize
+  } %>
 <% end %>
 
 <h5>Subtle</h5>
 <% colors.each do | color | %>
-  <%= render "examples/elements/label/markup",
-  color: color,
-  type: "subtle"
-  %>
+  <%= sage_component SageLabel, {
+    color: color,
+    style: "subtle",
+    value: color.capitalize
+  } %>
 <% end %>
 
 <h5>Bold</h5>
 <% colors.each do | color | %>
-  <%= render "examples/elements/label/markup",
-  color: color,
-  type: "bold"
-  %>
+  <%= sage_component SageLabel, {
+    color: color,
+    style: "bold",
+    value: color.capitalize
+  } %>
 <% end %>
 
 <h5>With Icons</h5>
-<div style="display: grid; grid-gap: 4px; grid-auto-columns: max-content; grid-auto-flow: column;">
-  <%= render "examples/elements/label/markup",
-    color: "draft",
-    icon_left: "add-small"
-  %>
-  <%= render "examples/elements/label/markup",
-    color: "draft",
-    icon_right: "tag"
-  %>
-</div>
+<%= sage_component SageLabel, {
+  color: "draft",
+  value: "Add",
+  icon: { style: "left", name: "add-small" }
+} %>
+<%= sage_component SageLabel, {
+  color: "draft",
+  value: "Tag",
+  icon: { style: "right", name: "tag" }
+} %>
 
 <h5>Interactive</h5>
-
-<a href="#" class="sage-label sage-label--interactive sage-label--draft sage-label--icon-right-caret-down">
-  Draft
-</a>
-
-<a href="#" class="sage-label sage-label--interactive sage-label--info sage-label--icon-right-caret-down">
-  Drip
-</a>
-
-<a href="#" class="sage-label sage-label--interactive sage-label--success sage-label--icon-right-caret-down">
-  Published
-</a>
-
-<a href="#" class="sage-label sage-label--interactive sage-label--warning sage-label--icon-right-caret-down">
-  Warning
-</a>
-
-<a href="#" class="sage-label sage-label--interactive sage-label--danger sage-label--icon-right-caret-down">
-  Locked
-</a>
+<% colors.each do | color | %>
+  <%= sage_component SageLabel, {
+    color: color,
+    interactive: true,
+    value: color.capitalize,
+    icon: { style: "right", name: "caret-down" }
+  } %>
+<% end %>
