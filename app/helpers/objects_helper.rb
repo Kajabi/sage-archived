@@ -85,7 +85,7 @@ module ObjectsHelper
       {
         title: "dropdown",
         description: "Sage dropdown",
-        use_legacy_html_code_source: true,
+        use_legacy_html_code_source: false,
         scss: "done",
         docs: "done",
         rails: "done",

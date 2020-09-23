@@ -15,8 +15,20 @@
   </div>
   <nav class="sage-dropdown__panel">
     <ul class="sage-dropdown__menu" role="menu" aria-label="Participant options">
+      <% if component.search %>
+        <li class="sage-dropdown__item sage-dropdown__item--search sage-search" role="none">
+          <input class="sage-search__input" type="text" placeholder="Search..." />
+        </li>
+      <% end %>
       <% component.items.each do |item| %>
-        <li class="sage-dropdown__item" role="none">
+        <li class="
+            sage-dropdown__item
+            <% item[:modifiers]&.each do |item_modifier| %>
+              <%= "sage-dropdown__item--#{item_modifier}" %>
+            <% end %>
+          "
+          role="none"
+        >
           <a
             <% item[:attributes].each do |key, value| %>
               <%= "#{key}=#{value}"%>
