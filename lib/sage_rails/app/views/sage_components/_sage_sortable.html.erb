@@ -2,8 +2,8 @@
   class="sage-sortable"
   data-js-sortable="<%= component.resource_name %>"
 >
-  <% if component.content.present? %>
-    <%= component.content %>
+  <% if component.children.present? %>
+    <%= component.children %>
   <% elsif content_for?(:sage_empty)%>
     <%= content_for :sage_empty %>
   <% end %>

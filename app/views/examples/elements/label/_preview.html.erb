@@ -12,7 +12,7 @@ colors = [
 <% colors.each do | color | %>
   <%= sage_component SageLabel, {
     color: color,
-    value: color.capitalize
+    content: color.capitalize
   } %>
 <% end %>
 
@@ -21,7 +21,7 @@ colors = [
   <%= sage_component SageLabel, {
     color: color,
     style: "subtle",
-    value: color.capitalize
+    content: color.capitalize
   } %>
 <% end %>
 
@@ -30,19 +30,19 @@ colors = [
   <%= sage_component SageLabel, {
     color: color,
     style: "bold",
-    value: color.capitalize
+    content: color.capitalize
   } %>
 <% end %>
 
 <h5>With Icons</h5>
 <%= sage_component SageLabel, {
   color: "draft",
-  value: "Add",
+  content: "Add",
   icon: { style: "left", name: "add-small" }
 } %>
 <%= sage_component SageLabel, {
   color: "draft",
-  value: "Tag",
+  content: "Tag",
   icon: { style: "right", name: "tag" }
 } %>
 
@@ -51,7 +51,7 @@ colors = [
   <%= sage_component SageLabel, {
     color: color,
     interactive: true,
-    value: color.capitalize,
+    content: color.capitalize,
     icon: { style: "right", name: "caret-down" }
   } %>
 <% end %>

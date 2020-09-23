@@ -1,7 +1,7 @@
 class SageComponent
   include ActiveModel::Model
   attr_accessor :context
-  attr_accessor :content
+  attr_accessor :children
 
   def generated_css_classes
     @generated_css_classes ||= ""

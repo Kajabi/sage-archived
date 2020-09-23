@@ -4,9 +4,9 @@
       <%= component.title %>
     </a>
   </h1>
-  <% if component.content.present? %>
+  <% if component.children.present? %>
     <div class="sage-catalog-item__content">
-      <%= component.content %>
+      <%= component.children %>
     </div>
   <% end %>
   <% if content_for? :sage_aside %>

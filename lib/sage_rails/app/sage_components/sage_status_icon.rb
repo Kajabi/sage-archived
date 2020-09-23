@@ -1,4 +1,4 @@
 class SageStatusIcon < SageComponent
-  attr_accessor :value
+  attr_accessor :content
   attr_accessor :icon
 end

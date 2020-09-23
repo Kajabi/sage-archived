@@ -1,21 +1,21 @@
 <h5>Menu Button</h5>
 <%= sage_component SageDropdown, {
   items: [{
-    value: "Edit",
+    content: "Edit",
     icon: "pen",
     attributes: { "href": "#" },
   }, {
-    value: "New",
+    content: "New",
     icon: "add",
     style: "primary",
     attributes: { "href": "#" },
    }, {
-    value: "Share Element",
+    content: "Share Element",
     icon: "url",
     modifiers: ["border-before"],
     attributes: { "href": "#" },
    }, {
-    value: "Take A Dangerous Action",
+    content: "Take A Dangerous Action",
     icon: "remove-circle",
     style: "danger",
     attributes: { "href": "#" },
@@ -23,7 +23,7 @@
 } do %>
   <%= sage_component SageButton, {
     style: "primary",
-    value: "Add An Element"
+    content: "Add An Element"
   } %>
 <% end %>
 
@@ -33,16 +33,16 @@
   <%= sage_component SageDropdown, {
     align: "right",
     items: [{
-      value: sage_component(SageLabel, { color: "success", value: "Publish" }),
+      content: sage_component(SageLabel, { color: "success", content: "Publish" }),
       attributes: { "href": "#" },
     }, {
-      value: sage_component(SageLabel, { color: "info", value: "Drip" }),
+      content: sage_component(SageLabel, { color: "info", content: "Drip" }),
       attributes: { "href": "#" },
     }, {
-      value: sage_component(SageLabel, { color: "draft", value: "Draft" }),
+      content: sage_component(SageLabel, { color: "draft", content: "Draft" }),
       attributes: { "href": "#" },
     }, {
-      value: "Delete Category",
+      content: "Delete Category",
       icon: "trash",
       style: "danger",
       attributes: { "href": "#" },
@@ -51,7 +51,7 @@
     <%= sage_component SageLabel, {
       color: "info",
       interactive: true,
-      value: "Drip",
+      content: "Drip",
       icon: { style: "right", name: "caret-down" }
     } %>
   <% end %>
@@ -64,21 +64,21 @@
   trigger_type: "select",
   align: "right",
   items: [{
-    value: "-- None --"
+    content: "-- None --"
   }, {
-    value: "Option 1",
+    content: "Option 1",
    }, {
-    value: "Option 2",
+    content: "Option 2",
    }, {
-    value: "Option 3",
+    content: "Option 3",
   }, {
-    value: "Muted",
+    content: "Muted",
     style: "muted"
   }]
 } do %>
   <%= sage_component SageButton, {
     style: "tertiary",
-    value: "",
+    content: "",
     css_classes: "sage-dropdown__trigger-selected-value",
     icon: { style: "right", name: "caret-down" }
   } %>
@@ -92,21 +92,21 @@
   trigger_type: "select-labeled",
   align: "right",
   items: [{
-    value: "-- None --"
+    content: "-- None --"
   }, {
-    value: "Option 1",
+    content: "Option 1",
    }, {
-    value: "Option 2",
+    content: "Option 2",
    }, {
-    value: "Option 3",
+    content: "Option 3",
   }, {
-    value: "Muted",
+    content: "Muted",
     style: "muted"
   }]
 } do %>
   <%= sage_component SageButton, {
     style: "tertiary",
-    value: "",
+    content: "",
     css_classes: "sage-dropdown__trigger-selected-value",
     icon: { style: "right", name: "caret-down" }
   } %>

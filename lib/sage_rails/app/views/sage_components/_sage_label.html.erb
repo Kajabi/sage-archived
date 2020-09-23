@@ -12,9 +12,9 @@
 >
   <% if component.icon&.dig(:style) == "only" %>
     <span class="visually-hidden">
-      <%= component.value.html_safe %>
+      <%= component.content.html_safe %>
     </span>
   <% else %>
-    <%= component.value.html_safe %>
+    <%= component.content.html_safe %>
   <% end %>
 </<%= html_tag %>>

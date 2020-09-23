@@ -8,34 +8,34 @@
       style: "tertiary",
       size: "tiny",
       icon: { name: "comment", style: "left" },
-      value: "5 Golden Eggs",
+      content: "5 Golden Eggs",
     } %>
     <%= sage_component SageButton, {
       style: "tertiary",
       size: "tiny",
       icon: { name: "users", style: "left" },
-      value: "3 Geese A-Laying",
+      content: "3 Geese A-Laying",
     } %>
     <%= sage_component SageButton, {
       style: "tertiary",
       size: "tiny",
       icon: { name: "coupon", style: "left" },
-      value: "1 Partridge In A Pear Tree",
+      content: "1 Partridge In A Pear Tree",
     } %>
     <%= content_for :sage_aside do %>
       <%= sage_component SageDropdown, {
         align: "right",
         items: [{
-          value: sage_component(SageLabel, { color: "success", value: "Publish" }),
+          content: sage_component(SageLabel, { color: "success", content: "Publish" }),
           attributes: { "href": "#" },
         }, {
-          value: sage_component(SageLabel, { color: "info", value: "Drip" }),
+          content: sage_component(SageLabel, { color: "info", content: "Drip" }),
           attributes: { "href": "#" },
         }, {
-          value: sage_component(SageLabel, { color: "draft", value: "Draft" }),
+          content: sage_component(SageLabel, { color: "draft", content: "Draft" }),
           attributes: { "href": "#" },
         }, {
-          value: "Delete Category",
+          content: "Delete Category",
           icon: "trash",
           style: "danger",
           attributes: { "href": "#" },
@@ -44,14 +44,14 @@
         <%= sage_component SageLabel, {
           color: "info",
           interactive: true,
-          value: "Drip",
+          content: "Drip",
           icon: { style: "right", name: "caret-down" }
         } %>
       <% end %>
       <%= sage_component SageDropdown, {
         align: "right",
         items: [{
-          value: "Edit Item",
+          content: "Edit Item",
           icon: "pen",
           attributes: {
             "href": "#",
@@ -61,7 +61,7 @@
         <%= sage_component SageButton, {
           style: "tertiary",
           icon: { name: "dot-menu-horizontal", style: "only" },
-          value: "Edit",
+          content: "Edit",
           align: "end"
         } %>
       <% end %>

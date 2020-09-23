@@ -27,7 +27,7 @@
       <%= component.link[:name] %>
     </a>
   <% end %>
-  <%= component.content if component.content.present? %>
+  <%= component.children if component.children.present? %>
 </div>
 
 <% if component.context_ladera_top %>

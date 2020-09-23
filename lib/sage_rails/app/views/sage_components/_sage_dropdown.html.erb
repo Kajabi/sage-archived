@@ -12,7 +12,7 @@
       <%= "sage-dropdown__trigger--#{component.trigger_type}" if component.trigger_type %>
     "
   >
-    <%= component.content %>
+    <%= component.children %>
   </div>
   <nav class="sage-dropdown__panel">
     <ul class="sage-dropdown__menu" role="menu" aria-label="options_menu">
@@ -42,7 +42,7 @@
               <%= "sage-dropdown__item-control--icon-#{item[:icon]}" if item[:icon] %>
             "
           >
-            <%= item[:value].html_safe %>
+            <%= item[:content].html_safe %>
           </a>
         </li>
       <% end %>
