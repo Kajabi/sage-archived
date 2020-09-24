@@ -35,6 +35,7 @@
   "dependencies": {
     "@babel/preset-env": "^7.11.5",
     "@babel/preset-react": "^7.10.4",
+    "@kajabi/sage": "git+ssh://git@github.com/Kajabi/sage-lib.git",
     "@rails/webpacker": "4.2.2",
     "arrive": "^2.4.1",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
