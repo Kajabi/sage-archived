@@ -4,5 +4,94 @@
 <% end %>
 
 <%= sage_component SagePanel, {} do %>
-  <%= sage_component SageButton, { style: "primary", value: "This is a sage component rails test" } %>
+  <%= sage_component SageOutlineItem, {
+    title: "cool",
+    type: "category",
+    actions_primary: [sage_component(SageButton, {
+      value: "Add Content",
+      style: "secondary",
+      icon: {style: "left", name: "add-circle"}
+    })],
+    actions_secondary: [
+      sage_component(SageButton, {
+        value: "wow",
+        style: "tertiary",
+        icon: {style: "only", name: "pen"}
+      }),
+      sage_component(SageButton, {
+        value: "wow",
+        style: "tertiary",
+        icon: {style: "only", name: "preview-on"}
+      })
+    ]
+  } do %>
+    <% 3.times do %>
+      <%= sage_component SageOutlineItem, {
+        title: "cool",
+        type: "post",
+        actions_primary: [sage_component(SageButton, {
+          value: "Add Content",
+          style: "secondary",
+          icon: {style: "left", name: "add-circle"}
+        })],
+        actions_secondary: [
+          sage_component(SageButton, {
+            value: "wow",
+            style: "tertiary",
+            icon: {style: "only", name: "pen"}
+          }),
+          sage_component(SageButton, {
+            value: "wow",
+            style: "tertiary",
+            icon: {style: "only", name: "preview-on"}
+          })
+        ]
+      } %>
+    <% end %>
+      <%= sage_component SageOutlineItem, {
+        title: "cool",
+        type: "category",
+        actions_primary: [sage_component(SageButton, {
+          value: "Add Content",
+          style: "secondary",
+          icon: {style: "left", name: "add-circle"}
+        })],
+        actions_secondary: [
+          sage_component(SageButton, {
+            value: "wow",
+            style: "tertiary",
+            icon: {style: "only", name: "pen"}
+          }),
+          sage_component(SageButton, {
+            value: "wow",
+            style: "tertiary",
+            icon: {style: "only", name: "preview-on"}
+          })
+        ]
+      }  do %>
+      <% 3.times do %>
+        <%= sage_component SageOutlineItem, {
+          title: "cool",
+          type: "post",
+          actions_primary: [sage_component(SageButton, {
+            value: "Add Content",
+            style: "secondary",
+            icon: {style: "left", name: "add-circle"}
+          })],
+          actions_secondary: [
+            sage_component(SageButton, {
+              value: "wow",
+              style: "tertiary",
+              icon: {style: "only", name: "pen"}
+            }),
+            sage_component(SageButton, {
+              value: "wow",
+              style: "tertiary",
+              icon: {style: "only", name: "preview-on"}
+            })
+          ]
+        } %>
+      <% end %>
+    <% end %>
+  <% end %>
 <% end %>
