@@ -2,7 +2,7 @@
 grid_patterns = [
   {
     group_name: "Equal sized columns",
-    group_desciption: "",
+    group_id: "patterns-equal",
     members: {
       m:  "--",
       o:  "---",
@@ -12,7 +12,7 @@ grid_patterns = [
   },
   {
     group_name: "Dots first",
-    group_desciption: "",
+    group_id: "patterns-dots",
     members: {
       et: ".-",
       em: ".--",
@@ -26,8 +26,8 @@ grid_patterns = [
     }
   },
   {
-    group_name: "Dots last",
-    group_desciption: "",
+    group_name: "Dashes First",
+    group_id: "patterns-dashes",
     members: {
       te: "-.",
       me: "--.",
@@ -42,7 +42,7 @@ grid_patterns = [
   },
   {
     group_name: "Dots on both sides",
-    group_desciption: "",
+    group_id: "patterns-both",
     members: {
       ete: ".-.",
       eme: ".--.",
@@ -129,9 +129,32 @@ dots = [
   <h1>Grid Templates</h1>
   <p>Easily create row layouts with our library of grid templates.</p>
 <% end %>
-
+<%= content_for :quick_links do %>
+  <div class="quick-links">
+    <h2 class="quick-links__title">Contents</h2>
+    <ul class="quick-links__body">
+      <li class="quick-links__item">
+        <a href="#overview" class="quick-links__link">Overview</a>
+      </li>
+      <li class="quick-links__item">
+        <a href="#patterns" class="quick-links__link">Patterns</a>
+      </li>
+      <% grid_patterns.each do | group | %>
+        <li class="quick-links__item">
+          <a href="#<%= group[:group_id] %>" class="quick-links__link quick-links__link--secondary"><%= group[:group_name] %></a>
+        </li>
+      <% end %>
+      <li class="quick-links__item">
+        <a href="#responsive" class="quick-links__link">Responsive Considerations</a>
+      </li>
+      <li class="quick-links__item">
+        <a href="#customization" class="quick-links__link">Limitations and Customization</a>
+      </li>
+    </ul>
+  </div>
+<% end %>
 <div class="sage-type">
-  <h2>Overview</h2>
+  <h2 id="overview">Overview</h2>
   <p>
     In order to make inline or row-based layouts simple and easy
     to build on the fly we've set up a number of template sets that
@@ -161,7 +184,7 @@ dots = [
     flexing elements are "dashes" we can easily analyze a layout to extract a "Morse-like" pattern.
   </p>
 
-  <h2>Patterns</h2>
+  <h2 id="patterns">Patterns</h2>
 
   <p class="t-sage-body-semi t-sage--color-red">
     TEMP NOTE FOR REVIEWERS: This approach aims to use a smaller set of dot- and dash-only letters in order to
@@ -169,36 +192,46 @@ dots = [
   </p>
 
   <p>The patterns below use a simple combinations of just a few letters:</p>
-  <ul>
-    <li><strong>E</strong> <code>.</code> a single fixed element.</li>
-    <li><strong>I</strong> <code>..</code> two fixed elements.</li>
-    <li><strong>S</strong> <code>...</code> three fixed elements.</li>
-    <li><strong>T</strong> <code>-</code> a single flexing element.</li>
-    <li><strong>M</strong> <code>--</code> two flexing elements.</li>
-    <li><strong>O</strong> <code>---</code> three flexing elements.</li>
-  </ul>
 
-  <p>While a these may be useful on their own, the power comes in their combination:</p>
-
-  <ul>
-    <li><strong>ME</strong> <code>--.</code> two flexing elements and one fixed element.</li>
-    <li><strong>IO</strong> <code>..---</code> two fixed elements and three flexing elements.</li>
-    <li><strong>EMI</strong> <code>.--..</code> one fixed elements, two flexing elements, and two fixed elements.</li>
-  </ul>
-
-  <p>A full table of the possibilities follows.</p>
+  <table class="sage-table">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Single</th>
+        <th>Double</th>
+        <th>Triple</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>Dots</th>
+        <td>Fixed elements such as icons, buttons, labels, and other controls</td>
+        <td>E <code>.</code></td>
+        <td>I <code>..</code></td>
+        <td>S <code>...</code></td>
+      </tr>
+      <tr>
+        <th>Dashes</th>
+        <td>Flexing elements such as text blocks</td>
+        <td>T <code>-</code></td>
+        <td>M <code>--</code></td>
+        <td>O <code>---</code></td>
+      </tr>
+    </tbody>
+  </table>
 
   <p>
-    These layouts persist for tablet and desktop viewports,
-    but for smartphone they will stack and flow with flexing elements filling the viewport
-    and fixed elements lining up as long as space allows, wrapping otherwise.
+    While a these may be useful on their own, the power comes in their combination, where letters are combined for a compound layout pattern.
+    Yet, it would also not be useful or practical to have two dot letters in a row, we thus allow for dots then dashes, dashes then dots, or dots, dashes, and dots.
+    A full set of the possibilities are demonstrated below.
   </p>
 
   <p><strong>Note:</strong> Elements shown here are merely demonstrations; any fixed or flexible units may be substituted.</p> 
   <div class="sage-panel-set">
     <% grid_patterns.each do | group | %>
       <div class="sage-panel sage-panel--docs-span-right">
-        <h3><%= group[:group_name] %></h3>
+        <h3 id="<%= group[:group_id] %>"><%= group[:group_name] %></h3>
         <ul class="sage-list">
           <% group[:members].each do | letter, code | %>
             <li>
@@ -229,4 +262,62 @@ dots = [
       </div>
     <% end %>
   </div>
+
+  <h2 id="responsive">Responsive Considerations</h2>
+  <p>
+    These layouts persist for tablet and desktop viewports,
+    but for smartphone they will stack and flow with flexing elements filling the viewport
+    and fixed elements lining up as long as space allows, wrapping otherwise.
+  </p>
+
+  <h2 id="customization">Limitations and Customization</h2>
+  <p>
+    A number of limitations become apparent with this system, some of which include:
+  </p>
+  <ul>
+    <li>
+      It is impossible to cover all possible layouts in a practical and digestible fashion.
+      We have limited this library to up to three dots or dashes in a series, and only one set of dashes.
+    </li>
+    <li>
+      Fixed elements sometimes do need particular sizes to be specified; our system assumes they have an intrinsic size.
+    </li>
+    <li>
+      The responsive capability of the grid is quite hampered by a one-size-fits-all rule as we've employed here.
+    </li>
+    <li>
+      Source order independence is another capability of the grid is completely ignored by this system.
+      Accessibility may therefore also be somewhat hampered, albeit no more than it has been hampered by layout techniques that predate the CSS Grid.
+    </li>
+  </ul>
+  <p>
+    For these and other reasons, needs may arise where a custom grid template may be needed.
+    In such a case consider this approach:
+  </p>
+  <ol>
+    <li>
+      Unless a completely new component is needed, aim to use as much
+      of the existing Panel and Card styles that exist
+      so that all that remains is a custom grid template,
+      possibly with additional responsive considerations.
+    <li>
+      In lieu of <code>sage-panel__row</code> or <code>sage-card__row</code>
+      use <code>sage-panel__custom-row</code> or <code>sage-card__custom-row</code>.
+      These will set up a basic grid with the appropraite spacings applied.
+      Yet, if even this provides too much constraint, use the complete open
+      <code>sage-panel__block</code> or <code>sage-card__block</code> instead.
+    </li>
+    <li>
+      In place of an existing grid template above set up a completely new one locally
+      or within <code>stylesheets/system/layout/_custom-grid-templates.scss</code>
+      named <code>.sage-custom-grid-template-{template-name}</code>.
+      Set up the template as needed, including responsive adjustments.
+    </li>
+    <li>
+      If you want to adjust source order and use <code>grid-area</code> mappings
+      nest those mappings within the above custom template style declaration
+      so as to keep all relevant setup contained in this space.
+    </li>
+  </ol>
+  <p>An example of such a custom grid template is under development for future release.</p>
 </div>
