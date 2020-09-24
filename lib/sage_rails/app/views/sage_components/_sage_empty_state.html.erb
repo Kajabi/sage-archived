@@ -1,0 +1,18 @@
+<%= sage_component SagePanel, {} do %>
+  <%= sage_component SageEmptyState, {
+    attributes: { "data-js-null-state": "" },
+    title: t("admin.navbar.empty.title"),
+    text: t("admin.navbar.empty.text"),
+  } do %>
+    <%= sage_component SageButton, {
+      attributes: {
+        "href": new_admin_site_navbar_path(@site),
+        "data-js-modaltrigger": "navbars-modal",
+        "data-remote": "true"
+      },
+      style: "primary",
+      icon: { name: "add", style: "left" },
+      value: t("admin.navbar.empty.button")
+    } %>
+  <% end %>
+<% end %>
