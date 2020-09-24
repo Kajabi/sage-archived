@@ -16,8 +16,10 @@
     height: auto;
   }
 
-  .sage-panel__content-stack > &,
-  .sage-panel__block > & {
+  .sage-panel__stack > &,
+  .sage-panel__block > &,
+  .sage-card__stack > &,
+  .sage-card__block > & {
     margin-bottom: 0;
   }
 }

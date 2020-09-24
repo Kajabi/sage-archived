@@ -110,7 +110,7 @@
 .sage-panel__stack {
   padding-left: 0;
 
-  @include sage-grid-content-stack();
+  @include sage-grid-stack();
 }
 
 .sage-panel__subtitle {

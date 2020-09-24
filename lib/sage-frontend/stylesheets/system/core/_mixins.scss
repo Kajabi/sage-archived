@@ -280,13 +280,14 @@
 
 /* ==================================================
   ** Grid: Panel Stack
-  Usage: `@include sage-grid-content-stack;`
+  Usage: `@include sage-grid-stack;`
 ================================================== */
-@mixin sage-grid-content-stack() {
+@mixin sage-grid-stack() {
   display: grid;
   grid-gap: sage-spacing(xs);
   grid-template-columns: 100%;
   grid-template-rows: min-content;
+  justify-items: start;
 }
 
 /* ==================================================
