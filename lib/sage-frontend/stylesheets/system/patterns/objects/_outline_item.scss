@@ -8,58 +8,72 @@
 
 .sage-outline-item {
   background-color: sage-color(white);
-  border: sage-border(light);
+  border: sage-border();
+  border-radius: sage-border(radius);
+  margin-bottom: sage-spacing(md);
+  overflow: hidden;
 
-  // @media (min-width: sage-breakpoint(md-min)) {
-  // grid-template-columns: rem(40px) 1fr min-content rem(160px) rem(92px) rem(40px);
-  // grid-template-rows: auto auto;
-  // grid-template-areas:
-  // "handle-drag title actions-secondary actions-primary status handle-collapse"
-  // "content";
-
-
-  // "content content content content content content";
-  // align-items: center;
-  // }
-
-  // @media (max-width: sage-breakpoint(md-min)) {
-    //   grid-template-columns: 1fr min-content;
-    //   grid-template-rows: auto auto;
-    //   grid-template-areas:
-    //     "handle-drag title actions-status handle-collapse"
-    //     "handle-drag actions-secondary actions-primary handle-collapse"
-    //   ;
-    // }
+  & & {
+    border: unset;
+    border-bottom: sage-border(light);
+    border-radius: unset;
+    margin-bottom: 0;
   }
+}
 
 .sage-outline-item__container {
-  grid-template-columns: rem(40px) 1fr min-content rem(160px) rem(92px) rem(40px);
-  grid-template-rows: auto;
-  grid-template-areas: "handle-drag title actions-secondary actions-primary status handle-collapse";
   align-items: center;
   display: grid;
-  grid-column-gap: sage-spacing(sm);
   padding-right: sage-spacing(sm);
   padding-left: sage-spacing(xs);
+  background: rgba(green, 0.07);
 
-  .sage-outline-item--type-category > & {
-    padding-top: sage-spacing(sm);
-    padding-bottom: sage-spacing(sm);
+  @media (min-width: sage-breakpoint(md-min)) {
+    grid-template-columns: rem(40px) 1fr min-content rem(160px) rem(92px) rem(40px);
+    grid-template-rows: auto;
+    grid-column-gap: sage-spacing(sm);
+    grid-template-areas: "handle-drag title actions-secondary actions-primary status handle-collapse";
+
+    .sage-outline-item--type-category > & {
+      padding-top: sage-spacing(sm);
+      padding-bottom: sage-spacing(sm);
+    }
+
+    .sage-outline-item--type-post > & {
+      padding-top: sage-spacing(xs);
+      padding-bottom: sage-spacing(xs);
+    }
   }
 
-  .sage-outline-item--type-post > & {
-    padding-top: sage-spacing(xs);
-    padding-bottom: sage-spacing(xs);
+  @media (max-width: sage-breakpoint(md-min)) {
+    grid-template-columns: min-content 1fr min-content min-content;
+    grid-template-rows: auto auto;
+    grid-row-gap: sage-spacing(xs);
+    grid-column-gap: sage-spacing(xs);
+    grid-template-areas:
+      "handle-drag title status handle-collapse"
+      "handle-drag actions-primary actions-secondary handle-collapse";
+
+    .sage-outline-item--type-category > & {
+      padding-top: sage-spacing(lg);
+      padding-bottom: sage-spacing(lg);
+    }
+
+    .sage-outline-item--type-post > & {
+      padding-top: sage-spacing(sm);
+      padding-bottom: sage-spacing(sm);
+    }
   }
+
 
   .sage-outline-item .sage-outline-item & {
     padding-left: sage-spacing(md);
-    background: pink;
+    background: rgba(red, 0.07);
   }
 
   .sage-outline-item .sage-outline-item .sage-outline-item & {
     padding-left: sage-spacing(xl);
-    background: green;
+    background: rgba(blue, 0.07);
   }
 }
 
@@ -67,6 +81,13 @@
   grid-area: title;
   color: sage-color(charcoal, 400);
   @include truncate;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &:focus-within {
+    color: sage-color(charcoal, 500);
+  }
 
   .sage-outline-item--type-category & {
     @extend %t-sage-body-semi;
@@ -79,21 +100,22 @@
 
 .sage-outline-item__actions-secondary {
   display: flex;
-  visibility: hidden;
   grid-area: actions-secondary;
   flex-direction: row;
 
-  :hover > &,
-  :focus > &,
-  :focus-within > & {
-    visibility: visible;
+  @media (min-width: sage-breakpoint(md-min)) {
+    visibility: hidden;
+
+    :hover > &,
+    :focus > &,
+    :focus-within > & {
+      visibility: visible;
+    }
   }
 }
 
 .sage-outline-item__actions-primary {
   grid-area: actions-primary;
-  display: flex;
-  justify-content: flex-end;
 }
 
 .sage-outline-item__status {
@@ -108,5 +130,9 @@
 
 .sage-outline-item__content {
   grid-area: content;
+
+  .sage-outline-item--collapsed > & {
+    display: none;
+  }
 }
 /* stylelint-enable */
