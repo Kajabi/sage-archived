@@ -20,6 +20,7 @@
 <% end %>
 
 <%= sage_component SagePanel, { spacer: { bottom: :lg } } do %>
+
   <%= sage_component SagePanelHeader, { title: "Domain" } %>
 
   <%= sage_component SageCard, {} do %>
@@ -106,6 +107,7 @@
         <% end %>
       <% end %>
     <% end %>
+
     <%= sage_component SagePanelTile, {} do %>
       <%= sage_component SagePanelSubheader, { title: "WHOIS Privacy" } %>
       <%= sage_component SageCard, {} do %>
@@ -119,6 +121,7 @@
       <% end %>
     <% end %>
   <% end %>
+
   <%= sage_component SagePanelBlock, { type_block: true } do %>
     <p>
       By purchasing this domain you have read and agreed to the
@@ -126,6 +129,7 @@
       <a href="#">Domain Registration Agreement</a>.
     </p>
   <% end %>
+
   <%= sage_component SagePanelFooter, {} do %>
     <%= sage_component SageButton, { value: "Cancel", style: "tertiary" } %>
     <%= sage_component SageButton, { value: "Complete Purchase", style: "primary" } %>
