@@ -40,8 +40,47 @@
       <p class="t-sage-heading-5 t-sage--color-grey-400 t-sage--strikethrough">$8.99</p>
     <% end %>
   <% end %>
-  
-  <hr />
+
+  <%= sage_component SagePanelSubheader, { title: "Your options" } %>
+  <%= sage_component SagePanelList, {} do %>
+    <li class="sage-panel__list-item sage-grid-template-b-et">
+      <i class="sage-icon-check-circle t-sage--color-sage"></i>
+      <span class="t-sage-body">Testing a list item</span>
+    </li>
+    <li class="sage-panel__list-item sage-grid-template-b-et">
+      <i class="sage-icon-check-circle t-sage--color-sage"></i>
+      <span class="t-sage-body">Testing a list item</span>
+    </li>
+    <li class="sage-panel__list-item sage-grid-template-b-et">
+      <i class="sage-icon-check-circle t-sage--color-sage"></i>
+      <span class="t-sage-body">Testing a list item</span>
+    </li>
+    <li class="sage-panel__list-item sage-grid-template-b-et">
+      <i class="sage-icon-check-circle t-sage--color-sage"></i>
+      <span class="t-sage-body">Testing a list item</span>
+    </li>
+  <% end %>
+
+  <%= sage_component SagePanelSubheader, { title: "Your options in a stack" } %>
+  <%= sage_component SagePanelStack, {} do %>
+    <div>
+      <i class="sage-icon-check-circle t-sage--color-sage"></i>
+      <span class="t-sage-body">Testing a list item</span>
+    </div>
+    <div>
+      <i class="sage-icon-check-circle t-sage--color-sage"></i>
+      <span class="t-sage-body">Testing a list item</span>
+    </div>
+    <div>
+      <i class="sage-icon-check-circle t-sage--color-sage"></i>
+      <span class="t-sage-body">Testing a list item</span>
+    </div>
+    <div>
+      <i class="sage-icon-check-circle t-sage--color-sage"></i>
+      <span class="t-sage-body">Testing a list item</span>
+    </div>
+  <% end %>
+
   <%= sage_component SagePanelTiles, { tiles_in_row: 2 } do %>
     <%= sage_component SagePanelTile, {} do %>
       <%= sage_component SagePanelSubheader, { title: "Billing Information" } do %>
