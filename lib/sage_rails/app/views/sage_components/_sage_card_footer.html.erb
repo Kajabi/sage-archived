@@ -1,5 +1,7 @@
 <div
-  class="sage-card__footer"
+  class="sage-card__footer
+    <%= "sage-card__footer--align-spread" if component.align_spread %>
+  "
   <%= component.generated_html_attributes %>
 >
   <%= component.content %>

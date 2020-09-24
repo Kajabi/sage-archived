@@ -28,7 +28,7 @@ class SageComponent
     raise ArgumentError.new("SageComponent expects :spacer to be a hash") unless spacer_hash.is_a?(Hash)
 
     spacer_hash.each do |key, value|
-      generated_css_classes << " sage-spacer-#{key}-#{value}"
+      generated_css_classes << " sage-spacer-#{key}#{value != :md ? "-#{value}" : ""}"
     end
   end
 

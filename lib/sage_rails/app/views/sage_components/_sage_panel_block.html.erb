@@ -1,5 +1,8 @@
 <div
-  class="sage-panel__block"
+  class="sage-panel__block
+    <%= "t-sage--color-#{component.color}" if component.color %>
+    <%= "sage-type" if component.type_block && component.type_block == true %>
+  "
   <%= component.generated_html_attributes %>
 >
   <%= component.content %>
