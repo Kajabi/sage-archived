@@ -10,23 +10,46 @@
   back_url: "#"
 %>
 
+<%= sage_component SagePanel, { spacer: { bottom: :lg } } do %>
+  <%= sage_component SagePanelHeader, { title: "Domain" } do %>
+    <%= sage_component SageButton, { value: "Test Button", style: "primary" } %>
+  <% end %>
+  <%= sage_component SageCard, {} do %>
+    <%= sage_component SageCardHeader, { title: "Card Title" } do %>
+      <%= sage_component SageButton, { value: "Test Button", style: "primary" } %>
+    <% end %>
+    <%= sage_component SageCardBlock, {} do %>
+    <% end %>
+    <%= sage_component SageCardStack, {} do %>
+    <% end %>
+    <%= sage_component SageCardList, {} do %>
+    <% end %>
+    <%= sage_component SageCardRow, { grid_template: "xxmmx" } do %>
+    <% end %>
+    <%= sage_component SageCardFooter, {} do %>
+    <% end %>
+  <% end %>
+  <%= sage_component SagePanelBlock, {} do %>
+  <% end %>
+  <%= sage_component SagePanelStack, {} do %>
+  <% end %>
+  <%= sage_component SagePanelList, {} do %>
+  <% end %>
+  <%= sage_component SagePanelTiles, { tiles_in_row: 4 } do %>
+  <% end %>
+  <%= sage_component SagePanelRow, { grid_template: "xxmmx" } do %>
+  <% end %>
+  <%= sage_component SagePanelFooter, {} do %>
+  <% end %>
+<% end %>
 
 <div class="sage-panel">
   <div class="sage-panel__header">
     <h2 class="sage-panel__title">Domain</h2>
-    <%= render "examples/elements/button/markup",
-      color: "tertiary",
-      icon_class: "sage-btn--icon-only-info-circle",
-      icon_only: true,
-      is_disabled: false,
-      is_link_btn: true,
-      link_url: "#",
-      size: "tiny",
-      text: "Learn more"
-    %>
+
   </div>
   <div class="sage-card sage-card--row sage-grid-template-b-eti">
-    <%= render "examples/elements/icon_card/markup", 
+    <%= render "examples/elements/icon_card/markup",
       color: "info",
       icon: "connect"
     %>
@@ -54,7 +77,7 @@
           is_link_btn: false,
           size: "tiny",
           text: "Edit"
-        %> 
+        %>
       </div>
       <div class="sage-card sage-card--row sage-grid-template-b-m">
         <div class="sage-card__block t-sage--color-charcoal-200">
@@ -83,9 +106,9 @@
   </div>
   <div class="sage-panel__block">
     <p class="t-sage-body">
-      By purchasing this domain you have read and agreed to the 
+      By purchasing this domain you have read and agreed to the
       <a href="#">ICANN policy</a> and
-      <a href="#">Domain Registration Agreement</a>.  
+      <a href="#">Domain Registration Agreement</a>.
     </p>
   </div>
   <div class="sage-panel__footer sage-panel__footer--align-right">

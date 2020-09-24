@@ -1,0 +1,2 @@
+class SagePanelBlock < SageComponent
+end

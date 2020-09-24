@@ -1,0 +1,2 @@
+class SagePanelFooter < SageComponent
+end
