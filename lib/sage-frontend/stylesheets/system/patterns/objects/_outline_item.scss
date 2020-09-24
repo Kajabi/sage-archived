@@ -6,6 +6,8 @@
 ================================================== */
 /* stylelint-disable */
 
+$-collapse-breakpoint-key: md-max;
+
 .sage-outline-item {
   background-color: sage-color(white);
   border: sage-border();
@@ -15,9 +17,12 @@
 
   & & {
     border: unset;
-    border-bottom: sage-border(light);
     border-radius: unset;
     margin-bottom: 0;
+
+    &:not(:last-child) {
+      border-bottom: sage-border(light);
+    }
   }
 }
 
@@ -28,7 +33,7 @@
   padding-left: sage-spacing(xs);
   background: rgba(green, 0.07);
 
-  @media (min-width: sage-breakpoint(md-min)) {
+  @media (min-width: sage-breakpoint($-collapse-breakpoint-key)) {
     grid-template-columns: rem(40px) 1fr min-content rem(160px) rem(92px) rem(40px);
     grid-template-rows: auto;
     grid-column-gap: sage-spacing(sm);
@@ -45,10 +50,10 @@
     }
   }
 
-  @media (max-width: sage-breakpoint(md-min)) {
+  @media (max-width: sage-breakpoint($-collapse-breakpoint-key)) {
     grid-template-columns: min-content 1fr min-content min-content;
     grid-template-rows: auto auto;
-    grid-row-gap: sage-spacing(xs);
+    grid-row-gap: sage-spacing(sm);
     grid-column-gap: sage-spacing(xs);
     grid-template-areas:
       "handle-drag title status handle-collapse"
