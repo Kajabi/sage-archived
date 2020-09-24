@@ -7,7 +7,7 @@
     </button>
   ),
   body: %(
-    <div class="sage-card__copy">
+    <div class="sage-card__block">
       <p>
         This is a copy block. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Nullam quis pretium massa. Maecenas posuere sapien in metus
@@ -42,8 +42,8 @@
       there are a small set of containers that can be used to create a variety of simple internal layouts:
       <ul>
         <li>
-          <strong><em>Copy</em></strong> —
-          <code>.sage-card__copy</code>
+          <strong><em>Block</em></strong> —
+          <code>.sage-card__block</code>
           should be used to contain a set of text with no preset spacing or layout base desired.
           If the block contains open text that should conform to type spacing rules,
           <code>.sage-type</code> can be added.
@@ -87,8 +87,8 @@
 <h5>Card with stack and row blocks</h5>
 <%= render "examples/objects/card/markup",
   body: %(
-    <strong>Copy:</strong>
-    <div class="sage-card__copy">
+    <strong>Block:</strong>
+    <div class="sage-card__block">
       <p>
         This is a copy block. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Nullam quis pretium massa. Maecenas posuere sapien in metus
@@ -132,7 +132,7 @@
   <h5>Card with a single body block</h5>
   <p>
     Cards with no header or footer and one outer body content type described above can be accomplished
-    with just <code>.sage-card--{copy|stack|list|row}</code> to simplify the containers needed. The example
+    with just <code>.sage-card--{block|stack|list|row}</code> to simplify the containers needed. The example
     below depicts such a case where the card contains a single row. Note, however, that the row may
     contain other group types.
   </p>
@@ -142,7 +142,7 @@
   single_block_type: "row",
   single_block_template: "ti",
   body: %(
-    <div class="sage-card__copy">
+    <div class="sage-card__block">
       <p class="t-sage-body-semi">
         daydreamsurfshop.com
       </p>

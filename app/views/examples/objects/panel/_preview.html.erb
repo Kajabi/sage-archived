@@ -4,7 +4,7 @@ panel_divider  = %(
 )
 
 sample_copy = %(
-  <div class="sage-panel__copy sage-type">
+  <div class="sage-panel__block sage-type">
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
       Morbi rhoncus mauris ut turpis gravida bibendum.
@@ -60,7 +60,7 @@ sample_subheader = %(
     <strong>Body</strong>
     While there is no specific container for the body itself,
     there are a variety of panel elements that can be used to create most panel configurations.
-    The simplest of these <strong>Panel Copy</strong> <code>.sage-panel__copy</code> (shown above)
+    The simplest of these <strong>Panel Block</strong> <code>.sage-panel__block</code> (shown above)
     allows for open text or elements with no preset spacing is desired.
     In the case of open text, the <code>sage-type</code> class can also be added to enforce open text spacing rules.
     Each of the Panel elements is explained and demonstrated in more detail below.
@@ -136,7 +136,7 @@ sample_subheader = %(
 <p><strong>Example:</strong></p>
 <div class="sage-panel__row sage-grid-template-b-ete">
   <i class="sage-icon-check-circle-xl t-sage--color-sage"></i>
-  <div class="sage-panel__copy">
+  <div class="sage-panel__block">
     <p class="t-sage-body-semi">Lorem ipsum dolor sit amet</p>
     <p class="t-sage-body-small t-sage--color-grey">consectetur adipiscing elit</p>
   </div>
@@ -213,7 +213,7 @@ sample_subheader = %(
 <div class="sage-panel-set">
   <%= render "examples/objects/panel/markup",
     body: %(
-      <div class="sage-panel__copy sage-type">
+      <div class="sage-panel__block sage-type">
         <p>
           This panel shows a standard figure inside the it. No modifiers are added onto the base class.
         </p> 
@@ -225,7 +225,7 @@ sample_subheader = %(
   %>
   <%= render "examples/objects/panel/markup",
     body: %(
-      <div class="sage-panel__copy sage-type">
+      <div class="sage-panel__block sage-type">
         <p>
           This panel shows a figure with bleed in the middle.
         </p> 
