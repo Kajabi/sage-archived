@@ -43,7 +43,7 @@
   
   <hr />
   <%= sage_component SagePanelTiles, { tiles_in_row: 2 } do %>
-    <div class="sage-panel__tile">
+    <%= sage_component SagePanelTile, {} do %>
       <%= sage_component SagePanelSubheader, { title: "Billing Information" } do %>
         <%= sage_component SageButton, { value: "Edit", style: "tertiary", size: "tiny", icon: {style: "only", name: "pen" } } %>
       <% end %>
@@ -66,8 +66,8 @@
           <% end %>
         <% end %>
       <% end %>
-    </div>
-    <div class="sage-panel__tile">
+    <% end %>
+    <%= sage_component SagePanelTile, {} do %>
       <%= sage_component SagePanelSubheader, { title: "WHOIS Privacy" } %>
       <%= sage_component SageCard, {} do %>
         <%= sage_component SageCardBlock, { color: "charcoal-200", type_block: true } do %>
@@ -78,7 +78,7 @@
           <p><a href="#">Learn more</a></p>
         <% end %>
       <% end %>
-    </div>
+    <% end %>
   <% end %>
   <%= sage_component SagePanelBlock, { type_block: true } do %>
     <p>
