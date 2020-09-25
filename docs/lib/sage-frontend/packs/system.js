@@ -4,5 +4,5 @@ import 'regenerator-runtime/runtime'
 import '@kajabi/sage'
 
 // --- Sage System Assets -------
-require.context('../../../../images/system', true)
-import '../../../../stylesheets/system/index.scss'
+require.context('../../../../assets/images/system', true)
+import '../../../../assets/stylesheets/system/index.scss'
