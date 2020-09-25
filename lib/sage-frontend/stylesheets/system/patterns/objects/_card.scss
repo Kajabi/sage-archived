@@ -7,6 +7,8 @@
 
 .sage-card {
   @include sage-card();
+
+  width: 100%;
 }
 
 .sage-card__footer {

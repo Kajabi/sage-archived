@@ -1,30 +1,22 @@
 <h5>Basic Card</h5>
-<%= render "examples/objects/card/markup",
-  title: "Card heading",
-  header_other: %(
+<%= sage_component SageCard, {} do %>
+  <%= sage_component SageCardHeader, { title: "Card heading" } do %>
     <button class="sage-btn sage-btn--tiny sage-btn--tertiary sage-btn--icon-only-info-circle">
       <span class="visually-hidden">Learn more</span>
     </button>
-  ),
-  body: %(
-    <div class="sage-card__block">
-      <p>
-        This is a copy block. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Nullam quis pretium massa. Maecenas posuere sapien in metus
-        fermentum posuere.
-      </p>
-    </div>
-  ),
-  footer: %(
-    <button class="sage-btn sage-btn--tertiary">
-      Cancel
-    </button>
-    <button class="sage-btn sage-btn--primary">
-      Save
-    </button>
-  ),
-  footer_aligns_right: true
-%>
+  <% end %>
+  <%= sage_component SageCardBlock, { type_block: true } do %>
+    <p>
+      This is a copy block. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Nullam quis pretium massa. Maecenas posuere sapien in metus
+      fermentum posuere.
+    </p>
+  <% end %>
+  <%= sage_component SageCardFooter, {} do %>
+    <%= sage_component SageButton, { style: "tertiary", value: "Cancel" } %>
+    <%= sage_component SageButton, { style: "primary", value: "Save" } %>
+  <% end %>
+<% end %>
 
 <div class="sage-type sage-spacer-top sage-spacer-bottom">
   <p>Cards have three core areas:</p>
@@ -85,72 +77,51 @@
 </div>
 
 <h5>Card with stack and row blocks</h5>
-<%= render "examples/objects/card/markup",
-  body: %(
-    <strong>Block:</strong>
-    <div class="sage-card__block">
-      <p>
-        This is a copy block. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Nullam quis pretium massa. Maecenas posuere sapien in metus
-        fermentum posuere.
-      </p>
-    </div>
-    <strong>Stack:</strong>
-    <ul class="sage-card__stack">
-      <li class="t-sage-body-small">
-        <i class="sage-icon-check t-sage--color-sage"></i>
-        Stack items here.
-      </li>
-      <li class="t-sage-body-small">
-        <i class="sage-icon-check t-sage--color-sage"></i>
-        Another stack item here.
-      </li>
-    </ul>
-    <strong>List:</strong>
-    <ul class="sage-card__list">
-      <li class="sage-card__list-item sage-card__row sage-grid-template-b-et">
-        <i class="sage-icon-check t-sage--color-sage"></i>
-        <span class="t-sage-body-small">Stack items here.</span>
-      </li>
-      <li class="sage-card__list-item sage-card__row sage-grid-template-b-et">
-        <i class="sage-icon-check t-sage--color-sage"></i>
-        <span class="t-sage-body-small">Another stack item here.</span>
-      </li>
-    </ul>
-    <strong>Row:</strong>
-    <div class="sage-card__row sage-grid-template-b-ete">
-      <i class="sage-icon-drop" aria-label="Product"></i>
-      <strong class="t-sage-body">
-        Row here -- $8.99/mo
-      </strong>
-      <button class="sage-btn sage-btn--small sage-btn--primary sage-btn--icon-left-cart">Buy now</strong>
-    </div>
-  )
-%>
-
-<div class="sage-type sage-spacer-top sage-spacer-bottom">
-  <h5>Card with a single body block</h5>
-  <p>
-    Cards with no header or footer and one outer body content type described above can be accomplished
-    with just <code>.sage-card--{block|stack|list|row}</code> to simplify the containers needed. The example
-    below depicts such a case where the card contains a single row. Note, however, that the row may
-    contain other group types.
-  </p>
-</div>
-
-<%= render "examples/objects/card/markup",
-  single_block_type: "row",
-  single_block_template: "ti",
-  body: %(
-    <div class="sage-card__block">
-      <p class="t-sage-body-semi">
-        daydreamsurfshop.com
-      </p>
-      <p class="t-sage-body-small t-sage--color-charcoal-200">
-        Auto renews yearly on August 6th
-      </p>
-    </div>
-    <p class="t-sage-body-semi t-sage--color-sage">First year free!</p>
-    <p class="t-sage-heading-5 t-sage--color-grey-400 t-sage--strikethrough">$8.99</p>
-  )
-%>
+<%= sage_component SageCard, {} do %>
+  <strong>Block:</strong>
+  <%= sage_component SageCardBlock, {} do %>
+    <p>
+      This is a copy block. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Nullam quis pretium massa. Maecenas posuere sapien in metus
+      fermentum posuere.
+    </p>
+  <% end %>
+  <strong>Stack:</strong>
+  <%= sage_component SageCardStack, {} do %>
+    <p class="t-sage-body-small">
+      <i class="sage-icon-check t-sage--color-sage"></i>
+      Stack items here.
+    </p>
+    <p class="t-sage-body-small">
+      <i class="sage-icon-check t-sage--color-sage"></i>
+      Another stack item here.
+    </p>
+  <% end %>
+  <strong>List:</strong>
+  <%= sage_component SageCardList, {} do %>
+    <%= sage_component SageCardListItem, { grid_template: "et" } do %>
+      <i class="sage-icon-check t-sage--color-sage"></i>
+      <span class="t-sage-body-small">Stack items here.</span>
+    <% end %>
+    <%= sage_component SageCardListItem, { grid_template: "et" } do %>
+      <i class="sage-icon-check t-sage--color-sage"></i>
+      <span class="t-sage-body-small">Another stack item here.</span>
+    <% end %>
+  <% end %>
+  <strong>Row:</strong>
+  <%= sage_component SageCardRow, { grid_template: "ete" } do %>
+    <i class="sage-icon-drop" aria-label="Product"></i>
+    <strong class="t-sage-body">
+      Row here -- $8.99/mo
+    </strong>
+    <%= sage_component SageButton, {
+      value: "Buy now",
+      style: "primary",
+      size: "small",
+      icon: {
+        name: "cart",
+        style: "left"
+      }
+    } %>
+  <% end %>
+<% end %>

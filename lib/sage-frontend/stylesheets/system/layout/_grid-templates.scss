@@ -20,7 +20,7 @@
       // Set dot elements to align at start
       @each $-n in map-get($-map, dot-slots) {
         > :nth-child(#{$-n}) {
-          align-self: start;
+          align-self: center;
         }
       }
     }
