@@ -173,6 +173,12 @@ $-collapse-breakpoint-key: md-min;
     @include sage-icon-base(handle);
     color: sage-color(charcoal, 200);
   }
+
+  &:hover::before,
+  &:active::before,
+  &:focus::before {
+    color: sage-color(primary);
+  }
 }
 
 .sage-outline-item__handle-collapse {
