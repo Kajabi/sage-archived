@@ -12,7 +12,7 @@
       </li>
       <% else %>
         <li class="sage-pagination__item">
-          <%= link_to_previous_page component.items, component.prev_text, class: "sage-pagination__page", params: component.pager_params %>
+          <%= link_to_previous_page component.items, component.prev_text, class: "sage-pagination__page", params: component.additional_params %>
         </li>
       <% end -%>
 
@@ -26,7 +26,7 @@
       </li>
       <% else %>
       <li class="sage-pagination__item">
-        <%= link_to_next_page component.items, component.next_text, class: "sage-pagination__page", params: component.pager_params %>
+        <%= link_to_next_page component.items, component.next_text, class: "sage-pagination__page", params: component.additional_params %>
       </li>
       <% end -%>
     </ul>
