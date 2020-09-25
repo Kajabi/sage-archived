@@ -10,8 +10,8 @@ services:
   js:
     user: root
     build:
-      context: ./javascript
-      dockerfile: Dockerfile.dev
+      context: .
+      dockerfile: docker/Dockerfile.dev
       target: base
     command:
       - /bin/bash
@@ -20,9 +20,9 @@ services:
         yarn install --check-files
         yarn build:watch
     volumes:
-      - ./javascript:/app:delegated
-      - ./javascript/yarncache:/root/.yarn-cache
-      - ./javascript/node_modules:/app/node_modules
+      - .:/app:delegated
+      - ./yarncache:/root/.yarn-cache
+      - ./node_modules:/app/node_modules
   docs:
     user: root
     build:
