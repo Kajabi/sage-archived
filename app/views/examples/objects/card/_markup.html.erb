@@ -1,7 +1,7 @@
 <%
 footer_aligns_right = defined?(footer_aligns_right) && footer_aligns_right
 %>
-<div class="sage-card<%= " sage-card--#{single_block_type}" if defined?(single_block_type) %><%= " sage-grid-template-b-#{single_block_template}" if defined?(single_block_template) %>">
+<div class="sage-card<%= " sage-card--#{single_block_type}" if defined?(single_block_type) %><%= " sage-grid-template-#{single_block_template}" if defined?(single_block_template) %>">
   <% if defined?(title) || defined?(header_other) %>
     <div class="sage-card__header">
       <% if defined?(title) %>

@@ -274,7 +274,7 @@
 ================================================== */
 @mixin sage-grid-card() {
   display: grid;
-  grid-gap: sage-spacing(sm);
+  gap: sage-spacing(sm);
   grid-template-rows: min-content;
 }
 
@@ -284,7 +284,7 @@
 ================================================== */
 @mixin sage-grid-stack() {
   display: grid;
-  grid-gap: sage-spacing(xs);
+  gap: sage-spacing(xs);
   grid-template-columns: 100%;
   grid-template-rows: min-content;
   justify-items: start;
@@ -296,7 +296,7 @@
 ================================================== */
 @mixin sage-grid-panel() {
   display: grid;
-  grid-gap: sage-spacing();
+  gap: sage-spacing();
   grid-template-columns: 100%;
   grid-template-rows: min-content;
 }
@@ -311,17 +311,17 @@
   justify-content: space-between;
   align-items: center;
 
-  @media (max-width: sage-breakpoint(sm-max)) {
+  @media (max-width: sage-breakpoint(md-max)) {
     display: flex;
     flex-flow: row wrap;
     gap: sage-spacing(sm);
   }
 
-  @media (min-width: sage-breakpoint(md-min)) {
+  @media (min-width: sage-breakpoint(lg-min)) {
     display: grid;
     grid-auto-columns: auto;
     grid-auto-flow: column;
-    grid-gap: sage-spacing(sm);
+    gap: sage-spacing(sm);
   }
 }
 
@@ -332,12 +332,21 @@
   Standard grid setup for a single row layout.
 ================================================== */
 @mixin sage-grid-panel-row() {
-  display: grid;
-  align-items: center;
-  grid-auto-columns: auto;
-  grid-auto-flow: column;
-  grid-gap: sage-spacing();
   justify-content: space-between;
+  align-items: center;
+
+  @media (max-width: sage-breakpoint(md-max)) {
+    display: flex;
+    flex-flow: row wrap;
+    gap: sage-spacing();
+  }
+
+  @media (min-width: sage-breakpoint(lg-min)) {
+    display: grid;
+    grid-auto-columns: auto;
+    grid-auto-flow: column;
+    gap: sage-spacing();
+  }
 }
 
 /* ==================================================

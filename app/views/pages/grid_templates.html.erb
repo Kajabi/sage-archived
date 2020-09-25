@@ -14,28 +14,28 @@ grid_patterns = [
     group_name: "Dots first",
     group_id: "patterns-dots",
     members: {
-      a: ".-",
-      w: ".--",
-      j: ".---",
-      u: "..-",
+      et: ".-",
+      em: ".--",
+      eo: ".---",
+      it: "..-",
       im: "..--",
       io: "..---",
-      v: "...-",
+      se: "...-",
       sm: "...--",
       so: "...---"
     }
   },
   {
-    group_name: "Dashes first",
+    group_name: "Dashes First",
     group_id: "patterns-dashes",
     members: {
-      n: "-.",
-      g: "--.",
+      te: "-.",
+      me: "--.",
       oe: "---.",
-      d: "-..",
-      z: "--..",
+      ti: "-..",
+      mi: "--..",
       oi: "---..",
-      b: "-...",
+      ts: "-...",
       ms: "--...",
       os: "---..."
     }
@@ -44,17 +44,33 @@ grid_patterns = [
     group_name: "Dots on both sides",
     group_id: "patterns-both",
     members: {
-      r: ".-.",
-      p: ".--.",
-      fe: ".---.",
-      l: ".-..",
-      wi: ".--..",
-      ji: ".---..",
-      f: "..-.",
-      ig: "..--.",
-      ug: "..---.",
-      ui: "..-..",
-      un: "..--.."
+      ete: ".-.",
+      eme: ".--.",
+      eoe: ".---.",
+      eti: ".-..",
+      emi: ".--..",
+      eoi: ".---..",
+      ets: ".-...",
+      ems: ".--...",
+      eos: ".---...",
+      ite: "..-.",
+      ime: "..--.",
+      ioe: "..---.",
+      iti: "..-..",
+      imi: "..--..",
+      ioi: "..---..",
+      its: "..-...",
+      ims: "..--...",
+      ios: "..---...",
+      ste: "...-.",
+      sme: "...--.",
+      soe: "...---.",
+      sti: "...-..",
+      smi: "...--..",
+      soi: "...---..",
+      sts: "...-...",
+      sms: "...--...",
+      sos: "...---...",
     }
   }
 ]
@@ -169,25 +185,40 @@ dots = [
   </p>
 
   <h2 id="patterns">Patterns</h2>
-  <p class="t-sage-body-semi t-sage--color-red">
-    TEMP NOTE FOR REVIEWERS: This approach aims to use actual Morse letters wherever possible
-    to keep the unique pattern names shorter.
-    However, this means that referring to a chart like this will be necessary for most folks
-    who do not have Morse Code memorized! 🤓
-  </p>
+  <p>The patterns below use a simple combinations of just a few letters:</p>
 
-  <p>The patterns below aim to use actual morse code letters wherever possible in order to accomplish a layout pattern.</p>
+  <table class="sage-table">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Single</th>
+        <th>Double</th>
+        <th width="80">Triple</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>Dots</th>
+        <td>Fixed elements such as icons, buttons, labels, and other controls</td>
+        <td>E <code>.</code></td>
+        <td>I <code>..</code></td>
+        <td>S <code>...</code></td>
+      </tr>
+      <tr>
+        <th>Dashes</th>
+        <td>Flexing elements such as text blocks</td>
+        <td>T <code>-</code></td>
+        <td>M <code>--</code></td>
+        <td>O <code>---</code></td>
+      </tr>
+    </tbody>
+  </table>
 
   <p>
-    Where layout patterns don't have their own distinct letter we aimed to represent that pattern
-    by a combination of dots-only and dashes-only letters (such as e, i, t, and m)
-    except where this would lead to a three-letter combo.
-  </p>
-
-  <p>
-    These layouts persist for tablet and desktop viewports,
-    but for smartphone they will stack and flow with flexing elements filling the viewport
-    and fixed elements lining up as long as space allows, wrapping otherwise.
+    While these may be useful on their own, the power comes in their combination, where letters are combined for a compound layout pattern.
+    Yet, it would also not be useful or practical to have two dot letters in a row, we thus allow for dots then dashes, dashes then dots, or dots, dashes, and dots.
+    A full set of the possibilities are demonstrated below.
   </p>
 
   <p><strong>Note:</strong> Elements shown here are merely demonstrations; any fixed or flexible units may be substituted.</p> 
@@ -198,26 +229,28 @@ dots = [
         <ul class="sage-list">
           <% group[:members].each do | letter, code | %>
             <li>
-              <h4 class="sage-panel__row sage-grid-template-a-u">
+              <h4 class="sage-panel__row sage-grid-template-it">
                 <span style="width: 30px"><%= letter %></span>
-                <code style="width: 80px"><%= code %></code>
+                <code style="width: 90px"><%= code %></code>
                 <code style="text-align: right">.sage-grid-template-<%= letter %></code>
               </h4>
-              <div class="sage-card sage-card--row sage-grid-template-a-<%= letter %> sage-spacer-top-xs sage-spacer-bottom">
-                <%
-                  i_dashes = 0
-                  i_dots = 0
-                %>
-                <% code.split("").each do | c | %>
-                  <% if c == "-" %>
-                    <%= dashes[i_dashes].html_safe %>
-                    <% i_dashes += 1 %>
+              <div class="sage-card">
+                <div class="sage-card__row sage-grid-template-<%= letter %> sage-spacer-top-xs sage-spacer-bottom">
+                  <%
+                    i_dashes = 0
+                    i_dots = 0
+                  %>
+                  <% code.split("").each do | c | %>
+                    <% if c == "-" %>
+                      <%= dashes[i_dashes].html_safe %>
+                      <% i_dashes += 1 %>
+                    <% end %>
+                    <% if c == "." %>
+                      <%= dots[i_dots].html_safe %>
+                      <% i_dots += 1 %>
+                    <% end %>
                   <% end %>
-                  <% if c == "." %>
-                    <%= dots[i_dots].html_safe %>
-                    <% i_dots += 1 %>
-                  <% end %>
-                <% end %>
+                </div>
               </div>
             </li>
           <% end %>
@@ -225,7 +258,7 @@ dots = [
       </div>
     <% end %>
   </div>
-  
+
   <h2 id="responsive">Responsive Considerations</h2>
   <p>
     These layouts persist for tablet and desktop viewports,

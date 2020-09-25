@@ -22,8 +22,14 @@ $-dashes: (
 );
 
 // Initial merge and cleanup of basic codes
-$sage-grid-template-codes-b: map-merge($-dots, $-dashes);
-$sage-grid-template-codes-b: map-remove($sage-grid-template-codes-b, _);
+$sage-grid-template-codes: map-merge($-dots, $-dashes);
+// Patch to add a few additional items missed below ... TBD why...
+$sage-grid-template-codes: map-merge($sage-grid-template-codes, (
+  mm: "----",
+  mo: "-----",
+  se: "...-"
+));
+$sage-grid-template-codes: map-remove($sage-grid-template-codes, _);
 
 // Start with an outer loop for left dots
 @each $-left-dot-ltr, $-left-dot-ptn in $-dots {
@@ -58,8 +64,8 @@ $sage-grid-template-codes-b: map-remove($sage-grid-template-codes-b, _);
       }
       
       // Append combo if there is at least one actual letter and the pattern is not in the combos yet
-      @if (($-ltrs != "") and (not map-has-key($sage-grid-template-codes-b, $-ltrs))) {
-        $sage-grid-template-codes-b: map-merge($sage-grid-template-codes-b, (
+      @if (($-ltrs != "") and (not map-has-key($sage-grid-template-codes, $-ltrs))) {
+        $sage-grid-template-codes: map-merge($sage-grid-template-codes, (
           #{$-ltrs}: $-left-dot-ptn + $-dash-ptn + $-right-dot-ptn
         ));
       }
@@ -88,10 +94,10 @@ $sage-grid-template-codes-b: map-remove($sage-grid-template-codes-b, _);
     ...
   );
 **/
-$sage-grid-templates-b: ();
-@each $-ltr, $-code in $sage-grid-template-codes-b {
-  $sage-grid-templates-b: map-merge(
-    $sage-grid-templates-b,
+$sage-grid-templates: ();
+@each $-ltr, $-code in $sage-grid-template-codes {
+  $sage-grid-templates: map-merge(
+    $sage-grid-templates,
     (
       #{$-ltr}: parse-morse-code($-code)
     )
