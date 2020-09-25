@@ -5,4 +5,4 @@ import '@kajabi/sage'
 
 // --- Sage System Assets -------
 require.context('../images/system', true)
-import '../../../../docs/stylesheets/system/index.scss'
+import '../../../../stylesheets/system/index.scss'

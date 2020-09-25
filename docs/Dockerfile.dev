@@ -10,5 +10,6 @@ COPY ./docker-entrypoint.sh /
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
 EXPOSE 4000
+EXPOSE 4035
 
 WORKDIR /app
