@@ -108,7 +108,7 @@ $-collapse-breakpoint-key: md-max;
   grid-area: actions-secondary;
   flex-direction: row;
 
-  @media (min-width: sage-breakpoint(md-min)) {
+  @media (min-width: sage-breakpoint($-collapse-breakpoint-key)) {
     visibility: hidden;
 
     :hover > &,
@@ -127,6 +127,10 @@ $-collapse-breakpoint-key: md-max;
   grid-area: status;
   display: flex;
   justify-content: flex-end;
+}
+
+.sage-outline-item__handle-drag {
+  grid-area: handle-drag;
 }
 
 .sage-outline-item__handle-collapse {
