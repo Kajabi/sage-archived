@@ -36,6 +36,7 @@ services:
     ports:
       - "4000:4000"
       - "4035:4035"
+      - "4001:4001"
     depends_on:
       - router
 
