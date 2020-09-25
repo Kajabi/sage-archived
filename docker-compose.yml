@@ -1,15 +1,5 @@
 version: '3.4'
 
-x-app-common: &app-common
-  user: root
-  volumes:
-    - '.:/app:delegated'
-    - "bundle:/usr/local/bundle"
-    - "yarncache:/root/.yarn-cache"
-    - "node_modules:/app/node_modules"
-    - "compiled_assets:/app/public/assets"
-    - /app/tmp
-
 services:
   router:
     image: nginx:alpine
@@ -17,13 +7,14 @@ services:
       - "80:80"
     volumes:
       - ./docker/nginx.conf:/etc/nginx/nginx.conf
-  web:
-    <<: *app-common
+  docs:
+    user: root
     build:
-      context: .
-      dockerfile: docker/Dockerfile.dev
+      context: ./docs
+      dockerfile: Dockerfile.dev
       target: base
     image: app
+    working_dir: '/app/docs'
     command:
       - /bin/bash
       - -c
@@ -36,11 +27,12 @@ services:
       - "4000:4000"
     depends_on:
       - router
-
-volumes:
-  bundle:
-  yarncache:
-  node_modules:
-  compiled_assets:
+    volumes:
+      - '.:/app:delegated'
+      - "./docs/bundle:/usr/local/bundle"
+      - "./docs/yarncache:/root/.yarn-cache"
+      - "./docs/node_modules:/app/docs/node_modules"
+      - "./docs/compiled_assets:/app/docs/public/assets"
+      - "./docs/tmp:/app/docs/tmp"
 
 
