@@ -1,1 +1,6 @@
-<%= render "examples/objects/empty_state/markup" %>
+<%= sage_component SageEmptyState, {
+  title: "Title for state",
+  text: "Text to appear below. Lorem ipsum dolor sit amet consectituor."
+} do %>
+  <p>Other stuff such as buttons...</p>
+<% end %>

@@ -1,7 +1,7 @@
 <%= sage_component SagePanel, {
-  title: "SageRails Code",
   spacer: { bottom: :lg, top: :lg }
 } do %>
+  <%= sage_component SagePanelHeader, { title: "SageRails Code" } %>
   <div class="example__code">
     <button class="example__expand-btn" aria-expanded="false" aria-controls="example-rails-code-<%= title %>">Expand this code snippet</button>
     <div id="example-rails-code-<%= title %>" class="sage-code-snippet" tabindex="-1">
@@ -11,9 +11,9 @@
 <% end %>
 
 <%= sage_component SagePanel, {
-  title: "HTML Code",
   spacer: { bottom: :lg, top: :lg }
 } do %>
+  <%= sage_component SagePanelHeader, { title: "HTML Code" } %>
   <div class="example__code">
     <button class="example__expand-btn" aria-expanded="false" aria-controls="example-html-code-<%= title %>">Expand this code snippet</button>
     <div id="example-html-code-<%= title %>" class="sage-code-snippet" tabindex="-1">

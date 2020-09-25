@@ -1,0 +1,10 @@
+<div
+  class="sage-empty-state"
+  <% component.attributes.each do |key, value| %>
+    <%= "#{key}='#{value}'".html_safe %>
+  <% end if component.attributes&.is_a?(Hash) %>
+>
+  <h2 class="sage-empty-state__title"><%= component.title %></h2>
+  <p class="sage-empty-state__text"><%= component.text %></p>
+  <%= component.content %>
+</div>

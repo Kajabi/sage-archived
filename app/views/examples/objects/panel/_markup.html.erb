@@ -1,9 +1,16 @@
 <div class="sage-panel">
-  <% if defined?(header) %>
-    <div class="sage-panel__header"><%= header.html_safe %></div>
+  <% if defined?(title) || defined?(header_other) %>
+    <div class="sage-panel__header">
+      <% if defined?(title) %>
+        <h2 class="sage-panel__title"><%= title.html_safe %></h2>
+      <% end %>
+      <%= header_other.html_safe if defined?(header_other) %>
+    </div>
   <% end %>
-  <%= body.html_safe %>
+  <%= body.html_safe if defined?(body) %>
   <% if defined?(footer) %>
-    <div class="sage-panel__footer"><%= footer.html_safe %></div>
+    <div class="sage-panel__footer">
+      <%= footer.html_safe %>
+    </div>
   <% end %>
 </div>
