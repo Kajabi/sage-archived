@@ -2,7 +2,7 @@
 var path = require('path');
 
 module.exports = {
-  entry: './javascript/index.js',
+  entry: './assets/javascript/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'main.js',
