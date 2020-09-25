@@ -19,10 +19,6 @@ $-collapse-breakpoint-key: md-max;
     border: unset;
     border-radius: unset;
     margin-bottom: 0;
-
-    &:not(:last-child) {
-      border-bottom: sage-border(light);
-    }
   }
 }
 
@@ -30,11 +26,12 @@ $-collapse-breakpoint-key: md-max;
   align-items: center;
   display: grid;
   padding-right: sage-spacing(sm);
-  padding-left: sage-spacing(xs);
-  background: rgba(green, 0.07);
+  padding-left: sage-spacing(md);
+  border-bottom: sage-border(light);
+  // background: rgba(green, 0.07);
 
   @media (min-width: sage-breakpoint($-collapse-breakpoint-key)) {
-    grid-template-columns: rem(40px) 1fr min-content rem(160px) rem(92px) rem(40px);
+    grid-template-columns: min-content 1fr min-content rem(160px) rem(92px) rem(40px);
     grid-template-rows: auto;
     grid-column-gap: sage-spacing(sm);
     grid-template-areas: "handle-drag title actions-secondary actions-primary status handle-collapse";
@@ -70,15 +67,22 @@ $-collapse-breakpoint-key: md-max;
     }
   }
 
+  // Development Mode Hightlighting
+  // .sage-outline-item .sage-outline-item & {
+  //   background: rgba(red, 0.07);
+  // }
 
-  .sage-outline-item .sage-outline-item & {
-    padding-left: sage-spacing(md);
-    background: rgba(red, 0.07);
-  }
+  // .sage-outline-item .sage-outline-item .sage-outline-item & {
+  //   background: rgba(blue, 0.07);
+  // }
 
+  // .sage-outline-item .sage-outline-item .sage-outline-item & {
+  //   background: rgba(blue, 0.07);
+  // }
+
+  // Nest Item Identention
   .sage-outline-item .sage-outline-item .sage-outline-item & {
     padding-left: sage-spacing(xl);
-    background: rgba(blue, 0.07);
   }
 }
 
@@ -131,13 +135,48 @@ $-collapse-breakpoint-key: md-max;
 
 .sage-outline-item__handle-drag {
   grid-area: handle-drag;
+  cursor: grab;
+
+  // Category Item
+  .sage-outline-item--type-category &::before {
+    @include sage-icon-base(folder);
+    color: sage-color(primary);
+  }
+
+  // Nested Category Item
+  .sage-outline-item__children .sage-outline-item--type-category &::before {
+    @include sage-icon-base(arrow-corner);
+    color: sage-color(primary);
+  }
+
+  // Post Standard
+  .sage-outline-item__children .sage-outline-item--type-post &::before {
+    @include sage-icon-base(file);
+    color: sage-color(charcoal, 200);
+  }
+
+  // Post Video
+  .sage-outline-item__children .sage-outline-item--post-icon-video &::before {
+    @include sage-icon-base(video-on);
+  }
+
+  // Post Assessment
+  .sage-outline-item__children .sage-outline-item--post-icon-assessment &::before {
+    @include sage-icon-base(form);
+  }
+
+  // Universal Drag Handle Hover Icon For All Types
+  .sage-outline-item__children .sage-outline-item__container:hover > &::before {
+    @include sage-icon-base(handle);
+    color: sage-color(charcoal, 200);
+  }
 }
 
 .sage-outline-item__handle-collapse {
   grid-area: handle-collapse;
 }
 
-.sage-outline-item__content {
+.sage-outline-item__children {
   grid-area: content;
 
   .sage-outline-item--collapsed > & {

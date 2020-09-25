@@ -1,9 +1,11 @@
 <% is_category = component.type == "category" %>
 
 <section class="
-  sage-outline-item
-  <%= "sage-outline-item--type-#{component.type}" if component.type %>
-">
+    sage-outline-item
+    <%= "sage-outline-item--type-#{component.type}" if component.type %>
+    <%= "sage-outline-item--post-icon-#{component.post_icon}" if component.post_icon %>
+  "
+>
   <div class="sage-outline-item__container">
     <div class="sage-outline-item__handle-drag"></div>
     <a href="#" class="sage-outline-item__title">
@@ -39,7 +41,7 @@
     <% end %>
   </div>
   <% if is_category %>
-    <div class="sage-outline-item__content">
+    <div class="sage-outline-item__children">
       <%= component.content %>
     </div>
   <% end %>
