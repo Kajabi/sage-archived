@@ -96,12 +96,12 @@ $-collapse-breakpoint-key: md-min;
   color: sage-color(charcoal, 400);
   @include truncate;
 
-  .sage-outline-item--type-category & {
+  .sage-outline-item--type-category > .sage-outline-item__container & {
     @extend %t-sage-body-semi;
   }
 
-  .sage-outline-item--type-post & {
-    @extend %t-sage-body-small-med;
+  .sage-outline-item--type-post > .sage-outline-item__container & {
+    @extend %t-sage-body;
   }
 }
 
