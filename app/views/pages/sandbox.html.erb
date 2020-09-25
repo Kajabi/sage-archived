@@ -3,103 +3,135 @@
   <p>Use this scratchpad to test out elements and objects in context. Just be sure not to commit your changes. ❤️</p>
 <% end %>
 
-<%= render "examples/objects/page_heading/markup",
-  page_title: "Order Summary",
-  back_icon: "sage-icon-caret-left",
-  back_text: "Back to Something",
-  back_url: "#"
-%>
-
-
-<div class="sage-panel">
-  <div class="sage-panel__header">
-    <h2 class="sage-panel__title">Domain</h2>
-    <%= render "examples/elements/button/markup",
-      color: "tertiary",
-      icon_class: "sage-btn--icon-only-info-circle",
-      icon_only: true,
-      is_disabled: false,
-      is_link_btn: true,
-      link_url: "#",
-      size: "tiny",
-      text: "Learn more"
+<%= sage_component SagePageHeading, {
+  title: "Order Summary",
+  spacer: { bottom: :md }
+} do %>
+  <% content_for :sage_breadcrumbs do %>
+    <%= render "examples/elements/breadcrumbs/markup",
+      klass: "sage-page-heading__back",
+      has_back_icon: true,
+      items: [{
+        text: "Back to Something",
+        url: "#"
+      }]
     %>
-  </div>
-  <div class="sage-card sage-card--row sage-grid-template-b-eti">
-    <%= render "examples/elements/icon_card/markup", 
-      color: "info",
-      icon: "connect"
-    %>
-    <div class="sage-card__block">
-      <p class="t-sage-body-semi">
-        daydreamsurfshop.com
-      </p>
-      <p class="t-sage-body-small t-sage--color-charcoal-200">
-        Auto renews yearly on August 6th
-      </p>
+  <% end %>
+<% end %>
+
+<%= sage_component SagePanel, { spacer: { bottom: :lg } } do %>
+
+  <%= sage_component SagePanelHeader, { title: "Domain" } %>
+
+  <%= sage_component SageCard, {} do %>
+    <%= sage_component SageCardRow, { grid_template: "b-eti" } do %>
+      <%= render "examples/elements/icon_card/markup",
+        color: "info",
+        icon: "connect"
+      %>
+      <%= sage_component SageCardBlock, {} do %>
+        <p class="t-sage-body-semi">
+          daydreamsurfshop.com
+        </p>
+        <p class="t-sage-body-small t-sage--color-charcoal-200">
+          Auto renews yearly on August 6th
+        </p>
+      <% end %>
+      <p class="t-sage-body-semi t-sage--color-sage">First year free!</p>
+      <p class="t-sage-heading-5 t-sage--color-grey-400 t-sage--strikethrough">$8.99</p>
+    <% end %>
+  <% end %>
+
+  <%= sage_component SagePanelSubheader, { title: "Your options" } %>
+  <%= sage_component SagePanelList, {} do %>
+    <li class="sage-panel__list-item sage-grid-template-b-et">
+      <i class="sage-icon-check-circle t-sage--color-sage"></i>
+      <span class="t-sage-body">Testing a list item</span>
+    </li>
+    <li class="sage-panel__list-item sage-grid-template-b-et">
+      <i class="sage-icon-check-circle t-sage--color-sage"></i>
+      <span class="t-sage-body">Testing a list item</span>
+    </li>
+    <li class="sage-panel__list-item sage-grid-template-b-et">
+      <i class="sage-icon-check-circle t-sage--color-sage"></i>
+      <span class="t-sage-body">Testing a list item</span>
+    </li>
+    <li class="sage-panel__list-item sage-grid-template-b-et">
+      <i class="sage-icon-check-circle t-sage--color-sage"></i>
+      <span class="t-sage-body">Testing a list item</span>
+    </li>
+  <% end %>
+
+  <%= sage_component SagePanelSubheader, { title: "Your options in a stack" } %>
+  <%= sage_component SagePanelStack, {} do %>
+    <div>
+      <i class="sage-icon-check-circle t-sage--color-sage"></i>
+      <span class="t-sage-body">Testing a list item</span>
     </div>
-    <p class="t-sage-body-semi t-sage--color-sage">First year free!</p>
-    <p class="t-sage-heading-5 t-sage--color-grey-400 t-sage--strikethrough">$8.99</p>
-  </div>
-  <hr />
-  <div class="sage-panel__tiles sage-panel__tiles--2-up">
-    <div class="sage-panel__tile">
-      <div class="sage-panel__subheader">
-        <h3 class="sage-panel__subtitle">Bililng Information</h3>
-        <%= render "examples/elements/button/markup",
-          color: "tertiary",
-          icon_class: "sage-btn--icon-only-pen",
-          icon_only: true,
-          is_disabled: false,
-          is_link_btn: false,
-          size: "tiny",
-          text: "Edit"
-        %> 
-      </div>
-      <div class="sage-card sage-card--row sage-grid-template-b-m">
-        <div class="sage-card__block t-sage--color-charcoal-200">
-          <p class="t-sage-body">John Doe</p>
-          <p class="t-sage-body">john@doe.com</p>
-          <p class="t-sage-body">9494587494</p>
-          <p class="t-sage-body">Account ID: 13894</p>
-        </div>
-        <div class="sage-card__block t-sage--color-charcoal-200">
-          <p class="t-sage-body">123 Kajabi Ln</p>
-          <p class="t-sage-body">Irvine, CA</p>
-          <p class="t-sage-body">92604</p>
-          <p class="t-sage-body">United States</p>
-        </div>
-      </div>
+    <div>
+      <i class="sage-icon-check-circle t-sage--color-sage"></i>
+      <span class="t-sage-body">Testing a list item</span>
     </div>
-    <div class="sage-panel__tile">
-      <h3 class="sage-panel__subtitle">WHOIS Privacy</h3>
-      <div class="sage-card">
-        <div class="sage-card__block t-sage--color-charcoal-200">
-          <p class="t-sage-body">This domain includes WHOIS privacy at no extra cost. This means your personal information won’t be displayed in public domain registration records.</p>
-          <p class="t-sage-body"><a href="#">Learn more</a></p>
-        </div>
-      </div>
+    <div>
+      <i class="sage-icon-check-circle t-sage--color-sage"></i>
+      <span class="t-sage-body">Testing a list item</span>
     </div>
-  </div>
-  <div class="sage-panel__block">
-    <p class="t-sage-body">
-      By purchasing this domain you have read and agreed to the 
+    <div>
+      <i class="sage-icon-check-circle t-sage--color-sage"></i>
+      <span class="t-sage-body">Testing a list item</span>
+    </div>
+  <% end %>
+
+  <%= sage_component SagePanelTiles, { tiles_in_row: 2 } do %>
+    <%= sage_component SagePanelTile, {} do %>
+      <%= sage_component SagePanelSubheader, { title: "Billing Information" } do %>
+        <%= sage_component SageButton, { value: "Edit", style: "tertiary", size: "tiny", icon: {style: "only", name: "pen" } } %>
+      <% end %>
+      <%= sage_component SageCard, {} do %>
+        <%= sage_component SageCardRow, { grid_template: "b-m", vertical_align: "start" } do %>
+          <%= sage_component SageCardBlock, { color: "charcoal-200", type_block: true } do %>
+            <p>
+              John Doe<br/>
+              john@doe.com<br/>
+              9494587494
+            </p>
+            <p>Account ID: 13894</p>
+          <% end %>
+          <%= sage_component SageCardBlock, { color: "charcoal-200", type_block: true } do %>
+            <p>
+              123 Kajabi Ln<br/>
+              Irvine, CA 92604<br/>
+              United States
+            </p>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+
+    <%= sage_component SagePanelTile, {} do %>
+      <%= sage_component SagePanelSubheader, { title: "WHOIS Privacy" } %>
+      <%= sage_component SageCard, {} do %>
+        <%= sage_component SageCardBlock, { color: "charcoal-200", type_block: true } do %>
+          <p>
+            This domain includes WHOIS privacy at no extra cost.
+            This means your personal information won’t be displayed in public domain registration records.
+          </p>
+          <p><a href="#">Learn more</a></p>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+
+  <%= sage_component SagePanelBlock, { type_block: true } do %>
+    <p>
+      By purchasing this domain you have read and agreed to the
       <a href="#">ICANN policy</a> and
-      <a href="#">Domain Registration Agreement</a>.  
+      <a href="#">Domain Registration Agreement</a>.
     </p>
-  </div>
-  <div class="sage-panel__footer sage-panel__footer--align-right">
-    <div class="sage-btn-group">
-      <%= render "examples/elements/button/markup",
-        color: "tertiary",
-        is_link_btn: false,
-        text: "Cancel"
-      %>
-      <%= render "examples/elements/button/markup",
-        color: "primary",
-        is_link_btn: false,
-        text: "Complete Purchase"
-      %>
-    </div>
-  </div>
-</div>
+  <% end %>
+
+  <%= sage_component SagePanelFooter, {} do %>
+    <%= sage_component SageButton, { value: "Cancel", style: "tertiary" } %>
+    <%= sage_component SageButton, { value: "Complete Purchase", style: "primary" } %>
+  <% end %>
+<% end %>

@@ -13,40 +13,8 @@
   @include sage-grid-panel();
 }
 
-.sage-panel__list {
-  padding: 0;
-  margin: 0 -#{sage-spacing()};
-  list-style: none;
-}
-
-.sage-panel__list-item {
-  margin-bottom: rem(-1px);
-  padding: sage-spacing(sm) sage-spacing();
-  border-top: 1px solid sage-color(grey, 200);
-  border-bottom: 1px solid sage-color(grey, 200);
-
-  @include sage-grid-card-row;
-}
-
-.sage-panel__row,
-.sage-panel__footer,
-.sage-panel__header,
-.sage-panel__subheader {
-  @include sage-grid-panel-row();
-}
-
-.sage-panel__row--media {
-  grid-template-columns: 160px 1fr;
-}
-
-.sage-panel__stack {
-  padding-left: 0;
-
-  @include sage-grid-content-stack();
-}
-
-.sage-panel > hr,
-.sage-panel__divider {
+.sage-panel__divider,
+.sage-panel > hr {
   margin: 0;
   padding-top: rem(11px); // 16 - 1px element - 4px bottom padding
   padding-bottom: rem(4px);
@@ -101,10 +69,52 @@
 
 .sage-panel__footer {
   @include sage-grid-panel-row();
+
+  &:not(.sage-panel__footer--align-spread) {
+    justify-content: end;
+  }
 }
 
-.sage-panel__footer--align-right {
-  justify-content: end;
+.sage-panel__header,
+.sage-panel__subheader {
+  @include sage-grid-panel-row();
+}
+
+.sage-panel__list {
+  padding: 0;
+  margin: 0 -#{sage-spacing()};
+  list-style: none;
+}
+
+.sage-panel__list-item {
+  margin-bottom: rem(-1px);
+  padding: sage-spacing(sm) sage-spacing();
+  border-top: 1px solid sage-color(grey, 200);
+  border-bottom: 1px solid sage-color(grey, 200);
+
+  @include sage-grid-card-row;
+}
+
+.sage-panel__row {
+  @include sage-grid-panel-row();
+}
+
+.sage-panel__row--media {
+  grid-template-columns: 160px 1fr;
+}
+
+.sage-panel__row--vertical-align-start {
+  align-items: start;
+}
+
+.sage-panel__stack {
+  padding-left: 0;
+
+  @include sage-grid-stack();
+}
+
+.sage-panel__subtitle {
+  @extend %t-sage-heading-6;
 }
 
 .sage-panel__tile {
@@ -139,8 +149,4 @@
   grid-template-columns: 100%;
   grid-template-rows: min-content;
   grid-gap: sage-spacing(lg);
-}
-
-.sage-panel__subtitle {
-  @extend %t-sage-heading-6;
 }

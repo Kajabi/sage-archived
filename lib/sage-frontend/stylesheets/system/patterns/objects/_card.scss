@@ -9,17 +9,14 @@
   @include sage-card();
 }
 
-.sage-card--row {
-  @include sage-grid-card-row();
-}
-
 .sage-card__footer {
   @include sage-grid-card-row();
+
+  &:not(.sage-card__footer--align-spread) {
+    justify-content: end;
+  }
 }
 
-.sage-card__footer--align-right {
-  justify-content: end;
-}
 
 .sage-card__figure {
   display: flex;
@@ -61,8 +58,7 @@
   display: block;
 }
 
-.sage-card__header,
-.sage-card__row {
+.sage-card__header {
   @include sage-grid-card-row();
 }
 
@@ -79,11 +75,19 @@
   border-bottom: 1px solid sage-color(grey, 200);
 }
 
+.sage-card__row {
+  @include sage-grid-card-row();
+}
+
+.sage-card__row--vertical-align-start {
+  align-items: start;
+}
+
 .sage-card__stack {
   padding: 0;
   list-style: none;
 
-  @include sage-grid-content-stack();
+  @include sage-grid-stack();
 }
 
 .sage-card__title {
