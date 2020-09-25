@@ -8,9 +8,9 @@
 >
   <div class="sage-outline-item__container">
     <div class="sage-outline-item__handle-drag"></div>
-    <a href="#" class="sage-outline-item__title">
+    <h1 class="sage-outline-item__title">
       <%= component.title %>
-    </a>
+    </h1>
     <% if component.actions_secondary %>
       <div class="sage-outline-item__actions-secondary">
         <% component.actions_secondary.each do |secondary| %>
@@ -35,7 +35,8 @@
         <%= sage_component SageButton, {
           value: "Add Content",
           style: "tertiary",
-          icon: {style: "only", name: "caret-down"}
+          icon: {style: "only", name: "caret-down"},
+          attributes: { "data-js-tooltip": "Collapse" }
         } %>
       </div>
     <% end %>

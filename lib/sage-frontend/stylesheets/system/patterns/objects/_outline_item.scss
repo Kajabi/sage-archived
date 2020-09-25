@@ -6,7 +6,7 @@
 ================================================== */
 /* stylelint-disable */
 
-$-collapse-breakpoint-key: md-max;
+$-collapse-breakpoint-key: md-min;
 
 .sage-outline-item {
   background-color: sage-color(white);
@@ -27,7 +27,6 @@ $-collapse-breakpoint-key: md-max;
   display: grid;
   padding-right: sage-spacing(sm);
   padding-left: sage-spacing(md);
-  border-bottom: sage-border(light);
   // background: rgba(green, 0.07);
 
   @media (min-width: sage-breakpoint($-collapse-breakpoint-key)) {
@@ -39,11 +38,17 @@ $-collapse-breakpoint-key: md-max;
     .sage-outline-item--type-category > & {
       padding-top: sage-spacing(sm);
       padding-bottom: sage-spacing(sm);
+      border-bottom: sage-border();
     }
 
     .sage-outline-item--type-post > & {
       padding-top: sage-spacing(xs);
       padding-bottom: sage-spacing(xs);
+      border-bottom: sage-border(light);
+    }
+
+    .sage-outline-item--type-post:last-child > & {
+      border-bottom: unset;
     }
   }
 
@@ -54,7 +59,7 @@ $-collapse-breakpoint-key: md-max;
     grid-column-gap: sage-spacing(xs);
     grid-template-areas:
       "handle-drag title status handle-collapse"
-      "handle-drag actions-primary actions-secondary handle-collapse";
+      "actions-primary actions-primary actions-secondary handle-collapse";
 
     .sage-outline-item--type-category > & {
       padding-top: sage-spacing(lg);
@@ -90,13 +95,6 @@ $-collapse-breakpoint-key: md-max;
   grid-area: title;
   color: sage-color(charcoal, 400);
   @include truncate;
-
-  &:hover,
-  &:focus,
-  &:active,
-  &:focus-within {
-    color: sage-color(charcoal, 500);
-  }
 
   .sage-outline-item--type-category & {
     @extend %t-sage-body-semi;
@@ -137,6 +135,10 @@ $-collapse-breakpoint-key: md-max;
   grid-area: handle-drag;
   cursor: grab;
 
+  &:active {
+    cursor: grabbing;
+  }
+
   // Category Item
   .sage-outline-item--type-category &::before {
     @include sage-icon-base(folder);
@@ -166,6 +168,7 @@ $-collapse-breakpoint-key: md-max;
   }
 
   // Universal Drag Handle Hover Icon For All Types
+  .sage-outline-item__container:hover > &::before,
   .sage-outline-item__children .sage-outline-item__container:hover > &::before {
     @include sage-icon-base(handle);
     color: sage-color(charcoal, 200);
