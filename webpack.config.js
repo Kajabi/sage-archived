@@ -12,7 +12,6 @@ module.exports = {
     rules: [
       {
         test: /\.js$|jsx/,
-        include: ['node_modules', path.resolve(__dirname, 'assets/javascript')],
         use: {
           loader: 'babel-loader',
           options: {
