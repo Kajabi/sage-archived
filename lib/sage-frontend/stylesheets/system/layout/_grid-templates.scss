@@ -4,7 +4,7 @@
 
 // Generates classes for each sage grid template
 @each $-key, $-map in $sage-grid-templates {
-  [data-sage-grid-tempalte="#{map-get($-map, code)}"],
+  [data-sage-grid-template="#{map-get($-map, code)}"],
   .sage-grid-template-#{$-key} {
     @media (max-width: sage-breakpoint(md-max)) {
       // Set dash elements to fill the space
