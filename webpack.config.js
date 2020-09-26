@@ -23,7 +23,17 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        loaders: ["style-loader", "css-loader", "sass-loader"],
+        use: [
+          { loader: 'css-loader' },
+          { loader: 'resolve-url-loader' },
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true,
+              sourceMapContents: false
+            }
+          }
+        ],
         include: path.resolve(__dirname, 'assets/stylesheets')
       }
     ],
