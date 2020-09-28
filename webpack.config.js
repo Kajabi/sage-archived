@@ -4,10 +4,13 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
   entry: {
-    main: [
-      './assets/javascript/index.js',
+    system: [
+      './assets/javascript/system/index.js',
       './assets/stylesheets/system/index.scss'
     ],
+    react: [
+      './assets/javascript/react-components/index.js'
+    ]
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -65,6 +68,21 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.css', '.scss', '.sass', '.woff', '.woff2', '.ttf', '.otf', '.svg']
+    extensions: [
+      '.js',
+      '.jsx',
+      '.css',
+      '.scss',
+      '.sass',
+      '.woff',
+      '.woff2',
+      '.ttf',
+      '.otf',
+      '.svg',
+      '.png',
+      '.jpeg',
+      '.jpg',
+      '.gif'
+    ]
   }
 }
