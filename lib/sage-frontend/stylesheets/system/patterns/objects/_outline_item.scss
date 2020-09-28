@@ -4,34 +4,33 @@
 
 
 ================================================== */
-/* stylelint-disable */
 
 $-collapse-breakpoint-key: md-min;
 
 .sage-outline-item {
+  overflow: hidden;
+  margin-bottom: sage-spacing(md);
   background-color: sage-color(white);
   border: sage-border();
   border-radius: sage-border(radius);
-  margin-bottom: sage-spacing(md);
-  overflow: hidden;
 
   & & {
+    margin-bottom: 0;
     border: unset;
     border-radius: unset;
-    margin-bottom: 0;
   }
 }
 
-.sage-outline-item__container {
-  align-items: center;
+.sage-outline-item__content {
   display: grid;
+  align-items: center;
+  grid-template-rows: repeat(auto-fit, auto);
   padding-right: sage-spacing(sm);
   padding-left: sage-spacing(md);
-  // background: rgba(green, 0.07);
 
   @media (min-width: sage-breakpoint($-collapse-breakpoint-key)) {
+    // Using static column values to ensure alignment
     grid-template-columns: min-content 1fr min-content rem(160px) rem(92px) rem(40px);
-    grid-template-rows: auto;
     grid-column-gap: sage-spacing(sm);
     grid-template-areas: "handle-drag title actions-secondary actions-primary status handle-collapse";
 
@@ -54,7 +53,6 @@ $-collapse-breakpoint-key: md-min;
 
   @media (max-width: sage-breakpoint($-collapse-breakpoint-key)) {
     grid-template-columns: min-content 1fr min-content min-content;
-    grid-template-rows: auto auto;
     grid-row-gap: sage-spacing(sm);
     grid-column-gap: sage-spacing(xs);
     grid-template-areas:
@@ -72,23 +70,16 @@ $-collapse-breakpoint-key: md-min;
     }
   }
 
-  // Development Mode Hightlighting
-  // .sage-outline-item .sage-outline-item & {
-  //   background: rgba(red, 0.07);
-  // }
+  /* stylelint-disable selector-max-compound-selectors */
 
-  // .sage-outline-item .sage-outline-item .sage-outline-item & {
-  //   background: rgba(blue, 0.07);
-  // }
-
-  // .sage-outline-item .sage-outline-item .sage-outline-item & {
-  //   background: rgba(blue, 0.07);
-  // }
-
-  // Nest Item Identention
-  .sage-outline-item .sage-outline-item .sage-outline-item & {
+  // Nested Item Identention
+  // Indents `type-category` that is 1-level deep and anything that is 2-levels deep
+  .sage-outline-item__children .sage-outline-item.sage-outline-item--type-category &,
+  .sage-outline-item__children .sage-outline-item.sage-outline-item--type-category .sage-outline-item__children & {
     padding-left: sage-spacing(xl);
   }
+
+  /* stylelint-enable selector-max-compound-selectors */
 }
 
 .sage-outline-item__title {
@@ -96,11 +87,11 @@ $-collapse-breakpoint-key: md-min;
   color: sage-color(charcoal, 400);
   @include truncate;
 
-  .sage-outline-item--type-category > .sage-outline-item__container & {
+  .sage-outline-item--type-category > .sage-outline-item__content & {
     @extend %t-sage-body-semi;
   }
 
-  .sage-outline-item--type-post > .sage-outline-item__container & {
+  .sage-outline-item--type-post > .sage-outline-item__content & {
     @extend %t-sage-body;
   }
 }
@@ -126,8 +117,8 @@ $-collapse-breakpoint-key: md-min;
 }
 
 .sage-outline-item__status {
-  grid-area: status;
   display: flex;
+  grid-area: status;
   justify-content: flex-end;
 }
 
@@ -139,45 +130,46 @@ $-collapse-breakpoint-key: md-min;
     cursor: grabbing;
   }
 
-  // Category Item
+  // Category: Standard
   .sage-outline-item--type-category &::before {
     @include sage-icon-base(folder);
     color: sage-color(primary);
   }
 
-  // Nested Category Item
+  // Category: Nested
   .sage-outline-item__children .sage-outline-item--type-category &::before {
     @include sage-icon-base(arrow-corner);
     color: sage-color(primary);
   }
 
-  // Post Standard
+  // Post: Standard
   .sage-outline-item__children .sage-outline-item--type-post &::before {
     @include sage-icon-base(file);
     color: sage-color(charcoal, 200);
   }
 
-  // Post Video
+  // Post: Video
   .sage-outline-item__children .sage-outline-item--post-icon-video &::before {
     @include sage-icon-base(video-on);
-  }
-
-  // Post Assessment
-  .sage-outline-item__children .sage-outline-item--post-icon-assessment &::before {
-    @include sage-icon-base(form);
-  }
-
-  // Universal Drag Handle Hover Icon For All Types
-  .sage-outline-item__container:hover > &::before,
-  .sage-outline-item__children .sage-outline-item__container:hover > &::before {
-    @include sage-icon-base(handle);
     color: sage-color(charcoal, 200);
   }
 
-  &:hover::before,
-  &:active::before,
-  &:focus::before {
-    color: sage-color(primary);
+  // Post: Assessment
+  .sage-outline-item__children .sage-outline-item--post-icon-assessment &::before {
+    @include sage-icon-base(form);
+    color: sage-color(charcoal, 200);
+  }
+
+  // Universal Hover For All
+  .sage-outline-item__content:hover > & {
+    &::before {
+      @include sage-icon-base(handle);
+      color: sage-color(charcoal, 100);
+    }
+
+    &:hover::before {
+      color: sage-color(primary);
+    }
   }
 }
 
@@ -192,4 +184,3 @@ $-collapse-breakpoint-key: md-min;
     display: none;
   }
 }
-/* stylelint-enable */

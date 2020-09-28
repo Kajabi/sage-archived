@@ -6,18 +6,11 @@
     <%= "sage-outline-item--post-icon-#{component.post_icon}" if component.post_icon %>
   "
 >
-  <div class="sage-outline-item__container">
-    <div class="sage-outline-item__handle-drag"></div>
+  <div class="sage-outline-item__content">
+    <div class="sage-outline-item__handle-drag" title="Click to drag"></div>
     <h1 class="sage-outline-item__title">
       <%= component.title %>
     </h1>
-    <% if component.actions_secondary %>
-      <div class="sage-outline-item__actions-secondary">
-        <% component.actions_secondary.each do |secondary| %>
-          <%= secondary.html_safe %>
-        <% end %>
-      </div>
-    <% end %>
     <% if component.actions_primary %>
       <div class="sage-outline-item__actions-primary">
         <% component.actions_primary.each do |primary| %>
@@ -25,7 +18,14 @@
         <% end %>
       </div>
     <% end %>
-      <% if component.status %>
+    <% if component.actions_secondary %>
+      <div class="sage-outline-item__actions-secondary">
+        <% component.actions_secondary.each do |secondary| %>
+          <%= secondary.html_safe %>
+        <% end %>
+      </div>
+    <% end %>
+    <% if component.status %>
       <div class="sage-outline-item__status">
         <%= component.status.html_safe %>
       </div>
