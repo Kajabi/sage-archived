@@ -249,6 +249,16 @@ module ObjectsHelper
         react: "todo",
         a11y: "done"
       },
+      {
+        title: "outline_item",
+        description: "Unicorn component handling the complex interactions required for managing Product children",
+        use_legacy_html_code_source: false,
+        scss: "done",
+        docs: "todo",
+        rails: "no",
+        react: "todo",
+        a11y: "done"
+      },
     ]
   end
 
