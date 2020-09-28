@@ -1,3 +1,3 @@
-import 'docs'
-import 'system'
-import 'react-components'
+export * from './docs'
+export * from './system'
+export * from './react-components'
