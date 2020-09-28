@@ -34,19 +34,19 @@ $-collapse-breakpoint-key: md-min;
     grid-column-gap: sage-spacing(sm);
     grid-template-areas: "handle-drag title actions-secondary actions-primary status handle-collapse";
 
-    .sage-outline-item--type-category > & {
+    .sage-outline-item--category > & {
       padding-top: sage-spacing(sm);
       padding-bottom: sage-spacing(sm);
       border-bottom: sage-border();
     }
 
-    .sage-outline-item--type-post > & {
+    :not(.sage-outline-item--category) > & {
       padding-top: sage-spacing(xs);
       padding-bottom: sage-spacing(xs);
       border-bottom: sage-border(light);
     }
 
-    .sage-outline-item--type-post:last-child > & {
+    :not(.sage-outline-item--category):last-child > & {
       border-bottom: unset;
     }
   }
@@ -59,12 +59,12 @@ $-collapse-breakpoint-key: md-min;
       "handle-drag title status handle-collapse"
       "actions-primary actions-primary actions-secondary handle-collapse";
 
-    .sage-outline-item--type-category > & {
+    .sage-outline-item--category > & {
       padding-top: sage-spacing(lg);
       padding-bottom: sage-spacing(lg);
     }
 
-    .sage-outline-item--type-post > & {
+    :not(.sage-outline-item--category) > & {
       padding-top: sage-spacing(sm);
       padding-bottom: sage-spacing(sm);
     }
@@ -73,8 +73,8 @@ $-collapse-breakpoint-key: md-min;
   /* stylelint-disable selector-max-compound-selectors */
   // Nested Item Identention
   // Indents `type-category` that is 1-level deep and anything that is 2-levels deep
-  .sage-outline-item__children .sage-outline-item.sage-outline-item--type-category &,
-  .sage-outline-item__children .sage-outline-item.sage-outline-item--type-category .sage-outline-item__children & {
+  .sage-outline-item__children .sage-outline-item.sage-outline-item--category &,
+  .sage-outline-item__children .sage-outline-item.sage-outline-item--category .sage-outline-item__children & {
     padding-left: sage-spacing(xl);
   }
   /* stylelint-enable selector-max-compound-selectors */
@@ -85,11 +85,11 @@ $-collapse-breakpoint-key: md-min;
   color: sage-color(charcoal, 400);
   @include truncate;
 
-  .sage-outline-item--type-category > .sage-outline-item__content & {
+  .sage-outline-item--category > .sage-outline-item__content & {
     @extend %t-sage-body-semi;
   }
 
-  .sage-outline-item--type-post > .sage-outline-item__content & {
+  :not(.sage-outline-item--category) > .sage-outline-item__content & {
     @extend %t-sage-body;
   }
 }
@@ -135,13 +135,13 @@ $-collapse-breakpoint-key: md-min;
 
   /* stylelint-disable selector-max-compound-selectors */
   // Category: Standard
-  .sage-outline-item--type-category > .sage-outline-item__content &::before {
+  .sage-outline-item--category > .sage-outline-item__content &::before {
     content: sage-icon(folder);
     color: sage-color(primary);
   }
 
   // Category: Nested
-  .sage-outline-item__children .sage-outline-item--type-category > .sage-outline-item__content &::before {
+  .sage-outline-item__children .sage-outline-item--category > .sage-outline-item__content &::before {
     content: sage-icon(arrow-corner);
     color: sage-color(primary);
   }

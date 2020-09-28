@@ -1,8 +1,8 @@
-<% is_category = component.type == "category" %>
+<% is_category = component.content.present? %>
 
 <section class="
     sage-outline-item
-    <%= "sage-outline-item--type-#{component.type}" if component.type %>
+    <%= "sage-outline-item--category" if is_category %>
   "
 >
   <div class="sage-outline-item__content">
