@@ -1,3 +1,12 @@
+ <%
+label_colors = [
+  "draft",
+  "info",
+  "success",
+  "warning",
+  "danger"
+]
+%>
 <%= content_for :heading do %>
   <h1>Colors</h1>
   <p>Our color palette is built with a minimal approach to reduce decision fatigue and save time making design decisions. All of our colors and text color combinations meet AA requirements with a 4.5:1 passing grade at the bare minimum.</p>
@@ -107,33 +116,18 @@
     <p>We prescribe a few sets of color combinations for an easy and consisteny pairing between a foreground and a background color</p>
     
     <h3>Default</h3>
-    <%
-    colors = [
-      "draft",
-      "info",
-      "success",
-      "warning",
-      "danger"
-    ]
-    %>
-    <% colors.each do | color | %>
-      <%= render "examples/elements/label/markup", color: color %>
+    <% label_colors.each do | color | %>
+      <%= sage_component SageLabel, { value: color, color: color } %>
     <% end %>
     
     <h3>Subtle</h3>
-    <% colors.each do | color | %>
-      <%= render "examples/elements/label/markup",
-        color: color,
-        type: "subtle"
-      %>
+    <% label_colors.each do | color | %>
+      <%= sage_component SageLabel, { value: color, color: color, style: "subtle" } %>
     <% end %>
     
     <h3>Bold</h3>
-    <% colors.each do | color | %>
-      <%= render "examples/elements/label/markup",
-        color: color,
-        type: "bold"
-      %>
+    <% label_colors.each do | color | %>
+      <%= sage_component SageLabel, { value: color, color: color, style: "bold" } %>
     <% end %>
   </div>
 </div>

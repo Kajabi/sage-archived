@@ -26,27 +26,6 @@
 }
 
 /* ==================================================
-  ** Visually Hidden mixin
-  Usage: `@include visually-hidden()`
-
-  Hides content from view, but allows text to stay visible to screen readers
-  arguments: n/a
-================================================== */
-
-@mixin visually-hidden {
-  position: absolute;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  clip-path: polygon(0 0, 0 0, 0 0);
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  white-space: nowrap;
-  border: 0;
-}
-
-/* ==================================================
 ** Overflow scroll mixin
   Usage: `@include overflow-scroll();
 
@@ -133,6 +112,27 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+/* ==================================================
+  ** Visually Hidden mixin
+  Usage: `@include visually-hidden()`
+
+  Hides content from view, but allows text to stay visible to screen readers
+  arguments: n/a
+================================================== */
+
+@mixin visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: polygon(0 0, 0 0, 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  white-space: nowrap;
+  border: 0;
 }
 
 
@@ -274,19 +274,20 @@
 ================================================== */
 @mixin sage-grid-card() {
   display: grid;
-  grid-gap: sage-spacing(sm);
+  gap: sage-spacing(sm);
   grid-template-rows: min-content;
 }
 
 /* ==================================================
   ** Grid: Panel Stack
-  Usage: `@include sage-grid-content-stack;`
+  Usage: `@include sage-grid-stack;`
 ================================================== */
-@mixin sage-grid-content-stack() {
+@mixin sage-grid-stack() {
   display: grid;
-  grid-gap: sage-spacing(xs);
+  gap: sage-spacing(xs);
   grid-template-columns: 100%;
   grid-template-rows: min-content;
+  justify-items: start;
 }
 
 /* ==================================================
@@ -295,7 +296,7 @@
 ================================================== */
 @mixin sage-grid-panel() {
   display: grid;
-  grid-gap: sage-spacing();
+  gap: sage-spacing();
   grid-template-columns: 100%;
   grid-template-rows: min-content;
 }
@@ -307,12 +308,21 @@
   Standard grid setup for a single row layout.
 ================================================== */
 @mixin sage-grid-card-row() {
-  display: grid;
-  align-items: center;
-  grid-auto-columns: auto;
-  grid-auto-flow: column;
-  grid-gap: sage-spacing(sm);
   justify-content: space-between;
+  align-items: center;
+
+  @media (max-width: sage-breakpoint(md-max)) {
+    display: flex;
+    flex-flow: row wrap;
+    gap: sage-spacing(sm);
+  }
+
+  @media (min-width: sage-breakpoint(lg-min)) {
+    display: grid;
+    grid-auto-columns: auto;
+    grid-auto-flow: column;
+    gap: sage-spacing(sm);
+  }
 }
 
 /* ==================================================
@@ -322,12 +332,21 @@
   Standard grid setup for a single row layout.
 ================================================== */
 @mixin sage-grid-panel-row() {
-  display: grid;
-  align-items: center;
-  grid-auto-columns: auto;
-  grid-auto-flow: column;
-  grid-gap: sage-spacing();
   justify-content: space-between;
+  align-items: center;
+
+  @media (max-width: sage-breakpoint(md-max)) {
+    display: flex;
+    flex-flow: row wrap;
+    gap: sage-spacing();
+  }
+
+  @media (min-width: sage-breakpoint(lg-min)) {
+    display: grid;
+    grid-auto-columns: auto;
+    grid-auto-flow: column;
+    gap: sage-spacing();
+  }
 }
 
 /* ==================================================
