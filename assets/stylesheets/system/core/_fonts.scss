@@ -16,7 +16,6 @@ $-body-font-version: 3.14 !default;
 
 @font-face {
   font-family: "Inter";
-  font-style: italic;
   font-weight: 100;
   font-display: swap;
   src: local("Inter-ThinItalic"), url("#{$-body-font-path}/Inter-ThinItalic.woff2?v=#{$-body-font-version}") format("woff2"), url("#{$-body-font-path}/Inter-ThinItalic.woff?v=#{$-body-font-version}") format("woff");

@@ -38,6 +38,7 @@ services:
         gem install bundler
         yarn install --check-files
         bundle check || bundle install --jobs 8
+        /container-complete.sh
         yarn start
     ports:
       - "4000:4000"
