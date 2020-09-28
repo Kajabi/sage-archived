@@ -1,3 +1,3 @@
-export { default as docs } from './docs'
-export { default as system } from './system'
-export { default as components } from './react-components'
+import 'docs'
+import 'system'
+import 'react-components'

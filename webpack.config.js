@@ -4,13 +4,10 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
   entry: {
-    system: [
+    main: [
       './assets/javascript/system/index.js',
       './assets/stylesheets/system/index.scss'
     ],
-    react: [
-      './assets/javascript/react-components/index.js'
-    ]
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
