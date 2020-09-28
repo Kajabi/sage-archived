@@ -2,7 +2,7 @@
   "name": "@kajabi/sage",
   "version": "1.2.0",
   "description": "Sage NPM Package",
-  "main": "dist/react.js",
+  "main": "dist/main.js",
   "private": "true",
   "scripts": {
     "build": "webpack --mode production",
