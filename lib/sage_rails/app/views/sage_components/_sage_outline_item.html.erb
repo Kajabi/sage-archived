@@ -3,11 +3,16 @@
 <section class="
     sage-outline-item
     <%= "sage-outline-item--type-#{component.type}" if component.type %>
-    <%= "sage-outline-item--post-icon-#{component.post_icon}" if component.post_icon %>
   "
 >
   <div class="sage-outline-item__content">
-    <div class="sage-outline-item__handle-drag" title="Click to drag"></div>
+    <div
+      class="
+        sage-outline-item__handle-drag
+        <%= "sage-icon-#{component.icon}" if component.icon && !is_category %>
+      "
+      title="Click to drag"
+    ></div>
     <h1 class="sage-outline-item__title">
       <%= component.title %>
     </h1>

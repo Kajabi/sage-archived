@@ -4,5 +4,5 @@ class SageOutlineItem < SageComponent
   attr_accessor :actions_secondary
   attr_accessor :actions_primary
   attr_accessor :status
-  attr_accessor :post_icon
+  attr_accessor :icon
 end

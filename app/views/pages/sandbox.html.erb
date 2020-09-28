@@ -33,7 +33,7 @@
         <%= sage_component SageOutlineItem, {
           title: "Amazing Item Here, It Has A Very Long Name... A Very, Very, Long Name",
           type: "post",
-          post_icon: nil,
+          icon: "file",
           status: sage_component(SageLabel, { value: "Draft", color: "draft" }),
           actions_primary: [sage_component(SageButton, {
             value: "Add Content",
@@ -59,7 +59,7 @@
           <%= sage_component SageOutlineItem, {
             title: "Amazing Item Here, It Has A Very Long Name... A Very, Very, Long Name",
             type: "post",
-            post_icon: "video",
+            icon: "video-on",
             status: sage_component(SageLabel, { value: "Draft", color: "draft" }),
             actions_primary: [sage_component(SageButton, {
               value: "Add Content",
@@ -110,7 +110,7 @@
             <%= sage_component SageOutlineItem, {
               title: "Amazing Item Here, It Has A Very Long Name... A Very, Very, Long Name",
               type: "post",
-              post_icon: "assessment",
+              icon: "form",
               status: sage_component(SageLabel, { value: "Draft", color: "draft" }),
               actions_primary: [sage_component(SageButton, {
                 value: "Add Content",

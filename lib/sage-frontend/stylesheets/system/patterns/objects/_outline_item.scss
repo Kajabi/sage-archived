@@ -71,14 +71,12 @@ $-collapse-breakpoint-key: md-min;
   }
 
   /* stylelint-disable selector-max-compound-selectors */
-
   // Nested Item Identention
   // Indents `type-category` that is 1-level deep and anything that is 2-levels deep
   .sage-outline-item__children .sage-outline-item.sage-outline-item--type-category &,
   .sage-outline-item__children .sage-outline-item.sage-outline-item--type-category .sage-outline-item__children & {
     padding-left: sage-spacing(xl);
   }
-
   /* stylelint-enable selector-max-compound-selectors */
 }
 
@@ -130,47 +128,38 @@ $-collapse-breakpoint-key: md-min;
     cursor: grabbing;
   }
 
+  &::before {
+    @include sage-icon-base(null);
+    color: sage-color(charcoal, 200);
+  }
+
+  /* stylelint-disable selector-max-compound-selectors */
   // Category: Standard
-  .sage-outline-item--type-category &::before {
-    @include sage-icon-base(folder);
+  .sage-outline-item--type-category > .sage-outline-item__content &::before {
+    content: sage-icon(folder);
     color: sage-color(primary);
   }
 
   // Category: Nested
-  .sage-outline-item__children .sage-outline-item--type-category &::before {
-    @include sage-icon-base(arrow-corner);
+  .sage-outline-item__children .sage-outline-item--type-category > .sage-outline-item__content &::before {
+    content: sage-icon(arrow-corner);
     color: sage-color(primary);
   }
+  /* stylelint-enable selector-max-compound-selectors */
 
-  // Post: Standard
-  .sage-outline-item__children .sage-outline-item--type-post &::before {
-    @include sage-icon-base(file);
-    color: sage-color(charcoal, 200);
-  }
-
-  // Post: Video
-  .sage-outline-item__children .sage-outline-item--post-icon-video &::before {
-    @include sage-icon-base(video-on);
-    color: sage-color(charcoal, 200);
-  }
-
-  // Post: Assessment
-  .sage-outline-item__children .sage-outline-item--post-icon-assessment &::before {
-    @include sage-icon-base(form);
-    color: sage-color(charcoal, 200);
-  }
-
+  /* stylelint-disable declaration-no-important */
   // Universal Hover For All
   .sage-outline-item__content:hover > & {
     &::before {
-      @include sage-icon-base(handle);
-      color: sage-color(charcoal, 100);
+      content: sage-icon(handle) !important;
+      color: sage-color(charcoal, 100) !important;
     }
 
     &:hover::before {
-      color: sage-color(primary);
+      color: sage-color(primary) !important;
     }
   }
+  /* stylelint-enable declaration-no-important */
 }
 
 .sage-outline-item__handle-collapse {
