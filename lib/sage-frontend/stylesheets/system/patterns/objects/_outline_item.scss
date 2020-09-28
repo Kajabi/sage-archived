@@ -39,8 +39,8 @@ $-collapse-breakpoint-key: md-max;
     grid-template-columns: min-content 1fr min-content min-content;
     grid-row-gap: sage-spacing(2xs);
     grid-template-areas:
-      "handle-drag title title status"
-      ". actions-primary actions-secondary handle-collapse";
+      "handle-drag title actions-secondary status"
+      ". actions-primary . handle-collapse";
   }
 
   .sage-outline-item--category > & {
@@ -89,11 +89,13 @@ $-collapse-breakpoint-key: md-max;
   flex-direction: row;
 
   @media (min-width: sage-breakpoint($-collapse-breakpoint-key)) {
+    display: none;
     visibility: hidden;
 
     :hover > &,
     :focus > &,
     :focus-within > & {
+      display: flex;
       visibility: visible;
     }
   }
@@ -152,7 +154,9 @@ $-collapse-breakpoint-key: md-max;
 }
 
 .sage-outline-item__handle-collapse {
+  display: flex;
   grid-area: handle-collapse;
+  justify-content: flex-end;
 }
 
 .sage-outline-item__children {
