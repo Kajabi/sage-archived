@@ -5,7 +5,7 @@
 
 ================================================== */
 
-$-collapse-breakpoint-key: md-min;
+$-collapse-breakpoint-key: md-max;
 
 .sage-outline-item {
   overflow: hidden;
@@ -25,49 +25,38 @@ $-collapse-breakpoint-key: md-min;
   display: grid;
   align-items: center;
   grid-template-rows: repeat(auto-fit, auto);
+  grid-column-gap: sage-spacing(sm);
   padding-right: sage-spacing(sm);
   padding-left: sage-spacing(md);
 
   @media (min-width: sage-breakpoint($-collapse-breakpoint-key)) {
     // Using static column values to ensure alignment
     grid-template-columns: min-content 1fr min-content rem(160px) rem(92px) rem(40px);
-    grid-column-gap: sage-spacing(sm);
     grid-template-areas: "handle-drag title actions-secondary actions-primary status handle-collapse";
-
-    .sage-outline-item--category > & {
-      padding-top: sage-spacing(sm);
-      padding-bottom: sage-spacing(sm);
-      border-bottom: sage-border();
-    }
-
-    :not(.sage-outline-item--category) > & {
-      padding-top: sage-spacing(xs);
-      padding-bottom: sage-spacing(xs);
-      border-bottom: sage-border(light);
-    }
-
-    :not(.sage-outline-item--category):last-child > & {
-      border-bottom: unset;
-    }
   }
 
   @media (max-width: sage-breakpoint($-collapse-breakpoint-key)) {
     grid-template-columns: min-content 1fr min-content min-content;
-    grid-row-gap: sage-spacing(sm);
-    grid-column-gap: sage-spacing(xs);
+    grid-row-gap: sage-spacing(2xs);
     grid-template-areas:
-      "handle-drag title status handle-collapse"
-      "actions-primary actions-primary actions-secondary handle-collapse";
+      "handle-drag title title status"
+      ". actions-primary actions-secondary handle-collapse";
+  }
 
-    .sage-outline-item--category > & {
-      padding-top: sage-spacing(lg);
-      padding-bottom: sage-spacing(lg);
-    }
+  .sage-outline-item--category > & {
+    padding-top: sage-spacing(sm);
+    padding-bottom: sage-spacing(sm);
+    border-bottom: sage-border();
+  }
 
-    :not(.sage-outline-item--category) > & {
-      padding-top: sage-spacing(sm);
-      padding-bottom: sage-spacing(sm);
-    }
+  :not(.sage-outline-item--category) > & {
+    padding-top: sage-spacing(xs);
+    padding-bottom: sage-spacing(xs);
+    border-bottom: sage-border(light);
+  }
+
+  :not(.sage-outline-item--category):last-child > & {
+    border-bottom: unset;
   }
 
   /* stylelint-disable selector-max-compound-selectors */
