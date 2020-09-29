@@ -4,5 +4,5 @@ class SageSortableItem < SageComponent
   attr_accessor :subtitle
   attr_accessor :label
   attr_accessor :id
-  attr_accessor :type
+  attr_accessor :card
 end

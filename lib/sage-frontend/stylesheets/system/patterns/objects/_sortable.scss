@@ -27,12 +27,14 @@
 
   &:focus,
   &:hover {
+    background-color: sage-color(grey, 100);
+
     &::before {
       color: sage-color(primary);
     }
   }
 
-  &.sage-sortable__item--large {
+  &.sage-sortable__item--card {
     padding: sage-spacing(xs);
     border: sage-border();
     border-radius: sage-border(radius-large);
@@ -70,25 +72,22 @@
   z-index: sage-z-index();
   overflow: hidden;
   flex-direction: row;
-  gap: sage-spacing(xs);
   align-items: baseline;
   margin-right: auto;
 
-  .sage-sortable__item--large & {
+  .sage-sortable__item--card & {
     flex-direction: column;
-    gap: unset;
-  }
-
-  > * {
-    @include truncate();
   }
 }
 
 .sage-sortable__item-title {
   @extend %t-sage-body-small;
+  @include truncate();
+  margin-right: sage-spacing(xs);
 
-  .sage-sortable__item--large & {
+  .sage-sortable__item--card & {
     @extend %t-sage-body;
+    margin-right: 0;
   }
 }
 

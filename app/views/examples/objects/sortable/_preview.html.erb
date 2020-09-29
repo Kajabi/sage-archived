@@ -5,8 +5,7 @@
       title: "Name Text",
       subtitle: "Label Text",
       url_update: "update/endpoint",
-      id: "id",
-      type: nil
+      id: "id"
     } do %>
       <%= sage_component SageStatusIcon, {
         icon: "lock",
@@ -14,8 +13,6 @@
       } %>
       <%= sage_component SageButton, {
         attributes: {
-          "href": "#",
-          "target": "_blank",
           "data-js-tooltip": "Preview"
         },
         style: "tertiary",
@@ -24,10 +21,7 @@
       } %>
       <%= sage_component SageButton, {
         attributes: {
-          "href": "#",
           "data-js-tooltip": "Edit",
-          "data-js-modaltrigger": "navbars-modal",
-          "data-remote": "true",
         },
         style: "tertiary",
         icon: { name: "pen", style: "only" },
@@ -54,16 +48,14 @@
       subtitle: "Label Text",
       url_update: "update/endpoint",
       id: "id",
-      type: "large"
+      card: true
     } do %>
       <%= sage_component SageStatusIcon, {
         icon: "lock",
-        value: "Authenticated Only"
+        value: "Authenticated Only",
       } %>
       <%= sage_component SageButton, {
         attributes: {
-          "href": "#",
-          "target": "_blank",
           "data-js-tooltip": "Preview"
         },
         style: "tertiary",
@@ -72,10 +64,7 @@
       } %>
       <%= sage_component SageButton, {
         attributes: {
-          "href": "#",
           "data-js-tooltip": "Edit",
-          "data-js-modaltrigger": "navbars-modal",
-          "data-remote": "true",
         },
         style: "tertiary",
         icon: { name: "pen", style: "only" },
