@@ -1,0 +1,129 @@
+<% 3.times do %>
+  <%= sage_component SageOutlineItem, {
+    title: "Wonderful Denim Pants",
+    status: sage_component(SageLabel, { value: "Draft", color: "draft" }),
+    actions_primary: [sage_component(SageButton, {
+      value: "Add Content",
+      style: "secondary",
+      icon: {style: "left", name: "add-circle"}
+    })],
+    actions_secondary: [
+      sage_component(SageButton, {
+        value: "Edit",
+        style: "tertiary",
+        icon: {style: "only", name: "pen"},
+        attributes: { "data-js-tooltip": "Edit" }
+      }),
+      sage_component(SageButton, {
+        value: "Preview",
+        style: "tertiary",
+        icon: {style: "only", name: "preview-on"},
+        attributes: { "data-js-tooltip": "Preview" }
+      })
+    ]
+  } do %>
+    <%= sage_component SageOutlineItem, {
+      title: "Amazing Item Here, It Has A Very Long Name, Lorem Ipsum Sit Dolar",
+      icon: "file",
+      status: sage_component(SageLabel, { value: "Draft", color: "draft" }),
+      actions_primary: [sage_component(SageButton, {
+        value: "Add Content",
+        style: "secondary",
+        icon: {style: "left", name: "add-circle"}
+      })],
+      actions_secondary: [
+        sage_component(SageButton, {
+          value: "Edit",
+          style: "tertiary",
+          icon: {style: "only", name: "pen"},
+          attributes: { "data-js-tooltip": "Edit" }
+        }),
+        sage_component(SageButton, {
+          value: "Preview",
+          style: "tertiary",
+          icon: {style: "only", name: "preview-on"},
+          attributes: { "data-js-tooltip": "Preview" }
+        })
+      ]
+    } %>
+    <% 3.times do %>
+      <%= sage_component SageOutlineItem, {
+        title: "Amazing Item Here, It Has A Very Long Name, Lorem Ipsum Sit Dolar",
+
+        icon: "video-on",
+        status: sage_component(SageLabel, { value: "Draft", color: "draft" }),
+        actions_primary: [sage_component(SageButton, {
+          value: "Add Content",
+          style: "secondary",
+          icon: {style: "left", name: "add-circle"}
+        })],
+        actions_secondary: [
+          sage_component(SageButton, {
+            value: "Edit",
+            style: "tertiary",
+            icon: {style: "only", name: "pen"},
+            attributes: { "data-js-tooltip": "Edit" }
+          }),
+          sage_component(SageButton, {
+            value: "Preview",
+            style: "tertiary",
+            icon: {style: "only", name: "preview-on"},
+            attributes: { "data-js-tooltip": "Preview" }
+          })
+        ]
+      } %>
+    <% end %>
+      <%= sage_component SageOutlineItem, {
+        title: "Amazing Item Here, It Has A Very Long Name, Lorem Ipsum Sit Dolar",
+
+        status: sage_component(SageLabel, { value: "Draft", color: "draft" }),
+        actions_primary: [sage_component(SageButton, {
+          value: "Add Content",
+          style: "secondary",
+          icon: {style: "left", name: "add-circle"}
+        })],
+        actions_secondary: [
+          sage_component(SageButton, {
+            value: "Edit",
+            style: "tertiary",
+            icon: {style: "only", name: "pen"},
+            attributes: { "data-js-tooltip": "Edit" }
+          }),
+          sage_component(SageButton, {
+            value: "Preview",
+            style: "tertiary",
+            icon: {style: "only", name: "preview-on"},
+            attributes: { "data-js-tooltip": "Preview" }
+          })
+        ]
+      }  do %>
+      <% 3.times do %>
+        <%= sage_component SageOutlineItem, {
+          title: "Amazing Item Here, It Has A Very Long Name, Lorem Ipsum Sit Dolar",
+
+          icon: "form",
+          status: sage_component(SageLabel, { value: "Draft", color: "draft" }),
+          actions_primary: [sage_component(SageButton, {
+            value: "Add Content",
+            style: "secondary",
+            icon: {style: "left", name: "add-circle"}
+          })],
+          actions_secondary: [
+            sage_component(SageButton, {
+              value: "Edit",
+              style: "tertiary",
+              icon: {style: "only", name: "pen"},
+              attributes: { "data-js-tooltip": "Edit" }
+            }),
+            sage_component(SageButton, {
+              value: "Preview",
+              style: "tertiary",
+              icon: {style: "only", name: "preview-on"},
+              attributes: { "data-js-tooltip": "Preview" }
+            })
+          ]
+        } %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>
