@@ -160,8 +160,6 @@ $-collapse-breakpoint-key: md-max;
 }
 
 .sage-outline-item__children {
-  grid-area: content;
-
   .sage-outline-item--collapsed > & {
     display: none;
   }
