@@ -1,1 +1,93 @@
-<%= render "examples/objects/sortable/markup" %>
+<%= sage_component SageSortable, { resource_name: "link" } do %>
+
+  <% 3.times do %>
+    <%= sage_component SageSortableItem, {
+      title: "Name Text",
+      subtitle: "Label Text",
+      url_update: "update/endpoint",
+      id: "id",
+      type: nil
+    } do %>
+      <%= sage_component SageStatusIcon, {
+        icon: "lock",
+        value: "Authenticated Only"
+      } %>
+      <%= sage_component SageButton, {
+        attributes: {
+          "href": "#",
+          "target": "_blank",
+          "data-js-tooltip": "Preview"
+        },
+        style: "tertiary",
+        icon: { name: "preview-on", style: "only" },
+        value: "Preview"
+      } %>
+      <%= sage_component SageButton, {
+        attributes: {
+          "href": "#",
+          "data-js-tooltip": "Edit",
+          "data-js-modaltrigger": "navbars-modal",
+          "data-remote": "true",
+        },
+        style: "tertiary",
+        icon: { name: "pen", style: "only" },
+        value: "Edit"
+      } %>
+    <% end %>
+  <% end %>
+
+  <%= sage_component_section :empty do %>
+    <%= sage_component SageEmptyState, {
+      title: "Empty State Title",
+      text: "Empty state text",
+    } %>
+  <% end %>
+<% end %>
+
+<hr style="margin: 50px 0;" />
+
+<%= sage_component SageSortable, { resource_name: "link" } do %>
+
+  <% 3.times do %>
+    <%= sage_component SageSortableItem, {
+      title: "Name Text",
+      subtitle: "Label Text",
+      url_update: "update/endpoint",
+      id: "id",
+      type: "large"
+    } do %>
+      <%= sage_component SageStatusIcon, {
+        icon: "lock",
+        value: "Authenticated Only"
+      } %>
+      <%= sage_component SageButton, {
+        attributes: {
+          "href": "#",
+          "target": "_blank",
+          "data-js-tooltip": "Preview"
+        },
+        style: "tertiary",
+        icon: { name: "preview-on", style: "only" },
+        value: "Preview"
+      } %>
+      <%= sage_component SageButton, {
+        attributes: {
+          "href": "#",
+          "data-js-tooltip": "Edit",
+          "data-js-modaltrigger": "navbars-modal",
+          "data-remote": "true",
+        },
+        style: "tertiary",
+        icon: { name: "pen", style: "only" },
+        value: "Edit"
+      } %>
+    <% end %>
+  <% end %>
+
+  <%= sage_component_section :empty do %>
+    <%= sage_component SageEmptyState, {
+      title: "Empty State Title",
+      text: "Empty state text",
+    } %>
+  <% end %>
+<% end %>

@@ -13,63 +13,86 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: sage-spacing(xs) sage-spacing(xs) sage-spacing(xs) sage-spacing(sm);
+  gap: sage-spacing(2xs);
+  padding: sage-spacing(2xs);
   background: sage-color(white);
-  border: sage-border();
-  border-radius: sage-border(radius-large);
-  transition: $sage-transition;
-  transition-property: border-color, box-shadow;
+  border-bottom: sage-border(light);
   cursor: grab;
-
-  &:not(:last-child) {
-    margin-bottom: sage-spacing(xs);
-  }
 
   &::before {
     @include sage-icon-base(handle);
-
-    padding: 0 sage-spacing(sm) 0 0;
+    padding: 0 sage-spacing(xs);
     color: sage-color(grey, 500);
   }
 
   &:focus,
   &:hover {
-    box-shadow: sage-shadow(sm);
-
     &::before {
       color: sage-color(primary);
     }
   }
 
+  &.sage-sortable__item--large {
+    padding: sage-spacing(xs);
+    border: sage-border();
+    border-radius: sage-border(radius-large);
+    transition: $sage-transition;
+    transition-property: border-color, box-shadow;
+
+    &:not(:last-child) {
+      margin-bottom: sage-spacing(xs);
+    }
+
+    &:focus,
+    &:hover {
+      box-shadow: sage-shadow(sm);
+    }
+
+    &.sage-sortable__item--active,
+    &:active {
+      border-color: sage-color(primary);
+      box-shadow: sage-shadow(md);
+    }
+  }
+
   &.sage-sortable__item--active,
   &:active {
-    border-color: sage-color(primary);
-    box-shadow: sage-shadow(md);
     cursor: grabbing;
   }
 
   &.sage-sortable__item--ghost {
-    border-color: sage-color(grey, 500);
-    opacity: 0.5;
+    background: sage-color(grey, 200);
   }
 }
 
 .sage-sortable__item-content {
+  display: flex;
   z-index: sage-z-index();
   overflow: hidden;
-  width: 100%;
-  list-style: none;
+  flex-direction: row;
+  gap: sage-spacing(xs);
+  align-items: baseline;
+  margin-right: auto;
+
+  .sage-sortable__item--large & {
+    flex-direction: column;
+    gap: unset;
+  }
 
   > * {
-    overflow: hidden;
-    margin-bottom: 0;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    @include truncate();
   }
 }
 
-.sage-sortable__item-actions {
-  display: flex;
-  margin: 0 0 0 auto;
-  padding: 0 sage-spacing(xs) 0 sage-spacing(sm);
+.sage-sortable__item-title {
+  @extend %t-sage-body-small;
+
+  .sage-sortable__item--large & {
+    @extend %t-sage-body;
+  }
+}
+
+.sage-sortable__item-subtitle {
+  @extend %t-sage-body-xsmall;
+  color: sage-color(charcoal, 100);
 }
