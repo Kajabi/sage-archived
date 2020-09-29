@@ -1,6 +1,6 @@
 <h3>Default</h3>
 <%= render "examples/objects/data_card/markup",
-  header: %(<h4>Header Content</h4>),
+  title: "Header Content",
   header_aside: "<i class='sage-icon-mapped' aria-label='Sortable'></i>",
   body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   footer: "Footer Content"
@@ -9,18 +9,18 @@
 <h4>Colors</h4>
 <div class="sage-data-card-group">
   <%= render "examples/objects/data_card/markup",
-    header: %(<h4>Default Color</h4>),
+    title: "Default Color",
     header_aside: "<i class='sage-icon-mapped' aria-label='Sortable'></i>",
     body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
   %>
   <%= render "examples/objects/data_card/markup",
-    header: %(<h4>Muted Color</h4>),
+    title: "Muted Color",
     header_aside: "<i class='sage-icon-skipped' aria-label='Sortable'></i>",
     body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     color: "muted"
   %>
   <%= render "examples/objects/data_card/markup",
-    header: %(<h4>Danger Color</h4>),
+    title: "Danger Color",
     header_aside: "<i class='sage-icon-unmapped' aria-label='Sortable'></i>",
     body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     color: "danger"
@@ -31,10 +31,10 @@
 <div class="sage-data-card-scroll-container">
   <div class="sage-data-card-scroll">
     <div class="sage-data-card-group sage-data-card-group--muted sage-data-card-group--labeled">
-      <p class="sage-data-card-group__title t-sage-body-semi">Group 1</p>
+      <p class="sage-data-card-group__title">Group 1</p>
       <div class="sage-data-card-group__items">
         <%= render "examples/objects/data_card/markup",
-          header: "Field 1",
+          title: "Field 1",
           header_aside: "<i class='sage-icon-unmapped' aria-label='Sortable'></i>",
           body: %(
             <p>Lorem ipsum dolor sit amet</p>
@@ -44,7 +44,7 @@
           )
         %>
         <%= render "examples/objects/data_card/markup",
-          header: "Field 2",
+          title: "Field 2",
           header_aside: "<i class='sage-icon-unmapped' aria-label='Sortable'></i>",
           body: %(
             <p>Lorem ipsum dolor sit amet</p>
@@ -56,10 +56,10 @@
       </div>
     </div>
     <div class="sage-data-card-group sage-data-card-group--labeled">
-      <p class="sage-data-card-group__title t-sage-body-semi">Group 2</p>
+      <p class="sage-data-card-group__title">Group 2</p>
       <div class="sage-data-card-group__items">
         <%= render "examples/objects/data_card/markup",
-          header: "Field 3",
+          title: "Field 3",
           header_aside: "<i class='sage-icon-mapped' aria-label='Sortable'></i>",
           body: %(
             <p>Lorem ipsum dolor sit amet</p>
@@ -69,7 +69,7 @@
           )
         %>
         <%= render "examples/objects/data_card/markup",
-          header: "Field 4",
+          title: "Field 4",
           header_aside: "<i class='sage-icon-mapped' aria-label='Sortable'></i>",
           body: %(
             <p>Lorem ipsum dolor sit amet</p>
@@ -79,7 +79,7 @@
           )
         %>
         <%= render "examples/objects/data_card/markup",
-          header: "Field 5",
+          title: "Field 5",
           header_aside: "<i class='sage-icon-mapped' aria-label='Sortable'></i>",
           body: %(
             <p>Lorem ipsum dolor sit amet</p>
@@ -89,7 +89,7 @@
           )
         %>
         <%= render "examples/objects/data_card/markup",
-          header: "Field 6",
+          title: "Field 6",
           header_aside: "<i class='sage-icon-mapped' aria-label='Sortable'></i>",
           body: %(
             <p>Lorem ipsum dolor sit amet</p>
