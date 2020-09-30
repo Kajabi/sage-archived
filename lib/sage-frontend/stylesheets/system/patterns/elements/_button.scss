@@ -180,7 +180,7 @@
 .sage-btn--tertiary {
   @include sage-focus-outline--update-color(sage-color(charcoal, 200));
   color: $sage-btn-tertiary-text-color;
-  background-color: sage-color(white);
+  background-color: transparent;
   border: 0;
   box-shadow: none;
 

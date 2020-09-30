@@ -13,12 +13,7 @@ $-image-height-mobile: rem(120px);
   display: grid;
   grid-column-gap: sage-spacing(md);
   grid-row-gap: sage-spacing(xs);
-  padding: sage-spacing(sm) 0;
   background-color: sage-color(white);
-
-  &:not(:last-child) {
-    border-bottom: sage-border(light);
-  }
 
   @media (min-width: sage-breakpoint(md-min)) {
     grid-template-columns: $-image-width 1fr min-content;
@@ -63,6 +58,7 @@ $-image-height-mobile: rem(120px);
   min-height: $-image-height-min;
   background: sage-color(grey, 200);
   border-radius: sage-border(radius);
+  border: sage-border();
 
   img {
     position: absolute;
