@@ -3,4 +3,5 @@ class SageTabs < SageComponent
   attr_accessor :stacked
   attr_accessor :id
   attr_accessor :items
+  attr_accessor :progressbar
 end
