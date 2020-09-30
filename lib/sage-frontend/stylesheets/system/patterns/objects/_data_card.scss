@@ -30,11 +30,6 @@ $-data-card-padding: sage-spacing(xs);
 
   .sage-data-card-scroll-container & {
     width: 200px;
-
-    &:not(:last-child) {
-      margin-right: sage-spacing(sm);
-      margin-bottom: 0;
-    }
   }
 
   @each $-color-name, $-values in $-data-card-colors {
@@ -55,15 +50,7 @@ $-data-card-padding: sage-spacing(xs);
   position: relative;
   padding: $-data-card-padding;
 
-  > *:not(:last-child) {
-    margin-bottom: sage-spacing(xs);
-  }
-
-  > :last-child {
-    margin-bottom: 0;
-  }
-
-  @include clearfix;
+  @include sage-grid-stack();
 }
 
 .sage-data-card__footer {
@@ -126,7 +113,8 @@ $-data-card-padding: sage-spacing(xs);
   @include sage-grid-stack();
 
   .sage-data-card-scroll-container & {
-    padding-bottom: sage-spacing(sm); 
+    gap: sage-spacing(sm);
+    padding-bottom: sage-spacing(sm);
   }
   
   .sage-data-card-scroll-container &:not(:last-child) {
@@ -141,14 +129,12 @@ $-data-card-padding: sage-spacing(xs);
 
 .sage-data-card-group__items {
   .sage-data-card-scroll-container & {
-    display: flex;
+    @include sage-grid-card-row();
   }
 }
 
 .sage-data-card-group__title {
   @extend %t-sage-body-semi;
-
-  margin-bottom: sage-spacing(xs);
   
   @each $-color-name, $-values in $-data-card-colors {
     @if $-color-name == default {
