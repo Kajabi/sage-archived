@@ -11,27 +11,23 @@ errors = defined?(errors) ? errors : false
         </div>
         <div class="sage-upload-card__body">
           <p class="sage-upload-card__text">Heading 6, Charcoal 400</p>
-          <%= sage_component SageButton, {
-            style: "secondary",
-            icon: {
-              style: "right",
-              name: "caret-down"
-            },
-            value: "Replace file"
-          } %>
+          <%= render "examples/elements/button/markup",
+            color: "secondary",
+            icon_class: "sage-btn--icon-right-caret-down",
+            is_link_btn: false,
+            text: "Replace file"
+          %>
           <p class="sage-upload-card__subtext">Body small, Charcoal 200</p>
         </div>
       <% else %>
         <div class="sage-upload-card__body">
           <i class="sage-upload-card__icon sage-icon-image-3xl" aria-label="Upload graphic"></i>
-          <%= sage_component SageButton, {
-            style: "secondary",
-            icon: {
-              style: "right",
-              name: "caret-down"
-            },
-            value: "Select a file"
-          } %>
+          <%= render "examples/elements/button/markup",
+            color: "secondary",
+            icon_class: "sage-btn--icon-right-caret-down",
+            is_link_btn: false,
+            text: "Select a file"
+          %>
           <p class="sage-upload-card__subtext">Body small, Charcoal 200</p>
         </div>
       <% end %>
