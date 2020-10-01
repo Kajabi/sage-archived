@@ -296,7 +296,7 @@
 ================================================== */
 @mixin sage-grid-panel() {
   display: grid;
-  gap: sage-spacing();
+  gap: $sage-panel-grid-gap;
   grid-template-columns: 100%;
   grid-template-rows: min-content;
 }

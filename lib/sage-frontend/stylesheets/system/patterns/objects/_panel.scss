@@ -26,6 +26,10 @@
     display: block;
     border-top: 1px solid sage-color(grey, 300);
   }
+
+  &.sage-panel__divider--full-bleed {
+    margin: 0 -#{$sage-panel-padding} -#{$sage-panel-grid-gap};
+  }
 }
 
 .sage-panel__figure {
