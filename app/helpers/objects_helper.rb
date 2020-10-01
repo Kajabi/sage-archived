@@ -25,7 +25,7 @@ module ObjectsHelper
       {
         title: "alert",
         description: "Alerts are used to indicate user-driven notifications.",
-        use_legacy_html_code_source: true,
+        use_legacy_html_code_source: false,
         scss: "done",
         docs: "done",
         rails: "done",
