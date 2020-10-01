@@ -25,7 +25,7 @@ module ElementsHelper
       {
         title: "button",
         description: "Standard button styling with multiple display options. Can be applied on both button and link elements.",
-        use_legacy_html_code_source: true,
+        use_legacy_html_code_source: false,
         scss: "done",
         docs: "done",
         rails: "done",
