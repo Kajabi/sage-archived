@@ -18,7 +18,6 @@
   align-items: baseline;
   position: relative;
   padding: rem(6px) sage-spacing(sm);
-  margin-right: sage-spacing(2xs);
   letter-spacing: $sage-btn-letter-spacing;
   color: sage-color(charcoal, 500);
   border: 0;
@@ -48,10 +47,6 @@
   .sage-input-group & {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
-  }
-
-  &:last-of-type {
-    margin-right: 0;
   }
 
   &:focus {
@@ -88,6 +83,23 @@
   .sage-page-heading__actions & {
     margin: 0;
   }
+
+  // NOTE: Hope to use `gap` in the future instead
+  // but Safari does not currently support it for flexbox
+  /* stylelint-disable max-nesting-depth */
+  @each $-key, $-value in $sage-spacings {
+    @if ($-key == xs) {
+      .sage-btn-group &:not(:last-child) {
+        margin-right: sage-spacing($-key);
+      }
+    }
+    @else if ($-key == sm or $-key == md or $-key == lg) {
+      .sage-btn-group--gap-#{$-key} &:not(:last-child) {
+        margin-right: sage-spacing($-key);
+      }
+    }
+  }
+  /* stylelint-enable max-nesting-depth */
 }
 
 .sage-btn--small {
@@ -263,12 +275,6 @@
 .sage-btn--align-end {
   align-self: flex-end;
   float: right;
-  margin-right: 0;
-  margin-left: sage-spacing(2xs);
-
-  &:first-of-type {
-    margin-left: 0;
-  }
 }
 
 /* stylelint-disable max-nesting-depth */
@@ -334,4 +340,13 @@
 
 .sage-btn__truncate-text {
   @include truncate;
+}
+
+.sage-btn-group {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.sage-btn-group--align-end {
+  justify-content: flex-end;
 }
