@@ -84,7 +84,7 @@ module ObjectsHelper
       },
       {
         title: "data_card",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", 
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
         use_legacy_html_code_source: true,
         scss: "todo",
         docs: "done",
@@ -215,7 +215,7 @@ module ObjectsHelper
       {
         title: "sortable",
         description: "Sage sortable list",
-        use_legacy_html_code_source: true,
+        use_legacy_html_code_source: false,
         scss: "done",
         docs: "done",
         rails: "doing",
@@ -235,7 +235,7 @@ module ObjectsHelper
       {
         title: "tabs",
         description: "Tabs organize related content across screens, data sets, and can be used for navigation to related destinations.",
-        use_legacy_html_code_source: true,
+        use_legacy_html_code_source: false,
         scss: "todo",
         docs: "todo",
         rails: "todo",

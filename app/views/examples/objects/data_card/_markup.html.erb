@@ -1,10 +1,10 @@
 <div class="sage-data-card<%= " sage-data-card--#{color}" if defined?(color) %>">
   <div class="sage-data-card__header">
-    <%= header.html_safe if defined?(header) %>
+    <h4 class="sage-data-card__title">
+      <%= title.html_safe if defined?(title) %>
+    </h4>
     <% if defined?(header_aside) %>
-      <div class="sage-data-card__header-aside">
-        <%= header_aside.html_safe %>
-      </div>
+      <%= header_aside.html_safe %>
     <% end %>
   </div>
   <div class="sage-data-card__body">

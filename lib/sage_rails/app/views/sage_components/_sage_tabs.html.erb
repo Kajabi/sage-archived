@@ -1,6 +1,9 @@
 <nav
   data-js-tabs="<%= component.id %>"
-  class="sage-tabs <%= component.stacked.present? ? "sage-tabs--layout-stacked" : "sage-tabs--layout-default" %>"
+  class="sage-tabs
+    <%= component.stacked.present? ? "sage-tabs--layout-stacked" : "sage-tabs--layout-default" %>
+    <%= "sage-tabs--progressbar" if component.progressbar.present? && component.progressbar == true %>
+  "
   role="tablist"
 >
   <% component.items.each do |item| %>

@@ -1,109 +1,167 @@
 <h3 class="t-sage-heading-6">Regular tabs</h3>
-<%= render "examples/objects/tabs/markup",
-  id: "example-tabs1",
-  options: [
-    {
-      text: "Active",
-      id: "test0",
-      content: "Active content"
-    },
-    {
-      text: "Sub Page 1",
-      id: "test1",
-      content: "Sub Page 1 content"
-    },
-    {
-      text: "Sub Page 2",
-      id: "test2",
-      content: "Sub Page 2 content"
-    },
-    {
-      text: "Sub Page 3",
-      id: "test3",
-      content: "Sub Page 3 content"
-    },
-  ]
-%>
+<div class="sage-tabs-container">
+  <%= sage_component SageTabs, {
+      id: "example-tabs1",
+      items: [
+        {
+          text: "Sub Page 1",
+          target: "basic-test1",
+          active: true
+        },
+        {
+          text: "Sub Page 2",
+          target: "basic-test2"
+        },
+        {
+          text: "Sub Page 3",
+          target: "basic-test3"
+        },
+      ]
+    }
+  %>
+
+  <%= sage_component SageTabsPane, { id: "basic-test1" } do %>
+    <%= sage_component SageCard, {} do %>
+      <p>Sub page 1 content</p>
+    <% end %>
+  <% end %>
+
+  <%= sage_component SageTabsPane, { id: "basic-test2" } do %>
+    <%= sage_component SageCard, {} do %>
+      <p>Sub page 2 content</p>
+    <% end %>
+  <% end %>
+
+  <%= sage_component SageTabsPane, { id: "basic-test3" } do %>
+    <%= sage_component SageCard, {} do %>
+      <p>Sub page 3 content</p>
+    <% end %>
+  <% end %>
+</div>
 
 <h3 class="t-sage-heading-6">Progress styled tabs</h3>
-<%= render "examples/objects/tabs/markup",
-  id: "example-tabs2",
-  is_progressbar: true,
-  options: [
-    {
-      text: "Active",
-      id: "test0",
-      content: "Active content"
-    },
-    {
-      text: "Sub Page 1",
-      id: "test1",
-      content: "Sub Page 1 content"
-    },
-    {
-      text: "Sub Page 2",
-      id: "test2",
-      content: "Sub Page 2 content"
-    },
-    {
-      text: "Sub Page 3",
-      id: "test3",
-      content: "Sub Page 3 content"
-    },
-  ]
-%>
+<div class="sage-tabs-container">
+  <%= sage_component SageTabs, {
+      id: "example-tabs2",
+      items: [
+        {
+          text: "Sub Page 1",
+          target: "pb-test1",
+          active: true
+        },
+        {
+          text: "Sub Page 2",
+          target: "pb-test2"
+        },
+        {
+          text: "Sub Page 3",
+          target: "pb-test3"
+        },
+      ],
+      progressbar: true
+    }
+  %>
+
+  <%= sage_component SageTabsPane, { id: "pb-test1" } do %>
+    <%= sage_component SageCard, {} do %>
+      <p>Sub page 1 content</p>
+    <% end %>
+  <% end %>
+
+  <%= sage_component SageTabsPane, { id: "pb-test2" } do %>
+    <%= sage_component SageCard, {} do %>
+      <p>Sub page 2 content</p>
+    <% end %>
+  <% end %>
+
+  <%= sage_component SageTabsPane, { id: "pb-test3" } do %>
+    <%= sage_component SageCard, {} do %>
+      <p>Sub page 3 content</p>
+    <% end %>
+  <% end %>
+</div>
 
 <h3 class="t-sage-heading-6">Choice tabs - default layout</h3>
-<%= render "examples/objects/tabs/markup",
-  id: "example-tabs3",
-  style: "choice",
-  options: [
-    {
-      text: "Active",
-      id: "test0",
-      content: "Active content"
-    },
-    {
-      text: "Sub Page 1",
-      id: "test1",
-      content: "Sub Page 1 content"
-    },
-    {
-      text: "Sub Page 2",
-      id: "test2",
-      content: "Sub Page 2 content"
-    },
-    {
-      text: "Sub Page 3",
-      id: "test3",
-      content: "Sub Page 3 content"
-    },
-  ]
-%>
+<div class="sage-tabs-container">
+  <%= sage_component SageTabs, {
+      id: "example-tabs3",
+      items: [
+        {
+          text: "Sub Page 1",
+          target: "choice-test1",
+          active: true
+        },
+        {
+          text: "Sub Page 2",
+          target: "choice-test2"
+        },
+        {
+          text: "Sub Page 3",
+          target: "choice-test3"
+        },
+      ],
+      style: "choice"
+    }
+  %>
+
+  <%= sage_component SageTabsPane, { id: "choice-test1" } do %>
+    <%= sage_component SageCard, {} do %>
+      <p>Sub page 1 content</p>
+    <% end %>
+  <% end %>
+
+  <%= sage_component SageTabsPane, { id: "choice-test2" } do %>
+    <%= sage_component SageCard, {} do %>
+      <p>Sub page 2 content</p>
+    <% end %>
+  <% end %>
+
+  <%= sage_component SageTabsPane, { id: "choice-test3" } do %>
+    <%= sage_component SageCard, {} do %>
+      <p>Sub page 3 content</p>
+    <% end %>
+  <% end %>
+</div>
 
 <h3 class="t-sage-heading-6">Choice tabs - stacked layout</h3>
-<%= render "examples/objects/tabs/markup",
-  id: "example-tabs4",
-  stacked: true,
-  style: "choice",
-  options: [
-    {
-      text: "Upload file",
-      subtext: "Upload a CSV or Excel file and map the columns to import.",
-      id: "test0",
-      content: "Upload file content"
-    },
-    {
-      text: "Copy/paste from file",
-      subtext: "Copy/paste the rows from a CSV file and insert below.",
-      id: "test1",
-      content: "Copy/paste from file content"
-    },
-    {
-      text: "Add a single contact",
-      subtext: "Manually add a single contact and add a tag or grant an offer.",
-      id: "test2",
-      content: "Add a single contact content"
-    },
-  ]
-%>
+<div class="sage-tabs-container">
+  <%= sage_component SageTabs, {
+      id: "example-tabs4",
+      items: [
+        {
+          text: "Sub Page 1",
+          target: "stacked-test1",
+          active: true
+        },
+        {
+          text: "Sub Page 2",
+          target: "stacked-test2"
+        },
+        {
+          text: "Sub Page 3",
+          target: "stacked-test3"
+        },
+      ],
+      style: "choice",
+      stacked: true
+    }
+  %>
+  <hr class="sage-tabs-divider" />
+  <%= sage_component SageTabsPane, { id: "stacked-test1" } do %>
+    <%= sage_component SageCard, {} do %>
+      <p>Sub page 1 content</p>
+    <% end %>
+  <% end %>
+
+  <%= sage_component SageTabsPane, { id: "stacked-test2" } do %>
+    <%= sage_component SageCard, {} do %>
+      <p>Sub page 2 content</p>
+    <% end %>
+  <% end %>
+
+  <%= sage_component SageTabsPane, { id: "stacked-test3" } do %>
+    <%= sage_component SageCard, {} do %>
+      <p>Sub page 3 content</p>
+    <% end %>
+  <% end %>
+</div>
