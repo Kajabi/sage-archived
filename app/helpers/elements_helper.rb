@@ -175,7 +175,7 @@ module ElementsHelper
       {
         title: "search",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        use_legacy_html_code_source: true,
+        use_legacy_html_code_source: false,
         scss: "doing",
         docs: "doing",
         rails: "todo",
@@ -228,6 +228,16 @@ module ElementsHelper
         use_legacy_html_code_source: true,
         scss: "done",
         docs: "done",
+        rails: "done",
+        react: "todo",
+        a11y: "todo"
+      },
+      {
+        title: "property",
+        description: "TO BE NAMED – Displays a metadata item for a resource.",
+        use_legacy_html_code_source: false,
+        scss: "done",
+        docs: "todo",
         rails: "done",
         react: "todo",
         a11y: "todo"

@@ -13,8 +13,7 @@ $-image-height-mobile: rem(120px);
   display: grid;
   grid-column-gap: sage-spacing(md);
   grid-row-gap: sage-spacing(xs);
-  padding: sage-spacing(sm) 0;
-  background-color: sage-color(white);
+  padding: sage-spacing(sm) sage-spacing();
 
   &:not(:last-child) {
     border-bottom: sage-border(light);
@@ -63,6 +62,7 @@ $-image-height-mobile: rem(120px);
   min-height: $-image-height-min;
   background: sage-color(grey, 200);
   border-radius: sage-border(radius);
+  border: sage-border();
 
   img {
     position: absolute;
@@ -77,7 +77,7 @@ $-image-height-mobile: rem(120px);
   grid-area: content;
   align-self: flex-start;
   flex-wrap: wrap;
-  gap: sage-spacing(2xs) sage-spacing(xs);
+  gap: sage-spacing(2xs) sage-spacing();
 }
 
 .sage-catalog-item__aside {
