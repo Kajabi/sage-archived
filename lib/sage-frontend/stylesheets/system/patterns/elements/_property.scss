@@ -1,0 +1,18 @@
+/* ==================================================
+  ** property
+  type: element
+
+================================================== */
+
+.sage-property {
+  @extend %t-sage-body-small;
+  @include truncate();
+
+  display: flex;
+  gap: sage-spacing(xs);
+  color: sage-color(charcoal, 200);
+}
+
+.sage-property__icon::before {
+  vertical-align: text-top;
+}

@@ -10,7 +10,9 @@ $-search-focus-line: "::after";
 
 .sage-search {
   position: relative;
-  border-bottom: 1px solid sage-color(grey, 300);
+  border: 1px solid sage-color(grey, 300);
+  border-radius: sage-border(radius);
+  background-color: sage-color(white);
 
   &#{$-search-icon} {
     @include sage-icon-base(search-small, xl);
@@ -56,7 +58,8 @@ $-search-focus-line: "::after";
   width: 100%;
   padding: rem(9px) sage-spacing(sm) rem(9px) sage-spacing(xl);
   border: 0;
-  
+  background-color: transparent;
+
   @extend %t-sage-body;
 
   @include placeholder {
@@ -67,4 +70,3 @@ $-search-focus-line: "::after";
     outline: 0;
   }
 }
-
