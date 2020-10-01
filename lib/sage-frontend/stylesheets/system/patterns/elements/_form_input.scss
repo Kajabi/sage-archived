@@ -139,6 +139,9 @@
     color: $sage-inputfield-color-disabled;
     background-color: $sage-inputfield-bg-disabled;
     cursor: not-allowed;
+    @include placeholder {
+      color: sage-color(grey, 400);
+    }
   }
 }
 
