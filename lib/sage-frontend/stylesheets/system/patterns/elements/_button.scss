@@ -32,7 +32,7 @@
   cursor: not-allowed;
   pointer-events: none;
 
-  &:hover:not(:focus):not(:active):not(:disabled):not(.disabled),
+  &:hover:not(:focus):not(:active):not(:disabled):not([aria-disabled="true"]),
   &:focus,
   &:active {
     outline: none;
@@ -53,8 +53,8 @@
     box-shadow: $sage-btn-shadow-base;
   }
 
-  &:focus:not(:disabled):not(.disabled),
-  &:active:not(:disabled):not(.disabled) {
+  &:focus:not(:disabled):not([aria-disabled="true"]),
+  &:active:not(:disabled):not([aria-disabled="true"]) {
     .sage-dropdown__item > & {
       @include sage-focus-outline--update-color(transparent);
     }
@@ -66,7 +66,7 @@
   }
 
   &:disabled,
-  &.disabled {
+  &[aria-disabled="true"] {
     @include button-style-disabled;
 
     color: sage-color(grey);
@@ -123,13 +123,13 @@
   color: $sage-btn-primary-text-color;
   background-color: $sage-btn-primary-bg-color;
 
-  &:hover:not(:focus):not(:active):not(:disabled):not(.disabled),
+  &:hover:not(:focus):not(:active):not(:disabled):not([aria-disabled="true"]),
   &:focus,
   &:active {
     color: $sage-btn-primary-text-color;
   }
 
-  &:hover:not(:focus):not(:active):not(:disabled):not(.disabled) {
+  &:hover:not(:focus):not(:active):not(:disabled):not([aria-disabled="true"]) {
     background-color: lighten($sage-btn-primary-bg-color, 9%);
   }
 
@@ -144,7 +144,7 @@
   }
 
   &:disabled,
-  &.disabled {
+  &[aria-disabled="true"] {
     @include button-style-disabled;
 
     color: sage-color(primary, 200);
@@ -159,7 +159,7 @@
   border: 0;
   box-shadow: none;
 
-  &:hover:not(:focus):not(:active):not(:disabled):not(.disabled) {
+  &:hover:not(:focus):not(:active):not(:disabled):not([aria-disabled="true"]) {
     color: $sage-btn-secondary-text-color;
     background-color: sage-color(grey, 200);
   }
@@ -177,7 +177,7 @@
   }
 
   &:disabled,
-  &.disabled {
+  &[aria-disabled="true"] {
     @include button-style-disabled;
 
     color: sage-color(primary, 200);
@@ -196,7 +196,7 @@
   border: 0;
   box-shadow: none;
 
-  &:hover:not(:focus):not(:active):not(:disabled):not(.disabled) {
+  &:hover:not(:focus):not(:active):not(:disabled):not([aria-disabled="true"]) {
     color: $sage-btn-tertiary-text-color;
     background-color: sage-color(grey, 200);
   }
@@ -214,7 +214,7 @@
   }
 
   &:disabled,
-  &.disabled {
+  &[aria-disabled="true"] {
     @include button-style-disabled;
 
     color: sage-color(grey, 300);
@@ -232,7 +232,7 @@
   border: 0;
   box-shadow: none;
 
-  &:hover:not(:focus):not(:active):not(:disabled):not(.disabled) {
+  &:hover:not(:focus):not(:active):not(:disabled):not([aria-disabled="true"]) {
     color: $sage-btn-danger-text-color;
     background-color: $sage-btn-danger-bg-hover-color;
   }
@@ -250,7 +250,7 @@
   }
 
   &:disabled,
-  &.disabled {
+  &[aria-disabled="true"] {
     @include button-style-disabled;
 
     color: sage-color(primary, 200);

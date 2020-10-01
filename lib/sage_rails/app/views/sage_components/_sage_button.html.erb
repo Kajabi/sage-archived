@@ -6,7 +6,7 @@
   <% component.attributes.each do |key, value| %>
     <%= "#{key}='#{value}'".html_safe %>
   <% end if component.attributes&.is_a?(Hash) %>
-  <%= "aria-disabled='true' disabled" if component.disabled %>
+  <%= "aria-disabled=true disabled" if component.disabled %>
   class="
     sage-btn
     <%= "sage-btn--full-width" if component.full_width %>
