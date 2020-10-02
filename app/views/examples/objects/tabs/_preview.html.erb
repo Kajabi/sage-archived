@@ -20,22 +20,22 @@
     }
   %>
 
-  <%= sage_component SageTabsPane, { id: "basic-test1" } do %>
-    <%= sage_component SageCard, {} do %>
-      <p>Sub page 1 content</p>
-    <% end %>
+  <%= sage_component SageTabsPane, { id: "basic-test1", card: true } do %>
+    <p>Sub page 1 content</p>
+    <p>Sub page 1 content</p>
+    <p>Sub page 1 content</p>
+    <%= sage_component SageButton, {
+      value: "Save",
+      style: "primary"
+    } %>
   <% end %>
 
-  <%= sage_component SageTabsPane, { id: "basic-test2" } do %>
-    <%= sage_component SageCard, {} do %>
-      <p>Sub page 2 content</p>
-    <% end %>
+  <%= sage_component SageTabsPane, { id: "basic-test2", card: true } do %>
+    <p>Sub page 2 content</p>
   <% end %>
 
-  <%= sage_component SageTabsPane, { id: "basic-test3" } do %>
-    <%= sage_component SageCard, {} do %>
-      <p>Sub page 3 content</p>
-    <% end %>
+  <%= sage_component SageTabsPane, { id: "basic-test3", card: true } do %>
+    <p>Sub page 3 content</p>
   <% end %>
 </div>
 
@@ -62,22 +62,16 @@
     }
   %>
 
-  <%= sage_component SageTabsPane, { id: "pb-test1" } do %>
-    <%= sage_component SageCard, {} do %>
-      <p>Sub page 1 content</p>
-    <% end %>
+  <%= sage_component SageTabsPane, { id: "pb-test1", card: true } do %>
+    <p>Sub page 1 content</p>
   <% end %>
 
-  <%= sage_component SageTabsPane, { id: "pb-test2" } do %>
-    <%= sage_component SageCard, {} do %>
-      <p>Sub page 2 content</p>
-    <% end %>
+  <%= sage_component SageTabsPane, { id: "pb-test2", card: true } do %>
+    <p>Sub page 2 content</p>
   <% end %>
 
-  <%= sage_component SageTabsPane, { id: "pb-test3" } do %>
-    <%= sage_component SageCard, {} do %>
-      <p>Sub page 3 content</p>
-    <% end %>
+  <%= sage_component SageTabsPane, { id: "pb-test3", card: true } do %>
+    <p>Sub page 3 content</p>
   <% end %>
 </div>
 
@@ -107,22 +101,16 @@
     }
   %>
 
-  <%= sage_component SageTabsPane, { id: "choice-test1" } do %>
-    <%= sage_component SageCard, {} do %>
-      <p>Sub page 1 content</p>
-    <% end %>
+  <%= sage_component SageTabsPane, { id: "choice-test1", card: true } do %>
+    <p>Sub page 1 content</p>
   <% end %>
 
-  <%= sage_component SageTabsPane, { id: "choice-test2" } do %>
-    <%= sage_component SageCard, {} do %>
-      <p>Sub page 2 content</p>
-    <% end %>
+  <%= sage_component SageTabsPane, { id: "choice-test2", card: true } do %>
+    <p>Sub page 2 content</p>
   <% end %>
 
-  <%= sage_component SageTabsPane, { id: "choice-test3" } do %>
-    <%= sage_component SageCard, {} do %>
-      <p>Sub page 3 content</p>
-    <% end %>
+  <%= sage_component SageTabsPane, { id: "choice-test3", card: true } do %>
+    <p>Sub page 3 content</p>
   <% end %>
 </div>
 
@@ -153,22 +141,16 @@
     }
   %>
   <hr class="sage-tabs-divider" />
-  <%= sage_component SageTabsPane, { id: "stacked-test1" } do %>
-    <%= sage_component SageCard, {} do %>
-      <p>Sub page 1 content</p>
-    <% end %>
+  <%= sage_component SageTabsPane, { id: "stacked-test1", card: true } do %>
+    <p>Sub page 1 content</p>
   <% end %>
 
-  <%= sage_component SageTabsPane, { id: "stacked-test2" } do %>
-    <%= sage_component SageCard, {} do %>
-      <p>Sub page 2 content</p>
-    <% end %>
+  <%= sage_component SageTabsPane, { id: "stacked-test2", card: true } do %>
+    <p>Sub page 2 content</p>
   <% end %>
 
-  <%= sage_component SageTabsPane, { id: "stacked-test3" } do %>
-    <%= sage_component SageCard, {} do %>
-      <p>Sub page 3 content</p>
-    <% end %>
+  <%= sage_component SageTabsPane, { id: "stacked-test3", card: true } do %>
+    <p>Sub page 3 content</p>
   <% end %>
 </div>
 
@@ -202,21 +184,19 @@
     }
   %>
   <hr class="sage-tabs-divider" />
-  <%= sage_component SageTabsPane, { id: "icon-tabs-test1" } do %>
-    <%= sage_component SageCard, {} do %>
-      <p>Sub page 1 content</p>
-    <% end %>
+  <%= sage_component SageTabsPane, { id: "icon-tabs-test1", card: true } do %>
+    <p>Sub page 1 content</p>
   <% end %>
 
-  <%= sage_component SageTabsPane, { id: "icon-tabs-test2" } do %>
-    <%= sage_component SageCard, {} do %>
-      <p>Sub page 2 content</p>
-    <% end %>
+  <%= sage_component SageTabsPane, { id: "icon-tabs-test2", card: true } do %>
+    <p>Sub page 2 content</p>
   <% end %>
 
-  <%= sage_component SageTabsPane, { id: "icon-tabs-test3" } do %>
-    <%= sage_component SageCard, {} do %>
-      <p>Sub page 3 content</p>
-    <% end %>
+  <%= sage_component SageTabsPane, { id: "icon-tabs-test3", card: true } do %>
+    <p>Sub page 3 content</p>
   <% end %>
 </div>
+
+<h5>Tab Pane Style and Spacing</h5>
+
+<p>Since tabs may be employed in a variety of settings, the following modifiers may be added on panes to set their appearance and internal spacing accordingly: <code>card</code>, <code>card_spacing</code>, and <code>panel_spacing</code>. See the Properties table below for more details</p>
