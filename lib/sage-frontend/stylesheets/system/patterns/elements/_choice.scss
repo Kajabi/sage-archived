@@ -5,7 +5,9 @@
 
 ================================================== */
 
-$item-radio: "::before";
+$item-radio: "before";
+$item-icon: "before";
+$item-arrow: "before";
 
 .sage-choice {
   @include sage-button-style-reset();
@@ -21,9 +23,18 @@ $item-radio: "::before";
   border: sage-border();
   border-radius: sage-border(radius);
   transition: $sage-transition;
-  transition-property: color, background-color, outline-color, box-shadow;
+  transition-property: color, background-color, border-color, box-shadow;
 
   @extend %t-sage-body-med;
+
+  &::after {
+    content: "";
+    position: absolute;
+    border: 2px solid transparent;
+    border-radius: sage-border(radius);
+
+    @include position(-1px, -1px, -1px, -1px);
+  }
 
   &:hover {
     color: $sage-tabs-active-color;
@@ -31,12 +42,20 @@ $item-radio: "::before";
   }
 
   &:focus {
-    outline-color: sage-color(primary);
+    outline: none;
+
+    &::after {
+      border-color: sage-color(grey, 400);
+    }
   }
 
   &:active,
   &.sage-choice--active {
     color: $sage-tabs-active-color;
+
+    &::after {
+      border-color: sage-color(primary);
+    }
   }
 
   .sage-tabs--layout-default &:not(:last-child) {
@@ -53,7 +72,9 @@ $item-radio: "::before";
 }
 
 .sage-choice--arrow {
-  &::after {
+  flex-flow: row-reverse;
+
+  &::#{$item-arrow} {
     @include sage-icon-base(caret-right, lg);
 
     margin: 0 0 0 sage-spacing(sm);
@@ -63,14 +84,14 @@ $item-radio: "::before";
 
   &:active,
   &.sage-choice--active {
-    &::after {
+    &::#{$item-arrow} {
       color: sage-color(primary);
     }
   }
 }
 
 [class*="sage-choice--icon-"] {
-  &::before {
+  &::#{$item-icon} {
     /* See icon generator */
     margin: 0 sage-spacing(xs) 0 0;
     color: currentColor;
@@ -79,7 +100,7 @@ $item-radio: "::before";
 }
 
 .sage-choice--radio {
-  &#{$item-radio} {
+  &::#{$item-radio} {
     content: "";
     display: inline-block;
     box-sizing: border-box;
@@ -94,13 +115,13 @@ $item-radio: "::before";
     transition-property: border, box-shadow;
   }
 
-  &:hover#{$item-radio} {
+  &:hover::#{$item-radio} {
     box-shadow: sage-shadow(sm);
   }
 
   &:active,
   &.sage-choice--active {
-    &#{$item-radio} {
+    &::#{$item-radio} {
       box-shadow: sage-shadow(sm);
       border-width: 5px;
       border-color: $sage-radio-color-checked;
