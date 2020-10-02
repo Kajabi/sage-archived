@@ -45,7 +45,7 @@ module ElementsHelper
       {
         title: "choice",
         description: "A radio button tab for making a choice. To be used inside a tabs object.",
-        use_legacy_html_code_source: true,
+        use_legacy_html_code_source: false,
         scss: "done",
         docs: "done",
         rails: "done",
