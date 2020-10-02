@@ -81,7 +81,7 @@
   <% end %>
 </div>
 
-<h3 class="t-sage-heading-6">Choice tabs - default layout</h3>
+<h3 class="t-sage-heading-6">Choice tabs - radios in default layout</h3>
 <div class="sage-tabs-container">
   <%= sage_component SageTabs, {
       id: "example-tabs3",
@@ -89,15 +89,18 @@
         {
           text: "Sub Page 1",
           target: "choice-test1",
-          active: true
+          active: true,
+          type: "radio"
         },
         {
           text: "Sub Page 2",
-          target: "choice-test2"
+          target: "choice-test2",
+          type: "radio"
         },
         {
           text: "Sub Page 3",
-          target: "choice-test3"
+          target: "choice-test3",
+          type: "radio"
         },
       ],
       style: "choice"
@@ -123,7 +126,7 @@
   <% end %>
 </div>
 
-<h3 class="t-sage-heading-6">Choice tabs - stacked layout</h3>
+<h3 class="t-sage-heading-6">Choice tabs - arrows in stacked layout</h3>
 <div class="sage-tabs-container">
   <%= sage_component SageTabs, {
       id: "example-tabs4",
@@ -131,15 +134,18 @@
         {
           text: "Sub Page 1",
           target: "stacked-test1",
-          active: true
+          active: true,
+          type: "arrow"
         },
         {
           text: "Sub Page 2",
-          target: "stacked-test2"
+          target: "stacked-test2",
+          type: "arrow"
         },
         {
           text: "Sub Page 3",
-          target: "stacked-test3"
+          target: "stacked-test3",
+          type: "arrow"
         },
       ],
       style: "choice",
@@ -160,6 +166,55 @@
   <% end %>
 
   <%= sage_component SageTabsPane, { id: "stacked-test3" } do %>
+    <%= sage_component SageCard, {} do %>
+      <p>Sub page 3 content</p>
+    <% end %>
+  <% end %>
+</div>
+
+<h3 class="t-sage-heading-6">Choice tabs with icons and centered</h3>
+<div class="sage-tabs-container">
+  <%= sage_component SageTabs, {
+      id: "example-tabs45",
+      items: [
+        {
+          text: "Sub Page 1",
+          target: "icon-tabs-test1",
+          active: true,
+          type: "icon",
+          icon: "preview-off",
+        },
+        {
+          text: "Sub Page 2",
+          target: "icon-tabs-test2",
+          type: "icon",
+          icon: "video-on"
+        },
+        {
+          text: "Sub Page 3",
+          target: "icon-tabs-test3",
+          type: "icon",
+          icon: "list-bullet"
+        },
+      ],
+      style: "choice",
+      align_items_center: true
+    }
+  %>
+  <hr class="sage-tabs-divider" />
+  <%= sage_component SageTabsPane, { id: "icon-tabs-test1" } do %>
+    <%= sage_component SageCard, {} do %>
+      <p>Sub page 1 content</p>
+    <% end %>
+  <% end %>
+
+  <%= sage_component SageTabsPane, { id: "icon-tabs-test2" } do %>
+    <%= sage_component SageCard, {} do %>
+      <p>Sub page 2 content</p>
+    <% end %>
+  <% end %>
+
+  <%= sage_component SageTabsPane, { id: "icon-tabs-test3" } do %>
     <%= sage_component SageCard, {} do %>
       <p>Sub page 3 content</p>
     <% end %>

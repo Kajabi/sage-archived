@@ -3,6 +3,7 @@
   class="sage-tabs
     <%= component.stacked.present? ? "sage-tabs--layout-stacked" : "sage-tabs--layout-default" %>
     <%= "sage-tabs--progressbar" if component.progressbar.present? && component.progressbar == true %>
+    <%= "sage-tabs--align-items-center" if component.align_items_center.present? && component.align_items_center == true %>
   "
   role="tablist"
 >
@@ -12,7 +13,9 @@
         target: item[:target],
         text: item[:text],
         subtext: item[:subtext],
-        active: item[:active]
+        active: item[:active],
+        type: item[:type],
+        icon: item[:icon]
       %>
     <% else %>
       <%= sage_component SageTab,
