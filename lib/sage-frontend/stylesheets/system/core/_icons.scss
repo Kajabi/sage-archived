@@ -58,6 +58,11 @@ $sage-icon-li-margin-right: 0.4em !default;
       }
     }
   }
+
+  // Other icons generated here
+  .sage-choice--icon-#{$icon-name}::before {
+    @include sage-icon-base($icon-name);
+  }
 }
 
 @keyframes sage-icon-spin {
