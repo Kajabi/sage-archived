@@ -6,7 +6,6 @@
 ================================================== */
 
 $item-radio: "::before";
-$item-radio-indicator: "::after";
 
 .sage-choice {
   @include sage-button-style-reset();
@@ -21,7 +20,8 @@ $item-radio-indicator: "::after";
   color: $sage-tabs-default-color;
   border: sage-border();
   border-radius: sage-border(radius);
-  transition: color $sage-transition, background-color $sage-transition, outline-color $sage-transition, box-shadow $sage-transition;
+  transition: $sage-transition;
+  transition-property: color, background-color, outline-color, box-shadow;
 
   @extend %t-sage-body-med;
 
@@ -90,7 +90,8 @@ $item-radio-indicator: "::after";
     background-color: $sage-radio-selected-indicator-color;
     border-radius: sage-border(radius-round);
     border: sage-border();
-    transition: border $sage-transition, box-shadow $sage-transition;
+    transition: $sage-transition;
+    transition-property: border, box-shadow;
   }
 
   &:hover#{$item-radio} {
@@ -127,5 +128,6 @@ $item-radio-indicator: "::after";
 
 .sage-choice__subtext {
   @extend %t-sage-body-small;
+
   color: sage-color(charcoal, 100);
 }
