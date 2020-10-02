@@ -195,7 +195,7 @@ module ElementsHelper
       {
         title: "tab",
         description: "A tab button to be used inside a tabs object",
-        use_legacy_html_code_source: true,
+        use_legacy_html_code_source: false,
         scss: "done",
         docs: "done",
         rails: "doing",
