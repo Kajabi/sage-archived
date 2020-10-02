@@ -38,19 +38,13 @@
 
   &.sage-tabs-pane--card {
     @include sage-card;
-
-    justify-items: start;
   }
 
   &.sage-tabs-pane--card-spacing {
     @include sage-grid-card;
-
-    justify-items: start;
   }
 
   &.sage-tabs-pane--panel-spacing {
     @include sage-grid-panel;
-
-    justify-items: start;
   }
 }
