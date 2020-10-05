@@ -54,12 +54,12 @@ module ElementsHelper
       },
       {
         title: "copy_text",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", 
+        description: "A small set of components to use in places where \"copy\" text is provided such as in a Copy Button or a block of text to be copied elsewhere.", 
         use_legacy_html_code_source: false,
-        scss: "todo",
-        rails: "todo",
-        react: "todo",
-        a11y: "todo",
+        scss: "done",
+        rails: "done",
+        react: "done",
+        a11y: "done",
       },
       {
         title: "description",

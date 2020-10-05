@@ -11,6 +11,8 @@ $-copy-text-color-hover: sage-color(charcoal, 500);
 @mixin sage-copy-text() {
   @extend %t-sage-body-small;
 
+  @include truncate();
+
   color: sage-color(charcoal, 400);
   background-color: sage-color(grey, 200);
   border: $-copy-text-border;
