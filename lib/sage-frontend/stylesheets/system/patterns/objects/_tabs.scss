@@ -5,20 +5,12 @@
 ================================================== */
 
 .sage-tabs {
-  /* stylelint-disable blcok-no-empty */
+  /* stylelint-disable block-no-empty */
 }
 
 .sage-tabs--layout-default {
   display: flex;
   flex-direction: row;
-
-  > * {
-    &:not(:last-of-type) {
-      margin-right: sage-spacing(sm);
-    }
-
-    @include sage-tab-underline(".sage-tabs__tab--active");
-  }
 }
 
 .sage-tabs--layout-stacked {
@@ -38,10 +30,21 @@
 .sage-tabs-pane {
   display: none;
   visibility: hidden;
-  margin-bottom: sage-spacing();
 }
 
 .sage-tabs-pane--active {
   display: block;
   visibility: visible;
+
+  &.sage-tabs-pane--card {
+    @include sage-card;
+  }
+
+  &.sage-tabs-pane--card-spacing {
+    @include sage-grid-card;
+  }
+
+  &.sage-tabs-pane--panel-spacing {
+    @include sage-grid-panel;
+  }
 }
