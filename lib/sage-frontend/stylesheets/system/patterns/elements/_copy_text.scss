@@ -9,7 +9,7 @@ $-copy-text-color: sage-color(charcoal, 400);
 $-copy-text-color-hover: sage-color(charcoal, 500);
 
 @mixin sage-copy-text() {
-  @extend %t-sage-body-small-semi;
+  @extend %t-sage-body-small;
 
   color: sage-color(charcoal, 400);
   background-color: sage-color(grey, 200);
@@ -36,7 +36,7 @@ $-copy-text-color-hover: sage-color(charcoal, 500);
 }
 
 .sage-copy-text-card {
-  @include sage-grid-card;
+  @include sage-grid-stack;
   @include sage-copy-text;
 
   padding: $sage-card-padding;
@@ -61,4 +61,10 @@ $-copy-text-color-hover: sage-color(charcoal, 500);
   &:hover::before {
     color: $-copy-text-color-hover;
   }
+}
+
+.sage-copy-btn--semibold,
+.sage-copy-text--semibold,
+.sage-copy-text-card--semibold {
+  @extend %t-sage-body-small-semi;
 }
