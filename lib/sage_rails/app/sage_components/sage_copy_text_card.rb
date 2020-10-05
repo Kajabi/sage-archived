@@ -1,0 +1,2 @@
+class SageCopyTextCard < SageComponent
+end
