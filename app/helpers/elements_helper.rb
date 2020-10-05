@@ -53,6 +53,15 @@ module ElementsHelper
         a11y: "todo"
       },
       {
+        title: "copy_text",
+        description: "A small set of components to use in places where \"copy\" text is provided such as in a Copy Button or a block of text to be copied elsewhere.", 
+        use_legacy_html_code_source: false,
+        scss: "done",
+        rails: "done",
+        react: "done",
+        a11y: "done",
+      },
+      {
         title: "description",
         description: "A description is composed of title and data content and is structured as a definition list.",
         use_legacy_html_code_source: true,
