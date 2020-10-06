@@ -106,11 +106,11 @@ First ensure all new code is completed through a PR and merged into `master`. Th
 
     Keep the version draft open as you will return to it shortly.
 
-3. From the `master` branch (after first ensuring your local branch is up to date with `origin`) use `bin/sage-release` script to bump the package & gem version with a version-tagged git commit as follows:
+3. From the `master` branch (after first ensuring your local branch is up to date with `origin`) use `bin/sage-tag.sh` script to bump the package & gem version with a version-tagged git commit as follows:
 
     ```bash
     # Use the minor or patch arguments to update the minor or patch version number respectively
-    $ bin/sage-tag patch
+    $ bin/sage-tag.sh patch
     # This will automatically push the git-tagged commit to github and deploy to Heroku
     ```
 
