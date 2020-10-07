@@ -1,5 +1,5 @@
 <h4>Default</h4>
-<%= render "examples/elements/breadcrumbs/markup",
+<%= sage_component SageBreadcrumbs, {
   items: [
     {
       text: 'Test 1',
@@ -14,10 +14,10 @@
       url: 'http://example.com/3'
     }
   ]
-%>
+} %>
 
 <h4>Back Link Variation</h4>
-<%= render "examples/elements/breadcrumbs/markup",
+<%= sage_component SageBreadcrumbs, {
   has_back_icon: true,
   items: [
     {
@@ -25,10 +25,10 @@
       url: '#'
     }
   ]
-%>
+} %>
 
 <h4>Progress Bar Variation</h4>
-<%= render "examples/elements/breadcrumbs/markup",
+<%= sage_component SageBreadcrumbs, {
   is_progressbar: true,
   items: [
     {
@@ -45,4 +45,4 @@
       url: 'http://example.com/3'
     }
   ]
-%>
+} %>
