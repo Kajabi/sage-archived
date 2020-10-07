@@ -19,6 +19,23 @@
   }
 }
 
+.sage-card__divider {
+  margin: 0;
+  padding-top: rem(11px); // 16 - 1px element - 4px bottom padding
+  padding-bottom: rem(4px);
+  border: 0;
+
+  &::before {
+    content: "";
+    display: block;
+    border-top: 1px solid sage-color(grey, 300);
+  }
+}
+
+.sage-card__divider--full-bleed {
+  padding: 0;
+  margin: 0 -#{$sage-card-padding};
+}
 
 .sage-card__figure {
   display: flex;

@@ -14,8 +14,7 @@
   @include sage-grid-panel();
 }
 
-.sage-panel__divider,
-.sage-panel > hr {
+.sage-panel__divider {
   margin: 0;
   padding-top: rem(11px); // 16 - 1px element - 4px bottom padding
   padding-bottom: rem(4px);
@@ -29,7 +28,8 @@
 }
 
 .sage-panel__divider--full-bleed {
-  margin: 0 -#{$sage-panel-padding} -#{$sage-panel-grid-gap};
+  padding: 0;
+  margin: 0 -#{$sage-panel-padding};
 }
 
 .sage-panel__figure {
