@@ -40,8 +40,17 @@ $-copy-text-color-hover: sage-color(charcoal, 500);
 .sage-copy-text-card {
   @include sage-grid-stack;
   @include sage-copy-text;
-
+  
+  width: 100%;
   padding: $sage-card-padding;
+}
+
+.sage-copy-text-card--truncate-contents {
+  > * {
+    width: 100%;
+
+    @include truncate();
+  }
 }
 
 .sage-copy-btn {
