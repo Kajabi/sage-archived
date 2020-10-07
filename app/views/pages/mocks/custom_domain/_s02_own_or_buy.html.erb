@@ -1,0 +1,60 @@
+<%= sage_component SageContainer, { size: "xs" } do %>
+  <%= sage_component SagePageHeading, {
+    title: "Custom Domain",
+    spacer: { bottom: :lg },
+    help_link: {
+      url: "#",
+      label: "More info"
+    },
+  } do %>
+    <% content_for :sage_breadcrumbs do %>
+      <!-- TODO: Replace with rails component when finished -->
+      <%= render "examples/elements/breadcrumbs/markup",
+          klass: "sage-page-heading__back",
+          has_back_icon: true,
+          items: [{
+          text: "Settings",
+          url: "#"
+        }]
+      %>
+    <% end %>
+  <% end %>
+  <%= sage_component SagePanel, {} do %>
+    <%= sage_component SagePanelHeader, {
+      title: "How would you like to set up your custom domain?"
+    } do %>
+      <%= sage_component SageButton, {
+        value: "Edit",
+        style: "tertiary",
+        size: "tiny",
+        icon: {
+          name: "info-circle",
+          style: "only"
+        },
+        attributes: {
+          href: "#info"
+        }
+      } %>
+    <% end %>
+    <div class="sage-tabs-container">
+      <%= sage_component SageTabs, {
+        style: "choice",
+        items: [
+          {
+            target: 'cd-setup-tab-a',
+            text: 'Buy a new domain',
+            subtext: 'I want to purchase a new domain.',
+            type: "arrow",
+          },
+          {
+            target: 'cd-setup-tab-b',
+            text: 'I already own a domain',
+            subtext: 'I have an existing domain and want to connect it to Kajabi. ',
+            type: "arrow",
+          }
+        ],
+        stacked: true
+      } %>
+    </div>
+  <% end %>
+<% end %>

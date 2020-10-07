@@ -1,72 +1,19 @@
+<% mocks = [
+  "pages/mocks/custom_domain/s01_main",
+  "pages/mocks/custom_domain/s02_own_or_buy",
+  "pages/mocks/custom_domain/s03_own_where",
+  "pages/mocks/custom_domain/s04a_here_instructions",
+  "pages/mocks/custom_domain/s04b_elsewhere_instructions",
+  "pages/mocks/custom_domain/s05a_main_domain_connected_subdomains",
+  "pages/mocks/custom_domain/s05b_main_domain_connected",
+]
+%>
 <%= content_for :heading do %>
-<%= md("
-# Sandbox
-
-Use this scratchpad to test out elements and objects in context. Just be sure not to commit your changes. ❤️
-") %>
+  <h1>Custom Domain Mocks</h1>
+  <p>Between the dividers below find the preview of the mocked views for the new Custom Domain flow</p>
 <% end %>
 
-<%= sage_component SagePanel, {} do %>
-<%= md(%(
-
-Some ERB:
-
-```erb
-\<\%\= sage_component SagePanelHeader, { title: "Hello, world!" } \%\>
-```
-
-Some HTML:
-
-```html
-<div class="sage-type">
-  <h1 id="hello">Hello</h1>
-  <p data-js-attr="green">World</p>
-</div>
-```
-
-Some CSS:
-
-```css
-h2 {
-  content: "";
-  text-align: center;
-}
-
-.sage-type {
-  color: red;
-}
-```
-
-Some JS:
-
-```jsx
-import React from 'react';
-
-const House = ({ children, title }) => {
-
-  return (
-    <div className="sage-type">
-      <h1 id="hello">Text</h1>
-      <p dataJsAttr="green">World</p>
-    </div>
-  );
-};
-
-export default House;
-```
-
-Some Ruby:
-
-```rb
-module MarkdownHelper
-  require "redcarpet"
-  require "rouge"
-  require "rouge/plugins/redcarpet"
-
-  class HTML < Redcarpet::Render::HTML
-    include Rouge::Plugins::Redcarpet
-  end
-end
-```
-), use_sage_type: true) %>
+<% mocks.each do | mock | %>
+  <h2 class="sage-docs-mock-caption"><%= mock %></h2>
+  <%= render mock %>
 <% end %>

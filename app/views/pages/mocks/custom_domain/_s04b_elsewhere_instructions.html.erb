@@ -1,0 +1,63 @@
+<%= sage_component SageContainer, { size: "xs" } do %>
+  <%= sage_component SagePageHeading, {
+    title: "Custom Domain",
+    spacer: { bottom: :lg },
+    help_link: {
+      url: "#help-1",
+      label: "Help"
+    },
+  } do %>
+    <% content_for :sage_breadcrumbs do %>
+      <!-- TODO: Replace with rails component when finished -->
+      <%= render "examples/elements/breadcrumbs/markup",
+          klass: "sage-page-heading__back",
+          has_back_icon: true,
+          items: [{
+          text: "Settings",
+          url: "#settings"
+        }]
+      %>
+    <% end %>
+  <% end %>
+  <%= sage_component SagePanel, {} do %>
+    <%= sage_component SagePanelHeader, {
+      title: "1. Log in to [Registar Name]"
+    } do %>
+      <%= sage_component SageButton, {
+        value: "Help",
+        style: "tertiary",
+        size: "tiny",
+        icon: {
+          name: "info-circle",
+          style: "only"
+        },
+        attributes: {
+          href: "#help-2"
+        }
+      } %>
+    <% end %>
+    
+    <%= sage_component SagePanelBlock, { type_block: true } do %>
+      <p>Head to the DNS Settings for [TODO: Registrar Name] to add in a new record. </p>
+    <% end %>
+
+    <%= sage_component SagePanelHeader, {
+      title: "2. Add this CNAME to your domain registrar"
+    } %>
+    
+    <%= sage_component SagePanelBlock, {} do %>
+      <%= sage_component SageCopyButton, { value: "ssl.kajabi.com" } %>
+    <% end %>
+
+    <%= sage_component SagePanelBlock, { type_block: true } do %>
+      <p>By adding this CNAME into your DNS Records in [TODO: Registrar Name] you are making sure your domain points to your Kajabi site.  </p>
+    <% end %>
+
+    <%= sage_component SagePanelFooter, {} do %>
+      <%= sage_component SageButton, {
+        value: "Done, verify CNAME",
+        style: "primary"
+      } %>
+    <% end %>
+  <% end %>
+<% end %>

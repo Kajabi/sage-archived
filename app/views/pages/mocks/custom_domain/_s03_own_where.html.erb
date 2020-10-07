@@ -1,0 +1,163 @@
+<%= sage_component SageContainer, { size: "xs" } do %>
+  <%= sage_component SagePageHeading, {
+    title: "Domain Setup",
+    spacer: { bottom: :lg },
+    help_link: {
+      url: "#help-1",
+      label: "Help"
+    },
+  } do %>
+    <% content_for :sage_breadcrumbs do %>
+      <!-- TODO: Replace with rails component when finished -->
+      <%= render "examples/elements/breadcrumbs/markup",
+        klass: "sage-page-heading__back",
+        has_back_icon: true,
+        items: [{
+          text: "Settings",
+          url: "#settings"
+        }, {
+          text: "Custom Domain",
+          url: "#s02_own_or_buy"
+        }, {
+          text: "Domain Setup",
+          url: "#here"
+        }]
+      %>
+    <% end %>
+  <% end %>
+  <%= sage_component SagePanel, {} do %>
+    <%= sage_component SagePanelHeader, {
+      title: "Where is your website hosted?"
+    } do %>
+      <%= sage_component SageButton, {
+        value: "Help",
+        style: "tertiary",
+        size: "tiny",
+        icon: {
+          name: "info-circle",
+          style: "only"
+        },
+        attributes: {
+          href: "#help-2"
+        }
+      } %>
+    <% end %>
+    <div class="sage-tabs-container">
+      <%= sage_component SageTabs, {
+        style: "choice",
+        items: [
+          {
+            target: 'cd-location-tab-here',
+            text: 'My website lives on Kajabi',
+            subtext: 'I plan to have my main website and courses in Kajabi.',
+            type: "radio",
+          },
+          {
+            target: 'cd-location-tab-elsewhere',
+            text: 'My website lives somwhere else',
+            subtext: 'Wordpress, Wix, Squarespace or other.',
+            type: "radio",
+          }
+        ],
+        stacked: true
+      } %>
+
+      <!-- TODO: Simpleform need in some fashion in here -->
+      <%= sage_component SageTabsPane, {
+        id: "cd-location-tab-here",
+        panel_spacing: true
+      } do %>
+        <hr class="sage-tabs-divider" />
+
+        <%= sage_component SagePanelHeader, {
+          title: "Enter the domain you want to connect"
+        } do %>
+          <%= sage_component SageButton, {
+            value: "Help",
+            style: "tertiary",
+            size: "tiny",
+            icon: {
+              name: "info-circle",
+              style: "only"
+            },
+            attributes: {
+              href: "#help-3"
+            }
+          } %>
+        <% end %>
+
+        <!-- TODO: Replace with simpleform field -->
+        <%= render "examples/elements/form_input/markup",
+          id: "cd-location-here-domain-name",
+          input_type: "text",
+          label_text: "Enter your domain...",
+          placeholder: "Enter your domain...",
+          value: "",
+          required: true,
+          disabled: false,
+          input_mode: "",
+          pattern: "",
+          max: "",
+          minlength: "",
+          maxlength: "",
+          has_error: false,
+          message_text: "",
+          prefix: "",
+          suffix: ""
+        %>
+      <% end %>
+
+      <%= sage_component SageTabsPane, {
+        id: "cd-location-tab-elsewhere",
+        panel_spacing: true
+      } do %>
+        <hr class="sage-tabs-divider" />
+
+        <%= sage_component SagePanelHeader, {
+          title: "Enter the subdomain you want to connect"
+        } do %>
+          <%= sage_component SageButton, {
+            value: "Help",
+            style: "tertiary",
+            size: "tiny",
+            icon: {
+              name: "info-circle",
+              style: "only"
+            },
+            attributes: {
+              href: "#help-4"
+            }
+          } %>
+        <% end %>
+
+        <!-- TODO: Replace with simpleform field -->
+        <%= render "examples/elements/form_input/markup",
+          id: "cd-location-elsewhere-domain-name",
+          input_type: "text",
+          label_text: "Enter your domain...",
+          placeholder: "Enter your domain...",
+          value: "",
+          required: true,
+          disabled: false,
+          input_mode: "",
+          pattern: "",
+          max: "",
+          minlength: "",
+          maxlength: "",
+          has_error: false,
+          message_text: "",
+          prefix: "",
+          suffix: ""
+        %>
+      <% end %>
+    </div>
+    <%= sage_component SagePanelFooter, {} do %>
+      <!-- TODO: disabled should toggle to false when field value is provided. -->
+      <%= sage_component SageButton, {
+        value: "Next",
+        style: "primary",
+        disabled: true,
+      } %>
+    <% end %>
+  <% end %>
+<% end %>

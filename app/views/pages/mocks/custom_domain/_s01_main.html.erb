@@ -1,0 +1,58 @@
+<%= sage_component SageContainer, { size: "xs" } do %>
+  <%= sage_component SagePageHeading, {
+    title: "Domain",
+    spacer: { bottom: :lg },
+    help_link: {
+      url: "#help",
+      label: "Help"
+    },
+  } do %>
+    <% content_for :sage_breadcrumbs do %>
+      <!-- TODO: Replace with rails component when finished -->
+      <%= render "examples/elements/breadcrumbs/markup",
+          klass: "sage-page-heading__back",
+          has_back_icon: true,
+          items: [{
+          text: "Settings",
+          url: "#settings"
+        }]
+      %>
+    <% end %>
+    <% content_for :sage_page_heading_actions do %>
+      <%= sage_component SageButton, {
+        style: "primary",
+        icon:{ 
+          name: "add",
+          style: "left"
+        },
+        value: "Custom Domain"
+      } %>
+    <% end %>
+  <% end %>
+  <%= sage_component SagePanel, {} do %>
+    <%= sage_component SagePanelHeader, {
+      title: "Kajabi Domain"
+    } do %>
+      <%= sage_component SageButton, {
+        value: "Edit",
+        style: "tertiary",
+        size: "tiny",
+        icon: {
+          name: "pen",
+          style: "only"
+        },
+        attributes: {
+          href: "#edit"
+        }
+      } %>
+    <% end %>
+    <p><b>www.daydreamsurfshop.mykajabi.com</b></p>
+    <p class="t-sage--color-charcoal-200">This is the default subdomain connected to your Kajabi site. All sites are given a Kajabi subdomain that you can replace with a custom domain or purchase a new one through Kajabi.</p>
+    <p>
+      <%= sage_component SageLabel, {
+        value: "Default",
+        style: "draft"
+       } %>
+    </p>
+  <% end %>
+<% end %>

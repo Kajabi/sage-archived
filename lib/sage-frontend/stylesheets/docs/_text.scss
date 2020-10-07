@@ -18,3 +18,17 @@ pre {
     font-size: 0.9rem;
   }
 }
+
+.sage-docs-mock-caption {
+  margin-bottom: sage-spacing(xl);
+  color: sage-color(grey, 500);
+  font-style: italic;
+  
+  &:not(:first-of-type) {
+    margin-top: sage-spacing(2xl);
+    padding-top: sage-spacing();
+    border-top: 1px solid sage-color(grey, 300);
+  }
+  
+  @extend %t-sage-body-small;
+}

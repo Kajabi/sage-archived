@@ -1,0 +1,151 @@
+<%= sage_component SageContainer, { size: "xs" } do %>
+  <%= sage_component SagePageHeading, {
+    title: "Domain",
+    spacer: { bottom: :lg },
+    help_link: {
+      url: "#help",
+      label: "Help"
+    },
+  } do %>
+    <% content_for :sage_breadcrumbs do %>
+      <!-- TODO: Replace with rails component when finished -->
+      <%= render "examples/elements/breadcrumbs/markup",
+          klass: "sage-page-heading__back",
+          has_back_icon: true,
+          items: [{
+          text: "Settings",
+          url: "#settings"
+        }]
+      %>
+    <% end %>
+    <% content_for :sage_page_heading_toolbar do %>
+      <%= sage_component SageButton, { 
+        style: "tertiary",
+        icon:{
+          name: "gear",
+          style: "left"
+        },
+        value: "DNS Settings",
+      } %>
+    <% end %>
+  <% end %>
+  <%= sage_component SagePanel, {} do %>
+    <%= sage_component SageCardRow, {
+      grid_template: "ite"
+    } do %>
+      <i class="sage-icon-check-circle-lg t-sage--color-sage" aria-label="Connected!"></i>
+      <strong class="t-sage-heading-5">daydreamsurfshop.com</strong>
+      <span class="t-sage-body t-sage--color-charcoal-200">is connected</span>
+      <!-- TODO: Add option dropdown menu -->
+      <%= sage_component SageButton, {
+        value: "Options",
+        style: "tertiary",
+        size: "tiny",
+        icon: {
+          name: "dot-menu-horizontal",
+          style: "only"
+        },
+        attributes: {
+          href: "#options"
+        }
+      } %>
+    <% end %>
+
+    <%= sage_component SagePanelDivider, { bleed: true } %>
+
+    <%= sage_component SageCard, {} do %>
+      
+      <table class="sage-table">
+        <thead>
+          <tr>
+            <th>Subdomains</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>www.daydreamsurfshop.mykajabi.com</td>
+            <td>
+              <%= sage_component SageLabel, {
+                value: "Connected",
+                style: "success"
+              } %>
+            </td>
+            <td>
+              <%= sage_component SageButton, {
+                value: "Options",
+                style: "tertiary",
+                size: "tiny",
+                icon: {
+                  name: "dot-menu-horizontal",
+                  style: "only"
+                },
+                attributes: {
+                  href: "#options"
+                }
+              } %>
+            </td>
+          </tr>
+          <tr>
+            <td>courses.daydreamsurfshop.com</td>
+            <td>
+              <%= sage_component SageLabel, {
+                value: "Connection in progress...",
+                style: "warning"
+              } %>
+            </td>
+            <td>
+              <%= sage_component SageButton, {
+                value: "Options",
+                style: "tertiary",
+                size: "tiny",
+                icon: {
+                  name: "dot-menu-horizontal",
+                  style: "only"
+                },
+                attributes: {
+                  href: "#options"
+                }
+              } %>
+            </td>
+          </tr>
+          <tr>
+            <td>store.daydreamsurfshop.com</td>
+            <td>
+              <%= sage_component SageLabel, {
+                value: "Connection failed",
+                style: "danger"
+              } %>
+            </td>
+            <td>
+              <%= sage_component SageButton, {
+                value: "Options",
+                style: "tertiary",
+                size: "tiny",
+                icon: {
+                  name: "dot-menu-horizontal",
+                  style: "only"
+                },
+                attributes: {
+                  href: "#options"
+                }
+              } %>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    <% end %>
+    <%= sage_component SageButton, {
+      value: "New Subdomain",
+      style: "secondary",
+      icon: {
+        name: "add",
+        style: "left"
+      },
+      attributes: {
+        href: "#new-subdomain"
+      }
+    } %>
+  <% end %>
+<% end %>
