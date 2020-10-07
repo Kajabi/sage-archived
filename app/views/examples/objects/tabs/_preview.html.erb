@@ -2,19 +2,29 @@
 <div class="sage-tabs-container">
   <%= sage_component SageTabs, {
       id: "example-tabs1",
+      navigational: true,
       items: [
         {
           text: "Sub Page 1",
-          target: "basic-test1",
+          #target: "basic-test1",
+          attributes: {
+            href: "//example.com/basic-test1",
+          },
           active: true
         },
         {
           text: "Sub Page 2",
-          target: "basic-test2"
+          #target: "basic-test2"
+          attributes: {
+            href: "//example.com/basic-test2"
+          },
         },
         {
           text: "Sub Page 3",
-          target: "basic-test3"
+          #target: "basic-test3"
+          attributes: {
+            href: "//example.com/basic-test3"
+          },
         },
       ]
     }
@@ -108,25 +118,31 @@
   <% end %>
 </div>
 
-<h3 class="t-sage-heading-6">Choice tabs - arrows in stacked layout</h3>
+<h3 class="t-sage-heading-6">Choice tabs - arrows as links in stacked layout</h3>
 <div class="sage-tabs-container">
   <%= sage_component SageTabs, {
       id: "example-tabs4",
       items: [
         {
           text: "Sub Page 1",
-          target: "stacked-test1",
+          attributes: {
+            href: "//example.com/#stacked-test1",
+          },
           active: true,
           type: "arrow"
         },
         {
           text: "Sub Page 2",
-          target: "stacked-test2",
+          attributes: {
+            href: "//example.com/#stacked-test2",
+          },
           type: "arrow"
         },
         {
           text: "Sub Page 3",
-          target: "stacked-test3",
+          attributes: {
+            href: "//example.com/#stacked-test3",
+          },
           type: "arrow"
         },
       ],

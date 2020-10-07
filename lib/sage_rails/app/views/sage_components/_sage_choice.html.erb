@@ -1,6 +1,14 @@
-<% css_active_class = "sage-choice--active" %>
-<button
-  type="button"
+<%
+css_active_class = "sage-choice--active" 
+is_button = !component.attributes&.has_key?(:href)
+html_tag = is_button ? "button" : "a"
+%>
+
+<<%= html_tag %>
+  <%= "type=button" if is_button %>
+  <% component.attributes.each do |key, value| %>
+    <%= "#{key}='#{value}'".html_safe %>
+  <% end if component.attributes&.is_a?(Hash) %>
   class="
     sage-choice
     <%= css_active_class if component.active %>
@@ -26,4 +34,4 @@
       <span class="sage-choice__subtext" aria-hidden="true"><%= component.subtext.html_safe %></span>
     <% end %>
   </div>
-</button>
+</<%= html_tag %>>

@@ -6,4 +6,5 @@ class SageChoice < SageComponent
   attr_accessor :subtext
   attr_accessor :active
   attr_accessor :align_center
+  attr_accessor :attributes
 end

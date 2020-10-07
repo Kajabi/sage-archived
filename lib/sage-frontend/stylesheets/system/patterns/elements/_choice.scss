@@ -12,7 +12,7 @@ $item-arrow: "before";
 .sage-choice {
   @include sage-button-style-reset();
 
-  display: flex;
+  display: inline-flex;
   position: relative;
   align-items: center;
   flex-grow: 1;
