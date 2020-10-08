@@ -3,77 +3,104 @@
   type: element
 
 ================================================== */
+// Borders and sizing
+$-table-border: rem(1px) solid sage-color(grey);
+$-table-header-border: rem(1px) solid sage-color(grey, 300);
+$-table-cell-padding-xs: sage-spacing(xs);
+$-table-cell-padding-sm: rem(12px) rem(12px);
+$-table-cell-padding-lg: rem(12px) rem(12px);
+$-table-heading-padding-sm: sage-spacing(sm) rem(12px);
+$-table-heading-padding-lg: sage-spacing(sm) rem(12px);
+$-table-max-width: none;
 
-$-sage-table-row-color-stripe: sage-color(grey, 100);
-$-sage-table-row-color-hover: sage-color(grey, 200);
-$-sage-table-cell-focus: sage-color(charcoal);
-$-sage-table-cell-truncate-width: 6.5em;
-$-sage-table-sort-indicator-width: rem(5px);
-$-sage-table-sort-indicator-direction: rem(7px);
+// Text
+$-table-caption-font-size: "%t-sage-body-small";
+$-table-caption-alignment: center;
+$-table-cell-font-color: sage-color(charcoal, 400);
+$-table-cell-type-spec: "%t-sage-body-small";
+$-table-heading-font-color: sage-color(charcoal, 400);
+$-table-heading-type-spec: "%t-sage-body-small-semi";
+
+// Overflow gradient
+$-table-overflow-indicator-width: sage-spacing(md);
+$-table-overflow-indicator-color-start: rgba(255, 255, 255, 0);
+$-table-overflow-indicator-color-end: sage-color(white);
+$-table-overflow-indicator-opacity: 0.95;
+$-table-overflow-indicator-gradient: linear-gradient(90deg, $-table-overflow-indicator-color-start 0%, rgba($-table-overflow-indicator-color-end, $-table-overflow-indicator-opacity) 100%);
+
+// Other
+$-table--row-color-stripe: sage-color(grey, 100);
+$-table--row-color-hover: sage-color(grey, 200);
+$-table--cell-focus: sage-color(charcoal);
+$-table--cell-truncate-width: 6.5em;
+$-table--sort-indicator-width: rem(5px);
+$-table--sort-indicator-direction: rem(7px);
 
 .sage-table {
-  --table-cell-padding: #{$sage-table-cell-padding-sm};
-  --table-heading-padding: #{$sage-table-heading-padding-sm};
-
   width: 100%;
-  max-width: $sage-table-max-width;
+  max-width: $-table-max-width;
 
   caption {
-    @extend #{$sage-table-caption-font-size};
-    text-align: $sage-table-caption-alignment;
+    @extend #{$-table-caption-font-size};
+    text-align: $-table-caption-alignment;
   }
 
   thead,
   tfoot {
-    color: $sage-table-heading-font-color;
-    border-bottom: $sage-table-border;
+    color: $-table-heading-font-color;
+    border-bottom: $-table-header-border;
 
     td,
     th {
-      @extend #{$sage-table-heading-font-size};
+      @extend #{$-table-heading-type-spec};
 
-      padding: $sage-table-heading-padding-sm;
-      padding: var(--table-heading-padding);
-    }
+      padding: $-table-heading-padding-sm;
 
-    td:first-child,
-    th:first-child {
-      padding-left: sage-spacing(sm) / 2;
-    }
+      &:first-child {
+        padding-left: rem(24px);
+      }
 
-    td:last-child,
-    th:last-child {
-      padding-right: sage-spacing(sm) / 2;
+      &:last-child {
+        padding-right: rem(24px);
+      }
     }
   }
 
   tbody {
-    color: $sage-table-cell-font-color;
-
-    tr {
-      border-bottom: $sage-table-border;
-    }
+    color: $-table-cell-font-color;
   }
 
   td {
-    @extend #{$sage-table-cell-font-size};
+    @extend #{$-table-cell-type-spec};
 
-    padding: $sage-table-cell-padding-sm;
-    padding: var(--table-cell-padding);
+    padding: $-table-cell-padding-sm;
     color: inherit;
 
     &:first-child {
-      padding-left: sage-spacing(sm) / 2;
+      padding-left: rem(24px);
     }
 
     &:last-child {
-      padding-right: sage-spacing(sm) / 2;
+      padding-right: rem(24px);
     }
   }
 
+  .sage-panel > & {
+    margin-left: -1 * sage-spacing();
+    margin-right: -1 * sage-spacing();
+  }
+
   @media screen and (min-width: sage-breakpoint(md-min)) {
-    --table-cell-padding: #{$sage-table-cell-padding-lg};
-    --table-heading-padding: #{$sage-table-heading-padding-lg};
+    thead,
+    tfoot {
+      th {
+        padding: $-table-heading-padding-lg;
+      }
+    }
+    
+    td {
+      padding: $-table-cell-padding-lg;
+    }
   }
 }
 
@@ -84,8 +111,8 @@ $-sage-table-sort-indicator-direction: rem(7px);
   tbody {
     td,
     th {
-      padding-top: $sage-table-cell-padding-xs;
-      padding-bottom: $sage-table-cell-padding-xs;
+      padding-top: $-table-cell-padding-xs;
+      padding-bottom: $-table-cell-padding-xs;
     }
   }
 }
@@ -95,7 +122,7 @@ $-sage-table-sort-indicator-direction: rem(7px);
 .sage-table--striped {
   tbody {
     tr:nth-child(odd) {
-      background-color: $-sage-table-row-color-stripe;
+      background-color: $-table--row-color-stripe;
     }
   }
 }
@@ -114,13 +141,13 @@ $-sage-table-sort-indicator-direction: rem(7px);
     &::after {
       content: "";
       display: block;
-      flex: 0 1 $-sage-table-sort-indicator-width;
+      flex: 0 1 $-table--sort-indicator-width;
       transform-origin: center center;
       height: 0;
       width: 0;
       margin-left: sage-spacing(2xs);
-      border-left: $-sage-table-sort-indicator-width solid transparent;
-      border-right: $-sage-table-sort-indicator-width solid transparent;
+      border-left: $-table--sort-indicator-width solid transparent;
+      border-right: $-table--sort-indicator-width solid transparent;
       transition: 0.15s ease-out;
       transition-property: opacity, transform;
       opacity: 0;
@@ -143,7 +170,7 @@ $-sage-table-sort-indicator-direction: rem(7px);
     text-decoration: underline;
 
     &::after {
-      border-top: $-sage-table-sort-indicator-direction solid currentColor;
+      border-top: $-table--sort-indicator-direction solid currentColor;
       opacity: 1;
     }
   }
@@ -166,11 +193,11 @@ $-sage-table-sort-indicator-direction: rem(7px);
     &:hover,
     &:focus,
     &:active {
-      background-color: $-sage-table-row-color-hover;
+      background-color: $-table--row-color-hover;
     }
 
     &:focus-within {
-      background-color: $-sage-table-row-color-hover;
+      background-color: $-table--row-color-hover;
     }
   }
 }
@@ -179,13 +206,18 @@ $-sage-table-sort-indicator-direction: rem(7px);
 // Wrapper div required for responsive tables
 .sage-table-wrapper {
   position: relative;
+
+  .sage-panel > & {
+    margin-left: -1 * sage-spacing();
+    margin-right: -1 * sage-spacing();
+  }
 }
 
 // Allows overflow scrolling when content exceeds container width
 .sage-table-wrapper__overflow {
   overflow: hidden;
   overflow-x: auto;
-  padding-right: ($sage-table-overflow-indicator-width / 2);
+  padding-right: ($-table-overflow-indicator-width / 2);
   -webkit-overflow-scrolling: touch;
 
   &::after {
@@ -195,8 +227,8 @@ $-sage-table-sort-indicator-direction: rem(7px);
     top: 0;
     right: 0;
     height: 100%;
-    width: $sage-table-overflow-indicator-width;
-    background: $sage-table-overflow-indicator-gradient;
+    width: $-table-overflow-indicator-width;
+    background: $-table-overflow-indicator-gradient;
   }
 }
 
@@ -204,7 +236,7 @@ $-sage-table-sort-indicator-direction: rem(7px);
 // Text overflow treatment in individual cells
 .sage-table-cell--truncate {
   overflow: hidden;
-  max-width: $-sage-table-cell-truncate-width;
+  max-width: $-table--cell-truncate-width;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
@@ -241,7 +273,7 @@ $-sage-table-sort-indicator-direction: rem(7px);
   }
 
   &:focus-visible {
-    outline: 1px dotted $-sage-table-cell-focus;
+    outline: 1px dotted $-table--cell-focus;
     outline-offset: 1px;
   }
 

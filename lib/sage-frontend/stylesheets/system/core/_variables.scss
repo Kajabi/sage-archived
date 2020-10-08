@@ -254,35 +254,6 @@ $sage-switch-focus-outline-color: sage-color(primary) !default;
 
 
 // ==================================================
-// TABLES
-// ==================================================
-
-// Borders and sizing
-$sage-table-border: rem(1px) solid sage-color(grey);
-$sage-table-cell-padding-xs: sage-spacing(xs);
-$sage-table-cell-padding-sm: sage-spacing(sm) sage-spacing(xs);
-$sage-table-cell-padding-lg: sage-spacing(md) sage-spacing(sm);
-$sage-table-heading-padding-sm: sage-spacing(sm) sage-spacing(xs);
-$sage-table-heading-padding-lg: sage-spacing(md) sage-spacing(sm);
-$sage-table-max-width: none;
-
-// Text
-$sage-table-caption-font-size: "%t-sage-body-small";
-$sage-table-caption-alignment: center;
-$sage-table-heading-font-color: sage-color(grey, 400);
-$sage-table-heading-font-size: "%t-sage-heading-6";
-$sage-table-cell-font-color: sage-color(charcoal);
-$sage-table-cell-font-size: "%t-sage-body-small";
-
-// Overflow gradient
-$sage-table-overflow-indicator-width: sage-spacing(md);
-$sage-table-overflow-indicator-color-start: rgba(255, 255, 255, 0);
-$sage-table-overflow-indicator-color-end: sage-color(white);
-$sage-table-overflow-indicator-opacity: 0.95;
-$sage-table-overflow-indicator-gradient: linear-gradient(90deg, $sage-table-overflow-indicator-color-start 0%, rgba($sage-table-overflow-indicator-color-end, $sage-table-overflow-indicator-opacity) 100%);
-
-
-// ==================================================
 // LOADERS AND SPINNERS
 // ==================================================
 
