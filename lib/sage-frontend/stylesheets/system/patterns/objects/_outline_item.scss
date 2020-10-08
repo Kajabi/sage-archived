@@ -13,7 +13,9 @@ $-collapse-breakpoint-key: md-max;
   grid-template-rows: repeat(auto-fit, auto);
   grid-column-gap: sage-spacing(xs);
   padding-right: sage-spacing(sm);
-  padding-left: sage-spacing(md);
+
+  // Note: The height of this element is defined by its container
+  height: 100%;
 
   @media (min-width: sage-breakpoint($-collapse-breakpoint-key)) {
     // Using static column values to ensure alignment
@@ -30,16 +32,12 @@ $-collapse-breakpoint-key: md-max;
   }
 
   &:not(.sage-outline-item--category) {
-    padding-top: sage-spacing(xs);
-    padding-bottom: sage-spacing(xs);
     border-bottom: sage-border(light);
   }
 
   &.sage-outline-item--category {
-    padding-top: sage-spacing(sm);
-    padding-bottom: sage-spacing(sm);
-    border-bottom: sage-border();
     border-top: sage-border();
+    border-bottom: sage-border();
   }
 
   &.sage-outline-item--depth-0 {
@@ -48,7 +46,7 @@ $-collapse-breakpoint-key: md-max;
 
   &.sage-outline-item--depth-1 {
     &:not(.sage-outline-item--category) {
-      padding-left: 0;
+      // no-op
     }
     &.sage-outline-item--category {
       padding-left: sage-spacing(lg);
@@ -69,6 +67,10 @@ $-collapse-breakpoint-key: md-max;
   grid-area: title;
   color: sage-color(charcoal, 400);
   @include truncate;
+
+  .sage-outline-item--is-dragging & {
+    background: pink;
+  }
 
   .sage-outline-item--category & {
     @extend %t-sage-body-semi;
@@ -109,6 +111,7 @@ $-collapse-breakpoint-key: md-max;
 
 .sage-outline-item__handle-drag {
   grid-area: handle-drag;
+  padding-left: sage-spacing(sm);
   cursor: grab;
 
   &:active {
