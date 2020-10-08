@@ -209,12 +209,13 @@ sample_copy = %(
   <%= sage_component SagePanelBlock, { type_block: true } do %>
     <%= sample_copy.html_safe %>
   <% end %>
-  <hr />
+  <%= sage_component SagePanelDivider, {} %>
   <%= sage_component SagePanelSubheader, { title: "Panel subheader here" } %>
   <%= sage_component SagePanelBlock, { type_block: true } do %>
     <%= sample_copy.html_safe %>
   <% end %>
 <% end %>
+<p>Dividers can also be set to extend to the panel edges with the <code>--full-bleed</code> modifier</p>
 
 <h5>Panel Figure <code>.sage-panel__figure</code></h5>
 <p>

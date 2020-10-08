@@ -61,6 +61,16 @@
           You can thus add one of the Grid Templates or provide a custom grid template when needed.
           <!-- TODO: Link to come once patterns are settled -->
         </li>
+        <li>
+          <strong><em>Figure</em></strong> —
+          <code>.sage-card__figure</code>
+          can be used to display images, similar to Panel Figures.
+        </li>
+        <li>
+          <strong><em>Divider</em></strong> —
+          <code>.sage-card__divider</code>
+          can be used to display images, similar to Panel Dividers.
+        </li>
       </ul>
       Note: These can also be nested inside each other for compound configurations.
     </li>
@@ -123,5 +133,12 @@
         style: "left"
       }
     } %>
+  <% end %>
+  <strong>Divider (full bleed):</strong>
+  <%= sage_component SageCardDivider, { bleed: true } %>
+
+  <strong>Figure:</strong>
+  <%= sage_component SageCardFigure, {} do %>
+    <%= image_pack_tag("docs/card/card-placeholder-sm.png", alt: "") %>
   <% end %>
 <% end %>
