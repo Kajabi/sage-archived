@@ -11,8 +11,9 @@ $-collapse-breakpoint-key: md-max;
   display: grid;
   align-items: center;
   grid-template-rows: repeat(auto-fit, auto);
+  border: 1px solid transparent;
+  background: sage-color(white);
   grid-column-gap: sage-spacing(xs);
-  padding-right: sage-spacing(sm);
 
   // Note: The height of this element is defined by its container
   height: 100%;
@@ -38,6 +39,12 @@ $-collapse-breakpoint-key: md-max;
   &.sage-outline-item--category {
     border-top: sage-border();
     border-bottom: sage-border();
+  }
+
+  &.sage-outline-item--is-dragging {
+    border: 1px dashed sage-color(primary);
+    background: sage-color(primary, 100);
+    transform: translateZ(0); // REQUIRED TO RESOLVE CHROME BUG – forces hardware acceleration
   }
 
   &.sage-outline-item--depth-0 {
@@ -67,10 +74,6 @@ $-collapse-breakpoint-key: md-max;
   grid-area: title;
   color: sage-color(charcoal, 400);
   @include truncate;
-
-  .sage-outline-item--is-dragging & {
-    background: pink;
-  }
 
   .sage-outline-item--category & {
     @extend %t-sage-body-semi;
@@ -107,6 +110,7 @@ $-collapse-breakpoint-key: md-max;
   display: flex;
   grid-area: status;
   justify-content: flex-end;
+  transform: none;
 }
 
 .sage-outline-item__handle-drag {
