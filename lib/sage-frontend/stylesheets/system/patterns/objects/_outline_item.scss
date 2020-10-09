@@ -13,6 +13,7 @@ $-collapse-breakpoint-key: md-max;
   grid-template-rows: repeat(auto-fit, auto);
   background: sage-color(white);
   grid-column-gap: sage-spacing(xs);
+  will-change: background, box-shadow;
 
   // Note: The height of this element is defined by its container
   height: 100%;
@@ -40,13 +41,39 @@ $-collapse-breakpoint-key: md-max;
   }
 
   &.sage-outline-item--is-dragging {
-    border-radius: sage-border(radius-large);
-    box-shadow: inset 0 0 0 2px sage-color(white), inset 0 0 0 3px sage-color(primary);
+    border-radius: sage-border(radius);
+    border: none;
+    box-shadow: inset 0 0 0 1px sage-color(white), inset 0 0 0 2px sage-color(grey, 500);
     transform: translateZ(0); // REQUIRED TO RESOLVE CHROME BUG – forces hardware acceleration
+
+    .sage-outline-item__actions-primary,
+    .sage-outline-item__actions-secondary,
+    .sage-outline-item__handle-collapse { visibility: hidden; }
   }
 
   &.sage-outline-item--is-droptarget {
-    background: sage-color(primary, 100);
+    box-shadow: inset 0 0 0 1px sage-color(white), inset 0 0 0 2px sage-color(primary), inset 0 0 0 5px sage-color(white);
+    background: repeating-linear-gradient(
+      45deg,
+      sage-color(grey, 300) 0,
+      sage-color(grey, 300) 12px,
+      sage-color(white) 12px,
+      sage-color(white) 24px
+    );
+
+    > * { visibility: hidden; }
+  }
+
+  &.sage-outline-item--is-droptarget-invalid {
+    box-shadow: inset 0 0 0 1px sage-color(white), inset 0 0 0 2px sage-color(red, 200), inset 0 0 0 5px sage-color(white);
+    background: repeating-linear-gradient(
+      45deg,
+      sage-color(red, 200) 0,
+      sage-color(red, 200) 12px,
+      sage-color(white) 12px,
+      sage-color(white) 24px
+    );
+
     > * { visibility: hidden; }
   }
 
