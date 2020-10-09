@@ -22,7 +22,7 @@ $-table-heading-font-color: sage-color(charcoal, 400);
 $-table-heading-type-spec: "%t-sage-body-small-semi";
 
 // Overflow gradient
-$-table-overflow-indicator-width: sage-spacing(md);
+$-table-overflow-indicator-width: sage-spacing(sm);
 $-table-overflow-indicator-color-start: rgba(255, 255, 255, 0);
 $-table-overflow-indicator-color-end: sage-color(white);
 $-table-overflow-indicator-opacity: 0.95;
@@ -48,7 +48,6 @@ $-table--sort-indicator-direction: rem(7px);
   thead,
   tfoot {
     color: $-table-heading-font-color;
-    border-bottom: $-table-header-border;
 
     td,
     th {
@@ -64,6 +63,14 @@ $-table--sort-indicator-direction: rem(7px);
         padding-right: rem(24px);
       }
     }
+  }
+
+  thead {
+    border-bottom: $-table-header-border;
+  }
+
+  tfoot {
+    border-top: $-table-header-border;
   }
 
   tbody {
@@ -86,6 +93,7 @@ $-table--sort-indicator-direction: rem(7px);
   }
 
   .sage-panel > & {
+    width: auto;
     margin-left: -1 * sage-spacing();
     margin-right: -1 * sage-spacing();
   }
@@ -215,20 +223,21 @@ $-table--sort-indicator-direction: rem(7px);
 
 // Allows overflow scrolling when content exceeds container width
 .sage-table-wrapper__overflow {
-  overflow: hidden;
-  overflow-x: auto;
-  padding-right: ($-table-overflow-indicator-width / 2);
-  -webkit-overflow-scrolling: touch;
-
-  &::after {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 100%;
-    width: $-table-overflow-indicator-width;
-    background: $-table-overflow-indicator-gradient;
+  @media (max-width: sage-breakpoint(sm-max)) {
+    overflow: hidden;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: $-table-overflow-indicator-width;
+      background: $-table-overflow-indicator-gradient;
+    }
   }
 }
 

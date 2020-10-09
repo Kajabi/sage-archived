@@ -1,0 +1,53 @@
+<div class="sage-table-wrapper">
+  <% if component.responsive %>
+    <div class="sage-table-wrapper__overflow">
+  <% end %>
+
+  <table class="
+      sage-table
+      <%= "sage-table--striped" if component.striped %>
+      <%= "sage-table--selectable" if component.selectable %>
+      <%= "sage-table--condensed" if component.condensed %>
+      <%= "sage-table--sortable" if component.sortable %>
+    "
+  >
+    <% if component.caption.present? %>
+      <caption><%= caption.html_safe %></caption>
+    <% end %>
+    <% if component.headers.present? %>
+      <thead>
+        <tr>
+          <% component.headers.each do  | header | %>
+            <th
+              <% if header.attributes.present? %>
+                <% header.attributes.each do  | key, value | %>
+                  <%= "#{key}=#{value}" %>
+                <% end %>
+              <% end %>
+            >
+              <%= header.value.html_safe %>
+            </th>
+          <% end %>
+        </tr>
+      </thead>
+    <% end %>
+    <tbody>
+      <tr>
+        <td>Cell</td>
+        <td>Cell</td>
+        <td>Cell</td>
+        <td>Cell</td>
+        <td>Cell</td>
+        <td>Cell</td>
+        <td>Cell</td>
+        <td>Cell</td>
+        <td>Cell</td>
+        <td>Cell</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <% if component.responsive %>
+    </div>
+  <% end %>
+</div>
