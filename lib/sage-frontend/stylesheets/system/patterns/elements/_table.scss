@@ -7,8 +7,8 @@
 $-table-border: rem(1px) solid sage-color(grey);
 $-table-header-border: rem(1px) solid sage-color(grey, 300);
 $-table-cell-padding-xs: sage-spacing(xs);
-$-table-cell-padding-sm: rem(12px) rem(12px);
-$-table-cell-padding-lg: rem(12px) rem(12px);
+$-table-cell-padding-card: sage-spacing(sm);
+$-table-cell-padding-panel: sage-spacing();
 $-table-heading-padding-sm: sage-spacing(sm) rem(12px);
 $-table-heading-padding-lg: sage-spacing(sm) rem(12px);
 $-table-max-width: none;
@@ -42,6 +42,7 @@ $-table--sort-indicator-direction: rem(7px);
 
   caption {
     @extend #{$-table-caption-font-size};
+
     text-align: $-table-caption-alignment;
   }
 
@@ -52,16 +53,6 @@ $-table--sort-indicator-direction: rem(7px);
     td,
     th {
       @extend #{$-table-heading-type-spec};
-
-      padding: $-table-heading-padding-sm;
-
-      &:first-child {
-        padding-left: rem(24px);
-      }
-
-      &:last-child {
-        padding-right: rem(24px);
-      }
     }
   }
 
@@ -80,35 +71,7 @@ $-table--sort-indicator-direction: rem(7px);
   td {
     @extend #{$-table-cell-type-spec};
 
-    padding: $-table-cell-padding-sm;
     color: inherit;
-
-    &:first-child {
-      padding-left: rem(24px);
-    }
-
-    &:last-child {
-      padding-right: rem(24px);
-    }
-  }
-
-  .sage-panel > & {
-    width: auto;
-    margin-left: -1 * sage-spacing();
-    margin-right: -1 * sage-spacing();
-  }
-
-  @media screen and (min-width: sage-breakpoint(md-min)) {
-    thead,
-    tfoot {
-      th {
-        padding: $-table-heading-padding-lg;
-      }
-    }
-    
-    td {
-      padding: $-table-cell-padding-lg;
-    }
   }
 }
 
@@ -216,8 +179,91 @@ $-table--sort-indicator-direction: rem(7px);
   position: relative;
 
   .sage-panel > & {
-    margin-left: -1 * sage-spacing();
-    margin-right: -1 * sage-spacing();
+    margin-left: -1 * $-table-cell-padding-panel;
+    margin-right: -1 * $-table-cell-padding-panel;
+
+    // Cells should split the desired padding in half to make total desired space
+    td {
+      padding: $-table-cell-padding-panel / 2;
+
+      // First and last cells in a row get the full outer spacing
+      &:first-child {
+        padding-left: $-table-cell-padding-panel;
+      }
+  
+      &:last-child {
+        padding-right: $-table-cell-padding-panel;
+      }
+    }
+
+    thead,
+    tfoot {
+      th,
+      td {
+        padding: sage-spacing(sm) $-table-cell-padding-panel / 2;
+
+        &:first-child {
+          padding-left: $-table-cell-padding-panel;
+        }
+    
+        &:last-child {
+          padding-right: $-table-cell-padding-panel;
+        }
+      }
+    }
+  }
+
+  .sage-card > & {
+    margin-left: -1 * $-table-cell-padding-card;
+    margin-right: -1 * $-table-cell-padding-card;
+
+    td {
+      padding: $-table-cell-padding-card / 2;
+
+      &:first-child {
+        padding-left: $-table-cell-padding-card;
+      }
+  
+      &:last-child {
+        padding-right: $-table-cell-padding-card;
+      }
+    }
+
+    thead,
+    tfoot {
+      th,
+      td {
+        padding: sage-spacing(xs) $-table-cell-padding-card / 2;
+
+        &:first-child {
+          padding-left: $-table-cell-padding-card;
+        }
+    
+        &:last-child {
+          padding-right: $-table-cell-padding-card;
+        }
+      }
+    }
+  }
+}
+
+.sage-table-wrapper--reset-above {
+  .sage-panel > & {
+    margin-top: -1 * sage-spacing();
+  }
+
+  .sage-card > & {
+    margin-top: -1 * sage-spacing(sm);
+  }
+}
+
+.sage-table-wrapper--reset-below {
+  .sage-panel > & {
+    margin-bottom: -1 * sage-spacing();
+  }
+
+  .sage-card > & {
+    margin-bottom: -1 * sage-spacing(sm);
   }
 }
 

@@ -1,4 +1,8 @@
-<div class="sage-table-wrapper">
+<div class="
+  sage-table-wrapper
+  <%= "sage-table-wrapper--reset-above" if component.reset_above %>
+  <%= "sage-table-wrapper--reset-below" if component.reset_below %>
+">
   <% if component.responsive %>
     <div class="sage-table-wrapper__overflow">
   <% end %>
@@ -19,31 +23,34 @@
         <tr>
           <% component.headers.each do  | header | %>
             <th
-              <% if header.attributes.present? %>
-                <% header.attributes.each do  | key, value | %>
+              <% if header[:html_attributes].present? %>
+                <% header[:html_attributes].each do | key, value | %>
                   <%= "#{key}=#{value}" %>
                 <% end %>
               <% end %>
             >
-              <%= header.value.html_safe %>
+              <%= header[:value].html_safe %>
             </th>
           <% end %>
         </tr>
       </thead>
     <% end %>
     <tbody>
-      <tr>
-        <td>Cell</td>
-        <td>Cell</td>
-        <td>Cell</td>
-        <td>Cell</td>
-        <td>Cell</td>
-        <td>Cell</td>
-        <td>Cell</td>
-        <td>Cell</td>
-        <td>Cell</td>
-        <td>Cell</td>
-      </tr>
+      <% if component.rows.present? %>
+        <% component.rows.each do | row | %>
+          <tr>
+            <% if row.is_a? Array %>
+              <% row.each do | cell | %>
+                <td><%= cell %></td>
+              <% end %>
+            <% elsif row.is_a? Object %>
+              <% row.each do | key, value | %>
+                <td data-cell-key="<%= key %>"><%= value %></td>
+              <% end %>
+            <% end %>
+          </tr>
+        <% end %>
+      <% end %>
     </tbody>
   </table>
 

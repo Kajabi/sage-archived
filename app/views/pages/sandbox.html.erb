@@ -5,6 +5,60 @@
 
 <%= sage_component SageContainer, { size: "lg" } do %>
   <%= sage_component SagePanel, {} do %>
-    <%= sage_component SageTable, { responsive: true } %>
+    <%= sage_component SageTable, {
+      responsive: true,
+      reset_above: true,
+      headers: [
+        { value: "Heading 1", },
+        { value: %(Heading 2 <i class="sage-icon-check-circle"></i>) },
+        { value: "Heading 3", html_attributes: { id: "heading-3" } }
+      ],
+      rows: [
+        [
+          "Schanely",
+          "1534 Trumptington Street",
+          "45314"
+        ],
+        {
+          name: "New folks",
+          street: "3415 Wildflower Place",
+          zip: 29466
+        },
+        {
+          name: "Old folks",
+          street: "5708 Davis Road",
+          zip: 28173
+        }
+      ]
+    } %>
+    <%= sage_component SageCard, {} do %>
+      <%= sage_component SageTable, {
+        responsive: true,
+        reset_above: true,
+        reset_below: true,
+        headers: [
+          { value: "Heading 1", },
+          { value: %(Heading 2 <i class="sage-icon-check-circle"></i>) },
+          { value: "Heading 3", html_attributes: { id: "heading-3" } }
+        ],
+        rows: [
+          [
+            "Schanely",
+            "1534 Trumptington Street",
+            "45314"
+          ],
+          {
+            name: "New folks",
+            street: "3415 Wildflower Place",
+            zip: 29466
+          },
+          {
+            name: "Old folks",
+            street: "5708 Davis Road",
+            zip: 28173
+          }
+        ]
+      } %>
+    <% end %>
   <% end %>
 <% end %>
