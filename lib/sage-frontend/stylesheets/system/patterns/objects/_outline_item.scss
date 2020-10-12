@@ -34,8 +34,10 @@ $-collapse-breakpoint-key: md-max;
   //       small datasets, Categories have a larger height than
   //       regular Outline Items
   //
-  // stylelint-disable-next-line order/properties-order
+  // stylelint-disable order/properties-order
   height: 100%;
+  max-height: rem(80px);
+  // stylelint-enable order/properties-order
 
   @media (min-width: sage-breakpoint($-collapse-breakpoint-key)) {
     // Using static column values to ensure alignment
