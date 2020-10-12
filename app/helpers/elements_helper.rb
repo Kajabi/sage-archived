@@ -214,7 +214,7 @@ module ElementsHelper
       {
         title: "table",
         description: "Basic table element",
-        use_legacy_html_code_source: true,
+        use_legacy_html_code_source: false,
         scss: "doing",
         docs: "doing",
         rails: "todo",
