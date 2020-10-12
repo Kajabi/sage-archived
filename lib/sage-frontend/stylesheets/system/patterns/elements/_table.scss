@@ -1,3 +1,5 @@
+// stylelint-disable selector-max-compound-selectors
+// stylelint-disable max-nesting-depth
 /* ==================================================
   ** sage_table
   type: element
@@ -29,12 +31,12 @@ $-table-overflow-indicator-opacity: 0.95;
 $-table-overflow-indicator-gradient: linear-gradient(90deg, $-table-overflow-indicator-color-start 0%, rgba($-table-overflow-indicator-color-end, $-table-overflow-indicator-opacity) 100%);
 
 // Other
-$-table--row-color-stripe: sage-color(grey, 100);
-$-table--row-color-hover: sage-color(grey, 200);
-$-table--cell-focus: sage-color(charcoal);
-$-table--cell-truncate-width: 6.5em;
-$-table--sort-indicator-width: rem(5px);
-$-table--sort-indicator-direction: rem(7px);
+$-table-row-color-stripe: sage-color(grey, 100);
+$-table-row-color-hover: sage-color(grey, 200);
+$-table-cell-focus: sage-color(charcoal);
+$-table-cell-truncate-width: 6.5em;
+$-table-sort-indicator-width: rem(5px);
+$-table-sort-indicator-direction: rem(7px);
 
 .sage-table {
   width: 100%;
@@ -114,7 +116,7 @@ $-table--sort-indicator-direction: rem(7px);
 .sage-table--striped {
   tbody {
     tr:nth-child(odd) {
-      background-color: $-table--row-color-stripe;
+      background-color: $-table-row-color-stripe;
     }
   }
 }
@@ -133,13 +135,13 @@ $-table--sort-indicator-direction: rem(7px);
     &::after {
       content: "";
       display: block;
-      flex: 0 1 $-table--sort-indicator-width;
+      flex: 0 1 $-table-sort-indicator-width;
       transform-origin: center center;
       height: 0;
       width: 0;
       margin-left: sage-spacing(2xs);
-      border-left: $-table--sort-indicator-width solid transparent;
-      border-right: $-table--sort-indicator-width solid transparent;
+      border-left: $-table-sort-indicator-width solid transparent;
+      border-right: $-table-sort-indicator-width solid transparent;
       transition: 0.15s ease-out;
       transition-property: opacity, transform;
       opacity: 0;
@@ -162,7 +164,7 @@ $-table--sort-indicator-direction: rem(7px);
     text-decoration: underline;
 
     &::after {
-      border-top: $-table--sort-indicator-direction solid currentColor;
+      border-top: $-table-sort-indicator-direction solid currentColor;
       opacity: 1;
     }
   }
@@ -185,11 +187,11 @@ $-table--sort-indicator-direction: rem(7px);
     &:hover,
     &:focus,
     &:active {
-      background-color: $-table--row-color-hover;
+      background-color: $-table-row-color-hover;
     }
 
     &:focus-within {
-      background-color: $-table--row-color-hover;
+      background-color: $-table-row-color-hover;
     }
   }
 }
@@ -282,7 +284,7 @@ $-table--sort-indicator-direction: rem(7px);
 // Text overflow treatment in individual cells
 .sage-table-cell--truncate {
   overflow: hidden;
-  max-width: $-table--cell-truncate-width;
+  max-width: $-table-cell-truncate-width;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
@@ -319,7 +321,7 @@ $-table--sort-indicator-direction: rem(7px);
   }
 
   &:focus-visible {
-    outline: 1px dotted $-table--cell-focus;
+    outline: 1px dotted $-table-cell-focus;
     outline-offset: 1px;
   }
 
