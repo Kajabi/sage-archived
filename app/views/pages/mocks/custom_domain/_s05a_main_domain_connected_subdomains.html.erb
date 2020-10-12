@@ -54,87 +54,74 @@
     <%= sage_component SagePanelDivider, { bleed: true } %>
 
     <%= sage_component SageCard, {} do %>
-      
-      <table class="sage-table">
-        <thead>
-          <tr>
-            <th>Subdomains</th>
-            <th></th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>www.daydreamsurfshop.mykajabi.com</td>
-            <td>
-              <%= sage_component SageLabel, {
-                value: "Connected",
-                style: "success"
-              } %>
-            </td>
-            <td>
-              <%= sage_component SageButton, {
-                value: "Options",
-                style: "tertiary",
-                size: "tiny",
-                icon: {
-                  name: "dot-menu-horizontal",
-                  style: "only"
-                },
-                attributes: {
-                  href: "#options"
-                }
-              } %>
-            </td>
-          </tr>
-          <tr>
-            <td>courses.daydreamsurfshop.com</td>
-            <td>
-              <%= sage_component SageLabel, {
-                value: "Connection in progress...",
-                style: "warning"
-              } %>
-            </td>
-            <td>
-              <%= sage_component SageButton, {
-                value: "Options",
-                style: "tertiary",
-                size: "tiny",
-                icon: {
-                  name: "dot-menu-horizontal",
-                  style: "only"
-                },
-                attributes: {
-                  href: "#options"
-                }
-              } %>
-            </td>
-          </tr>
-          <tr>
-            <td>store.daydreamsurfshop.com</td>
-            <td>
-              <%= sage_component SageLabel, {
-                value: "Connection failed",
-                style: "danger"
-              } %>
-            </td>
-            <td>
-              <%= sage_component SageButton, {
-                value: "Options",
-                style: "tertiary",
-                size: "tiny",
-                icon: {
-                  name: "dot-menu-horizontal",
-                  style: "only"
-                },
-                attributes: {
-                  href: "#options"
-                }
-              } %>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      <%= sage_component SageTable, {
+        headers: [
+          "Subdomains",
+          "",
+          ""
+        ],
+        reset_above: true,
+        reset_below: true,
+        rows: [
+          [
+            "www.daydreamsurfshop.mykajabi.com",
+            sage_component(SageLabel, {
+              value: "Connected",
+              style: "success"
+            }),
+            sage_component(SageButton, {
+              value: "Options",
+              style: "tertiary",
+              size: "tiny",
+              icon: {
+                name: "dot-menu-horizontal",
+                style: "only"
+              },
+              attributes: {
+                href: "#options"
+              }
+            })
+          ],
+          [
+            "courses.daydreamsurfshop.com",
+            sage_component(SageLabel, {
+              value: "Connection in progress...",
+              style: "warning"
+            }),
+            sage_component(SageButton, {
+              value: "Options",
+              style: "tertiary",
+              size: "tiny",
+              icon: {
+                name: "dot-menu-horizontal",
+                style: "only"
+              },
+              attributes: {
+                href: "#options"
+              }
+            })
+          ],
+          [
+            "store.daydreamsurfshop.com",
+            sage_component(SageLabel, {
+              value: "Connection failed",
+              style: "danger"
+            }),
+            sage_component(SageButton, {
+              value: "Options",
+              style: "tertiary",
+              size: "tiny",
+              icon: {
+                name: "dot-menu-horizontal",
+                style: "only"
+              },
+              attributes: {
+                href: "#options"
+              }
+            })
+          ]
+        ]
+      } %>
     <% end %>
     <%= sage_component SageButton, {
       value: "New Subdomain",
