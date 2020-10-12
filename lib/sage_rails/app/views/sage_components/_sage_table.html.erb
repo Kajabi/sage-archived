@@ -1,9 +1,12 @@
+<%
+is_responsive = component.responsive.present? ? component.responsive : true
+%>
 <div class="
   sage-table-wrapper
   <%= "sage-table-wrapper--reset-above" if component.reset_above %>
   <%= "sage-table-wrapper--reset-below" if component.reset_below %>
 ">
-  <% if component.responsive %>
+  <% if is_responsive %>
     <div class="sage-table-wrapper__overflow">
   <% end %>
 
@@ -16,20 +19,20 @@
     "
   >
     <% if component.caption.present? %>
-      <caption><%= caption.html_safe %></caption>
+      <caption><%= component.caption.html_safe %></caption>
     <% end %>
     <% if component.headers.present? %>
       <thead>
         <tr>
-          <% component.headers.each do  | header | %>
+          <% component.headers.each do | header | %>
             <th
-              <% if header[:html_attributes].present? %>
-                <% header[:html_attributes].each do | key, value | %>
-                  <%= "#{key}=#{value}" %>
-                <% end %>
-              <% end %>
+              <% header[:html_attributes].each do | key, value | %>
+                <%= "#{key}=#{value}" %>
+              <% end if header&.is_a?(Hash) && header[:html_attributes].present? %>
             >
-              <%= header[:value].html_safe %>
+              <% if component.sortable %><a href="#" class="sage-table__sort"><% end %>
+              <%= header&.is_a?(Hash) ? header[:value].html_safe : header.html_safe %>
+              <% if component.sortable %></a><% end %>
             </th>
           <% end %>
         </tr>
@@ -38,14 +41,27 @@
     <tbody>
       <% if component.rows.present? %>
         <% component.rows.each do | row | %>
-          <tr>
+          <tr class="<%= "sage-row--selectable" if component.selectable %>">
             <% if row.is_a? Array %>
               <% row.each do | cell | %>
-                <td><%= cell %></td>
+                <td
+                  <% cell[:html_attributes].each do | key, value | %>
+                    <%= "#{key}=#{value}" %>
+                  <% end if cell&.is_a?(Hash) && cell[:html_attributes].present? %>
+                >
+                  <%= cell&.is_a?(Hash) ? cell[:value].html_safe : cell.html_safe %>
+                </td>
               <% end %>
-            <% elsif row.is_a? Object %>
+            <% elsif row.is_a? Object or row.is_a? Hash %>
               <% row.each do | key, value | %>
-                <td data-cell-key="<%= key %>"><%= value %></td>
+                <td
+                  data-cell-key="<%= key %>"
+                  <% value[:html_attributes].each do | k, v | %>
+                    <%= "#{k}=#{v}" %>
+                  <% end if value&.is_a?(Hash) && value[:html_attributes].present? %>  
+                >
+                  <%= value&.is_a?(Hash) ? value[:value].html_safe : value.html_safe %>
+                </td>
               <% end %>
             <% end %>
           </tr>
@@ -54,7 +70,7 @@
     </tbody>
   </table>
 
-  <% if component.responsive %>
+  <% if is_responsive %>
     </div>
   <% end %>
 </div>

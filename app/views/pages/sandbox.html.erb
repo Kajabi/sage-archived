@@ -8,26 +8,30 @@
     <%= sage_component SageTable, {
       responsive: true,
       reset_above: true,
+      # Headers can be a string or an object with a `value` attribute along with optional html_attributes
       headers: [
-        { value: "Heading 1", },
+        "Heading 1",
         { value: %(Heading 2 <i class="sage-icon-check-circle"></i>) },
-        { value: "Heading 3", html_attributes: { id: "heading-3" } }
+        { value: "Heading 3", html_attributes: { id: "heading-3", class: "sage-col--sm-hide" } }
       ],
+      # Rows can be an array of values or an object.
+      # If an object, the assigned values will be displayed in the cell unless the value is itself an object.
+      # In this case, the `value` attribute is expected to contain the cell value
       rows: [
         [
-          "Schanely",
-          "1534 Trumptington Street",
-          "45314"
+          "Value A1",
+          "Value A2",
+          "Value A3"
         ],
         {
-          name: "New folks",
-          street: "3415 Wildflower Place",
-          zip: 29466
-        },
-        {
-          name: "Old folks",
-          street: "5708 Davis Road",
-          zip: 28173
+          field_1: {
+            value: "Value B1",
+            html_attributes: {
+              class: "green"
+            }
+          },
+          field_2: "Value B2",
+          field_3: "Value B3"
         }
       ]
     } %>
@@ -39,23 +43,18 @@
         headers: [
           { value: "Heading 1", },
           { value: %(Heading 2 <i class="sage-icon-check-circle"></i>) },
-          { value: "Heading 3", html_attributes: { id: "heading-3" } }
+          { value: "Heading 3", html_attributes: { id: "heading-3" }, truncate: true }
         ],
         rows: [
           [
-            "Schanely",
-            "1534 Trumptington Street",
-            "45314"
+            "Value A1",
+            "Value A2",
+            "Value A3"
           ],
           {
-            name: "New folks",
-            street: "3415 Wildflower Place",
-            zip: 29466
-          },
-          {
-            name: "Old folks",
-            street: "5708 Davis Road",
-            zip: 28173
+            field_1: "Value B1",
+            field_2: "Value B2",
+            field_3: "Value B3"
           }
         ]
       } %>
