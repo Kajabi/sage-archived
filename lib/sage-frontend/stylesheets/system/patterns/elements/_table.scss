@@ -68,12 +68,18 @@ $-table-sort-indicator-direction: rem(7px);
     }
   }
 
-  thead {
+  // Adds borders in these positions that are also stacked above the
+  // responsive scroll fade when it is enabled.
+  thead::after,
+  tfoot::before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    right: 0;
+    height: 0;
     border-bottom: $-table-header-border;
-  }
-
-  tfoot {
-    border-top: $-table-header-border;
   }
 
   tbody {
@@ -262,21 +268,20 @@ $-table-sort-indicator-direction: rem(7px);
 
 // Allows overflow scrolling when content exceeds container width
 .sage-table-wrapper__overflow {
-  @media (max-width: sage-breakpoint(sm-max)) {
-    overflow: hidden;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  
-    &::after {
-      content: "";
-      display: block;
-      position: absolute;
-      top: 0;
-      right: 0;
-      height: 100%;
-      width: $-table-overflow-indicator-width;
-      background: $-table-overflow-indicator-gradient;
-    }
+  overflow: hidden;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    height: 100%;
+    width: $-table-overflow-indicator-width;
+    background: $-table-overflow-indicator-gradient;
   }
 }
 
