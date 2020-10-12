@@ -2,6 +2,16 @@
   ** outline-item
   type: object
 
+  This is a unicorn component built for the SortableTree/Product-Outline
+  React component within Kajabi-Products. The current implementation
+  uses the raw css classes defined here rather than using a SageReact
+  component. This was done because the logic governing dragging & sorting
+  is tightly knit to the class modifiers provided in this file. A refactor
+  to a SageReact component is targeted at the end of this cycle. However, until
+  we can account for the entire featureset required for the Product Outline, we
+  consider a SageReact component premature optimization.
+
+  Component Owner: Product-Build UXD
 
 ================================================== */
 
@@ -11,11 +21,20 @@ $-collapse-breakpoint-key: md-max;
   display: grid;
   align-items: center;
   grid-template-rows: repeat(auto-fit, auto);
-  background: sage-color(white);
   grid-column-gap: sage-spacing(xs);
+  background: sage-color(white);
   will-change: background, box-shadow;
 
-  // Note: The height of this element is defined by its container
+  // NOTE: Height is governed by a parent React node to allow us
+  //       to dynamically adjust the height of elements depending
+  //       on the size of the dataset provided. If the dataset
+  //       is large we 'normalize' all of the node heights to
+  //       allow them to be predictably virtualized in a shodow
+  //       DOM when not visible. This prevents browser lag. For
+  //       small datasets, Categories have a larger height than
+  //       regular Outline Items
+  //
+  // stylelint-disable-next-line order/properties-order
   height: 100%;
 
   @media (min-width: sage-breakpoint($-collapse-breakpoint-key)) {
@@ -42,13 +61,20 @@ $-collapse-breakpoint-key: md-max;
 
   &.sage-outline-item--is-dragging {
     border-radius: sage-border(radius);
-    border: none;
+    border-color: transparent;
     box-shadow: inset 0 0 0 1px sage-color(white), inset 0 0 0 2px sage-color(grey, 500);
-    transform: translateZ(0); // REQUIRED TO RESOLVE CHROME BUG – forces hardware acceleration
+
+    // NOTE: Forces hardware acceleration, this resolves issue with HTML5 Drag & Drop
+    //       API drag-preview 'capture' action in webkit browsers.
+    //
+    // stylelint-disable-next-line order/properties-order
+    transform: translateZ(0);
 
     .sage-outline-item__actions-primary,
     .sage-outline-item__actions-secondary,
-    .sage-outline-item__handle-collapse { visibility: hidden; }
+    .sage-outline-item__handle-collapse {
+      visibility: hidden;
+    }
   }
 
   &.sage-outline-item--is-droptarget {
@@ -61,7 +87,9 @@ $-collapse-breakpoint-key: md-max;
       sage-color(white) 24px
     );
 
-    > * { visibility: hidden; }
+    > * {
+      visibility: hidden;
+    }
   }
 
   &.sage-outline-item--is-droptarget-invalid {
@@ -74,7 +102,9 @@ $-collapse-breakpoint-key: md-max;
       sage-color(white) 24px
     );
 
-    > * { visibility: hidden; }
+    > * {
+      visibility: hidden;
+    }
   }
 
   &.sage-outline-item--depth-0 {
