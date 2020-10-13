@@ -62,9 +62,8 @@ $-collapse-breakpoint-key: md-max;
   }
 
   &.sage-outline-item--is-dragging {
-    border-radius: sage-border(radius);
-    border-color: transparent;
-    box-shadow: inset 0 0 0 1px sage-color(white), inset 0 0 0 2px sage-color(grey, 500);
+    border: unset;
+    box-shadow: inset 0 0 0 1px sage-color(white), inset 0 0 0 2px sage-color(grey, 300);
 
     // NOTE: Forces hardware acceleration, this resolves issue with HTML5 Drag & Drop
     //       API drag-preview 'capture' action in webkit browsers.
@@ -79,7 +78,23 @@ $-collapse-breakpoint-key: md-max;
     }
   }
 
+  &.sage-outline-item--is-dragging-descendant {
+    border: unset;
+    box-shadow: inset 0 0 0 1px sage-color(white), inset 0 0 0 2px sage-color(grey, 300);
+
+    .sage-outline-item__actions-primary,
+    .sage-outline-item__actions-secondary,
+    .sage-outline-item__handle-collapse {
+      visibility: hidden;
+    }
+
+    > * {
+      opacity: 0.5;
+    }
+  }
+
   &.sage-outline-item--is-droptarget {
+    border-radius: sage-border(radius-large);
     box-shadow: inset 0 0 0 1px sage-color(white), inset 0 0 0 2px sage-color(primary), inset 0 0 0 5px sage-color(white);
     background: repeating-linear-gradient(
       45deg,
@@ -95,6 +110,7 @@ $-collapse-breakpoint-key: md-max;
   }
 
   &.sage-outline-item--is-droptarget-invalid {
+    border-radius: sage-border(radius-large);
     box-shadow: inset 0 0 0 1px sage-color(white), inset 0 0 0 2px sage-color(red, 200), inset 0 0 0 5px sage-color(white);
     background: repeating-linear-gradient(
       45deg,
