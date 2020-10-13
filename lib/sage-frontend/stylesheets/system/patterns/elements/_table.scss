@@ -209,6 +209,9 @@ $-sage-table-sort-indicator-direction: rem(7px);
   text-overflow: ellipsis;
 }
 
+.sage-table-cell--align-right {
+  text-align: right;
+}
 
 // Stacked block content within cells
 .sage-table-cell__block {
