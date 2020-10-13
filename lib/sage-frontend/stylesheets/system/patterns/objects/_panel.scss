@@ -153,5 +153,5 @@
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: min-content;
-  grid-gap: sage-spacing(lg);
+  grid-gap: $sage-stage-grid-gap;
 }
