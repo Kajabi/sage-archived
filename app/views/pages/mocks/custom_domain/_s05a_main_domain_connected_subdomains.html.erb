@@ -29,69 +29,111 @@
       } %>
     <% end %>
   <% end %>
-  <%= sage_component SagePanel, {} do %>
-    <%= sage_component SageCardRow, {
-      grid_template: "ite"
-    } do %>
-      <i class="sage-icon-check-circle-lg t-sage--color-sage" aria-label="Connected!"></i>
-      <strong class="t-sage-heading-5">daydreamsurfshop.com</strong>
-      <span class="t-sage-body t-sage--color-charcoal-200">is connected</span>
-      <!-- TODO: Add option dropdown menu -->
-      <%= sage_component SageButton, {
-        value: "Options",
-        style: "tertiary",
-        size: "tiny",
-        icon: {
-          name: "dot-menu-horizontal",
-          style: "only"
-        },
-        attributes: {
-          href: "#options"
-        }
+  <div class="sage-row sage-row--stage">
+    <div class="sage-col-8">
+      <%= sage_component SageAlert, {
+        color: "warning",
+        icon_name: "sage-icon-warning",
+        title: "Domain connection in progress",
+        desc: "Your domain is currently being connected to your Kajabi site.
+          This process can take up to 24 hours but usually will complete much quicker.
+          We will let you know when it is fully connected via email."
       } %>
-    <% end %>
-
-    <%= sage_component SagePanelDivider, { bleed: true } %>
-
-    <%= sage_component SageCard, {} do %>
-      <%= sage_component SageTable, {
-        headers: [
-          "Subdomains"
-        ],
-        reset_above: true,
-        reset_below: true,
-        rows: [
-          [
-            "www.daydreamsurfshop.mykajabi.com",
-            sage_component(SageLabel, {
-              value: "Connected",
-              style: "success"
-              # Alternate options...
-              #value: "Connection in progress...",
-              #style: "warning"
-              #value: "Connection failed",
-              #style: "danger"
-            }),
-            { 
-              value: sage_component(SageButton, {
-                value: "Options",
-                style: "tertiary",
-                size: "tiny",
-                icon: {
-                  name: "dot-menu-horizontal",
-                  style: "only"
-                },
-                attributes: {
-                  href: "#options"
-                }
-              }),
-              html_attributes: {
-                class: "sage-table-cell--align-right"
+      <div class="sage-panel-set">
+        <%= sage_component SagePanel, {} do %>
+          <%= sage_component SageCardRow, {
+            grid_template: "ite"
+          } do %>
+            <i class="sage-icon-check-circle-lg t-sage--color-sage" aria-label="Connected!"></i>
+            <strong class="t-sage-heading-5">daydreamsurfshop.com</strong>
+            <span class="t-sage-body t-sage--color-charcoal-200">is connected</span>
+            <!-- TODO: Add option dropdown menu -->
+            <%= sage_component SageButton, {
+              value: "Options",
+              style: "tertiary",
+              size: "tiny",
+              icon: {
+                name: "dot-menu-horizontal",
+                style: "only"
+              },
+              attributes: {
+                href: "#options"
               }
+            } %>
+          <% end %>
+
+          <%= sage_component SagePanelDivider, { bleed: true } %>
+
+          <%= sage_component SageCard, {} do %>
+            <%= sage_component SageTable, {
+              headers: [
+                "Subdomains"
+              ],
+              reset_above: true,
+              reset_below: true,
+              rows: [
+                [
+                  "www.daydreamsurfshop.mykajabi.com",
+                  sage_component(SageLabel, {
+                    value: "Connected",
+                    style: "success"
+                    # Alternate options...
+                    #value: "Connection in progress...",
+                    #style: "warning"
+                    #value: "Connection failed",
+                    #style: "danger"
+                  }),
+                  { 
+                    value: sage_component(SageButton, {
+                      value: "Options",
+                      style: "tertiary",
+                      size: "tiny",
+                      icon: {
+                        name: "dot-menu-horizontal",
+                        style: "only"
+                      },
+                      attributes: {
+                        href: "#options"
+                      }
+                    }),
+                    html_attributes: {
+                      class: "sage-table-cell--align-right"
+                    }
+                  }
+                ]
+              ]
+            } %>
+          <% end %>
+        <% end %>
+        <%= sage_component SagePanel, {} do %>
+          <%= sage_component SagePanelHeader, { title: "Marketing Email Domain" } %>
+          <i>Content TBD</i>
+        <% end %>
+      </div>
+    </div>
+    <div class="sage-col-4">
+      <%= sage_component SagePanel, {} do %>
+        <%= sage_component SagePanelHeader, { title: "Registrar Information" } do %>
+          <%= sage_component SageButton, {
+            value: "Help",
+            style: "tertiary",
+            size: "tiny",
+            icon: {
+              name: "info-circle",
+              style: "only"
+            },
+            attributes: {
+              href: "#help-2"
             }
-          ]
-        ]
-      } %>
-    <% end %>
-  <% end %>
+          } %>
+        <% end %>
+        <%= sage_component SagePanelBlock, { type_block: true } do %>
+          <p>
+            Your domain settings can now be updated or modified inside Kajabi.
+            However, paying for your domain and renewing it will still happen with your original domain registrar (Godaddy).
+          </p>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
 <% end %>
