@@ -2,32 +2,42 @@
   ** outline-item
   type: object
 
+  This is a unicorn component built for the SortableTree/Product-Outline
+  React component within Kajabi-Products. The current implementation
+  uses the raw css classes defined here rather than using a SageReact
+  component. This was done because the logic governing dragging & sorting
+  is tightly knit to the class modifiers provided in this file. A refactor
+  to a SageReact component is targeted at the end of this cycle. However, until
+  we can account for the entire featureset required for the Product Outline, we
+  consider a SageReact component premature optimization.
+
+  Component Owner: Product-Build UXD
 
 ================================================== */
 
 $-collapse-breakpoint-key: md-max;
 
 .sage-outline-item {
-  overflow: hidden;
-  margin-bottom: sage-spacing(xs);
-  background-color: sage-color(white);
-  border: sage-border();
-  border-radius: sage-border(radius);
-
-  & & {
-    margin-bottom: 0;
-    border: unset;
-    border-radius: unset;
-  }
-}
-
-.sage-outline-item__content {
   display: grid;
   align-items: center;
   grid-template-rows: repeat(auto-fit, auto);
-  grid-column-gap: sage-spacing(sm);
-  padding-right: sage-spacing(sm);
-  padding-left: sage-spacing(md);
+  grid-column-gap: sage-spacing(xs);
+  background: sage-color(white);
+  will-change: background, box-shadow;
+
+  // NOTE: Height is governed by a parent React node to allow us
+  //       to dynamically adjust the height of elements depending
+  //       on the size of the dataset provided. If the dataset
+  //       is large we 'normalize' all of the node heights to
+  //       allow them to be predictably virtualized in a shodow
+  //       DOM when not visible. This prevents browser lag. For
+  //       small datasets, Categories have a larger height than
+  //       regular Outline Items
+  //
+  // stylelint-disable order/properties-order
+  height: 100%;
+  max-height: rem(80px);
+  // stylelint-enable order/properties-order
 
   @media (min-width: sage-breakpoint($-collapse-breakpoint-key)) {
     // Using static column values to ensure alignment
@@ -43,30 +53,99 @@ $-collapse-breakpoint-key: md-max;
       ". actions-primary . handle-collapse";
   }
 
-  .sage-outline-item--category > & {
-    padding-top: sage-spacing(sm);
-    padding-bottom: sage-spacing(sm);
-    border-bottom: sage-border();
-  }
-
-  :not(.sage-outline-item--category) > & {
-    padding-top: sage-spacing(xs);
-    padding-bottom: sage-spacing(xs);
+  &:not(.sage-outline-item--category) {
     border-bottom: sage-border(light);
   }
 
-  :not(.sage-outline-item--category):last-child > & {
-    border-bottom: unset;
+  &.sage-outline-item--category {
+    border-bottom: sage-border();
   }
 
-  /* stylelint-disable selector-max-compound-selectors */
-  // Nested Item Identention
-  // Indents `type-category` that is 1-level deep and anything that is 2-levels deep
-  .sage-outline-item__children .sage-outline-item.sage-outline-item--category &,
-  .sage-outline-item__children .sage-outline-item.sage-outline-item--category .sage-outline-item__children & {
-    padding-left: sage-spacing(xl);
+  &.sage-outline-item--is-dragging {
+    border: unset;
+    box-shadow: inset 0 0 0 1px sage-color(white), inset 0 0 0 2px sage-color(grey, 300);
+
+    // NOTE: Forces hardware acceleration, this resolves issue with HTML5 Drag & Drop
+    //       API drag-preview 'capture' action in webkit browsers.
+    //
+    // stylelint-disable-next-line order/properties-order
+    transform: translateZ(0);
+
+    .sage-outline-item__actions-primary,
+    .sage-outline-item__actions-secondary,
+    .sage-outline-item__handle-collapse {
+      visibility: hidden;
+    }
   }
-  /* stylelint-enable selector-max-compound-selectors */
+
+  &.sage-outline-item--is-dragging-descendant {
+    border: unset;
+    box-shadow: inset 0 0 0 1px sage-color(white), inset 0 0 0 2px sage-color(grey, 300);
+
+    .sage-outline-item__actions-primary,
+    .sage-outline-item__actions-secondary,
+    .sage-outline-item__handle-collapse {
+      visibility: hidden;
+    }
+
+    > * {
+      opacity: 0.5;
+    }
+  }
+
+  &.sage-outline-item--is-droptarget {
+    border-radius: sage-border(radius-large);
+    box-shadow: inset 0 0 0 1px sage-color(white), inset 0 0 0 2px sage-color(primary), inset 0 0 0 5px sage-color(white);
+    background: repeating-linear-gradient(
+      45deg,
+      sage-color(grey, 300) 0,
+      sage-color(grey, 300) 12px,
+      sage-color(white) 12px,
+      sage-color(white) 24px
+    );
+
+    > * {
+      visibility: hidden;
+    }
+  }
+
+  &.sage-outline-item--is-droptarget-invalid {
+    border-radius: sage-border(radius-large);
+    box-shadow: inset 0 0 0 1px sage-color(white), inset 0 0 0 2px sage-color(red, 200), inset 0 0 0 5px sage-color(white);
+    background: repeating-linear-gradient(
+      45deg,
+      sage-color(red, 200) 0,
+      sage-color(red, 200) 12px,
+      sage-color(white) 12px,
+      sage-color(white) 24px
+    );
+
+    > * {
+      visibility: hidden;
+    }
+  }
+
+  &.sage-outline-item--depth-0 {
+    // no-op
+  }
+
+  &.sage-outline-item--depth-1 {
+    &:not(.sage-outline-item--category) {
+      // no-op
+    }
+    &.sage-outline-item--category {
+      margin-left: sage-spacing(lg);
+    }
+  }
+
+  &.sage-outline-item--depth-2 {
+    &:not(.sage-outline-item--category) {
+      margin-left: sage-spacing(lg);
+    }
+    &.sage-outline-item--category {
+      margin-left: sage-spacing(xl);
+    }
+  }
 }
 
 .sage-outline-item__title {
@@ -74,11 +153,11 @@ $-collapse-breakpoint-key: md-max;
   color: sage-color(charcoal, 400);
   @include truncate;
 
-  .sage-outline-item--category > .sage-outline-item__content & {
+  .sage-outline-item--category & {
     @extend %t-sage-body-semi;
   }
 
-  :not(.sage-outline-item--category) > .sage-outline-item__content & {
+  :not(.sage-outline-item--category) & {
     @extend %t-sage-body;
   }
 }
@@ -109,10 +188,12 @@ $-collapse-breakpoint-key: md-max;
   display: flex;
   grid-area: status;
   justify-content: flex-end;
+  transform: none;
 }
 
 .sage-outline-item__handle-drag {
   grid-area: handle-drag;
+  padding-left: sage-spacing(sm);
   cursor: grab;
 
   &:active {
@@ -124,33 +205,20 @@ $-collapse-breakpoint-key: md-max;
     color: sage-color(charcoal, 200);
   }
 
-  /* stylelint-disable selector-max-compound-selectors */
-  // Category: Standard
-  .sage-outline-item--category > .sage-outline-item__content &::before {
-    content: sage-icon(folder);
+  .sage-outline-item--category &::before {
     color: sage-color(primary);
   }
 
-  // Category: Nested
-  .sage-outline-item__children .sage-outline-item--category > .sage-outline-item__content &::before {
-    content: sage-icon(arrow-corner);
-    color: sage-color(primary);
-  }
-  /* stylelint-enable selector-max-compound-selectors */
-
-  /* stylelint-disable declaration-no-important */
-  // Universal Hover For All
-  .sage-outline-item__content:hover > & {
+  .sage-outline-item:hover > & {
     &::before {
-      content: sage-icon(handle) !important;
-      color: sage-color(charcoal, 100) !important;
+      content: sage-icon(handle);
+      color: sage-color(charcoal, 100);
     }
 
     &:hover::before {
-      color: sage-color(primary) !important;
+      color: sage-color(primary);
     }
   }
-  /* stylelint-enable declaration-no-important */
 }
 
 .sage-outline-item__handle-collapse {
