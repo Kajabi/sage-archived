@@ -23,16 +23,28 @@
 .sage-row--stage {
   margin-left: $sage-stage-padding / -2;
   margin-right: $sage-stage-padding / -2;
+
+  &:not(:last-child) {
+    margin-bottom: $sage-stage-grid-gap;
+  }
 }
 
 .sage-row--panel {
   margin-left: $sage-panel-padding / -2;
   margin-right: $sage-panel-padding / -2;
+
+  &:not(:last-child) {
+    margin-bottom: $sage-panel-grid-gap;
+  }
 }
 
 .sage-row--card {
   margin-left: $sage-card-padding / -2;
   margin-right: $sage-card-padding / -2;
+
+  &:not(:last-child) {
+    margin-bottom: $sage-card-grid-gap;
+  }
 }
 
 // horizontal alignment
