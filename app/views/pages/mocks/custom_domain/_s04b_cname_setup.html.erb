@@ -1,6 +1,6 @@
 <%= sage_component SageContainer, { size: "xs" } do %>
   <%= sage_component SagePageHeading, {
-    title: "Custom Domain",
+    title: "CNAME Setup",
     spacer: { bottom: :lg },
     help_link: {
       url: "#help-1",
@@ -10,11 +10,19 @@
     <% content_for :sage_breadcrumbs do %>
       <!-- TODO: Replace with rails component when finished -->
       <%= render "examples/elements/breadcrumbs/markup",
-          klass: "sage-page-heading__back",
-          has_back_icon: true,
-          items: [{
+        klass: "sage-page-heading__back",
+        items: [{
           text: "Settings",
           url: "#settings"
+        }, {
+          text: "Custom Domain",
+          url: "#custom-domain"
+        }, {
+          text: "Domain Setup",
+          url: "#domain-setup"
+        }, {
+          text: "CNAME Setup",
+          url: "#"
         }]
       %>
     <% end %>
@@ -38,7 +46,7 @@
     <% end %>
     
     <%= sage_component SagePanelBlock, { type_block: true } do %>
-      <p>Head to the DNS Settings for [TODO: Registrar Name] to add in a new record. </p>
+      <p>Head to the DNS Settings for [TODO: Registrar Name] to add a new CNAME record. </p>
     <% end %>
 
     <%= sage_component SagePanelHeader, {
@@ -46,7 +54,7 @@
     } %>
     
     <%= sage_component SagePanelBlock, {} do %>
-      <%= sage_component SageCopyButton, { value: "ssl.kajabi.com" } %>
+      <%= sage_component SageCopyButton, { value: "ssl.kajabi.com", semibold: true } %>
     <% end %>
 
     <%= sage_component SagePanelBlock, { type_block: true } do %>

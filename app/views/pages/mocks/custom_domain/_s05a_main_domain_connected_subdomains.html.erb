@@ -1,4 +1,4 @@
-<%= sage_component SageContainer, { size: "xs" } do %>
+<%= sage_component SageContainer, { size: "lg" } do %>
   <%= sage_component SagePageHeading, {
     title: "Domain",
     spacer: { bottom: :lg },
@@ -56,9 +56,7 @@
     <%= sage_component SageCard, {} do %>
       <%= sage_component SageTable, {
         headers: [
-          "Subdomains",
-          "",
-          ""
+          "Subdomains"
         ],
         reset_above: true,
         reset_below: true,
@@ -68,71 +66,32 @@
             sage_component(SageLabel, {
               value: "Connected",
               style: "success"
+              # Alternate options...
+              #value: "Connection in progress...",
+              #style: "warning"
+              #value: "Connection failed",
+              #style: "danger"
             }),
-            sage_component(SageButton, {
-              value: "Options",
-              style: "tertiary",
-              size: "tiny",
-              icon: {
-                name: "dot-menu-horizontal",
-                style: "only"
-              },
-              attributes: {
-                href: "#options"
+            { 
+              value: sage_component(SageButton, {
+                value: "Options",
+                style: "tertiary",
+                size: "tiny",
+                icon: {
+                  name: "dot-menu-horizontal",
+                  style: "only"
+                },
+                attributes: {
+                  href: "#options"
+                }
+              }),
+              html_attributes: {
+                class: "sage-table-cell--align-right"
               }
-            })
-          ],
-          [
-            "courses.daydreamsurfshop.com",
-            sage_component(SageLabel, {
-              value: "Connection in progress...",
-              style: "warning"
-            }),
-            sage_component(SageButton, {
-              value: "Options",
-              style: "tertiary",
-              size: "tiny",
-              icon: {
-                name: "dot-menu-horizontal",
-                style: "only"
-              },
-              attributes: {
-                href: "#options"
-              }
-            })
-          ],
-          [
-            "store.daydreamsurfshop.com",
-            sage_component(SageLabel, {
-              value: "Connection failed",
-              style: "danger"
-            }),
-            sage_component(SageButton, {
-              value: "Options",
-              style: "tertiary",
-              size: "tiny",
-              icon: {
-                name: "dot-menu-horizontal",
-                style: "only"
-              },
-              attributes: {
-                href: "#options"
-              }
-            })
+            }
           ]
         ]
       } %>
     <% end %>
-    <%= sage_component SageButton, {
-      value: "New Subdomain",
-      style: "secondary",
-      icon: {
-        name: "add",
-        style: "left"
-      },
-      attributes: {
-        href: "#new-subdomain"
-      }
-    } %>
   <% end %>
 <% end %>

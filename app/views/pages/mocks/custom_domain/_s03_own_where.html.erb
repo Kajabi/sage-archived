@@ -11,16 +11,18 @@
       <!-- TODO: Replace with rails component when finished -->
       <%= render "examples/elements/breadcrumbs/markup",
         klass: "sage-page-heading__back",
-        has_back_icon: true,
         items: [{
           text: "Settings",
           url: "#settings"
+        }, {
+          text: "Domain",
+          url: "#s01_main"
         }, {
           text: "Custom Domain",
           url: "#s02_own_or_buy"
         }, {
           text: "Domain Setup",
-          url: "#here"
+          url: "#"
         }]
       %>
     <% end %>
@@ -45,6 +47,7 @@
     <div class="sage-tabs-container">
       <%= sage_component SageTabs, {
         style: "choice",
+        id: "cd-own-where-selection",
         items: [
           {
             target: 'cd-location-tab-here',
@@ -152,7 +155,7 @@
       <% end %>
     </div>
     <%= sage_component SagePanelFooter, {} do %>
-      <!-- TODO: disabled should toggle to false when field value is provided. -->
+      <!-- TODO: Button needs to be disabled at first but enabled once fields are valid. -->
       <%= sage_component SageButton, {
         value: "Next",
         style: "primary",

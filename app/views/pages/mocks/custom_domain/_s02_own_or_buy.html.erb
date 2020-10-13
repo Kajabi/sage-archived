@@ -10,10 +10,15 @@
     <% content_for :sage_breadcrumbs do %>
       <!-- TODO: Replace with rails component when finished -->
       <%= render "examples/elements/breadcrumbs/markup",
-          klass: "sage-page-heading__back",
-          has_back_icon: true,
-          items: [{
+        klass: "sage-page-heading__back",
+        items: [{
           text: "Settings",
+          url: "#settings"
+        }, {
+          text: "Domain",
+          url: "#s01_main"
+        }, {
+          text: "Custom Domain",
           url: "#"
         }]
       %>

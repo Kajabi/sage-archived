@@ -1,6 +1,6 @@
 <%= sage_component SageContainer, { size: "xs" } do %>
   <%= sage_component SagePageHeading, {
-    title: "Custom Domain",
+    title: "Nameserver Setup",
     spacer: { bottom: :lg },
     help_link: {
       url: "#help-1",
@@ -10,11 +10,19 @@
     <% content_for :sage_breadcrumbs do %>
       <!-- TODO: Replace with rails component when finished -->
       <%= render "examples/elements/breadcrumbs/markup",
-          klass: "sage-page-heading__back",
-          has_back_icon: true,
-          items: [{
+        klass: "sage-page-heading__back",
+        items: [{
           text: "Settings",
           url: "#settings"
+        }, {
+          text: "Custom Domain",
+          url: "#custom-domain"
+        }, {
+          text: "Domain Setup",
+          url: "#domain-setup"
+        }, {
+          text: "Nameserver Setup",
+          url: "#"
         }]
       %>
     <% end %>
@@ -60,8 +68,8 @@
 
     <%= sage_component SagePanelStack, {} do %>
       <!-- TODO: Are these the actual things to use? -->
-      <%= sage_component SageCopyButton, { value: "adrian.ns.cloudflare.com" } %>
-      <%= sage_component SageCopyButton, { value: "noah.ns.cloudflare.com" } %>
+      <%= sage_component SageCopyButton, { value: "adrian.ns.cloudflare.com", semibold: true } %>
+      <%= sage_component SageCopyButton, { value: "noah.ns.cloudflare.com", semibold: true } %>
     <% end %>
 
     <%= sage_component SagePanelBlock, { type_block: true } do %>
