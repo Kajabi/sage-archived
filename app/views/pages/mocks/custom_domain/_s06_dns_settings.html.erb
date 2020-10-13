@@ -1,0 +1,208 @@
+<%
+# For simpler mocking here...
+option_menu_cell = {
+  value: sage_component(SageButton, {
+      value: "[options]",
+      size: "tiny",
+      style: "tertiary",
+      icon: {
+        name: "dot-menu-horizontal",
+        style: "only"
+      }
+    }
+  ),
+  html_attributes: {
+    class: "sage-table-cell--align-right"
+  }
+}
+%>
+<%= sage_component SageContainer, { size: "lg" } do %>
+  <%= sage_component SagePageHeading, {
+    title: "DNS Settings",
+    spacer: { bottom: :lg },
+    help_link: {
+      url: "#help",
+      label: "Help"
+    },
+  } do %>
+    <% content_for :sage_breadcrumbs do %>
+      <%= sage_component SageBreadcrumbs, {
+        css_classes: "sage-page-heading__back",
+        items: [{
+          text: "Settings",
+          url: "#settings"
+        }, {
+          text: "Domain",
+          url: "#s05a_main_domain_connected_subdomains"
+        }, {
+          text: "DNS Settings",
+          url: "#"
+        }]
+      } %>
+    <% end %>
+    <% content_for :sage_page_heading_toolbar do %>
+      <%= sage_component SageButton, { 
+        style: "tertiary",
+        icon:{
+          name: "gear",
+          style: "left"
+        },
+        value: "DNS Settings",
+      } %>
+    <% end %>
+  <% end %>
+  <div class="sage-row sage-row--stage">
+    <div class="sage-col-4 sage-type">
+      <h4>Advanced Settings</h5>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Enim, arcu, egestas adipiscing aliquam suspendisse arcu malesuada donec.
+        Aliquam pulvinar lectus id nunc faucibus.
+        Egestas in mauris arcu.
+      </p>
+    </div>
+    <div class="sage-col-8">
+      <%= sage_component SagePanel, {} do %>
+        <%= sage_component SagePanelHeader, { title: "DNS Records" } do %>
+          <%= sage_component(SageButton, {
+              value: "Options",
+              size: "tiny",
+              style: "tertiary",
+              icon: {
+                name: "info-circle",
+                style: "only"
+              }
+            }
+          ) %>
+        <% end %>
+        <%= sage_component SagePanelSubheader, { title: "Subdomains" } %>
+        <%= sage_component SageCard, {} do %>
+          <%= sage_component SageTable, {
+            reset_above: true,
+            reset_below: true,
+            headers: [
+              "Name",
+              "Status"
+            ],
+            rows: [
+              [
+                "www.daydreamsurfshop.mykajabi.com",
+                sage_component(SageLabel, {
+                  color: "success",
+                  value: "Connected"
+                }),
+                option_menu_cell
+              ]
+            ]
+          } %>
+        <% end %>
+
+        <%= sage_component SagePanelSubheader, { title: "A Record" } %>
+        <%= sage_component SageCard, {} do %>
+          <%= sage_component SageTable, {
+            reset_above: true,
+            reset_below: true,
+            headers: [
+              "Name",
+              "Points to"
+            ],
+            rows: [
+              [
+                "@",
+                "23.222.38.65",
+                option_menu_cell
+              ]
+            ]
+          } %>
+        <% end %>
+
+        <%= sage_component SagePanelSubheader, { title: "CNAME Record" } %>
+        <%= sage_component SageCard, {} do %>
+          <%= sage_component SageTable, {
+            reset_above: true,
+            reset_below: true,
+            headers: [
+              "Name",
+              "Points to"
+            ],
+            rows: [
+              [
+                "www",
+                "endpoint.mykajabi.com",
+                option_menu_cell
+              ]
+            ]
+          } %>
+        <% end %>
+
+        <%= sage_component SagePanelSubheader, { title: "MX Record" } %>
+        <%= sage_component SageCard, {} do %>
+          <%= sage_component SageTable, {
+            reset_above: true,
+            reset_below: true,
+            headers: [
+              "Name",
+              "Points to",
+              "Priority"
+            ],
+            rows: [
+              [
+                "@",
+                "mx.daydreamsurfshop.com",
+                "1",
+                option_menu_cell
+              ]
+            ]
+          } %>
+        <% end %>
+
+        <%= sage_component SagePanelSubheader, { title: "TXT Record" } %>
+        <%= sage_component SageCard, {} do %>
+          <%= sage_component SageTable, {
+            reset_above: true,
+            reset_below: true,
+            headers: [
+              "Name",
+              "Points to"
+            ],
+            rows: [
+              [
+                "www",
+                "endpoint.mykajabi.com",
+                option_menu_cell
+              ]
+            ]
+          } %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div class="sage-row sage-row--stage">
+    <div class="sage-col-4 sage-type">
+      <h4>Nameservers</h5>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Enim, arcu, egestas adipiscing aliquam suspendisse arcu malesuada donec.
+      </p>
+    </div>
+    <div class="sage-col-8">
+      <%= sage_component SagePanel, {} do %>
+        <%= sage_component SagePanelHeader, { title: "DNS Records" } do %>
+          <%= sage_component(SageButton, {
+              value: "Options",
+              size: "tiny",
+              style: "tertiary",
+              icon: {
+                name: "info-circle",
+                style: "only"
+              }
+            }
+          ) %>
+        <% end %>
+        <%= sage_component SagePanelBlock, { type_block: true } do %>
+          <p>Your site is using Kajabi’s default nameservers.</p>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
