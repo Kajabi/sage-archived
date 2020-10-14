@@ -4,9 +4,8 @@
 
 ================================================== */
 
-$-avatar-min-size: rem(36px);
+$-avatar-min-size: rem(32px);
 $-avatar-max-size: rem(128px);
-$-avatar-ring-transition: $sage-transition;
 $-avatar-ring-colors: (
   charcoal: (
     main: sage-color(charcoal, 500),
@@ -53,21 +52,6 @@ $-avatar-tile-size: rem(216px);
   border-radius: sage-border(radius-round);
   background-color: sage-color(primary, 100);
 
-  // Start a transparent border tucked behind the image and smaller
-  // so as to create an animation when toggled on.
-  &::before {
-    $-avatar-ring-offset: 0;
-
-    content: "";
-    position: absolute;
-    border-radius: sage-border(radius-round);
-    border: $sage-avatar-ring-width solid transparent;
-    transition: $-avatar-ring-transition;
-    transition-property: border-color, top, left, right, bottom;
-
-    @include position-full($-avatar-ring-offset);
-  }
-
   // Documentation-specific styles
   .sage-avatar-wrapper & {
     margin-right: sage-spacing();
@@ -96,10 +80,6 @@ $-avatar-tile-size: rem(216px);
   .sage-avatar--#{"" + $color} {
     color: map-get($settings, main);
     background-color: map-get($settings, bg);
-
-    &.sage-avatar--ring {
-      @include sage-avatar-ring($color);
-    }
   }
 }
 
@@ -110,13 +90,17 @@ $-avatar-tile-size: rem(216px);
   color: sage-color(primary);
   fill: sage-color(primary);
 
-  @extend %t-sage-body-small-bold;
+  @extend %t-sage-body-xsmall-bold;
 
   @each $color, $settings in $-avatar-ring-colors {
     .sage-avatar--#{"" + $color} & {
       color: map-get($settings, main);
       fill: map-get($settings, main);
     }
+  }
+
+  text {
+    text-anchor: middle;
   }
 
   .sage-avatar--tile & {
