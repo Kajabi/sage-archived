@@ -8,9 +8,7 @@
     },
   } do %>
     <% content_for :sage_breadcrumbs do %>
-      <!-- TODO: Replace with rails component when finished -->
-      <%= render "examples/elements/breadcrumbs/markup",
-        klass: "sage-page-heading__back",
+      <%= sage_component SageBreadcrumbs, {
         #has_back_icon: true,
         #items: [{
         #  text: "Settings",
@@ -23,7 +21,7 @@
           text: "Domain",
           url: "#"
         }]
-      %>
+      } %>
     <% end %>
     <% content_for :sage_page_heading_actions do %>
       <%= sage_component SageButton, {

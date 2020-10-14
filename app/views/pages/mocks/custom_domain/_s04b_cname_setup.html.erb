@@ -8,9 +8,7 @@
     },
   } do %>
     <% content_for :sage_breadcrumbs do %>
-      <!-- TODO: Replace with rails component when finished -->
-      <%= render "examples/elements/breadcrumbs/markup",
-        klass: "sage-page-heading__back",
+      <%= sage_component SageBreadcrumbs, {
         items: [{
           text: "Settings",
           url: "#settings"
@@ -24,7 +22,7 @@
           text: "CNAME Setup",
           url: "#"
         }]
-      %>
+      } %>
     <% end %>
   <% end %>
   <%= sage_component SagePanel, {} do %>
