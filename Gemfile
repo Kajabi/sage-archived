@@ -31,3 +31,5 @@ group :development do
 end
 
 gem "lockup", "~> 1.5"
+gem "redcarpet"
+gem "rouge"
