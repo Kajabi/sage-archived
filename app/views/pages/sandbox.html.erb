@@ -4,10 +4,11 @@
 <% end %>
 
 <%= sage_component SageContainer, { size: "lg" } do %>
-  <%= sage_component SagePanel, {} do %>
+  <%= sage_component SagePanel, {
+      clear_top_padding: true,
+    } do %>
     <%= sage_component SageTable, {
       responsive: true,
-      reset_above: true,
       # Headers can be a string or an object with a `value` attribute along with optional html_attributes
       headers: [
         "Heading 1",
@@ -35,11 +36,12 @@
         }
       ]
     } %>
-    <%= sage_component SageCard, {} do %>
+    <%= sage_component SageCard, {
+        clear_top_padding: true,
+        clear_bottom_padding: true,
+      } do %>
       <%= sage_component SageTable, {
         responsive: true,
-        reset_above: true,
-        reset_below: true,
         headers: [
           { value: "Heading 1", },
           { value: %(Heading 2 <i class="sage-icon-check-circle"></i>) },
