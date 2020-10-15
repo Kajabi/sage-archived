@@ -12,36 +12,39 @@ $-alert-colors: (
 );
 
 .sage-alert {
-  display: flex;
+  display: grid;
+  grid-auto-columns: auto;
+  grid-auto-flow: column;
+  grid-template-columns: auto 1fr;
+  grid-gap: sage-spacing(sm);
   position: relative;
-  margin-bottom: sage-spacing();
-  padding: sage-spacing();
-  background: sage-color(gray, 200);
-  border-top: 4px solid;
-  border-bottom-left-radius: sage-border(radius);
-  box-shadow: sage-shadow();
+  margin-bottom: sage-spacing(md);
+  padding: sage-spacing(sm);
+  border-radius: sage-border(radius);
+}
+
+.sage-alert--raised {
+  box-shadow: sage-shadow(sm);
 }
 
 @each $name, $color in $-alert-colors {
   .sage-alert--#{$name} {
     border-color: sage-color($color);
     background: sage-color($color, 100);
-
     a:not([class]) {
-      color: sage-color($color, 500);
+      margin-right: sage-spacing(md);
+      color: sage-color($color, 400);
       text-decoration: underline;
     }
   }
 }
 
 .sage-alert__copy {
-  padding-right: rem(26px);
+  @include sage-grid-stack();
 }
 
 .sage-alert__title {
   @extend %t-sage-body-semi;
-  color: sage-color(charcoal, 500);
-
   @each $name, $color in $-alert-colors {
     .sage-alert--#{$name} & {
       color: sage-color($color, 500);
@@ -50,8 +53,6 @@ $-alert-colors: (
 }
 
 .sage-alert__desc {
-  color: sage-color(charcoal, 400);
-  @extend %t-sage-body-small;
   @each $name, $color in $-alert-colors {
     .sage-alert--#{$name} & {
       color: sage-color($color, 400);
@@ -61,8 +62,6 @@ $-alert-colors: (
 
 .sage-alert__icon {
   transform: translateY(rem(2px));
-  margin: 0 rem(16px) 0 0;
-  color: sage-color(charcoal, 200);
   @each $name, $color in $-alert-colors {
     .sage-alert--#{$name} & {
       color: sage-color($color, 300);
@@ -72,13 +71,11 @@ $-alert-colors: (
 
 .sage-alert__close {
   overflow: hidden;
-  position: absolute;
-  top: sage-spacing();
-  right: sage-spacing();
   height: rem(27.65px);
   width: rem(27.65px);
   padding: 0;
   font-size: sage-font-size(2xl);
+  line-height: 1;
   background-color: transparent;
   border: 0;
   appearance: none;
@@ -90,4 +87,8 @@ $-alert-colors: (
   &:hover {
     opacity: 0.7;
   }
+}
+
+.sage-alert__actions {
+  display: flex;
 }
