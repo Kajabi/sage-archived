@@ -1,51 +1,13 @@
 <div class="sage-avatar-wrapper">
   <!-- Showing default -->
-  <%= render "examples/objects/avatar/markup",
-    initials: "JC",
-    color: "",
-    hasRing: false,
-    url: "",
-    scale: false,
-    custom_class: ""
-  %>
+  <%= sage_component SageAvatar, { color: "", initials: "JC" } %>
 
   <!-- Showing color variation -->
-  <%= render "examples/objects/avatar/markup",
-    initials: "PS",
-    color: "purple",
-    scale: false,
-    custom_class: ""
-  %>
-
-  <!-- Showing with avatar image -->
-  <%= render "examples/objects/avatar/markup",
-    initials: "LJ",
-    color: "",
-    scale: false,
-    custom_class: ""
-  %>
+  <%= sage_component SageAvatar, { color: "purple", initials: "PS" } %>
 
   <!-- Showing with ring color -->
-  <%= render "examples/objects/avatar/markup",
-    initials: "CM",
-    color: "",
-    scale: false,
-    custom_class: ""
-  %>
+  <%= sage_component SageAvatar, { color: "", initials: "CM" } %>
 
   <!-- Showing sample specific ring color -->
-  <%= render "examples/objects/avatar/markup",
-    initials: "JJ",
-    color: "orange",
-    scale: false,
-    custom_class: ""
-  %>
-
-  <!-- Showing sample defajlt no ring color -->
-  <%= render "examples/objects/avatar/markup",
-    initials: "CJ",
-    color: "sage",
-    scale: false,
-    custom_class: ""
-  %>
+  <%= sage_component SageAvatar, { color: "orange", initials: "JJ" } %>
 </div>
