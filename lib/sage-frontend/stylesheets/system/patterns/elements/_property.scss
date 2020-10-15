@@ -6,7 +6,9 @@
 
 .sage-property {
   @extend %t-sage-body-small;
-  @include truncate();
+
+  display: inline-flex;
+  align-items: center;
   color: sage-color(charcoal, 200);
 }
 
@@ -16,4 +18,8 @@
   &::before {
     vertical-align: text-top;
   }
+}
+
+.sage-property__value {
+  @include truncate();
 }
