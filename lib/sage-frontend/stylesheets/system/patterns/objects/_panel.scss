@@ -14,6 +14,16 @@
   @include sage-grid-panel();
 }
 
+.sage-panel--clear-padding-top,
+.sage-panel--clear-padding-both {
+  padding-top: 0;
+}
+
+.sage-panel--clear-padding-bottom,
+.sage-panel--clear-padding-both {
+  padding-bottom: 0;
+}
+
 .sage-panel__divider {
   margin: 0;
   padding-top: rem(11px); // 16 - 1px element - 4px bottom padding

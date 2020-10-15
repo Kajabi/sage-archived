@@ -11,6 +11,16 @@
   width: 100%;
 }
 
+.sage-card--clear-padding-top,
+.sage-card--clear-padding-both {
+  padding-top: 0;
+}
+
+.sage-card--clear-padding-bottom,
+.sage-card--clear-padding-both {
+  padding-bottom: 0;
+}
+
 .sage-card__footer {
   @include sage-grid-card-row();
 
@@ -88,6 +98,8 @@
 }
 
 .sage-card__list-item {
+  @include sage-grid-card-row();
+
   margin-bottom: rem(-1px);
   padding: sage-spacing(xs) sage-spacing(sm);
   border-top: 1px solid sage-color(grey, 200);

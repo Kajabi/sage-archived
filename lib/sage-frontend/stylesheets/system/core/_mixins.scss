@@ -311,13 +311,13 @@
   justify-content: space-between;
   align-items: center;
 
-  @media (max-width: sage-breakpoint(md-max)) {
+  @media (max-width: sage-breakpoint(sm-max)) {
     display: flex;
     flex-flow: row wrap;
     gap: sage-spacing(sm);
   }
 
-  @media (min-width: sage-breakpoint(lg-min)) {
+  @media (min-width: sage-breakpoint(md-min)) {
     display: grid;
     grid-auto-columns: auto;
     grid-auto-flow: column;
@@ -335,13 +335,13 @@
   justify-content: space-between;
   align-items: center;
 
-  @media (max-width: sage-breakpoint(md-max)) {
+  @media (max-width: sage-breakpoint(sm-max)) {
     display: flex;
     flex-flow: row wrap;
     gap: sage-spacing();
   }
 
-  @media (min-width: sage-breakpoint(lg-min)) {
+  @media (min-width: sage-breakpoint(md-min)) {
     display: grid;
     grid-auto-columns: auto;
     grid-auto-flow: column;
