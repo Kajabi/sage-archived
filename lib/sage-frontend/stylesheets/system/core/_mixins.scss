@@ -141,29 +141,6 @@
 ================================================== */
 
 /* ==================================================
-** Avatar Ring
-  Usage: `@include sage-avatar-ring();`
-
-  Adds an activated ring around a save-avatar object in the provided color
-  arguments: $color | [valid system color]
-================================================== */
-
-@mixin sage-avatar-ring($color: primary) {
-  $-avatar-ring-offset: -($sage-avatar-ring-width + 2px);
-  $-avatar-right-color: sage-color($color);
-
-  @if ($color == charcoal) {
-    $-avatar-right-color: sage-color($color, 500);
-  }
-
-  &::before {
-    border-color: $-avatar-right-color;
-
-    @include position-full($-avatar-ring-offset);
-  }
-}
-
-/* ==================================================
 ** Button reset mixin
   Usage: `@include sage-button-style-reset();
 

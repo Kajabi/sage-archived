@@ -45,7 +45,7 @@ module ObjectsHelper
       {
         title: "avatar",
         description: "The Avatar object shows a user's profile image in a circular frame and allows for a few helpful modifications for different uses.",
-        use_legacy_html_code_source: true,
+        use_legacy_html_code_source: false,
         scss: "done",
         docs: "done",
         rails: "no",

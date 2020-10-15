@@ -64,10 +64,6 @@ $-avatar-tile-size: rem(216px);
   margin-bottom: sage-spacing();
 }
 
-.sage-avatar--ring {
-  @include sage-avatar-ring();
-}
-
 .sage-avatar--tile {
   padding: sage-spacing(md);
   border-radius: initial;
