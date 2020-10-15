@@ -40,11 +40,10 @@ $-alert-colors: (
 }
 
 .sage-alert__copy {
-  padding-right: rem(26px);
+  @include sage-grid-stack();
 }
 
 .sage-alert__title {
-  margin-bottom: sage-spacing(xs);
   @extend %t-sage-body-semi;
   @each $name, $color in $-alert-colors {
     .sage-alert--#{$name} & {
@@ -72,9 +71,6 @@ $-alert-colors: (
 
 .sage-alert__close {
   overflow: hidden;
-  position: absolute;
-  top: sage-spacing(sm);
-  right: sage-spacing(sm);
   height: rem(27.65px);
   width: rem(27.65px);
   padding: 0;
@@ -95,6 +91,4 @@ $-alert-colors: (
 
 .sage-alert__actions {
   display: flex;
-  margin-top: sage-spacing(xs);
-
 }
