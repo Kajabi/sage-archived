@@ -11,11 +11,6 @@ demo_configs = [
     style: "secondary",
   },
   {
-    heading: "Tertiary (regular and disabled)",
-    label: "Tertiary",
-    style: "tertiary",
-  },
-  {
     heading: "Danger (regular and disabled)",
     label: "Danger",
     style: "danger",
@@ -80,76 +75,7 @@ demo_configs = [
   <% end %>
 <% end %>
 
-<h3 class="t-sage-heading-6">Small</h3>
-<% demo_configs.each do | config | %>
-  <%= sage_component SageButtonGroup, { spacer: { bottom: :xs }} do %>
-    <%= sage_component SageButton, {
-      value: "Button",
-      style: config[:style],
-      size: "small"
-    } %>
-    <%= sage_component SageButton, {
-      value: "Button",
-      style: config[:style],
-      size: "small",
-      icon: {
-        name: "menu",
-        style: "left"
-      }
-    } %>
-    <%= sage_component SageButton, {
-      value: "Button",
-      style: config[:style],
-      size: "small",
-      icon: {
-        name: "menu",
-        style: "only"
-      }
-    } %>
-  <% end %>
-<% end %>
-
-
-<h3 class="t-sage-heading-6">Tiny Button Contextual Examples</h3>
-
-<%= sage_component SageButtonGroup, { gap: :lg } do %>
-  <%= sage_component SageButton, {
-    value: "5 Wonderful Comments",
-    size: "tiny",
-    style: "tertiary",
-    icon: {
-      name: "comment",
-      style: "left"
-    }
-  } %>
-
-  <%= sage_component SageButton, {
-    value: %(
-      <span class="sage-label sage-label--draft">#hastag</span>
-    ),
-    size: "tiny",
-    style: "tertiary",
-    icon: {
-      name: "tag",
-      style: "left"
-    }
-  } %>
-
-  <%= sage_component SageButton, {
-    value: %(
-      <span class="sage-label sage-label--draft">3.1459</span>
-    ),
-    size: "tiny",
-    style: "tertiary",
-    icon: {
-      name: "copy",
-      style: "right"
-    }
-  } %>
-<% end %>
-
 <h3 class="t-sage-heading-6">Button group: Align End</h3>
-
 <%= sage_component SageButtonGroup, { align: "end" } do %>
   <%= sage_component SageButton, {
     value: "Save",

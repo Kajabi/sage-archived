@@ -55,7 +55,8 @@ $-copy-text-color-hover: sage-color(charcoal, 500);
 
 .sage-copy-btn {
   @include sage-button-style-reset();
-  @include sage-focus-outline($-copy-text-color-hover);
+  @include sage-focus-outline();
+  @include sage-focus-outline--update-color($-copy-text-color-hover);
 
   display: inline-flex;
   flex-flow: row-reverse;

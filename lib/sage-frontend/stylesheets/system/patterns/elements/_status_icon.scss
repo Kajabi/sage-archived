@@ -12,7 +12,7 @@
   align-items: baseline;
   position: relative;
   padding: $sage-iconbtn-padding;
-  color: $sage-btn-tertiary-text-color;
+  color: sage-color(charcoal, 300);
   border-radius: sage-border(radius);
   transition: color $sage-transition, background-color $sage-transition;
   cursor: help;
