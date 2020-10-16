@@ -29,7 +29,6 @@ $-alert-colors: (
 
 @each $name, $color in $-alert-colors {
   .sage-alert--#{$name} {
-    border-color: sage-color($color);
     background: sage-color($color, 100);
     a:not([class]) {
       margin-right: sage-spacing(md);
