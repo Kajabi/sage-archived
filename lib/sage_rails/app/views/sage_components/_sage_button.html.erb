@@ -10,6 +10,9 @@
   class="
     sage-btn
     <%= "sage-btn--full-width" if component.full_width %>
+    <%= "sage-btn--subtle" if component.subtle %>
+    <%= "sage-btn--raised" if component.raised %>
+    <%= "sage-btn--no-shadow" if component.no_shadow %>
     <%= "sage-btn--#{component.size}" if component.size %>
     <%= "sage-btn--#{component.style}" if component.style %>
     <%= "sage-btn--align-end" if (component.align == "end") %>

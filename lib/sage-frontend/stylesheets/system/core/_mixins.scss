@@ -200,21 +200,11 @@
   @else if $direction == only {
     .sage-btn--icon-only-#{$icon-name} {
       justify-content: center;
-      padding: $sage-iconbtn-padding;
       text-align: center;
 
       &::before {
         @include sage-icon-base($icon-name);
         align-self: center;
-      }
-
-      &.sage-btn--small {
-        padding: rem(6px);
-      }
-
-      &.sage-btn--tiny {
-        width: auto;
-        padding: sage-spacing(2xs);
       }
     }
   }
@@ -235,7 +225,7 @@
     $color: [hex color to be used for the stroke color]
 ================================================== */
 
-@mixin sage-focus-outline($outline-width: 2px, $outline-offset: 4px) {
+@mixin sage-focus-outline($outline-width: 2px, $outline-offset-block: 4px, $outline-offset-inline: 4px) {
   position: relative;
 
   &:focus {
@@ -243,15 +233,16 @@
   }
 
   &::after {
-    $-offset-calculatation: $outline-width * 2 + $outline-offset * 2;
+    $-offset-block: $outline-width * 2 + $outline-offset-block * 2;
+    $-offset-inline: $outline-width * 2 + $outline-offset-inline * 2;
 
     content: "";
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate3d(-50%, -50%, 0) scale(0.94);
-    width: calc(100% + #{$-offset-calculatation});
-    height: calc(100% + #{$-offset-calculatation});
+    width: calc(100% + #{$-offset-inline});
+    height: calc(100% + #{$-offset-block});
     border: $outline-width solid transparent;
     border-radius: sage-border(radius-large);
     transition: opacity 0.15s ease-out 0.05s, transform 0.2s ease-in-out;

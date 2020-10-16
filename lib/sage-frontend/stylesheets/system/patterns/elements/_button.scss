@@ -5,16 +5,12 @@
 
 ================================================== */
 
+/* stylelint-disable max-nesting-depth */
+
 // Base styles
 $-btn-transition: $sage-transition;
 $-btn-border-radius: sage-border(radius);
 $-btn-shadow-base: sage-shadow(sm);
-
-// Focus outline
-$-btn-focus-outline-spacing: sage-spacing(3xs);
-$-btn-focus-outline-width: 2;
-$-btn-focus-outline-color: currentColor;
-
 $-btn-base-styles: (
   primary: (
     default: (
@@ -101,11 +97,14 @@ $-btn-subtle-styles: (
   @include sage-button-style-reset();
   @include sage-focus-outline;
 
+  $-padding-block: rem(6px);
+
   display: inline-flex;
   align-self: inherit;
   align-items: baseline;
   position: relative;
-  padding: rem(6px) sage-spacing(sm);
+  min-height: ($-padding-block * 2 + sage-line-height(md));
+  padding: $-padding-block sage-spacing(sm);
   border: 0;
   border-radius: $-btn-border-radius;
   transition: $-btn-transition;
@@ -138,7 +137,6 @@ $-btn-subtle-styles: (
 
   // NOTE: Hope to use `gap` in the future instead
   // but Safari does not currently support it for flexbox
-  /* stylelint-disable max-nesting-depth */
   @each $-key, $-value in $sage-spacings {
     @if ($-key == xs) {
       .sage-btn-group &:not(:last-child) {
@@ -151,11 +149,11 @@ $-btn-subtle-styles: (
       }
     }
   }
-  /* stylelint-enable max-nesting-depth */
+
+  // NOTE: Icon generation consolidated in `core/_icons.scss`
 }
 
 // Generate button style variations
-/* stylelint-disable max-nesting-depth */
 @each $-style-name, $-styles in $-btn-base-styles {
   .sage-btn--#{$-style-name} {
     @each $-style-type-name, $-style-type-configs in $-styles {
@@ -188,25 +186,62 @@ $-btn-subtle-styles: (
       }
     }
 
-    // Shadow appears on Primary by default but can be toggled off with `--no-shadow`
-    @if ($-style-name == primary) {
-      box-shadow: $-btn-shadow-base;
-
-      &.sage-btn--no-shadow {
-        box-shadow: none;
-      }
-    }
-    // All other buttons have no shadow by default but one can be toggled on with `--raised`
-    @else {
-      &.sage-btn--raised {
+    &:not(.sage-btn--subtle) {
+      // Shadow appears on Primary by default but can be toggled off with `--no-shadow`
+      @if ($-style-name == primary) {
         box-shadow: $-btn-shadow-base;
+        
+        &.sage-btn--no-shadow {
+          box-shadow: none;
+        }
+      }
+      // All other buttons have no shadow by default but one can be toggled on with `--raised`
+      @else {
+        &.sage-btn--raised {
+          box-shadow: $-btn-shadow-base;
+        }
       }
     }
   }
 }
-/* stylelint-enable max-nesting-depth */
 
-// NOTE: Icon generation consolidated in `core/_icons.scss`
+// Subtle buttons are smaller with no padding or background color but still use a focus ring
+.sage-btn--subtle {
+  min-height: sage-line-height(md);
+  padding: 0;
+  box-shadow: none;
+
+  @include sage-focus-outline($outline-offset-inline: 6px, $outline-offset-block: 0);
+  
+  
+  // Generate button style variations
+  @each $-style-name, $-styles in $-btn-subtle-styles {
+    &.sage-btn--#{$-style-name} {
+      color: map-get($-styles, default);
+      background-color: transparent;
+
+      @include sage-focus-outline--update-color(map-get($-styles, default));
+
+      &:hover {
+        color: map-get($-styles, hover);
+        background-color: transparent;
+      }
+    
+      &:focus,
+      &:active {
+        color: map-get($-styles, focus);
+        background-color: transparent;
+      }
+    
+      &:disabled,
+      &[aria-disabled="true"] {
+        color: map-get($-styles, disabled);
+        background-color: transparent;
+      }
+    }
+  }
+}
+
 
 // TODO: Investigate deprecating the float setting here
 .sage-btn--align-end {
@@ -234,3 +269,5 @@ $-btn-subtle-styles: (
 .sage-btn-group--align-end {
   justify-content: flex-end;
 }
+
+/* stylelint-enable max-nesting-depth */

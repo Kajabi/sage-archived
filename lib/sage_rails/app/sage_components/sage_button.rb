@@ -8,4 +8,7 @@ class SageButton < SageComponent
   attr_accessor :value
   attr_accessor :full_width
   attr_accessor :css_classes
+  attr_accessor :subtle
+  attr_accessor :raised
+  attr_accessor :no_shadow
 end
