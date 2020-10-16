@@ -78,14 +78,14 @@ demo_configs = [
 <% demo_configs.each do | config | %>
   <h3 class="t-sage-heading-6">Subtle <%= config[:heading] %></h3>
 
-  <% ["", "small"].each do | size | %>
+  <% [false, true].each do | size | %>
     <%= sage_component SageButtonGroup, { gap: :sm, spacer: { bottom: :sm }} do %>
       <!-- Primary button -->
       <%= sage_component SageButton, {
         value: "Button",
         style: config[:style],
         subtle: true,
-        size: size
+        small: size
       } %>
 
       <!-- Primary button (link) -->
@@ -96,7 +96,7 @@ demo_configs = [
           href: "#element-button"
         },
         subtle: true,
-        size: size
+        small: size
       } %>
 
       <!-- Primary button (icon-left) -->
@@ -108,7 +108,7 @@ demo_configs = [
           name: "gear"
         },
         subtle: true,
-        size: size
+        small: size
       } %>
 
       <!-- Primary button (icon-right) -->
@@ -120,7 +120,7 @@ demo_configs = [
           name: "gear"
         },
         subtle: true,
-        size: size
+        small: size
       } %>
 
       <!-- Primary button (icon-only) -->
@@ -132,7 +132,7 @@ demo_configs = [
           name: "gear"
         },
         subtle: true,
-        size: size
+        small: size
       } %>
     <% end %>
   <% end %>

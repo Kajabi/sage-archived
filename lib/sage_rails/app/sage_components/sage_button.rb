@@ -7,7 +7,7 @@ class SageButton < SageComponent
   attr_accessor :icon
   attr_accessor :no_shadow
   attr_accessor :raised
-  attr_accessor :size
+  attr_accessor :small
   attr_accessor :style
   attr_accessor :subtle
   attr_accessor :value

@@ -101,7 +101,7 @@ $-btn-subtle-styles: (
 
   display: inline-flex;
   align-self: inherit;
-  align-items: baseline;
+  align-items: center;
   position: relative;
   min-height: ($-padding-block * 2 + sage-line-height(md));
   padding: $-padding-block sage-spacing(sm);
@@ -212,8 +212,7 @@ $-btn-subtle-styles: (
   box-shadow: none;
 
   @include sage-focus-outline($outline-offset-inline: 6px, $outline-offset-block: 0);
-  
-  
+
   // Generate button style variations
   @each $-style-name, $-styles in $-btn-subtle-styles {
     &.sage-btn--#{$-style-name} {
@@ -240,6 +239,10 @@ $-btn-subtle-styles: (
       }
     }
   }
+}
+
+.sage-btn--small {
+  @extend %t-sage-body-small;
 }
 
 
