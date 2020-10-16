@@ -1,7 +1,12 @@
 class SagePagination < SageComponent
   attr_accessor :items
   attr_accessor :window
-  attr_accessor :pager_params
+  attr_accessor :additional_params
+
+  def initialize(attributes = {})
+    super
+    self.additional_params ||= {}
+  end
 
   def prev_text
     "Back".html_safe
