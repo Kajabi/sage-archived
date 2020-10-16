@@ -63,26 +63,6 @@ $-label-inset-border: 0 0 0 1px inset;
       }
     }
   }
-}
 
-@each $-icon-name, $-icon-code in $sage-icons {
-  .sage-label--icon-left-#{$-icon-name} {
-    flex-direction: row;
-    gap: sage-spacing(xs);
-
-    &::before {
-      align-self: center;
-      @include sage-icon-base($-icon-name, sm);
-    }
-  }
-
-  .sage-label--icon-right-#{$-icon-name} {
-    flex-direction: row-reverse;
-    gap: sage-spacing(xs);
-
-    &::before {
-      align-self: center;
-      @include sage-icon-base($-icon-name, sm);
-    }
-  }
+  // NOTE: Icon generation consolidated in `core/_icons.scss`
 }

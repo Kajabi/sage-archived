@@ -28,12 +28,6 @@
     color: sage-color(charcoal, 100);
     background-color: sage-color(grey, 200);
   }
-}
 
-@each $icon-name, $icon-code in $sage-icons {
-  .sage-status-icon--#{$icon-name} {
-    &::before {
-      @include sage-icon-base($icon-name);
-    }
-  }
+  // NOTE: Icon generation consolidated in `core/_icons.scss`
 }

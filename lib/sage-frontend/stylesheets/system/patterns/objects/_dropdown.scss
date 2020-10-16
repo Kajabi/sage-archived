@@ -124,6 +124,8 @@ $-trigger-dropdown-offset: rem(16px) + sage-spacing(xs);
     pointer-events: none;
     cursor: not-allowed;
   }
+
+  // NOTE: Icon generation consolidated in `core/_icons.scss`
 }
 
 .sage-dropdown__item-control--primary {
@@ -150,13 +152,6 @@ $-trigger-dropdown-offset: rem(16px) + sage-spacing(xs);
   &:hover {
     color: sage-color(charcoal, 400);
     background-color: sage-color(grey, 200);
-  }
-}
-
-@each $icon-name, $icon-code in $sage-icons {
-  .sage-dropdown__item-control--icon-#{$icon-name}#{$-option-icon} {
-    @include sage-icon-base($icon-name);
-    margin: 0 sage-spacing(xs) 0 0;
   }
 }
 
