@@ -160,6 +160,27 @@
 }
 
 /* ==================================================
+** Button disabled mixin
+  Usage: `@include sage-button-style-disabled();
+
+  Sets up disabled styles for buttons
+  arguments: n/a
+================================================== */
+
+@mixin sage-button-style-disabled {
+  box-shadow: none;
+  transition: none;
+  cursor: not-allowed;
+  pointer-events: none;
+
+  &:hover:not(:focus):not(:active):not(:disabled):not([aria-disabled="true"]),
+  &:focus,
+  &:active {
+    outline: none;
+  }
+}
+
+/* ==================================================
 ** Button button icon generator mixin
   Usage: `@include sage-button-icon-generator();
 
