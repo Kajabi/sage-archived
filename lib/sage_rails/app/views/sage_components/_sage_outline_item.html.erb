@@ -22,7 +22,7 @@
     </div>
   <% end %>
   <% if component.actions_secondary %>
-    <div class="sage-outline-item__actions-secondary sage-btn-group sage-btn-group-gap-lg">
+    <div class="sage-outline-item__actions-secondary sage-btn-group sage-btn-group--gap-xs">
       <% component.actions_secondary.each do |secondary| %>
         <%= secondary.html_safe %>
       <% end %>
