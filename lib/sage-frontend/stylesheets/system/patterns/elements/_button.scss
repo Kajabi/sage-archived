@@ -148,6 +148,12 @@ $-btn-subtle-styles: (
     }
   }
 
+  .sage-sortable__item & {
+    &:not(:last-child) {
+      margin-right: sage-spacing(sm);
+    }
+  }
+
   // NOTE: Hope to use `gap` in the future instead
   // but Safari does not currently support it for flexbox
   @each $-key, $-value in $sage-spacings {
