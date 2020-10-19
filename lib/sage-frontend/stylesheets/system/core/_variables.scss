@@ -181,7 +181,8 @@ $sage-checkbox-color-disabled: sage-color(grey, 200) !default;
 $sage-checkbox-color-disabled-checked: sage-color(primary, 200) !default;
 
 $sage-checkbox-size: rem(20px) !default;
-$sage-checkbox-border-radius: sage-border(radius) !default;
+$sage-checkbox-border-radius-inner: sage-border(radius-small) !default;
+$sage-checkbox-border-radius-outer: sage-border(radius-large) !default;
 $sage-checkbox-transition: 0.15s ease-in-out !default;
 
 $sage-checkbox-marker-border: rem(2px) !default;
@@ -193,7 +194,7 @@ $sage-checkbox-marker-offset: $sage-checkbox-marker-border * 2 !default;
 
 // Focus state
 $sage-checkbox-focus-outline-size: sage-spacing(2xs) !default;
-$sage-checkbox-focus-outline-width: 1 !default;
+$sage-checkbox-focus-outline-width: 2 !default;
 $sage-checkbox-focus-outline-color: sage-color(primary) !default;
 
 
