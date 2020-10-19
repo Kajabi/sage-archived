@@ -123,9 +123,7 @@
 
   &:disabled {
     background: $sage-radio-color-disabled;
-    border-color: $sage-radio-color-disabled-checked;
     cursor: not-allowed;
-    opacity: 0.5;
 
     // disabled & checked
     &:checked {
@@ -134,7 +132,7 @@
     }
 
     + .sage-radio__label {
-      color: $sage-radio-color-disabled-checked;
+      color: $sage-radio-color-disabled-text;
       cursor: not-allowed;
     }
 
@@ -144,7 +142,7 @@
   }
 
   &:not(.sage-radio--standalone) {
-    margin-top: 6px;
+    margin-top: 5px;
   }
 }
 

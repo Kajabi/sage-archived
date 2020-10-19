@@ -1,0 +1,15 @@
+<div class="sage-radio<%= component.has_error ? " sage-radio--error" : "" %>">
+  <input 
+    id="<%= component.id %>" 
+    type="radio" 
+    class="sage-radio__input" 
+    name="<%= component.name %>" 
+    value="<%= component.value %>"
+    <%= component.checked ? " checked" : "" %>
+    <%= component.disabled ? " disabled" : "" %>
+    <%= component.required ? " required" : "" %>
+  >
+  <label for="<%= component.id %>" class="sage-radio__label">
+    <%= component.label_text %>
+  </label>
+</div>
