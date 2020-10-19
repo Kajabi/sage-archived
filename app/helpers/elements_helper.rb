@@ -174,10 +174,10 @@ module ElementsHelper
       {
         title: "radio",
         description: "Radio elements provide users a way to select only one option from a list of two or more options.",
-        use_legacy_html_code_source: true,
+        use_legacy_html_code_source: false,
         scss: "done",
         docs: "done",
-        rails: "no",
+        rails: "done",
         react: "no",
         a11y: "todo"
       },
