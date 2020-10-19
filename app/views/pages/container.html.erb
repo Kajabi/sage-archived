@@ -45,8 +45,12 @@ containers = [
 ]
 %>
 <%= content_for :heading do %>
-  <h1>Containers</h1>
-  <p>Containers provide a restricted width box any sort of content can be placed within. Here we show Card object inside the containers, but containers have no intrinsic decorations.
+<%= md('
+# Containers
+
+Containers provide a restricted width box any sort of content can be placed within.
+Here we show Card object inside the containers, but containers have no intrinsic decorations.
+') %>
 <% end %>
 <%= content_for :quick_links do %>
   <div class="quick-links">
@@ -60,18 +64,16 @@ containers = [
     </ul>
   </div>
 <% end %>
-<div class="sage-type">
+<div class="sage-panel-set">
   <% containers.each do | container | %>
-    <h2 id="<%= container[:id] %>"><%= container[:full_name] %></h2>
     <div class="sage-container<%= " sage-container--#{container[:alias]}" if container[:alias] %>">
-      <div class="sage-panel">
+      <%= sage_component SagePanel, {} do %>
+        <%= sage_component SagePanelHeader, {  title: container[:full_name], html_attributes: { id: container[:id] } } %>
         <p><%= container[:size] %></p>
-      </div>
-    </div>
-    <div class="docs-container">
       <pre class="prettyprint"><code>&lt;div class=&quot;sage-container<%= " sage-container--#{container[:alias]}" if container[:alias] %>&quot;&gt;
   &lt;!-- <%= container[:size] %> --&gt;
 &lt;/div&gt;</code></pre>
+      <% end %>
     </div>
   <% end %>
 
