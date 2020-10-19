@@ -170,33 +170,6 @@ $sage-textarea-bg-disabled: $sage-inputfield-bg-disabled !default;
 $sage-textarea-label-bg-color: $sage-textarea-bg-default !default;
 
 
-// ==================================================
-// CHECKBOXES
-// ==================================================
-
-// Colors
-$sage-checkbox-color-default: sage-color(grey, 400) !default;
-$sage-checkbox-color-checked: sage-color(primary) !default;
-$sage-checkbox-color-disabled: sage-color(grey, 200) !default;
-$sage-checkbox-color-disabled-checked: sage-color(primary, 200) !default;
-
-$sage-checkbox-size: rem(20px) !default;
-$sage-checkbox-border-radius: sage-border(radius) !default;
-$sage-checkbox-transition: 0.15s ease-in-out !default;
-
-$sage-checkbox-marker-border: rem(2px) !default;
-$sage-checkbox-marker-height: rem(12px) !default;
-$sage-checkbox-marker-width: rem(6px) !default;
-$sage-checkbox-marker-color: sage-color(white) !default;
-$sage-checkbox-marker-rotate: 42.5deg !default;
-$sage-checkbox-marker-offset: $sage-checkbox-marker-border * 2 !default;
-
-// Focus state
-$sage-checkbox-focus-outline-size: sage-spacing(2xs) !default;
-$sage-checkbox-focus-outline-width: 1 !default;
-$sage-checkbox-focus-outline-color: sage-color(primary) !default;
-
-
 // ============================================
 // RADIO BUTTONS
 // ============================================

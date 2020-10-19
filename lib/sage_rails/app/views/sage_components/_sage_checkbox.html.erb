@@ -1,0 +1,12 @@
+<div class="sage-checkbox<%= component.has_error ? " sage-checkbox--error" : "" %>">
+  <input 
+    id="<%= component.id %>" 
+    type="checkbox" 
+    class="sage-checkbox__input"
+    <%= component.checked ? " checked" : "" %>
+    <%= component.disabled ? " disabled" : "" %>
+  >
+  <label for="<%= component.id %>" class="sage-checkbox__label">
+    <%= component.label_text %>
+  </label>
+</div>
