@@ -35,7 +35,7 @@ module ElementsHelper
       {
         title: "checkbox",
         description: "Checkboxes provide users with selectable options like toggling a single setting or selecting multiple options from a list.",
-        use_legacy_html_code_source: true,
+        use_legacy_html_code_source: false,
         scss: "done",
         docs: "todo",
         rails: "no",
