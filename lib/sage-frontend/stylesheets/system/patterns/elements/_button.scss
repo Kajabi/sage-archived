@@ -123,6 +123,7 @@ $-btn-subtle-styles: (
     }
   }
 
+  // Contextual modifications
   .sage-dropdown__item > & {
     width: 100%;
     padding-top: rem(9px);
@@ -133,6 +134,18 @@ $-btn-subtle-styles: (
   .sage-input-group & {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
+  }
+
+  .sage-page-heading__actions & {
+    &:not(:last-child) {
+      margin-right: sage-spacing();
+    }
+  }
+
+  .sage-page-heading__toolbar & {
+    &:not(:last-child) {
+      margin-right: sage-spacing(lg);
+    }
   }
 
   // NOTE: Hope to use `gap` in the future instead

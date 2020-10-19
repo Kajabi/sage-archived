@@ -36,7 +36,6 @@
   display: flex;
   grid-area: toolbar;
   flex-wrap: wrap;
-  gap: 0;
   margin-top: sage-spacing(sm);
 
   // NOTE: Icon generation consolidated in `core/_icons.scss`
@@ -46,13 +45,14 @@
 .sage-page-heading__actions {
   display: flex;
   grid-area: actions;
-  grid-gap: sage-spacing(sm);
   align-items: flex-start;
+
   @media (max-width: sage-breakpoint(sm-max)) {
     flex-wrap: wrap;
     justify-content: flex-start;
     margin-top: sage-spacing(sm);
   }
+
   @media (min-width: sage-breakpoint()) {
     flex-wrap: nowrap;
     justify-content: flex-end;
