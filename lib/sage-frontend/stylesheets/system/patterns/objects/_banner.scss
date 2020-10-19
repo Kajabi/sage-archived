@@ -14,8 +14,9 @@ $-banner-colors: (
 
 .sage-banner {
   @extend %t-sage-body-med;
+
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: center;
   width: 100%;
   padding: sage-spacing(sm) sage-spacing(md);
@@ -50,8 +51,6 @@ $-banner-colors: (
 .sage-banner__icon {
   display: inline-flex;
   align-self: center;
-  height: $sage-banner-icon-size;
-  width: $sage-banner-icon-size;
 }
 
 .sage-banner__link,
