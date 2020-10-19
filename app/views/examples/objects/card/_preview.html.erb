@@ -1,7 +1,7 @@
 <h5>Basic Card</h5>
 <%= sage_component SageCard, {} do %>
   <%= sage_component SageCardHeader, { title: "Card heading" } do %>
-    <button class="sage-btn sage-btn--tiny sage-btn--tertiary sage-btn--icon-only-info-circle">
+    <button class="sage-btn sage-btn--subtle sage-btn--secondary sage-btn--icon-only-info-circle">
       <span class="visually-hidden">Learn more</span>
     </button>
   <% end %>
@@ -13,7 +13,7 @@
     </p>
   <% end %>
   <%= sage_component SageCardFooter, {} do %>
-    <%= sage_component SageButton, { style: "tertiary", value: "Cancel" } %>
+    <%= sage_component SageButton, { style: "secondary", value: "Cancel" } %>
     <%= sage_component SageButton, { style: "primary", value: "Save" } %>
   <% end %>
 <% end %>
@@ -127,7 +127,7 @@
     <%= sage_component SageButton, {
       value: "Buy now",
       style: "primary",
-      size: "small",
+      subtle: true,
       icon: {
         name: "cart",
         style: "left"

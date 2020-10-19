@@ -12,7 +12,10 @@ colors = [
 <% colors.each do | color | %>
   <%= sage_component SageLabel, {
     color: color,
-    value: color.capitalize
+    value: %(
+      #{color.capitalize}
+      <button class="sage-btn sage-btn--subtle sage-btn--secondary sage-btn--icon-only-remove"></button>
+    )
   } %>
 <% end %>
 
