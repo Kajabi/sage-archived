@@ -22,7 +22,7 @@
     </div>
   <% end %>
   <% if component.actions_secondary %>
-    <div class="sage-outline-item__actions-secondary">
+    <div class="sage-outline-item__actions-secondary sage-btn-group sage-btn-group-gap-lg">
       <% component.actions_secondary.each do |secondary| %>
         <%= secondary.html_safe %>
       <% end %>
@@ -37,7 +37,8 @@
     <div class="sage-outline-item__handle-collapse">
       <%= sage_component SageButton, {
         value: "Add Content",
-        style: "tertiary",
+        style: "secondary",
+        subtle: true,
         icon: {style: "only", name: "caret-down"},
         attributes: { "data-js-tooltip": "Collapse" }
       } %>
