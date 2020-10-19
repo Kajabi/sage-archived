@@ -85,7 +85,8 @@ $-checkbox-focus-outline-color: sage-color(primary) !default;
   border: 1px solid $-checkbox-color-default;
   border-radius: $-checkbox-border-radius-inner;
   outline: none;
-  transition: background $-checkbox-transition, box-shadow $-checkbox-transition, border $-checkbox-transition;
+  transition: $-checkbox-transition;
+  transition-property: background, box-shadow, border;
   cursor: pointer;
 
 
