@@ -124,6 +124,12 @@ $-btn-subtle-styles: (
   }
 
   // Contextual modifications
+  .sage-catalog-item__content & {
+    &:not(:last-child) {
+      margin-right: sage-spacing();
+    }
+  }
+
   .sage-dropdown__item > & {
     width: 100%;
     padding-top: rem(9px);
@@ -162,7 +168,7 @@ $-btn-subtle-styles: (
     }
   }
 
-  .sage-sortable__item & {
+  .sage-sortable__item-actions & {
     &:not(:last-child) {
       margin-right: sage-spacing(sm);
     }

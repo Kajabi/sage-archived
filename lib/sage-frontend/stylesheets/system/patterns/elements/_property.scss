@@ -10,6 +10,12 @@
   display: inline-flex;
   align-items: center;
   color: sage-color(charcoal, 200);
+
+  .sage-catalog-item__content & {
+    &:not(:last-child) {
+      margin-right: sage-spacing();
+    }
+  }
 }
 
 .sage-property__icon {
