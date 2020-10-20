@@ -163,6 +163,8 @@ $-trigger-dropdown-offset: rem(16px) + sage-spacing(xs);
 .sage-dropdown__item-label {
   @include truncate();
 
+  flex: 1;
+
   .sage-dropdown__item-checkbox + & {
     margin-left: sage-spacing(xs);
   }
