@@ -2,6 +2,7 @@ class SagePagination < SageComponent
   attr_accessor :items
   attr_accessor :window
   attr_accessor :additional_params
+  attr_accessor :pager_params
 
   def initialize(attributes = {})
     super
@@ -25,7 +26,7 @@ class SagePagination < SageComponent
     else
       first = collection.offset_value + 1
       last = collection.last_page? ? collection.total_count : collection.offset_value + collection.limit_value
-      "<strong>#{first}</strong> - <strong>#{last}</strong> of <strong>#{collection.total_count}</strong> Records" 
+      "<strong>#{first}</strong> - <strong>#{last}</strong> of <strong>#{collection.total_count}</strong> Records"
     end.html_safe
   end
 

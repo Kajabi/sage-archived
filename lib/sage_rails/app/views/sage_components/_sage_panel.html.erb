@@ -5,7 +5,7 @@
     <%= "sage-panel--clear-padding-bottom" if component.clear_bottom_padding %>
     <%= component.generated_css_classes %>
   "
-  <%= component.generated_html_attributes %>
+  <%= component.generated_html_attributes.html_safe %>
 >
   <%= component.content %>
 </section>
