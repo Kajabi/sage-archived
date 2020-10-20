@@ -10,11 +10,11 @@
 }
 
 .sage-sortable__item {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: $sage-card-grid-gap;
   align-items: center;
-  gap: sage-spacing(sm);
-  padding: sage-spacing(xs) sage-spacing(md);
+  padding: sage-spacing(xs) $sage-panel-padding;
   background: sage-color(white);
   border-bottom: sage-border(light);
   cursor: grab;
@@ -35,7 +35,7 @@
   }
 
   &.sage-sortable__item--card {
-    padding: sage-spacing(xs) sage-spacing(sm);
+    padding: sage-spacing(xs) $sage-card-padding;
     border: sage-border();
     border-radius: sage-border(radius-large);
     transition: $sage-transition;
