@@ -24,6 +24,9 @@
           style: "left"
         },
         value: "DNS Settings",
+        attributes: {
+          href: "#dns-settings"
+        }
       } %>
     <% end %>
   <% end %>
@@ -45,19 +48,7 @@
             <i class="sage-icon-check-circle-lg t-sage--color-sage" aria-label="Connected!"></i>
             <strong class="t-sage-heading-5">daydreamsurfshop.com</strong>
             <span class="t-sage-body t-sage--color-charcoal-200">is connected</span>
-            <!-- TODO: Add option dropdown menu -->
-            <%= sage_component SageButton, {
-              value: "Options",
-              style: "tertiary",
-              size: "tiny",
-              icon: {
-                name: "dot-menu-horizontal",
-                style: "only"
-              },
-              attributes: {
-                href: "#options"
-              }
-            } %>
+            <%= render "pages/mocks/custom_domain/shared/option_menu" %>
           <% end %>
 
           <%= sage_component SagePanelDivider, { bleed: true } %>
@@ -82,18 +73,7 @@
                     #style: "danger"
                   }),
                   { 
-                    value: sage_component(SageButton, {
-                      value: "Options",
-                      style: "tertiary",
-                      size: "tiny",
-                      icon: {
-                        name: "dot-menu-horizontal",
-                        style: "only"
-                      },
-                      attributes: {
-                        href: "#options"
-                      }
-                    }),
+                    value: render("pages/mocks/custom_domain/shared/edit_button", href: "#edit"),
                     html_attributes: {
                       class: "sage-table-cell--align-right"
                     }
@@ -112,18 +92,7 @@
     <div class="sage-col-4">
       <%= sage_component SagePanel, {} do %>
         <%= sage_component SagePanelHeader, { title: "Registrar Information" } do %>
-          <%= sage_component SageButton, {
-            value: "Help",
-            style: "tertiary",
-            size: "tiny",
-            icon: {
-              name: "info-circle",
-              style: "only"
-            },
-            attributes: {
-              href: "#help-2"
-            }
-          } %>
+          <%= render "pages/mocks/custom_domain/shared/info_button", href: "#help-2" %>
         <% end %>
         <%= sage_component SagePanelBlock, { type_block: true } do %>
           <p>

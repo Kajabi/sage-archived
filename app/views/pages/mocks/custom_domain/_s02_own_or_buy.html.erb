@@ -26,18 +26,7 @@
     <%= sage_component SagePanelHeader, {
       title: "How would you like to set up your custom domain?"
     } do %>
-      <%= sage_component SageButton, {
-        value: "Edit",
-        style: "tertiary",
-        size: "tiny",
-        icon: {
-          name: "info-circle",
-          style: "only"
-        },
-        attributes: {
-          href: "#info"
-        }
-      } %>
+      <%= render "pages/mocks/custom_domain/shared/info_button", href: "#info" %>
     <% end %>
     <div class="sage-tabs-container">
       <%= sage_component SageTabs, {

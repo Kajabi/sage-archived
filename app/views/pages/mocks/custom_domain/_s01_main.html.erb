@@ -9,11 +9,6 @@
   } do %>
     <% content_for :sage_breadcrumbs do %>
       <%= sage_component SageBreadcrumbs, {
-        #has_back_icon: true,
-        #items: [{
-        #  text: "Settings",
-        #  url: "#settings"
-        #}]
         items: [{
           text: "Settings",
           url: "#settings"
@@ -38,21 +33,14 @@
     <%= sage_component SagePanelHeader, {
       title: "Kajabi Domain"
     } do %>
-      <%= sage_component SageButton, {
-        value: "Edit",
-        style: "tertiary",
-        size: "tiny",
-        icon: {
-          name: "pen",
-          style: "only"
-        },
-        attributes: {
-          href: "#edit"
-        }
-      } %>
+      <%= render "pages/mocks/custom_domain/shared/edit_button", href: "#edit" %>
     <% end %>
     <p><b>www.daydreamsurfshop.mykajabi.com</b></p>
-    <p class="t-sage--color-charcoal-200">This is the default subdomain connected to your Kajabi site. All sites are given a Kajabi subdomain that you can replace with a custom domain or purchase a new one through Kajabi.</p>
+    <p class="t-sage--color-charcoal-200">
+      This is the default subdomain connected to your Kajabi site.
+      All sites are given a Kajabi subdomain that you can replace
+      with a custom domain or purchase a new one through Kajabi.
+    </p>
     <p>
       <%= sage_component SageLabel, {
         value: "Default",

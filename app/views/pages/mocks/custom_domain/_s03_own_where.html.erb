@@ -29,18 +29,7 @@
     <%= sage_component SagePanelHeader, {
       title: "Where is your website hosted?"
     } do %>
-      <%= sage_component SageButton, {
-        value: "Help",
-        style: "tertiary",
-        size: "tiny",
-        icon: {
-          name: "info-circle",
-          style: "only"
-        },
-        attributes: {
-          href: "#help-2"
-        }
-      } %>
+      <%= render "pages/mocks/custom_domain/shared/info_button", href: "#help-2" %>
     <% end %>
     <div class="sage-tabs-container">
       <%= sage_component SageTabs, {
@@ -73,18 +62,7 @@
         <%= sage_component SagePanelHeader, {
           title: "Enter the domain you want to connect"
         } do %>
-          <%= sage_component SageButton, {
-            value: "Help",
-            style: "tertiary",
-            size: "tiny",
-            icon: {
-              name: "info-circle",
-              style: "only"
-            },
-            attributes: {
-              href: "#help-3"
-            }
-          } %>
+          <%= render "pages/mocks/custom_domain/shared/info_button", href: "#help-3" %>
         <% end %>
 
         <!-- TODO: Replace with simpleform field -->
@@ -117,18 +95,7 @@
         <%= sage_component SagePanelHeader, {
           title: "Enter the subdomain you want to connect"
         } do %>
-          <%= sage_component SageButton, {
-            value: "Help",
-            style: "tertiary",
-            size: "tiny",
-            icon: {
-              name: "info-circle",
-              style: "only"
-            },
-            attributes: {
-              href: "#help-4"
-            }
-          } %>
+          <%= render "pages/mocks/custom_domain/shared/info_button", href: "#help-4" %>
         <% end %>
 
         <!-- TODO: Replace with simpleform field -->

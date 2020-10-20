@@ -29,20 +29,8 @@
     <%= sage_component SagePanelHeader, {
       title: "1. Log in to [Registar Name]"
     } do %>
-      <%= sage_component SageButton, {
-        value: "Help",
-        style: "tertiary",
-        size: "tiny",
-        icon: {
-          name: "info-circle",
-          style: "only"
-        },
-        attributes: {
-          href: "#help-2"
-        }
-      } %>
+      <%= render "pages/mocks/custom_domain/shared/info_button", href: "#help-2" %>
     <% end %>
-    
 
     <%= sage_component SagePanelBlock, { type_block: true } do %>
       <p>Head to your DNS settings in [TODO: Regstar Name].</p>
@@ -52,7 +40,7 @@
       <p>Remove these nameservers:</p>
 
       <%= sage_component SageCopyTextCard, { semibold: true } do %>
-        <!-- TODO: Are these the actual things to use? -->
+        <!-- TODO: Are these the actual values to use? -->
         <p>ns-cloud-e1.googledomains.com</p>
         <p>ns-cloud-e2.googledomains.com</p>
         <p>ns-cloud-e3.googledomains.com</p>
@@ -65,7 +53,7 @@
     } %>
 
     <%= sage_component SagePanelStack, {} do %>
-      <!-- TODO: Are these the actual things to use? -->
+      <!-- TODO: Are these the actual values to use? -->
       <%= sage_component SageCopyButton, { value: "adrian.ns.cloudflare.com", semibold: true } %>
       <%= sage_component SageCopyButton, { value: "noah.ns.cloudflare.com", semibold: true } %>
     <% end %>

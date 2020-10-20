@@ -1,16 +1,7 @@
 <%
 # For simpler mocking here...
 option_menu_cell = {
-  value: sage_component(SageButton, {
-      value: "[options]",
-      size: "tiny",
-      style: "tertiary",
-      icon: {
-        name: "dot-menu-horizontal",
-        style: "only"
-      }
-    }
-  ),
+  value: render("pages/mocks/custom_domain/shared/option_menu"),
   html_attributes: {
     class: "sage-table-cell--align-right"
   }
@@ -39,14 +30,14 @@ option_menu_cell = {
         }]
       } %>
     <% end %>
-    <% content_for :sage_page_heading_toolbar do %>
+    <% content_for :sage_page_heading_actions do %>
       <%= sage_component SageButton, { 
-        style: "tertiary",
+        style: "primary",
         icon:{
-          name: "gear",
+          name: "add",
           style: "left"
         },
-        value: "DNS Settings",
+        value: "Create New",
       } %>
     <% end %>
   <% end %>
@@ -63,16 +54,7 @@ option_menu_cell = {
     <div class="sage-col-8">
       <%= sage_component SagePanel, {} do %>
         <%= sage_component SagePanelHeader, { title: "DNS Records" } do %>
-          <%= sage_component(SageButton, {
-              value: "Options",
-              size: "tiny",
-              style: "tertiary",
-              icon: {
-                name: "info-circle",
-                style: "only"
-              }
-            }
-          ) %>
+          <%= render "pages/mocks/custom_domain/shared/info_button", href: "#dns-info" %>
         <% end %>
         <%= sage_component SagePanelSubheader, { title: "Subdomains" } %>
         <%= sage_component SageCard, {} do %>
@@ -186,17 +168,8 @@ option_menu_cell = {
     </div>
     <div class="sage-col-8">
       <%= sage_component SagePanel, {} do %>
-        <%= sage_component SagePanelHeader, { title: "DNS Records" } do %>
-          <%= sage_component(SageButton, {
-              value: "Options",
-              size: "tiny",
-              style: "tertiary",
-              icon: {
-                name: "info-circle",
-                style: "only"
-              }
-            }
-          ) %>
+        <%= sage_component SagePanelHeader, { title: "Kajabi Nameservers" } do %>
+          <%= render "pages/mocks/custom_domain/shared/info_button", href: "#nameserver-info" %>
         <% end %>
         <%= sage_component SagePanelBlock, { type_block: true } do %>
           <p>Your site is using Kajabi’s default nameservers.</p>

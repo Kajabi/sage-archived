@@ -1,0 +1,12 @@
+<%= sage_component SageButton, {
+  value: "Edit",
+  style: "tertiary",
+  size: "tiny",
+  icon: {
+    name: "pen",
+    style: "only"
+  },
+  attributes: {
+    href: defined?(href) ? href : "#",
+  }
+} %>
