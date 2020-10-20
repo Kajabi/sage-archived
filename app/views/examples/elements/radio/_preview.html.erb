@@ -4,21 +4,14 @@
   name: "radio1",
   value: "1",
   label_text: "Option 1",
-  checked: true,
-  disabled: false,
-  required: false,
-  has_error: false
+  checked: true
 } %>
 
 <%= sage_component SageRadio, { 
   id: "r2",
   name: "radio1",
   value: "2",
-  label_text: "Option 2",
-  checked: false,
-  disabled: false,
-  required: false,
-  has_error: false
+  label_text: "Option 2"
 } %>
 
 <!-- Disabled -->
@@ -27,10 +20,7 @@
   name: "radio2",
   value: "3",
   label_text: "Disabled",
-  checked: false,
-  disabled: true,
-  required: false,
-  has_error: false
+  disabled: true
 } %>
 
 <!-- Checked & Disabled -->
@@ -40,9 +30,7 @@
   value: "4",
   label_text: "Checked & Disabled",
   checked: true,
-  disabled: true,
-  required: false,
-  has_error: false
+  disabled: true
 } %>
 
 <!-- Errror -->
@@ -51,8 +39,6 @@
   name: "radio4",
   value: "5",
   label_text: "Error",
-  checked: false,
-  disabled: false,
   required: true,
   has_error: true
 } %>
