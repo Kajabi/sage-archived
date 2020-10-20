@@ -1,7 +1,7 @@
 <div class="sage-row">
   <div class="sage-col--md-6">
     <!-- Checkbox Default -->
-    <%= render "examples/elements/switch/markup",
+    <%= sage_component SageSwitch, { 
       type: "checkbox",
       id: "sage-switch-1",
       name: "sage-switch-1",
@@ -12,9 +12,9 @@
       disabled: false,
       required: false,
       message: ""
-    %>
+    } %>
     <!-- Checkbox Error -->
-    <%= render "examples/elements/switch/markup",
+    <%= sage_component SageSwitch, { 
       type: "checkbox",
       id: "sage-switch-2",
       name: "sage-switch-2",
@@ -25,9 +25,9 @@
       disabled: false,
       required: true,
       message: ""
-    %>
+    } %>
     <!-- Checkbox Disabled -->
-    <%= render "examples/elements/switch/markup",
+    <%= sage_component SageSwitch, { 
       type: "checkbox",
       id: "sage-switch-3",
       name: "sage-switch-3",
@@ -38,9 +38,9 @@
       disabled: true,
       required: false,
       message: ""
-    %>
+    } %>
     <!-- Checkbox On & Disabled -->
-    <%= render "examples/elements/switch/markup",
+    <%= sage_component SageSwitch, { 
       type: "checkbox",
       id: "sage-switch-4",
       name: "sage-switch-4",
@@ -51,9 +51,9 @@
       disabled: true,
       required: false,
       message: ""
-    %>
+    } %>
     <!-- Checkbox w/ Message -->
-    <%= render "examples/elements/switch/markup",
+    <%= sage_component SageSwitch, { 
       type: "checkbox",
       id: "sage-switch-5",
       name: "sage-switch-5",
@@ -64,8 +64,8 @@
       disabled: false,
       required: false,
       message: "Additional Info"
-    %>
-    <%= render "examples/elements/switch/markup",
+    } %>
+    <%= sage_component SageSwitch, { 
       type: "checkbox",
       id: "sage-switch-6",
       name: "sage-switch-6",
@@ -76,11 +76,11 @@
       disabled: false,
       required: true,
       message: "Additional Info"
-    %>
+    } %>
   </div>
   <div class="sage-col--md-6">
     <!-- Radio Default -->
-    <%= render "examples/elements/switch/markup",
+    <%= sage_component SageSwitch, { 
       type: "radio",
       id: "sage-switch-7",
       name: "sage-switch-7",
@@ -91,8 +91,8 @@
       disabled: false,
       required: false,
       message: ""
-    %>
-    <%= render "examples/elements/switch/markup",
+    } %>
+    <%= sage_component SageSwitch, { 
       type: "radio",
       id: "sage-switch-8",
       name: "sage-switch-7",
@@ -103,10 +103,10 @@
       disabled: false,
       required: false,
       message: ""
-    %>
+    } %>
     <hr/>
     <!-- Radio Error -->
-    <%= render "examples/elements/switch/markup",
+    <%= sage_component SageSwitch, { 
       type: "radio",
       id: "sage-switch-9",
       name: "sage-switch-9",
@@ -117,9 +117,9 @@
       disabled: false,
       required: true,
       message: ""
-    %>
+    } %>
     <!-- Radio Disabled -->
-    <%= render "examples/elements/switch/markup",
+    <%= sage_component SageSwitch, { 
       type: "radio",
       id: "sage-switch-10",
       name: "sage-switch-10",
@@ -130,9 +130,9 @@
       disabled: true,
       required: false,
       message: ""
-    %>
+    } %>
     <!-- Radio On & Disabled -->
-    <%= render "examples/elements/switch/markup",
+    <%= sage_component SageSwitch, { 
       type: "radio",
       id: "sage-switch-11",
       name: "sage-switch-10",
@@ -143,6 +143,6 @@
       disabled: true,
       required: false,
       message: ""
-    %>
+    } %>
   </div>
 </div>
