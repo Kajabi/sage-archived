@@ -136,6 +136,20 @@ $-btn-subtle-styles: (
     border-bottom-left-radius: 0;
   }
 
+  .sage-label & {
+    &:first-child:not(:last-child) {
+      margin-right: sage-spacing(xs);
+    }
+
+    &:last-child:not(:first-child) {
+      margin-left: sage-spacing(xs);
+    }
+
+    + & {
+      margin-left: 0;
+    }
+  }
+
   .sage-page-heading__actions & {
     &:not(:last-child) {
       margin-right: sage-spacing();
