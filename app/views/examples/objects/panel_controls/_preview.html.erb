@@ -1,0 +1,78 @@
+<% tabs = sage_component(SageTabs, {
+  items: [
+    {
+      text: "Test 1",
+      attributes: { href: "#test-1" },
+      active: true
+    },
+    {
+      text: "Test 2",
+      attributes: { href: "#test-2" },
+    },
+    {
+      text: "Test 3",
+      attributes: { href: "#test-3" },
+    }
+  ]
+})
+
+search = sage_component(SageSearch, { placeholder: "Find..." })
+
+dropdown = sage_component(SageDropdown, {
+  search: true,
+  trigger_type: "select",
+  align: "right",
+  items: [{
+    value: "-- None --"
+  }, {
+    value: "Option 1",
+   }, {
+    value: "Option 2",
+   }, {
+    value: "Option 3",
+  }, {
+    value: "Muted",
+    style: "muted"
+  }, {
+    value: "Disabled",
+    modifiers: ["disabled"]
+  }],
+  content: sage_component(SageButton, {
+    style: "secondary",
+    value: "",
+    css_classes: "sage-dropdown__trigger-selected-value",
+    icon: { style: "right", name: "caret-down" }
+  })
+})
+%>
+<h4>Tabs + Search</h4>
+<div class="sage-panel-controls">
+  <%= tabs %>
+  <%= search %>
+</div>
+
+<h4>Tabs + Search in Toolbar</h4>
+<div class="sage-panel-controls">
+  <%= tabs %>
+  <div class="sage-panel-controls__toolbar">
+    <div class="sage-panel-controls__toolbar-btn-group">
+      <%= search %>
+      <%= sage_component SageButton, {
+        value: "Saved filters",
+        style: "secondary",
+        icon: { name: "favortie", style: "left" }
+      } %>
+      <%= sage_component SageButton, {
+        value: "Filters",
+        style: "secondary",
+        icon: { name: "filters", style: "left" }
+      } %>
+      <%= sage_component SageButton, {
+        value: "Clear filters",
+        style: "secondary",
+        icon: { name: "remove", style: "left" }
+      } %>
+    </div>
+    <%= dropdown %>
+  </div>
+</div>

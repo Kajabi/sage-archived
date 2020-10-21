@@ -49,15 +49,11 @@ $-search-icon: "::before";
     }
   }
 
-  &.sage-search--contained {
-    border: sage-border();
+  &.sage-search--contained,
+  .sage-panel-controls__toolbar & {
+    box-shadow: $sage-toolbar-btn-border;
+    border: 0;
     border-radius: sage-border(radius);
-    transition: $sage-inputfield-transition;
-
-    &:focus-within {
-      border-color: $sage-inputfield-color-success;
-      box-shadow: $sage-inputfield-box-shadow-size $sage-inputfield-color-success;
-    }
   }
 }
 
