@@ -49,10 +49,9 @@ $-modal-padding-y: sage-spacing(md);
     margin-top: 8vh;
   }
 
-    @media (min-width: sage-breakpoint(xl-min)) {
-      margin-top: 10vh;
-    }
-
+  @media (min-width: sage-breakpoint(xl-min)) {
+    margin-top: 10vh;
+  }
 
   .sage-modal--active & {
     visibility: visible;
