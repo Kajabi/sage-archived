@@ -1,0 +1,9 @@
+<div
+  class="sage-progress-bar"
+  <%= component.generated_html_attributes.html_safe %>
+>
+  <progress class="sage-progress-bar__element" max="100" value="<%= component.percent %>">
+    Progress: <%= component.percent %>%
+  </progress>
+  <div class="sage-progress-bar__value" style="width: <%= component.percent %>%;">&nbsp;</div>
+</div>

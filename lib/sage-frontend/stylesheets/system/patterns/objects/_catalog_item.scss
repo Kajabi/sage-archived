@@ -15,6 +15,11 @@ $-image-height-mobile: rem(120px);
   grid-row-gap: sage-spacing(xs);
   padding: sage-spacing(sm) sage-spacing();
 
+  &.sage-catalog-item--disabled {
+    background-color: sage-color(grey, 100);
+  }
+
+
   &:not(:last-child) {
     border-bottom: sage-border(light);
   }

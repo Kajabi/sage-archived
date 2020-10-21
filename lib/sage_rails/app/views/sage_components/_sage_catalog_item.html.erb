@@ -1,8 +1,13 @@
-<li class="sage-catalog-item">
+<% disabled = !component.href %>
+<% link_tag = disabled ? "div" : "a" %>
+<li class="
+  sage-catalog-item
+  <%= "sage-catalog-item--disabled" if disabled %>
+">
   <strong class="sage-catalog-item__title">
-    <a class="t-sage-heading-6" href="<%= component.href %>" tabindex="0">
+    <<%= link_tag %> class="t-sage-heading-6" href="<%= component.href %>">
       <%= component.title %>
-    </a>
+    </<%= link_tag %>>
   </strong>
   <% if component.content.present? %>
     <div class="sage-catalog-item__content">
@@ -15,7 +20,7 @@
     </div>
   <% end %>
   <%# Uses tabindex="-1" because there are two links to the same location in this component (component.title also links to the href) %>
-  <a class="sage-catalog-item__img" href="<%= component.href %>" tabindex="-1" title="Go to: <%= component.title %>">
+  <<%= link_tag %> class="sage-catalog-item__img" href="<%= component.href %>" tabindex="-1" title="Go to: <%= component.title %>">
     <img src="<%= component.image %>" alt="Cover image for: <%= component.title %>">
-  </a>
+  </<%= link_tag %>>
 </li>

@@ -54,7 +54,7 @@ module ElementsHelper
       },
       {
         title: "copy_text",
-        description: "A small set of components to use in places where \"copy\" text is provided such as in a Copy Button or a block of text to be copied elsewhere.", 
+        description: "A small set of components to use in places where \"copy\" text is provided such as in a Copy Button or a block of text to be copied elsewhere.",
         use_legacy_html_code_source: false,
         scss: "done",
         rails: "done",
@@ -244,6 +244,16 @@ module ElementsHelper
       {
         title: "property",
         description: "TO BE NAMED – Displays a metadata item for a resource.",
+        use_legacy_html_code_source: false,
+        scss: "done",
+        docs: "todo",
+        rails: "done",
+        react: "todo",
+        a11y: "todo"
+      },
+      {
+        title: "progress_bar",
+        description: "Displays progress with a value",
         use_legacy_html_code_source: false,
         scss: "done",
         docs: "todo",
