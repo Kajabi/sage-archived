@@ -194,10 +194,10 @@ module ElementsHelper
       {
         title: "switch",
         description: "Checkbox or radio element styled to appear as a toggle",
-        use_legacy_html_code_source: true,
+        use_legacy_html_code_source: false,
         scss: "done",
         docs: "done",
-        rails: "no",
+        rails: "done",
         react: "no",
         a11y: "todo"
       },

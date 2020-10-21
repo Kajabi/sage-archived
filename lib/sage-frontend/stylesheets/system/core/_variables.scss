@@ -179,34 +179,6 @@ $sage-radio-selected-indicator-color: sage-color(white) !default;
 $sage-radio-color-checked: sage-color(primary) !default;
 
 
-// ============================================
-// SWITCHES
-// ============================================
-
-// Colors
-$sage-switch-color-default: sage-color(grey, 400) !default;
-$sage-switch-color-default-text: sage-color(charcoal, 300) !default;
-$sage-switch-color-checked: sage-color(primary) !default;
-$sage-switch-color-disabled: sage-color(grey, 200) !default;
-$sage-switch-color-disabled-text: sage-color(grey, 400) !default;
-$sage-switch-color-disabled-checked: sage-color(primary, 200) !default;
-$sage-switch-color-disabled-checked-text: sage-color(charcoal, 100) !default;
-
-// Switch
-$sage-switch-label-left-spacing: sage-spacing(sm) !default;
-$sage-switch-border-radius: rem(16px) !default;
-$sage-switch-height: rem(24px) !default;
-$sage-switch-width: rem(44px) !default;
-
-// Toggle
-$sage-switch-toggle-size: rem(20px) !default;
-
-// Focus state
-$sage-switch-focus-outline-spacing: sage-spacing(2xs) !default;
-$sage-switch-focus-outline-width: 1 !default;
-$sage-switch-focus-outline-color: sage-color(primary) !default;
-
-
 // ==================================================
 // LOADERS AND SPINNERS
 // ==================================================
