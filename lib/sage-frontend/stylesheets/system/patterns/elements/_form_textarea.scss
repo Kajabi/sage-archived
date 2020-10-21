@@ -39,7 +39,8 @@
 }
 
 .sage-textarea__message {
-  @extend %t-sage-body-small;
+  @extend %t-sage-body-xsmall;
+  color: sage-color(charcoal, 100);
 }
 
 .sage-textarea__field {
