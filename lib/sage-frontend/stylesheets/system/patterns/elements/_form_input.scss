@@ -147,6 +147,7 @@
 
 .sage-input__message {
   @extend %t-sage-body-xsmall;
+  color: sage-color(charcoal, 100);
 
   .sage-input--error & {
     color: $sage-inputfield-color-error;
