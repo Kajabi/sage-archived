@@ -10,6 +10,12 @@ $-alert-colors: (
   warning: yellow,
   danger: red,
 );
+$-alert-icon-colors: (
+  info: primary,
+  success: sage,
+  warning: orange,
+  danger: red,
+);
 
 .sage-alert {
   display: grid;
@@ -61,13 +67,10 @@ $-alert-colors: (
 
 .sage-alert__icon {
   transform: translateY(rem(2px));
-  @each $name, $color in $-alert-colors {
+  @each $name, $color in $-alert-icon-colors {
     .sage-alert--#{$name} & {
       color: sage-color($color, 300);
     }
-  }
-  .sage-alert--warning & {
-    color: sage-color(orange, 300);
   }
 }
 
