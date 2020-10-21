@@ -64,10 +64,10 @@ $-search-icon: "::before";
 .sage-search__input {
   position: relative;
   z-index: 1;
-  background: transparent;
   width: 100%;
   padding: rem(9px) sage-spacing(sm) rem(9px) sage-spacing(xl);
   border: 0;
+  background: transparent;
 
   @extend %t-sage-body;
 
