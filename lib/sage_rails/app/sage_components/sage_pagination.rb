@@ -2,7 +2,6 @@ class SagePagination < SageComponent
   attr_accessor :items
   attr_accessor :window
   attr_accessor :additional_params
-  attr_accessor :pager_params
 
   def initialize(attributes = {})
     super
