@@ -84,7 +84,7 @@
   border: $sage-inputfield-border-width solid $sage-inputfield-border-color;
   border-radius: $sage-inputfield-border-radius;
   background: transparent;
-  transition: border 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  transition: $sage-inputfield-transition;
 
   @include placeholder {
     color: sage-color(charcoal, 100);

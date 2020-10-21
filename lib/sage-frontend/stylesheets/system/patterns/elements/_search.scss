@@ -4,13 +4,11 @@
 
 ================================================== */
 
-
 $-search-icon: "::before";
-$-search-focus-line: "::after";
 
 .sage-search {
   position: relative;
-  border-bottom: 1px solid sage-color(grey, 300);
+  background-color: sage-color(white);
 
   &#{$-search-icon} {
     @include sage-icon-base(search-small, xl);
@@ -21,31 +19,44 @@ $-search-focus-line: "::after";
     color: sage-color(charcoal, 100);
     transition: $sage-transition;
     transition-property: color;
-  }
 
-  &#{$-search-focus-line} {
-    content: "";
-    display: block;
-    position: absolute;
-    bottom: rem(-1px);
-    left: 50%;
-    right: 50%;
-    z-index: 3;
-    height: 0;
-    border-bottom: rem(2px) solid sage-color(primary);
-    transition: $sage-transition;
-    transition-property: left, right, opacity;
-  }
-
-  &:focus-within {
-    &#{$-search-icon} {
+    :focus-within > & {
       color: sage-color(primary);
     }
+  }
 
-    &#{$-search-focus-line} {
+  &:not(.sage-search--contained) {
+    border-bottom: 1px solid sage-color(grey, 300);
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: rem(-1px);
+      left: 50%;
+      right: 50%;
+      z-index: 3;
+      height: 0;
+      border-bottom: rem(2px) solid sage-color(primary);
+      transition: $sage-transition;
+      transition-property: left, right, opacity;
+    }
+
+    &:focus-within::after {
       left: 0;
       right: 0;
       opacity: 1;
+    }
+  }
+
+  &.sage-search--contained {
+    border: sage-border();
+    border-radius: sage-border(radius);
+    transition: $sage-inputfield-transition;
+
+    &:focus-within {
+      border-color: $sage-inputfield-color-success;
+      box-shadow: $sage-inputfield-box-shadow-size $sage-inputfield-color-success;
     }
   }
 }
@@ -56,7 +67,8 @@ $-search-focus-line: "::after";
   width: 100%;
   padding: rem(9px) sage-spacing(sm) rem(9px) sage-spacing(xl);
   border: 0;
-  
+  background: transparent;
+
   @extend %t-sage-body;
 
   @include placeholder {
@@ -67,4 +79,3 @@ $-search-focus-line: "::after";
     outline: 0;
   }
 }
-

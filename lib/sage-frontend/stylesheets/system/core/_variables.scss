@@ -89,6 +89,7 @@ $sage-inputfield-box-shadow-size: 0 0 0 rem(1px) !default;
 
 // Sizing
 $sage-inputfield-height: rem(40px) !default;
+$sage-inputfield-transition: border 0.2s ease-in-out, box-shadow 0.2s ease-in-out !default;
 $sage-inputfield-padding: sage-spacing(sm) !default;
 $sage-inputfield-label-offset: rem(12px) !default;
 $sage-inputfield-padding-offset: $sage-inputfield-padding - $sage-inputfield-border-width;
