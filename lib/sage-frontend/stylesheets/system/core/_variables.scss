@@ -62,36 +62,6 @@ $sage-form-element-spacing: sage-spacing(sm) !default;
 // BUTTONS
 // ==================================================
 
-// Base styles
-$sage-btn-transition: $sage-transition !default;
-$sage-btn-border-width: rem(2px) !default;
-$sage-btn-border-radius: sage-border(radius) !default;
-$sage-btn-letter-spacing: $sage-body-letter-spacing !default;
-$sage-btn-shadow-base: sage-shadow(sm) !default;
-$sage-btn-shadow-hover: sage-shadow(md) !default;
-
-// Focus outline
-$sage-btn-focus-outline-spacing: sage-spacing(3xs) !default;
-$sage-btn-focus-outline-width: 1 !default;
-$sage-btn-focus-outline-color: currentColor !default;
-
-// Primary button
-$sage-btn-primary-bg-color: sage-color(primary) !default;
-$sage-btn-primary-bg-active-color: darken($sage-btn-primary-bg-color, 11%) !default;
-$sage-btn-primary-bg-hover-color: lighten($sage-btn-primary-bg-color, 9%) !default;
-$sage-btn-primary-text-color: sage-color(white) !default;
-
-// Secondary button
-$sage-btn-secondary-text-color: sage-color(primary) !default;
-
-// Tertiary button
-$sage-btn-tertiary-text-color: sage-color(charcoal, 300) !default;
-
-// Danger button
-$sage-btn-danger-text-color: sage-color(red) !default;
-$sage-btn-danger-bg-active-color: sage-color(red, 200) !default;
-$sage-btn-danger-bg-hover-color: sage-color(red, 100) !default;
-
 // Menu button
 $sage-menubtn-toggle-size: rem(24px) !default;
 $sage-menubtn-toggle-line-color: sage-color(grey, 100) !default;

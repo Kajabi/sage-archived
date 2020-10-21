@@ -10,18 +10,18 @@
 }
 
 .sage-sortable__item {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: $sage-card-grid-gap;
   align-items: center;
-  gap: sage-spacing(2xs);
-  padding: sage-spacing(2xs);
+  padding: sage-spacing(xs) $sage-panel-padding;
   background: sage-color(white);
   border-bottom: sage-border(light);
   cursor: grab;
 
   &::before {
     @include sage-icon-base(handle);
-    padding: 0 sage-spacing(xs);
+    padding: 0;
     color: sage-color(grey, 500);
   }
 
@@ -35,7 +35,7 @@
   }
 
   &.sage-sortable__item--card {
-    padding: sage-spacing(xs);
+    padding: sage-spacing(xs) $sage-card-padding;
     border: sage-border();
     border-radius: sage-border(radius-large);
     transition: $sage-transition;
@@ -68,26 +68,17 @@
 }
 
 .sage-sortable__item-content {
-  display: flex;
   z-index: sage-z-index();
   overflow: hidden;
-  flex-direction: row;
-  align-items: baseline;
   margin-right: auto;
-
-  .sage-sortable__item--card & {
-    flex-direction: column;
-  }
 }
 
 .sage-sortable__item-title {
   @extend %t-sage-body-small;
   @include truncate();
-  margin-right: sage-spacing(xs);
 
   .sage-sortable__item--card & {
     @extend %t-sage-body;
-    margin-right: 0;
   }
 }
 

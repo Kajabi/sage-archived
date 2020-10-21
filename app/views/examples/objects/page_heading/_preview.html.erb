@@ -2,14 +2,14 @@
 
 <%= sage_component SagePageHeading, {
   title: "Page Title",
-  spacer: {bottom: :sm},
+  spacer: { bottom: :xl },
 } %>
 
 <h3 class="t-sage-heading-6">Page Heading with Back Link</h3>
 
 <%= sage_component SagePageHeading, {
   title: "Page Title",
-  spacer: {bottom: :sm},
+  spacer: { bottom: :xl },
 } do %>
     <% content_for :sage_breadcrumbs do %>
       <%= render "examples/elements/breadcrumbs/markup",
@@ -27,7 +27,7 @@
 
 <%= sage_component SagePageHeading, {
   title: "Page Title",
-  spacer: {bottom: :sm},
+  spacer: { bottom: :xl },
   help_link: {
     url: "#",
     label: "Help"
@@ -38,11 +38,20 @@
 
 <%= sage_component SagePageHeading, {
   title: "Page Title",
-  spacer: {bottom: :sm},
+  spacer: { bottom: :xl },
 } do %>
     <% content_for :sage_page_heading_actions do %>
-      <%= sage_component(SageButton,{style: "tertiary", icon:{name: "preview-on", style: "left"}, value: "Preview",}) %>
-      <%= sage_component(SageButton,{style: "primary", icon:{name: "add", style: "left"}, value: "Create",}) %>
+      <%= sage_component SageButton, {
+        style: "secondary",
+        raised: true,
+        icon: { name: "preview-on", style: "left" },
+        value: "Preview",
+      } %>
+      <%= sage_component SageButton, {
+        style: "primary",
+        icon: { name: "add", style: "left" },
+        value: "Create",
+      } %>
     <% end %>
 <% end %>
 
@@ -50,13 +59,28 @@
 
 <%= sage_component SagePageHeading, {
   title: "Page Title",
-  spacer: {bottom: :sm},
+  spacer: { bottom: :xl },
   secondary_text: "1 Email in Sequence",
 } do %>
     <% content_for :sage_page_heading_toolbar do %>
-      <%= sage_component(SageButton,{style: "tertiary", icon:{name: "preview-on", style: "left"}, value: "Preview",}) %>
-      <%= sage_component(SageButton,{style: "tertiary", icon:{name: "chart", style: "left"}, value: "Report",}) %>
-      <%= sage_component(SageButton,{style: "tertiary", icon:{name: "gear", style: "left"}, value: "Settings",}) %>
+      <%= sage_component SageButton, {
+        style: "secondary",
+        subtle: true,
+        icon: { name: "preview-on", style: "left" },
+        value: "Preview",
+      }%>
+      <%= sage_component SageButton, {
+        style: "secondary",
+        subtle: true,
+        icon: { name: "chart", style: "left" },
+        value: "Report",
+      }%>
+      <%= sage_component SageButton, {
+        style: "secondary",
+        subtle: true,
+        icon: { name: "gear", style: "left" },
+        value: "Settings",
+      }%>
     <% end %>
 <% end %>
 
@@ -65,7 +89,7 @@
 
 <%= sage_component SagePageHeading, {
   title: "Page Title",
-  spacer: {bottom: :sm},
+  spacer: { bottom: :xl },
 } do %>
     <% content_for :sage_page_heading_intro do %>
       <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo dolorum esse modi ut ipsa corporis.</p>
@@ -77,7 +101,7 @@
 
 <%= sage_component SagePageHeading, {
   title: "Page Title",
-  spacer: {bottom: :sm},
+  spacer: { bottom: :xl },
   help_link: {
     url: "#",
     label: "Help"
@@ -95,13 +119,37 @@
     %>
     <% end %>
     <% content_for :sage_page_heading_actions do %>
-      <%= sage_component(SageButton,{style: "tertiary", icon:{name: "preview-on", style: "left"}, value: "Preview",}) %>
-      <%= sage_component(SageButton,{style: "primary", icon:{name: "add", style: "left"}, value: "Create",}) %>
+      <%= sage_component SageButton, {
+        style: "secondary",
+        raised: true,
+        icon: { name: "preview-on", style: "left" },
+        value: "Preview",
+      } %>
+      <%= sage_component SageButton, {
+        style: "primary",
+        icon: { name: "add", style: "left" },
+        value: "Create",
+      } %>
     <% end %>
     <% content_for :sage_page_heading_toolbar do %>
-      <%= sage_component(SageButton,{style: "tertiary", icon:{name: "preview-on", style: "left"}, value: "Preview",}) %>
-      <%= sage_component(SageButton,{style: "tertiary", icon:{name: "chart", style: "left"}, value: "Report",}) %>
-      <%= sage_component(SageButton,{style: "tertiary", icon:{name: "gear", style: "left"}, value: "Settings",}) %>
+      <%= sage_component SageButton, {
+        style: "secondary",
+        subtle: true,
+        icon: { name: "preview-on", style: "left" },
+        value: "Preview",
+      }%>
+      <%= sage_component SageButton, {
+        style: "secondary",
+        subtle: true,
+        icon: { name: "chart", style: "left" },
+        value: "Report",
+      }%>
+      <%= sage_component SageButton, {
+        style: "secondary",
+        subtle: true,
+        icon: { name: "gear", style: "left" },
+        value: "Settings",
+      }%>
     <% end %>
     <% content_for :sage_page_heading_intro do %>
       <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo dolorum esse modi ut ipsa corporis.</p>

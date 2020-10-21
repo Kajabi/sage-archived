@@ -24,9 +24,9 @@ sample_copy = %(
     <%= sample_copy.html_safe %>
   <% end %>
   <%= sage_component SagePanelFooter, { align_spread: true} do %>
-    <%= sage_component SageButton, { value: "Other", style: "secondary" } %>
+    <%= sage_component SageButton, { value: "Other", subtle: true, style: "primary" } %>
     <div class="sage-btn-group">
-      <%= sage_component SageButton, { value: "Cancel", style: "tertiary" } %>
+      <%= sage_component SageButton, { value: "Cancel", style: "secondary" } %>
       <%= sage_component SageButton, { value: "Save", style: "primary" } %>
     </div>
   <% end %>
@@ -137,8 +137,8 @@ sample_copy = %(
   <% end %>
   <%= sage_component SageButton, {
     value: "Options",
-    style: "tertiary",
-    size: "small",
+    style: "secondary",
+    subtle: true,
     icon: {
       name: "dot-menu-horizontal",
       style: "only"

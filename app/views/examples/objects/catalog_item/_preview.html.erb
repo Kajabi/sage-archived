@@ -5,20 +5,23 @@
     href: "#"
   } do %>
     <%= sage_component SageButton, {
-      style: "tertiary",
-      size: "tiny",
+      style: "secondary",
+      subtle: true,
+      small: true,
       icon: { name: "comment", style: "left" },
       value: "5 Golden Eggs",
     } %>
     <%= sage_component SageButton, {
-      style: "tertiary",
-      size: "tiny",
+      style: "secondary",
+      subtle: true,
+      small: true,
       icon: { name: "users", style: "left" },
       value: "3 Geese A-Laying",
     } %>
     <%= sage_component SageButton, {
-      style: "tertiary",
-      size: "tiny",
+      style: "secondary",
+      subtle: true,
+      small: true,
       icon: { name: "coupon", style: "left" },
       value: "1 Partridge In A Pear Tree",
     } %>
@@ -59,10 +62,11 @@
         }]
       } do %>
         <%= sage_component SageButton, {
-          style: "tertiary",
+          style: "secondary",
           icon: { name: "dot-menu-horizontal", style: "only" },
           value: "Edit",
-          align: "end"
+          align: "end",
+          subtle: true,
         } %>
       <% end %>
     <% end %>
