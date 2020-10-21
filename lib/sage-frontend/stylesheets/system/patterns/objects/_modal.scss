@@ -40,17 +40,17 @@ $-modal-padding-y: sage-spacing(md);
   z-index: sage-z-index(modal);
   min-width: min-content;
   width: sage-container(modal);
-  margin: 0 0 sage-spacing();
+  margin: 0;
   border-radius: sage-border(radius);
   background-color: sage-color(white);
   box-shadow: sage-shadow(2xl);
 
   @media (min-width: sage-breakpoint(lg-min)) {
-    margin-top: 8vh;
+    margin-top: 6vh;
   }
 
   @media (min-width: sage-breakpoint(xl-min)) {
-    margin-top: 10vh;
+    margin-top: 8vh;
   }
 
   .sage-modal--active & {
