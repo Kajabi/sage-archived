@@ -175,6 +175,46 @@ $-btn-subtle-styles: (
     }
   }
 
+  .sage-panel-controls__toolbar > &,
+  .sage-panel-controls__toolbar-btn-group > &,
+  .sage-panel-controls__mini-pagination > & {
+    position: relative;
+    z-index: sage-z-index(default);
+    box-shadow: $sage-toolbar-btn-border;
+    border: 0;
+
+    @include sage-focus-outline--update-color(transparent);
+
+    &:hover {
+      z-index: sage-z-index(default, 1);
+      box-shadow: $sage-toolbar-btn-border-hover;
+    }
+
+    &:focus {
+      z-index: sage-z-index(default, 2);
+      box-shadow: $sage-toolbar-btn-border-focus;
+    }
+  }
+
+  .sage-panel-controls__toolbar-btn-group > & {
+    border-radius: 0;
+
+    &:first-child {
+      border-top-left-radius: sage-border(radius);
+      border-bottom-left-radius: sage-border(radius);
+    }
+
+    &:last-child {
+      border-top-right-radius: sage-border(radius);
+      border-bottom-right-radius: sage-border(radius);
+    }
+  }
+  
+  .sage-panel-controls__toolbar > &,
+  .sage-panel-controls__mini-pagination > & {
+    border-radius: sage-border(radius);
+  }
+
   // NOTE: Hope to use `gap` in the future instead
   // but Safari does not currently support it for flexbox
   @each $-key, $-value in $sage-spacings {

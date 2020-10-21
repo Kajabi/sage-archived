@@ -28,6 +28,47 @@ $-trigger-dropdown-offset: rem(16px) + sage-spacing(xs);
   &:not(.sage-dropdown--customized) {
     display: inline-flex;
   }
+
+  // Adds form field styling
+  &.sage-dropdown--contained,
+  .sage-panel-controls__toolbar > &,
+  .sage-panel-controls__toolbar-btn-group > & {
+    position: relative;
+    z-index: sage-z-index(default);
+    box-shadow: $sage-toolbar-btn-border;
+    border: 0;
+
+    @include sage-focus-outline--update-color(transparent);
+
+    &:hover {
+      z-index: sage-z-index(default, 1);
+      box-shadow: $sage-toolbar-btn-border-hover;
+    }
+
+    &:focus {
+      z-index: sage-z-index(default, 2);
+      box-shadow: $sage-toolbar-btn-border-focus;
+    }
+  }
+   
+  .sage-panel-controls__toolbar-btn-group > & {
+    border-radius: 0;
+
+    &:first-child {
+      border-top-left-radius: sage-border(radius);
+      border-bottom-left-radius: sage-border(radius);
+    }
+
+    &:last-child {
+      border-top-right-radius: sage-border(radius);
+      border-bottom-right-radius: sage-border(radius);
+    }
+  }
+
+  &.sage-dropdown--contained,
+  .sage-panel-controls__toolbar > & {
+    border-radius: sage-border(radius);
+  }
 }
 
 .sage-dropdown--disabled {
@@ -257,12 +298,6 @@ $-trigger-dropdown-offset: rem(16px) + sage-spacing(xs);
 .sage-dropdown__trigger-selected-value {
   justify-content: space-between;
   width: 100%;
-
-  // Adds form field styling
-  .sage-dropdown__trigger--select &,
-  .sage-dropdown__trigger--select-labeled & {
-    border: $sage-inputfield-border-width solid $sage-inputfield-border-color;
-  }
 }
 
 .sage-dropdown__trigger-label {

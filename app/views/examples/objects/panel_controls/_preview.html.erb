@@ -1,4 +1,5 @@
-<% tabs = sage_component(SageTabs, {
+<%
+tabs = sage_component(SageTabs, {
   items: [
     {
       text: "Test 1",
@@ -37,13 +38,36 @@ dropdown = sage_component(SageDropdown, {
     value: "Disabled",
     modifiers: ["disabled"]
   }],
-  content: sage_component(SageButton, {
-    style: "secondary",
-    value: "",
-    css_classes: "sage-dropdown__trigger-selected-value",
-    icon: { style: "right", name: "caret-down" }
-  })
+  content: %(
+    #{sage_component(SageButton, {
+      style: "secondary",
+      value: "",
+      css_classes: "sage-dropdown__trigger-selected-value",
+      icon: { style: "right", name: "caret-down" }
+    })}
+  <label class="sage-dropdown__trigger-label">Select an option...</label>
+  ).html_safe
 })
+
+mini_pagination = %(
+  <div class="sage-panel-controls__mini-pagination">
+    #{
+      sage_component(SageButton, {
+        value: "Previous page",
+        style: "secondary",
+        icon: { name: "arrow-left", style: "only" }
+      })
+    }
+    #{
+      sage_component(SageButton, {
+        value: "Next page",
+        style: "secondary",
+        icon: { name: "arrow-right", style: "only" }
+      })
+    }
+  </div>
+).html_safe
+
 %>
 <h4>Tabs + Search</h4>
 <div class="sage-panel-controls">
@@ -74,5 +98,13 @@ dropdown = sage_component(SageDropdown, {
       } %>
     </div>
     <%= dropdown %>
+  </div>
+  <div class="sage-panel-controls__toolbar">
+    <div class="sage-panel-controls__bulk-actions">
+      <p>Testing</p>
+    </div>
+    <div class="sage-panel-controls__toolbar">
+      <%= mini_pagination %>
+    </div>
   </div>
 </div>
