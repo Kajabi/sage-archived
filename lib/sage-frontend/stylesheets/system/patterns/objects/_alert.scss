@@ -7,7 +7,7 @@
 $-alert-colors: (
   info: primary,
   success: sage,
-  warning: orange,
+  warning: yellow,
   danger: red,
 );
 
@@ -65,6 +65,9 @@ $-alert-colors: (
     .sage-alert--#{$name} & {
       color: sage-color($color, 300);
     }
+  }
+  .sage-alert--warning & {
+    color: sage-color(orange, 300);
   }
 }
 
