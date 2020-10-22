@@ -26,8 +26,9 @@ $-image-height-mobile: rem(120px);
     border-bottom: sage-border();
   }
 
-  &.sage-catalog-item--disabled {
+  &.sage-catalog-item--loading {
     background-color: sage-color(grey, 100);
+    cursor: wait;
   }
 
   @media (min-width: sage-breakpoint(md-min)) {

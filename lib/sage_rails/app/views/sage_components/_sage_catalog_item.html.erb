@@ -1,8 +1,8 @@
-<% disabled = !component.href %>
-<% link_tag = disabled ? "div" : "a" %>
+<% is_loading = !component.href %>
+<% link_tag = is_loading ? "div" : "a" %>
 <li class="
   sage-catalog-item
-  <%= "sage-catalog-item--disabled" if disabled %>
+  <%= "sage-catalog-item--loading" if is_loading %>
 ">
   <strong class="sage-catalog-item__title">
     <<%= link_tag %> class="t-sage-heading-6" href="<%= component.href %>">
