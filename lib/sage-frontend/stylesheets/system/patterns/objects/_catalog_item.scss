@@ -14,9 +14,21 @@ $-image-height-mobile: rem(120px);
   grid-column-gap: sage-spacing(md);
   grid-row-gap: sage-spacing(xs);
   padding: sage-spacing(sm) sage-spacing();
+  margin-bottom: rem(-1px);
+  border-top: sage-border(light);
+  border-bottom: sage-border(light);
 
-  &:not(:last-child) {
-    border-bottom: sage-border(light);
+  &:first-child {
+    border-top: sage-border();
+  }
+
+  &:last-child {
+    border-bottom: sage-border();
+  }
+
+  &.sage-catalog-item--loading {
+    background-color: sage-color(grey, 100);
+    cursor: wait;
   }
 
   @media (min-width: sage-breakpoint(md-min)) {
