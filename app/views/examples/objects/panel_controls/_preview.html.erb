@@ -23,21 +23,17 @@ dropdown = sage_component(SageDropdown, {
   search: true,
   trigger_type: "select",
   align: "right",
-  items: [{
-    value: "-- None --"
-  }, {
-    value: "Option 1",
-   }, {
-    value: "Option 2",
-   }, {
-    value: "Option 3",
-  }, {
-    value: "Muted",
-    style: "muted"
-  }, {
-    value: "Disabled",
-    modifiers: ["disabled"]
-  }],
+  items: [
+    {
+      value: "-- None --"
+    }, {
+      value: "Option 1",
+    }, {
+      value: "Option 2",
+    }, {
+      value: "Option 3",
+    }
+  ],
   content: %(
     #{sage_component(SageButton, {
       style: "secondary",
@@ -49,62 +45,64 @@ dropdown = sage_component(SageDropdown, {
   ).html_safe
 })
 
-mini_pagination = %(
-  <div class="sage-panel-controls__mini-pagination">
+search_filter_toolbar = %(
+  <div class="sage-panel-controls__toolbar-btn-group">
+    #{search}
     #{
       sage_component(SageButton, {
-        value: "Previous page",
+        value: "Saved filters",
         style: "secondary",
-        icon: { name: "arrow-left", style: "only" }
+        icon: { name: "favorite", style: "left" }
       })
     }
     #{
       sage_component(SageButton, {
-        value: "Next page",
+        value: "Filters",
         style: "secondary",
-        icon: { name: "arrow-right", style: "only" }
+        icon: { name: "filters", style: "left" }
+      })
+    }
+    #{
+      sage_component(SageButton, {
+        value: "Clear filters",
+        style: "secondary",
+        icon: { name: "remove", style: "left" }
       })
     }
   </div>
 ).html_safe
-
 %>
+
 <h4>Tabs + Search</h4>
-<div class="sage-panel-controls">
-  <%= tabs %>
-  <%= search %>
-</div>
+<%= sage_component SagePanelControls, {} do %>
+  <% content_for :sage_panel_controls_tabs do %>
+    <%= tabs %>
+  <% end %>
+  <% content_for :sage_panel_controls_toolbar do %>
+    <%= search %>
+  <% end %>
+<% end %>
 
 <h4>Tabs + Search in Toolbar</h4>
-<div class="sage-panel-controls">
-  <%= tabs %>
-  <div class="sage-panel-controls__toolbar">
-    <div class="sage-panel-controls__toolbar-btn-group">
-      <%= search %>
-      <%= sage_component SageButton, {
-        value: "Saved filters",
-        style: "secondary",
-        icon: { name: "favortie", style: "left" }
-      } %>
-      <%= sage_component SageButton, {
-        value: "Filters",
-        style: "secondary",
-        icon: { name: "filters", style: "left" }
-      } %>
-      <%= sage_component SageButton, {
-        value: "Clear filters",
-        style: "secondary",
-        icon: { name: "remove", style: "left" }
-      } %>
-    </div>
+<%= sage_component SagePanelControls, {} do %>
+  <% content_for :sage_panel_controls_tabs do %>
+    <%= tabs %>
+  <% end %>
+  <% content_for :sage_panel_controls_toolbar do %>
+    <%= search_filter_toolbar %>
     <%= dropdown %>
-  </div>
-  <div class="sage-panel-controls__toolbar">
-    <div class="sage-panel-controls__bulk-actions">
-      <p>Testing</p>
-    </div>
-    <div class="sage-panel-controls__toolbar">
-      <%= mini_pagination %>
-    </div>
-  </div>
-</div>
+  <% end %>
+<% end %>
+
+<h4>Tabs + Search with Bulk actions</h4>
+<%= sage_component SagePanelControls, {
+  show_bulk_actions: true,
+} do %>
+  <% content_for :sage_panel_controls_tabs do %>
+    <%= tabs %>
+  <% end %>
+  <% content_for :sage_panel_controls_toolbar do %>
+    <%= search_filter_toolbar %>
+    <%= dropdown %>
+  <% end %>
+<% end %>

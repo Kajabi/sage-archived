@@ -4,5 +4,6 @@ class SageCheckbox < SageComponent
   attr_accessor :label_text
   attr_accessor :checked
   attr_accessor :disabled
+  attr_accessor :partial_selection
 end
   

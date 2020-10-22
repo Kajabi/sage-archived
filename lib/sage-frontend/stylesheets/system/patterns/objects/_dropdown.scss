@@ -31,6 +31,7 @@ $-trigger-dropdown-offset: rem(16px) + sage-spacing(xs);
 
   // Adds form field styling
   &.sage-dropdown--contained,
+  .sage-panel-controls__bulk-actions > &,
   .sage-panel-controls__toolbar > &,
   .sage-panel-controls__toolbar-btn-group > & {
     position: relative;
@@ -45,12 +46,13 @@ $-trigger-dropdown-offset: rem(16px) + sage-spacing(xs);
       box-shadow: $sage-toolbar-btn-border-hover;
     }
 
-    &:focus {
+    &:focus-within {
       z-index: sage-z-index(default, 2);
       box-shadow: $sage-toolbar-btn-border-focus;
     }
   }
-   
+  
+  .sage-panel-controls__bulk-actions > &,
   .sage-panel-controls__toolbar-btn-group > & {
     border-radius: 0;
 
@@ -74,6 +76,14 @@ $-trigger-dropdown-offset: rem(16px) + sage-spacing(xs);
 .sage-dropdown--disabled {
   pointer-events: none;
   cursor: not-allowed;
+}
+
+.sage-dropdown--actions {
+  width: rem(128px);
+}
+
+.sage-dropdown--sort {
+  width: rem(100px);
 }
 
 .sage-dropdown__item {
@@ -282,6 +292,7 @@ $-trigger-dropdown-offset: rem(16px) + sage-spacing(xs);
 
 .sage-dropdown__trigger {
   width: 100%;
+  border-radius: inherit;
 
   &.sage-dropdown__trigger--options {
     min-width: auto;

@@ -4,20 +4,36 @@
   grid-template-rows: min-content;
 }
 
-.sage-panel-controls__toolbar {
-  @include sage-grid-panel-row();
+.sage-panel-controls__toolbar,
+.sage-panel-controls__default-controls {
+  display: flex;
+  align-items: center;
 }
 
 .sage-panel-controls__toolbar-btn-group {
   display: flex;
   align-items: center;
+  flex: 1;
+
+  &:not(:last-child) {
+    margin-right: $sage-panel-grid-gap;
+  }
 }
 
 .sage-panel-controls__mini-pagination {
   display: flex;
   align-items: center;
 
-  *:first-child {
-    margin-right: $sage-card-grid-gap;
+  &:not(:last-child) {
+    margin-right: $sage-panel-grid-gap;
+  }
+}
+
+.sage-panel-controls__bulk-actions {
+  display: flex;
+  align-items: center;
+
+  &:not(:last-child) {
+    margin-right: $sage-panel-grid-gap;
   }
 }

@@ -131,6 +131,14 @@ $-btn-subtle-styles: (
     }
   }
 
+  .sage-dropdown--contained &,
+  .sage-panel-controls__toolbar .sage-dropdown__trigger &,
+  .sage-panel-controls__bulk-actions .sage-dropdown__trigger & {
+    @include sage-focus-outline--update-color(transparent);
+
+    border-radius: inherit;
+  }
+
   .sage-dropdown__item > & {
     width: 100%;
     padding-top: rem(9px);
@@ -175,6 +183,7 @@ $-btn-subtle-styles: (
     }
   }
 
+  .sage-panel-controls__bulk-actions > &,
   .sage-panel-controls__toolbar > &,
   .sage-panel-controls__toolbar-btn-group > &,
   .sage-panel-controls__mini-pagination > & {
@@ -213,6 +222,10 @@ $-btn-subtle-styles: (
   .sage-panel-controls__toolbar > &,
   .sage-panel-controls__mini-pagination > & {
     border-radius: sage-border(radius);
+
+    &:not(:last-child) {
+      margin-right: $sage-panel-grid-gap;
+    }
   }
 
   // NOTE: Hope to use `gap` in the future instead

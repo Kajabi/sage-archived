@@ -3,6 +3,8 @@
     sage-dropdown
     <%= "sage-dropdown--anchor-right" if component.align == "right" %>
     <%= "sage-dropdown--contained" if component.contained %>
+    <%= "sage-dropdown--customized" if component.customized %>
+    <%= "sage-dropdown--#{component.custom_modifier}" if component.custom_modifier.present? %>
   "
   data-js-dropdown="<%= component.id %>"
 >

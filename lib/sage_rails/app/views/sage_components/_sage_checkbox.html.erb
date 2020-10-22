@@ -1,4 +1,9 @@
-<div class="sage-checkbox<%= component.has_error ? " sage-checkbox--error" : "" %>">
+<div class="
+    sage-checkbox
+    <%= "sage-checkbox--partial-selection" if component.partial_selection %>
+    <%= component.has_error ? "sage-checkbox--error" : "" %>
+  "
+>
   <input 
     id="<%= component.id %>" 
     type="checkbox" 
