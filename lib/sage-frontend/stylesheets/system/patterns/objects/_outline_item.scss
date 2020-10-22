@@ -24,6 +24,8 @@ $-collapse-breakpoint-key: md-max;
   grid-column-gap: sage-spacing(sm);
   background: sage-color(white);
   will-change: background, box-shadow;
+  padding: 0 sage-spacing();
+  height: 64px;
 
   // NOTE: Height is governed by a parent React node to allow us
   //       to dynamically adjust the height of elements depending
@@ -35,13 +37,13 @@ $-collapse-breakpoint-key: md-max;
   //       regular Outline Items
   //
   // stylelint-disable order/properties-order
-  height: 100%;
+  // height: 100%;
   max-height: rem(80px);
   // stylelint-enable order/properties-order
 
   @media (min-width: sage-breakpoint($-collapse-breakpoint-key)) {
     // Using static column values to ensure alignment
-    grid-template-columns: min-content 1fr max-content rem(160px) rem(92px) rem(40px);
+    grid-template-columns: min-content 1fr max-content rem(160px) rem(138px) rem(40px);
     grid-template-areas: "handle-drag title actions-secondary actions-primary status handle-collapse";
   }
 
@@ -126,28 +128,26 @@ $-collapse-breakpoint-key: md-max;
   }
 
   &.sage-outline-item--depth-0 {
-    padding: sage-spacing();
+    &.sage-outline-item--category {
+      // margin-top: 300px;
+    }
   }
 
   &.sage-outline-item--depth-1 {
     &:not(.sage-outline-item--category) {
-      padding: sage-spacing(sm) sage-spacing();
+      // no-op
     }
     &.sage-outline-item--category {
       margin-left: sage-spacing(lg);
-      padding: sage-spacing();
     }
   }
 
   &.sage-outline-item--depth-2 {
-
     &:not(.sage-outline-item--category) {
       margin-left: sage-spacing(lg);
-      padding: sage-spacing(sm) sage-spacing();
     }
     &.sage-outline-item--category {
       margin-left: sage-spacing(xl);
-      padding: sage-spacing();
     }
   }
 }
