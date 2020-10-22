@@ -249,7 +249,8 @@
 @mixin sage-focus-outline($outline-width: 2px, $outline-offset-block: 4px, $outline-offset-inline: 4px) {
   position: relative;
 
-  &:focus {
+  &:focus,
+  &:focus-within {
     outline: none;
   }
 
@@ -272,6 +273,7 @@
   }
 
   &:focus:not(:disabled):not([aria-disabled="true"]),
+  &:focus-within:not(:disabled):not([aria-disabled="true"]),
   &:active:not(:disabled):not([aria-disabled="true"]) {
     &::after {
       transform: translate3d(-50%, -50%, 0) scale(1);

@@ -10,16 +10,32 @@ $-label-border-radius: sage-border(radius) !default;
 $-label-inset-border: 0 0 0 1px inset;
 
 .sage-label {
-  @extend %t-sage-body-small-semi;
-
   display: inline-flex;
   align-items: center;
+  position: relative;
+}
+
+.sage-label__value {
+  @extend %t-sage-body-small-semi;
+
   appearance: none;
   padding: $-label-padding;
-  text-align: center;
   white-space: nowrap;
   border-radius: $-label-border-radius;
   border: unset;
+  outline: none;
+
+  &:hover,
+  &:focus,
+  &:active {
+    outline: none;
+  }
+}
+
+.sage-label__button-wrapper {
+  position: absolute;
+  right: sage-spacing(xs);
+  margin: auto 0;
 }
 
 .sage-label--truncate {
@@ -28,41 +44,45 @@ $-label-inset-border: 0 0 0 1px inset;
 }
 
 @each $-color-name, $-color-settings in $sage-color-combos {
-  .sage-label--#{$-color-name} {
+  $-color-modifier: ".sage-label--#{$-color-name}";
+
+  #{$-color-modifier} .sage-label__value {
     color: sage-color-combo($-color-name, default, foreground);
     background-color: sage-color-combo($-color-name, default, background);
+  }
 
-    &.sage-label--subtle {
-      color: sage-color-combo($-color-name, subtle, foreground);
-      background-color: sage-color(white);
-      // Box shadow instead of border so that size and inner spacing is not affected
-      box-shadow: $-label-inset-border sage-color-combo($-color-name, subtle, background);
-    }
+  #{$-color-modifier}.sage-label--subtle .sage-label__value {
+    color: sage-color-combo($-color-name, subtle, foreground);
+    background-color: sage-color(white);
+    // Box shadow instead of border so that size and inner spacing is not affected
+    box-shadow: $-label-inset-border sage-color-combo($-color-name, subtle, background);
+  }
 
-    &.sage-label--bold {
-      color: sage-color-combo($-color-name, bold, foreground);
-      background-color: sage-color-combo($-color-name, bold, background);
-    }
+  #{$-color-modifier}.sage-label--bold .sage-label__value {
+    color: sage-color-combo($-color-name, bold, foreground);
+    background-color: sage-color-combo($-color-name, bold, background);
+  }
 
-    &.sage-label--interactive {
-      cursor: pointer;
+  #{$-color-modifier}.sage-label--interactive {
+    @include sage-focus-outline();
+    @include sage-focus-outline--update-color( sage-color-combo($-color-name, subtle, background) );
 
-      @include sage-focus-outline();
-      @include sage-focus-outline--update-color( sage-color-combo($-color-name, subtle, background) );
+    .sage-label__value {
+      padding-right: rem(36px);
 
       &:hover:not(:focus):not(:active):not(:disabled):not(.disabled) {
         background-color: darken(sage-color-combo($-color-name, default, background), 5%);
       }
     }
-
-    .sage-btn & {
-      &:focus,
-      &:active {
-        background-color: inherit;
-        box-shadow: $-label-inset-border transparent;
-      }
-    }
   }
+
+  // .sage-btn & {
+  //   &:focus,
+  //   &:active {
+  //     background-color: inherit;
+  //     box-shadow: $-label-inset-border transparent;
+  //   }
+  // }
 
   // NOTE: Icon generation consolidated in `core/_icons.scss`
 }

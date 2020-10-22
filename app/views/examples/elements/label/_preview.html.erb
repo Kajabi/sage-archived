@@ -45,15 +45,15 @@ colors = [
 
 <h3 class="t-sage-heading-6">With Icons</h3>
 <%= sage_component SagePanelBlock, {} do %>
-  <%= sage_component SageLabel, {
+  <%= sage_component SageLabel, { 
     color: "draft",
     value: "Add",
-    icon: { style: "left", name: "add-small" }
+    icon: "add-small"
   } %>
   <%= sage_component SageLabel, {
     color: "draft",
     value: "Tag",
-    icon: { style: "right", name: "tag" }
+    icon: "tag"
   } %>
 <% end %>
 
@@ -64,7 +64,15 @@ colors = [
       color: color,
       interactive: true,
       value: color.capitalize,
-      icon: { style: "right", name: "caret-down" }
-    } %>
+      icon: "caret-down"
+    } do %>
+      <%= sage_component SageButton, {
+        value: "Close",
+        subtle: true,
+        small: true,
+        style: "secondary",
+        icon: { style: "only", name: "trash" }
+      } %>
+    <% end %>
   <% end %>
 <% end %>
