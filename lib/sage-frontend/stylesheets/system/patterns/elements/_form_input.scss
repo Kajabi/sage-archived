@@ -24,6 +24,8 @@
   }
 }
 
+
+
 .sage-input__affix {
   position: absolute;
   top: sage-spacing(xs);
@@ -141,6 +143,12 @@
     cursor: not-allowed;
     @include placeholder {
       color: sage-color(grey, 400);
+    }
+  }
+
+  .sage-input--showplaceholder & {
+    ~ .sage-input__label {
+      @include floating-label-active();
     }
   }
 }
