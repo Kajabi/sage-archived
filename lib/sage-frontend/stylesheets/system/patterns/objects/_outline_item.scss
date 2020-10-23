@@ -24,8 +24,9 @@ $-collapse-breakpoint-key: md-max;
   grid-column-gap: sage-spacing(sm);
   background: sage-color(white);
   will-change: background, box-shadow;
-  padding: 0 sage-spacing();
-  height: 64px;
+  padding: 0 sage-spacing(sm);
+  border-left: sage-border();
+  border-right: sage-border();
 
   // NOTE: Height is governed by a parent React node to allow us
   //       to dynamically adjust the height of elements depending
@@ -37,13 +38,12 @@ $-collapse-breakpoint-key: md-max;
   //       regular Outline Items
   //
   // stylelint-disable order/properties-order
-  // height: 100%;
-  max-height: rem(80px);
+  height: 100%;
   // stylelint-enable order/properties-order
 
   @media (min-width: sage-breakpoint($-collapse-breakpoint-key)) {
     // Using static column values to ensure alignment
-    grid-template-columns: min-content 1fr max-content rem(160px) rem(138px) rem(40px);
+    grid-template-columns: min-content 1fr max-content rem(140px) rem(140px) rem(24px);
     grid-template-areas: "handle-drag title actions-secondary actions-primary status handle-collapse";
   }
 
@@ -60,7 +60,41 @@ $-collapse-breakpoint-key: md-max;
   }
 
   &.sage-outline-item--category {
+    border-top: sage-border();
     border-bottom: sage-border();
+  }
+
+  &.sage-outline-item--last-child {
+    border-bottom: sage-border();
+  }
+
+  &.sage-outline-item--depth-0 {
+    &:not(.sage-outline-item--category) {
+      // no-op
+    }
+    &.sage-outline-item--category {
+      margin-top: sage-spacing(sm);
+      border-top-left-radius: sage-border(radius);
+      border-top-right-radius: sage-border(radius);
+    }
+  }
+
+  &.sage-outline-item--depth-1 {
+    &:not(.sage-outline-item--category) {
+      // no-op
+    }
+    &.sage-outline-item--category {
+      padding-left: sage-spacing(xl);
+    }
+  }
+
+  &.sage-outline-item--depth-2 {
+    &:not(.sage-outline-item--category) {
+      padding-left: sage-spacing(xl);
+    }
+    &.sage-outline-item--category {
+      padding-left: sage-spacing(2xl);
+    }
   }
 
   &.sage-outline-item--is-dragging {
@@ -77,6 +111,10 @@ $-collapse-breakpoint-key: md-max;
     .sage-outline-item__actions-secondary,
     .sage-outline-item__handle-collapse {
       visibility: hidden;
+    }
+
+    > * {
+      opacity: 0.5;
     }
   }
 
@@ -97,13 +135,13 @@ $-collapse-breakpoint-key: md-max;
 
   &.sage-outline-item--is-droptarget {
     border-radius: sage-border(radius-large);
-    box-shadow: inset 0 0 0 1px sage-color(white), inset 0 0 0 2px sage-color(primary), inset 0 0 0 5px sage-color(white);
+    box-shadow: inset 0 0 0 3px sage-color(white), inset 0 0 0 4px sage-color(primary), inset 0 0 0 5px sage-color(white);
     background: repeating-linear-gradient(
       45deg,
-      sage-color(grey, 300) 0,
-      sage-color(grey, 300) 12px,
-      sage-color(white) 12px,
-      sage-color(white) 24px
+      sage-color(primary, 100) 0,
+      sage-color(primary, 100) 24px,
+      sage-color(white) 24px,
+      sage-color(white) 48px
     );
 
     > * {
@@ -113,41 +151,17 @@ $-collapse-breakpoint-key: md-max;
 
   &.sage-outline-item--is-droptarget-invalid {
     border-radius: sage-border(radius-large);
-    box-shadow: inset 0 0 0 1px sage-color(white), inset 0 0 0 2px sage-color(red, 200), inset 0 0 0 5px sage-color(white);
+    box-shadow: inset 0 0 0 3px sage-color(white), inset 0 0 0 4px sage-color(red, 200), inset 0 0 0 5px sage-color(white);
     background: repeating-linear-gradient(
       45deg,
-      sage-color(red, 200) 0,
-      sage-color(red, 200) 12px,
-      sage-color(white) 12px,
-      sage-color(white) 24px
+      sage-color(red, 100) 0,
+      sage-color(red, 100) 24px,
+      sage-color(white) 24px,
+      sage-color(white) 48px
     );
 
     > * {
       visibility: hidden;
-    }
-  }
-
-  &.sage-outline-item--depth-0 {
-    &.sage-outline-item--category {
-      // margin-top: 300px;
-    }
-  }
-
-  &.sage-outline-item--depth-1 {
-    &:not(.sage-outline-item--category) {
-      // no-op
-    }
-    &.sage-outline-item--category {
-      margin-left: sage-spacing(lg);
-    }
-  }
-
-  &.sage-outline-item--depth-2 {
-    &:not(.sage-outline-item--category) {
-      margin-left: sage-spacing(lg);
-    }
-    &.sage-outline-item--category {
-      margin-left: sage-spacing(xl);
     }
   }
 }
