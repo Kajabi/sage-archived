@@ -26,6 +26,10 @@ is_responsive = component.responsive.present? ? component.responsive : true
         <tr>
           <% component.headers.each do | header | %>
             <th
+              class="
+                sage-table__header
+                <%= "sage-table__header--#{header[:data_type]}" if header&.is_a?(Hash) && header[:data_type].present? %>
+              "
               <% header[:html_attributes].each do | key, value | %>
                 <%= "#{key}=#{value}" %>
               <% end if header&.is_a?(Hash) && header[:html_attributes].present? %>

@@ -344,3 +344,15 @@ $-table-sort-indicator-direction: rem(7px);
     margin-left: 0.5em;
   }
 }
+
+.sage-table__header--avatar,
+.sage-table__cell--avatar {
+  box-sizing: content-box;
+  width: 20px;
+}
+
+.sage-table__header--checkbox,
+.sage-table__cell--checkbox {
+  box-sizing: content-box;
+  width: 20px;
+}

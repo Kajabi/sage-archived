@@ -82,6 +82,10 @@ $-checkbox-focus-outline-color: sage-color(primary) !default;
 
 .sage-checkbox--standalone {
   display: inline-block;
+
+  .sage-table td > & {
+    display: block;
+  }
 }
 
 .sage-checkbox__label {
