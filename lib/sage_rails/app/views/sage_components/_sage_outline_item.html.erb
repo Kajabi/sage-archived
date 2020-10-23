@@ -1,4 +1,6 @@
-<section class="
+<section
+  style="height: 64px;" <%# This height is handled dynamically in React by a containing element %>
+  class="
     sage-outline-item
     <%= "sage-outline-item--category" if component.category %>
     <%= "sage-outline-item--depth-#{component.depth}" if component.depth %>
@@ -12,7 +14,12 @@
     title="Click to drag"
   ></div>
   <h1 class="sage-outline-item__title">
-    <%= component.title %>
+    <%= sage_component SageButton, {
+      value: component.title,
+      style: "secondary",
+      subtle: true,
+      small: !component.category
+    } %>
   </h1>
   <% if component.actions_primary %>
     <div class="sage-outline-item__actions-primary">

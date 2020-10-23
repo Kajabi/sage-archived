@@ -21,10 +21,10 @@ $-collapse-breakpoint-key: md-max;
   display: grid;
   align-items: stretch;
   grid-template-rows: repeat(auto-fit, auto);
-  grid-column-gap: sage-spacing(sm);
+  grid-column-gap: sage-spacing(xs);
+  padding: 0 sage-spacing(sm);
   background: sage-color(white);
   will-change: background, box-shadow;
-  padding: 0 sage-spacing(sm);
   border-left: sage-border();
   border-right: sage-border();
 
@@ -37,9 +37,8 @@ $-collapse-breakpoint-key: md-max;
   //       small datasets, Categories have a larger height than
   //       regular Outline Items
   //
-  // stylelint-disable order/properties-order
+  // stylelint-disable-next-line order/properties-order
   height: 100%;
-  // stylelint-enable order/properties-order
 
   @media (min-width: sage-breakpoint($-collapse-breakpoint-key)) {
     // Using static column values to ensure alignment
@@ -55,11 +54,9 @@ $-collapse-breakpoint-key: md-max;
       ". actions-primary . handle-collapse";
   }
 
-// ------------------------------------------------------------------
-
-  // ------------------ TOP LEVEL CATEGORY
+  // ------------------ ( /Category )
   &.sage-outline-item--depth-0.sage-outline-item--category {
-    margin-top: sage-spacing(sm);
+    margin-top: sage-spacing(xs);
     border-top-right-radius: sage-border(radius);
     border-top-left-radius: sage-border(radius);
     border-top: sage-border();
@@ -71,7 +68,7 @@ $-collapse-breakpoint-key: md-max;
     }
   }
 
-  // ------------------ TOP LEVEL POST
+  // ------------------ ( /Category/Post )
   &.sage-outline-item--depth-1:not(.sage-outline-item--category) {
     border-bottom: sage-border(light);
 
@@ -82,12 +79,12 @@ $-collapse-breakpoint-key: md-max;
     }
   }
 
-  // ------------------ 2ND LEVEL CATEGORY
+  // ------------------ ( /Category/Category )
   &.sage-outline-item--depth-1.sage-outline-item--category {
     padding-left: sage-spacing(lg);
+    margin-top: rem(-1px);
     border-top: sage-border();
     border-bottom: sage-border();
-    margin-top: rem(-1px);
 
     &.sage-outline-item--last-child:not(.sage-outline-item--expanded) {
       border-bottom-right-radius: sage-border(radius);
@@ -95,7 +92,7 @@ $-collapse-breakpoint-key: md-max;
     }
   }
 
-  // ------------------ 2ND LEVEL POST
+  // ------------------ ( /Category/Category/Post )
   &.sage-outline-item--depth-2:not(.sage-outline-item--category) {
     padding-left: sage-spacing(xl);
     border-bottom: sage-border(light);
@@ -105,12 +102,14 @@ $-collapse-breakpoint-key: md-max;
     }
   }
 
-  // ------------------------------------------------------------------
-
   &.sage-outline-item--is-dragging,
   &.sage-outline-item--is-dragging-descendant {
     margin: 0;
+
+    // stylelint-disable-next-line declaration-no-important
     border: 1px solid sage-color(grey) !important;
+
+    // stylelint-disable-next-line declaration-no-important
     border-radius: unset !important;
 
     // NOTE: Forces hardware acceleration, this resolves issue with HTML5 Drag & Drop
@@ -126,7 +125,7 @@ $-collapse-breakpoint-key: md-max;
     }
 
     > * {
-      opacity: 0.75;
+      opacity: 0.5;
     }
   }
 
@@ -135,23 +134,18 @@ $-collapse-breakpoint-key: md-max;
   }
 
   &.sage-outline-item--is-droptarget-invalid {
-    box-shadow: 0 -4px 0 0 sage-color(red, 300), inset 0 0 0 2px sage-color(red, 300);
+    box-shadow: 0 -4px 0 0 sage-color(red, 300);
   }
 }
 
 .sage-outline-item__title {
-  grid-area: title;
-  color: sage-color(charcoal, 400);
-  align-items: center;
   display: flex;
-  @include truncate;
+  grid-area: title;
+  align-items: center;
+  min-width: 0;
 
-  .sage-outline-item--category & {
-    @extend %t-sage-body-semi;
-  }
-
-  :not(.sage-outline-item--category) & {
-    @extend %t-sage-body;
+  > * {
+    max-width: 100%;
   }
 }
 
@@ -160,6 +154,10 @@ $-collapse-breakpoint-key: md-max;
   grid-area: actions-secondary;
   flex-direction: row;
   align-items: center;
+
+  > * {
+    margin-right: sage-spacing();
+  }
 
   @media (min-width: sage-breakpoint($-collapse-breakpoint-key)) {
     display: none;
@@ -175,9 +173,9 @@ $-collapse-breakpoint-key: md-max;
 }
 
 .sage-outline-item__actions-primary {
+  display: flex;
   grid-area: actions-primary;
   align-items: center;
-  display: flex;
 }
 
 .sage-outline-item__status {
@@ -189,9 +187,9 @@ $-collapse-breakpoint-key: md-max;
 }
 
 .sage-outline-item__handle-drag {
+  display: flex;
   grid-area: handle-drag;
   align-items: center;
-  display: flex;
   cursor: grab;
 
   &:active {
@@ -223,6 +221,7 @@ $-collapse-breakpoint-key: md-max;
   display: flex;
   grid-area: handle-collapse;
   justify-content: flex-end;
+  align-items: center;
 }
 
 .sage-outline-item__children {
