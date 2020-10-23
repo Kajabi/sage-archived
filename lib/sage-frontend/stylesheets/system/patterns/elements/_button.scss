@@ -105,6 +105,7 @@ $-btn-subtle-styles: (
   position: relative;
   min-height: ($-padding-block * 2 + sage-line-height(md));
   padding: $-padding-block sage-spacing(sm);
+  text-align: left; // Prevents text alignment issue when inner text is truncated
   border: 0;
   border-radius: $-btn-border-radius;
   transition: $-btn-transition;
@@ -229,7 +230,7 @@ $-btn-subtle-styles: (
       // Shadow appears on Primary by default but can be toggled off with `--no-shadow`
       @if ($-style-name == primary) {
         box-shadow: $-btn-shadow-base;
-        
+
         &.sage-btn--no-shadow {
           box-shadow: none;
         }
@@ -264,13 +265,13 @@ $-btn-subtle-styles: (
         color: map-get($-styles, hover);
         background-color: transparent;
       }
-    
+
       &:focus,
       &:active {
         color: map-get($-styles, focus);
         background-color: transparent;
       }
-    
+
       &:disabled,
       &[aria-disabled="true"] {
         color: map-get($-styles, disabled);
