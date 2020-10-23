@@ -55,6 +55,8 @@ $-collapse-breakpoint-key: md-max;
       ". actions-primary . handle-collapse";
   }
 
+// ------------------------------------------------------------------
+
   // ------------------ TOP LEVEL CATEGORY
   &.sage-outline-item--depth-0.sage-outline-item--category {
     margin-top: sage-spacing(sm);
@@ -124,42 +126,16 @@ $-collapse-breakpoint-key: md-max;
     }
 
     > * {
-      opacity: 0.5;
+      opacity: 0.75;
     }
   }
 
   &.sage-outline-item--is-droptarget {
-    // border-radius: sage-border(radius-large);
     box-shadow: 0 -4px 0 0 sage-color(primary);
-    // box-shadow: inset 0 0 0 4px sage-color(white), inset 0 0 0 6px sage-color(sage);
-    // background: repeating-linear-gradient(
-    //   45deg,
-    //   sage-color(primary, 200) 0,
-    //   sage-color(primary, 200) 24px,
-    //   sage-color(white) 24px,
-    //   sage-color(white) 48px
-    // );
-
-    // > * {
-    //   visibility: hidden;
-    // }
   }
 
   &.sage-outline-item--is-droptarget-invalid {
-    // border-radius: sage-border(radius-large);
-    box-shadow: inset 0 0 0 2px sage-color(red, 300);
-    // box-shadow: inset 0 0 0 4px sage-color(white), inset 0 0 0 6px sage-color(red, 200);
-    // background: repeating-linear-gradient(
-    //   45deg,
-    //   sage-color(red, 100) 0,
-    //   sage-color(red, 100) 24px,
-    //   sage-color(white) 24px,
-    //   sage-color(white) 48px
-    // );
-
-    // > * {
-    //   visibility: hidden;
-    // }
+    box-shadow: 0 -4px 0 0 sage-color(red, 300), inset 0 0 0 2px sage-color(red, 300);
   }
 }
 
