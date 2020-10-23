@@ -226,6 +226,7 @@
       &::before {
         @include sage-icon-base($icon-name);
         align-self: center;
+        justify-content: center;
       }
     }
   }
