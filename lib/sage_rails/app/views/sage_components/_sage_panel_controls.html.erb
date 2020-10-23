@@ -4,7 +4,7 @@ show_default_controls = component.show_bulk_actions or show_secondary_toolbar
 bulk_action_items = component.bulk_action_items.present? ? component.bulk_action_items : []
 sort_items = component.sort_items.present? ? component.sort_items : []
 %>
-<div class="sage-panel-controls" data-js-sage-panel-controls="<%= component.target %>">
+<div class="sage-panel-controls" data-js-panel-controls="<%= component.target %>">
   <% if content_for? :sage_panel_controls_tabs %>
     <div class="sage-panel-controls__tabs">
       <%= content_for :sage_panel_controls_tabs %>

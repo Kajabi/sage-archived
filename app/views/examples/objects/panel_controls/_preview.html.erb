@@ -108,3 +108,74 @@ search_filter_toolbar = %(
     <%= dropdown %>
   <% end %>
 <% end %>
+
+<%= sage_component SageTable, {
+  html_attributes: {
+    id: "demo-table",
+  },
+  reset_above: true,
+  headers: [
+    {
+      value: "",
+      data_type: "checkbox",
+    },
+    {
+      value: "",
+      data_type: "avatar",
+    },
+    {
+      value: "Name",
+    },
+    {
+      value: "Email",
+    },
+    {
+      value: "Email Marketing",
+    },
+    {
+      value: "Join Date",
+    },
+    {
+      value: "Last Activity",
+    },
+  ],
+  rows: [
+    {
+      selected: sage_component(SageCheckbox, { value: "", standalone: true }),
+      avatar: sage_component(SageAvatar, { initials: "AF", color: "purple" }),
+      name: "Albert Flores",
+      email: "albert.flores@example.com",
+      marking: "Never Subcribed",
+      joinDate: "8/2/19",
+      lastActivity: "8/2/19",
+    },
+    {
+      selected: sage_component(SageCheckbox, { value: "", standalone: true }),
+      avatar: sage_component(SageAvatar, { initials: "EP", color: "orange" }),
+      name: "Eleanor Pena",
+      email: "eleanorpena@example.com",
+      marking: "Unsubscribed",
+      joinDate: "7/11/19",
+      lastActivity: "7/11/19",
+    },
+    {
+      selected: sage_component(SageCheckbox, { value: "", standalone: true }),
+      avatar: sage_component(SageAvatar, { initials: "AM", color: "sage" }),
+      name: "Arlene McCoy",
+      email: "arlenemccoy@example.com",
+      marking: "Unsubscribed",
+      joinDate: "6/21/19",
+      lastActivity: "6/21/19",
+    },
+    {
+      selected: sage_component(SageCheckbox, { value: "", standalone: true }),
+      avatar: sage_component(SageAvatar, { initials: "KM" }),
+      name: "Kathryn Murphy",
+      email: "katmurphy98@example.com",
+      marking: "Subscribed",
+      joinDate: "4/4/18",
+      lastActivity: "4/4/18",
+    }
+  ]
+}
+%>
