@@ -1,83 +1,14 @@
 <%
-show_secondary_toolbar = component.show_mini_pagination or component.show_sort or component.show_expand_contract
+show_secondary_toolbar = component.show_pagination or component.show_sort or component.show_expand_collapse
 show_default_controls = component.show_bulk_actions or show_secondary_toolbar
-
-bulk_actions_unchecked = %(
-  <div class="sage-panel-controls__bulk-actions">
-    #{
-      sage_component(SageCheckbox, { 
-        id:"c1",
-        label_text: "Displaying 1-25 of 300",
-        checked: false,
-        disabled: false,
-        has_error: false,
-        partial_selection: false,
-      })
-    }
-  </div>
-).html_safe
-
-bulk_actions_checked = %(
-  <div class="sage-panel-controls__bulk-actions sage-panel-controls__bulk-actions--checked">
-    #{
-      sage_component(SageCheckbox, { 
-        id:"c1",
-        label_text: "Selected all 25",
-        checked: true,
-        disabled: false,
-        has_error: false,
-        partial_selection: false,
-      })
-    }
-    #{
-      sage_component(SageDropdown, {
-        trigger_type: "select",
-        align: "right",
-        customized: true,
-        custom_modifier: "actions",
-        items: [
-          {
-            value: "-- None --"
-          }, {
-            value: "Option 1",
-          }, {
-            value: "Option 2",
-          }, {
-            value: "Option 3",
-          }
-        ],
-        content: %(
-          #{sage_component(SageButton, {
-            style: "secondary",
-            value: "",
-            css_classes: "sage-dropdown__trigger-selected-value",
-            icon: { style: "right", name: "caret-down" }
-          })}
-          <label class="sage-dropdown__trigger-label">Actions</label>
-        ).html_safe
-      })
-    }
-  </div>
-).html_safe
-
-bulk_actions_checked_partial = %(
-  <div class="sage-panel-controls__bulk-actions sage-panel-controls__bulk-actions--checked">
-    #{
-      sage_component(SageCheckbox, { 
-        id:"c1",
-        label_text: "Selected 5 of 25",
-        checked: true,
-        disabled: false,
-        has_error: false,
-        partial_selection: true,
-      })
-    }
-  </div>
-).html_safe
+bulk_action_items = component.bulk_action_items.present? ? component.bulk_action_items : []
+sort_items = component.sort_items.present? ? component.sort_items : []
 %>
-<div class="sage-panel-controls">
+<div class="sage-panel-controls" data-js-sage-panel-controls="<%= component.target %>">
   <% if content_for? :sage_panel_controls_tabs %>
-    <%= content_for :sage_panel_controls_tabs %>
+    <div class="sage-panel-controls__tabs">
+      <%= content_for :sage_panel_controls_tabs %>
+    </div>
   <% end %>
 
   <% if content_for? :sage_panel_controls_toolbar %>
@@ -89,13 +20,39 @@ bulk_actions_checked_partial = %(
   <% if show_default_controls %>
     <div class="sage-panel-controls__default-controls">
       <% if component.show_bulk_actions %>
-        <%= bulk_actions_checked %>
+        <div class="sage-panel-controls__bulk-actions sage-panel-controls__bulk-actions--checked">
+          <%= sage_component SageCheckbox, { 
+            id:"c1",
+            label_text: "Selected all 25",
+            checked: true,
+            css_classes: "sage-panel-controls__bulk-actions-checkbox",
+            disabled: false,
+            has_error: false,
+            partial_selection: false,
+          } %>
+          <%= sage_component SageDropdown, {
+            trigger_type: "select",
+            align: "right",
+            css_classes: "sage-panel-controls__bulk-actions-dropdown",
+            customized: true,
+            custom_modifier: "actions",
+            items: bulk_action_items,
+          } do %>
+            <%= sage_component SageButton, {
+              style: "secondary",
+              value: "",
+              css_classes: "sage-dropdown__trigger-selected-value",
+              icon: { style: "right", name: "caret-down" }
+            } %>
+            <label class="sage-dropdown__trigger-label">Actions</label>
+          <% end %>
+        </div>
       <% end %>
 
       <% if show_secondary_toolbar %>
         <div class="sage-panel-controls__toolbar">
-          <% if component.show_mini_pagination %>
-            <div class="sage-panel-controls__mini-pagination">
+          <% if component.show_pagination %>
+            <div class="sage-panel-controls__pagination">
               <%= sage_component SageButton, {
                 value: "Previous page",
                 style: "secondary",
@@ -108,23 +65,14 @@ bulk_actions_checked_partial = %(
               } %>
             </div>
           <% end %>
+
           <% if component.show_sort %>
             <%= sage_component SageDropdown, {
               trigger_type: "select",
               align: "right",
               customized: true,
               custom_modifier: "sort",
-              items: [
-                {
-                  value: "-- None --"
-                }, {
-                  value: "Option 1",
-                }, {
-                  value: "Option 2",
-                }, {
-                  value: "Option 3",
-                }
-              ]
+              items: sort_items
             } do %>
               <%= sage_component SageButton, {
                 style: "secondary",
@@ -135,16 +83,19 @@ bulk_actions_checked_partial = %(
               <label class="sage-dropdown__trigger-label">Sort</label>
             <% end %>
           <% end %>
-          <% if component.show_expand_contract %>
+
+          <% if component.show_expand_collapse %>
             <%= sage_component(SageButton, {
               value: "Expand",
               style: "secondary",
-              icon: { name: "list-details", style: "only" }
+              icon: { name: "list-details", style: "only" },
+              css_classes: "sage-panel-controls__expand-btn"
             }) %>
             <%= sage_component(SageButton, {
-              value: "Condense",
+              value: "Collapse",
               style: "secondary",
-              icon: { name: "list-stack", style: "only" }
+              icon: { name: "list-stack", style: "only" },
+              css_classes: "sage-panel-controls__collapse-btn"
             }) %>
           <% end %>
         </div>

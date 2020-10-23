@@ -186,7 +186,7 @@ $-btn-subtle-styles: (
   .sage-panel-controls__bulk-actions > &,
   .sage-panel-controls__toolbar > &,
   .sage-panel-controls__toolbar-btn-group > &,
-  .sage-panel-controls__mini-pagination > & {
+  .sage-panel-controls__pagination > & {
     position: relative;
     z-index: sage-z-index(default);
     box-shadow: $sage-toolbar-btn-border;
@@ -220,11 +220,11 @@ $-btn-subtle-styles: (
   }
   
   .sage-panel-controls__toolbar > &,
-  .sage-panel-controls__mini-pagination > & {
+  .sage-panel-controls__pagination > & {
     border-radius: sage-border(radius);
 
     &:not(:last-child) {
-      margin-right: $sage-panel-grid-gap;
+      margin-right: $sage-card-grid-gap;
     }
   }
 

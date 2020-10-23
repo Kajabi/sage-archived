@@ -97,6 +97,8 @@ search_filter_toolbar = %(
 <h4>Tabs + Search with Bulk actions</h4>
 <%= sage_component SagePanelControls, {
   show_bulk_actions: true,
+  show_expand_collapse: true,
+  show_pagination: true,
 } do %>
   <% content_for :sage_panel_controls_tabs do %>
     <%= tabs %>
