@@ -35,20 +35,26 @@ $-trigger-dropdown-offset: rem(16px) + sage-spacing(xs);
   .sage-panel-controls__toolbar > &,
   .sage-panel-controls__toolbar-btn-group > & {
     position: relative;
-    z-index: sage-z-index(default);
+    z-index: sage-z-index(default, 1);
     box-shadow: $sage-toolbar-btn-border;
     border: 0;
 
     @include sage-focus-outline--update-color(transparent);
 
     &:hover {
-      z-index: sage-z-index(default, 1);
+      z-index: sage-z-index(default, 2);
       box-shadow: $sage-toolbar-btn-border-hover;
     }
 
     &:focus-within {
-      z-index: sage-z-index(default, 2);
+      z-index: sage-z-index(default, 3);
       box-shadow: $sage-toolbar-btn-border-focus;
+    }
+  }
+
+  .sage-panel-controls__toolbar > & {
+    &:not(:last-child) {
+      margin-right: $sage-panel-grid-gap;
     }
   }
   

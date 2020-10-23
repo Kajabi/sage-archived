@@ -218,6 +218,10 @@ $-btn-subtle-styles: (
       border-bottom-right-radius: sage-border(radius);
     }
   }
+
+  .sage-panel-controls__toolbar-btn-group--expand-collapse > & {
+    border-radius: sage-border(radius);
+  }
   
   .sage-panel-controls__toolbar > &,
   .sage-panel-controls__pagination > & {
