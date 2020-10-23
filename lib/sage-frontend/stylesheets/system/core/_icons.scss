@@ -79,8 +79,8 @@ $sage-icon-li-margin-right: 0.4em !default;
     @include sage-icon-base($icon-name, md);
     align-self: center;
     position: relative;
-    margin: 0 sage-spacing(2xs) 0 0;
     top: 2px;
+    margin: 0 sage-spacing(2xs) 0 0;
   }
 
   .sage-page-heading__toolbar-icon-#{$icon-name} {
