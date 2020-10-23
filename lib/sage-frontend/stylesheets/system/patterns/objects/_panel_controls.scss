@@ -55,3 +55,13 @@
     display: block;
   }
 }
+
+// Expand/collapse button setup
+// If status is "collapse" then the "collapse" button should show and not the "expand"
+[data-js-expand-collapse-status="collapse"] .sage-panel-controls__expand-btn {
+  display: none;
+}
+// Or if status is "expand" then the "expand" button should show and not the "collapse"
+[data-js-expand-collapse-status="expand"] .sage-panel-controls__collapse-btn {
+  display: none;
+}

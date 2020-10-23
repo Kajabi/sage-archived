@@ -3,6 +3,7 @@ show_secondary_toolbar = component.show_pagination or component.show_sort or com
 show_default_controls = component.show_bulk_actions or show_secondary_toolbar
 bulk_action_items = component.bulk_action_items.present? ? component.bulk_action_items : []
 sort_items = component.sort_items.present? ? component.sort_items : []
+item_count_text = component.item_count_label.present? ? item_count_label : "Select all"
 %>
 <div class="sage-panel-controls" data-js-panel-controls="<%= component.target %>">
   <% if content_for? :sage_panel_controls_tabs %>
@@ -23,7 +24,7 @@ sort_items = component.sort_items.present? ? component.sort_items : []
         <div class="sage-panel-controls__bulk-actions sage-panel-controls__bulk-actions--checked">
           <%= sage_component SageCheckbox, { 
             id:"c1",
-            label_text: "Selected all 25",
+            label_text: item_count_text,
             checked: true,
             css_classes: "sage-panel-controls__bulk-actions-checkbox",
             disabled: false,
@@ -54,11 +55,13 @@ sort_items = component.sort_items.present? ? component.sort_items : []
           <% if component.show_pagination %>
             <div class="sage-panel-controls__pagination">
               <%= sage_component SageButton, {
+                css_classes: "sage-panel-controls__pagination-prev",
                 value: "Previous page",
                 style: "secondary",
                 icon: { name: "arrow-left", style: "only" }
               } %>
               <%= sage_component SageButton, {
+                css_classes: "sage-panel-controls__pagination-next",
                 value: "Next page",
                 style: "secondary",
                 icon: { name: "arrow-right", style: "only" }
@@ -70,6 +73,7 @@ sort_items = component.sort_items.present? ? component.sort_items : []
             <%= sage_component SageDropdown, {
               trigger_type: "select",
               align: "right",
+              css_classes: "sage-panel-controls__sorts",
               customized: true,
               custom_modifier: "sort",
               items: sort_items
@@ -85,18 +89,25 @@ sort_items = component.sort_items.present? ? component.sort_items : []
           <% end %>
 
           <% if component.show_expand_collapse %>
-            <%= sage_component(SageButton, {
-              value: "Expand",
-              style: "secondary",
-              icon: { name: "list-details", style: "only" },
-              css_classes: "sage-panel-controls__expand-btn"
-            }) %>
-            <%= sage_component(SageButton, {
-              value: "Collapse",
-              style: "secondary",
-              icon: { name: "list-stack", style: "only" },
-              css_classes: "sage-panel-controls__collapse-btn"
-            }) %>
+            <div class="
+                sage-panel-controls__toolbar-btn-group
+                sage-panel-controls__toolbar-btn-group--expand-collapse
+              "
+              data-js-expand-collapse-status="<%= component.start_expanded ? "collapse" : "expand" %>"
+            >
+              <%= sage_component SageButton, {
+                value: "Expand",
+                style: "secondary",
+                icon: { name: "list-details", style: "only" },
+                css_classes: "sage-panel-controls__expand-btn"
+              } %>
+              <%= sage_component SageButton, {
+                value: "Collapse",
+                style: "secondary",
+                icon: { name: "list-stack", style: "only" },
+                css_classes: "sage-panel-controls__collapse-btn"
+              } %>
+            </div>
           <% end %>
         </div>
       <% end %>
