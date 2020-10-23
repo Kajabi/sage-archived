@@ -78,8 +78,8 @@ $sage-icon-li-margin-right: 0.4em !default;
   .sage-label--icon-#{$icon-name} .sage-label__value::before {
     @include sage-icon-base($icon-name, md);
     align-self: center;
-    margin: 0 sage-spacing(2xs) 0 0;
     position: relative;
+    margin: 0 sage-spacing(2xs) 0 0;
     top: 2px;
   }
 
