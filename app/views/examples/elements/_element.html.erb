@@ -16,15 +16,15 @@
     type: "element",
     title: @title %>
 
-<% if info_content[:use_legacy_html_code_source] %>
-  <%= render "examples/shared/legacy_code",
-    type: "element",
-    title: @title %>
-<% else %>
-  <%= render "examples/shared/code",
-    type: "element",
-    title: @title %>
-<% end %>
+  <% if info_content[:use_legacy_html_code_source] %>
+    <%= render "examples/shared/legacy_code",
+      type: "element",
+      title: @title %>
+  <% else %>
+    <%= render "examples/shared/code",
+      type: "element",
+      title: @title %>
+  <% end %>
 
   <%= render "examples/shared/props",
     props_content: props_content %>

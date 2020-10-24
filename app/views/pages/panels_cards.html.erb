@@ -1,11 +1,11 @@
 <%= content_for :heading do %>
-<%= md('
+<%= md("
 # Panels and Cards
 
 Panels and Cards are the two most common ways designers and engineers can group content within Sage.
-') %>
+") %>
 <% end %>
-<%= md('
+<%= md("
 ## Organizing within Sage
 
 Within Sage we aim to keep our content organized well while avoiding additional unsemantic markup.
@@ -20,7 +20,7 @@ Our grid setup and containers provide a baseline for sizing elements
 and displaying them in particular arrangements beside each other.
 But when it comes to visual effects that enhance grouping we have two core categories
 of grouping devices: Panels and Cards.
-', true) %>
+", true) %>
 <%= sage_component SagePanel, { spacer: { top: :md, bottom: :md }} do %>
   <%= sage_component SagePanelHeader, { title: "Panel" } %>
   <%= sage_component SagePanelBlock, { type_block: true } do %>
@@ -31,7 +31,7 @@ of grouping devices: Panels and Cards.
     <p>This is a basic card filling the space available inside this panel.</p>
   <% end %>
 <% end %>
-<%= md('
+<%= md("
 ## Panels
 
 Panels may be placed on the Stage and present a group of content
@@ -53,5 +53,5 @@ such as Upload Cards, Data Cards, and Expandable Cards.
 For other one-off implementations the
 [Card Object](/pages/object/card)
 can be used (ussamedly within a panel).
-', true) %>
+", true) %>
 

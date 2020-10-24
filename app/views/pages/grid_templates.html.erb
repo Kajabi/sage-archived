@@ -126,11 +126,11 @@ dots = [
 %>
 
 <%= content_for :heading do %>
-<%= md('
+<%= md("
 # Grid Templates
 
 Easily create row layouts with our library of grid templates.
-') %>
+") %>
 <% end %>
 <%= content_for :quick_links do %>
   <div class="quick-links">
@@ -156,7 +156,7 @@ Easily create row layouts with our library of grid templates.
     </ul>
   </div>
 <% end %>
-<%= md('
+<%= md("
 ## Overview
 
 Certain components allow for items inside them to be laid out inline in a row-like fashion.
@@ -180,13 +180,13 @@ The method we employ sees layouts as being composed of one of two kinds of eleme
 Since naming a series of abstract patterns is challenging to do in a way that is anything
 more than an enumerated list, we decided to use Morse Code as a base.
 As each letter in Morse Code is composed of a series of dots and dashes, so our layouts are
-composed of a series of fixed and flexing elements. So if fixed elements are "dots" and
-flexing elements are "dashes" we can easily analyze a layout to extract a "Morse-like" pattern.
+composed of a series of fixed and flexing elements. So if fixed elements are \"dots\" and
+flexing elements are \"dashes\" we can easily analyze a layout to extract a \"Morse-like\" pattern.
 
 ## Patterns
 
 The patterns below use a simple combinations of just a few letters:
-', true) %>
+", true) %>
   <table class="sage-table">
     <thead>
       <tr>
@@ -214,7 +214,7 @@ The patterns below use a simple combinations of just a few letters:
       </tr>
     </tbody>
   </table>
-<%= md('
+<%= md("
 While these may be useful on their own, the power comes in their combination,
 where letters are combined for a compound layout pattern.
 Yet, it would also not be useful or practical to have two dot letters in a row,
@@ -222,7 +222,7 @@ we thus allow for dots then dashes, dashes then dots, or dots, dashes, and dots.
 A full set of the possibilities are demonstrated below.
 
 **Note:** Elements shown here are merely demonstrations; any fixed or flexible units may be substituted.
-', true) %>
+", true) %>
   <div class="sage-panel-set sage-spacer-top sage-spacer-bottom">
     <% grid_patterns.each do | group | %>
       <%= sage_component SagePanel, {} do %>
@@ -256,7 +256,7 @@ A full set of the possibilities are demonstrated below.
       <% end %>
     <% end %>
   </div>
-  <%= md('
+  <%= md("
 ## Responsive Considerations</h2>
 
 These layouts persist for tablet and desktop viewports,
@@ -298,4 +298,4 @@ nest those mappings within the above custom template style declaration
 so as to keep all relevant setup contained in this space.
 
 An example of such a custom grid template is under development for future release.
-', true) %>
+", true) %>

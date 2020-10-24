@@ -44,13 +44,14 @@ containers = [
   }
 ]
 %>
+
 <%= content_for :heading do %>
-<%= md('
+<%= md("
 # Containers
 
 Containers provide a restricted width box any sort of content can be placed within.
 Here we show Card object inside the containers, but containers have no intrinsic decorations.
-') %>
+") %>
 <% end %>
 <%= content_for :quick_links do %>
   <div class="quick-links">
@@ -76,5 +77,4 @@ Here we show Card object inside the containers, but containers have no intrinsic
       <% end %>
     </div>
   <% end %>
-
 </div>
