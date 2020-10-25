@@ -1,55 +1,61 @@
 
 
 <h3>Standard link</h3>
-<%= render "examples/elements/link/markup",
-  url: "#",
-  label: "Standard link",
-  external: false,
-  launch: false,
-  help_link: false,
-  show_label: true
-%><br/>
-<%= render "examples/elements/link/markup",
-  url: "#",
-  label: "Internal link with launch",
-  external: false,
-  launch: true,
-  help_link: false,
-  show_label: true
-%>
+<div class="sage-panel__stack">
+  <%= render "examples/elements/link/markup",
+    url: "#",
+    label: "Standard link",
+    external: false,
+    launch: false,
+    help_link: false,
+    show_label: true
+  %>
+  <%= render "examples/elements/link/markup",
+    url: "#",
+    label: "Internal link with launch",
+    external: false,
+    launch: true,
+    help_link: false,
+    show_label: true
+  %>
+</div>
 
 <h3>External links</h3>
-<%= render "examples/elements/link/markup",
-  url: "https://example.com",
-  label: "External link",
-  external: true,
-  launch: true,
-  help_link: false,
-  show_label: true
-%><br />
-<%= render "examples/elements/link/markup",
-  url: "https://example.com",
-  label: "External link (launch icon cancelled)",
-  external: true,
-  launch: false,
-  help_link: false,
-  show_label: true
-%>
+<div class="sage-panel__stack">
+  <%= render "examples/elements/link/markup",
+    url: "https://example.com",
+    label: "External link",
+    external: true,
+    launch: true,
+    help_link: false,
+    show_label: true
+  %>
+  <%= render "examples/elements/link/markup",
+    url: "https://example.com",
+    label: "External link (launch icon cancelled)",
+    external: true,
+    launch: false,
+    help_link: false,
+    show_label: true
+  %>
+</div>
 
 <h3>Help/Info links</h3>
-<%= render "examples/elements/link/markup",
-  url: "#",
-  label: "Get help",
-  external: false,
-  launch: false,
-  help_link: true,
-  show_label: true
-%><br />
-<%= render "examples/elements/link/markup",
-  url: "#",
-  label: "Get help (hidden)",
-  external: false,
-  launch: false,
-  help_link: true,
-  show_label: false
-%>
+<div class="sage-panel__stack">
+  <%= render "examples/elements/link/markup",
+    url: "#",
+    label: "Get help",
+    external: false,
+    launch: false,
+    help_link: true,
+    show_label: true
+  %>
+  <%= render "examples/elements/link/markup",
+    url: "#",
+    label: "Get help (hidden)",
+    external: false,
+    launch: false,
+    help_link: true,
+    show_label: false
+  %>
+</div>

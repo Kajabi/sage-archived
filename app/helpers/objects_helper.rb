@@ -13,16 +13,6 @@ module ObjectsHelper
     [
       # Sage Generated Objects
       {
-        title: "icon_list",
-        description: "Icon lists allow for a richer formatting for bulleted lists of things including checkbox lists, feature lists, and more!",
-        use_legacy_html_code_source: true,
-        scss: "todo",
-        docs: "todo",
-        rails: "todo",
-        react: "todo",
-        a11y: "todo",
-      },
-      {
         title: "alert",
         description: "Alerts are used to indicate user-driven notifications.",
         use_legacy_html_code_source: false,

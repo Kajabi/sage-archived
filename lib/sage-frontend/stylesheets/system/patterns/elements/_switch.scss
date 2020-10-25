@@ -49,6 +49,10 @@ $-switch-focus-outline-color: sage-color(primary) !default;
   .sage-card__stack > &,
   .sage-card__block > & {
     margin-bottom: 0;
+
+    + .sage-switch {
+      margin-top: 0;
+    }
   }
 }
 
