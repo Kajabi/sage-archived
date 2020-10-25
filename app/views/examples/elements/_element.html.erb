@@ -1,20 +1,22 @@
 <% info_content = sage_elements.select { |element| element[:title] == @title }[0] %>
-<% props_content = render partial: "examples/elements/#{@title}/props" %>
-<% do_content = render partial: "examples/elements/#{@title}/rules_do" %>
-<% dont_content = render partial: "examples/elements/#{@title}/rules_dont" %>
 
 <%= render "examples/shared/heading",
   info_content: info_content %>
 
-<%= render "examples/shared/quick_links",
-  props_content: props_content,
-  do_content: do_content,
-  dont_content: dont_content %>
+<% if info_content[:use_legacy_documentation] %>
+  <% props_content = render partial: "examples/elements/#{@title}/props" %>
+  <% do_content = render partial: "examples/elements/#{@title}/rules_do" %>
+  <% dont_content = render partial: "examples/elements/#{@title}/rules_dont" %>
 
-<div class="sage-panel-set">
-  <%= render "examples/shared/preview",
-    type: "element",
-    title: @title %>
+  <%= render "examples/shared/quick_links",
+    props_content: props_content,
+    do_content: do_content,
+    dont_content: dont_content %>
+
+  <div class="sage-panel-set">
+    <%= render "examples/shared/preview",
+      type: "element",
+      title: @title %>
 
   <% if info_content[:use_legacy_html_code_source] %>
     <%= render "examples/shared/legacy_code",
@@ -26,10 +28,25 @@
       title: @title %>
   <% end %>
 
-  <%= render "examples/shared/props",
-    props_content: props_content %>
+    <%= render "examples/shared/props",
+      props_content: props_content %>
 
-  <%= render "examples/shared/rules",
-    do_content: do_content,
-    dont_content: dont_content %>
-</div>
+    <%= render "examples/shared/rules",
+      do_content: do_content,
+      dont_content: dont_content %>
+  </div>
+<% else %>
+  <div class="sage-panel-set">
+    <%= sage_component SagePanel, {} do %>
+      <%= sage_component SagePanelHeader, { title: "Prototype" } %>
+      <%= render "examples/elements/#{@title}/prototype" %>
+    <% end %>
+
+    <%= sage_component SagePanel, {} do %>
+      <%= sage_component SagePanelHeader, { title: "Examples" } %>
+      <%= render "examples/elements/#{@title}/examples" %>
+    <% end %>
+
+    <%= render "examples/elements/#{@title}/documentation" %>
+  </div>
+<% end %>

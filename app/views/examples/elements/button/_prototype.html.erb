@@ -1,0 +1,25 @@
+<%= sage_component SageButtonGroup, {} do %>
+  <%= sage_component SageButton, {
+    value: "Save",
+    style: "primary"
+  } %>
+
+  <%= sage_component SageButton, {
+    value: "Posts",
+    style: "secondary",
+    icon: {
+      name: "add",
+      style: "left",
+    }
+  } %>
+
+  <%= sage_component SageButton, {
+    value: "Cancel",
+    style: "tertiary"
+  } %>
+
+  <%= sage_component SageButton, {
+    value: "Unsubscribe",
+    style: "danger"
+  } %>
+<% end %>

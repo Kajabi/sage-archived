@@ -1,0 +1,5 @@
+<%= sage_component SagePanelSubheader, { title: title } %>
+<%= yield %>
+<%= sage_component SagePanelBlock, { type_block: true } do %>
+  <%= notes if defined?(notes) %>
+<% end %>
