@@ -8,7 +8,7 @@ The Sage Design System (SDS) is our single source of truth, providing everything
 <%= sage_component SagePanel, {} do %>
   <%= sage_component SagePanelHeader, { title: "How it works" } %>
   <%= sage_component SagePanelBlock, { type_block: true } do %>
-    <%= md("
+    <%= md(%(
       The UI of the Kajabi Core application is a combination of Rails Components,
       React Components and a custom CSS Framework called Sage that applies a uniform style to both.
 
@@ -24,11 +24,65 @@ The Sage Design System (SDS) is our single source of truth, providing everything
       In this case we move to React as our default approach
       to solving complex, Javascript heavy problems
 
+Some HTML:
+
+```html
+<div class="sage-type">
+  <h1 id="hello">{{ Text }}</h1>
+  <p data-js-attr="green">World</p>
+</div>
+```
+
+Some CSS:
+
+```css
+h2 {
+  content: "";
+  text-align: center;
+}
+
+.sage-type {
+  color: red;
+}
+```
+
+Some JS:
+
+```jsx
+import React from 'react';
+
+const House = ({ children, title }) => {
+
+  return (
+    <div className="sage-type">
+      <h1 id="hello">Text</h1>
+      <p dataJsAttr="green">World</p>
+    </div>
+  );
+};
+
+export default House;
+```
+
+Some ERB
+
+```rb
+module MarkdownHelper
+  require "redcarpet"
+  require "rouge"
+  require "rouge/plugins/redcarpet"
+
+  class HTML < Redcarpet::Render::HTML
+    include Rouge::Plugins::Redcarpet
+  end
+end
+```
+
       Because our system contains two different approaches to UI creation,
       we utilize a SCSS Design System to provide the styles to both types of components
       (think Bootstrap, but customized for our products).
       Our Design System provides the styles for the core components that make up the UI of our product.
-    ") %>
+    )) %>
     <%= image_pack_tag("docs/sage_structure.png", class: "sage-panel__img", style: "display:block;max-width:500px;margin:0 auto;width:100%;height:auto", size: "1000x1036") %>
   <% end %>
 <% end %>
