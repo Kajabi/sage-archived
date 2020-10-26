@@ -8,11 +8,18 @@ Use this scratchpad to test out elements and objects in context. Just be sure no
 
 <%= sage_component SagePanel, {} do %>
 <%= md(%(
+
+Some ERB:
+
+```erb
+\<\%\= sage_component SagePanelHeader, { title: "Hello, world!" } \%\>
+```
+
 Some HTML:
 
 ```html
 <div class="sage-type">
-  <h1 id="hello">{{ Text }}</h1>
+  <h1 id="hello">Hello</h1>
   <p data-js-attr="green">World</p>
 </div>
 ```
