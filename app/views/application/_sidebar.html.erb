@@ -15,10 +15,17 @@
           <% end %>
         </li>
         <li>
-          <%= link_to "Elements", pages_elements_path, class: "sage-nav__link #{"sage-nav__link--active" if current_page_elements?}" %>
-        </li>
-        <li>
-          <%= link_to "Objects", pages_objects_path, class: "sage-nav__link #{"sage-nav__link--active" if current_page_objects?}" %>
+          <%= link_to "Components", pages_elements_path, class: "sage-nav__link #{"sage-nav__link--active" if current_page_elements?}" %>
+          <% if current_page_elements? || current_page_objects? %>
+            <ul class="sage-nav__list sage-nav__list--sub">
+              <li>
+                <%= link_to "Elements", pages_elements_path, class: "sage-nav__link sage-nav__link--sub #{"sage-nav__link--active" if current_page_elements?}" %>
+              </li>
+              <li>
+                <%= link_to "Objects", pages_objects_path, class: "sage-nav__link sage-nav__link--sub #{"sage-nav__link--active" if current_page_objects?}" %>
+              </li>
+            </ul>
+          <% end %>
         </li>
         <li>
           <%= link_to "Sandbox", pages_sandbox_path, class: "sage-nav__link #{"sage-nav__link--active" if current_page?(pages_sandbox_path)}" %>
