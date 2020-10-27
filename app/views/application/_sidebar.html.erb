@@ -1,12 +1,77 @@
+<%
+foundations_pages = [
+  {
+    name: "UX Values",
+    path: pages_foundation_path(:ux_values),
+  },
+  {
+    name: "Design Principles",
+    path: pages_foundation_path(:design_principles),
+  },
+  {
+    name: "Accessibility",
+    path: pages_foundation_path(:accessibility),
+  },
+]
+%>
+<%
+design_pages = [
+  {
+    name: "Tokens",
+    path: pages_design_path(:token),
+  },
+  {
+    name: "Colors",
+    path: pages_design_path(:color),
+  },
+  {
+    name: "Typography",
+    path: pages_design_path(:typography),
+  },
+  {
+    name: "Icons",
+    path: pages_design_path(:icon),
+  },
+  {
+    name: "Containers",
+    path: pages_design_path(:container),
+  },
+  {
+    name: "Panels and Cards",
+    path: pages_design_path(:panels_cards),
+  },
+  {
+    name: "Grid",
+    path: pages_design_path(:grid),
+  },
+  {
+    name: "Grid Templates",
+    path: pages_design_path(:grid_templates),
+  }
+]
+%>
 <div class="sage-sidebar" data-js-sidebar="sage-sidebar-menu" id="sage-sidebar-menu">
   <div class="sage-sidebar__body">
     <nav class="sage-nav" aria-label="Main">
       <ul class="sage-nav__list">
+        <li><%= link_to "Home", pages_index_path, class: "sage-nav__link #{"sage-nav__link--active" if current_page?(pages_index_path)}" %>
         <li>
-          <%= link_to "Design", pages_index_path, class: "sage-nav__link #{"sage-nav__link--active" if current_page_design?}" %>
+          <%= link_to "Foundations", pages_foundation_path(:ux_values), class: "sage-nav__link #{"sage-nav__link--active" if current_page_foundations?}" %>
+          <% if current_page_foundations? %>
+            <ul class="sage-nav__list sage-nav__list--sub">
+              <% foundations_pages.each do | page | %>
+                <li>
+                  <%= link_to page[:name], page[:path], class: "sage-nav__link sage-nav__link--sub #{"sage-nav__link--active" if current_page?(page[:path])}" %>
+                </li>
+              <% end %>
+            </ul>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to "Design", pages_design_path(:token), class: "sage-nav__link #{"sage-nav__link--active" if current_page_design?}" %>
           <% if current_page_design? %>
             <ul class="sage-nav__list sage-nav__list--sub">
-              <% @design_pages.each do | page | %>
+              <% design_pages.each do | page | %>
                 <li>
                   <%= link_to page[:name], page[:path], class: "sage-nav__link sage-nav__link--sub #{"sage-nav__link--active" if current_page?(page[:path])}" %>
                 </li>
