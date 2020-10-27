@@ -23,6 +23,7 @@ $-copy-text-color-hover: sage-color(charcoal, 500);
   @include sage-copy-text;
 
   display: inline-block;
+  max-width: 100%;
   padding: 0 sage-spacing(xs);
 
   .sage-copy-btn & {
@@ -40,7 +41,7 @@ $-copy-text-color-hover: sage-color(charcoal, 500);
 .sage-copy-text-card {
   @include sage-grid-stack;
   @include sage-copy-text;
-  
+
   width: 100%;
   padding: $sage-card-padding;
 }
@@ -61,6 +62,7 @@ $-copy-text-color-hover: sage-color(charcoal, 500);
   display: inline-flex;
   flex-flow: row-reverse;
   align-items: center;
+  max-width: 100%;
   padding-right: sage-spacing(2xs);
 
   &::before {
