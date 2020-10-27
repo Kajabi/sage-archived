@@ -54,8 +54,8 @@ $-sage-nav-icon-size: rem(20px);
 }
 
 .sage-nav__link--sub.sage-nav__link--active {
-  background: rgba($-sage-nav-color-background, 0.06);
   color: sage-color(primary);
+  background: rgba($-sage-nav-color-background, 0.06);
 }
 
 .sage-nav__link-decorator {
