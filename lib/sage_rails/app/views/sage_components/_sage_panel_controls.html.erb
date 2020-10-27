@@ -21,11 +21,11 @@ item_count_text = component.item_count_label.present? ? item_count_label : "Sele
   <% if show_default_controls %>
     <div class="sage-panel-controls__default-controls">
       <% if component.show_bulk_actions %>
-        <div class="sage-panel-controls__bulk-actions sage-panel-controls__bulk-actions--checked">
+        <div class="sage-panel-controls__bulk-actions">
           <%= sage_component SageCheckbox, { 
             id:"c1",
             label_text: item_count_text,
-            checked: true,
+            checked: false,
             css_classes: "sage-panel-controls__bulk-actions-checkbox",
             disabled: false,
             has_error: false,
@@ -48,6 +48,11 @@ item_count_text = component.item_count_label.present? ? item_count_label : "Sele
             <label class="sage-dropdown__trigger-label">Actions</label>
           <% end %>
         </div>
+
+      <% elsif component.item_count_label.present? %>
+        <p class="sage-panel-controls__item-count-label">
+          <%= item_count_text %>
+        </p>
       <% end %>
 
       <% if show_secondary_toolbar %>

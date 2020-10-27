@@ -17,6 +17,7 @@ is_responsive = component.responsive.present? ? component.responsive : true
       <%= "sage-table--condensed" if component.condensed %>
       <%= "sage-table--sortable" if component.sortable %>
     "
+    <%= component.generated_html_attributes.html_safe %>
   >
     <% if component.caption.present? %>
       <caption><%= component.caption.html_safe %></caption>
