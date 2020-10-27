@@ -1,5 +1,5 @@
 <h5>Dark Tooltips</h5>
-<div class="sage-panel__block">
+<%= sage_component SagePanelBlock, {} do %>
   <%= render "examples/elements/tooltip/markup",
   position: "top",
   text: "Nascetur ridiculus mus",
@@ -24,10 +24,10 @@
   theme: "",
   size: ""
   %>
-</div>
+<% end %>
 
 <h5>Light Tooltips</h5>
-<div class="sage-panel__block">
+<%= sage_component SagePanelBlock, {} do %>
   <%= render "examples/elements/tooltip/markup",
   position: "top",
   text: "Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
@@ -52,4 +52,4 @@
   theme: "light",
   size: ""
   %>
-</div>
+<% end %>

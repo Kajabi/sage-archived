@@ -76,52 +76,20 @@ grid_patterns = [
 ]
 
 dashes = [
-  %(
-    <div class="sage-card__block">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </div>
-  ),
-  %(
-    <div class="sage-card__block">
-      <p>Proin aliquam tortor eget tortor suscipit blandit nunc sed.</p>
-    </div>
-  ),
-  %(
-    <div class="sage-card__block">
-      <p>Sed a tortor magna sed consectetur, sapien eget consequat.</p>
-    </div>
-  ),
-  %(
-    <div class="sage-card__block">
-      <p>Phasellus semper nisi metus, vel pulvinar risus hendrerit non.</p>
-    </div>
-  ),
-  %(
-    <div class="sage-card__block">
-      <p>Integer nec ultricies nibh. Aenean sit amet faucibus massa.</p>
-    </div>
-  )
+  sage_component(SageCardBlock, { content: md("Lorem ipsum dolor sit amet, consectetur adipiscing elit.") }),
+  sage_component(SageCardBlock, { content: md("Proin aliquam tortor eget tortor suscipit blandit nunc sed.") }),
+  sage_component(SageCardBlock, { content: md("Sed a tortor magna sed consectetur, sapien eget consequat.") }),
+  sage_component(SageCardBlock, { content: md("Phasellus semper nisi metus, vel pulvinar risus hendrerit non.") }),
+  sage_component(SageCardBlock, { content: md("Integer nec ultricies nibh. Aenean sit amet faucibus massa.") }),
 ]
 
 dots = [
-  %(
-    <i class="sage-icon-check-circle"></i>
-  ),
-  %(
-    <span class="sage-label sage-label--draft">In progress</span>
-  ),
-  %(
-    <i class="sage-icon-star"></i>
-  ),
-  %(
-    <span class="sage-label sage-label--success">Verified</span>
-  ),
-  %(
-    <span class="t-sage-body-small-semi">$5.99</span>
-  ),
-  %(
-    <i class="sage-icon-dot-menu-horizontal"></i>
-  )
+  %(<i class="sage-icon-check-circle t-sage--color-sage"></i>),
+  sage_component(SageLabel, { value: "In progress", color: "warning" }),
+  %(<i class="sage-icon-star t-sage--color-orange"></i>),
+  sage_component(SageLabel, { value: "Verified", color: "success" }),
+  %(<span class="t-sage-body-small-semi">$5.99</span>),
+  %(<i class="sage-icon-dot-menu-horizontal t-sage--color-grey"></i>)
 ]
 %>
 
@@ -170,9 +138,9 @@ and the elements within will conform in a snap.
 
 The method we employ sees layouts as being composed of one of two kinds of elements:
 
-- Fixed elements -- these have a small instrinsic size, and they space they occupy fits
+- Fixed elements — these have a small instrinsic size, and they space they occupy fits
   snugly around them. Think of icons, small text labels, and option menu triggers.
-- Flexing elements -- these are allowed to span wider and fill space that remains after
+- Flexing elements — these are allowed to span wider and fill space that remains after
   fixed elements\'s sizes are accounted for. This means they may not always naturally fill
   this space, but can flow within the bounds of this space. Think of text that may be of
   varied size but can span between other fixed elements.
@@ -187,33 +155,40 @@ flexing elements are \"dashes\" we can easily analyze a layout to extract a \"Mo
 
 The patterns below use a simple combinations of just a few letters:
 ", use_sage_type: true) %>
-  <table class="sage-table">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Single</th>
-        <th>Double</th>
-        <th width="80">Triple</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th>Dots</th>
-        <td>Fixed elements such as icons, buttons, labels, and other controls</td>
-        <td>E <code>.</code></td>
-        <td>I <code>..</code></td>
-        <td>S <code>...</code></td>
-      </tr>
-      <tr>
-        <th>Dashes</th>
-        <td>Flexing elements such as text blocks</td>
-        <td>T <code>-</code></td>
-        <td>M <code>--</code></td>
-        <td>O <code>---</code></td>
-      </tr>
-    </tbody>
-  </table>
+<%= sage_component SagePanel, {
+  clear_top_padding: true,
+  clear_bottom_padding: true,
+  spacer: {
+    top: :md,
+    bottom: :md,
+  }
+} do %>
+  <%= sage_component SageTable, {
+    headers: [
+      "Type",
+      "Description",
+      "Single",
+      "Double",
+      "Triple"
+    ],
+    rows: [
+      [
+        "Dots",
+        "Fixed elements such as icons, buttons, labels, and other controls",
+        md("E `.`"),
+        md("I `..`"),
+        md("S `...`")
+      ],
+      [
+        "Dashes",
+        "Flexing elements such as text blocks",
+        md("T `-`"),
+        md("M `--`"),
+        md("O `---`")
+      ]
+    ]
+  } %>
+<% end %>
 <%= md("
 While these may be useful on their own, the power comes in their combination,
 where letters are combined for a compound layout pattern.
@@ -221,20 +196,20 @@ Yet, it would also not be useful or practical to have two dot letters in a row,
 we thus allow for dots then dashes, dashes then dots, or dots, dashes, and dots.
 A full set of the possibilities are demonstrated below.
 
-**Note:** Elements shown here are merely demonstrations; any fixed or flexible units may be substituted.
+**Note:** Elements shown here are merely demonstrations; any fixed or flexible elements may be substituted.
 ", use_sage_type: true) %>
   <div class="sage-panel-set sage-spacer-top sage-spacer-bottom">
     <% grid_patterns.each do | group | %>
       <%= sage_component SagePanel, {} do %>
         <h3 id="<%= group[:group_id] %>"><%= group[:group_name] %></h3>
           <% group[:members].each do | letter, code | %>
-            <h4 class="sage-panel__row sage-grid-template-ete">
-              <span style="width: 30px"><%= letter %></span>
+            <%= sage_component SagePanelRow, { grid_template: "ete" } do %>
+              <h4 style="width: 30px"><%= letter %></h4>
               <code><%= code %></code>
               <code style="text-align: right">.sage-grid-template-<%= letter %></code>
-            </h4>
-            <div class="sage-card">
-              <div class="sage-card__row sage-grid-template-<%= letter %> sage-spacer-top-xs sage-spacer-bottom">
+            <% end %>
+            <%= sage_component SageCard, {} do %>
+              <%= sage_component SageCardRow, { grid_template: letter, spacer: { top: :xs, bottom: :md }} do %>
                 <%
                   i_dashes = 0
                   i_dots = 0
@@ -249,8 +224,8 @@ A full set of the possibilities are demonstrated below.
                     <% i_dots += 1 %>
                   <% end %>
                 <% end %>
-              </div>
-            </div>
+              <% end %>
+            <% end %>
           <% end %>
         </ul>    
       <% end %>

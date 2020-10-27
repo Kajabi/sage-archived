@@ -117,19 +117,6 @@ Sage provides a constrained, purposeful set of typographic styles.
 These styles map as much as possible to functional roles so you know when each can be used.
 ") %>
 <% end %>
-<%= content_for :quick_links do %>
-  <div class="quick-links">
-    <h2 class="quick-links__title">Contents</h2>
-    <ul class="quick-links__body">
-      <li class="quick-links__item">
-        <a href="#guidance" class="quick-links__link">Guidance</a>
-      </li>
-      <li class="quick-links__item">
-        <a href="#spec-table" class="quick-links__link">Type Spec Reference</a>
-      </li>
-    </ul>
-  </div>
-<% end %>
 <%= sage_component SagePanel, {} do %>
   <%= sage_component SagePanelBlock, { type_block: true } do %>
     <%= md("

@@ -1,5 +1,5 @@
-<div class="sage-panel__row sage-grid-template-m">
-  <div class="sage-panel__stack">
+<%= sage_component SagePanelRow, { grid_template: "m" } do %>
+  <%= sage_component SagePanelStack, {} do %>
     <!-- Checkbox Default -->
     <%= sage_component SageSwitch, { 
       type: "checkbox",
@@ -60,8 +60,8 @@
       required: true,
       message: "Additional Info"
     } %>
-  </div>
-  <div class="sage-panel__stack">
+  <% end %>
+  <%= sage_component SagePanelStack, {} do %>
     <!-- Radio Default -->
     <%= sage_component SageSwitch, { 
       type: "radio",
@@ -113,5 +113,5 @@
       disabled: true,
       message: ""
     } %>
-  </div>
-</div>
+  <% end %>
+<% end %>

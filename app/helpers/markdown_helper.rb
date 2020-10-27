@@ -16,10 +16,10 @@ module MarkdownHelper
     }
     renderer = HTML.new(render_options)
     extras = {
-      autolink: true,
       no_intra_emphasis: true,
       disable_indented_code_blocks: true,
       fenced_code_blocks: true,
+      # autolink: true,
       # strikethrough: true,
       # superscript: true,
       # lax_spacing: true,

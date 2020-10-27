@@ -9,7 +9,7 @@ colors = [
 %>
 
 <h5>Default</h5>
-<div class="sage-panel__block">
+<%= sage_component SagePanelBlock, {} do %>
   <% colors.each do | color | %>
     <%= sage_component SageLabel, {
       color: color,
@@ -19,10 +19,10 @@ colors = [
       )
     } %>
   <% end %>
-</div>
+<% end %>
 
 <h5>Subtle</h5>
-<div class="sage-panel__block">
+<%= sage_component SagePanelBlock, {} do %>
   <% colors.each do | color | %>
     <%= sage_component SageLabel, {
       color: color,
@@ -30,10 +30,10 @@ colors = [
       value: color.capitalize
     } %>
   <% end %>
-</div>
+<% end %>
 
 <h5>Bold</h5>
-<div class="sage-panel__block">
+<%= sage_component SagePanelBlock, {} do %>
   <% colors.each do | color | %>
     <%= sage_component SageLabel, {
       color: color,
@@ -41,10 +41,10 @@ colors = [
       value: color.capitalize
     } %>
   <% end %>
-</div>
+<% end %>
 
 <h5>With Icons</h5>
-<div class="sage-panel__block">
+<%= sage_component SagePanelBlock, {} do %>
   <%= sage_component SageLabel, {
     color: "draft",
     value: "Add",
@@ -55,10 +55,10 @@ colors = [
     value: "Tag",
     icon: { style: "right", name: "tag" }
   } %>
-</div>
+<% end %>
 
 <h5>Interactive</h5>
-<div class="sage-panel__block">
+<%= sage_component SagePanelBlock, {} do %>
   <% colors.each do | color | %>
     <%= sage_component SageLabel, {
       color: color,
@@ -67,4 +67,4 @@ colors = [
       icon: { style: "right", name: "caret-down" }
     } %>
   <% end %>
-</div>
+<% end %>

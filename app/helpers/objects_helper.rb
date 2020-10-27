@@ -69,7 +69,7 @@ module ObjectsHelper
         scss: "doing",
         docs: "doing",
         rails: "doing",
-        react: "sdoidionggop",
+        react: "doing",
         a11y: "doing"
       },
       {

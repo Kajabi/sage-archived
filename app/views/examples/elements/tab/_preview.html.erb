@@ -1,14 +1,14 @@
 <h4>As a button with a target pane in mind</h4>
-<div class="sage-panel__block">
+<%= sage_component SagePanelBlock, {} do %>
   <%= sage_component SageTab, {
       target: "example-tab1",
       text: "Page 1"
     }
   %>
-</div>
+<% end %>
 
 <h4>As a link with a route or site in mind</h4>
-<div class="sage-panel__block">
+<%= sage_component SagePanelBlock, {} do %>
   <%= sage_component SageTab, {
       attributes: {
         href: "//example.com",
@@ -16,4 +16,4 @@
       text: "Page 1"
     }
   %>
-</div>
+<% end %>

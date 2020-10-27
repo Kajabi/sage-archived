@@ -1,7 +1,7 @@
 
 
 <h3>Standard link</h3>
-<div class="sage-panel__stack">
+<%= sage_component SagePanelStack, {} do %>">
   <%= render "examples/elements/link/markup",
     url: "#",
     label: "Standard link",
@@ -18,10 +18,10 @@
     help_link: false,
     show_label: true
   %>
-</div>
+<% end %>
 
 <h3>External links</h3>
-<div class="sage-panel__stack">
+<%= sage_component SagePanelStack, {} do %>">
   <%= render "examples/elements/link/markup",
     url: "https://example.com",
     label: "External link",
@@ -38,10 +38,10 @@
     help_link: false,
     show_label: true
   %>
-</div>
+<% end %>
 
 <h3>Help/Info links</h3>
-<div class="sage-panel__stack">
+<%= sage_component SagePanelStack, {} do %>">
   <%= render "examples/elements/link/markup",
     url: "#",
     label: "Get help",
@@ -58,4 +58,4 @@
     help_link: true,
     show_label: false
   %>
-</div>
+<% end %>

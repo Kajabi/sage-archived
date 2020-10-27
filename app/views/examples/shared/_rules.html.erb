@@ -1,13 +1,15 @@
 <% if do_content.present? || dont_content.present? %>
   <%= sage_component SagePanel, {} do %>
-    <div class="sage-panel__header">
+    <%= sage_component SagePanelHeader, {} do %>
       <h2 id="<%= @title %>-example-best-practices" class="sage-panel__title">Best Practices</h2>
-    </div>
+    <% end %>
+
     <%= sage_component SagePanelRow, { grid_template: "m", vertical_align: "start" } do %>
       <%= sage_component SagePanelStack, {} do %>
         <%= sage_component SagePanelSubheader, { title: "Do" } %>
         <%= do_content %>
       <% end %>
+
       <%= sage_component SagePanelStack, {} do %>
         <%= sage_component SagePanelSubheader, { title: "Don't" } %>
         <%= dont_content %>
