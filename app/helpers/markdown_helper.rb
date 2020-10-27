@@ -7,7 +7,7 @@ module MarkdownHelper
     include Rouge::Plugins::Redcarpet
   end
 
-  def md(text, use_sage_type=false)
+  def md(text, use_sage_type: false)
     render_options = {
       # filer_html: true, 
       # hard_wrap: true,#
@@ -27,7 +27,7 @@ module MarkdownHelper
  
     markdown = Redcarpet::Markdown.new(renderer, extras)
     if use_sage_type
-      raw "<div class=\"sage-type\">#{markdown.render(text)}</div>"
+      "<div class=\"sage-type\">#{markdown.render(text)}</div>".html_safe
     else
       raw markdown.render(text)
     end
