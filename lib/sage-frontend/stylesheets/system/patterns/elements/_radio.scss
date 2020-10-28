@@ -130,6 +130,8 @@ $-radio-focus-outline-color: currentColor !default;
 
   &:focus:not(:disabled),
   &:active:not(:disabled) {
+    outline: none;
+    
     &::before {
       transform: translate3d(-50%, -50%, 0) scale(1);
       opacity: 1;
