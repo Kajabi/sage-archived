@@ -1,8 +1,7 @@
-<div class="sage-panel">
-  <div class="sage-panel__header">
+<%= sage_component SagePanel, {} do %>
+  <%= sage_component SagePanelHeader, {} do %>
     <h2 id="<%= title %>-example-preview" class="sage-panel__title">Preview</h2>
-  </div>
-  <div class="sage-type">
-    <%= render "examples/#{type.pluralize}/#{title}/preview" %>
-  </div>
-</div>
+  <% end %>
+
+  <%= render "examples/#{type.pluralize}/#{title}/preview" %>
+<% end %>

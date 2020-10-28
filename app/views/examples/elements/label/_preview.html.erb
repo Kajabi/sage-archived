@@ -9,52 +9,62 @@ colors = [
 %>
 
 <h5>Default</h5>
-<% colors.each do | color | %>
-  <%= sage_component SageLabel, {
-    color: color,
-    value: %(
-      #{color.capitalize}
-      <button class="sage-btn sage-btn--subtle sage-btn--secondary sage-btn--icon-only-remove"></button>
-    )
-  } %>
+<%= sage_component SagePanelBlock, {} do %>
+  <% colors.each do | color | %>
+    <%= sage_component SageLabel, {
+      color: color,
+      value: %(
+        #{color.capitalize}
+        <button class="sage-btn sage-btn--subtle sage-btn--secondary sage-btn--icon-only-remove"></button>
+      )
+    } %>
+  <% end %>
 <% end %>
 
 <h5>Subtle</h5>
-<% colors.each do | color | %>
-  <%= sage_component SageLabel, {
-    color: color,
-    style: "subtle",
-    value: color.capitalize
-  } %>
+<%= sage_component SagePanelBlock, {} do %>
+  <% colors.each do | color | %>
+    <%= sage_component SageLabel, {
+      color: color,
+      style: "subtle",
+      value: color.capitalize
+    } %>
+  <% end %>
 <% end %>
 
 <h5>Bold</h5>
-<% colors.each do | color | %>
-  <%= sage_component SageLabel, {
-    color: color,
-    style: "bold",
-    value: color.capitalize
-  } %>
+<%= sage_component SagePanelBlock, {} do %>
+  <% colors.each do | color | %>
+    <%= sage_component SageLabel, {
+      color: color,
+      style: "bold",
+      value: color.capitalize
+    } %>
+  <% end %>
 <% end %>
 
 <h5>With Icons</h5>
-<%= sage_component SageLabel, {
-  color: "draft",
-  value: "Add",
-  icon: { style: "left", name: "add-small" }
-} %>
-<%= sage_component SageLabel, {
-  color: "draft",
-  value: "Tag",
-  icon: { style: "right", name: "tag" }
-} %>
+<%= sage_component SagePanelBlock, {} do %>
+  <%= sage_component SageLabel, {
+    color: "draft",
+    value: "Add",
+    icon: { style: "left", name: "add-small" }
+  } %>
+  <%= sage_component SageLabel, {
+    color: "draft",
+    value: "Tag",
+    icon: { style: "right", name: "tag" }
+  } %>
+<% end %>
 
 <h5>Interactive</h5>
-<% colors.each do | color | %>
-  <%= sage_component SageLabel, {
-    color: color,
-    interactive: true,
-    value: color.capitalize,
-    icon: { style: "right", name: "caret-down" }
-  } %>
+<%= sage_component SagePanelBlock, {} do %>
+  <% colors.each do | color | %>
+    <%= sage_component SageLabel, {
+      color: color,
+      interactive: true,
+      value: color.capitalize,
+      icon: { style: "right", name: "caret-down" }
+    } %>
+  <% end %>
 <% end %>
