@@ -92,15 +92,13 @@ design_pages = [
             </ul>
           <% end %>
         </li>
-        <li>
-          <%= link_to "Sandbox", pages_sandbox_path, class: "sage-nav__link #{"sage-nav__link--active" if current_page?(pages_sandbox_path)}" %>
-        </li>
       </ul>
     </nav>
   </div>
   <div class="sage-sidebar__footer">
     <nav class="sage-nav" aria-label="Secondary">
       <ul class="sage-nav__list">
+        <%= link_to "Sandbox", pages_sandbox_path, class: "sage-nav__link #{"sage-nav__link--active" if current_page?(pages_sandbox_path)}" %>
         <li><%= link_to "Voice & Tone", "https://github.com/Kajabi/sage/wiki/Voice-&-Tone", class: "sage-nav__link", target: "_blank", rel: "noopener noreferrer" %></li>
         <li><%= link_to "Guidelines", "https://github.com/Kajabi/sage/wiki", class: "sage-nav__link", target: "_blank", rel: "noopener noreferrer" %></li>
         <li><%= link_to "Code Status", pages_status_path, class: "sage-nav__link #{"sage-nav__link--active" if current_page?(pages_status_path)}" %></li>
