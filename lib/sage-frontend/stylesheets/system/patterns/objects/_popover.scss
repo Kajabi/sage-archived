@@ -1,57 +1,57 @@
 
 .sage-page-heading-tooltip__wrapper {
-    padding: 16px;
-    padding: sage-spacing(sm);
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: sage-z-index(modal);
-    width: 100%;
-    min-width: rem(250px);
-    max-width: rem(300px);
-    background-color: sage-color(white);
-    background-clip: padding-box;
-    box-shadow: sage-shadow();
-    border-radius: sage-border(radius);
-    opacity: 0;
-    will-change: transform;
-    transform: translate3d(sage-spacing(md), sage-spacing(2xs), 0);
-  
-    &.show {
-      opacity: 1;
-    }
-  }
-  
-  .sage-page-heading-tooltip__eyebrow {
-    @extend %t-sage-body-xsmall-bold;
-    margin-bottom: sage-spacing(xs);
-    color: sage-color(charcoal, 100);
-  
-    span {
-      margin-left: sage-spacing(xs);
-    }
-  }
-  
-  .sage-page-heading-tooltip__title {
-    @extend %t-sage-heading-5;
-    margin-bottom: sage-spacing(xs);
-  }
-  
-  .sage-page-heading-tooltip__body  {
-    font-size: sage-font-size(sm);
-    
-    p {
-      @extend %t-sage-body;
-      color: sage-color(charcoal, 100);
-  
-      & + & {
-        margin-bottom: sage-spacing(sm);  //why not working
-      }
-    }
-  }
-  
-  .sage-popover-wrapper {
-    display: inline-flex;
-    position: relative;
-  }
-  
+	padding: 16px;
+	padding: sage-spacing(sm);
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: sage-z-index(modal);
+	width: 100%;
+	min-width: rem(250px);
+	max-width: rem(300px);
+	background-color: sage-color(white);
+	background-clip: padding-box;
+	box-shadow: sage-shadow();
+	border-radius: sage-border(radius);
+	opacity: 0;
+	will-change: transform;
+	transform: translate3d(sage-spacing(md), sage-spacing(2xs), 0);
+
+	&.show {
+		opacity: 1;
+	}
+}
+
+.sage-page-heading-tooltip__eyebrow {
+	@extend %t-sage-body-xsmall-bold;
+	margin-bottom: sage-spacing(xs);
+	color: sage-color(charcoal, 100);
+
+	span {
+		margin-left: sage-spacing(xs);
+	}
+}
+
+.sage-page-heading-tooltip__title {
+	@extend %t-sage-heading-5;
+	margin-bottom: sage-spacing(xs);
+}
+
+.sage-page-heading-tooltip__body  {
+	font-size: sage-font-size(sm);
+	
+	p {
+		@extend %t-sage-body;
+		color: sage-color(charcoal, 100);
+
+		& + & {
+			margin-bottom: sage-spacing(sm);  //why not working
+		}
+	}
+}
+
+.sage-popover-wrapper {
+	display: inline-flex;
+	position: relative;
+}
+
