@@ -15,6 +15,7 @@ $-modal-padding-y: sage-spacing(md);
   position: fixed;
   overflow-y: scroll;
   z-index: sage-z-index(modal, -1);
+  padding: sage-spacing(md);
   background-color: rgba(sage-color(charcoal, 500), 0.4);
   background-image: linear-gradient(
     rgba(sage-color(charcoal, 200), 0.3) 0%,
@@ -38,8 +39,8 @@ $-modal-padding-y: sage-spacing(md);
   visibility: hidden;
   display: none;
   z-index: sage-z-index(modal);
-  min-width: min-content;
-  width: sage-container(modal);
+  width: calc(100vw - #{sage-spacing(md)});
+  max-width: sage-container(modal);
   margin: 0;
   border-radius: sage-border(radius);
   background-color: sage-color(white);
@@ -82,6 +83,7 @@ $-modal-padding-y: sage-spacing(md);
 .sage-modal__footer {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   margin: $-modal-padding-y $-modal-padding-x;
 }
 
