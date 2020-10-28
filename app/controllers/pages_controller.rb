@@ -14,6 +14,9 @@ class PagesController < ApplicationController
     @title = params[:title]
   end
 
+  def getting_started
+  end
+
   def elements
   end
 

@@ -80,9 +80,12 @@ design_pages = [
           <% end %>
         </li>
         <li>
-          <%= link_to "Components", pages_elements_path, class: "sage-nav__link #{"sage-nav__link--active" if current_page_elements?}" %>
-          <% if current_page_elements? || current_page_objects? %>
+          <%= link_to "Components", pages_elements_path, class: "sage-nav__link #{"sage-nav__link--active" if current_page_elements? || current_page_objects? || current_page?(pages_getting_started_path) }" %>
+          <% if current_page_elements? || current_page_objects? || current_page?(pages_getting_started_path) %>
             <ul class="sage-nav__list sage-nav__list--sub">
+              <li>
+                <%= link_to "Getting Started", pages_getting_started_path, class: "sage-nav__link sage-nav__link--sub #{"sage-nav__link--active" if current_page?(pages_getting_started_path)}" %>
+              </li>
               <li>
                 <%= link_to "Elements", pages_elements_path, class: "sage-nav__link sage-nav__link--sub #{"sage-nav__link--active" if current_page_elements?}" %>
               </li>
@@ -98,10 +101,9 @@ design_pages = [
   <div class="sage-sidebar__footer">
     <nav class="sage-nav" aria-label="Secondary">
       <ul class="sage-nav__list">
-        <%= link_to "Sandbox", pages_sandbox_path, class: "sage-nav__link #{"sage-nav__link--active" if current_page?(pages_sandbox_path)}" %>
+        <li><%= link_to "Sandbox", pages_sandbox_path, class: "sage-nav__link #{"sage-nav__link--active" if current_page?(pages_sandbox_path)}" %></li>
         <li><%= link_to "Voice & Tone", "https://github.com/Kajabi/sage/wiki/Voice-&-Tone", class: "sage-nav__link", target: "_blank", rel: "noopener noreferrer" %></li>
-        <li><%= link_to "Guidelines", "https://github.com/Kajabi/sage/wiki", class: "sage-nav__link", target: "_blank", rel: "noopener noreferrer" %></li>
-        <li><%= link_to "Code Status", pages_status_path, class: "sage-nav__link #{"sage-nav__link--active" if current_page?(pages_status_path)}" %></li>
+        <li><%= link_to "Code Guidelines", "https://github.com/Kajabi/sage/wiki", class: "sage-nav__link", target: "_blank", rel: "noopener noreferrer" %></li>
       </ul>
     </nav>
   </div>
