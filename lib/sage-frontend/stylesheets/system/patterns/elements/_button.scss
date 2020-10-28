@@ -118,7 +118,6 @@ $-btn-subtle-styles: (
 
   &:focus:not(:disabled):not([aria-disabled="true"]),
   &:active:not(:disabled):not([aria-disabled="true"]) {
-
     .sage-dropdown__item > & {
       @include sage-focus-outline--update-color(transparent);
     }

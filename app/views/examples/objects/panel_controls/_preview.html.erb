@@ -1,3 +1,18 @@
+<%= md(%(
+## Trustworthy
+
+<p class="docs-feature__lead">We want to continue to deliver on our promise of Kajabi’s ease of use and remedy to technical headaches. Our goal is for the app to feel like it just works, and when there is an issue, it’s clearly communicated.</p>
+
+- Make it clear when changes have occurred that must be saved.
+- Always use a confirmation modal to approve destructive actions.
+- If a certain feature is currently unavailable to a user, show it as disabled. In the case of requiring certain admin validations, pop a modal when the disabled action is clicked.
+- Use consistently placed iconography to give helpful tooltips, descriptions, and links to resources to learn more about how to best use a particular feature.
+- Use short but descriptive text to explain complexities, tips to avoid errors, and form validation errors.
+- Use a toast notification to show changes have been saved.
+- Use page banners for announcements, warnings, or errors that apply to the overarching admin experience.
+- Use panel alerts for info, warnings, or errors that apply to the overall use of a feature.
+- Use card alerts for info, warnings, or errors that apply to a specific panel or section within a panel.
+), use_sage_type: true) %>
 <%
 tabs = sage_component(SageTabs, {
   items: [
@@ -168,7 +183,7 @@ actions_items = [
     "data-js-list-items-total": "485",
     "data-js-list-items-shown": "25",
     "data-js-list-page": "1",
-    "data-js-list-noun": "Products",
+    "data-js-list-noun": "Products,Product",
   },
   reset_above: true,
   headers: [
@@ -188,7 +203,7 @@ actions_items = [
   ],
   rows: [
     {
-      selected: sage_component(SageCheckbox, { value: "", standalone: true }),
+      selected: sage_component(SageCheckbox, { value: "", standalone: true, checked: true }),
       avatar: sage_component(SageAvatar, { initials: "AF", color: "purple" }),
       name: "Albert Flores",
       email: "albert.flores@example.com",
@@ -197,7 +212,7 @@ actions_items = [
       lastActivity: "8/2/19",
     },
     {
-      selected: sage_component(SageCheckbox, { value: "", standalone: true }),
+      selected: sage_component(SageCheckbox, { value: "", standalone: true, checked: true }),
       avatar: sage_component(SageAvatar, { initials: "EP", color: "orange" }),
       name: "Eleanor Pena",
       email: "eleanorpena@example.com",
@@ -276,3 +291,52 @@ through the `action` property.
 Any additional properties may be provided as data attributes
 and accessible on the custom event's `target.dataset` property.
 ), use_sage_type: true) %>
+
+<script type="text/javascript">
+  // Target table
+  let table = null;
+
+  // Count selected elements
+  let selectedItemsCount = null;
+
+  // Panel Controls object
+  let panelControls = null;
+
+  // Functions
+
+  const setupPanelControls = () => {
+    table = document.getElementById('demo-table');
+    selectedItemsCount = table.querySelectorAll(':checked').length;
+
+    if (selectedItemsCount > 0) {
+      // TODO: issue event to update selected count
+    }
+
+    // Set up event handlers
+    table.addEventListener('click', (ev) => {
+      const target = ev.target;
+      if (target.classList.contains('sage-checkbox')) {
+        handleClickCheckbox(target);
+      }
+    });
+  };
+
+  const handleClickCheckbox = (target) => {
+    if (target.checked) {
+      selectedItemsCount++;
+    } else {
+      selectedItemsCount--;
+    }
+
+    Sage.panelControls.handleItemSelection({ target, total: selectedItemsCount });
+  };
+
+  const ready = (callback) => {
+    if (document.readyState != "loading") callback();
+    else document.addEventListener("DOMContentLoaded", callback);
+  }
+
+  ready(() => { 
+     if (Sage.panelControls) setupPanelControls();
+  });
+</script>
