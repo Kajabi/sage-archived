@@ -1,5 +1,5 @@
 
-.sage-page-heading-tooltip__wrapper {
+.sage-popover__panel {
 	padding: 16px;
 	padding: sage-spacing(sm);
 	position: absolute;
@@ -8,7 +8,7 @@
 	z-index: sage-z-index(modal);
 	width: 100%;
 	min-width: rem(250px);
-	max-width: rem(300px);
+	max-width: rem(350px);
 	background-color: sage-color(white);
 	background-clip: padding-box;
 	box-shadow: sage-shadow();
@@ -22,26 +22,16 @@
 	}
 }
 
-.sage-page-heading-tooltip__eyebrow {
-	@extend %t-sage-body-xsmall-bold;
-	margin-bottom: sage-spacing(xs);
-	color: sage-color(charcoal, 100);
-
-	span {
-		margin-left: sage-spacing(xs);
-	}
-}
-
-.sage-page-heading-tooltip__title {
+.sage-popover__title {
 	@extend %t-sage-heading-5;
 	margin-bottom: sage-spacing(xs);
 }
 
-.sage-page-heading-tooltip__body  {
+.sage-popover__body  {
 	font-size: sage-font-size(sm);
 	
 	p {
-		@extend %t-sage-body;
+		@extend %t-sage-body-small;
 		color: sage-color(charcoal, 100);
 
 		& + & {

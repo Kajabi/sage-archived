@@ -13,13 +13,24 @@
         </span>
       </a>
     <% end %>
-    <% if component.help_content %> 
-      <%= sage_component SagePopover, {
-        help_title: "Page Title",
-        help_content: true,
-        help_content_link: true,
-        help_content_link_text: "Learn More"
-      } %>
+    <% if component.help %> 
+      <%= sage_component SagePopover, component.help do %>
+        <%= sage_component SageButton, {
+          value: "Open Menu",
+          style: "secondary",
+          subtle: true,
+          icon: {
+            style: "only",
+            name: "question-circle"
+          },
+          attributes: {
+            'aria-haspopup': true,
+            'aria-controls': 'sage-tooltip',
+            'aria-expanded': false,
+            'data-js-popover': ''
+          },
+        } %>
+      <% end %>
     <% end %>
   </h1>
   <% if content_for? :sage_page_heading_actions %>

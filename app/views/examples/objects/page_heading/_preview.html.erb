@@ -40,15 +40,13 @@
   title: "Page Title",
   spacer: { bottom: :xl },
   help_title: "Help Title",
-  help_content: true,
-  help_content_link: true,
-  help_content_link_text: "Learn More"
-} do %>
-  <% sage_component_section :help_content do %>
-    <p>This is help content that will exist inside the Page Header tooltip's popover</p>
-    <p>This is block of content.
-  <% end %>
-<% end %>
+  help: {
+    title: "Page Title",
+    body: '<p>This is a block of content.</p>',
+    content_link: true,
+    content_link_text: "Learn More"
+  }
+} %>
 
 <h3 class="t-sage-heading-6">Page Heading with Action Buttons</h3>
 

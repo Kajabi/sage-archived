@@ -4,9 +4,7 @@ class SagePageHeading < SageComponent
   attr_accessor :link_url
   attr_accessor :help_link
   attr_accessor :help_title
-  attr_accessor :help_content
-  attr_accessor :help_content_link
-  attr_accessor :help_content_link_text
+  attr_accessor :help
   attr_accessor :secondary_text
 
   def sections
