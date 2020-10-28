@@ -180,21 +180,11 @@ actions_items = [
       value: "",
       data_type: "avatar",
     },
-    {
-      value: "Name",
-    },
-    {
-      value: "Email",
-    },
-    {
-      value: "Email Marketing",
-    },
-    {
-      value: "Join Date",
-    },
-    {
-      value: "Last Activity",
-    },
+    "Name",
+    "Email",
+    "Email Marketing",
+    "Join Date",
+    "Last Activity",
   ],
   rows: [
     {
@@ -236,63 +226,53 @@ actions_items = [
   ]
 }
 %>
+<%= md(%(
+#### Events
 
+This component is set up to pair with a table of items.
+As a result, these controls can sort, navigate between pages,
+and apply bulk actions when the actions exposed here
+are paired with corresponding responders in context.
 
-<h4>Events</h4>
-<p>
-  This component is set up to pair with a table of items.
-  As a result, these controls can sort, navigate between pages,
-  and apply bulk actions when the actions exposed here
-  are paired with corresponding responders in context.
-</p>
-<ul>
-  <li>All these custom events are mapped to the <code>sage.panelControls.change</code> event type.</li>
-  <li>
-    The <code>detail</code> property of this custom event always contains the following
-    along with additional properties outlined in detail below:
-    <ul>
-      <li><code>type</code>: the more specific type of event in the context of the Panel Controls</li>
-      <li><code>targetListId</code>: the id of the list to be targetted by the action</li>
-    </ul>
-  </li>
-</ul>
+- All these custom events are mapped to the `sage.panelControls.change` event type.</li>
+- The `detail` property of this custom event always contains the following
+  along with additional properties outlined in detail below:
+  
+  - `type`: the more specific type of event in the context of the Panel Controls
+  - `targetListId`: the id of the list to be targetted by the action
 
-<h5>Pagination events <code>type: "pagination:[next|prev]"</code></h5>
-<p>
-  As the user clicks on the "next" or "previous" buttons,
-  they will fire the corresponding event type.
-  It is up the the repsonder to interpret and adjust the list accordingly.
-</p>
+##### Pagination events `type: "pagination:[next|prev]"`
 
-<h5>Expand/Collapse events <code>type: "list:[collapse|expand]"</code></h5>
-<p>
-  As the user clicks on the "expand" or "collapse" buttons,
-  they will fire the corresponding event type.
-  It is up the the repsonder to interpret and adjust the list accordingly.
-</p>
+As the user clicks on the "next" or "previous" buttons,
+they will fire the corresponding event type.
+It is up the the responder to interpret and adjust the list accordingly.
 
-<h5>Selection events <code>type: "list:[selectAll|selectNone]"</code></h5>
-<p>
-  As the user toggles the "select all" checkbox the corresponding event type is issued.
-  It is up the the repsonder to interpret and adjust the list accordingly.
-</p>
+##### Expand/Collapse events `type: "list:[collapse|expand]"`
 
-<h5>Sorting events <code>type: "list:sort"</code></h5>
-<p>
-  Items provided to the <code>sort_items</code>
-  should set the <code>data-js-list-sort-by</code> attribute
-  with the name of the field to be sorted by the responder.
-  This value is passed to the <code>detail</code> of the custom event
-  through the <code>sortBy</code> property.
-</p>
+As the user clicks on the "expand" or "collapse" buttons,
+they will fire the corresponding event type.
+It is up the the responder to interpret and adjust the list accordingly.
 
-<h5>Bulk action events <code>type: "list:action"</code></h5>
-<p>
-  Items provided to the <code>bulk_action_items</code>
-  should set the <code>data-js-action</code> attribute
-  with the name of an action to be exposed to the responder.
-  This value is passed to the <code>detail</code> of the custom event
-  through the <code>action</code> property.
-  Any additional properties may be provided as data attributes
-  and accessible on the custom event's <code>target.dataset</code> property.
-</p>
+##### Selection events `type: "list:[selectAll|selectNone]"`
+
+As the user toggles the "select all" checkbox the corresponding event type is issued.
+It is up the the responder to interpret and adjust the list accordingly.
+
+##### Sorting events `type: "list:sort"`
+
+Items provided to the `sort_items`
+should set the `data-js-list-sort-by` attribute
+with the name of the field to be sorted by the responder.
+This value is passed to the `detail` of the custom event
+through the `sortBy` property.
+
+##### Bulk action events `type: "list:action"`
+
+Items provided to the `bulk_action_items`
+should set the `data-js-action` attribute
+with the name of an action to be exposed to the responder.
+This value is passed to the `detail` of the custom event
+through the `action` property.
+Any additional properties may be provided as data attributes
+and accessible on the custom event's `target.dataset` property.
+), use_sage_type: true) %>
