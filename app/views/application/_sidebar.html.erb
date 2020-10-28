@@ -116,7 +116,7 @@ design_pages = [
           <% end %>
         </li>
         <li>
-          <%= link_to "Components", pages_elements_path, class: "sage-nav__link #{"sage-nav__link--active" if current_page_elements? || current_page_objects? || current_page?(pages_getting_started_path) }" %>
+          <%= link_to "Components", pages_getting_started_path, class: "sage-nav__link #{"sage-nav__link--active" if current_page_elements? || current_page_objects? || current_page?(pages_getting_started_path) }" %>
           <% if current_page_elements? || current_page_objects? || current_page?(pages_getting_started_path) %>
             <ul class="sage-nav__list sage-nav__list--sub">
               <li>
