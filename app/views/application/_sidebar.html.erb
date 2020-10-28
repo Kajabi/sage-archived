@@ -1,7 +1,7 @@
 <%
 foundations_pages = [
   {
-    name: "UX Values",
+    name: "Experience Values",
     path: pages_foundation_path(:ux_values),
   },
   {
@@ -11,6 +11,30 @@ foundations_pages = [
   {
     name: "Accessibility",
     path: pages_foundation_path(:accessibility),
+  },
+]
+%>
+<%
+content_pages = [
+  {
+    name: "Voice & Tone",
+    path: pages_content_path(:voice_tone),
+  },
+  {
+    name: "Grammar",
+    path: pages_content_path(:grammar),
+  },
+  {
+    name: "Branding",
+    path: pages_content_path(:branding),
+  },
+  {
+    name: "Product Content",
+    path: pages_content_path(:content),
+  },
+  {
+    name: "Vocabulary",
+    path: pages_content_path(:vocabulary),
   },
 ]
 %>
@@ -68,6 +92,18 @@ design_pages = [
           <% end %>
         </li>
         <li>
+          <%= link_to "Content", pages_content_path(:voice_tone), class: "sage-nav__link #{"sage-nav__link--active" if current_page_content?}" %>
+          <% if current_page_content? %>
+            <ul class="sage-nav__list sage-nav__list--sub">
+              <% content_pages.each do | page | %>
+                <li>
+                  <%= link_to page[:name], page[:path], class: "sage-nav__link sage-nav__link--sub #{"sage-nav__link--active" if current_page?(page[:path])}" %>
+                </li>
+              <% end %>
+            </ul>
+          <% end %>
+        </li>
+        <li>
           <%= link_to "Design", pages_design_path(:token), class: "sage-nav__link #{"sage-nav__link--active" if current_page_design?}" %>
           <% if current_page_design? %>
             <ul class="sage-nav__list sage-nav__list--sub">
@@ -102,7 +138,6 @@ design_pages = [
     <nav class="sage-nav" aria-label="Secondary">
       <ul class="sage-nav__list">
         <li><%= link_to "Sandbox", pages_sandbox_path, class: "sage-nav__link #{"sage-nav__link--active" if current_page?(pages_sandbox_path)}" %></li>
-        <li><%= link_to "Voice & Tone", "https://github.com/Kajabi/sage/wiki/Voice-&-Tone", class: "sage-nav__link", target: "_blank", rel: "noopener noreferrer" %></li>
         <li><%= link_to "Code Guidelines", "https://github.com/Kajabi/sage/wiki", class: "sage-nav__link", target: "_blank", rel: "noopener noreferrer" %></li>
       </ul>
     </nav>

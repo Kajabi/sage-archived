@@ -6,6 +6,10 @@ class PagesController < ApplicationController
     render params[:title]
   end
 
+  def content
+    render params[:title]
+  end
+
   def design
     render params[:title]
   end
