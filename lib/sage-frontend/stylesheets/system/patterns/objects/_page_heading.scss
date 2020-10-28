@@ -72,3 +72,39 @@
     justify-content: flex-start;
   }
 }
+
+.sage-page-heading-tooltip__wrapper {
+  padding: 16px;
+  padding: sage-spacing(sm);
+  // position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1060;
+  max-width: rem(400px);
+  background-color: #fff;
+  background-clip: padding-box;
+  box-shadow: sage-shadow();
+  border-radius: sage-border(radius);
+  // opacity: 0;
+  will-change: transform;
+
+  &:show {
+    opacity: 1;
+  }
+}
+
+.sage-page-heading-tooltip__eyebrow {
+  @extend %t-sage-body-xsmall-bold;
+  margin-bottom: sage-spacing(xs);
+  color: sage-color(charcoal, 100);
+}
+
+.sage-page-heading-tooltip__title {
+  @extend %t-sage-heading-5;
+  margin-bottom: sage-spacing(sm);
+}
+
+.sage-page-heading-tooltip__body  {
+  margin-bottom: sage-spacing(sm);
+  font-size: sage-font-size(sm);
+}
