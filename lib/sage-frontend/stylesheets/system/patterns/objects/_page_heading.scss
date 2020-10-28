@@ -76,19 +76,21 @@
 .sage-page-heading-tooltip__wrapper {
   padding: 16px;
   padding: sage-spacing(sm);
-  // position: absolute;
+  position: absolute;
   top: 0;
   left: 0;
-  z-index: 1060;
-  max-width: rem(400px);
-  background-color: #fff;
+  z-index: sage-z-index(modal);
+  width: 100%;
+  min-width: rem(300px);
+  background-color: sage-color(white);
   background-clip: padding-box;
   box-shadow: sage-shadow();
   border-radius: sage-border(radius);
-  // opacity: 0;
+  opacity: 0;
   will-change: transform;
+  transform: translate3d(sage-spacing(md), sage-spacing(2xs), 0);
 
-  &:show {
+  &.show {
     opacity: 1;
   }
 }
@@ -97,6 +99,10 @@
   @extend %t-sage-body-xsmall-bold;
   margin-bottom: sage-spacing(xs);
   color: sage-color(charcoal, 100);
+
+  span {
+    margin-left: sage-spacing(xs);
+  }
 }
 
 .sage-page-heading-tooltip__title {
@@ -107,4 +113,14 @@
 .sage-page-heading-tooltip__body  {
   margin-bottom: sage-spacing(sm);
   font-size: sage-font-size(sm);
+  
+  p {
+    @extend %t-sage-body-xsmall;
+    color: sage-color(charcoal, 100);
+  }
+}
+
+.sage-popover-wrapper {
+  display: inline-flex;
+  position: relative;
 }
