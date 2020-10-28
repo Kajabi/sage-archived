@@ -14,51 +14,12 @@
       </a>
     <% end %>
     <% if component.help_content %> 
-      <div class="sage-popover-wrapper">
-        <%= sage_component SageButton, {
-          value: "Open Menu",
-          style: "secondary",
-          subtle: true,
-          icon: {
-            style: "only",
-            name: "question-circle"
-          },
-          attributes: {
-            'aria-haspopup': true,
-            'aria-controls': 'sage-tooltip',
-            'aria-expanded': false,
-            'data-js-tooltip-trigger': '',
-            'data-js-popover': ''
-          },
-        } %>
-        <% if content_for? :sage_help_content %>
-          <div id="sage-tooltip" data-js-tooltip-content class="sage-page-heading-tooltip__wrapper">
-            <div class="sage-page-heading-tooltip">
-              <div class="sage-page-heading-tooltip__eyebrow">
-                LEARN <span role="img" aria-hidden="true">🧠</span>
-              </div>
-              <div class="sage-page-heading-tooltip__title">
-                <%= component.help_title %>
-              </div>
-              <div class="sage-page-heading-tooltip__body">
-                <%= content_for :sage_help_content %>
-              </div>
-              <div class="sage-page-heading-tooltip__actions">
-                <%= sage_component SageButton, {
-                  value: "Learn More",
-                  style: "primary",
-                  icon: {
-                    style: "right",
-                    name: "launch"
-                  },
-                  subtle: true,
-                  small: true
-                } %>
-              </div>
-            </div>
-          </div>
-        <% end %>
-      </div>
+      <%= sage_component SagePopover, {
+        help_title: "Page Title",
+        help_content: true,
+        help_content_link: true,
+        help_content_link_text: "Learn More"
+      } %>
     <% end %>
   </h1>
   <% if content_for? :sage_page_heading_actions %>

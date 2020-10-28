@@ -272,6 +272,16 @@ module ObjectsHelper
         react: "todo",
         a11y: "done"
       },
+      {
+        title: "popover",
+        description: "Unicorn component handling the complex interactions required for managing Product children",
+        use_legacy_html_code_source: false,
+        scss: "done",
+        docs: "todo",
+        rails: "done",
+        react: "todo",
+        a11y: "done"
+      },
     ]
   end
 

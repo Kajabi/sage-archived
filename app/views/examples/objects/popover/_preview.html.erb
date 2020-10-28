@@ -1,0 +1,12 @@
+<h3 class="t-sage-heading-6">Standalone Popover</h3>
+
+<%= sage_component SagePopover, {
+	help_title: "Page Title",
+	help_content: true,
+	help_content_link: true,
+	help_content_link_text: "Learn More"
+} do %>
+	<% sage_component_section :help_content do %>
+		<p>This is a block of content.
+	<% end %>
+<% end %>
