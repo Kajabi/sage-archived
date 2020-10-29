@@ -110,12 +110,14 @@ type_color_classes = [
 ]
 %>
 <%= content_for :heading do %>
-<%= md("
+<%= md(%(
 # Typography
+<p class="docs-heading__lead">Sage provides a constrained, purposeful set of typographic styles. These styles map as much as possible to functional roles so you know when each can be used.</p>
 
-Sage provides a constrained, purposeful set of typographic styles.
-These styles map as much as possible to functional roles so you know when each can be used.
-") %>
+Setting individual styles manually should be avoided, but where needed, should be sure to use the appropriate
+      [design tokens](/pages/foundations/token).
+      In the end, we prefer adding new entries to the type spec over including one-off styling.
+)) %>
 <% end %>
 <%= sage_component SagePanel, {} do %>
   <%= sage_component SagePanelBlock, { type_block: true } do %>
@@ -126,10 +128,6 @@ These styles map as much as possible to functional roles so you know when each c
       These can be used on any element to apply the desired typographical styles regardless of the tag. This allows a
       wide range of flexibility for applying a desired style to an element while still using the most semantic element possible
       for a given context.
-
-      Setting individual styles manually should be avoided, but where needed, should be sure to use the appropriate
-      [design tokens](/pages/foundations/token).
-      In the end, we prefer adding new entries to the type spec over including one-off styling.
     ") %>
   <% end %>
   

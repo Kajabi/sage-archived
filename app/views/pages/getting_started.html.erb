@@ -1,0 +1,22 @@
+<%= content_for :heading do %>
+<%= md(%(
+# Getting Started
+<p class="docs-heading__lead">Sage is informed by customer outcomes and is the tool designers at Kajabi use to craft predictable patterns that are integrated throughout the admin experience. </p>
+
+These reusable patterns are created from flexible building blocks we call components that share consistent visual foundations like color, iconography, typography, spacing, and interactive states.
+
+This design system is not owned by any one person or group but is a collective effort across the UXD and Product Design teams at Kajabi. Each team member can make suggestions for enhancements, as well as propose new components and patterns. 
+)) %>
+<% end %>
+<div class="sage-type">
+  <%= md(" 
+## How It Works 
+The UI of the Kajabi Core application is a combination of Rails Components, React Components and a custom CSS Framework called Sage that applies a uniform style to both.
+
+We think of our approach to UI at Kajabi in this way: We default to using Rails Components and a classic Rails approach to most problems and move to React where it counts.
+
+Rails does many things very well and gives us the ability to move quickly and solve complex problems with very simple, tried and true, code solutions. With that said, sometimes we come across a problem that we want to solve that the standard rails approach will just not be enough ( Think complex interactions with many versions of state ). In this case we move to React as our default approach to solving complex, Javascript heavy problems.
+
+Because our system contains two different approaches to UI creation, we utilize a SCSS Design System to provide the styles to both types of components (Think Bootstrap, but customized for our products). Our Design System provides the styles for the core components that make up the UI of our product.
+  ") %>
+</div>

@@ -1,0 +1,10 @@
+.docs-heading {
+  @include sage-grid-card;
+  h1 {
+    font-size: 2.8rem;
+  }
+  .docs-heading__lead {
+    @extend %t-sage-heading-3;
+    font-weight: sage-font-weight(regular);
+  }
+}
