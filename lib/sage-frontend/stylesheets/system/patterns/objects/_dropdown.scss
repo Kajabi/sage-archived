@@ -83,6 +83,10 @@ $-trigger-dropdown-offset: rem(16px) + sage-spacing(xs);
   }
 }
 
+.sage-dropdown__item--search {
+  display: block;
+}
+
 .sage-dropdown__item--border-before {
   border-top: 1px solid sage-color(grey, 300);
 }
