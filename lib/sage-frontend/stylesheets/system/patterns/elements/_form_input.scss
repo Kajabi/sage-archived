@@ -153,6 +153,7 @@
 
 .sage-input__message {
   @extend %t-sage-body-xsmall;
+  margin-top: sage-spacing(xs);
   color: sage-color(charcoal, 100);
 
   .sage-input--error & {
