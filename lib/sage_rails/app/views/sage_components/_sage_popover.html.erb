@@ -2,14 +2,14 @@
 	<%= component.content %>
 	<% if component.body %>
 		<div id="sage-tooltip" data-js-tooltip-content class="sage-popover__panel">
-			<div class="sage-page-heading-tooltip">
+			<div class="">
 				<div class="sage-popover__title">
 					<%= component.title %>
 				</div>
 				<div class="sage-popover__body">
 					<%= component.body.html_safe %>
 				</div>
-				<div class="sage-page-heading-tooltip__actions">
+				<div class="sage-popover__actions">
 					<%= sage_component SageButton, {
 						value: "Learn More",
 						style: "primary",

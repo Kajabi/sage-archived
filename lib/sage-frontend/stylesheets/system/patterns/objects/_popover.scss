@@ -3,8 +3,8 @@
 	padding: 16px;
 	padding: sage-spacing(sm);
 	position: absolute;
-	top: 0;
-	left: 0;
+	top: sage-spacing(2xs);
+	left: sage-spacing(md);
 	z-index: sage-z-index(modal);
 	width: 100%;
 	min-width: rem(250px);
@@ -14,11 +14,24 @@
 	box-shadow: sage-shadow();
 	border-radius: sage-border(radius);
 	opacity: 0;
-	will-change: transform;
-	transform: translate3d(sage-spacing(md), sage-spacing(2xs), 0);
+
+	// will-change: transform;
+	// transform: translate3d(sage-spacing(md), sage-spacing(2xs), 0);
 
 	&.show {
 		opacity: 1;
+	}
+
+	&::before {
+		content: "";
+    visibility: hidden;
+    position: fixed;
+    background-color: transparent;
+    pointer-events: none;
+    cursor: default;
+
+		@include position-full;
+
 	}
 }
 
