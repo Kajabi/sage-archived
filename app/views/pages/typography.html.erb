@@ -119,8 +119,7 @@ Setting individual styles manually should be avoided, but where needed, should b
       In the end, we prefer adding new entries to the type spec over including one-off styling.
 )) %>
 <% end %>
-<%= sage_component SagePanel, {} do %>
-  <%= sage_component SagePanelBlock, { type_block: true } do %>
+<div class="sage-type">
     <%= md("
       The Sage type system uses a major second modular scale (factor of 1.125) with a base font size of 16px.
 
@@ -129,7 +128,6 @@ Setting individual styles manually should be avoided, but where needed, should b
       wide range of flexibility for applying a desired style to an element while still using the most semantic element possible
       for a given context.
     ") %>
-  <% end %>
   
   <%= sage_component SageTable, {
     headers: [
@@ -143,7 +141,6 @@ Setting individual styles manually should be avoided, but where needed, should b
     rows: type_specs,
   } %>
   
-  <%= sage_component SagePanelBlock, { type_block: true } do %>
     <%= md('
 \* The `t-sage-body{-size}` classes also have weight variations:
 append `-med` for <span class="t-sage-body-med">medium (500)</span>;
@@ -159,28 +156,24 @@ The type specs above map logically to corresponding HTML elements, as well as th
 
 As an example, see here how the \"Heading 3\" type spec can be applied to an `h3` element:
 ') %>
-  <% end %>
   
   <h3 class="t-sage-heading-3">Lorem ipsum dolor sit</h3>
   <div class="sage-code-snippet">
     <pre class="prettyprint"><code>&lt;h3 class="t-sage-heading-3"&gt;Lorem ipsum dolor sit&lt;/h3&gt;</code></pre>
   </div>
   
-  <%= sage_component SagePanelBlock, { type_block: true } do %>
     <%= md("
       But the exact specs can also be applied to any element such as a `span`.
       This is not meant to be an excuse for using non-semantic markup, but rather,
       to free a spec to be applied to the most semantic element in context regardless
       of the spec's name.
     ") %>
-  <% end %>
 
-  <span class="t-sage-heading-3">Lorem ipsum dolor sit</span>
+  <h3 class="t-sage-heading-3">Lorem ipsum dolor sit</h3>
   <div class="sage-code-snippet">
     <pre class="prettyprint"><code>&lt;span class="t-sage-heading-3"&gt;Lorem ipsum dolor sit&lt;/span&gt;</code></pre>
   </div>
   
-  <%= sage_component SagePanelBlock, { type_block: true } do %>
     <%= md("
       For setting text in open areas where simpler markup is desired, or where a
       content management system controls the markup being output, we recommend applying
@@ -188,16 +181,13 @@ As an example, see here how the \"Heading 3\" type spec can be applied to an `h3
       leads to some default styling applied to the tags within the container
       include our preferred colors and block spacing.
     ") %>
-  <% end %>
 
-  <%= sage_component SagePanelBlock, { type_block: true } do %>
     <%= md("
 ## Coloring Type
 
 While applying colors to type on-the-fly should generally be avoided
 we do provide the following utility classes for such cases where its most practical:
     ") %>
-  <% end %>
 
   <%= sage_component SageTable, {
     headers: [
@@ -206,4 +196,4 @@ we do provide the following utility classes for such cases where its most practi
     ],
     rows: type_color_classes
   } %>
-<% end %>
+<div>
