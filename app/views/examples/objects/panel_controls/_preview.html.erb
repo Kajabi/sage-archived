@@ -167,7 +167,7 @@ actions_items = [
     "data-js-list-items-total": "4",
     "data-js-list-items-shown": "25",
     "data-js-list-page": "1",
-    "data-js-list-noun": "Products,Product",
+    "data-js-list-noun": "People,Person",
   },
   reset_above: true,
   headers: [
@@ -226,6 +226,19 @@ actions_items = [
 }
 %>
 <%= md(%(
+#### List properties
+
+This component is set up to pair with a target table.
+The following `data-` properties can be set on the table
+in order for the two to sync up well:
+
+| Property | Value | Notes |
+| --- | --- | --- |
+| `data-js-list-items-total` | Number | Total number of items that are available, even beyond this current page. |
+| `data-js-list-items-shown` | Number | Total number of items possible in this view. Consider this the "page size" or maximum number of items the view will show at any one time. |
+| `data-js-list-page` | Number | Current page being shown |
+| `data-js-list-noun` | String | The noun used to describe the items in the table. A plural and singular value can be provided separated by a comma. |
+
 #### Events
 
 This component is set up to pair with a table of items.
@@ -252,10 +265,25 @@ As the user clicks on the "expand" or "collapse" buttons,
 they will fire the corresponding event type.
 It is up the the responder to interpret and adjust the list accordingly.
 
-##### Selection events `type: "list:[selectAll|selectNone]"`
+##### Selection events `type: "list:[selectAll|selectNone|selectSome]"`
 
 As the user toggles the "select all" checkbox the corresponding event type is issued.
 It is up the the responder to interpret and adjust the list accordingly.
+
+When pairing with a target table, clicking on items' checkboxes should affect
+what the bulk actions/item count label should display.
+So the `Sage.panelControls` also exposes a `handleItemSelection()` method as an aid for this.
+Call this method in sync with click events on such checkboxes and the pass the following object:
+
+```
+{
+  target: <Object: the event target>,
+  total: <Number: the total number of items selected>,
+}
+```
+
+This dispatches the `list:selectSome` event detail type with the `target` and `total` values
+passed along for the panel controls to recieve and interpret.
 
 ##### Sorting events `type: "list:sort"`
 
