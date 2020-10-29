@@ -56,6 +56,10 @@
   }
 }
 
+.sage-panel-controls__item-count-label {
+  margin-left: sage-spacing(xs);
+}
+
 // Expand/collapse button setup
 // If status is "collapse" then the "collapse" button should show and not the "expand"
 [data-js-expand-collapse-status="collapse"] .sage-panel-controls__expand-btn {

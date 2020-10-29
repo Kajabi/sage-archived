@@ -1,18 +1,3 @@
-<%= md(%(
-## Trustworthy
-
-<p class="docs-feature__lead">We want to continue to deliver on our promise of Kajabi’s ease of use and remedy to technical headaches. Our goal is for the app to feel like it just works, and when there is an issue, it’s clearly communicated.</p>
-
-- Make it clear when changes have occurred that must be saved.
-- Always use a confirmation modal to approve destructive actions.
-- If a certain feature is currently unavailable to a user, show it as disabled. In the case of requiring certain admin validations, pop a modal when the disabled action is clicked.
-- Use consistently placed iconography to give helpful tooltips, descriptions, and links to resources to learn more about how to best use a particular feature.
-- Use short but descriptive text to explain complexities, tips to avoid errors, and form validation errors.
-- Use a toast notification to show changes have been saved.
-- Use page banners for announcements, warnings, or errors that apply to the overarching admin experience.
-- Use panel alerts for info, warnings, or errors that apply to the overall use of a feature.
-- Use card alerts for info, warnings, or errors that apply to a specific panel or section within a panel.
-), use_sage_type: true) %>
 <%
 tabs = sage_component(SageTabs, {
   items: [
@@ -130,7 +115,7 @@ actions_items = [
 %>
 
 <h4>Tabs + Search</h4>
-<%= sage_component SagePanelControls, { target: "demo-table" } do %>
+<%= sage_component SagePanelControls, {} do %>
   <% content_for :sage_panel_controls_tabs do %>
     <%= tabs %>
   <% end %>
@@ -147,11 +132,10 @@ actions_items = [
   show_sort: true,
   bulk_action_items: actions_items,
   sort_items: sort_items,
-  target: "demo-table",
 } %>
 
 <h4>Sample Custom Toolbar</h4>
-<%= sage_component SagePanelControls, { target: "demo-table" } do %>
+<%= sage_component SagePanelControls, {} do %>
   <% content_for :sage_panel_controls_toolbar do %>
     <%= search_filter_toolbar %>
     <%= dropdown %>
@@ -180,7 +164,7 @@ actions_items = [
 <%= sage_component SageTable, {
   html_attributes: {
     id: "demo-table",
-    "data-js-list-items-total": "485",
+    "data-js-list-items-total": "4",
     "data-js-list-items-shown": "25",
     "data-js-list-page": "1",
     "data-js-list-noun": "Products,Product",
@@ -296,7 +280,11 @@ and accessible on the custom event's `target.dataset` property.
   // Target table
   let table = null;
 
+  // Table items
+  let items = null;
+
   // Count selected elements
+  let selectedItems = null;
   let selectedItemsCount = null;
 
   // Panel Controls object
@@ -306,17 +294,42 @@ and accessible on the custom event's `target.dataset` property.
 
   const setupPanelControls = () => {
     table = document.getElementById('demo-table');
-    selectedItemsCount = table.querySelectorAll(':checked').length;
-
-    if (selectedItemsCount > 0) {
-      // TODO: issue event to update selected count
-    }
+    items = table.querySelectorAll('tr');
+    selectedItems = table.querySelectorAll(':checked');
+    selectedItemsCount = selectedItems ? selectedItems.length : null;
 
     // Set up event handlers
     table.addEventListener('click', (ev) => {
       const target = ev.target;
       if (target.classList.contains('sage-checkbox')) {
         handleClickCheckbox(target);
+      }
+    });
+
+    document.addEventListener('sage.panelControls.change', (ev) => {
+      switch (ev.detail.type) {
+        case 'list:selectAll':
+          items.forEach(tr => {
+            const cb = tr.querySelector('td .sage-checkbox--standalone');
+            if (cb) {
+              cb.checked = true;
+            }
+          });
+          selectedItems = table.querySelectorAll(':checked');
+          selectedItemsCount = selectedItems.length;
+          break;
+        case 'list:selectNone':
+          items.forEach(tr => {
+            const cb = tr.querySelector('td .sage-checkbox--standalone');
+            if (cb) {
+              cb.checked = false;
+            }
+          });
+          selectedItems = null;
+          selectedItemsCount = 0;
+          break;
+        default:
+          break;
       }
     });
   };
