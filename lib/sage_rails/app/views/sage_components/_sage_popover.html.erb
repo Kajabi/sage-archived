@@ -1,6 +1,9 @@
-<div class="sage-popover-wrapper">
-	<%= component.content %>
+<div data-js-popover class="sage-popover-wrapper">
+	<div data-js-popover--trigger>
+		<%= component.content %>
+	</div>
 	<% if component.body %>
+		<div data-js-tooltip-overlay class="sage-popover__overlay" tabindex="0"></div>
 		<div id="sage-tooltip" data-js-tooltip-content class="sage-popover__panel">
 			<div class="">
 				<div class="sage-popover__title">

@@ -1,38 +1,47 @@
+$-overlay-z-index: sage-z-index(modal);
+$-button-z-index: $-overlay-z-index + 1;
 
 .sage-popover__panel {
-	padding: 16px;
-	padding: sage-spacing(sm);
-	position: absolute;
-	top: sage-spacing(2xs);
-	left: sage-spacing(md);
-	z-index: sage-z-index(modal);
-	width: 100%;
-	min-width: rem(250px);
-	max-width: rem(350px);
-	background-color: sage-color(white);
-	background-clip: padding-box;
-	box-shadow: sage-shadow();
-	border-radius: sage-border(radius);
-	opacity: 0;
+  z-index: sage-z-index(modal);
+  position: absolute;
+  top: sage-spacing(2xs);
+  left: sage-spacing(md);
+  width: 100%;
+  min-width: rem(250px);
+  max-width: rem(350px);
+  padding: 16px;
+  padding: sage-spacing(sm);
+  background-color: sage-color(white);
+  background-clip: padding-box;
+  box-shadow: sage-shadow();
+  border-radius: sage-border(radius);
+  opacity: 0;
+  // will-change: transform;
+  // transform: translate3d(sage-spacing(md), sage-spacing(2xs), 0);
 
-	// will-change: transform;
-	// transform: translate3d(sage-spacing(md), sage-spacing(2xs), 0);
+  &.show {
+    opacity: 1;
+  }
+}
 
-	&.show {
-		opacity: 1;
-	}
+.sage-popover__button {
+  z-index: $-button-z-index;
+  position: relative;
+}
 
-	&::before {
-		content: "";
-    visibility: hidden;
-    position: fixed;
-    background-color: transparent;
-    pointer-events: none;
-    cursor: default;
+.sage-popover__overlay {
+  // z-index: calc(sage-z-index(modal) - 1px);
+  z-index: $-overlay-z-index;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  visibility: hidden;
 
-		@include position-full;
-
-	}
+  &.sage-popover__overlay--is-open {
+    visibility: visible;
+  }
 }
 
 .sage-popover__title {
