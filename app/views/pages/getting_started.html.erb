@@ -12,28 +12,36 @@ This design system is not owned by any one person or group but is a collective e
 ## How It Works 
 The UI of the Kajabi Core application is a combination of Rails Components, React Components and a custom SCSS Framework called Sage that applies a uniform style to both.
 ", use_sage_type: true) %>
-<div class="sage-row">
-  <div class="sage-col-3 docs-feature">
-    <i class="devicon devicon-sass-original colored"></i>
-    <h4>SCSS System</h4>
-    <p>The language-agnostic style system that allows us to service any app code choice. This is the cornerstone of Sage.</p>
-  </div>
-  <div class="sage-col-3 docs-feature">
-    <i class="devicon devicon-rails-plain-wordmark colored"></i>
-    <h4>Rails Components</h4>
-    <p>Our default approach to solving customer problems is via ROR. We use custom Rails Components to serve our system to the app.</p>
-  </div>
-  <div class="sage-col-3 docs-feature">
-    <i class="devicon devicon-react-original colored"></i>
-    <h4>React Components</h4>
-    <p>Our React components are used for situations where the desired solution for our customers is highly interactive or has lots of state management.</p>
-  </div>
-  <div class="sage-col-3 docs-feature">
-    <i class="devicon devicon-javascript-plain colored"></i>
-    <h4>Vanilla Javascript</h4>
-    <p>When minor interactions are needed we lean on vanilla javascript to ensure that our code is simple and can stand the test of time.</p>
-  </div>
-</div>
+<%= sage_component SageGridRow, {} do %>
+  <%= sage_component SageGridCol, { breakpoint: :lg, size: "3" } do %>
+    <div class="docs-feature">
+      <i class="devicon devicon-sass-original colored"></i>
+      <h4>SCSS System</h4>
+      <p>The language-agnostic style system that allows us to service any app code choice. This is the cornerstone of Sage.</p>
+    </div>
+  <% end %>
+  <%= sage_component SageGridCol, { breakpoint: :lg, size: "3" } do %>
+    <div class="docs-feature">
+      <i class="devicon devicon-rails-plain-wordmark colored"></i>
+      <h4>Rails Components</h4>
+      <p>Our default approach to solving customer problems is via ROR. We use custom Rails Components to serve our system to the app.</p>
+    </div>
+  <% end %>
+  <%= sage_component SageGridCol, { breakpoint: :lg, size: "3" } do %>
+    <div class="docs-feature">
+      <i class="devicon devicon-react-original colored"></i>
+      <h4>React Components</h4>
+      <p>Our React components are used for situations where the desired solution for our customers is highly interactive or has lots of state management.</p>
+    </div>
+  <% end %>
+  <%= sage_component SageGridCol, { breakpoint: :lg, size: "3" } do %>
+    <div class="docs-feature">
+      <i class="devicon devicon-javascript-plain colored"></i>
+      <h4>Vanilla Javascript</h4>
+      <p>When minor interactions are needed we lean on vanilla javascript to ensure that our code is simple and can stand the test of time.</p>
+    </div>
+  <% end %>
+<% end %>
 <%= md(" 
 We think of our approach to UI at Kajabi in this way: We default to using Rails Components and a classic Rails approach to most problems and move to React where it counts.
 
