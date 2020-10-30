@@ -263,11 +263,11 @@ module ElementsHelper
       },
       {
         title: "toast",
-        description: "Displays a temporary notification to a user based an interaction, the Rails implementation is custom to shim into current Kajabi-Products architecture.",
+        description: "Displays a temporary notification to a user based an interaction.",
         use_legacy_html_code_source: false,
         scss: "done",
         docs: "no",
-        rails: "no",
+        rails: "todo",
         react: "todo",
         a11y: "todo"
       },
