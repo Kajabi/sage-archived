@@ -136,6 +136,12 @@ $-collapse-breakpoint-key: md-max;
   &.sage-outline-item--is-droptarget-invalid {
     box-shadow: 0 -4px 0 0 sage-color(red, 300);
   }
+
+  &.sage-outline-item--is-searchmatch {
+    box-shadow: inset 0 0 0 1px sage-color(primary, 200);
+    // stylelint-disable-next-line declaration-no-important
+    border-color: sage-color(primary, 200) !important;
+  }
 }
 
 .sage-outline-item__title {
