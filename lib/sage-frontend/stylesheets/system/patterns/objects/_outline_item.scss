@@ -42,7 +42,7 @@ $-collapse-breakpoint-key: md-max;
 
   @media (min-width: sage-breakpoint($-collapse-breakpoint-key)) {
     // Using static column values to ensure alignment
-    grid-template-columns: min-content 1fr max-content rem(140px) rem(140px) rem(24px);
+    grid-template-columns: min-content 1fr max-content min-content rem(140px) rem(24px);
     grid-template-areas: "handle-drag title actions-secondary actions-primary status handle-collapse";
   }
 
@@ -161,8 +161,8 @@ $-collapse-breakpoint-key: md-max;
   flex-direction: row;
   align-items: center;
 
-  > * {
-    margin-right: sage-spacing();
+  > *:not(:last-child) {
+    margin-right: sage-spacing(lg);
   }
 
   @media (min-width: sage-breakpoint($-collapse-breakpoint-key)) {
@@ -182,6 +182,8 @@ $-collapse-breakpoint-key: md-max;
   display: flex;
   grid-area: actions-primary;
   align-items: center;
+  justify-content: flex-end;
+  padding-left: sage-spacing(md);
 }
 
 .sage-outline-item__status {
