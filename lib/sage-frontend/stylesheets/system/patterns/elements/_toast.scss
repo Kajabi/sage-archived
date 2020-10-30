@@ -26,7 +26,6 @@ $-toast-viewport-spacing-bottom: sage-spacing();
   position: fixed;
   justify-content: space-between;
   align-items: center;
-  gap: sage-spacing();
   padding: 0 sage-spacing(md);
   border-radius: sage-border(radius-large);
   box-shadow: sage-shadow(lg);
@@ -69,6 +68,7 @@ $-toast-viewport-spacing-bottom: sage-spacing();
 .sage-toast__value {
   @extend %t-sage-body-med;
   @include truncate();
+  margin-right: sage-spacing();
   color: sage-color(white);
 }
 
