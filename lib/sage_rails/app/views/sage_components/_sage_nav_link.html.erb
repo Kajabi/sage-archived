@@ -2,7 +2,7 @@
 <% component_class = component.type ? "sage-nav__link--#{component.type}" : "" %>
 <%= link_to component.link, method: component.method, class: "sage-nav__link #{active_class} #{component_class}" do %>
   <% if component.icon %>
-    <div class="sage-icon-<%= component.icon %> sage-nav__icon"></div>
+    <i class="sage-icon-<%= component.icon %> sage-nav__icon"></i>
   <% end %>
   <%= component.text %>
 <% end %>
