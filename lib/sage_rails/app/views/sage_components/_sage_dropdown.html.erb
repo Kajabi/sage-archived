@@ -15,15 +15,13 @@
     <%= component.content %>
   </div>
   <nav class="sage-dropdown__panel">
+    <% if component.search %>
+      <%= sage_component SageSearch, {
+        placeholder: "Search",
+        value: nil,
+      } %>
+    <% end %>
     <ul class="sage-dropdown__menu" role="menu" aria-label="options_menu">
-      <% if component.search %>
-        <li class="sage-dropdown__item sage-dropdown__item--block" role="none">
-          <%= sage_component SageSearch, {
-            placeholder: "Search",
-            value: nil
-          } %>
-        </li>
-      <% end %>
       <% component.items.each do |item| %>
         <li class="
             sage-dropdown__item
