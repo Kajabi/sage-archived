@@ -27,7 +27,6 @@ $-toast-viewport-spacing-bottom: sage-spacing();
   justify-content: space-between;
   align-items: center;
   gap: sage-spacing();
-  max-width: 98vw;
   padding: 0 sage-spacing(md);
   border-radius: sage-border(radius-large);
   box-shadow: sage-shadow(lg);
@@ -56,6 +55,7 @@ $-toast-viewport-spacing-bottom: sage-spacing();
     @include position(auto, sage-spacing(lg), $-toast-viewport-spacing-bottom, auto);
     height: $-toast-height-default;
     width: fit-content;
+    max-width: 90vw;
     padding: 0 sage-spacing(lg);
 
     @include generate-stacked-toast-alignment($-toast-height-default);
