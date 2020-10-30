@@ -19,6 +19,9 @@
       <%= sage_component SageSearch, {
         placeholder: "Search",
         value: nil,
+        html_attribute: {
+          "aria-label": "options_search"
+        }
       } %>
     <% end %>
     <ul class="sage-dropdown__menu" role="menu" aria-label="options_menu">
