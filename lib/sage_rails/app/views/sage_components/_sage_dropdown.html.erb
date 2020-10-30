@@ -15,12 +15,16 @@
     <%= component.content %>
   </div>
   <nav class="sage-dropdown__panel">
+    <% if component.search %>
+      <%= sage_component SageSearch, {
+        placeholder: "Search",
+        value: nil,
+        html_attribute: {
+          "aria-label": "options_search"
+        }
+      } %>
+    <% end %>
     <ul class="sage-dropdown__menu" role="menu" aria-label="options_menu">
-      <% if component.search %>
-        <li class="sage-dropdown__item sage-dropdown__item--search sage-search" role="none">
-          <input class="sage-search__input" type="text" placeholder="Search..." />
-        </li>
-      <% end %>
       <% component.items.each do |item| %>
         <li class="
             sage-dropdown__item
