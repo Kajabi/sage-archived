@@ -42,7 +42,7 @@ $-collapse-breakpoint-key: md-max;
 
   @media (min-width: sage-breakpoint($-collapse-breakpoint-key)) {
     // Using static column values to ensure alignment
-    grid-template-columns: min-content 1fr max-content rem(140px) rem(140px) rem(24px);
+    grid-template-columns: min-content 1fr max-content min-content rem(140px) rem(24px);
     grid-template-areas: "handle-drag title actions-secondary actions-primary status handle-collapse";
   }
 
@@ -136,6 +136,12 @@ $-collapse-breakpoint-key: md-max;
   &.sage-outline-item--is-droptarget-invalid {
     box-shadow: 0 -4px 0 0 sage-color(red, 300);
   }
+
+  &.sage-outline-item--is-searchmatch {
+    box-shadow: inset 0 0 0 1px sage-color(primary, 200);
+    // stylelint-disable-next-line declaration-no-important
+    border-color: sage-color(primary, 200) !important;
+  }
 }
 
 .sage-outline-item__title {
@@ -155,8 +161,8 @@ $-collapse-breakpoint-key: md-max;
   flex-direction: row;
   align-items: center;
 
-  > * {
-    margin-right: sage-spacing();
+  > *:not(:last-child) {
+    margin-right: sage-spacing(lg);
   }
 
   @media (min-width: sage-breakpoint($-collapse-breakpoint-key)) {
@@ -176,6 +182,8 @@ $-collapse-breakpoint-key: md-max;
   display: flex;
   grid-area: actions-primary;
   align-items: center;
+  justify-content: flex-end;
+  padding-left: sage-spacing(md);
 }
 
 .sage-outline-item__status {
