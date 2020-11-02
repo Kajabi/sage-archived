@@ -20,6 +20,17 @@ $-label-inset-border: 0 0 0 1px inset;
   white-space: nowrap;
   border-radius: $-label-border-radius;
   border: unset;
+
+  .sage-btn {
+    min-height: sage-spacing(md);
+
+    &::before {
+      font-size: rem(8px);
+      width: 100%;
+      padding-left: sage-spacing(3xs);
+      padding-right: sage-spacing(3xs);
+    }
+  }
 }
 
 .sage-label--truncate {
