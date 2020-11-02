@@ -29,16 +29,16 @@ The UI of the Kajabi Core application is a combination of Rails Components, Reac
   <% end %>
   <%= sage_component SageGridCol, { breakpoint: :lg, size: "3" } do %>
     <div class="docs-feature">
-      <i class="devicon devicon-react-original colored"></i>
-      <h4>React Components</h4>
-      <p>Our React components are used for situations where the desired solution for our customers is highly interactive or has lots of state management.</p>
+      <i class="devicon devicon-javascript-plain colored"></i>
+      <h4>Vanilla Javascript</h4>
+      <p>Our Rails components have clean, minimal JavaScript needed to ensure the necessary interactions and accessibility features are available right out of the box.</p>
     </div>
   <% end %>
   <%= sage_component SageGridCol, { breakpoint: :lg, size: "3" } do %>
     <div class="docs-feature">
-      <i class="devicon devicon-javascript-plain colored"></i>
-      <h4>Vanilla Javascript</h4>
-      <p>When minor interactions are needed we lean on vanilla javascript to ensure that our code is simple and can stand the test of time.</p>
+      <i class="devicon devicon-react-original colored"></i>
+      <h4>React Components</h4>
+      <p>We build React versions of many of our components that mimic the same functionality. A few of our components exist only as React components due to their complexity.</p>
     </div>
   <% end %>
 <% end %>
@@ -67,7 +67,7 @@ Because our system contains two different approaches to UI creation, we utilize 
 <hr>
 <%= md(" 
 
-This system is a work of shared ownership and we encourage any member of the Kajabi team to feel empowered to participate in its ongoing improvement. Understanding and improving the methodologies of the system is the key to the system's longevity. We encourage anyone planning on contributing to the system to first read over our Guides: 
+This system is a work of shared ownership and we encourage any member of the Kajabi team to feel empowered to participate in its ongoing improvement. Understanding and contributing to the system are the keys to the system's longevity. We encourage anyone planning on contributing to the system to first read over our Guides: 
 
 [Code Guidelines](https://github.com/Kajabi/sage/wiki).
 ", use_sage_type: true) %>
