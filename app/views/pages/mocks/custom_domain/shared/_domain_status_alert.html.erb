@@ -1,0 +1,31 @@
+<%
+show_status = false
+status_configs = {
+  color: "success",
+  icon: "check-circle",
+  title: "Domain connected",
+  desc: "Everything is ready to go for your domain"
+}
+
+if defined?(status) && status != "connected"
+  show_status = true
+  status_configs[:color] = "warning"
+  status_configs[:icon] = "warning"
+
+  if status == "in_progress"
+    status_configs[:title] = "Domain connection in progress"
+    status_configs[:desc] = "Your domain is currently being connected to your Kajabi site.
+      This process can take up to 24 hours but usually will complete much quicker.
+      We will let you know when it is fully connected via email."
+  end
+end
+
+
+%>
+<%= sage_component SageAlert, {
+  color: status_configs[:color],
+  desc: status_configs[:desc],
+  icon_name: "sage-icon-#{status_configs[:icon]}",
+  raised: true,
+  title: status_configs[:title],
+} if show_status %>

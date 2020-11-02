@@ -1,53 +1,62 @@
+<%
+## View variables
+
+# Globals
+site_kajabi_default_subdomain = "www.daydreamsurfshop.mykajabi.com"
+site_custom_domain = "daydreamsurfshop.com"
+# connection_status = "in_progress"
+connection_status = "connected"
+
+# Local content
+header = {
+  title: "Domain",
+  breadcrumbs: [{
+    text: "Settings",
+    url: "#"
+  }]
+}
+button_configs_add_custom_domain = {
+  style: "primary",
+  icon:{ name: "add", style: "left" },
+  value: "Custom Domain"
+}
+panel_default_subdomain = {
+  title: site_kajabi_default_subdomain,
+  edit_path: "#",
+  body: %(
+    <p class="t-sage--color-charcoal-200">
+      This is the default subdomain connected to your Kajabi site.
+      All sites are given a Kajabi subdomain that you can replace
+      with a custom domain you already own
+      or purchase a new one through Kajabi.
+    </p>
+  ),
+  badge: sage_component(SageLabel, { value: "Kajabi Default", style: "info" })
+}
+
+%>
+
 <%= sage_component SageContainer, { size: "lg" } do %>
-  <%= sage_component SagePageHeading, {
-    title: "Domain",
-    spacer: { bottom: :lg },
-    help_link: {
-      url: "#help",
-      label: "Help"
-    },
-  } do %>
+  <%= sage_component SagePageHeading, { title: header[:title], spacer: { bottom: :lg }} do %>
     <% content_for :sage_breadcrumbs do %>
-      <%= sage_component SageBreadcrumbs, {
-        has_back_icon: true,
-        items: [{
-          text: "Settings",
-          url: "#settings"
-        }]
-      } %>
+      <%= sage_component SageBreadcrumbs, { items: header[:breadcrumbs], has_back_icon: true } %>
     <% end %>
     <% content_for :sage_page_heading_toolbar do %>
-      <%= sage_component SageButton, { 
-        style: "tertiary",
-        icon:{
-          name: "gear",
-          style: "left"
-        },
-        value: "DNS Settings",
-        attributes: {
-          href: "#dns-settings"
-        }
-      } %>
+      <%= render "pages/mocks/custom_domain/shared/dns_settings_button" %>
     <% end %>
   <% end %>
   <div class="sage-row sage-row--stage">
     <div class="sage-col-8">
-      <%= sage_component SageAlert, {
-        color: "warning",
-        icon_name: "sage-icon-warning",
-        title: "Domain connection in progress",
-        desc: "Your domain is currently being connected to your Kajabi site.
-          This process can take up to 24 hours but usually will complete much quicker.
-          We will let you know when it is fully connected via email."
-      } %>
+      <%= render "pages/mocks/custom_domain/shared/domain_status_alert", status: connection_status %>
       <div class="sage-panel-set">
         <%= sage_component SagePanel, {} do %>
           <%= sage_component SageCardRow, {
             grid_template: "ite"
           } do %>
-            <i class="sage-icon-check-circle-lg t-sage--color-sage" aria-label="Connected!"></i>
-            <strong class="t-sage-heading-5">daydreamsurfshop.com</strong>
-            <span class="t-sage-body t-sage--color-charcoal-200">is connected</span>
+            <%= render "pages/mocks/custom_domain/shared/domain_status_header",
+              status: connection_status,
+              custom_domain: site_custom_domain
+            %>
             <%= render "pages/mocks/custom_domain/shared/option_menu" %>
           <% end %>
 

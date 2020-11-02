@@ -1,73 +1,103 @@
+<%
+## View variables
+
+# Glabals
+site_registrar_name = "TODO: Registrar name"
+original_nameserver_list = [
+  "ns-cloud-e1.googledomains.com",
+  "ns-cloud-e2.googledomains.com",
+  "ns-cloud-e3.googledomains.com",
+  "ns-cloud-e4.googledomains.com"
+]
+kajabi_nameserver_list = [
+  "adrian.ns.cloudflare.com",
+  "noah.ns.cloudflare.com"
+]
+
+# Local content
+header = {
+  title: "Nameserver Setup",
+  breadcrumbs: [{
+    text: "Domain",
+    url: "#"
+  }, {
+    text: "Custom Domain",
+    url: "#"
+  }, {
+    text: "Domain Setup",
+    url: "#"
+  }, {
+    text: "Nameserver Setup",
+    url: "#"
+  }]
+}
+
+panel_nameserver_setup = {
+  step_1: {
+    title: "1. Log in to [Registar Name]",
+    intro: %(
+      <p>Head to your DNS settings in #{site_registrar_name}.</p>
+    ),
+    remove_prompt: %(
+      <p>Remove these nameservers:</p>
+    ),
+  },
+  step_2: {
+    title: "2. Replace with Kajabi’s nameservers",
+    replace_prompt: %(
+      <p>Check to make sure they’re correct, then <strong>save your changes</strong>.</p>
+      <p>Registrars typically process nameserver updates within 24 hours. Once this process completes, Kajabi will confirm your domain activation via email.</p>
+    )
+  }
+}
+
+button_configs_done = {
+  value: "Done, check nameservers",
+  style: "primary"
+}
+
+# Processing
+
+html_original_nameserver_list = ""
+original_nameserver_list.each do | ons |
+  html_original_nameserver_list << %(<p>#{ons}</p>)
+end
+
+html_kajabi_nameserver_list = ""
+kajabi_nameserver_list.each do | kns |
+  html_kajabi_nameserver_list << sage_component(SageCopyButton, { value: kns, semibold: true })
+end
+%>
+
 <%= sage_component SageContainer, { size: "xs" } do %>
-  <%= sage_component SagePageHeading, {
-    title: "Nameserver Setup",
-    spacer: { bottom: :lg },
-    help_link: {
-      url: "#help-1",
-      label: "Help"
-    },
-  } do %>
+  <%= sage_component SagePageHeading, { title: header[:title], spacer: { bottom: :lg }} do %>
     <% content_for :sage_breadcrumbs do %>
-      <%= sage_component SageBreadcrumbs, {
-        items: [{
-          text: "Settings",
-          url: "#settings"
-        }, {
-          text: "Custom Domain",
-          url: "#custom-domain"
-        }, {
-          text: "Domain Setup",
-          url: "#domain-setup"
-        }, {
-          text: "Nameserver Setup",
-          url: "#"
-        }]
-      } %>
+      <%= sage_component SageBreadcrumbs, { items: header[:breadcrumbs] } %>
     <% end %>
   <% end %>
+
   <%= sage_component SagePanel, {} do %>
-    <%= sage_component SagePanelHeader, {
-      title: "1. Log in to [Registar Name]"
-    } do %>
-      <%= render "pages/mocks/custom_domain/shared/info_button", href: "#help-2" %>
-    <% end %>
-
+    <%= sage_component SagePanelHeader, { title: panel_nameserver_setup[:step_1][:title] } %>
     <%= sage_component SagePanelBlock, { type_block: true } do %>
-      <p>Head to your DNS settings in [TODO: Regstar Name].</p>
+      <%= panel_nameserver_setup[:step_1][:intro].html_safe %>
     <% end %>
-
     <%= sage_component SagePanelStack, {} do %>
-      <p>Remove these nameservers:</p>
-
+      <%= panel_nameserver_setup[:step_1][:remove_prompt].html_safe %>
       <%= sage_component SageCopyTextCard, { semibold: true } do %>
-        <!-- TODO: Are these the actual values to use? -->
-        <p>ns-cloud-e1.googledomains.com</p>
-        <p>ns-cloud-e2.googledomains.com</p>
-        <p>ns-cloud-e3.googledomains.com</p>
-        <p>ns-cloud-e4.googledomains.com</p>
+        <%= html_original_nameserver_list.html_safe %>
       <% end %>
     <% end %>
 
-    <%= sage_component SagePanelHeader, {
-      title: "2. Replace with Kajabi’s nameservers"
-    } %>
-
+    <%= sage_component SagePanelHeader, { title: panel_nameserver_setup[:step_2][:title] } %>
     <%= sage_component SagePanelStack, {} do %>
-      <!-- TODO: Are these the actual values to use? -->
-      <%= sage_component SageCopyButton, { value: "adrian.ns.cloudflare.com", semibold: true } %>
-      <%= sage_component SageCopyButton, { value: "noah.ns.cloudflare.com", semibold: true } %>
+      <%= html_kajabi_nameserver_list.html_safe %>
     <% end %>
-
     <%= sage_component SagePanelBlock, { type_block: true } do %>
-      <p>Check to make sure they’re correct, then <strong>save your changes</strong>.</p>
-      <p>Registrars typically process nameserver updates within 24 hours. Once this process completes, Kajabi will confirm your domain activation via email.</p>
+      <%= panel_nameserver_setup[:step_2][:replace_prompt].html_safe %>
     <% end %>
 
     <%= sage_component SagePanelFooter, {} do %>
-      <%= sage_component SageButton, {
-        value: "Done, check nameservers",
-        style: "primary"
-      } %>
+      <%= sage_component SageButton, button_configs_done %>
     <% end %>
   <% end %>
 <% end %>

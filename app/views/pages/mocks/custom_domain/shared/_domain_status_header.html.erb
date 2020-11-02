@@ -1,0 +1,22 @@
+<%
+status_configs = {
+  color: "sage",
+  icon: "check-circle",
+  icon_caption: "Connected!",
+  message: "is connected"
+}
+
+if defined?(status) && status != "connected"
+  status_configs[:color] = "yellow"
+  status_configs[:icon] = "warning"
+
+  if status == "in_progress"
+    status_configs[:icon_caption] = "In Progress"
+    status_configs[:message] = "is in progress"
+  end
+end
+
+%>
+<i class="sage-icon-<%= status_configs[:icon] %>-lg t-sage--color-<%= status_configs[:color] %>" aria-label="<%= status_configs[:icon_caption] %>"></i>
+<strong class="t-sage-heading-5"><%= custom_domain %></strong>
+<span class="t-sage-body t-sage--color-charcoal-200"><%= status_configs[:message] %></span>
