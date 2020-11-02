@@ -1,27 +1,27 @@
 <div data-js-popover class="sage-popover-wrapper">
-	<div data-js-popover--trigger>
-		<%= component.content %>
-	</div>
-	<% if component.body %>
-		<div data-js-popover--overlay class="sage-popover__overlay"></div>
-		<div id="sage-popover" data-js-popover--content class="sage-popover__panel">
-			<div class="sage-popover__title">
-				<%= component.title %>
-			</div>
-			<div class="sage-popover__body">
-				<%= component.body.html_safe %>
-			</div>
-			<div class="sage-popover__actions">
-				<%= sage_component SageButton, {
-					value: "Learn More",
-					style: "primary",
-					icon: {
-						style: "right",
-						name: "launch"
-					},
-					subtle: true
-				} %>
-			</div>
-		</div>
-	<% end %>
+  <div data-js-popover--trigger>
+    <%= component.content %>
+  </div>
+  <% if component.body %>
+    <div data-js-popover--overlay class="sage-popover__overlay"></div>
+    <div id="sage-popover" data-js-popover--content class="sage-popover__panel">
+      <div class="sage-popover__title">
+        <%= component.title %>
+      </div>
+      <div class="sage-popover__body">
+        <%= component.body.html_safe %>
+      </div>
+      <div class="sage-popover__actions">
+        <%= sage_component SageButton, {
+          value: "Learn More",
+          style: "primary",
+          icon: {
+            style: "right",
+            name: "launch"
+          },
+          subtle: true
+        } %>
+      </div>
+    </div>
+  <% end %>
 </div>
