@@ -29,7 +29,7 @@ $-popover-panel-offset-left: sage-spacing(md);
 
   @include sage-grid-stack();
 
-  &.show {
+  &.sage-popover__panel--is-expanded {
     opacity: 1;
   }
 }
@@ -68,7 +68,7 @@ $-popover-panel-offset-left: sage-spacing(md);
   color: sage-color(charcoal, 100);
 }
 
-.sage-popover-wrapper {
+.sage-popover {
   display: inline-flex;
   position: relative;
 }
