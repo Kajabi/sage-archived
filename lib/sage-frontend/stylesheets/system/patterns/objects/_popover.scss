@@ -36,8 +36,8 @@ $-button-z-index: $-overlay-z-index + 1;
 }
 
 .sage-popover__overlay {
-  z-index: $-overlay-z-index;
   visibility: hidden;
+  z-index: $-overlay-z-index;
   position: fixed;
   top: 0;
   left: 0;
