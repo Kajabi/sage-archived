@@ -1,54 +1,56 @@
-<%= sage_component SageContainer, { size: "xs" } do %>
-  <%= sage_component SagePageHeading, {
-    title: "Custom Domain",
-    spacer: { bottom: :lg },
-    help_link: {
-      url: "#",
-      label: "More info"
+<%
+## View variables
+
+# Local content
+header = {
+  title: "Custom Domain",
+  breadcrumbs: [{
+    text: "Settings",
+    url: "#settings"
+  }, {
+    text: "Domain",
+    url: "#s01_main"
+  }, {
+    text: "Custom Domain",
+    url: "#"
+  }]
+}
+
+panel_domain_setup = {
+  title: "How would you like to set up your custom domain?",
+  tabs: [
+    {
+      attributes: {
+        href: "#react-app",
+      },
+      text: "Buy a new domain",
+      subtext: "I want to purchase a new domain.",
+      type: "arrow",
     },
-  } do %>
+    {
+      attributes: {
+        href: "#s03_own_where",
+      },
+      text: "I already own a domain",
+      subtext: "I have an existing domain and want to connect it to Kajabi.",
+      type: "arrow",
+    }
+  ]
+}
+%>
+
+<%= sage_component SageContainer, { size: "xs" } do %>
+  <%= sage_component SagePageHeading, { title: header[:title], spacer: { bottom: :lg }} do %>
     <% content_for :sage_breadcrumbs do %>
-      <%= sage_component SageBreadcrumbs, {
-        items: [{
-          text: "Settings",
-          url: "#settings"
-        }, {
-          text: "Domain",
-          url: "#s01_main"
-        }, {
-          text: "Custom Domain",
-          url: "#"
-        }]
-      } %>
+      <%= sage_component SageBreadcrumbs, { items: header[:breadcrumbs] } %>
     <% end %>
   <% end %>
   <%= sage_component SagePanel, {} do %>
-    <%= sage_component SagePanelHeader, {
-      title: "How would you like to set up your custom domain?"
-    } do %>
-      <%= render "pages/mocks/custom_domain/shared/info_button", href: "#info" %>
-    <% end %>
+    <%= sage_component SagePanelHeader, { title: panel_domain_setup[:title] } %>
     <div class="sage-tabs-container">
       <%= sage_component SageTabs, {
         style: "choice",
-        items: [
-          {
-            attributes: {
-              href: "#react-app",
-            },
-            text: 'Buy a new domain',
-            subtext: 'I want to purchase a new domain.',
-            type: "arrow",
-          },
-          {
-            attributes: {
-              href: "#s03_own_where",
-            },
-            text: 'I already own a domain',
-            subtext: 'I have an existing domain and want to connect it to Kajabi. ',
-            type: "arrow",
-          }
-        ],
+        items: panel_domain_setup[:tabs],
         stacked: true
       } %>
     </div>

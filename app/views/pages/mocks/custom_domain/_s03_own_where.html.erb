@@ -1,72 +1,38 @@
-<%= sage_component SageContainer, { size: "xs" } do %>
-  <%= sage_component SagePageHeading, {
-    title: "Domain Setup",
-    spacer: { bottom: :lg },
-    help_link: {
-      url: "#help-1",
-      label: "Help"
-    },
-  } do %>
-    <% content_for :sage_breadcrumbs do %>
-      <%= sage_component SageBreadcrumbs, {
-        items: [{
-          text: "Settings",
-          url: "#settings"
-        }, {
-          text: "Domain",
-          url: "#s01_main"
-        }, {
-          text: "Custom Domain",
-          url: "#s02_own_or_buy"
-        }, {
-          text: "Domain Setup",
-          url: "#"
-        }]
-      } %>
-    <% end %>
-  <% end %>
-  <%= sage_component SagePanel, {} do %>
-    <%= sage_component SagePanelHeader, {
-      title: "Where is your website hosted?"
-    } do %>
-      <%= render "pages/mocks/custom_domain/shared/info_button", href: "#help-2" %>
-    <% end %>
-    <div class="sage-tabs-container">
-      <%= sage_component SageTabs, {
-        style: "choice",
-        id: "cd-own-where-selection",
-        items: [
-          {
-            target: 'cd-location-tab-here',
-            text: 'My website lives on Kajabi',
-            subtext: 'I plan to have my main website and courses in Kajabi.',
-            type: "radio",
-          },
-          {
-            target: 'cd-location-tab-elsewhere',
-            text: 'My website lives somwhere else',
-            subtext: 'Wordpress, Wix, Squarespace or other.',
-            type: "radio",
-          }
-        ],
-        stacked: true
-      } %>
+<%
+## View variables
 
-      <!-- TODO: Simpleform need in some fashion in here -->
-      <%= sage_component SageTabsPane, {
-        id: "cd-location-tab-here",
-        panel_spacing: true
-      } do %>
-        <hr class="sage-tabs-divider" />
+# Local content
+header = {
+  title: "Domain Setup",
+  breadcrumbs: [{
+    text: "Settings",
+    url: "#settings"
+  }, {
+    text: "Domain",
+    url: "#s01_main"
+  }, {
+    text: "Custom Domain",
+    url: "#s02_own_or_buy"
+  }, {
+    text: "Domain Setup",
+    url: "#"
+  }]
+}
 
-        <%= sage_component SagePanelHeader, {
-          title: "Enter the domain you want to connect"
-        } do %>
-          <%= render "pages/mocks/custom_domain/shared/info_button", href: "#help-3" %>
-        <% end %>
-
-        <!-- TODO: Replace with simpleform field -->
-        <%= render "examples/elements/form_input/markup",
+panel_site_location = {
+  title: "Where is your website hosted?",
+  tabs_id: "cd-own-where-selection",
+  tabs: [
+    {
+      target: "cd-location-tab-here",
+      text: "My website lives on Kajabi",
+      subtext: "I plan to have my main website and courses in Kajabi.",
+      type: "radio",
+      panel_title: "Enter the domain you want to connect",
+      # TODO: Replace with simpleform element...
+      panel_body: render(
+        "examples/elements/form_input/markup",
+        {
           id: "cd-location-here-domain-name",
           input_type: "text",
           label_text: "Enter your domain...",
@@ -83,27 +49,23 @@
           message_text: "",
           prefix: "",
           suffix: ""
-        %>
-      <% end %>
-
-      <%= sage_component SageTabsPane, {
-        id: "cd-location-tab-elsewhere",
-        panel_spacing: true
-      } do %>
-        <hr class="sage-tabs-divider" />
-
-        <%= sage_component SagePanelHeader, {
-          title: "Enter the subdomain you want to connect"
-        } do %>
-          <%= render "pages/mocks/custom_domain/shared/info_button", href: "#help-4" %>
-        <% end %>
-
-        <!-- TODO: Replace with simpleform field -->
-        <%= render "examples/elements/form_input/markup",
+        }
+      )
+    },
+    {
+      target: "cd-location-tab-elsewhere",
+      text: "My website lives somwhere else",
+      subtext: "Wordpress, Wix, Squarespace or other.",
+      type: "radio",
+      panel_title: "Enter the subdomain you want to connect",
+      # TODO: Replace with simpleform element...
+      panel_body: render(
+        "examples/elements/form_input/markup",
+        {
           id: "cd-location-elsewhere-domain-name",
           input_type: "text",
-          label_text: "Enter your domain...",
-          placeholder: "Enter your domain...",
+          label_text: "Enter your subdomain...",
+          placeholder: "Enter your subdomain...",
           value: "",
           required: true,
           disabled: false,
@@ -116,16 +78,46 @@
           message_text: "",
           prefix: "",
           suffix: ""
-        %>
+        }
+      )
+    }
+  ],
+}
+
+button_configs_next = {
+  value: "Next",
+  style: "primary",
+  disabled: true,
+}
+%>
+
+<%= sage_component SageContainer, { size: "xs" } do %>
+  <%= sage_component SagePageHeading, { title: header[:title], spacer: { bottom: :lg }} do %>
+    <% content_for :sage_breadcrumbs do %>
+      <%= sage_component SageBreadcrumbs, { items: header[:breadcrumbs] } %>
+    <% end %>
+  <% end %>
+  <%= sage_component SagePanel, {} do %>
+    <%= sage_component SagePanelHeader, { title: panel_site_location[:title] } %>
+    <div class="sage-tabs-container">
+      <%= sage_component SageTabs, {
+        style: "choice",
+        id: panel_site_location[:tabs_id],
+        items: panel_site_location[:tabs],
+        stacked: true
+      } %>
+      <% panel_site_location[:tabs].each do | tab | %>
+        <!-- TODO: Simpleform need in some fashion in here -->
+        <%= sage_component SageTabsPane, { id: tab[:target], panel_spacing: true } do %>
+          <hr class="sage-tabs-divider" />
+          <%= sage_component SagePanelHeader, { title: tab[:panel_title] } %>
+          <%= tab[:panel_body].html_safe %>
+        <% end %>
       <% end %>
     </div>
     <%= sage_component SagePanelFooter, {} do %>
       <!-- TODO: Button needs to be disabled at first but enabled once fields are valid. -->
-      <%= sage_component SageButton, {
-        value: "Next",
-        style: "primary",
-        disabled: true,
-      } %>
+      <%= sage_component SageButton, button_configs_next %>
     <% end %>
   <% end %>
 <% end %>

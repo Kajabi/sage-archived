@@ -1,51 +1,53 @@
-<%= sage_component SageContainer, { size: "xs" } do %>
-  <%= sage_component SagePageHeading, {
-    title: "Domain",
-    spacer: { bottom: :lg },
-    help_link: {
-      url: "#help",
-      label: "Help"
-    },
-  } do %>
-    <% content_for :sage_breadcrumbs do %>
-      <%= sage_component SageBreadcrumbs, {
-        items: [{
-          text: "Settings",
-          url: "#settings"
-        }, {
-          text: "Domain",
-          url: "#"
-        }]
-      } %>
-    <% end %>
-    <% content_for :sage_page_heading_actions do %>
-      <%= sage_component SageButton, {
-        style: "primary",
-        icon:{ 
-          name: "add",
-          style: "left"
-        },
-        value: "Custom Domain"
-      } %>
-    <% end %>
-  <% end %>
-  <%= sage_component SagePanel, {} do %>
-    <%= sage_component SagePanelHeader, {
-      title: "Kajabi Domain"
-    } do %>
-      <%= render "pages/mocks/custom_domain/shared/edit_button", href: "#edit" %>
-    <% end %>
-    <p><b>www.daydreamsurfshop.mykajabi.com</b></p>
+<%
+## View variables
+
+# Globals
+site_kajabi_default_subdomain = "www.daydreamsurfshop.mykajabi.com"
+
+# Local content
+header = {
+  title: "Domain",
+  breadcrumbs: [{
+    text: "Settings",
+    url: "#settings"
+  }, {
+    text: "Domain"
+  }]
+}
+button_configs_add_custom_domain = {
+  style: "primary",
+  icon:{ name: "add", style: "left" },
+  value: "Custom Domain"
+}
+panel_default_subdomain = {
+  title: "Kajabi Domain",
+  edit_path: "#",
+  subdomain: site_kajabi_default_subdomain,
+  body: %(
     <p class="t-sage--color-charcoal-200">
       This is the default subdomain connected to your Kajabi site.
       All sites are given a Kajabi subdomain that you can replace
       with a custom domain or purchase a new one through Kajabi.
     </p>
-    <p>
-      <%= sage_component SageLabel, {
-        value: "Default",
-        style: "draft"
-       } %>
-    </p>
+  ),
+  badge: sage_component(SageLabel, { value: "Default", style: "draft" })
+}
+%>
+<%= sage_component SageContainer, { size: "xs" } do %>
+  <%= sage_component SagePageHeading, { title: header[:title], spacer: { bottom: :lg }} do %>
+    <% content_for :sage_breadcrumbs do %>
+      <%= sage_component SageBreadcrumbs, { items: header[:breadcrumbs] } %>
+    <% end %>
+    <% content_for :sage_page_heading_actions do %>
+      <%= sage_component SageButton, button_configs_add_custom_domain %>
+    <% end %>
+  <% end %>
+  <%= sage_component SagePanel, {} do %>
+    <%= sage_component SagePanelHeader, { title: panel_default_subdomain[:title] } do %>
+      <%= render "pages/mocks/custom_domain/shared/edit_button", href: panel_default_subdomain[:edit_path] %>
+    <% end %>
+    <p><b><%= panel_default_subdomain[:subdomain] %></b></p>
+    <%= panel_default_subdomain[:body].html_safe %>
+    <p><%= panel_default_subdomain[:badge].html_safe %></p>
   <% end %>
 <% end %>
