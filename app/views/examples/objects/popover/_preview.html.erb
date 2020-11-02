@@ -1,50 +1,31 @@
 <h3 class="t-sage-heading-6">Standalone Popover</h3>
 
 <%= sage_component SagePopover, {
-  title: "Page Title",
-  body: '<p>This is a block of content.</p>',
-  url_link: true,
-  link_text: "Learn More"
+  title: "Page Title 1",
+  icon: "question-circle",
+  link: {
+    href: "#",
+    name: "Learn more about a thing",
+  }
 } do %>
-  <%= sage_component SageButton, {
-    value: "Open Menu",
-    style: "secondary",
-    subtle: true,
-    icon: {
-      style: "only",
-      name: "question-circle"
-    },
-    attributes: {
-      'aria-haspopup': true,
-      'aria-controls': 'sage-popover',
-      'aria-expanded': false
-    },
-    css_classes: "sage-popover__button"
-  } %>
+  <p>This is a block of content.</p>
+  <p>This is a block of content.</p>
+  <p>This is a block of content.</p>
+  <p>This is a block of content.</p>
 <% end %>
 
 <h3 class="t-sage-heading-6">Another Standalone Popover</h3>
 
 <%= sage_component SagePopover, {
-  id: 2,
   title: "Page Title 2",
-  body: '<p>This is a block of content.</p>',
-  url_link: true,
-  link_text: "Learn More"
+  icon: "dot-menu-horizontal",
+  link: {
+    href: "#",
+    name: "Learn more",
+  }
 } do %>
-  <%= sage_component SageButton, {
-    value: "Open Menu",
-    style: "secondary",
-    subtle: true,
-    icon: {
-      style: "only",
-      name: "dot-menu-horizontal"
-    },
-    attributes: {
-      'aria-haspopup': true,
-      'aria-controls': 'sage-popover',
-      'aria-expanded': false
-    },
-    css_classes: "sage-popover__button"
-  } %>
+  <p>This is a block of content.</p>
+  <p>This is a block of content.</p>
+  <p>This is a block of content.</p>
+  <p>This is a block of content.</p>
 <% end %>

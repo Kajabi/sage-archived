@@ -12,6 +12,11 @@ $-popover-panel-max-size: rem(350px);
 $-popover-panel-offset-top: sage-spacing(2xs);
 $-popover-panel-offset-left: sage-spacing(md);
 
+.sage-popover {
+  display: inline-flex;
+  position: relative;
+}
+
 .sage-popover__panel {
   z-index: sage-z-index(modal);
   position: absolute;
@@ -29,7 +34,7 @@ $-popover-panel-offset-left: sage-spacing(md);
 
   @include sage-grid-stack();
 
-  &.sage-popover__panel--is-expanded {
+  .sage-popover--is-expanded & {
     opacity: 1;
   }
 }
@@ -61,14 +66,9 @@ $-popover-panel-offset-left: sage-spacing(md);
   @extend %t-sage-heading-5;
 }
 
-.sage-popover__body {
+.sage-popover__content {
   @extend %t-sage-body-small;
   @include sage-grid-stack();
 
   color: sage-color(charcoal, 100);
-}
-
-.sage-popover {
-  display: inline-flex;
-  position: relative;
 }
