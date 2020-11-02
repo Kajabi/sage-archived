@@ -27,10 +27,15 @@ $-button-z-index: $-overlay-z-index + 1;
 .sage-popover__button {
   z-index: $-button-z-index;
   position: relative;
+  pointer-events: all;
+}
+
+// Remove ability to click on a popover when one is already expanded
+.sage-popover--is-expanded .sage-popover__button:not([aria-expanded="true"]) {
+  pointer-events: none;
 }
 
 .sage-popover__overlay {
-  // z-index: calc(sage-z-index(modal) - 1px);
   z-index: $-overlay-z-index;
   position: fixed;
   top: 0;
@@ -55,10 +60,6 @@ $-button-z-index: $-overlay-z-index + 1;
 	p {
 		@extend %t-sage-body-small;
 		color: sage-color(charcoal, 100);
-
-		& + & {
-			margin-bottom: sage-spacing(sm);  //why not working
-		}
 	}
 }
 
@@ -66,4 +67,3 @@ $-button-z-index: $-overlay-z-index + 1;
 	display: inline-flex;
 	position: relative;
 }
-

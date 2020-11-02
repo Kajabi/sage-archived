@@ -16,7 +16,32 @@
 		},
 		attributes: {
 			'aria-haspopup': true,
-			'aria-controls': 'sage-tooltip',
+			'aria-controls': 'sage-popover',
+			'aria-expanded': false
+		},
+		css_classes: "sage-popover__button"
+	} %>
+<% end %>
+
+<h3 class="t-sage-heading-6">Another Standalone Popover</h3>
+
+<%= sage_component SagePopover, {
+	title: "Page Title 2",
+	body: '<p>This is a block of content.</p>',
+	content_link: true,
+	content_link_text: "Learn More"
+} do %>
+	<%= sage_component SageButton, {
+		value: "Open Menu",
+		style: "secondary",
+		subtle: true,
+		icon: {
+			style: "only",
+			name: "trash"
+		},
+		attributes: {
+			'aria-haspopup': true,
+			'aria-controls': 'sage-popover',
 			'aria-expanded': false
 		},
 		css_classes: "sage-popover__button"
