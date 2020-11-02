@@ -37,10 +37,10 @@ $-button-z-index: $-overlay-z-index + 1;
 
 .sage-popover__overlay {
   z-index: $-overlay-z-index;
+  visibility: hidden;
   position: fixed;
   top: 0;
   left: 0;
-  visibility: hidden;
   height: 100%;
   width: 100%;
 
@@ -54,7 +54,7 @@ $-button-z-index: $-overlay-z-index + 1;
   margin-bottom: sage-spacing(xs);
 }
 
-.sage-popover__body  {
+.sage-popover__body {
   font-size: sage-font-size(sm);
 	
   p {
