@@ -1,21 +1,12 @@
-<%= sage_component SageButtonGroup, {} do %>
+<%= sage_component SageButtonGroup, { gap: :md } do %>
   <%= sage_component SageButton, {
     value: "Save",
     style: "primary"
   } %>
 
   <%= sage_component SageButton, {
-    value: "Posts",
-    style: "secondary",
-    icon: {
-      name: "add",
-      style: "left",
-    }
-  } %>
-
-  <%= sage_component SageButton, {
     value: "Cancel",
-    style: "tertiary"
+    style: "secondary"
   } %>
 
   <%= sage_component SageButton, {

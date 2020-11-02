@@ -36,16 +36,34 @@
       dont_content: dont_content %>
   </div>
 <% else %>
-  <div class="sage-panel-set">
-    <%= sage_component SagePanel, {} do %>
-      <%= sage_component SagePanelHeader, { title: "Prototype" } %>
-      <%= render "examples/elements/#{@title}/prototype" %>
-    <% end %>
+  <%= content_for :quick_links do %>
+    <div class="quick-links">
+      <h2 class="quick-links__title">Contents</h2>
+      <ul class="quick-links__body">
+        <li class="quick-links__item">
+          <a href="#prototype" class="quick-links__link">Prototpye</a>
+        </li>
+        <li class="quick-links__item">
+          <a href="#examples" class="quick-links__link">Examples</a>
+        </li>
+        <li class="quick-links__item">
+          <a href="#best-practices" class="quick-links__link">Best Practices</a>
+        </li>
+        <li class="quick-links__item">
+          <a href="#props" class="quick-links__link">Properties</a>
+        </li>
+      </ul>
+    </div>
+  <% end %>
 
-    <%= sage_component SagePanel, {} do %>
-      <%= sage_component SagePanelHeader, { title: "Examples" } %>
-      <%= render "examples/elements/#{@title}/examples" %>
-    <% end %>
+  <div class="sage-panel-set">
+    <h2 id="prototype">Prototype</h2>
+    <%= render "examples/elements/#{@title}/prototype" %>
+
+    <%= sage_component SagePanelDivider, {} %>
+
+    <h2 id="Examples">Examples</h2>
+    <%= render "examples/elements/#{@title}/examples" %>
 
     <%= render "examples/elements/#{@title}/documentation" %>
   </div>

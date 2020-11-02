@@ -1,5 +1,6 @@
 <!-- Demos -->
 <% 
+index = 0
 demos = [
   {
     title: "Primary",
@@ -25,10 +26,13 @@ demos = [
 ]
 %>
 <% demos.each do | demo | %>
-  <%= render :layout => "examples/shared/examples", :locals => { title: "#{demo[:title]} (regular and disabled)", notes: demo[:notes] } do %>
+  <%= render :layout => "examples/shared/examples", :locals => {
+      title: "#{demo[:title]} (regular and disabled)",
+      number: index += 1
+    } do %>
     <%= sage_component SagePanelStack, {} do %>
       <% [false, true].each do | disabled | %>
-        <%= sage_component SageButtonGroup, { spacer: { bottom: :xs }} do %>
+        <%= sage_component SageButtonGroup, { gap: :md, spacer: { bottom: :xs }} do %>
           <!-- Primary button -->
           <%= sage_component SageButton, {
             value: demo[:options][:value],
@@ -85,8 +89,12 @@ demos = [
 <% end %>
 
 <% demos.each do | demo | %>
-  <%= render :layout => "examples/shared/examples", :locals => { title: "#{demo[:title]} (Small)" } do %>
-    <%= sage_component SageButtonGroup, { spacer: { bottom: :xs }} do %>
+  <%= render :layout => "examples/shared/examples",
+    :locals => {
+      title: "#{demo[:title]} (Small)",
+      number: index += 1
+    } do %>
+    <%= sage_component SageButtonGroup, { gap: :lg, spacer: { bottom: :xs }} do %>
       <%= sage_component SageButton, {
         value: "Button",
         style: demo[:options][:style],
@@ -97,7 +105,7 @@ demos = [
         style: demo[:options][:style],
         subtle: true,
         icon: {
-          name: "menu",
+          name: "pen",
           style: "left"
         }
       } %>
@@ -106,7 +114,7 @@ demos = [
         style: demo[:options][:style],
         subtle: true,
         icon: {
-          name: "menu",
+          name: "pen",
           style: "only"
         }
       } %>
@@ -117,11 +125,17 @@ demos = [
 <%= render "examples/shared/examples", {
   title: "Button groups",
   notes: md("
-The Button Group has been used in each example of multiple buttons in a row above. This provides grouping and spacing according to the System's intentions.
-  ")
+The Button Group has been used in each example of multiple buttons in a row above.
+This provides grouping and spacing according to the System's intentions.
+  "),
+  number: index += 1
 } %>
 
-<%= render :layout => "examples/shared/examples", :locals => { title: "Button group: Align End" } do %>
+<%= render :layout => "examples/shared/examples",
+  :locals => {
+    title: "Button group: Align End",
+    number: index += 1
+  } do %>
   <%= sage_component SageButtonGroup, { align: "end" } do %>
     <%= sage_component SageButton, {
       value: "Save",
@@ -129,7 +143,7 @@ The Button Group has been used in each example of multiple buttons in a row abov
     } %>
     <%= sage_component SageButton, {
       value: "Cancel",
-      style: "tertiary",
+      style: "secondary",
     } %>
   <% end %>
 <% end %>
