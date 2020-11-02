@@ -30,7 +30,7 @@
     <% end %>
   <% end %>
 
-  <% if info_content[:use_legacy_documentation] %>
+  <% if use_legacy_documentation %>
     <%= render "examples/elements/#{title}/preview" %>
   <% else %>
     <%= render "examples/elements/#{title}/prototype" %>
