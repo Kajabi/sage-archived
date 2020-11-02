@@ -62,14 +62,10 @@ $-popover-panel-offset-left: sage-spacing(md);
 }
 
 .sage-popover__body {
-  font-size: sage-font-size(sm);
-
+  @extend %t-sage-body-small;
   @include sage-grid-stack();
-	
-  p {
-    @extend %t-sage-body-small;
-    color: sage-color(charcoal, 100);
-  }
+
+  color: sage-color(charcoal, 100);
 }
 
 .sage-popover-wrapper {
