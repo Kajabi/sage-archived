@@ -1,9 +1,9 @@
-<%= sage_component SagePanel, { spacer: { bottom: :lg, top: :lg } } do %>
-  <%= sage_component SagePanelHeader, { title: "HTML Code"} %>
-  <div class="example__code">
-    <button class="example__expand-btn" aria-expanded="false" aria-controls="example-code-<%= title %>">Expand this code snippet</button>
-    <div id="example-code-<%= title %>" class="sage-code-snippet" tabindex="-1">
-      <pre class="prettyprint"><code><%= CGI.unescapeHTML(CGI.escapeHTML render "examples/#{type.pluralize}/#{title}/preview") %></code></pre>
-    </div>
-  </div>
+<%= sage_component SageCardRow, { grid_template: "te", spacer: {bottom: :sm} } do %>
+  <h2 id="<%= title %>-example-code">HTML Code</h2>
 <% end %>
+<div class="example__code sage-spacer-bottom-xl">
+  <button class="example__expand-btn" aria-expanded="false" aria-controls="example-code-<%= title %>">Expand this code snippet</button>
+  <div id="example-code-<%= title %>" class="sage-code-snippet" tabindex="-1">
+    <pre class="prettyprint"><code><%= CGI.unescapeHTML(CGI.escapeHTML render "examples/#{type.pluralize}/#{title}/preview") %></code></pre>
+  </div>
+</div>

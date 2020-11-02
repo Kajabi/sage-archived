@@ -1,9 +1,8 @@
 <% if props_content.present? %>
-  <%= sage_component SagePanel, {} do %>
-    <%= sage_component SagePanelHeader, {} do %>
-      <h2 id="<%= @title %>-example-props" class="sage-panel__title">Properties</h2>
-    <% end %>
-
+  <%= sage_component SageCardRow, { grid_template: "te", spacer: {bottom: :sm} } do %>
+    <h2 id="<%= title %>-example-props">Properties</h2>
+  <% end %>
+  <%= sage_component SageCard, { spacer: {bottom: :xl} } do %>
     <div class="sage-table-wrapper">
       <div class="sage-table-wrapper__overflow">
         <table class="sage-table sage-table--properties">

@@ -1,34 +1,32 @@
 <% permalink = "element-#{title}" %>
-
-<%= sage_component SagePanel, {} do %>
-  <%= sage_component SagePanelHeader, {} do %>
-    <h2 id="<%= permalink %>" class="sage-panel__title">
-      <%= link_to title.titleize, "##{permalink}", class: "example__link" %>
-    </h2>
-    <%= sage_component SageButtonGroup, { gap: :md } do %>
-      <%= sage_component SageButton, {
-        value: "View Details",
-        style: "secondary",
-        subtle: true,
-        icon: { name: "preview-on", style: "only" },
-        attributes: {
-          "data-js-tooltip": "Inspect element details",
-          href: pages_element_path(title),
-        }
-      } %>
-      <%= sage_component SageButton, {
-        value: "Opens #{title.titleize} in a new window",
-        style: "secondary",
-        subtle: true,
-        icon: { name: "launch", style: "only" },
-        attributes: {
-          "data-js-tooltip": "Open breakout page",
-          href: pages_breakout_path(type: :element, title: title),
-          target: "_blank",
-        }
-      } %>
-    <% end %>
+<%= sage_component SageCardRow, { grid_template: "te", spacer: {bottom: :sm} } do %>
+  <h2 id="<%= permalink %>">
+    <%= link_to title.titleize, pages_element_path(title), class: "example__link" %>
+  </h2>
+  <%= sage_component SageButtonGroup, { gap: :md } do %>
+    <%= sage_component SageButton, {
+      value: "View Details",
+      style: "secondary",
+      subtle: true,
+      icon: { name: "preview-on", style: "only" },
+      attributes: {
+        "data-js-tooltip": "Inspect element details",
+        href: pages_element_path(title),
+      }
+    } %>
+    <%= sage_component SageButton, {
+      value: "Opens #{title.titleize} in a new window",
+      style: "secondary",
+      subtle: true,
+      icon: { name: "launch", style: "only" },
+      attributes: {
+        "data-js-tooltip": "Open breakout page",
+        href: pages_breakout_path(type: :element, title: title),
+        target: "_blank",
+      }
+    } %>
   <% end %>
-
+<% end %>
+<%= sage_component SageCard, { spacer: {bottom: :xl} } do %>
   <%= render "examples/elements/#{title}/preview" %>
 <% end %>

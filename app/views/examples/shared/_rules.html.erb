@@ -1,17 +1,21 @@
 <% if do_content.present? || dont_content.present? %>
-  <%= sage_component SagePanel, {} do %>
-    <%= sage_component SagePanelHeader, {} do %>
-      <h2 id="<%= @title %>-example-best-practices" class="sage-panel__title">Best Practices</h2>
-    <% end %>
-
-    <%= sage_component SagePanelRow, { grid_template: "m", vertical_align: "start" } do %>
-      <%= sage_component SagePanelStack, {} do %>
-        <%= sage_component SagePanelSubheader, { title: "Do" } %>
+  <%= sage_component SageCardRow, { grid_template: "te", spacer: {bottom: :sm} } do %>
+    <h2 id="<%= title %>-example-best-practices">Best Practices</h2>
+  <% end %>
+  <%= sage_component SageCard, { spacer: {bottom: :xl} } do %>
+    <%= sage_component SageGridRow, { } do %>
+      <%= sage_component SageGridCol, { breakpoint: "md", size: "6" } do %> 
+        <%= sage_component SageLabel, {
+          color: "success",
+          value: "Do",
+        } %>
         <%= do_content %>
       <% end %>
-
-      <%= sage_component SagePanelStack, {} do %>
-        <%= sage_component SagePanelSubheader, { title: "Don't" } %>
+      <%= sage_component SageGridCol, { breakpoint: "md", size: "6" } do %> 
+        <%= sage_component SageLabel, {
+            color: "danger",
+            value: "Don't",
+          } %>
         <%= dont_content %>
       <% end %>
     <% end %>

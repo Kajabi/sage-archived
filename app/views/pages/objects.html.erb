@@ -17,8 +17,6 @@ These Objects take on their own properties and serve as the backbone of our desi
     </ul>
   </div>
 <% end %>
-<div class="sage-panel-set">
-  <% sorted_sage_objects.each do |object| %>
-    <%= render "examples/objects/object_preview", title: object[:title], description: object[:description] %>
-  <% end %>
-</div>
+<% sorted_sage_objects.each do |object| %>
+  <%= render "examples/objects/object_preview", title: object[:title], description: object[:description] %>
+<% end %>
