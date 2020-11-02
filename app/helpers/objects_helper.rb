@@ -274,7 +274,7 @@ module ObjectsHelper
       },
       {
         title: "popover",
-        description: "Unicorn component handling the complex interactions required for managing Product children",
+        description: "Popovers open upon click to show information regarding the section. It has a header/subject, minimal information, and a link to learn more",
         use_legacy_html_code_source: false,
         scss: "done",
         docs: "todo",

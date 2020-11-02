@@ -40,9 +40,9 @@ $-button-z-index: $-overlay-z-index + 1;
   position: fixed;
   top: 0;
   left: 0;
+  visibility: hidden;
   height: 100%;
   width: 100%;
-  visibility: hidden;
 
   &.sage-popover__overlay--is-open {
     visibility: visible;
@@ -50,20 +50,20 @@ $-button-z-index: $-overlay-z-index + 1;
 }
 
 .sage-popover__title {
-	@extend %t-sage-heading-5;
-	margin-bottom: sage-spacing(xs);
+  @extend %t-sage-heading-5;
+  margin-bottom: sage-spacing(xs);
 }
 
 .sage-popover__body  {
-	font-size: sage-font-size(sm);
+  font-size: sage-font-size(sm);
 	
-	p {
-		@extend %t-sage-body-small;
-		color: sage-color(charcoal, 100);
-	}
+  p {
+    @extend %t-sage-body-small;
+    color: sage-color(charcoal, 100);
+  }
 }
 
 .sage-popover-wrapper {
-	display: inline-flex;
-	position: relative;
+  display: inline-flex;
+  position: relative;
 }
