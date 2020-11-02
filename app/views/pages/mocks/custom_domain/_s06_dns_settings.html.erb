@@ -1,178 +1,152 @@
 <%
-# For simpler mocking here...
+## View variables
+
+# Content helpers
 option_menu_cell = {
   value: render("pages/mocks/custom_domain/shared/option_menu"),
   html_attributes: {
     class: "sage-table-cell--align-right"
   }
 }
+
+# Local content
+header = {
+  title: "DNS Settings",
+  breadcrumbs: [{
+    text: "Domain",
+    url: "#"
+  }, {
+    text: "DNS Settings",
+    url: "#"
+  }]
+}
+advanced_settings_block = %(
+  <h4>Advanced Settings</h5>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Enim, arcu, egestas adipiscing aliquam suspendisse arcu malesuada donec.
+    Aliquam pulvinar lectus id nunc faucibus.
+    Egestas in mauris arcu.
+  </p>
+)
+nameservers_block = %(
+  <h4>Nameservers</h5>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Enim, arcu, egestas adipiscing aliquam suspendisse arcu malesuada donec.
+  </p>
+)
+default_nameservers_info = %(
+  <p>Your site is using Kajabi’s default nameservers.</p>
+)
+
+dns_records_settings = [
+  {
+    title: "Subdomains",
+    table_headers: ["Name", "Status"],
+    table_rows: [
+      [
+        "www.daydreamsurfshop.mykajabi.com",
+        sage_component(SageLabel, {
+          color: "success",
+          value: "Connected"
+        }),
+        option_menu_cell
+      ]
+    ]
+  },
+  {
+    title: "A Record",
+    table_headers: ["Name", "Points to"],
+    table_rows: [
+      [
+        "@",
+        "23.222.38.65",
+        option_menu_cell
+      ]
+    ]
+  },
+  {
+    title: "CNAME Record",
+    table_headers: ["Name", "Points to"],
+    table_rows: [
+      [
+        "www",
+        "endpoint.mykajabi.com",
+        option_menu_cell
+      ]
+    ]
+  },
+  {
+    title: "MX Record",
+    table_headers: ["Name", "Points to", "Priority"],
+    table_rows: [
+      [
+        "@",
+        "mx.daydreamsurfshop.com",
+        "1",
+        option_menu_cell
+      ]
+    ]
+  },
+  {
+    title: "TXT Record",
+    table_headers: ["Name", "Points to"],
+    table_rows: [
+      [
+        "www",
+        "endpoint.mykajabi.com",
+        option_menu_cell
+      ]
+    ]
+  }
+]
+
 %>
 <%= sage_component SageContainer, { size: "lg" } do %>
-  <%= sage_component SagePageHeading, {
-    title: "DNS Settings",
-    spacer: { bottom: :lg },
-    help_link: {
-      url: "#help",
-      label: "Help"
-    },
-  } do %>
+  <%= sage_component SagePageHeading, { title: header[:title], spacer: { bottom: :lg }} do %>
     <% content_for :sage_breadcrumbs do %>
-      <%= sage_component SageBreadcrumbs, {
-        items: [{
-          text: "Settings",
-          url: "#settings"
-        }, {
-          text: "Domain",
-          url: "#s05a_main_domain_connected_subdomains"
-        }, {
-          text: "DNS Settings",
-          url: "#"
-        }]
-      } %>
+      <%= sage_component SageBreadcrumbs, { items: header[:breadcrumbs] } %>
     <% end %>
     <% content_for :sage_page_heading_actions do %>
       <%= sage_component SageButton, { 
         style: "primary",
-        icon:{
-          name: "add",
-          style: "left"
-        },
+        icon: { name: "add", style: "left" },
         value: "Create New",
       } %>
     <% end %>
   <% end %>
   <div class="sage-row sage-row--stage">
     <div class="sage-col-4 sage-type">
-      <h4>Advanced Settings</h5>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Enim, arcu, egestas adipiscing aliquam suspendisse arcu malesuada donec.
-        Aliquam pulvinar lectus id nunc faucibus.
-        Egestas in mauris arcu.
-      </p>
+      <%= advanced_settings_block.html_safe %>
     </div>
     <div class="sage-col-8">
       <%= sage_component SagePanel, {} do %>
-        <%= sage_component SagePanelHeader, { title: "DNS Records" } do %>
-          <%= render "pages/mocks/custom_domain/shared/info_button", href: "#dns-info" %>
-        <% end %>
-        <%= sage_component SagePanelSubheader, { title: "Subdomains" } %>
-        <%= sage_component SageCard, {} do %>
-          <%= sage_component SageTable, {
-            reset_above: true,
-            reset_below: true,
-            headers: [
-              "Name",
-              "Status"
-            ],
-            rows: [
-              [
-                "www.daydreamsurfshop.mykajabi.com",
-                sage_component(SageLabel, {
-                  color: "success",
-                  value: "Connected"
-                }),
-                option_menu_cell
-              ]
-            ]
-          } %>
-        <% end %>
+        <%= sage_component SagePanelHeader, { title: "DNS Records" } %>
 
-        <%= sage_component SagePanelSubheader, { title: "A Record" } %>
-        <%= sage_component SageCard, {} do %>
-          <%= sage_component SageTable, {
-            reset_above: true,
-            reset_below: true,
-            headers: [
-              "Name",
-              "Points to"
-            ],
-            rows: [
-              [
-                "@",
-                "23.222.38.65",
-                option_menu_cell
-              ]
-            ]
-          } %>
-        <% end %>
-
-        <%= sage_component SagePanelSubheader, { title: "CNAME Record" } %>
-        <%= sage_component SageCard, {} do %>
-          <%= sage_component SageTable, {
-            reset_above: true,
-            reset_below: true,
-            headers: [
-              "Name",
-              "Points to"
-            ],
-            rows: [
-              [
-                "www",
-                "endpoint.mykajabi.com",
-                option_menu_cell
-              ]
-            ]
-          } %>
-        <% end %>
-
-        <%= sage_component SagePanelSubheader, { title: "MX Record" } %>
-        <%= sage_component SageCard, {} do %>
-          <%= sage_component SageTable, {
-            reset_above: true,
-            reset_below: true,
-            headers: [
-              "Name",
-              "Points to",
-              "Priority"
-            ],
-            rows: [
-              [
-                "@",
-                "mx.daydreamsurfshop.com",
-                "1",
-                option_menu_cell
-              ]
-            ]
-          } %>
-        <% end %>
-
-        <%= sage_component SagePanelSubheader, { title: "TXT Record" } %>
-        <%= sage_component SageCard, {} do %>
-          <%= sage_component SageTable, {
-            reset_above: true,
-            reset_below: true,
-            headers: [
-              "Name",
-              "Points to"
-            ],
-            rows: [
-              [
-                "www",
-                "endpoint.mykajabi.com",
-                option_menu_cell
-              ]
-            ]
-          } %>
+        <% dns_records_settings.each do | configs | %>
+          <%= sage_component SagePanelSubheader, { title: configs[:title] } %>
+          <%= sage_component SageCard, {} do %>
+            <%= sage_component SageTable, {
+              reset_above: true,
+              reset_below: true,
+              headers: configs[:table_headers],
+              rows: configs[:table_rows]
+            } %>
+          <% end %>
         <% end %>
       <% end %>
     </div>
   </div>
   <div class="sage-row sage-row--stage">
     <div class="sage-col-4 sage-type">
-      <h4>Nameservers</h5>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Enim, arcu, egestas adipiscing aliquam suspendisse arcu malesuada donec.
-      </p>
+      <%= nameservers_block.html_safe %>
     </div>
     <div class="sage-col-8">
       <%= sage_component SagePanel, {} do %>
-        <%= sage_component SagePanelHeader, { title: "Kajabi Nameservers" } do %>
-          <%= render "pages/mocks/custom_domain/shared/info_button", href: "#nameserver-info" %>
-        <% end %>
+        <%= sage_component SagePanelHeader, { title: "Kajabi Nameservers" } %>
         <%= sage_component SagePanelBlock, { type_block: true } do %>
-          <p>Your site is using Kajabi’s default nameservers.</p>
+          <%= default_nameservers_info.html_safe %>
         <% end %>
       <% end %>
     </div>

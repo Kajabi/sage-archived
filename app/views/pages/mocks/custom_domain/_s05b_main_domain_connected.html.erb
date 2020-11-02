@@ -1,74 +1,66 @@
+<%
+## View variables
+
+# Globals
+site_kajabi_default_subdomain = "www.daydreamsurfshop.mykajabi.com"
+site_custom_domain = "daydreamsurfshop.com"
+# connection_status = "in_progress"
+connection_status = "connected"
+
+# Local content
+header = {
+  title: "Domain",
+  breadcrumbs: [{
+    text: "Settings",
+    url: "#"
+  }]
+}
+button_configs_add_custom_domain = {
+  style: "primary",
+  icon:{ name: "add", style: "left" },
+  value: "Custom Domain"
+}
+default_subdomain_badge = sage_component(SageLabel, { value: "Kajabi Default", style: "info" })
+subdomain_rows = [
+  [
+    site_kajabi_default_subdomain,
+    default_subdomain_badge,
+    { 
+      value: render("pages/mocks/custom_domain/shared/edit_button", href: "#edit"),
+      html_attributes: { class: "sage-table-cell--align-right" }
+    }
+  ],
+  #[
+    #"otherdomains...",
+    #sage_component(SageLabel, {
+      #value: "Connected",
+      #style: "success"
+      # Alternate options...
+      #value: "Connection in progress...",
+      #style: "warning"
+      #value: "Connection failed",
+      #style: "danger"
+    #}),
+    #{ 
+      #value: render("pages/mocks/custom_domain/shared/dns_settings_button_inline"),
+      #html_attributes: { class: "sage-table-cell--align-right" }
+    #}
+  #]
+]
+
+%>
 <%= sage_component SageContainer, { size: "xs" } do %>
-  <%= sage_component SagePageHeading, {
-    title: "Domain",
-    spacer: { bottom: :lg },
-    help_link: {
-      url: "#help",
-      label: "Help"
-    },
-  } do %>
+  <%= sage_component SagePageHeading, { title: header[:title], spacer: { bottom: :lg }} do %>
     <% content_for :sage_breadcrumbs do %>
-      <%= sage_component SageBreadcrumbs, {
-          has_back_icon: true,
-          items: [{
-          text: "Settings",
-          url: "#settings"
-        }]
-      } %>
-    <% end %>
-    <% content_for :sage_page_heading_actions do %>
-      <%= sage_component SageButton, {
-        style: "primary",
-        icon:{ 
-          name: "add",
-          style: "left"
-        },
-        value: "Custom Domain"
-      } %>
+      <%= sage_component SageBreadcrumbs, { items: header[:breadcrumbs], has_back_icon: true } %>
     <% end %>
   <% end %>
   <div class="sage-panel-set">
-    <%= sage_component SagePanel, {} do %>
-      <%= sage_component SageCardRow, {
-        grid_template: "ite"
-      } do %>
-        <i class="sage-icon-check-circle-lg t-sage--color-sage" aria-label="Connected!"></i>
-        <strong class="t-sage-heading-5">daydreamsurfshop.com</strong>
-        <span class="t-sage-body t-sage--color-charcoal-200">is connected</span>
-        <%= render "pages/mocks/custom_domain/shared/option_menu" %>
-      <% end %>
-
-      <%= sage_component SagePanelDivider, { bleed: true } %>
-
-      <%= sage_component SageCard, {} do %>
-        <%= sage_component SageTable, {
-          headers: [
-            "Kajabi Subdomain"
-          ],
-          reset_above: true,
-          reset_below: true,
-          rows: [
-            [
-              "www.daydreamsurfshop.mykajabi.com",
-              sage_component(SageLabel, {
-                value: "Connected",
-                style: "success"
-                # Alternate options...
-                #value: "Connection in progress...",
-                #style: "warning"
-                #value: "Connection failed",
-                #style: "danger"
-              }),
-              { 
-                value: render("pages/mocks/custom_domain/shared/edit_button", href: "#edit"),
-                html_attributes: {
-                  class: "sage-table-cell--align-right"
-                }
-              }
-            ]
-          ]
-        } %>
-      <% end %>
-    <% end %>
+    <%= render "pages/mocks/custom_domain/shared/domain_status_alert", status: connection_status %>
+    <%= render "pages/mocks/custom_domain/shared/main_domain_after_setup", 
+      custom_domain: site_custom_domain,
+      connection_status: connection_status,
+      subdomain_rows: subdomain_rows
+    %>
   </div>
 <% end %>

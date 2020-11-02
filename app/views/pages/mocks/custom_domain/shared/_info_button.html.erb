@@ -1,13 +1,8 @@
 <!-- TODO: Determine params to pass in -->
 <%= sage_component SageButton, {
   value: defined?(value) ? value : "More information",
-  size: "tiny",
-  style: "tertiary",
-  icon: {
-    name: "info-circle",
-    style: "only"
-  },
-  attributes: {
-    href: defined?(href) ? href : "#",
-  }
+  subtle: true,
+  style: "secondary",
+  icon: { name: "info-circle", style: "only" },
+  attributes: { href: defined?(href) ? href : "#" }
 } %>

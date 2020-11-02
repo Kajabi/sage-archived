@@ -1,0 +1,26 @@
+<%= sage_component SagePanel, {} do %>
+  <%= sage_component SageCardRow, {
+    grid_template: "ite"
+  } do %>
+    <%= render "pages/mocks/custom_domain/shared/domain_status_header",
+      status: connection_status,
+      custom_domain: custom_domain
+    %>
+    <%= render "pages/mocks/custom_domain/shared/option_menu" %>
+  <% end %>
+
+  <%= sage_component SagePanelDivider, { bleed: true } %>
+
+  <%= sage_component SageCard, {} do %>
+    <%= sage_component SageTable, {
+      headers: [
+        "Subdomains",
+        "",
+        ""
+      ],
+      reset_above: true,
+      reset_below: true,
+      rows: subdomain_rows
+    } %>
+  <% end %>
+<% end %>

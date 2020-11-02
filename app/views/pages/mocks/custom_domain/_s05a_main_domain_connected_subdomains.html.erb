@@ -20,19 +20,39 @@ button_configs_add_custom_domain = {
   icon:{ name: "add", style: "left" },
   value: "Custom Domain"
 }
-panel_default_subdomain = {
-  title: site_kajabi_default_subdomain,
-  edit_path: "#",
-  body: %(
-    <p class="t-sage--color-charcoal-200">
-      This is the default subdomain connected to your Kajabi site.
-      All sites are given a Kajabi subdomain that you can replace
-      with a custom domain you already own
-      or purchase a new one through Kajabi.
-    </p>
-  ),
-  badge: sage_component(SageLabel, { value: "Kajabi Default", style: "info" })
-}
+dns_settings_info = %(
+  <p>
+    Your domain settings can now be updated or modified inside Kajabi.
+    However, paying for your domain and renewing it will still happen with your original domain registrar (Godaddy).
+  </p>
+)
+default_subdomain_badge = sage_component(SageLabel, { value: "Kajabi Default", style: "info" })
+subdomain_rows = [
+  [
+    site_kajabi_default_subdomain,
+    default_subdomain_badge,
+    { 
+      value: render("pages/mocks/custom_domain/shared/edit_button", href: "#edit"),
+      html_attributes: { class: "sage-table-cell--align-right" }
+    }
+  ],
+  #[
+    #"otherdomains...",
+    #sage_component(SageLabel, {
+      #value: "Connected",
+      #style: "success"
+      # Alternate options...
+      #value: "Connection in progress...",
+      #style: "warning"
+      #value: "Connection failed",
+      #style: "danger"
+    #}),
+    #{ 
+      #value: render("pages/mocks/custom_domain/shared/dns_settings_button_inline"),
+      #html_attributes: { class: "sage-table-cell--align-right" }
+    #}
+  #]
+]
 
 %>
 
@@ -49,49 +69,11 @@ panel_default_subdomain = {
     <div class="sage-col-8">
       <%= render "pages/mocks/custom_domain/shared/domain_status_alert", status: connection_status %>
       <div class="sage-panel-set">
-        <%= sage_component SagePanel, {} do %>
-          <%= sage_component SageCardRow, {
-            grid_template: "ite"
-          } do %>
-            <%= render "pages/mocks/custom_domain/shared/domain_status_header",
-              status: connection_status,
-              custom_domain: site_custom_domain
-            %>
-            <%= render "pages/mocks/custom_domain/shared/option_menu" %>
-          <% end %>
-
-          <%= sage_component SagePanelDivider, { bleed: true } %>
-
-          <%= sage_component SageCard, {} do %>
-            <%= sage_component SageTable, {
-              headers: [
-                "Subdomains"
-              ],
-              reset_above: true,
-              reset_below: true,
-              rows: [
-                [
-                  "www.daydreamsurfshop.mykajabi.com",
-                  sage_component(SageLabel, {
-                    value: "Connected",
-                    style: "success"
-                    # Alternate options...
-                    #value: "Connection in progress...",
-                    #style: "warning"
-                    #value: "Connection failed",
-                    #style: "danger"
-                  }),
-                  { 
-                    value: render("pages/mocks/custom_domain/shared/edit_button", href: "#edit"),
-                    html_attributes: {
-                      class: "sage-table-cell--align-right"
-                    }
-                  }
-                ]
-              ]
-            } %>
-          <% end %>
-        <% end %>
+        <%= render "pages/mocks/custom_domain/shared/main_domain_after_setup", 
+          custom_domain: site_custom_domain,
+          connection_status: connection_status,
+          subdomain_rows: subdomain_rows
+        %>
         <%= sage_component SagePanel, {} do %>
           <%= sage_component SagePanelHeader, { title: "Marketing Email Domain" } %>
           <i>Content TBD</i>
@@ -104,10 +86,7 @@ panel_default_subdomain = {
           <%= render "pages/mocks/custom_domain/shared/info_button", href: "#help-2" %>
         <% end %>
         <%= sage_component SagePanelBlock, { type_block: true } do %>
-          <p>
-            Your domain settings can now be updated or modified inside Kajabi.
-            However, paying for your domain and renewing it will still happen with your original domain registrar (Godaddy).
-          </p>
+          <%= dns_settings_info.html_safe %>
         <% end %>
       <% end %>
     </div>
