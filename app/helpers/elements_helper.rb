@@ -261,6 +261,16 @@ module ElementsHelper
         react: "todo",
         a11y: "todo"
       },
+      {
+        title: "toast",
+        description: "Displays a temporary notification to a user based an interaction.",
+        use_legacy_html_code_source: false,
+        scss: "done",
+        docs: "no",
+        rails: "todo",
+        react: "todo",
+        a11y: "todo"
+      },
     ]
   end
 

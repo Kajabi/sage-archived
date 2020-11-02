@@ -1,4 +1,6 @@
 <%= content_for :heading do %>
-  <h1><%= @title.titleize %></h1>
-  <h2><%= info_content[:description] %></h2>
+  <div class="docs-heading">
+    <h1><%= @title.titleize %></h1>
+    <p class="docs-heading__lead"><%= info_content[:description] %></p>
+  </div>
 <% end %>
