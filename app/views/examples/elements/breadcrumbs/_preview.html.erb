@@ -1,4 +1,9 @@
-<h4>Default</h4>
+<%= sage_component SageCardBlock, {} do %>
+  <%= sage_component SageLabel, {
+    color: "draft",
+    value: "Default",
+  } %>
+<% end %>
 <%= sage_component SageBreadcrumbs, {
   items: [
     {
@@ -16,7 +21,12 @@
   ]
 } %>
 
-<h4>Back Link Variation</h4>
+<%= sage_component SageCardBlock, {} do %>
+  <%= sage_component SageLabel, {
+    color: "draft",
+    value: "Back Link Variation",
+  } %>
+<% end %>
 <%= sage_component SageBreadcrumbs, {
   has_back_icon: true,
   items: [
@@ -27,7 +37,12 @@
   ]
 } %>
 
-<h4>Progress Bar Variation</h4>
+<%= sage_component SageCardBlock, {} do %>
+  <%= sage_component SageLabel, {
+    color: "draft",
+    value: "Progress Bar Variation",
+  } %>
+<% end %>
 <%= sage_component SageBreadcrumbs, {
   is_progressbar: true,
   items: [

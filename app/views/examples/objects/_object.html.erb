@@ -26,8 +26,10 @@
 <% end %>
 
 <%= render "examples/shared/props",
-  props_content: props_content %>
+  props_content: props_content,
+  title: @title %>
 
 <%= render "examples/shared/rules",
   do_content: do_content,
-  dont_content: dont_content %>
+  dont_content: dont_content,
+  title: @title %>
