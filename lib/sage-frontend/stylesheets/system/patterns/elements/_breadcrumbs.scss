@@ -1,3 +1,5 @@
+$-breadcrumb-disabled-color: sage-color(grey, 500);
+
 .sage-breadcrumbs {
   display: flex;
   flex-flow: row wrap;
@@ -40,6 +42,13 @@
   &:focus,
   &:active {
     color: sage-color(charcoal, 400);
+  }
+
+  &[aria-disabled="true"],
+  &:disabled {
+    color: $-breadcrumb-disabled-color;
+    pointer-events: none;
+    cursor: default;
   }
 
   .sage-breadcrumbs--progressbar & {
