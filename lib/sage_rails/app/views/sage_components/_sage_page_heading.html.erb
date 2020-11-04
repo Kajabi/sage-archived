@@ -6,30 +6,13 @@
   <% end %>
   <h1 class="sage-page-heading__title">
     <%= component.title %>
-    <% if component.help_link.present? %> 
-      <a href="<%= component.help_link[:url] %>" class="sage-link--no-launch sage-link--help-icon-only" target="_blank" referrer="no-referrer">
-        <span class="visually-hidden">
-          <%= component.help_link[:label] %>
-        </span>
-      </a>
-    <% end %>
-    <% if component.help %> 
-      <%= sage_component SagePopover, component.help do %>
-        <%= sage_component SageButton, {
-          value: "Open Menu",
-          style: "secondary",
-          subtle: true,
-          icon: {
-            style: "only",
-            name: "question-circle"
-          },
-          attributes: {
-            'aria-haspopup': true,
-            'aria-controls': 'sage-popover',
-            'aria-expanded': false
-          },
-          css_classes: "sage-popover__button"
-        } %>
+    <% if component.help_title && component.help_link && component.help_html %>
+      <%= sage_component SagePopover, {
+        title: component.help_title,
+        icon: "question-circle",
+        link: component.help_link
+      } do %>
+        <%= component.help_html.html_safe %>
       <% end %>
     <% end %>
   </h1>

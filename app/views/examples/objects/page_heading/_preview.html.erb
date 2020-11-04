@@ -28,9 +28,11 @@
 <%= sage_component SagePageHeading, {
   title: "Page Title",
   spacer: { bottom: :xl },
+  help_title: "About This Cool Thing",
+  help_html: "<p>This is a block of content.</p>",
   help_link: {
-    url: "#",
-    label: "Help"
+    href: "#",
+    name: "Help"
   },
 } %>
 
@@ -39,13 +41,12 @@
 <%= sage_component SagePageHeading, {
   title: "Page Title",
   spacer: { bottom: :xl },
-  help_title: "Help Title",
-  help: {
-    title: "Page Title",
-    body: '<p>This is a block of content.<a href="#">test</a></p>',
-    url_link: true,
-    link_text: "Learn More"
-  }
+  help_title: "About This Cool Thing",
+  help_html: "<p>This is a block of content.</p>",
+  help_link: {
+    href: "#",
+    name: "Help"
+  },
 } %>
 
 <h3 class="t-sage-heading-6">Page Heading with Action Buttons</h3>
@@ -116,9 +117,11 @@
 <%= sage_component SagePageHeading, {
   title: "Page Title",
   spacer: { bottom: :xl },
+  help_title: "About This Cool Thing",
+  help_html: "<p>This is a block of content.</p>",
   help_link: {
-    url: "#",
-    label: "Help"
+    href: "#",
+    name: "Help"
   },
   secondary_text: "1 Email in Sequence",
 } do %>
