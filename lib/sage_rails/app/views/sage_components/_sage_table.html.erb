@@ -30,14 +30,13 @@ is_responsive = component.responsive.present? ? component.responsive : true
               class="
                 sage-table__header
                 <%= "sage-table__header--#{header[:data_type]}" if header&.is_a?(Hash) && header[:data_type].present? %>
+                <%= "sage-table__header--sortable" if component.sortable %>
               "
               <% header[:html_attributes].each do | key, value | %>
                 <%= "#{key}=#{value}" %>
               <% end if header&.is_a?(Hash) && header[:html_attributes].present? %>
             >
-              <% if component.sortable %><a href="#" class="sage-table__sort"><% end %>
               <%= header&.is_a?(Hash) ? header[:value].html_safe : header.html_safe %>
-              <% if component.sortable %></a><% end %>
             </th>
           <% end %>
         </tr>
@@ -65,7 +64,7 @@ is_responsive = component.responsive.present? ? component.responsive : true
                     <%= "#{k}=#{v}" %>
                   <% end if value&.is_a?(Hash) && value[:html_attributes].present? %>  
                 >
-                  <%= value&.is_a?(Hash) ? value[:value].html_safe : value.html_safe %>
+                  <%=  value&.is_a?(Hash) ? value[:value].html_safe : value.html_safe %>
                 </td>
               <% end %>
             <% end %>
