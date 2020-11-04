@@ -130,7 +130,7 @@ $-table-sort-indicator-direction: rem(7px);
 
 // Sortable rows
 .sage-table--sortable {
-  .sage-table__header--sortable > a {
+  .sage-table__sort-link {
     display: flex;
     align-items: center;
     color: inherit;
@@ -165,7 +165,7 @@ $-table-sort-indicator-direction: rem(7px);
     }
   }
 
-  .sage-table__header--sortable-selected > a {
+  .sage-table__sort-link--selected {
     color: sage-color(charcoal, 100);
     text-decoration: underline;
 
@@ -175,7 +175,7 @@ $-table-sort-indicator-direction: rem(7px);
     }
   }
 
-  .sage-table__header--sortable-ascending > a {
+  .sage-table__sort-link--ascending {
     &::after {
       transform: scaleY(-1);
     }
@@ -343,16 +343,4 @@ $-table-sort-indicator-direction: rem(7px);
   .sage-table-cell__link & {
     margin-left: 0.5em;
   }
-}
-
-.sage-table__header--avatar,
-.sage-table__cell--avatar {
-  box-sizing: content-box;
-  width: 20px;
-}
-
-.sage-table__header--checkbox,
-.sage-table__cell--checkbox {
-  box-sizing: content-box;
-  width: 20px;
 }
