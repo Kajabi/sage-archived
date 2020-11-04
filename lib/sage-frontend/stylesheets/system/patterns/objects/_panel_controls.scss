@@ -16,6 +16,7 @@
 .sage-panel-controls__toolbar,
 .sage-panel-controls__default-controls {
   display: flex;
+  flex-flow: row wrap;
   align-items: center;
   justify-content: space-between;
 }
@@ -41,6 +42,7 @@
 
 .sage-panel-controls__bulk-actions {
   display: flex;
+  flex: 1;
   align-items: center;
 
   &:not(:last-child) {
