@@ -6,7 +6,6 @@
 ================================================== */
 
 $-overlay-z-index: sage-z-index(modal);
-$-button-z-index: $-overlay-z-index + 1;
 $-popover-panel-min-size: rem(250px);
 $-popover-panel-max-size: rem(350px);
 $-popover-panel-offset-top: sage-spacing(2xs);
@@ -30,24 +29,17 @@ $-popover-panel-offset-left: sage-spacing(md);
   background-clip: padding-box;
   box-shadow: sage-shadow();
   border-radius: sage-border(radius);
-  opacity: 0;
+  visibility: hidden;
 
   @include sage-grid-stack();
 
   .sage-popover--is-expanded & {
-    opacity: 1;
+    visibility: visible;
   }
 }
 
 .sage-popover__button {
-  z-index: $-button-z-index;
   position: relative;
-  pointer-events: all;
-
-  // Remove ability to click on a popover when one is already expanded
-  .sage-popover--is-expanded &:not([aria-expanded="true"]) {
-    pointer-events: none;
-  }
 }
 
 .sage-popover__overlay {
@@ -57,7 +49,7 @@ $-popover-panel-offset-left: sage-spacing(md);
 
   @include position-full();
 
-  &.sage-popover__overlay--is-open {
+  .sage-popover--is-expanded & {
     visibility: visible;
   }
 }
