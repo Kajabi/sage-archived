@@ -41,6 +41,10 @@
 .sage-textarea__message {
   @extend %t-sage-body-xsmall;
   color: sage-color(charcoal, 100);
+
+  .sage-textarea--error & {
+    color: $sage-inputfield-color-error;
+  }
 }
 
 .sage-textarea__field {
