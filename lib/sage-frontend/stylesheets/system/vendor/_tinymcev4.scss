@@ -13,7 +13,7 @@
     border: unset !important; /* stylelint-disable-line declaration-no-important */
 
     &.mce-toolbar-grp {
-      border-bottom: sage-border() !important;
+      border-bottom: sage-border() !important; /* stylelint-disable-line declaration-no-important */
     }
   }
 
@@ -21,59 +21,73 @@
     padding: sage-spacing(xs) rem(12px) sage-spacing(sm) !important; /* stylelint-disable-line declaration-no-important */
   }
 
+  .mce-btn.mce-colorbutton button[role="presentation"] {
+    padding-right: 0 !important; /* stylelint-disable-line declaration-no-important */
+    position: relative;
+
+    .mce-preview {
+      margin-left: unset !important; /* stylelint-disable-line declaration-no-important */
+      width: 13px !important; /* stylelint-disable-line declaration-no-important */
+      height: 4px !important; /* stylelint-disable-line declaration-no-important */
+      top: 15px !important; /* stylelint-disable-line declaration-no-important */
+      right: -2px !important; /* stylelint-disable-line declaration-no-important */
+      left: unset !important; /* stylelint-disable-line declaration-no-important */
+    }
+  }
+
   .mce-ico.mce-i-code::before {
-    @include sage-icon-base(code, lg);
+    @include sage-icon-base(code, md);
   }
 
   .mce-ico.mce-i-undo::before {
-    @include sage-icon-base(undo, lg);
+    @include sage-icon-base(undo, md);
   }
 
   .mce-ico.mce-i-redo::before {
-    @include sage-icon-base(redo, lg);
+    @include sage-icon-base(redo, md);
   }
 
   .mce-ico.mce-i-bold::before {
-    @include sage-icon-base(bold, lg);
+    @include sage-icon-base(bold, md);
   }
 
   .mce-ico.mce-i-italic::before {
-    @include sage-icon-base(italic, lg);
+    @include sage-icon-base(italic, md);
   }
 
   .mce-ico.mce-i-strikethrough::before {
-    @include sage-icon-base(strikethrough, lg);
+    @include sage-icon-base(strikethrough, md);
   }
 
   .mce-ico.mce-i-underline::before {
-    @include sage-icon-base(underline, lg);
+    @include sage-icon-base(underline, md);
   }
 
   .mce-ico.mce-i-forecolor::before {
-    @include sage-icon-base(color, lg);
+    @include sage-icon-base(color, md);
   }
 
   .mce-ico.mce-i-bullist::before {
-    @include sage-icon-base(list-bullet, lg);
+    @include sage-icon-base(list-bullet, md);
   }
 
   .mce-ico.mce-i-numlist::before {
-    @include sage-icon-base(list-numbers, lg);
+    @include sage-icon-base(list-numbers, md);
   }
 
   .mce-ico.mce-i-indent::before {
-    @include sage-icon-base(margin-left, lg);
+    @include sage-icon-base(margin-left, md);
   }
 
   .mce-ico.mce-i-outdent::before {
-    @include sage-icon-base(margin-right, lg);
+    @include sage-icon-base(margin-right, md);
   }
 
   .mce-ico.mce-i-image::before {
-    @include sage-icon-base(image, lg);
+    @include sage-icon-base(image, md);
   }
 
   .mce-ico.mce-i-fullscreen::before {
-    @include sage-icon-base(fullscreen, lg);
+    @include sage-icon-base(fullscreen, md);
   }
 }
