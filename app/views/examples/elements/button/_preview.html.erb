@@ -18,7 +18,12 @@ demo_configs = [
 ]
 %>
 <% demo_configs.each do | config | %>
-  <h3 class="t-sage-heading-6"><%= config[:heading] %></h3>
+  <%= sage_component SageCardBlock, {} do %>
+    <%= sage_component SageLabel, {
+      color: "draft",
+      value: config[:heading],
+    } %>
+  <% end %>
 
   <% [false, true].each do | disabled | %>
     <%= sage_component SageButtonGroup, { gap: :sm, spacer: { bottom: :sm }} do %>
@@ -76,7 +81,12 @@ demo_configs = [
 <% end %>
 
 <% demo_configs.each do | config | %>
-  <h3 class="t-sage-heading-6">Subtle <%= config[:heading] %></h3>
+  <%= sage_component SageCardBlock, {} do %>
+    <%= sage_component SageLabel, {
+      color: "draft",
+      value: "Subtle #{config[:heading]}",
+    } %>
+  <% end %>
 
   <% [false, true].each do | size | %>
     <%= sage_component SageButtonGroup, { gap: :sm, spacer: { bottom: :sm }} do %>
@@ -138,7 +148,12 @@ demo_configs = [
   <% end %>
 <% end %>
 
-<h3 class="t-sage-heading-6">Button group: Align End</h3>
+<%= sage_component SageCardBlock, {} do %>
+  <%= sage_component SageLabel, {
+    color: "draft",
+    value: "Button group: Align End",
+  } %>
+<% end %>
 <%= sage_component SageButtonGroup, { gap: :md, align: "end" } do %>
   <%= sage_component SageButton, {
     value: "Cancel",
@@ -150,7 +165,13 @@ demo_configs = [
   } %>
 <% end %>
 
-<h3 class="t-sage-heading-6">Shadow Treatment</h3>
+
+<%= sage_component SageCardBlock, {} do %>
+  <%= sage_component SageLabel, {
+    color: "draft",
+    value: "Shadow Treatment",
+  } %>
+<% end %>
 <p>
   Regular buttons allow for a "raised" shadow treatement to be toggled on or off.
   This is on by default for "Primary" button styles and can be toggled off with "no_shadow".
