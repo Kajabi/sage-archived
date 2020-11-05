@@ -5,9 +5,9 @@
 ================================================== */
 
 .sage-vendor-tinymcev4 {
+  overflow: hidden;
   border: sage-border();
   border-radius: sage-border(radius);
-  overflow: hidden;
 
   .mce-panel {
     border: unset !important; /* stylelint-disable-line declaration-no-important */
@@ -18,20 +18,20 @@
   }
 
   .mce-btn button {
-    padding: sage-spacing(xs) rem(12px) sage-spacing(sm) !important; /* stylelint-disable-line declaration-no-important */
+    padding: rem(8px) rem(12px) rem(12px) !important; /* stylelint-disable-line declaration-no-important */
   }
 
   .mce-btn.mce-colorbutton button[role="presentation"] {
-    padding-right: 0 !important; /* stylelint-disable-line declaration-no-important */
     position: relative;
+    padding-right: 0 !important; /* stylelint-disable-line declaration-no-important */
 
-    .mce-preview {
-      margin-left: unset !important; /* stylelint-disable-line declaration-no-important */
-      width: 13px !important; /* stylelint-disable-line declaration-no-important */
-      height: 4px !important; /* stylelint-disable-line declaration-no-important */
-      top: 15px !important; /* stylelint-disable-line declaration-no-important */
-      right: -2px !important; /* stylelint-disable-line declaration-no-important */
+    .mce-preview {  /* stylelint-disable-line selector-max-compound-selectors */
+      top: rem(18px) !important; /* stylelint-disable-line declaration-no-important */
+      right: rem(-2px) !important; /* stylelint-disable-line declaration-no-important */
       left: unset !important; /* stylelint-disable-line declaration-no-important */
+      width: rem(13px) !important; /* stylelint-disable-line declaration-no-important */
+      height: rem(4px) !important; /* stylelint-disable-line declaration-no-important */
+      margin-left: unset !important; /* stylelint-disable-line declaration-no-important */
     }
   }
 
@@ -65,6 +65,7 @@
 
   .mce-ico.mce-i-forecolor::before {
     @include sage-icon-base(color, md);
+    margin-top: rem(2px);
   }
 
   .mce-ico.mce-i-bullist::before {
