@@ -322,6 +322,12 @@ and accessible on the custom event's `target.dataset` property.
 
   const setupPanelControls = () => {
     table = document.getElementById('demo-table');
+
+    // Ensure matching table exists
+    if (!table) {
+      return;
+    }
+
     items = table.querySelectorAll('tr');
     selectedItems = table.querySelectorAll(':checked');
     selectedItemsCount = selectedItems ? selectedItems.length : null;

@@ -44,6 +44,7 @@ $-trigger-dropdown-offset: rem(16px) + sage-spacing(xs);
     &:hover {
       z-index: sage-z-index(default, 2);
       box-shadow: $sage-toolbar-btn-border-hover;
+      background-color: sage-color(white);
     }
 
     &:focus-within {

@@ -23,7 +23,7 @@ item_count_text = component.item_count_label.present? ? item_count_label : "Sele
       <% if component.show_bulk_actions %>
         <div class="sage-panel-controls__bulk-actions">
           <%= sage_component SageCheckbox, { 
-            id:"c1",
+            id:"panel-controls-bulk-checkbox-#{component.target}",
             label_text: item_count_text,
             checked: false,
             css_classes: "sage-panel-controls__bulk-actions-checkbox",

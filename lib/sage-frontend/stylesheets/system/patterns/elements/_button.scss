@@ -136,6 +136,10 @@ $-btn-subtle-styles: (
     @include sage-focus-outline--update-color(transparent);
 
     border-radius: inherit;
+
+    &:hover {
+      background-color: sage-color(white);
+    }
   }
 
   .sage-dropdown__item > & {
@@ -196,6 +200,7 @@ $-btn-subtle-styles: (
     &:hover {
       z-index: sage-z-index(default, 1);
       box-shadow: $sage-toolbar-btn-border-hover;
+      background-color: sage-color(white);
     }
 
     &:focus {
