@@ -1,4 +1,9 @@
-<div class="sage-switch<%= component.has_error ? " sage-switch--error" : "" %>">
+<div class="
+    sage-switch
+    <%= component.has_error ? "sage-switch--error" : "" %>
+    <%= component.css_classes if component.css_classes.present? %>
+  "
+>
   <input 
     type="<%= component.type %>" 
     id="<%= component.id %>" 

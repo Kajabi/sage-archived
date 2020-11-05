@@ -56,6 +56,11 @@ $-avatar-tile-size: rem(216px);
   .sage-avatar-wrapper & {
     margin-right: sage-spacing();
   }
+
+  .sage-table td > & {
+    margin-top: -1 * sage-spacing(2xs);
+    margin-bottom: -1 * sage-spacing(2xs);
+  }
 }
 
 // Documentation-specific styles

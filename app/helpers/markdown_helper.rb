@@ -12,13 +12,16 @@ module MarkdownHelper
       # filer_html: true, 
       # hard_wrap: true,#
       link_attributes: { rel: 'nofollow' },
-      with_toc_data: true
+      with_toc_data: true,
+      tables: true
     }
     renderer = HTML.new(render_options)
     extras = {
       no_intra_emphasis: true,
       disable_indented_code_blocks: true,
       fenced_code_blocks: true,
+      with_toc_data: true,
+      tables: true,
       # autolink: true,
       # strikethrough: true,
       # superscript: true,

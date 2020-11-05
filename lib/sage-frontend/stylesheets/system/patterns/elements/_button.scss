@@ -118,7 +118,6 @@ $-btn-subtle-styles: (
 
   &:focus:not(:disabled):not([aria-disabled="true"]),
   &:active:not(:disabled):not([aria-disabled="true"]) {
-
     .sage-dropdown__item > & {
       @include sage-focus-outline--update-color(transparent);
     }
@@ -128,6 +127,18 @@ $-btn-subtle-styles: (
   .sage-catalog-item__content & {
     &:not(:last-child) {
       margin-right: sage-spacing();
+    }
+  }
+
+  .sage-dropdown--contained &,
+  .sage-panel-controls__toolbar .sage-dropdown__trigger &,
+  .sage-panel-controls__bulk-actions .sage-dropdown__trigger & {
+    @include sage-focus-outline--update-color(transparent);
+
+    border-radius: inherit;
+
+    &:hover {
+      background-color: sage-color(white);
     }
   }
 
@@ -172,6 +183,56 @@ $-btn-subtle-styles: (
   .sage-sortable__item-actions & {
     &:not(:last-child) {
       margin-right: sage-spacing(sm);
+    }
+  }
+
+  .sage-panel-controls__bulk-actions > &,
+  .sage-panel-controls__toolbar > &,
+  .sage-panel-controls__toolbar-btn-group > &,
+  .sage-panel-controls__pagination > & {
+    position: relative;
+    z-index: sage-z-index(default);
+    box-shadow: $sage-toolbar-btn-border;
+    border: 0;
+
+    @include sage-focus-outline--update-color(transparent);
+
+    &:hover {
+      z-index: sage-z-index(default, 1);
+      box-shadow: $sage-toolbar-btn-border-hover;
+      background-color: sage-color(white);
+    }
+
+    &:focus {
+      z-index: sage-z-index(default, 2);
+      box-shadow: $sage-toolbar-btn-border-focus;
+    }
+  }
+
+  .sage-panel-controls__toolbar-btn-group > & {
+    border-radius: 0;
+
+    &:first-child {
+      border-top-left-radius: sage-border(radius);
+      border-bottom-left-radius: sage-border(radius);
+    }
+
+    &:last-child {
+      border-top-right-radius: sage-border(radius);
+      border-bottom-right-radius: sage-border(radius);
+    }
+  }
+
+  .sage-panel-controls__toolbar-btn-group--expand-collapse > & {
+    border-radius: sage-border(radius);
+  }
+  
+  .sage-panel-controls__toolbar > &,
+  .sage-panel-controls__pagination > & {
+    border-radius: sage-border(radius);
+
+    &:not(:last-child) {
+      margin-right: $sage-card-grid-gap;
     }
   }
 
@@ -320,7 +381,6 @@ $-btn-subtle-styles: (
 // Button groups allow for several buttons together to be spaced appropriately
 .sage-btn-group {
   display: flex;
-  flex-flow: row wrap;
   align-items: center;
 }
 

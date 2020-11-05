@@ -203,6 +203,16 @@ module ObjectsHelper
         a11y: "todo"
       },
       {
+        title: "panel_controls",
+        description: "Panel controls provides a unified interface for controlling lists inside of a panel.",
+        use_legacy_html_code_source: false,
+        scss: "doing",
+        docs: "doing",
+        rails: "doing",
+        react: "todo",
+        a11y: "doing"
+      },
+      {
         title: "sortable",
         description: "Sage sortable list",
         use_legacy_html_code_source: false,

@@ -130,7 +130,7 @@ $-table-sort-indicator-direction: rem(7px);
 
 // Sortable rows
 .sage-table--sortable {
-  .sage-table__sort {
+  .sage-table__sort-link {
     display: flex;
     align-items: center;
     color: inherit;
@@ -158,14 +158,9 @@ $-table-sort-indicator-direction: rem(7px);
     &:active {
       color: sage-color(charcoal, 300);
     }
-
-    &:focus,
-    &:active {
-      outline: 1px dotted sage-color(charcoal, 100);
-    }
   }
 
-  .sage-table__sort--selected {
+  .sage-table__sort-link--selected {
     color: sage-color(charcoal, 100);
     text-decoration: underline;
 
@@ -175,7 +170,7 @@ $-table-sort-indicator-direction: rem(7px);
     }
   }
 
-  .sage-table__sort--ascending {
+  .sage-table__sort-link--ascending {
     &::after {
       transform: scaleY(-1);
     }

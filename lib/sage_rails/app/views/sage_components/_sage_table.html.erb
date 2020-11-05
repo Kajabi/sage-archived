@@ -17,6 +17,7 @@ is_responsive = component.responsive.present? ? component.responsive : true
       <%= "sage-table--condensed" if component.condensed %>
       <%= "sage-table--sortable" if component.sortable %>
     "
+    <%= component.generated_html_attributes.html_safe %>
   >
     <% if component.caption.present? %>
       <caption><%= component.caption.html_safe %></caption>
@@ -26,11 +27,15 @@ is_responsive = component.responsive.present? ? component.responsive : true
         <tr>
           <% component.headers.each do | header | %>
             <th
+              class="
+                sage-table__header
+                <%= "sage-table__header--#{header[:data_type]}" if header&.is_a?(Hash) && header[:data_type].present? %>
+              "
               <% header[:html_attributes].each do | key, value | %>
                 <%= "#{key}=#{value}" %>
               <% end if header&.is_a?(Hash) && header[:html_attributes].present? %>
             >
-              <% if component.sortable %><a href="#" class="sage-table__sort"><% end %>
+              <% if component.sortable %><a href="#" class="sage-table__sort-link"><% end %>
               <%= header&.is_a?(Hash) ? header[:value].html_safe : header.html_safe %>
               <% if component.sortable %></a><% end %>
             </th>

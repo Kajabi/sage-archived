@@ -19,6 +19,9 @@
 $sage-transition: 0.1s ease-in-out !default;
 $sage-stage-grid-gap: sage-spacing(lg);
 $sage-stage-padding: sage-spacing(lg);
+$sage-toolbar-btn-border: 0 0 0 1px sage-color(grey, 300);
+$sage-toolbar-btn-border-hover: 0 0 0 1px sage-color(grey, 400);
+$sage-toolbar-btn-border-focus: 0 0 0 2px sage-color(primary);
 
 // ==================================================
 // TYPOGRAPHY
