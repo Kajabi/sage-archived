@@ -17,6 +17,7 @@
               sage-breadcrumbs__link
               <%= " sage-breadcrumbs__link--current" if defined?(item[:is_current]) && item[:is_current] || !component.is_progressbar && i == (component.items.length() - 1) %>
             "
+            <%= "aria-disabled=true" if item[:disabled]  %>
           >
             <% if i == 0 && defined?(has_back_icon) && has_back_icon %>
               <i class="sage-breadcrumbs__icon sage-icon-arrow-left" aria-hidden="true"></i>

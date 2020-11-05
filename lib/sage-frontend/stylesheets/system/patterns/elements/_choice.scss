@@ -9,6 +9,8 @@ $item-radio: "before";
 $item-icon: "before";
 $item-arrow: "before";
 
+$-choice-disabled-color: sage-color(grey, 500);
+
 .sage-choice {
   @include sage-button-style-reset();
 
@@ -55,6 +57,21 @@ $item-arrow: "before";
 
     &::after {
       border-color: sage-color(primary);
+    }
+  }
+
+  &[aria-disabled="true"],
+  &:disabled {
+    background-color: sage-color(grey, 100);
+    cursor: default;
+    pointer-events: none;
+
+    &::before {
+      background-color: sage-color(grey, 200);
+    }
+
+    &:hover::before {
+      box-shadow: none;
     }
   }
 

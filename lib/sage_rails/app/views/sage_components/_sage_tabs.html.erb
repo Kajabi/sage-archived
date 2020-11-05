@@ -16,14 +16,16 @@
         active: item[:active],
         type: item[:type],
         icon: item[:icon],
-        attributes: item[:attributes]
+        attributes: item[:attributes],
+        disabled: item[:disabled]
       %>
     <% else %>
       <%= sage_component SageTab,
         target: item[:target],
         text: item[:text],
         active: item[:active],
-        attributes: item[:attributes]
+        attributes: item[:attributes],
+        disabled: item[:disabled]
       %>
     <% end %>
   <% end %>

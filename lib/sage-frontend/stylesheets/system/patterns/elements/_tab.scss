@@ -4,7 +4,7 @@
 
 ================================================== */
 
-$item-underline: "::after";
+$-tab-disabled-color: sage-color(grey, 500);
 
 /* stylelint-disable max-nesting-depth */
 .sage-tab {
@@ -37,6 +37,13 @@ $item-underline: "::after";
 
   &:last-of-type {
     margin-right: 0;
+  }
+
+  &[aria-disabled="true"],
+  &:disabled {
+    color: $-tab-disabled-color;
+    cursor: default;
+    pointer-events: none;
   }
 
   @include sage-tab-underline;
