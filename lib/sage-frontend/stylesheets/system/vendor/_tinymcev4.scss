@@ -1,0 +1,79 @@
+/* ==================================================
+  ** tinymcev4
+  type: vendor modification styles
+
+================================================== */
+
+.sage-vendor-tinymcev4 {
+  border: sage-border();
+  border-radius: sage-border(radius);
+  overflow: hidden;
+
+  .mce-panel {
+    border: unset !important; /* stylelint-disable-line declaration-no-important */
+
+    &.mce-toolbar-grp {
+      border-bottom: sage-border() !important;
+    }
+  }
+
+  .mce-btn button {
+    padding: sage-spacing(xs) rem(12px) sage-spacing(sm) !important; /* stylelint-disable-line declaration-no-important */
+  }
+
+  .mce-ico.mce-i-code::before {
+    @include sage-icon-base(code, lg);
+  }
+
+  .mce-ico.mce-i-undo::before {
+    @include sage-icon-base(undo, lg);
+  }
+
+  .mce-ico.mce-i-redo::before {
+    @include sage-icon-base(redo, lg);
+  }
+
+  .mce-ico.mce-i-bold::before {
+    @include sage-icon-base(bold, lg);
+  }
+
+  .mce-ico.mce-i-italic::before {
+    @include sage-icon-base(italic, lg);
+  }
+
+  .mce-ico.mce-i-strikethrough::before {
+    @include sage-icon-base(strikethrough, lg);
+  }
+
+  .mce-ico.mce-i-underline::before {
+    @include sage-icon-base(underline, lg);
+  }
+
+  .mce-ico.mce-i-forecolor::before {
+    @include sage-icon-base(color, lg);
+  }
+
+  .mce-ico.mce-i-bullist::before {
+    @include sage-icon-base(list-bullet, lg);
+  }
+
+  .mce-ico.mce-i-numlist::before {
+    @include sage-icon-base(list-numbers, lg);
+  }
+
+  .mce-ico.mce-i-indent::before {
+    @include sage-icon-base(margin-left, lg);
+  }
+
+  .mce-ico.mce-i-outdent::before {
+    @include sage-icon-base(margin-right, lg);
+  }
+
+  .mce-ico.mce-i-image::before {
+    @include sage-icon-base(image, lg);
+  }
+
+  .mce-ico.mce-i-fullscreen::before {
+    @include sage-icon-base(fullscreen, lg);
+  }
+}
