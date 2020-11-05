@@ -17,6 +17,7 @@ $-popover-panel-offset-left: sage-spacing(md);
 }
 
 .sage-popover__panel {
+  visibility: hidden;
   z-index: sage-z-index(modal);
   position: absolute;
   top: $-popover-panel-offset-top;
@@ -29,7 +30,6 @@ $-popover-panel-offset-left: sage-spacing(md);
   background-clip: padding-box;
   box-shadow: sage-shadow();
   border-radius: sage-border(radius);
-  visibility: hidden;
 
   @include sage-grid-stack();
 
