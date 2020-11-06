@@ -156,6 +156,20 @@ Then run `bundle install`.
 $ bundle install
 ```
 
+Check to ensure the following files are updated through this process and that the version information in each lines up:
+
+- `Gemfile`
+- `Gemfile.lock`
+- `Gemfile_next.lock`
+- `package.json`
+- `yarn.lock`
+
+**NOTE:** If the `Gemfile_next.lock` is not updated automatically at this point then run the following:
+
+```
+DEPENDENCIES_NEXT=1 bundle update sage_rails
+```
+
 ## Installation
 ### Frontend Package
 Add the frontend package to your `package.json`.
