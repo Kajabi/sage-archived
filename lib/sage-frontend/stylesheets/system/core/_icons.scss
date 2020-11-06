@@ -70,9 +70,9 @@ $sage-icon-li-margin-right: 0.4em !default;
     @include sage-icon-base($icon-name);
   }
 
-  .sage-dropdown__item-control--icon-#{$icon-name}::before {
+  .sage-dropdown__item-control--icon-#{$icon-name}::after {
     @include sage-icon-base($icon-name);
-    margin: 0 sage-spacing(xs) 0 0;
+    margin: 0 0 0 sage-spacing(xs);
   }
 
   .sage-label--icon-left-#{$icon-name} {
