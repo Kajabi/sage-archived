@@ -19,11 +19,11 @@ $-image-height-mobile: rem(120px);
   border-bottom: sage-border(light);
 
   &:first-child {
-    border-top: sage-border();
+    border-top: 0;
   }
 
   &:last-child {
-    border-bottom: sage-border();
+    border-bottom: 0;
   }
 
   &.sage-catalog-item--loading {
