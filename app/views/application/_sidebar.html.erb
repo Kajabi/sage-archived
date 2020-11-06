@@ -11,11 +11,7 @@ foundations_pages = [
   {
     name: "Accessibility",
     path: pages_foundation_path(:accessibility),
-  },
-  {
-    name: "Onboarding",
-    path: pages_foundation_path(:onboarding),
-  },
+  }
 ]
 %>
 <%
@@ -39,6 +35,38 @@ content_pages = [
   {
     name: "Vocabulary",
     path: pages_content_path(:vocabulary),
+  },
+]
+%>
+<%
+experiences_pages = [
+  {
+    name: "Empty States",
+    path: pages_experiences_path(:null),
+  },
+  {
+    name: "Onboarding",
+    path: pages_experiences_path(:onboarding),
+  },
+  {
+    name: "Create & Distroy",
+    path: pages_experiences_path(:crud),
+  },
+  {
+    name: "Loading",
+    path: pages_experiences_path(:loading),
+  },
+  {
+    name: "Navigation",
+    path: pages_experiences_path(:nav),
+  },
+  {
+    name: "Feedback",
+    path: pages_experiences_path(:feedback),
+  },
+  {
+    name: "Help",
+    path: pages_experiences_path(:help),
   },
 ]
 %>
@@ -100,6 +128,18 @@ design_pages = [
           <% if current_page_content? %>
             <ul class="sage-nav__list sage-nav__list--sub">
               <% content_pages.each do | page | %>
+                <li>
+                  <%= link_to page[:name], page[:path], class: "sage-nav__link sage-nav__link--sub #{"sage-nav__link--active" if current_page?(page[:path])}" %>
+                </li>
+              <% end %>
+            </ul>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to "Experiences", pages_experiences_path(:null), class: "sage-nav__link #{"sage-nav__link--active" if current_page_experiences?}" %>
+          <% if current_page_experiences? %>
+            <ul class="sage-nav__list sage-nav__list--sub">
+              <% experiences_pages.each do | page | %>
                 <li>
                   <%= link_to page[:name], page[:path], class: "sage-nav__link sage-nav__link--sub #{"sage-nav__link--active" if current_page?(page[:path])}" %>
                 </li>

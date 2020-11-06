@@ -10,6 +10,10 @@ class PagesController < ApplicationController
     render params[:title]
   end
 
+  def experiences
+    render params[:title]
+  end
+
   def design
     render params[:title]
   end
