@@ -4,12 +4,18 @@
       <%= content_for :sage_breadcrumbs %>
     </div>
   <% end %>
-  <h1 class="sage-page-heading__title"><%= component.title %><% if component.help_link.present? %> <a href="<%= component.help_link[:url] %>" class="sage-link--no-launch sage-link--help-icon-only" target="_blank" referrer="no-referrer"><span class="visually-hidden"><%= component.help_link[:label] %></span></a><% end %></h1>
-  <% if content_for? :sage_page_heading_intro %>
-    <div class="sage-page-heading__intro">
-      <%= content_for :sage_page_heading_intro %>
-    </div>
-  <% end %>
+  <h1 class="sage-page-heading__title">
+    <%= component.title %>
+    <% if component.help_title && component.help_link && component.help_html %>
+      <%= sage_component SagePopover, {
+        title: component.help_title,
+        icon: "question-circle",
+        link: component.help_link
+      } do %>
+        <%= component.help_html.html_safe %>
+      <% end %>
+    <% end %>
+  </h1>
   <% if content_for? :sage_page_heading_actions %>
     <div class="sage-page-heading__actions">
       <%= content_for :sage_page_heading_actions %>

@@ -272,6 +272,16 @@ module ObjectsHelper
         react: "todo",
         a11y: "done"
       },
+      {
+        title: "popover",
+        description: "Popovers open upon click to show information regarding the section. It has a header/subject, minimal information, and a link to learn more",
+        use_legacy_html_code_source: false,
+        scss: "done",
+        docs: "todo",
+        rails: "done",
+        react: "todo",
+        a11y: "done"
+      },
     ]
   end
 
