@@ -52,15 +52,6 @@ colors = [
     value: "Tag",
     icon: { style: "right", name: "tag" }
   } %>
-  <%= sage_component SageLabel, {
-    color: "draft",
-    value: "Tag",
-    icon: { style: "right", name: "tag" },
-    value: %(
-      Draft
-      <button class="sage-btn sage-btn--subtle sage-btn--secondary sage-btn--icon-only-remove"></button>
-    )
-  } %>
 <% end %>
 
 <h5>Interactive</h5>
@@ -68,19 +59,8 @@ colors = [
   <% colors.each do | color | %>
     <%= sage_component SageLabel, {
       color: color,
-      interactive: true,
-      value: color.capitalize,
-      icon: { style: "right", name: "caret-down" }
-    } %>
-  <% end %>
-<% end %>
-
-<h5>Default</h5>
-<%= sage_component SagePanelBlock, {} do %>
-  <% colors.each do | color | %>
-    <%= sage_component SageLabel, {
-      color: color,
       icon: { style: "left", name: "tag" },
+      interactive: true,
       value: %(
         #{color.capitalize}
         <button class="sage-btn sage-btn--subtle sage-btn--secondary sage-btn--icon-only-caret-down"></button>

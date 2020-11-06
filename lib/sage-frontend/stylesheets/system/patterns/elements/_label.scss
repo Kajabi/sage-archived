@@ -56,13 +56,10 @@ $-label-inset-border: 0 0 0 1px inset;
     }
 
     &.sage-label--interactive {
-      cursor: pointer;
-
       @include sage-focus-outline();
-      @include sage-focus-outline--update-color( sage-color-combo($-color-name, subtle, background) );
 
-      &:hover:not(:focus):not(:active):not(:disabled):not(.disabled) {
-        background-color: darken(sage-color-combo($-color-name, default, background), 5%);
+      .sage-btn {
+        @include sage-focus-outline--update-color( sage-color-combo($-color-name, subtle, background) );
       }
     }
 

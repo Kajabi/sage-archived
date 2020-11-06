@@ -1,6 +1,4 @@
-<% html_tag = component.interactive ? "button" : "span" %>
-
-<<%= html_tag %>
+<span
   class="
     sage-label
     <%= "sage-label--#{component.color}" if component.color %>
@@ -17,4 +15,4 @@
   <% else %>
     <%= component.value.html_safe %>
   <% end %>
-</<%= html_tag %>>
+</span>
