@@ -45,12 +45,12 @@ module ObjectsHelper
       {
         title: "banner",
         description: "A banner that displays at the top of the page, used for systemwide notifications and events.",
-        use_legacy_html_code_source: true,
+        use_legacy_html_code_source: false,
         scss: "done",
         docs: "done",
         rails: "done",
-        react: "todo",
-        a11y: "todo"
+        react: "doing",
+        a11y: "done"
       },
       {
         title: "billboard",
