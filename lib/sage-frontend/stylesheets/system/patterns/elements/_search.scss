@@ -92,6 +92,10 @@ $-search-icon: "::before";
   }
 }
 
+.sage-search__label {
+  @include visually-hidden()
+}
+
 .sage-search__input {
   position: relative;
   z-index: 1;

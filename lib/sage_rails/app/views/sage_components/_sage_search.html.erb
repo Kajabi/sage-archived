@@ -1,11 +1,19 @@
-<div class="
-  sage-search
-  <%= "sage-search--contained" if component.contained %>
-">
-  <input
-    class="sage-search__input"
-    type="search"
-    placeholder="<%= component.placeholder.present? ? component.placeholder : "Search" %>"
-    value="<%= component.value %>"
-  />
-</div>
+<form>
+  <div 
+    role="search"
+    class="
+    sage-search
+    <%= "sage-search--contained" if component.contained %>
+  ">
+    <label for="<%= component.id %>" class="sage-search__label">
+      <%= component.label_text %>
+    </label>
+    <input
+      id="<%= component.id %>"
+      class="sage-search__input"
+      type="search"
+      placeholder="<%= component.placeholder.present? ? component.placeholder : "Search" %>"
+      value="<%= component.value %>"
+    />
+  </div>
+</form>
