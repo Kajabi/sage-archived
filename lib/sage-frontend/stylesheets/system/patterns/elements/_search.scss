@@ -124,7 +124,7 @@ $-search-icon: "::before";
   &::-webkit-search-cancel-button,
   &::-webkit-search-results-button,
   &::-webkit-search-results-decoration {
-    -webkit-appearance: none;
+    -webkit-appearance: none; /* stylelint-disable-line property-no-vendor-prefix */
   }
 }
 
