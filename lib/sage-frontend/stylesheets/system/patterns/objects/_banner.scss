@@ -51,8 +51,11 @@ $-icon: "::before";
   transition: 0.3s ease-in-out;
   transition-property: transform, opacity, z-index;
   opacity: 0;
+  
+  .sage-banner-wrapper--context-ladera-top & {
+    position: absolute;
+  }
 
-  .sage-banner-wrapper--context-ladera-top &,
   .sage-banner-wrapper--context-sage-demo & {
     position: relative;
   }
@@ -80,7 +83,7 @@ $-icon: "::before";
   opacity: 1;
 }
 
-.sage-banner-wrapper--context-ladera {
+.sage-banner-wrapper--context-ladera-top {
   margin-bottom: 60px;
 }
 
