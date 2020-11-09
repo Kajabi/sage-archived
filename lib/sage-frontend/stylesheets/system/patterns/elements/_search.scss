@@ -129,6 +129,7 @@ $-search-icon: "::before";
 }
 
 .sage-search__reset-button {
+  margin-right: sage-spacing(xs);
   visibility: hidden;
 
   .sage-search--has-text & {
