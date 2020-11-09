@@ -1,10 +1,12 @@
 <form>
   <div 
     role="search"
-    class="
-    sage-search
+    class=" sage-search
     <%= "sage-search--contained" if component.contained %>
-  ">
+    "
+    data-js-search
+
+  >
     <label for="<%= component.id %>" class="sage-search__label">
       <%= component.label_text %>
     </label>
@@ -15,5 +17,13 @@
       placeholder="<%= component.placeholder.present? ? component.placeholder : "Search" %>"
       value="<%= component.value %>"
     />
+    
+    <%# TODO UXD: update Sage Button to accept a type parameter so that we can allow a type=reset here %>
+    <button 
+      class="sage-btn sage-btn--subtle sage-btn--secondary sage-btn--icon-only-remove sage-search__reset-button" 
+      type="reset"
+    >
+      <span class="sage-search__clear-button-text">clear search</span>
+    </button>
   </div>
 </form>

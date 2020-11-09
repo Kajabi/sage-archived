@@ -92,8 +92,9 @@ $-search-icon: "::before";
   }
 }
 
-.sage-search__label {
-  @include visually-hidden()
+.sage-search__label,
+.sage-search__clear-button-text {
+  @include visually-hidden();
 }
 
 .sage-search__input {
@@ -116,5 +117,21 @@ $-search-icon: "::before";
 
   .sage-panel-controls__toolbar & {
     border-radius: sage-border(radius);
+  }
+
+  // remove default webkit search field styling
+  &::-webkit-search-decoration,
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-results-button,
+  &::-webkit-search-results-decoration {
+    -webkit-appearance: none;
+  }
+}
+
+.sage-search__reset-button {
+  visibility: hidden;
+
+  .sage-search--has-text & {
+    visibility: visible;
   }
 }
