@@ -1,6 +1,6 @@
-<%= sage_component SageCardRow, { grid_template: "te", spacer: {bottom: :sm} } do %>
+<%= sage_component SagePanelHeader, {} do %>
   <h2 id="<%= title %>-example-preview">Preview</h2>
 <% end %>
-<%= sage_component SageCard, { spacer: {bottom: :xl} } do %>
+<%= sage_component SageCard, {} do %>
   <%= render "examples/#{type.pluralize}/#{title}/preview" %>
 <% end %>

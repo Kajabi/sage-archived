@@ -1,9 +1,10 @@
 <%= content_for :heading do %>
 <%= md(%(
 # Objects
-<p class="docs-heading__lead">Objects are groups of elements bonded together.
-
-These Objects take on their own properties and serve as the backbone of our design systems.</p>
+<p class="docs-heading__lead">
+Objects are groups of elements bonded together.
+These Objects take on their own properties and serve as the backbone of our design systems.
+</p>
 
 )) %>
 <% end %>
@@ -17,6 +18,8 @@ These Objects take on their own properties and serve as the backbone of our desi
     </ul>
   </div>
 <% end %>
-<% sorted_sage_objects.each do |object| %>
-  <%= render "examples/objects/object_preview", title: object[:title], description: object[:description] %>
-<% end %>
+<div class="sage-panel-set">
+  <% sorted_sage_objects.each do |object| %>
+    <%= render "examples/objects/object_preview", title: object[:title], description: object[:description] %>
+  <% end %>
+</div>
