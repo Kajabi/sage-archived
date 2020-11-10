@@ -1,7 +1,7 @@
 <div
   class="sage-input<% if has_error %> sage-input--error<% end %><% if prefix != "" || suffix !="" %> sage-input--affixed<% end %><% if has_placeholder %> sage-input--showplaceholder<% end %>"
-  <%= prefix != "" ? "data-input-prefix=#{prefix}" : "" -%>
-  <%= suffix != "" ? "data-input-suffix=#{suffix}" : "" -%>
+  <%= prefix != "" ? "data-js-input-prefix=#{prefix}" : "" -%>
+  <%= suffix != "" ? "data-js-input-suffix=#{suffix}" : "" -%>
 >
   <input
     type="<%= input_type %>"
