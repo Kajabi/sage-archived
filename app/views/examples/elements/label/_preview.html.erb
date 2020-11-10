@@ -2,9 +2,9 @@
 colors = [
   "draft",
   "info",
-  "success",
+  "published",
   "warning",
-  "danger"
+  "locked"
 ]
 %>
 
@@ -64,14 +64,14 @@ colors = [
       color: color,
       interactive: true,
       value: color.capitalize,
-      icon: "caret-down"
+      icon: "tag"
     } do %>
       <%= sage_component SageButton, {
         value: "Close",
         subtle: true,
         small: true,
         style: "secondary",
-        icon: { style: "only", name: "trash" }
+        icon: { style: "only", name: "caret-down" }
       } %>
     <% end %>
   <% end %>

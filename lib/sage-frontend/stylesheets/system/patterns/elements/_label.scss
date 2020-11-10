@@ -34,7 +34,7 @@ $-label-inset-border: 0 0 0 1px inset;
 
 .sage-label__button-wrapper {
   position: absolute;
-  right: sage-spacing(xs);
+  right: 0;
   margin: auto 0;
 
   .sage-btn::before {
@@ -68,22 +68,59 @@ $-label-inset-border: 0 0 0 1px inset;
   }
 
   #{$-color-modifier}.sage-label--interactive {
-    @include sage-focus-outline();
-    @include sage-focus-outline--update-color( sage-color-combo($-color-name, subtle, background) );
-
     .sage-label__value {
       padding-right: rem(32px);
 
+      @include sage-focus-outline();
+      @include sage-focus-outline--update-color( sage-color-combo($-color-name, subtle, background) );
+
       &:hover:not(:focus):not(:active):not(:disabled):not(.disabled) {
-        background-color: darken(sage-color-combo($-color-name, default, background), 5%);
+        color: sage-color-combo($-color-name, bold, foreground-accent);
+        // background-color: darken(sage-color-combo($-color-name, default, background), 5%);
       }
     }
 
-    .sage-btn:focus::after {
-      transform: translate3d(-50%, calc(-50% - 1px), 0) scale(1);
+    .sage-label__button-wrapper {
+      &:hover .sage-btn {
+        background-color: sage-color-combo($-color-name, default, inner-button-background);
+      }
+    }
+
+    &:hover {
+      .sage-label__value {
+        background-color: sage-color-combo($-color-name, default, background-accent)
+      }
+
+      .sage-btn::before {
+        color: sage-color-combo($-color-name, default, foreground-accent);
+      }
+    }
+
+    .sage-btn {
+      width: rem(24px);
+      min-height: rem(24px);
+      display: flex;
+      justify-content: center;
+      border-radius: 0 sage-border(radius) sage-border(radius) 0;
+
+      &::before {
+        font-weight: sage-font-weight(bold);
+        color: sage-color-combo($-color-name, default, foreground);
+      }
+
+      &::after {
+        width: rem(24px);
+        height: rem(24px);
+        border-radius: 0 sage-border(radius) sage-border(radius) 0;
+      }
+
+      &:focus {
+        // color: sage-color-combo($-color-name, default, foreground-accent);
+        @include sage-focus-outline--update-color( sage-color-combo($-color-name, default, foreground-accent) );
+      }
     }
   }
-  
+
   // .sage-btn & {
   //   &:focus,
   //   &:active {
