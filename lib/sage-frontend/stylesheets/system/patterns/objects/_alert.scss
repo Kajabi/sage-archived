@@ -40,10 +40,14 @@ $-alert-icon-colors: (
 @each $name, $color in $-alert-colors {
   .sage-alert--#{$name} {
     background: sage-color($color, 100);
+
     a:not([class]) {
-      margin-right: sage-spacing(md);
       color: sage-color($color, 400);
       text-decoration: underline;
+    }
+
+    .sage-alert__actions a:not([class]) {
+      margin-right: sage-spacing(md);
     }
   }
 }
