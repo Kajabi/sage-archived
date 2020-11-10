@@ -114,7 +114,7 @@ actions_items = [
 ]
 %>
 
-<h4>Tabs + Search</h4>
+<h3 class="t-sage-heading-6">Tabs + Search</h3>
 <%= sage_component SagePanelControls, {} do %>
   <% content_for :sage_panel_controls_tabs do %>
     <%= tabs %>
@@ -124,7 +124,7 @@ actions_items = [
   <% end %>
 <% end %>
 
-<h4>Bulk actions</h4>
+<h3 class="t-sage-heading-6">Bulk actions</h3>
 <%= sage_component SagePanelControls, {
   show_bulk_actions: true,
   show_expand_collapse: true,
@@ -134,7 +134,7 @@ actions_items = [
   sort_items: sort_items,
 } %>
 
-<h4>Sample Custom Toolbar</h4>
+<h3 class="t-sage-heading-6">Sample Custom Toolbar</h3>
 <%= sage_component SagePanelControls, {} do %>
   <% content_for :sage_panel_controls_toolbar do %>
     <%= search_filter_toolbar %>
@@ -142,7 +142,7 @@ actions_items = [
   <% end %>
 <% end %>
 
-<h4>Kitchen Sink</h4>
+<h3 class="t-sage-heading-6">Kitchen Sink</h3>
 <%= sage_component SagePanelControls, {
   show_bulk_actions: true,
   show_expand_collapse: true,

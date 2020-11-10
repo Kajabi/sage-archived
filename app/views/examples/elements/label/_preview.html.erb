@@ -8,7 +8,7 @@ colors = [
 ]
 %>
 
-<h5>Default</h5>
+<h3 class="t-sage-heading-6">Default</h3>
 <%= sage_component SagePanelBlock, {} do %>
   <% colors.each do | color | %>
     <%= sage_component SageLabel, {
@@ -21,7 +21,7 @@ colors = [
   <% end %>
 <% end %>
 
-<h5>Subtle</h5>
+<h3 class="t-sage-heading-6">Subtle</h3>
 <%= sage_component SagePanelBlock, {} do %>
   <% colors.each do | color | %>
     <%= sage_component SageLabel, {
@@ -32,7 +32,7 @@ colors = [
   <% end %>
 <% end %>
 
-<h5>Bold</h5>
+<h3 class="t-sage-heading-6">Bold</h3>
 <%= sage_component SagePanelBlock, {} do %>
   <% colors.each do | color | %>
     <%= sage_component SageLabel, {
@@ -43,7 +43,7 @@ colors = [
   <% end %>
 <% end %>
 
-<h5>With Icons</h5>
+<h3 class="t-sage-heading-6">With Icons</h3>
 <%= sage_component SagePanelBlock, {} do %>
   <%= sage_component SageLabel, {
     color: "draft",
@@ -57,7 +57,7 @@ colors = [
   } %>
 <% end %>
 
-<h5>Interactive</h5>
+<h3 class="t-sage-heading-6">Interactive</h3>
 <%= sage_component SagePanelBlock, {} do %>
   <% colors.each do | color | %>
     <%= sage_component SageLabel, {
