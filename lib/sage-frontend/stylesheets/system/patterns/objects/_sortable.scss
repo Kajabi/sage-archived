@@ -16,8 +16,19 @@
   align-items: center;
   padding: sage-spacing(xs) $sage-panel-padding;
   background: sage-color(white);
-  border-bottom: sage-border(light);
+  border-bottom: sage-border();
+  border-left: sage-border();
+  border-right: sage-border();
   cursor: grab;
+
+  &:first-child {
+    border-radius: sage-border(radius) sage-border(radius) 0 0;
+    border-top: sage-border();
+  }
+
+  &:last-child {
+    border-radius: 0 0 sage-border(radius) sage-border(radius);
+  }
 
   &::before {
     @include sage-icon-base(handle);
