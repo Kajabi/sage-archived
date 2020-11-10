@@ -19,20 +19,23 @@ We use them in place of hard-coded values (such as hex values for color or pixel
     </ul>
   </div>
 <% end %>
-<% sage_tokens.each do |token| %>
-  <div class="sage-type">
-    <h2 id="<%= token[:category] %>"><%= token[:category].titleize %></h2>
-    <h4>Default</h4>
-    <div class="tokens">
-      <div class="token token-<%= token[:category] %>"><strong>sage-<%= token[:category] %>( )</strong></div>
-    </div>
+<div class="sage-panel-set">
+  <% sage_tokens.each do |token| %>
+    <h2 class="sage-panel__title" id="<%= token[:category] %>"><%= token[:category].titleize %></h2>
+    <%= sage_component SagePanelStack, {} do %>
+      <h3 class="sage-panel__subtitle">Default</h3>
+      <div class="tokens">
+        <div class="token token-<%= token[:category] %>"><strong>sage-<%= token[:category] %>( )</strong></div>
+      </div>
+    <% end %>
 
-    <h4>Options</h4>
-    <div class="tokens">
-      <% token[:tokens] .each do |test| %>
-        <div class="token token-<%= token[:category] %>-<%= test[:name] %>"><strong>sage-<%= token[:category] %>(<%= test[:name] %>)</strong></div>
-      <% end %>
-    </div>
-  </div>
-  <br><br>
-<% end %>
+    <%= sage_component SagePanelStack, {} do %>
+      <h3 class="sage-panel__subtitle">Options</h3>
+      <div class="tokens">
+        <% token[:tokens] .each do |test| %>
+          <div class="token token-<%= token[:category] %>-<%= test[:name] %>"><strong>sage-<%= token[:category] %>(<%= test[:name] %>)</strong></div>
+        <% end %>
+      </div>
+    <% end %>
+  <% end %>
+</div>

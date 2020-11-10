@@ -1,6 +1,6 @@
 <% permalink = "object-#{title}" %>
 
-<%= sage_component SageCardRow, { grid_template: "te", spacer: {bottom: :sm} } do %>
+<%= sage_component SagePanelHeader, {} do %>
   <h2 id="<%= permalink %>">
     <%= link_to title.titleize, pages_object_path(title), class: "example__link" %>
   </h2>
@@ -28,7 +28,8 @@
     } %>
   <% end %>
 <% end %>
-<%= sage_component SageCard, { spacer: {bottom: :xl} } do %>
+
+<%= sage_component SageCard, {} do %>
   <%= render "examples/objects/#{title}/preview" %>
 <% end %>
 

@@ -1,4 +1,4 @@
-<h4>As a Panel list</h4>
+<h3 class="t-sage-heading-6">As a Panel list</h3>
 <%= sage_component SagePanelList, {} do %>
   <%= sage_component SageSortable, { resource_name: "link" } do %>
 
@@ -43,7 +43,7 @@
   <% end %>
 <% end %>
 
-<h4>As cards</h4>
+<h3 class="t-sage-heading-6">As cards</h3>
 <%= sage_component SageSortable, { resource_name: "link" } do %>
   <% 3.times do %>
     <%= sage_component SageSortableItem, {
