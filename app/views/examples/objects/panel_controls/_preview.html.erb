@@ -115,116 +115,125 @@ actions_items = [
 %>
 
 <h3 class="t-sage-heading-6">Tabs + Search</h3>
-<%= sage_component SagePanelControls, {} do %>
-  <% content_for :sage_panel_controls_tabs do %>
-    <%= tabs %>
-  <% end %>
-  <% content_for :sage_panel_controls_toolbar do %>
-    <%= search %>
+<%= sage_component SagePanel, {} do %>
+  <%= sage_component SagePanelControls, {} do %>
+    <% content_for :sage_panel_controls_tabs do %>
+      <%= tabs %>
+    <% end %>
+    <% content_for :sage_panel_controls_toolbar do %>
+      <%= search %>
+    <% end %>
   <% end %>
 <% end %>
 
 <h3 class="t-sage-heading-6">Bulk actions</h3>
-<%= sage_component SagePanelControls, {
-  show_bulk_actions: true,
-  show_expand_collapse: true,
-  show_pagination: true,
-  show_sort: true,
-  bulk_action_items: actions_items,
-  sort_items: sort_items,
-} %>
+<%= sage_component SagePanel, {} do %>
+  <%= sage_component SagePanelControls, {
+    show_bulk_actions: true,
+    show_expand_collapse: true,
+    show_pagination: true,
+    show_sort: true,
+    bulk_action_items: actions_items,
+    sort_items: sort_items,
+  } %>
+<% end %>
 
 <h3 class="t-sage-heading-6">Sample Custom Toolbar</h3>
-<%= sage_component SagePanelControls, {} do %>
-  <% content_for :sage_panel_controls_toolbar do %>
-    <%= search_filter_toolbar %>
-    <%= dropdown %>
+<%= sage_component SagePanel, {} do %>
+  <%= sage_component SagePanelControls, {} do %>
+    <% content_for :sage_panel_controls_toolbar do %>
+      <%= search_filter_toolbar %>
+      <%= dropdown %>
+    <% end %>
   <% end %>
 <% end %>
 
 <h3 class="t-sage-heading-6">Kitchen Sink</h3>
-<%= sage_component SagePanelControls, {
-  show_bulk_actions: true,
-  show_expand_collapse: true,
-  show_pagination: true,
-  show_sort: true,
-  bulk_action_items: actions_items,
-  sort_items: sort_items,
-  target: "demo-table",
-} do %>
-  <% content_for :sage_panel_controls_tabs do %>
-    <%= tabs %>
+<%= sage_component SagePanel, {} do %>
+  <%= sage_component SagePanelControls, {
+    show_bulk_actions: true,
+    show_expand_collapse: true,
+    show_pagination: true,
+    show_sort: true,
+    bulk_action_items: actions_items,
+    sort_items: sort_items,
+    target: "demo-table",
+  } do %>
+    <% content_for :sage_panel_controls_tabs do %>
+      <%= tabs %>
+    <% end %>
+    <% content_for :sage_panel_controls_toolbar do %>
+      <%= search_filter_toolbar %>
+      <%= dropdown %>
+    <% end %>
   <% end %>
-  <% content_for :sage_panel_controls_toolbar do %>
-    <%= search_filter_toolbar %>
-    <%= dropdown %>
-  <% end %>
+
+  <%= sage_component SageTable, {
+    html_attributes: {
+      id: "demo-table",
+      "data-js-list-items-total": "4",
+      "data-js-list-items-shown": "25",
+      "data-js-list-page": "1",
+      "data-js-list-noun": "People,Person",
+    },
+    reset_above: true,
+    headers: [
+      {
+        value: "",
+        data_type: "checkbox",
+      },
+      {
+        value: "",
+        data_type: "avatar",
+      },
+      "Name",
+      "Email",
+      "Email Marketing",
+      "Join Date",
+      "Last Activity",
+    ],
+    rows: [
+      {
+        selected: sage_component(SageCheckbox, { value: "", standalone: true, checked: true }),
+        avatar: sage_component(SageAvatar, { initials: "AF", color: "purple" }),
+        name: "Albert Flores",
+        email: "albert.flores@example.com",
+        marking: "Never Subcribed",
+        joinDate: "8/2/19",
+        lastActivity: "8/2/19",
+      },
+      {
+        selected: sage_component(SageCheckbox, { value: "", standalone: true, checked: true }),
+        avatar: sage_component(SageAvatar, { initials: "EP", color: "orange" }),
+        name: "Eleanor Pena",
+        email: "eleanorpena@example.com",
+        marking: "Unsubscribed",
+        joinDate: "7/11/19",
+        lastActivity: "7/11/19",
+      },
+      {
+        selected: sage_component(SageCheckbox, { value: "", standalone: true }),
+        avatar: sage_component(SageAvatar, { initials: "AM", color: "sage" }),
+        name: "Arlene McCoy",
+        email: "arlenemccoy@example.com",
+        marking: "Unsubscribed",
+        joinDate: "6/21/19",
+        lastActivity: "6/21/19",
+      },
+      {
+        selected: sage_component(SageCheckbox, { value: "", standalone: true }),
+        avatar: sage_component(SageAvatar, { initials: "KM" }),
+        name: "Kathryn Murphy",
+        email: "katmurphy98@example.com",
+        marking: "Subscribed",
+        joinDate: "4/4/18",
+        lastActivity: "4/4/18",
+      }
+    ]
+  }
+  %>
 <% end %>
 
-<%= sage_component SageTable, {
-  html_attributes: {
-    id: "demo-table",
-    "data-js-list-items-total": "4",
-    "data-js-list-items-shown": "25",
-    "data-js-list-page": "1",
-    "data-js-list-noun": "People,Person",
-  },
-  reset_above: true,
-  headers: [
-    {
-      value: "",
-      data_type: "checkbox",
-    },
-    {
-      value: "",
-      data_type: "avatar",
-    },
-    "Name",
-    "Email",
-    "Email Marketing",
-    "Join Date",
-    "Last Activity",
-  ],
-  rows: [
-    {
-      selected: sage_component(SageCheckbox, { value: "", standalone: true, checked: true }),
-      avatar: sage_component(SageAvatar, { initials: "AF", color: "purple" }),
-      name: "Albert Flores",
-      email: "albert.flores@example.com",
-      marking: "Never Subcribed",
-      joinDate: "8/2/19",
-      lastActivity: "8/2/19",
-    },
-    {
-      selected: sage_component(SageCheckbox, { value: "", standalone: true, checked: true }),
-      avatar: sage_component(SageAvatar, { initials: "EP", color: "orange" }),
-      name: "Eleanor Pena",
-      email: "eleanorpena@example.com",
-      marking: "Unsubscribed",
-      joinDate: "7/11/19",
-      lastActivity: "7/11/19",
-    },
-    {
-      selected: sage_component(SageCheckbox, { value: "", standalone: true }),
-      avatar: sage_component(SageAvatar, { initials: "AM", color: "sage" }),
-      name: "Arlene McCoy",
-      email: "arlenemccoy@example.com",
-      marking: "Unsubscribed",
-      joinDate: "6/21/19",
-      lastActivity: "6/21/19",
-    },
-    {
-      selected: sage_component(SageCheckbox, { value: "", standalone: true }),
-      avatar: sage_component(SageAvatar, { initials: "KM" }),
-      name: "Kathryn Murphy",
-      email: "katmurphy98@example.com",
-      marking: "Subscribed",
-      joinDate: "4/4/18",
-      lastActivity: "4/4/18",
-    }
-  ]
-}
-%>
 <%= md(%(
 #### List properties
 

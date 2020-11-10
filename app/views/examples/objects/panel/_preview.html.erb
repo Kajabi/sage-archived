@@ -9,11 +9,13 @@ Ut elementum id leo ac fringilla.
 
 <%= md('
 <strong class="t-sage--color-orange">
-  While this page depicts panels within panels this not a pattern that should be implemented elsewhere.
+  While this page depicts panels within cards this merely a consequence of our documentation structure
+  and NOT a pattern that should be implemented elsewhere.
 </strong>
 ', use_sage_type: true) %>
 
 <%= sage_component SagePanelHeader, { title: "Basic Panel" } %>
+
 <%= sage_component SagePanel, {} do %>
   <%= sage_component SagePanelHeader, { title: "Panel Header" } do %>
     <%= sage_component SageButton, {
@@ -69,29 +71,32 @@ presentation of several distinct lines of text content beyond open type formatti
 ", use_sage_type: true) %>
 
 <%= sage_component SagePanelSubheader, { title: "Example:" } %>
-<%= sage_component SagePanelStack, {} do %>
-  <%= sage_component SageCard, {} do %>
-    <%= sage_component SageCardRow, { grid_template: "et" } do %>
-      <i class="sage-icon-video-on"></i>
-      <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+
+<%= sage_component SagePanel, {} do %>
+  <%= sage_component SagePanelStack, {} do %>
+    <%= sage_component SageCard, {} do %>
+      <%= sage_component SageCardRow, { grid_template: "et" } do %>
+        <i class="sage-icon-video-on"></i>
+        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+      <% end %>
     <% end %>
-  <% end %>
-  <%= sage_component SageCard, {} do %>
-    <%= sage_component SageCardRow, { grid_template: "et" } do %>
-      <i class="sage-icon-video-on"></i>
-      <span>Morbi rhoncus mauris ut turpis gravida bibendum.</span>
+    <%= sage_component SageCard, {} do %>
+      <%= sage_component SageCardRow, { grid_template: "et" } do %>
+        <i class="sage-icon-video-on"></i>
+        <span>Morbi rhoncus mauris ut turpis gravida bibendum.</span>
+      <% end %>
     <% end %>
-  <% end %>
-  <%= sage_component SageCard, {} do %>
-    <%= sage_component SageCardRow, { grid_template: "et" } do %>
-      <i class="sage-icon-video-on"></i>
-      <span>Donec feugiat accumsan velit et semper.</span>
+    <%= sage_component SageCard, {} do %>
+      <%= sage_component SageCardRow, { grid_template: "et" } do %>
+        <i class="sage-icon-video-on"></i>
+        <span>Donec feugiat accumsan velit et semper.</span>
+      <% end %>
     <% end %>
-  <% end %>
-  <%= sage_component SageCard, {} do %>
-    <%= sage_component SageCardRow, { grid_template: "et" } do %>
-      <i class="sage-icon-video-on"></i>
-      <span>Ut elementum id leo ac fringilla.</span>
+    <%= sage_component SageCard, {} do %>
+      <%= sage_component SageCardRow, { grid_template: "et" } do %>
+        <i class="sage-icon-video-on"></i>
+        <span>Ut elementum id leo ac fringilla.</span>
+      <% end %>
     <% end %>
   <% end %>
 <% end %>
@@ -104,22 +109,24 @@ Lists can also have row-like layouts with elements setup inline.
 ", use_sage_type: true) %>
 
 <%= sage_component SagePanelSubheader, { title: "Example:" } %>
-<%= sage_component SagePanelList, {} do %>
-  <%= sage_component SagePanelListItem, { grid_template: "et" } do %>
-    <i class="sage-icon-video-on"></i>
-    <span class="t-sage-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
-  <% end %>
-  <%= sage_component SagePanelListItem, { grid_template: "et" } do %>
-    <i class="sage-icon-video-on"></i>
-    <span class="t-sage-body">Morbi rhoncus mauris ut turpis gravida bibendum.</span>
-  <% end %>
-  <%= sage_component SagePanelListItem, { grid_template: "et" } do %>
-    <i class="sage-icon-video-on"></i>
-    <span class="t-sage-body">Donec feugiat accumsan velit et semper.</span>
-  <% end %>
-  <%= sage_component SagePanelListItem, { grid_template: "et" } do %>
-    <i class="sage-icon-video-on"></i>
-    <span class="t-sage-body">Ut elementum id leo ac fringilla.</span>
+<%= sage_component SagePanel, {} do %>
+  <%= sage_component SagePanelList, {} do %>
+    <%= sage_component SagePanelListItem, { grid_template: "et" } do %>
+      <i class="sage-icon-video-on"></i>
+      <span class="t-sage-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+    <% end %>
+    <%= sage_component SagePanelListItem, { grid_template: "et" } do %>
+      <i class="sage-icon-video-on"></i>
+      <span class="t-sage-body">Morbi rhoncus mauris ut turpis gravida bibendum.</span>
+    <% end %>
+    <%= sage_component SagePanelListItem, { grid_template: "et" } do %>
+      <i class="sage-icon-video-on"></i>
+      <span class="t-sage-body">Donec feugiat accumsan velit et semper.</span>
+    <% end %>
+    <%= sage_component SagePanelListItem, { grid_template: "et" } do %>
+      <i class="sage-icon-video-on"></i>
+      <span class="t-sage-body">Ut elementum id leo ac fringilla.</span>
+    <% end %>
   <% end %>
 <% end %>
 
@@ -130,21 +137,23 @@ It can either be a custom component or employ one of the standard Grid Template 
 ", use_sage_type: true) %>
 
 <%= sage_component SagePanelSubheader, { title: "Example:" } %>
-<%= sage_component SagePanelRow, { grid_template: "ete" } do %>
-  <i class="sage-icon-check-circle-xl t-sage--color-sage"></i>
-  <%= sage_component SagePanelBlock, {} do %>
-    <p class="t-sage-body-semi">Lorem ipsum dolor sit amet</p>
-    <p class="t-sage-body-small t-sage--color-grey">consectetur adipiscing elit</p>
+<%= sage_component SagePanel, {} do %>
+  <%= sage_component SagePanelRow, { grid_template: "ete" } do %>
+    <i class="sage-icon-check-circle-xl t-sage--color-sage"></i>
+    <%= sage_component SagePanelBlock, {} do %>
+      <p class="t-sage-body-semi">Lorem ipsum dolor sit amet</p>
+      <p class="t-sage-body-small t-sage--color-grey">consectetur adipiscing elit</p>
+    <% end %>
+    <%= sage_component SageButton, {
+      value: "Options",
+      style: "secondary",
+      subtle: true,
+      icon: {
+        name: "dot-menu-horizontal",
+        style: "only"
+      }
+    } %>
   <% end %>
-  <%= sage_component SageButton, {
-    value: "Options",
-    style: "secondary",
-    subtle: true,
-    icon: {
-      name: "dot-menu-horizontal",
-      style: "only"
-    }
-  } %>
 <% end %>
 
 <%= sage_component SagePanelHeader, { title: "Panel Tiles <code>.sage-panel__tiles</code>".html_safe } %>
@@ -155,36 +164,38 @@ Use one of the tiling pattern modifiers to determine how many tiles appear in a 
 ", use_sage_type: true) %>
 
 <%= sage_component SagePanelSubheader, { title: "Example:" } %>
-<%= sage_component SagePanelTiles, { tiles_in_row: 3 } do %>
-  <%= sage_component SageCard, {} do %>
-    <%= sage_component SageCardFigure, {} do %>
-      <%= image_pack_tag("docs/card/card-placeholder-sm.png", alt: "") %>
+<%= sage_component SagePanel, {} do %>
+  <%= sage_component SagePanelTiles, { tiles_in_row: 3 } do %>
+    <%= sage_component SageCard, {} do %>
+      <%= sage_component SageCardFigure, {} do %>
+        <%= image_pack_tag("docs/card/card-placeholder-sm.png", alt: "") %>
+      <% end %>
+      <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
     <% end %>
-    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
-  <% end %>
-  <%= sage_component SageCard, {} do %>
-    <%= sage_component SageCardFigure, {} do %>
-      <%= image_pack_tag("docs/card/card-placeholder-sm.png", alt: "") %>
+    <%= sage_component SageCard, {} do %>
+      <%= sage_component SageCardFigure, {} do %>
+        <%= image_pack_tag("docs/card/card-placeholder-sm.png", alt: "") %>
+      <% end %>
+      <span>Morbi rhoncus mauris ut turpis gravida bibendum.</span>
     <% end %>
-    <span>Morbi rhoncus mauris ut turpis gravida bibendum.</span>
-  <% end %>
-  <%= sage_component SageCard, {} do %>
-    <%= sage_component SageCardFigure, {} do %>
-      <%= image_pack_tag("docs/card/card-placeholder-sm.png", alt: "") %>
+    <%= sage_component SageCard, {} do %>
+      <%= sage_component SageCardFigure, {} do %>
+        <%= image_pack_tag("docs/card/card-placeholder-sm.png", alt: "") %>
+      <% end %>
+      <span>Donec feugiat accumsan velit et semper.</span>
     <% end %>
-    <span>Donec feugiat accumsan velit et semper.</span>
-  <% end %>
-  <%= sage_component SageCard, {} do %>
-    <%= sage_component SageCardFigure, {} do %>
-      <%= image_pack_tag("docs/card/card-placeholder-sm.png", alt: "") %>
+    <%= sage_component SageCard, {} do %>
+      <%= sage_component SageCardFigure, {} do %>
+        <%= image_pack_tag("docs/card/card-placeholder-sm.png", alt: "") %>
+      <% end %>
+      <span>Ut elementum id leo ac fringilla.</span>
     <% end %>
-    <span>Ut elementum id leo ac fringilla.</span>
-  <% end %>
-  <%= sage_component SageCard, {} do %>
-    <%= sage_component SageCardFigure, {} do %>
-      <%= image_pack_tag("docs/card/card-placeholder-sm.png", alt: "") %>
+    <%= sage_component SageCard, {} do %>
+      <%= sage_component SageCardFigure, {} do %>
+        <%= image_pack_tag("docs/card/card-placeholder-sm.png", alt: "") %>
+      <% end %>
+      <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
     <% end %>
-    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
   <% end %>
 <% end %>
 
@@ -233,8 +244,8 @@ We also have a modifier `.sage-panel__figure--wistia` for when Wistia videos are
 ", use_sage_type: true) %>
 
 <%= sage_component SagePanelSubheader, { title: "Example:" } %>
-<p><i>This example shows a standard figure in context of this existing panel</i>.</p>
-<div class="sage-panel-set">
+<%= sage_component SagePanel, {} do %>
+  <p><i>This example shows a standard figure in context of this existing panel</i>.</p>
   <%= sage_component SagePanelFigure, {} do %>
     <%= image_pack_tag("docs/card/card-placeholder-lg.png", alt: "") %>
   <% end %>
@@ -242,21 +253,21 @@ We also have a modifier `.sage-panel__figure--wistia` for when Wistia videos are
   <%= sage_component SagePanelFigure, { bleed: "sides" } do %>
     <%= image_pack_tag("docs/card/card-placeholder-lg.png", alt: "") %>
   <% end %>
-  <p><i>These examples demonstrate figures with top and bottom bleed respectively</i>.</p>
-  <%= sage_component SagePanel, {} do %>
-    <%= sage_component SagePanelBlock, { type_block: true } do %>
-      <%= sample_copy.html_safe %>
-    <% end %>
-    <%= sage_component SagePanelFigure, { bleed: "bottom" } do %>
-      <%= image_pack_tag("docs/card/card-placeholder-lg.png", alt: "") %>
-    <% end %>
+<% end %>
+<p><i>These examples demonstrate figures with top and bottom bleed respectively</i>.</p>
+<%= sage_component SagePanel, {} do %>
+  <%= sage_component SagePanelFigure, { bleed: "top" } do %>
+    <%= image_pack_tag("docs/card/card-placeholder-lg.png", alt: "") %>
   <% end %>
-  <%= sage_component SagePanel, {} do %>
-    <%= sage_component SagePanelFigure, { bleed: "top" } do %>
-      <%= image_pack_tag("docs/card/card-placeholder-lg.png", alt: "") %>
-    <% end %>
-    <%= sage_component SagePanelBlock, { type_block: true } do %>
-      <%= sample_copy.html_safe %>
-    <% end %>
+  <%= sage_component SagePanelBlock, { type_block: true } do %>
+    <%= sample_copy.html_safe %>
   <% end %>
-</div>
+<% end %>
+<%= sage_component SagePanel, {} do %>
+  <%= sage_component SagePanelBlock, { type_block: true } do %>
+    <%= sample_copy.html_safe %>
+  <% end %>
+  <%= sage_component SagePanelFigure, { bleed: "bottom" } do %>
+    <%= image_pack_tag("docs/card/card-placeholder-lg.png", alt: "") %>
+  <% end %>
+<% end %>
