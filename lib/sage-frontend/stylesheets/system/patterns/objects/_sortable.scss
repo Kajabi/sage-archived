@@ -42,12 +42,14 @@
     transition-property: border-color, box-shadow;
 
     &:first-child {
-      border-radius: sage-border(radius) sage-border(radius) 0 0;
+      border-top-left-radius: sage-border(radius);
+      border-top-right-radius: sage-border(radius);
       border-top: sage-border();
     }
 
     &:last-child {
-      border-radius: 0 0 sage-border(radius) sage-border(radius);
+      border-bottom-left-radius: sage-border(radius);
+      border-bottom-right-radius: sage-border(radius);
     }
   }
 
