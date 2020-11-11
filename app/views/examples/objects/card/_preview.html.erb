@@ -21,11 +21,20 @@
   <% end %>
 <% end %>
 
+<%= sage_component SageCard, { border_dashed: true } do %>
+  <%= sage_component SageCardBlock, { type_block: true } do %>
+    <p>
+      A card with a dashed border. (<code>border_dashed</code>)
+    </p>
+  <% end %>
+<% end %>
+
+
 <%= md("
 Cards have three core areas:
 
-- **Header** — 
-  `.sage-card__header` 
+- **Header** —
+  `.sage-card__header`
   (optional) This area usually contains at least a title (`sage-card__title`)
   and often an icon or menu flanking the right corner.
   It employs the Sage Row layout base with `16px` gutters.
@@ -69,7 +78,7 @@ Cards have three core areas:
     These can also be nested inside each other for compound configurations.
 
 - **Footer** —
-  `.sage-card__footer` 
+  `.sage-card__footer`
   (optional) This area is less common in cards than on panels
   but when used it often contains one or more buttons
   that can be sent to the right edge of the card
