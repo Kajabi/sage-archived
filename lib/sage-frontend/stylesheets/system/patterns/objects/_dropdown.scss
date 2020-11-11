@@ -58,7 +58,7 @@ $-trigger-dropdown-offset: rem(16px) + sage-spacing(xs);
       margin-right: $sage-panel-grid-gap;
     }
   }
-  
+
   .sage-panel-controls__bulk-actions > &,
   .sage-panel-controls__toolbar-btn-group > & {
     border-radius: 0;
@@ -327,6 +327,7 @@ $-trigger-dropdown-offset: rem(16px) + sage-spacing(xs);
   padding: 0 $-trigger-padding-label;
   color: $-trigger-label-color-default;
   white-space: nowrap;
+  text-align: left;
   pointer-events: none;
 
   @include position(($-dropdown-height / 2), unset, unset, ($-trigger-padding-x - $-trigger-padding-label));
