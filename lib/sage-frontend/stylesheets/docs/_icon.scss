@@ -4,7 +4,7 @@
   For Sage documentation use
 ================================================== */
 
-.sage-icon-block {
+.docs-icon-block {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -15,8 +15,25 @@
   border: sage-border();
 }
 
-.sage-icon-block__label {
+.docs-icon-block__label {
   margin-bottom: 0;
+  font-size: sage-font-size(xs);
+  font-weight: sage-font-weight(semibold);
+}
+
+
+.docs-icon-inline {
+  text-align: right;
+  margin-bottom: sage-spacing(sm);
+  padding: sage-spacing(sm);
+  background: sage-color(white);
+  border: sage-border();
+  i {
+    line-height: 1;
+  }
+}
+
+.docs-icon-inline__label {
   font-size: sage-font-size(xs);
   font-weight: sage-font-weight(semibold);
 }

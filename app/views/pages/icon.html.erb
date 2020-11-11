@@ -1,5 +1,68 @@
 <% action_icons = [
-  "add",
+  {
+    name: "add",
+    action: "Add",
+  },
+  {
+    name: "check",
+    action: "Confirm",
+  },
+  {
+    name: "copy",
+    action: "Copy & Clone",
+  },
+  {
+    name: "customize",
+    action: "Customize",
+  },
+  {
+    name: "download",
+    action: "Download",
+  },
+  {
+    name: "gear",
+    action: "Configure",
+  },
+  {
+    name: "handle",
+    action: "Drag",
+  },
+  {
+    name: "launch",
+    action: "Leave Expereince",
+  },
+  {
+    name: "pen",
+    action: "Edit",
+  },
+  {
+    name: "preview-on",
+    action: "Preview",
+  },
+  {
+    name: "question-circle",
+    action: "Help",
+  },
+  {
+    name: "remove",
+    action: "Clear",
+  },
+  {
+    name: "search",
+    action: "Search",
+  },
+  {
+    name: "sort",
+    action: "Sort",
+  },
+  {
+    name: "trash",
+    action: "Delete",
+  },
+  {
+    name: "upload",
+    action: "Upload",
+  },
 ]
 %>
 <% feature_icons = [
@@ -161,6 +224,9 @@ then `aria-hidden=\"true\"` can be used instead.
     <h2 class="quick-links__title">Contents</h2>
     <ul class="quick-links__body">
       <li class="quick-links__item">
+        <a href="#guidelines" class="quick-links__link">Guidelines</a>
+      </li>
+      <li class="quick-links__item">
         <a href="#all-icons" class="quick-links__link">Action Icons</a>
       </li>
       <li class="quick-links__item">
@@ -172,27 +238,43 @@ then `aria-hidden=\"true\"` can be used instead.
     </ul>
   </div>
 <% end %>
+<div id="guidelines">
+<%= md(%(
+## General Guidelines
+
+Icons are an effective way to enforce the purpose of an experience. Icons are broken out into two main categories: Actions and Features. In order to ensure that the icons are adding to the clarity of an experience and not creating confusion, we adhere to two principles. 
+
+####Actions take priority over features. 
+
+**Example:** Add Product, the add action take priority over the Product feature. Add Product and Add Post both carry the add icon.
+
+####Feature icons are reserved for their feature.
+
+**Example:** Marketing uses the Megaphone icon. We do not use the megaphone icon for other treatments such as an in-app announcement. 
+), use_sage_type: true) %>
+</div>
+<hr>
 <div id="action-icons" class="sage-type">
   <h2>Action Icons</h2>
-  <%= sage_component SageGridRow, {} do %> 
-    <% action_icons.each do |icon| %>
-      <%= sage_component SageGridCol, { breakpoint: "md", size: "4" } do %>
-        <div class="sage-icon-block">
-          <i class="sage-icon-<%= icon %>-2xl" aria-hidden="true"></i>
-          <p class="sage-icon-block__label">sage-icon-<%= icon %></p>
-        </div>
+  <% action_icons.each do |icon| %>
+    <div class="docs-icon-inline">
+      <%= sage_component SageCardRow, { grid_template: "it" } do %>
+        <i class="sage-icon-<%= icon[:name] %>-2xl" aria-hidden="true"></i>
+        <p class="docs-icon-inline__label">sage-icon-<%= icon[:name] %></p>
+        <p class="docs-icon-inline__usage"><strong><%= icon[:action] %></strong> Actions</p>
       <% end %>
-    <% end %>
+    </div>
   <% end %>
 </div>
+<hr>
 <div id="feature-icons" class="sage-type">
   <h2>Feature Icons</h2>
   <%= sage_component SageGridRow, {} do %> 
     <% feature_icons.each do |icon| %>
       <%= sage_component SageGridCol, { breakpoint: "md", size: "4" } do %>
-        <div class="sage-icon-block">
+        <div class="docs-icon-block">
           <i class="sage-icon-<%= icon %>-2xl" aria-hidden="true"></i>
-          <p class="sage-icon-block__label">sage-icon-<%= icon %></p>
+          <p class="docs-icon-block__label">sage-icon-<%= icon %></p>
         </div>
       <% end %>
     <% end %>
@@ -203,9 +285,9 @@ then `aria-hidden=\"true\"` can be used instead.
   <%= sage_component SageGridRow, {} do %> 
     <% all_icons.each do |icon| %>
       <%= sage_component SageGridCol, { breakpoint: "md", size: "4" } do %>
-        <div class="sage-icon-block">
+        <div class="docs-icon-block">
           <i class="sage-icon-<%= icon %>-2xl" aria-hidden="true"></i>
-          <p class="sage-icon-block__label">sage-icon-<%= icon %></p>
+          <p class="docs-icon-block__label">sage-icon-<%= icon %></p>
         </div>
       <% end %>
     <% end %>
