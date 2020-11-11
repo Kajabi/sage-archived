@@ -11,8 +11,8 @@
   margin-bottom: sage-spacing();
   padding: sage-spacing(lg) sage-spacing(sm);
   text-align: center;
-  background: sage-color(white);
-  border: sage-border();
+  background: sage-color(grey, 100);
+  border-radius: sage-border(radius);
 }
 
 .docs-icon-block__label {
@@ -26,8 +26,8 @@
   text-align: right;
   margin-bottom: sage-spacing(sm);
   padding: sage-spacing(sm);
-  background: sage-color(white);
-  border: sage-border();
+  background: sage-color(grey, 100);
+  border-radius: sage-border(radius);
   i {
     line-height: 1;
   }
