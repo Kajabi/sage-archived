@@ -1,4 +1,12 @@
-<% icons = [
+<% action_icons = [
+  "add",
+]
+%>
+<% feature_icons = [
+  "add",
+]
+%>
+<% all_icons = [
   "add",
   "add-circle",
   "add-image",
@@ -148,13 +156,58 @@ text that describes the icon, such as where the icon is purely decorative
 then `aria-hidden=\"true\"` can be used instead.
 )) %>
 <% end %>
-<div class="sage-row">
-  <% icons.each do |icon| %>
-    <div class="sage-col--md-4 sage-col--sm-6">
-      <div class="sage-icon-block">
-        <i class="sage-icon-<%= icon %>-2xl" aria-hidden="true"></i>
-        <p class="sage-icon-block__label">sage-icon-<%= icon %></p>
-      </div>
-    </div>
+<%= content_for :quick_links do %>
+  <div class="quick-links">
+    <h2 class="quick-links__title">Contents</h2>
+    <ul class="quick-links__body">
+      <li class="quick-links__item">
+        <a href="#all-icons" class="quick-links__link">Action Icons</a>
+      </li>
+      <li class="quick-links__item">
+        <a href="#all-icons" class="quick-links__link">Feature Icons</a>
+      </li>
+      <li class="quick-links__item">
+        <a href="#all-icons" class="quick-links__link">All Icons</a>
+      </li>
+    </ul>
+  </div>
+<% end %>
+<div id="action-icons" class="sage-type">
+  <h2>Action Icons</h2>
+  <%= sage_component SageGridRow, {} do %> 
+    <% action_icons.each do |icon| %>
+      <%= sage_component SageGridCol, { breakpoint: "md", size: "4" } do %>
+        <div class="sage-icon-block">
+          <i class="sage-icon-<%= icon %>-2xl" aria-hidden="true"></i>
+          <p class="sage-icon-block__label">sage-icon-<%= icon %></p>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
+<div id="feature-icons" class="sage-type">
+  <h2>Feature Icons</h2>
+  <%= sage_component SageGridRow, {} do %> 
+    <% feature_icons.each do |icon| %>
+      <%= sage_component SageGridCol, { breakpoint: "md", size: "4" } do %>
+        <div class="sage-icon-block">
+          <i class="sage-icon-<%= icon %>-2xl" aria-hidden="true"></i>
+          <p class="sage-icon-block__label">sage-icon-<%= icon %></p>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
+<div id="all-icons" class="sage-type">
+  <h2>All Icons</h2>
+  <%= sage_component SageGridRow, {} do %> 
+    <% all_icons.each do |icon| %>
+      <%= sage_component SageGridCol, { breakpoint: "md", size: "4" } do %>
+        <div class="sage-icon-block">
+          <i class="sage-icon-<%= icon %>-2xl" aria-hidden="true"></i>
+          <p class="sage-icon-block__label">sage-icon-<%= icon %></p>
+        </div>
+      <% end %>
+    <% end %>
   <% end %>
 </div>
