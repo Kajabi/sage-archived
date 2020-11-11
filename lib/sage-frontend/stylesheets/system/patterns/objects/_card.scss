@@ -22,7 +22,7 @@
 }
 
 .sage-card--border-dashed {
-  border: unset;
+  border-color: sage-color(white);
   @include sage-dashed-border(
     $border-radius: $sage-card-border-radius,
     $color: sage-color(grey, 300),
