@@ -330,7 +330,7 @@ Icons are an effective way to enforce the purpose of an experience. Icons are br
   <% action_icons.each do |icon| %>
     <div class="docs-icon-inline">
       <%= sage_component SageCardRow, { grid_template: "it" } do %>
-        <i class="sage-icon-<%= icon[:name] %>-2xl" aria-hidden="true"></i>
+        <i class="sage-icon-<%= icon[:name] %>-xl" aria-hidden="true"></i>
         <p class="docs-icon-inline__label">sage-icon-<%= icon[:name] %></p>
         <p class="docs-icon-inline__usage"><strong><%= icon[:action] %></strong> Actions</p>
       <% end %>
@@ -343,7 +343,7 @@ Icons are an effective way to enforce the purpose of an experience. Icons are br
   <% feature_icons.each do |icon| %>
     <div class="docs-icon-inline">
       <%= sage_component SageCardRow, { grid_template: "it" } do %>
-        <i class="sage-icon-<%= icon[:name] %>-2xl" aria-hidden="true"></i>
+        <i class="sage-icon-<%= icon[:name] %>-xl" aria-hidden="true"></i>
         <p class="docs-icon-inline__label">sage-icon-<%= icon[:name] %></p>
         <p class="docs-icon-inline__usage"><strong><%= icon[:action] %></strong></p>
       <% end %>
