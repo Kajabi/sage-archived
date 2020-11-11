@@ -30,7 +30,6 @@ configs = [
       color: config[:color],
       value: %(
         #{config[:color].capitalize}
-        <button class="sage-btn sage-btn--subtle sage-btn--secondary sage-btn--icon-only-remove"></button>
       )
     } %>
   <% end %>
@@ -72,12 +71,32 @@ configs = [
   } %>
 <% end %>
 
-<h3 class="t-sage-heading-6">Interactive</h3>
+<h3 class="t-sage-heading-6">Tags</h3>
 <%= sage_component SagePanelBlock, {} do %>
   <% configs.each do | config | %>
     <%= sage_component SageLabel, {
       color: config[:color],
-      interactive: true,
+      value: %(
+        #{config[:color].capitalize}
+      )
+    } do %>
+      <%= sage_component SageButton, {
+        value: "Close",
+        subtle: true,
+        small: true,
+        style: "secondary",
+        icon: { style: "only", name: "remove" },
+        css_classes: "sage-btn--tag"
+      } %>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h3 class="t-sage-heading-6">Status</h3>
+<%= sage_component SagePanelBlock, {} do %>
+  <% configs.each do | config | %>
+    <%= sage_component SageLabel, {
+      color: config[:color],
       value: config[:color].capitalize,
       icon: config[:icon]
     } do %>

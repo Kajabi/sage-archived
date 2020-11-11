@@ -98,26 +98,41 @@ $-label-danger-icon-background-accent: #da665e;
       justify-content: center;
       position: absolute;
       right: 0;
-      width: rem(24px);
-      min-height: rem(24px);
       margin: auto 0;
       border-radius: 0 sage-border(radius) sage-border(radius) 0;
 
       &::before {
-        font-size: rem(8px);
+        // font-size: rem(8px);
         font-weight: sage-font-weight(bold);
         color: sage-color-combo($-color-name, default, foreground);
       }
 
       &::after {
-        width: rem(24px);
-        height: rem(24px);
+        // width: rem(24px);
+        // height: rem(24px);
         border-radius: 0 sage-border(radius) sage-border(radius) 0;
       }
 
       &:focus {
-        // color: sage-color-combo($-color-name, default, foreground-accent);
         @include sage-focus-outline--update-color( sage-color-combo($-color-name, default, foreground-accent) );
+      }
+
+      &.sage-btn--small {
+        width: rem(24px);
+        min-height: rem(24px);
+
+        &::before {
+          font-size: rem(8px);
+        }
+  
+        &::after {
+          width: rem(24px);
+          height: rem(24px);
+        }
+
+        &.sage-btn--tag::before {
+          font-size: rem(16px);
+        }
       }
     }
   }
