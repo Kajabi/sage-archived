@@ -165,14 +165,16 @@ $-collapse-breakpoint-key: lg-max;
   }
 
   @media (min-width: sage-breakpoint($-collapse-breakpoint-key)) {
-    display: none;
     visibility: hidden;
+    transition: opacity $sage-transition;
+    transition-delay: 0.1s;
+    opacity: 0;
 
     :hover > &,
     :focus > &,
     :focus-within > & {
-      display: flex;
       visibility: visible;
+      opacity: 1;
     }
   }
 }
