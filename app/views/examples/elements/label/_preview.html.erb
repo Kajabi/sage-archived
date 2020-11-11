@@ -1,21 +1,36 @@
-<%
-colors = [
-  "draft",
-  "info",
-  "published",
-  "warning",
-  "locked"
+<% 
+configs = [
+  {
+    color: "draft",
+    icon: "draft",
+  },
+  {
+    color: "published",
+    icon: "check",
+  },
+  {
+    color: "info",
+    icon: "draft",
+  },
+  {
+    color: "warning",
+    icon: "warning",
+  },
+  {
+    color: "locked",
+    icon: "lock",
+  }
 ]
 %>
 
 <h3 class="t-sage-heading-6">Default</h3>
 <%= sage_component SagePanelBlock, {} do %>
-  <% colors.each do | color | %>
+  <% configs.each do | config | %>
     <%= sage_component SageLabel, {
-      color: color,
+      color: config[:color],
       value: %(
-        #{color.capitalize}
-        <button class="sage-btn sage-btn--subtle sage-btn--secondary sage-btn--icon-only-remove"></button>
+        #{config[:color].capitalize}
+        <button class='sage-btn sage-btn--subtle sage-btn--secondary sage-btn--icon-only-remove"></button>
       )
     } %>
   <% end %>
@@ -23,22 +38,22 @@ colors = [
 
 <h3 class="t-sage-heading-6">Subtle</h3>
 <%= sage_component SagePanelBlock, {} do %>
-  <% colors.each do | color | %>
+  <% configs.each do | config | %>
     <%= sage_component SageLabel, {
-      color: color,
+      color: config[:color],
       style: "subtle",
-      value: color.capitalize
+      value: config[:color].capitalize
     } %>
   <% end %>
 <% end %>
 
 <h3 class="t-sage-heading-6">Bold</h3>
 <%= sage_component SagePanelBlock, {} do %>
-  <% colors.each do | color | %>
+  <% configs.each do | config | %>
     <%= sage_component SageLabel, {
-      color: color,
+      color: config[:color],
       style: "bold",
-      value: color.capitalize
+      value: config[:color].capitalize
     } %>
   <% end %>
 <% end %>
@@ -59,12 +74,12 @@ colors = [
 
 <h3 class="t-sage-heading-6">Interactive</h3>
 <%= sage_component SagePanelBlock, {} do %>
-  <% colors.each do | color | %>
+  <% configs.each do | config | %>
     <%= sage_component SageLabel, {
-      color: color,
+      color: config[:color],
       interactive: true,
-      value: color.capitalize,
-      icon: "tag"
+      value: config[:color].capitalize,
+      icon: config[:icon]
     } do %>
       <%= sage_component SageButton, {
         value: "Close",
