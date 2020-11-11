@@ -66,7 +66,78 @@
 ]
 %>
 <% feature_icons = [
-  "add",
+  {
+    name: "automations",
+    action: "Automations",
+  },
+  {
+    name: "calendar-date",
+    action: "???",
+  },
+  {
+    name: "cart",
+    action: "???",
+  },
+  {
+    name: "chart",
+    action: "Analytics",
+  },
+  {
+    name: "comment",
+    action: "Comments",
+  },
+  {
+    name: "coupon",
+    action: "Coupons",
+  },
+  {
+    name: "drop",
+    action: "Drip",
+  },
+  {
+    name: "filters",
+    action: "Filters",
+  },
+  {
+    name: "folder",
+    action: "Categories",
+  },
+  {
+    name: "folder-group",
+    action: "Sub Categories",
+  },
+  {
+    name: "form",
+    action: "Forms",
+  },
+  {
+    name: "mail",
+    action: "Email Broadcasts",
+  },
+  {
+    name: "megaphone",
+    action: "Marketing",
+  },
+  {
+    name: "monitor",
+    action: "Website",
+  },
+  {
+    name: "product",
+    action: "Products",
+  },
+  {
+    name: "refresh",
+    action: "Email Sequences",
+  },
+  {
+    name: "user-circle",
+    action: "People",
+  },
+  {
+    name: "user-star",
+    action: "Partners",
+  },
 ]
 %>
 <% all_icons = [
@@ -269,17 +340,17 @@ Icons are an effective way to enforce the purpose of an experience. Icons are br
 <hr>
 <div id="feature-icons" class="sage-type">
   <h2>Feature Icons</h2>
-  <%= sage_component SageGridRow, {} do %> 
-    <% feature_icons.each do |icon| %>
-      <%= sage_component SageGridCol, { breakpoint: "md", size: "4" } do %>
-        <div class="docs-icon-block">
-          <i class="sage-icon-<%= icon %>-2xl" aria-hidden="true"></i>
-          <p class="docs-icon-block__label">sage-icon-<%= icon %></p>
-        </div>
+  <% feature_icons.each do |icon| %>
+    <div class="docs-icon-inline">
+      <%= sage_component SageCardRow, { grid_template: "it" } do %>
+        <i class="sage-icon-<%= icon[:name] %>-2xl" aria-hidden="true"></i>
+        <p class="docs-icon-inline__label">sage-icon-<%= icon[:name] %></p>
+        <p class="docs-icon-inline__usage"><strong><%= icon[:action] %></strong></p>
       <% end %>
-    <% end %>
+    </div>
   <% end %>
 </div>
+<hr>
 <div id="all-icons" class="sage-type">
   <h2>All Icons</h2>
   <%= sage_component SageGridRow, {} do %> 
