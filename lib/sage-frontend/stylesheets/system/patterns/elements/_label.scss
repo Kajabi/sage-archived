@@ -8,6 +8,8 @@
 $-label-padding: 0 sage-spacing(xs) !default;
 $-label-border-radius: sage-border(radius) !default;
 $-label-inset-border: 0 0 0 1px inset;
+
+// temporary colors to be used only with interactive labels
 $-label-primary-icon-background-accent: #3e92ee;
 $-label-warning-background-accent: #f9df8b;
 $-label-danger-background-accent: #f3988c;
@@ -38,7 +40,7 @@ $-label-danger-icon-background-accent: #da665e;
   }
 
   .sage-btn {
-    width: 28px;
+    width: rem(28px);
   }
 }
 
