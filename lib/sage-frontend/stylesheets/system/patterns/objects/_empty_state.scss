@@ -15,6 +15,15 @@
   @include sage-grid-panel();
 }
 
+.sage-empty-state--size-sm {
+  padding-top: sage-spacing(xs);
+  padding-bottom: sage-spacing(xs);
+}
+
+.sage-empty-state__icon {
+  color: sage-color(charcoal, 100);
+}
+
 .sage-empty-state__title {
   @extend %t-sage-heading-4;
 
