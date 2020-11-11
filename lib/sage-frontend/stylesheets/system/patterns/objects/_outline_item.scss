@@ -15,7 +15,7 @@
 
 ================================================== */
 
-$-collapse-breakpoint-key: md-max;
+$-collapse-breakpoint-key: lg-max;
 
 .sage-outline-item {
   display: grid;
@@ -47,11 +47,8 @@ $-collapse-breakpoint-key: md-max;
   }
 
   @media (max-width: sage-breakpoint($-collapse-breakpoint-key)) {
-    grid-template-columns: min-content 1fr max-content min-content;
-    grid-row-gap: sage-spacing(2xs);
-    grid-template-areas:
-      "handle-drag title actions-secondary status"
-      ". actions-primary . handle-collapse";
+    grid-template-columns: min-content 1fr max-content min-content min-content rem(24px);
+    grid-template-areas: "handle-drag title actions-secondary actions-primary status handle-collapse";
   }
 
   // ------------------ ( /Category )
@@ -161,8 +158,10 @@ $-collapse-breakpoint-key: md-max;
   flex-direction: row;
   align-items: center;
 
-  > *:not(:last-child) {
-    margin-right: sage-spacing(lg);
+  @media (max-width: sage-breakpoint($-collapse-breakpoint-key)) {
+    &.sage-btn-group > *:not(:last-child) {
+      margin-right: sage-spacing(sm);
+    }
   }
 
   @media (min-width: sage-breakpoint($-collapse-breakpoint-key)) {
@@ -184,6 +183,14 @@ $-collapse-breakpoint-key: md-max;
   align-items: center;
   justify-content: flex-end;
   padding-left: sage-spacing(md);
+
+  @media (max-width: sage-breakpoint($-collapse-breakpoint-key)) {
+    padding-left: sage-spacing(xs);
+
+    .sage-btn__truncate-text {
+      @include visually-hidden();
+    }
+  }
 }
 
 .sage-outline-item__status {
