@@ -8,6 +8,10 @@
 $-label-padding: 0 sage-spacing(xs) !default;
 $-label-border-radius: sage-border(radius) !default;
 $-label-inset-border: 0 0 0 1px inset;
+$-label-primary-icon-background-accent: #3e92ee;
+$-label-warning-background-accent: #f9df8b;
+$-label-danger-background-accent: #f3988c;
+$-label-danger-icon-background-accent: #da665e;
 
 .sage-label {
   display: inline-flex;
@@ -19,6 +23,8 @@ $-label-inset-border: 0 0 0 1px inset;
   @extend %t-sage-body-small-semi;
 
   appearance: none;
+  display: flex;
+  align-items: center;
   padding: $-label-padding;
   white-space: nowrap;
   border-radius: $-label-border-radius;
@@ -30,15 +36,9 @@ $-label-inset-border: 0 0 0 1px inset;
   &:active {
     outline: none;
   }
-}
 
-.sage-label__button-wrapper {
-  position: absolute;
-  right: 0;
-  margin: auto 0;
-
-  .sage-btn::before {
-    font-size: rem(8px);
+  .sage-btn {
+    width: 28px;
   }
 }
 
@@ -72,17 +72,15 @@ $-label-inset-border: 0 0 0 1px inset;
       padding-right: rem(32px);
 
       @include sage-focus-outline();
-      @include sage-focus-outline--update-color( sage-color-combo($-color-name, subtle, background) );
+      @include sage-focus-outline--update-color( sage-color-combo($-color-name, default, foreground) );
 
       &:hover:not(:focus):not(:active):not(:disabled):not(.disabled) {
         color: sage-color-combo($-color-name, bold, foreground-accent);
       }
     }
 
-    .sage-label__button-wrapper {
-      &:hover .sage-btn {
-        background-color: sage-color-combo($-color-name, default, inner-button-background);
-      }
+    .sage-btn:hover {
+      background-color: sage-color-combo($-color-name, default, inner-button-background);
     }
 
     &:hover {
@@ -98,11 +96,15 @@ $-label-inset-border: 0 0 0 1px inset;
     .sage-btn {
       display: flex;
       justify-content: center;
+      position: absolute;
+      right: 0;
       width: rem(24px);
       min-height: rem(24px);
+      margin: auto 0;
       border-radius: 0 sage-border(radius) sage-border(radius) 0;
 
       &::before {
+        font-size: rem(8px);
         font-weight: sage-font-weight(bold);
         color: sage-color-combo($-color-name, default, foreground);
       }
@@ -129,4 +131,21 @@ $-label-inset-border: 0 0 0 1px inset;
   // }
 
   // NOTE: Icon generation consolidated in `core/_icons.scss`
+}
+
+// Overwrites for colors that dont exist in color palette specific to this interaction
+.sage-label--info.sage-label--interactive .sage-btn:hover {
+  background-color: $-label-primary-icon-background-accent;
+}
+
+.sage-label--danger.sage-label--interactive .sage-btn:hover {
+  background-color: $-label-danger-icon-background-accent;
+}
+
+.sage-label--warning.sage-label--interactive:hover .sage-label__value {
+  background-color: $-label-warning-background-accent;
+}
+
+.sage-label--danger.sage-label--interactive:hover .sage-label__value {
+  background-color: $-label-danger-background-accent;
 }

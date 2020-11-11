@@ -15,11 +15,9 @@
     class="sage-label__value"
     <%= component.generated_html_attributes %>
   />
-    <%= component.value %>
+    <%= component.value.html_safe %>
   </<%= label_content_tag %>>
   <% if component.content %>
-    <span class="sage-label__button-wrapper">
       <%= component.content %>
-    </span>
   <% end %>
 </span>
