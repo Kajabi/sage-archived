@@ -6,7 +6,9 @@
 ================================================== */
 
 .sage-sortable {
-  /* stylelint-disable-line block-no-empty */
+  &:empty {
+    display: none;
+  }
 }
 
 .sage-sortable__item {
