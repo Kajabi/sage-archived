@@ -186,10 +186,6 @@ $-collapse-breakpoint-key: lg-max;
 
   @media (max-width: sage-breakpoint($-collapse-breakpoint-key)) {
     padding-left: sage-spacing(xs);
-
-    .sage-btn__truncate-text {
-      @include visually-hidden();
-    }
   }
 }
 

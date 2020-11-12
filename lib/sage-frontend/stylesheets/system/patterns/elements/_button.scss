@@ -375,8 +375,13 @@ $-btn-subtle-styles: (
 
 .sage-btn__truncate-text {
   @include truncate;
-}
 
+  @media (max-width: sage-breakpoint(lg-max)) {
+    .sage-outline-item__actions-primary & {
+      @include visually-hidden();
+    }
+  }
+}
 
 // Button groups allow for several buttons together to be spaced appropriately
 .sage-btn-group {
