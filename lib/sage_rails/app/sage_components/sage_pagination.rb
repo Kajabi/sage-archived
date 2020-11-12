@@ -17,16 +17,14 @@ class SagePagination < SageComponent
   end
 
   def page_count(collection)
-    entry_name = collection.entry_name
-    entry_name = entry_name.pluralize unless collection.total_count == 1
+    entry_name = (collection.entry_name || "Record").pluralize(collection.total_count)
 
     if collection.total_pages < 2
-      "<strong>#{collection.total_count}</strong> Records"
+      "<strong>#{collection.total_count}</strong> #{entry_name}"
     else
       first = collection.offset_value + 1
       last = collection.last_page? ? collection.total_count : collection.offset_value + collection.limit_value
-      "<strong>#{first}</strong> - <strong>#{last}</strong> of <strong>#{collection.total_count}</strong> Records"
+      "<strong>#{first}</strong> - <strong>#{last}</strong> of <strong>#{collection.total_count}</strong> #{entry_name}"
     end.html_safe
   end
-
 end
