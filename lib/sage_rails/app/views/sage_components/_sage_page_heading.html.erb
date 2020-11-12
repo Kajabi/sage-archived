@@ -4,6 +4,11 @@
       <%= content_for :sage_breadcrumbs %>
     </div>
   <% end %>
+  <% if content_for? :sage_page_heading_intro %>
+    <div class="sage-page-heading__intro">
+      <%= content_for :sage_page_heading_intro %>
+    </div>
+  <% end %>
   <h1 class="sage-page-heading__title">
     <%= component.title %>
     <% if component.help_title && component.help_link && component.help_html %>
