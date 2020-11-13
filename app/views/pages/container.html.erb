@@ -63,16 +63,14 @@ containers = [
     </ul>
   </div>
 <% end %>
-<div class="sage-panel-set">
+<div class="sage-type">
   <% containers.each do | container | %>
-    <div class="sage-container<%= " sage-container--#{container[:alias]}" if container[:alias] %>">
-      <%= sage_component SagePanel, {} do %>
-        <%= sage_component SagePanelHeader, {  title: container[:full_name], html_attributes: { id: container[:id] } } %>
-        <p><%= container[:size] %></p>
-      <pre class="prettyprint"><code>&lt;div class=&quot;sage-container<%= " sage-container--#{container[:alias]}" if container[:alias] %>&quot;&gt;
-  &lt;!-- <%= container[:size] %> --&gt;
+  <%= sage_component SagePanelHeader, {  title: container[:full_name], html_attributes: { id: container[:id] } } %>
+  <p><%= container[:size] %></p>
+  <pre class="prettyprint"><code>&lt;div class=&quot;sage-container<%= " sage-container--#{container[:alias]}" if container[:alias] %>&quot;&gt;
+&lt;!-- <%= container[:size] %> --&gt;
 &lt;/div&gt;</code></pre>
-      <% end %>
-    </div>
-  <% end %>
+<hr>
+<% end %>
 </div>
+
