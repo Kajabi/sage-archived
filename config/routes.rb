@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'pages/content/:title', to: 'pages#content', as: 'pages_content'
   get 'pages/experiences/:title', to: 'pages#experiences', as: 'pages_experiences'
   get 'pages/design/:title', to: 'pages#design', as: 'pages_design'
+  get 'pages/pattern/:title', to: 'pages#pattern', as: 'pages_pattern'
   get 'pages/getting_started'
   get 'pages/elements'
   get 'pages/element/:title', to: 'pages#element', as: 'pages_element'
