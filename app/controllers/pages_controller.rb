@@ -18,6 +18,10 @@ class PagesController < ApplicationController
     render params[:title]
   end
 
+  def layout
+    render params[:title]
+  end
+
   def element
     @title = params[:title]
   end

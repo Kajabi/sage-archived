@@ -16,6 +16,10 @@ module ApplicationHelper
     current_page?(pages_design_path(:token)) || (params[:title] && current_page?(pages_design_path(params[:title])))
   end
 
+  def current_page_layout?
+    current_page?(pages_layout_path(:token)) || (params[:title] && current_page?(pages_layout_path(params[:title])))
+  end
+
   def current_page_elements?
     current_page?(pages_elements_path) || (params[:title] && current_page?(pages_element_path(params[:title])))
   end

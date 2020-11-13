@@ -89,20 +89,28 @@ design_pages = [
     path: pages_design_path(:icon),
   },
   {
+    name: "Motion",
+    path: pages_design_path(:motion),
+  }
+]
+%>
+<%
+layout_pages = [
+  {
     name: "Containers",
-    path: pages_design_path(:container),
+    path: pages_layout_path(:container),
   },
   {
     name: "Panels and Cards",
-    path: pages_design_path(:panels_cards),
+    path: pages_layout_path(:panels_cards),
   },
   {
-    name: "Grid",
-    path: pages_design_path(:grid),
+    name: "12 Col Grid",
+    path: pages_layout_path(:grid),
   },
   {
     name: "Grid Templates",
-    path: pages_design_path(:grid_templates),
+    path: pages_layout_path(:grid_templates),
   }
 ]
 %>
@@ -152,6 +160,18 @@ design_pages = [
           <% if current_page_design? %>
             <ul class="sage-nav__list sage-nav__list--sub">
               <% design_pages.each do | page | %>
+                <li>
+                  <%= link_to page[:name], page[:path], class: "sage-nav__link sage-nav__link--sub #{"sage-nav__link--active" if current_page?(page[:path])}" %>
+                </li>
+              <% end %>
+            </ul>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to "Layout", pages_layout_path(:container), class: "sage-nav__link #{"sage-nav__link--active" if current_page_layout?}" %>
+          <% if current_page_layout? %>
+            <ul class="sage-nav__list sage-nav__list--sub">
+              <% layout_pages.each do | page | %>
                 <li>
                   <%= link_to page[:name], page[:path], class: "sage-nav__link sage-nav__link--sub #{"sage-nav__link--active" if current_page?(page[:path])}" %>
                 </li>
