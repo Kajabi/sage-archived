@@ -40,10 +40,6 @@
     action: "Preview",
   },
   {
-    name: "question-circle",
-    action: "Help",
-  },
-  {
     name: "remove",
     action: "Clear",
   },
@@ -72,11 +68,11 @@
   },
   {
     name: "calendar-date",
-    action: "???",
+    action: "Events",
   },
   {
     name: "cart",
-    action: "???",
+    action: "Checkout",
   },
   {
     name: "chart",
@@ -137,6 +133,33 @@
   {
     name: "user-star",
     action: "Partners",
+  },
+]
+%>
+<% dialogue_icons = [
+  {
+    name: "check-circle",
+    action: "Confirmation",
+  },
+  {
+    name: "danger",
+    action: "Danger",
+  },
+  {
+    name: "flag",
+    action: "Announcement",
+  },
+  {
+    name: "info-circle",
+    action: "Information",
+  },
+  {
+    name: "question-circle",
+    action: "Help",
+  },
+  {
+    name: "warning",
+    action: "Warning",
   },
 ]
 %>
@@ -295,13 +318,16 @@ then `aria-hidden=\"true\"` can be used instead.
     <h2 class="quick-links__title">Contents</h2>
     <ul class="quick-links__body">
       <li class="quick-links__item">
-        <a href="#guidelines" class="quick-links__link">Guidelines</a>
+        <a href="#general-guidelines" class="quick-links__link">Guidelines</a>
       </li>
       <li class="quick-links__item">
-        <a href="#all-icons" class="quick-links__link">Action Icons</a>
+        <a href="#action-icons" class="quick-links__link">Action Icons</a>
       </li>
       <li class="quick-links__item">
-        <a href="#all-icons" class="quick-links__link">Feature Icons</a>
+        <a href="#feature-icons" class="quick-links__link">Feature Icons</a>
+      </li>
+      <li class="quick-links__item">
+        <a href="#dialogue-icons" class="quick-links__link">Dialogue Icons</a>
       </li>
       <li class="quick-links__item">
         <a href="#all-icons" class="quick-links__link">All Icons</a>
@@ -309,7 +335,6 @@ then `aria-hidden=\"true\"` can be used instead.
     </ul>
   </div>
 <% end %>
-<div id="guidelines">
 <%= md(%(
 ## General Guidelines
 
@@ -327,7 +352,6 @@ Add Product, the add action take priority over the Product feature. Add Product 
 
 Marketing uses the Megaphone icon. We do not use the megaphone icon for other treatments such as an in-app announcement. 
 ), use_sage_type: true) %>
-</div>
 <hr>
 <div id="action-icons" class="sage-type">
   <h2>Action Icons</h2>
@@ -350,6 +374,19 @@ Marketing uses the Megaphone icon. We do not use the megaphone icon for other tr
         <i class="sage-icon-<%= icon[:name] %>-xl" aria-hidden="true"></i>
         <p class="docs-icon-inline__label">sage-icon-<%= icon[:name] %></p>
         <p class="docs-icon-inline__usage"><strong><%= icon[:action] %></strong></p>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+<hr>
+<div id="dialogue-icons" class="sage-type">
+  <h2>Dialogue Icons</h2>
+  <% dialogue_icons.each do |icon| %>
+    <div class="docs-icon-inline">
+      <%= sage_component SageCardRow, { grid_template: "it" } do %>
+        <i class="sage-icon-<%= icon[:name] %>-xl" aria-hidden="true"></i>
+        <p class="docs-icon-inline__label">sage-icon-<%= icon[:name] %></p>
+        <p class="docs-icon-inline__usage"><strong><%= icon[:action] %></strong> Dialogues</p>
       <% end %>
     </div>
   <% end %>
