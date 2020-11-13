@@ -91,18 +91,22 @@ design_pages = [
 ]
 %>
 <%
-pattern_pages = [
+layout_pages = [
+  {
+    name: "Containers",
+    path: pages_layout_path(:container),
+  },
   {
     name: "Panels and Cards",
-    path: pages_pattern_path(:panels_cards),
+    path: pages_layout_path(:panels_cards),
   },
   {
     name: "12 Col Grid",
-    path: pages_pattern_path(:grid),
+    path: pages_layout_path(:grid),
   },
   {
     name: "Grid Templates",
-    path: pages_pattern_path(:grid_templates),
+    path: pages_layout_path(:grid_templates),
   }
 ]
 %>
@@ -160,10 +164,10 @@ pattern_pages = [
           <% end %>
         </li>
         <li>
-          <%= link_to "Patterns", pages_pattern_path(:container), class: "sage-nav__link #{"sage-nav__link--active" if current_page_pattern?}" %>
-          <% if current_page_pattern? %>
+          <%= link_to "Layout", pages_layout_path(:container), class: "sage-nav__link #{"sage-nav__link--active" if current_page_layout?}" %>
+          <% if current_page_layout? %>
             <ul class="sage-nav__list sage-nav__list--sub">
-              <% pattern_pages.each do | page | %>
+              <% layout_pages.each do | page | %>
                 <li>
                   <%= link_to page[:name], page[:path], class: "sage-nav__link sage-nav__link--sub #{"sage-nav__link--active" if current_page?(page[:path])}" %>
                 </li>

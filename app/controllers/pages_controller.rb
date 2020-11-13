@@ -18,7 +18,7 @@ class PagesController < ApplicationController
     render params[:title]
   end
 
-  def pattern
+  def layout
     render params[:title]
   end
 
