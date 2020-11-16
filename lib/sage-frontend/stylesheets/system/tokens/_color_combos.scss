@@ -5,6 +5,11 @@
   @return map-get($combo-set, $color-type);
 }
 
+// Color overrides
+$-label-primary-icon-background-accent: #3e92ee;
+$-label-warning-background-accent: #f9df8b;
+$-label-danger-background-accent: #f3988c;
+$-label-danger-icon-background-accent: #da665e;
 
 $sage-color-combos: (
   draft: (
@@ -48,7 +53,7 @@ $sage-color-combos: (
       foreground: sage-color(primary, 400),
       foreground-accent: sage-color(primary, 500),
       background: sage-color(primary, 100),
-      background-accent: sage-color(primary, 200),
+      background-accent: $-label-primary-icon-background-accent,
       inner-button-background: sage-color(primary, 300),
     ),
     subtle: (
@@ -84,7 +89,7 @@ $sage-color-combos: (
       foreground: sage-color(yellow, 400),
       foreground-accent: sage-color(yellow, 500),
       background: sage-color(yellow, 200),
-      background-accent: sage-color(yellow, 400),
+      background-accent: $-label-warning-background-accent,
       inner-button-background: sage-color(yellow, 300),
     ),
     subtle: (
@@ -102,8 +107,8 @@ $sage-color-combos: (
       foreground: sage-color(red, 400),
       foreground-accent: sage-color(red, 500),
       background: sage-color(red, 200),
-      background-accent: sage-color(red, 400),
-      inner-button-background: sage-color(red, 300),
+      background-accent: $-label-danger-background-accent,
+      inner-button-background: $-label-danger-icon-background-accent,
     ),
     subtle: (
       foreground: sage-color(red, 400),

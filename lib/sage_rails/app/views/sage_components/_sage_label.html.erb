@@ -1,4 +1,4 @@
-<% is_interactive = component.content.present? %>
+<% is_interactive = component.is_interactive %>
 <% label_content_tag = is_interactive ? "button" : "span" %>
 
 <span
@@ -17,7 +17,18 @@
   />
     <%= component.value.html_safe %>
   </<%= label_content_tag %>>
-  <% if component.content %>
-      <%= component.content %>
+
+  <% if component.is_tag %>
+    <%= sage_component SageButton, {
+      value: "Close",
+      subtle: true,
+      small: true,
+      style: "secondary",
+      icon: { style: "only", name: "remove" }
+    } %>
+  <% end %>
+
+  <% if component.is_status %>
+    <span class="sage-label__decor-icon sage-label__decor-icon--caret-down"></span>
   <% end %>
 </span>

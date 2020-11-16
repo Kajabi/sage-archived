@@ -82,6 +82,11 @@ $sage-icon-li-margin-right: 0.4em !default;
     margin: 0 sage-spacing(xs) 0 0;
   }
 
+  .sage-label__decor-icon--#{$icon-name}::before {
+    @include sage-icon-base($icon-name, md);
+    align-self: center;
+  }
+
   .sage-page-heading__toolbar-icon-#{$icon-name} {
     white-space: nowrap;
 
