@@ -11,6 +11,17 @@
   <% end %>
   <h1 class="sage-page-heading__title">
     <%= component.title %>
+    <% if component.help_link.present? && component.help_html.blank? %> 
+      <a href="<%= component.help_link[:url] %>" 
+        class="sage-link--no-launch sage-link--help-icon-only" 
+        target="_blank" 
+        referrer="no-referrer"
+      >
+        <span class="visually-hidden">
+          <%= component.help_link[:label] %>
+        </span>
+      </a>
+    <% end %>
     <% if component.help_title && component.help_link && component.help_html %>
       <%= sage_component SagePopover, {
         title: component.help_title,
