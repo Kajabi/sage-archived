@@ -1,3 +1,7 @@
+:warning: **IMPORTANT:** The Sage codebase [has been moved and renamed to "sage-lib"](https://github.com/Kajabi/sage-lib), and this repository is in the process of being archived. Please visit https://github.com/Kajabi/sage-lib moving forward. Thank you!
+
+---
+
 # Sage Design System
 
 The Sage Design System (SDS) is our single source of truth, providing everything you need to build great products for our customers. It is the culmination of designers and developers working together to give teams the ability to ship high-quality products faster.
